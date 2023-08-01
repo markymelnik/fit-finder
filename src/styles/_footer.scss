@@ -1,0 +1,26 @@
+.footer-container {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.developer-information {
+  font-size: 20px;
+}
+
+.social-media-links {
+  height: 60px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.something-link {
+  height: 50px;
+  width: 50px;
+  background-color: lightgrey;
+}
