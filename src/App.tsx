@@ -1,9 +1,13 @@
-import './styles/main.scss';
+import './styles/styles.scss';
 import Header from './components/Header/Header';
+import Main from './components/Main/Main';
 
 const App = () => {
   return (
-    <Header />
+    <div className='site-container'>
+      <Header />
+      <Main />
+    </div>
   )
 };
 

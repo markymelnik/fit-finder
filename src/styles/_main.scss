@@ -1,0 +1,75 @@
+.main-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-photo-container {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
+}
+
+.search-bar-container {
+  height: 120px;
+  width: 800px;
+  position: absolute;
+  top: 320px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background-color: lightsteelblue;
+}
+
+.carousel-container {
+  height: calc(100vh - 380px);
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+
+.carousel-header {
+  font-weight: 700;
+}
+
+.carousel-subheader {
+  font-weight: 400;
+}
+
+.carousel-display {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.carousel-card {
+  height: 250px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.information-container {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.information-box {
+  height: 300px;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
