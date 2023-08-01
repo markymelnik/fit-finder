@@ -1,5 +1,10 @@
+import './styles/main.scss';
+import Header from './components/Header/Header';
+
 const App = () => {
-  return <h1>Fitness Finder App</h1>;
+  return (
+    <Header />
+  )
 };
 
 export default App;
