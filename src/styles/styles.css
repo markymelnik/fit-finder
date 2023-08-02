@@ -1,20 +1,67 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 1px dotted red;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.site-container {
+  height: auto;
+  width: 100%;
+}
+
+@media (min-width: 320px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media (min-width: 480px) {
+  html {
+    font-size: 20px;
+  }
+}
 .header-container {
-  height: 80px;
+  height: 10vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding: 2vh;
 }
 
 .logo-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 60px;
-  width: 200px;
+  height: 6vh;
+  width: 60%;
+  font-size: 1rem;
 }
 
-.navigation-bar {
+.mobile-menu-btn, .space-fragment {
+  height: 6vh;
+  width: 6vh;
+}
+
+/* @media (min-width: 320px) {
+  .header-container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 480px) {
+  .header-container {
+    width: 100%;
+  }
+} */
+/* .navigation-bar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,54 +72,180 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
-  width: 200px;
+  height: 20px;
+  width: 60px;
 }
 
 .help-link {
-  height: 50px;
-  width: 100px;
+  height: 20px;
+  width: 40px;
 }
 
 .business-link {
-  height: 50px;
-  width: 100px;
+  height: 20px;
+  width: 40px;
 }
 
 .header-btns {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
-  width: 200px;
+  height: 20px;
+  width: 80px;
 }
 
 .log-in-btn {
-  height: 50px;
-  width: 100px;
+  height: 20px;
+  width: 40px;
 }
 
 .sign-up-btn {
-  height: 50px;
-  width: 100px;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 1px dotted red;
-}
-
-body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.site-container {
+  height: 20px;
+  width: 40px;
+} */
+.main-container {
+  height: auto;
   width: 100%;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.main-photo-container {
+  height: 45vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
+}
+
+.search-bar-container {
+  height: 10vh;
+  width: 80%;
+  position: absolute;
+  top: 50vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background-color: lightsteelblue;
+}
+
+.carousel-container {
+  height: 100%;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 15vh 0 10vh;
+}
+
+.carousel-header {
+  font-weight: 700;
+  align-self: flex-start;
+  font-size: 1rem;
+}
+
+.carousel-subheader {
+  font-weight: 400;
+  align-self: flex-start;
+  margin-bottom: 2vh;
+  font-size: 0.75rem;
+}
+
+.carousel-subheader h5 {
+  font-size: 0.75rem;
+}
+
+.carousel-display {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  place-items: center;
+}
+
+.carousel-card {
+  height: 32vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2vh 0;
+  background-color: lightsteelblue;
+}
+
+.information-container {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
+  padding: 2vh 0;
+  margin: 2vh 0;
+}
+
+.information-box {
+  height: 90%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+/* @media (min-width: 320px) {
+  .main-container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 480px) {
+  .main-container {
+    width: 100%;
+  }
+} */
+.footer-container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2vh 0;
+}
+
+.developer-information {
+  font-size: 1rem;
+  margin: 2vh 0;
+}
+
+.social-media-links {
+  height: 10vh;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vh;
+  margin: 2vh 0;
+}
+
+.something-link {
+  height: 6vh;
+  width: 6vh;
+  background-color: lightgrey;
+}
+
+/* @media (min-width: 320px) {
+  .footer-container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 480px) {
+  .footer-container {
+    width: 100%;
+  }
+} */
 
 /*# sourceMappingURL=styles.css.map */

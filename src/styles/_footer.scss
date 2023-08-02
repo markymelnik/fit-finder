@@ -5,30 +5,38 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin: 2vh 0;
 }
 
 .developer-information {
-  font-size: 20px;
-  margin: 20px 0;
+  font-size: 1rem;
+  margin: 2vh 0;
 }
 
 .social-media-links {
-  height: 60px;
-  width: 250px;
+  height: 10vh;
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 3vh;
+  margin: 2vh 0;
 }
 
 .something-link {
-  height: 40px;
-  width: 40px;
+  height: 6vh;
+  width: 6vh;
   background-color: lightgrey;
 }
 
-@media (min-width: 320px) {
+/* @media (min-width: 320px) {
   .footer-container {
-    max-width: 320px;
+    width: 100%;
   }
 }
+
+@media (min-width: 480px) {
+  .footer-container {
+    width: 100%;
+  }
+} */

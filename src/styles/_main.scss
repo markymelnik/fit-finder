@@ -7,7 +7,7 @@
 }
 
 .main-photo-container {
-  height: 250px;
+  height: 45vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -16,10 +16,10 @@
 }
 
 .search-bar-container {
-  height: 80px;
-  width: 280px;
+  height: 10vh;
+  width: 80%;
   position: absolute;
-  top: 280px;
+  top: 50vh;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -28,23 +28,28 @@
 
 .carousel-container {
   height: 100%;
-  width: 100%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 60px;
+  margin: 15vh 0 10vh;
 }
 
 .carousel-header {
-  font-size: 1.25rem;
   font-weight: 700;
   align-self: flex-start;
+  font-size: 1rem;
 }
 
 .carousel-subheader {
-  font-size: 0.75rem;
   font-weight: 400;
   align-self: flex-start;
+  margin-bottom: 2vh;
+  font-size: 0.75rem;
+}
+
+.carousel-subheader h5 {
+  font-size: 0.75rem;
 }
 
 .carousel-display {
@@ -54,34 +59,44 @@
 }
 
 .carousel-card {
-  height: 250px;
+  height: 32vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 2vh 0;
+  background-color: lightsteelblue;
 }
 
 .information-container {
-  height: 500px;
+  height: 80vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: lightgrey;
+  padding: 2vh 0;
+  margin: 2vh 0;
 }
 
 .information-box {
-  height: 300px;
-  width: 75%;
+  height: 90%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
 }
 
-@media (min-width: 320px) {
+/* @media (min-width: 320px) {
   .main-container {
-    max-width: 320px;
+    width: 100%;
   }
 }
+
+@media (min-width: 480px) {
+  .main-container {
+    width: 100%;
+  }
+} */
