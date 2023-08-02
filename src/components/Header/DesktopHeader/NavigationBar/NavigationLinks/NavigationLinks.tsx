@@ -1,7 +1,7 @@
 import BusinessLink from './BusinessLink';
 import HelpLink from './HelpLink';
 
-const HeaderLinks = () => {
+const NavigationLinks = () => {
   return (
     <div className='header-links'>
       <BusinessLink />
@@ -10,4 +10,4 @@ const HeaderLinks = () => {
   );
 };
 
-export default HeaderLinks;
+export default NavigationLinks;

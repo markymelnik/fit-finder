@@ -1,5 +1,5 @@
-import HeaderLinks from './HeaderLinks/HeaderLinks';
-import HeaderButtons from './HeaderButtons/HeaderButtons';
+import HeaderLinks from './NavigationLinks/NavigationLinks';
+import HeaderButtons from './NavigationButtons/NavigationButtons';
 
 const NavigationBar = () => {
   return (

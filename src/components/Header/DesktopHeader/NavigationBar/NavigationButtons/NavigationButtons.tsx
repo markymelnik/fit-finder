@@ -1,7 +1,7 @@
 import LogInButton from './LogInButton';
 import SignUpButton from './SignUpButton';
 
-const HeaderButtons = () => {
+const NavigationButtons = () => {
   return (
     <div className='header-btns'>
       <LogInButton />
@@ -10,4 +10,4 @@ const HeaderButtons = () => {
   );
 };
 
-export default HeaderButtons;
+export default NavigationButtons;
