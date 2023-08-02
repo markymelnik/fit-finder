@@ -1,20 +1,46 @@
 .header-container {
-  height: 80px;
+  height: auto;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
 }
 
 .logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
-  width: 250px;
+  height: 30px;
+  width: 120px;
+  font-size: 0.5rem;
 }
 
-.navigation-bar {
+.mobile-menu-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+}
+
+.space-fragment {
+  height: 40px;
+  width: 40px;
+}
+
+
+@media (min-width: 320px) {
+  .header-container {
+    max-width: 320px;
+  }
+}
+
+
+
+
+
+/* .navigation-bar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,34 +51,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
-  width: 200px;
+  height: 20px;
+  width: 60px;
 }
 
 .help-link {
-  height: 50px;
-  width: 100px;
+  height: 20px;
+  width: 40px;
 }
 
 .business-link {
-  height: 50px;
-  width: 100px;
+  height: 20px;
+  width: 40px;
 }
 
 .header-btns {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
-  width: 200px;
+  height: 20px;
+  width: 80px;
 }
 
 .log-in-btn {
-  height: 50px;
-  width: 100px;
+  height: 20px;
+  width: 40px;
 }
 
 .sign-up-btn {
-  height: 50px;
-  width: 100px;
-}
+  height: 20px;
+  width: 40px;
+} */
