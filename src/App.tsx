@@ -1,7 +1,7 @@
 import './styles/styles.scss';
-import Header from './components/Header/Header';
-import Main from './components/Main/Main';
-import Footer from './components/Footer/Footer';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import LoadHomePage from './components/LoadHomePage';
+import LoadSearchPage from './components/LoadSearchPage';
 import useIsMobile from './hooks/useIsMobile';
 
 const App = () => {
@@ -9,9 +9,12 @@ const App = () => {
 
   return (
     <div className='site-container'>
-      <Header useIsMobile={isMobile} />
-      <Main />
-      <Footer />
+      <Router>
+        <Routes>
+          <Route path="/" element={ <LoadHomePage useIsMobile={isMobile}/>}  />
+          <Route path="/search" element = { <LoadSearchPage useIsMobile={isMobile} />} />
+        </Routes>
+      </Router>
     </div>
   );
 };

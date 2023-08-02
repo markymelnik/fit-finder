@@ -1,6 +1,10 @@
+import { Link } from 'react-router-dom';
+
 const Logo = () => {
   return (
-    <h1 className='logo-container'>Fitness Finder</h1>
+    <h1 className='logo-container'>
+      <Link to='/' className="logo-text">Fitness Finder</Link>
+    </h1>
   );
 };
 
