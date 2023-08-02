@@ -128,10 +128,10 @@ body {
 }
 
 .search-bar-container {
-  height: 10vh;
-  width: 80%;
+  height: 8vh;
+  width: 75%;
   position: absolute;
-  top: 50vh;
+  top: 52vh;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -144,7 +144,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 15vh 0 10vh;
+  margin: 20vh 0 10vh;
 }
 
 .carousel-header {
@@ -167,13 +167,19 @@ body {
 }
 
 .carousel-card {
-  height: 32vh;
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 2vh 0;
   background-color: lightsteelblue;
+}
+
+.carousel-card::before {
+  content: "";
+  display: block;
+  padding-bottom: 75%;
 }
 
 .information-container {
@@ -184,8 +190,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: lightgrey;
-  padding: 2vh 0;
-  margin: 2vh 0;
+  margin: 1.25rem 0;
 }
 
 .information-box {
@@ -197,58 +202,65 @@ body {
   background-color: white;
 }
 
-/* @media (min-width: 320px) {
-  .main-container {
-    width: 100%;
+@media (min-width: 480px) {
+  .search-bar-container {
+    width: 80%;
   }
 }
-
-@media (min-width: 480px) {
-  .main-container {
-    width: 100%;
+@media (min-width: 768px) {
+  .search-bar-container {
+    top: 50vh;
+    height: 10vh;
   }
-} */
+  .carousel-display {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+  .carousel-card {
+    margin: 0;
+  }
+}
+@media (min-width: 992px) {
+  .carousel-display {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.5rem;
+  }
+}
 .footer-container {
-  height: auto;
+  min-height: 4rem;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 2vh 0;
+  margin: 1.25rem 0 0;
 }
 
 .developer-information {
-  font-size: 1rem;
+  font-size: 0.75rem;
   margin: 2vh 0;
 }
 
 .social-media-links {
   height: 10vh;
-  width: 80%;
+  width: 15rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3vh;
-  margin: 2vh 0;
+  gap: 1rem;
+  margin: 1rem 0;
 }
 
 .something-link {
-  height: 6vh;
-  width: 6vh;
+  height: 2rem;
+  width: 2rem;
   background-color: lightgrey;
 }
 
-/* @media (min-width: 320px) {
+@media (min-width: 768px) {
   .footer-container {
-    width: 100%;
+    flex-direction: row;
   }
 }
-
-@media (min-width: 480px) {
-  .footer-container {
-    width: 100%;
-  }
-} */
 
 /*# sourceMappingURL=styles.css.map */
