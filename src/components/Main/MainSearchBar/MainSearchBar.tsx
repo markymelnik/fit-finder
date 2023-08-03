@@ -1,34 +1,36 @@
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSearchTerm } from '../../../redux/searchTermSlice';
 import { useNavigate } from 'react-router-dom';
 
 const MainSearchBar = () => {
+  const searchTerm = useSelector((state) => state.searchTerm);
 
-  const [searchTerm, setSearchTerm] = useState('');
+  const dispath = useDispatch();
   const navigate = useNavigate();
 
   const handleInputChange = (event) => {
-    setSearchTerm(event.target.value);
-  }
+    dispath(setSearchTerm(event.target.value));
+  };
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    setSearchTerm('');
+    dispath(setSearchTerm(`${searchTerm}`));
     navigate(`/search?query=${searchTerm}`);
-  }
+  };
 
   return (
-    <div className="main-search-bar">
+    <div className='main-search-bar'>
       <form onSubmit={handleSearchSubmit}>
-        <input 
-          type="text"
+        <input
+          type='text'
           value={searchTerm}
           onChange={handleInputChange}
-          placeholder="Search..."
+          placeholder='Search...'
         />
-        <button type="submit"></button>
+        <button type='submit'></button>
       </form>
     </div>
-  )
+  );
 };
 
 export default MainSearchBar;

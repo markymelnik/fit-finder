@@ -132,15 +132,37 @@ body {
   background-color: lightgrey;
 }
 
-.search-bar-container {
+.main-search-bar {
   height: 3rem;
   width: 75%;
   position: absolute;
   top: 43vh;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 1;
   background-color: lightsteelblue;
+}
+
+.main-search-bar form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 80%;
+}
+
+.main-search-bar input {
+  height: 1.5rem;
+  width: 90%;
+  font-size: 0.75rem;
+  padding: 0.25rem;
+}
+
+.main-search-bar button {
+  height: 1.5rem;
+  min-width: 1.5rem;
 }
 
 .carousel-container {
@@ -269,11 +291,36 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 0.5rem;
 }
 
-.search-subheader-searchbar {
+.subheader-search-bar {
   height: 1.5rem;
-  width: 10rem;
+  width: 12rem;
+  display: flex;
+}
+
+.subheader-search-bar form {
+  height: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.subheader-search-bar input {
+  height: 1.5rem;
+  width: 100%;
+  border: 1px solid black;
+  font-size: 0.75rem;
+  padding: 0.25rem;
+}
+
+.subheader-search-bar button {
+  height: 1.5rem;
+  min-width: 1.5rem;
+  border: 1px solid black;
 }
 
 .query-info-container {
