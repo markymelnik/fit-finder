@@ -1,9 +1,8 @@
-const Search = () => {
-  return (
-    <div className="search-container">
-      <h1>Search Page</h1>
-    </div>
-  )
-}
+import MobileSearch from "./MobileSearch/MobileSearch";
+import DesktopSearch from "./DesktopSearch/DesktopSearch";
+
+const Search = ({ useIsMobile }) => {
+  return useIsMobile ? <MobileSearch useIsMobile={useIsMobile} /> : <DesktopSearch useIsMobile={useIsMobile} />;
+};
 
 export default Search;

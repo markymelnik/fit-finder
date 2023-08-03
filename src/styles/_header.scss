@@ -1,18 +1,19 @@
 .header-mobile-container {
-  height: 10vh;
+  height: 2.5rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 2vh;
+  align-items: center;
+  padding: 0.5rem;
 }
 
 .mobile-menu-btn, .space-fragment {
-  height: 6vh;
-  width: 6vh;
+  height: 2rem;
+  width: 2rem;
 }
 
 .header-desktop-container {
-  height: 10vh;
+  height: 2.5rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -30,29 +31,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 6vh;
+  height: 2rem;
   gap: 0.5rem;
 }
 
 .help-link, .business-link {
-  height: 1.25rem;
-  width: 4rem;
+  height: 1rem;
+  width: 3rem;
 }
 
 .log-in-btn {
-  height: 1.25rem;
-  width: 4rem;
+  height: 1rem;
+  width: 3rem;
 }
 
 .sign-up-btn {
-  height: 1.25rem;
-  width: 4rem;
+  height: 1rem;
+  width: 3rem;
 }
 
 .logo-container {
   display: flex;
   justify-content: center;
-  height: 6vh;
+  height: 2rem;
   width: 60%;
   
 }

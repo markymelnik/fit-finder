@@ -6,7 +6,7 @@ const LoadSearchPage = ({ useIsMobile }) => {
   return (
     <div className='site-container'>
       <Header useIsMobile={useIsMobile} />
-      <Search />
+      <Search useIsMobile={useIsMobile} />
       <Footer />
     </div>
   )
