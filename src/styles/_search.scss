@@ -40,11 +40,36 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 0.5rem;
 }
 
-.search-subheader-searchbar {
+.subheader-search-bar {
   height: 1.5rem;
-  width: 10rem;
+  width: 12rem;
+  display: flex;
+}
+
+.subheader-search-bar form {
+  height: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.subheader-search-bar input {
+  height: 1.5rem;
+  width: 100%;
+  border: 1px solid black;
+  font-size: 0.75rem;
+  padding: 0.25rem;
+}
+
+.subheader-search-bar button {
+  height: 1.5rem;
+  min-width: 1.5rem;
+  border: 1px solid black;
 }
 
 .query-info-container {

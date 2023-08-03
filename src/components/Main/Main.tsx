@@ -1,5 +1,5 @@
 import MainPhoto from './MainPhoto';
-import SearchBar from './SearchBar/SearchBar';
+import SearchBar from './MainSearchBar/MainSearchBar';
 import Carousel from './Carousel/Carousel';
 import Information from './Information/Information';
 

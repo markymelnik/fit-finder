@@ -15,15 +15,37 @@
   background-color: lightgrey;
 }
 
-.search-bar-container {
+.main-search-bar {
   height: 3rem;
   width: 75%;
   position: absolute;
   top: 43vh;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 1;
   background-color: lightsteelblue;
+}
+
+.main-search-bar form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 80%;
+}
+
+.main-search-bar input {
+  height: 1.5rem;
+  width: 90%;
+  font-size: 0.75rem;
+  padding: 0.25rem;
+}
+
+.main-search-bar button {
+  height: 1.5rem;
+  min-width: 1.5rem;
 }
 
 .carousel-container {

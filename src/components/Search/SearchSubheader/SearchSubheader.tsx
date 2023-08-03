@@ -1,4 +1,4 @@
-import SearchBar from './SearchBar';
+import SearchBar from './SubheaderSearchBar';
 import MobileFilterDropdown from '../MobileSearch/MobileFilterDropdown';
 import DesktopFilterMenu from '../DesktopSearch/DesktopFilterMenu';
 
