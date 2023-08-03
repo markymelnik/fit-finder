@@ -1,8 +1,11 @@
-import MobileSearch from "./MobileSearch/MobileSearch";
-import DesktopSearch from "./DesktopSearch/DesktopSearch";
+import { useSelector } from 'react-redux';
+import MobileSearch from './MobileSearch/MobileSearch';
+import DesktopSearch from './DesktopSearch/DesktopSearch';
 
-const Search = ({ useIsMobile }) => {
-  return useIsMobile ? <MobileSearch useIsMobile={useIsMobile} /> : <DesktopSearch useIsMobile={useIsMobile} />;
+const Search = () => {
+  const isMobile = useSelector((state) => state.isMobile);
+
+  return isMobile ? <MobileSearch /> : <DesktopSearch />;
 };
 
 export default Search;

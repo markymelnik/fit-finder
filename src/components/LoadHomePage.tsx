@@ -2,14 +2,14 @@ import Header from './Header/Header';
 import Main from './Main/Main';
 import Footer from './Footer/Footer';
 
-const LoadHomePage = ({ useIsMobile }) => {
+const LoadHomePage = () => {
   return (
     <div className='site-container'>
-      <Header useIsMobile={useIsMobile} />
+      <Header />
       <Main />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default LoadHomePage;

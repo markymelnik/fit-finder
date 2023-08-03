@@ -1,23 +1,25 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setIsMobile } from '../redux/mobileSlice';
 
 const useIsMobile = () => {
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) setIsMobile(true);
-      else setIsMobile(false);
+      if (window.innerWidth < 768) dispatch(setIsMobile(true));
+      else dispatch(setIsMobile(false));
     };
 
     window.addEventListener('resize', handleResize);
 
+    handleResize();
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
-
-  return isMobile;
+  }, [dispatch]);
 }
 
 export default useIsMobile;

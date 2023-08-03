@@ -2,10 +2,10 @@ import SearchSubheader from '../SearchSubheader/SearchSubheader';
 import QueryInformation from '../QueryInformation';
 import Results from '../Results/Results';
 
-const DesktopSearch = ({ useIsMobile }) => {
+const DesktopSearch = () => {
   return (
     <div className='search-desktop-container'>
-      <SearchSubheader useIsMobile={useIsMobile} />
+      <SearchSubheader />
       <QueryInformation />
       <Results />
     </div>
