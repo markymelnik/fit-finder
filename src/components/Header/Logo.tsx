@@ -1,13 +1,15 @@
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { setSearchTerm } from '../../redux/searchTermSlice';
+import { AppDispatch } from '../../redux/store';
 
 const Logo = () => {
-  const dispath = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const handleLogoClick = () => {
-    dispath(setSearchTerm(''));
+    dispatch(setSearchTerm(''));
   };
+
   return (
     <h1 className='logo-container'>
       <Link to='/' onClick={handleLogoClick} className='logo-text'>

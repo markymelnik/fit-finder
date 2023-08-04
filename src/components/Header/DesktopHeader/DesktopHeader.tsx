@@ -1,5 +1,5 @@
 import Logo from '../Logo';
-import NavigationBar from "./NavigationBar/NavigationBar";
+import NavigationBar from './NavigationBar/NavigationBar';
 
 const DesktopHeader = () => {
   return (

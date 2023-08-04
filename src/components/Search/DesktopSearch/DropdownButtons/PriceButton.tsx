@@ -1,7 +1,9 @@
-import DropdownButton from "./DropdownButtonFactory";
+import DropdownButton from './DropdownButtonFactory';
 
 const PriceButton = () => {
-  return <DropdownButton text={"Price"} customClass={"price-dropdown-btn"} />
-}
+  return (
+    <DropdownButton text={'Price'} customClass={'price-dropdown-btn'} />
+  );
+};
 
 export default PriceButton;

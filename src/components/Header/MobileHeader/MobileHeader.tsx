@@ -1,6 +1,6 @@
-import MobileMenuButton from "./MobileMenu/MobileMenu";
+import MobileMenuButton from './MobileMenu/MobileMenu';
 import Logo from '../Logo';
-import SpaceFragment from "./MobileMenu/SpaceFragment";
+import SpaceFragment from './MobileMenu/SpaceFragment';
 
 const MobileHeader = () => {
   return (

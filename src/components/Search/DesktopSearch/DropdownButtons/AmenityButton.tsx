@@ -1,7 +1,9 @@
-import DropdownButton from "./DropdownButtonFactory";
+import DropdownButton from './DropdownButtonFactory';
 
 const AmenityButton = () => {
-  return <DropdownButton text={"Amenity"} customClass={"amenity-dropdown-btn"} />
-}
+  return (
+    <DropdownButton text={'Amenity'} customClass={'amenity-dropdown-btn'} />
+  );
+};
 
 export default AmenityButton;

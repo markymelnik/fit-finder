@@ -1,9 +1,9 @@
 const LogInButton = () => {
-  return ( 
+  return (
     <button className='log-in-btn'>
       <h4>Log In</h4>
-    </button> 
-  )
+    </button>
+  );
 };
 
 export default LogInButton;

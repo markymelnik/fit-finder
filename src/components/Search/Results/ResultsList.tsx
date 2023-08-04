@@ -1,4 +1,4 @@
-import LocationCard from "../../Location/Card";
+import LocationCard from '../../Location/Card';
 
 const ResultsList = () => {
   return (

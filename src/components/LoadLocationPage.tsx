@@ -4,12 +4,12 @@ import Footer from './Footer/Footer';
 
 const LoadLocationPage = () => {
   return (
-    <div className="location-container">
+    <div className='location-container'>
       <Header />
       <Location />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default LoadLocationPage;
