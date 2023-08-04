@@ -1,12 +1,12 @@
-import ResultCard from './ResultCard';
+import LocationCard from "../../Location/Card";
 
 const ResultsList = () => {
   return (
     <div className='results-list'>
-      <ResultCard />
-      <ResultCard />
-      <ResultCard />
-      <ResultCard />
+      <LocationCard />
+      <LocationCard />
+      <LocationCard />
+      <LocationCard />
     </div>
   );
 };

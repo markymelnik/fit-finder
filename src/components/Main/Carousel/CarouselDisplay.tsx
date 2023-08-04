@@ -1,11 +1,11 @@
-import CarouselCard from './CarouselCard';
+import LocationCard from "../../Location/Card";
 
 const CarouselDisplay = () => {
   return <div className='carousel-display'>
-    <CarouselCard />
-    <CarouselCard />
-    <CarouselCard />
-    <CarouselCard />
+    <LocationCard />
+    <LocationCard />
+    <LocationCard />
+    <LocationCard />
   </div>;
 };
 

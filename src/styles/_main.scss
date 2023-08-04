@@ -76,22 +76,6 @@
   place-items: center;
 }
 
-.carousel-card {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2vh 0;
-  background-color: lightsteelblue;
-}
-
-.carousel-card::before {
-  content: '';
-  display: block;
-  padding-bottom: 75%;
-}
-
 .information-container {
   height: 80vh;
   width: 100%;
