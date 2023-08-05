@@ -1,10 +1,20 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
+interface mobileSliceState {
+  isMobile: boolean;
+}
+
+const initialState: mobileSliceState = {
+  isMobile: window.innerWidth < 768,
+};
+
 export const mobileSlice = createSlice({
   name: 'isMobile',
-  initialState: window.innerWidth < 768,
+  initialState: initialState,
   reducers: {
-    setIsMobile: (state, action: PayloadAction<boolean>) => action.payload,
+    setIsMobile: (state, action: PayloadAction<boolean>) => {
+      state.isMobile = action.payload;
+    },
   },
 });
 

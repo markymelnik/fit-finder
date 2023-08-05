@@ -7,17 +7,17 @@ import { ChangeEvent, FormEvent } from 'react';
 const MainSearchBar = () => {
   const searchTerm = useSelector((state: RootState) => state.searchTerm);
 
-  const dispath = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    dispath(setSearchTerm(event.target.value));
+    dispatch(setSearchTerm(event.target.value));
   };
 
   const handleSearchSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    dispath(setSearchTerm(`${searchTerm}`));
-    navigate(`/search?query=${searchTerm}`);
+    dispatch(setSearchTerm(`${searchTerm.searchTerm}`));
+    navigate(`/search?query=${searchTerm.searchTerm}`);
   };
 
   return (
@@ -25,7 +25,7 @@ const MainSearchBar = () => {
       <form onSubmit={handleSearchSubmit}>
         <input
           type='text'
-          value={searchTerm}
+          value={searchTerm.searchTerm}
           onChange={handleInputChange}
           placeholder='Search...'
         />

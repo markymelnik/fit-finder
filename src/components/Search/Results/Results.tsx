@@ -1,9 +1,9 @@
-import ResultsDisplay from './ResultsList';
+import ResultsList from './ResultsList';
 
 const Results = () => {
   return (
     <div className='results-container'>
-      <ResultsDisplay />
+      <ResultsList />
     </div>
   );
 };

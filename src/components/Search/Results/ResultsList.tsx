@@ -1,12 +1,20 @@
-import LocationCard from '../../Location/Card';
+import Card from '../../Location/Card';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../redux/store';
 
 const ResultsList = () => {
+  const locations = useSelector((state: RootState) => state.locations.locations);
+
   return (
     <div className='results-list'>
-      <LocationCard />
-      <LocationCard />
-      <LocationCard />
-      <LocationCard />
+      {locations.map((location) => (
+        <Card
+          key={location.id}
+          name={location.name}
+          type={location.type}
+          address={location.address}
+        />
+      ))}
     </div>
   );
 };

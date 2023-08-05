@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Card = () => {
+const Card = ({ name, type, address }) => {
   return (
     <div className='card-container'>
       <Link to='/location'>
@@ -9,9 +9,9 @@ const Card = () => {
         </div>
       </Link>
       <div className='card-location-info'>
-        <div className='card-location-name'>Location Name</div>
-        <div className='card-location-type'>Type</div>
-        <div className='card-location-address'>Address</div>
+        <div className='card-location-name'>{name}</div>
+        <div className='card-location-type'>{type}</div>
+        <div className='card-location-address'>{address}</div>
       </div>
     </div>
   );

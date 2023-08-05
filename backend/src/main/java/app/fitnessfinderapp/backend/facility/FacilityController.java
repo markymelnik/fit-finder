@@ -3,6 +3,7 @@ package app.fitnessfinderapp.backend.facility;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,9 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path="api/facility")
+@RequestMapping(path = "api/facility")
+@CrossOrigin(origins = "http://localhost:5173")
 public class FacilityController {
-  
+
   private final FacilityService facilityService;
 
   @Autowired
@@ -32,7 +34,7 @@ public class FacilityController {
     facilityService.addNewFacility(facility);
   }
 
-  @DeleteMapping(path= "{facilityId}")
+  @DeleteMapping(path = "{facilityId}")
   public void deleteStudent(@PathVariable("facilityId") Long facilityId) {
     facilityService.deleteFacility(facilityId);
   }
