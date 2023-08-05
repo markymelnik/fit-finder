@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from '../../../redux/store';
 import { setSearchTerm } from '../../../redux/searchTermSlice';
-import { fetchAllFacilities } from '../../../redux/apiRequests';
+import { fetchAllFacilities, fetchFacilitiesByKeyword } from '../../../redux/apiRequests';
 import { useNavigate } from 'react-router-dom';
 import { ChangeEvent, FormEvent } from 'react';
 import { RootState } from '../../../redux/store';
@@ -20,7 +20,12 @@ const SubheaderSearchBar = () => {
     event.preventDefault();
     dispatch(setSearchTerm(`${searchTerm.searchTerm}`));
     navigate(`/search?query=${searchTerm.searchTerm}`);
-    dispatch(fetchAllFacilities());
+
+    if (searchTerm.searchTerm.trim()) {
+      dispatch(fetchFacilitiesByKeyword(searchTerm.searchTerm));
+    } else {
+      dispatch(fetchAllFacilities());
+    }
   };
 
   return (

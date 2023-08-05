@@ -19,6 +19,10 @@ public class FacilityService {
     return facilityRepository.findAll();
   }
 
+  public List<Facility> searchFacilitiesByName(String keyword) {
+    return facilityRepository.searchByName(keyword);
+  }
+
   public void addNewFacility(Facility facility) {
     facilityRepository.save(facility);
   }

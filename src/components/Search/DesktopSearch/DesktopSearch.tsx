@@ -1,6 +1,6 @@
 import SearchSubheader from '../SearchSubheader/SearchSubheader';
 import QueryInformation from '../QueryInformation';
-import Results from '../Results/Results';
+import Results from '../SearchResults/ResultsContainer';
 
 const DesktopSearch = () => {
   return (
