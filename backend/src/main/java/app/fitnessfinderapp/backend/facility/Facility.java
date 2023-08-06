@@ -27,18 +27,24 @@ public class Facility {
   private String name;
   private String type;
   private String address;
+  private String neighborhood;
+  private String postal_code;
 
-  public Facility(Long id, String name, String type, String address) {
+  public Facility(Long id, String name, String type, String address, String neighborhood, String postal_code) {
     this.id = id;
     this.name = name;
     this.type = type;
     this.address = address;
+    this.neighborhood = neighborhood;
+    this.postal_code = postal_code;
   }
 
-  public Facility(String name, String type, String address) {
+  public Facility(String name, String type, String address, String neighborhood, String postal_code) {
     this.name = name;
     this.type = type;
     this.address = address;
+    this.neighborhood = neighborhood;
+    this.postal_code = postal_code;
   }
 
   public Facility() {
@@ -77,9 +83,26 @@ public class Facility {
     this.address = address;
   }
 
+  public String getNeighborhood() {
+    return this.neighborhood;
+  }
+
+  public void setNeighborhood(String neighborhood) {
+    this.neighborhood = neighborhood;
+  }
+
+  public String getPostalCode() {
+    return this.postal_code;
+  }
+
+  public void setPostCode(String postal_code) {
+    this.postal_code = postal_code;
+  }
+
   @Override
   public String toString() {
-    return "Facility {" + "id=" + id + ", name=" + name + '\'' + ", type=" + type + '\'' + ", address=" + '\'' + address + '}'; 
+    return "Facility {" + "id=" + id + ", name=" + name + '\'' + ", type=" + type + '\'' + ", address=" + '\'' + address
+        + '\'' + ", neighborhood=" + '\'' + neighborhood + '\'' + ", postal_code=" + '\'' + postal_code + '}';
   }
 
 }

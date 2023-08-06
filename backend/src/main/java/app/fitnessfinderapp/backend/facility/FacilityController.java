@@ -31,8 +31,8 @@ public class FacilityController {
   }
 
   @GetMapping("/search")
-  public List<Facility> searchFacilitiesByName(@RequestParam String keyword) {
-    return facilityService.searchFacilitiesByName(keyword);
+  public List<Facility> searchFacilitiesByKeyword(@RequestParam String keyword) {
+    return facilityService.searchFacilitiesByKeyword(keyword);
   }
 
   @PostMapping

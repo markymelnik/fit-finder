@@ -9,8 +9,14 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FacilityRepository
-  extends JpaRepository<Facility, Long> {
+    extends JpaRepository<Facility, Long> {
 
-    @Query("SELECT f FROM Facility f WHERE lower(f.name) LIKE lower(concat('%', :keyword, '%'))")
-    List<Facility> searchByName(@Param("keyword") String keyword);
-  }
+  @Query("SELECT f FROM Facility f WHERE " +
+      "lower(f.name) LIKE lower(concat('%', :keyword, '%')) OR " +
+      "lower(f.address) LIKE lower(concat('%', :keyword, '%')) OR " +
+      "lower(f.neighborhood) LIKE lower(concat('%', :keyword, '%')) OR " +
+      "lower(f.type) LIKE lower(concat('%', :keyword, '%')) OR " +
+      "f.postal_code = :keyword")
+  List<Facility> searchByKeyword(@Param("keyword") String keyword);
+
+}

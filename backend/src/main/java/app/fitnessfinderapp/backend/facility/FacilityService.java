@@ -19,8 +19,8 @@ public class FacilityService {
     return facilityRepository.findAll();
   }
 
-  public List<Facility> searchFacilitiesByName(String keyword) {
-    return facilityRepository.searchByName(keyword);
+  public List<Facility> searchFacilitiesByKeyword(String keyword) {
+    return facilityRepository.searchByKeyword(keyword);
   }
 
   public void addNewFacility(Facility facility) {
