@@ -1,6 +1,7 @@
 package app.fitnessfinderapp.backend.amenity;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,5 +18,9 @@ public class AmenityService {
 
   public List<Amenity> getAmenities() {
     return amenityRepository.findAll();
+  }
+
+  public Set<Amenity> getAmenitiesByFacilityId(Long facilityId) {
+    return amenityRepository.getAmenitiesByFacilityId(facilityId);
   }
 }

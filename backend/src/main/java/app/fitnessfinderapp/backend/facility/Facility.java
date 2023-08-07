@@ -38,13 +38,15 @@ public class Facility {
   )
   private List<Amenity> amenities = new ArrayList<>();
   
-  
-
   private String name;
   private String type;
   private String address;
   private String neighborhood;
   private String postal_code;
+
+   public Facility() {
+
+  }
 
   public Facility(Long id, String name, String type, String address, String neighborhood, String postal_code) {
     this.id = id;
@@ -61,10 +63,6 @@ public class Facility {
     this.address = address;
     this.neighborhood = neighborhood;
     this.postal_code = postal_code;
-  }
-
-  public Facility() {
-
   }
 
   public Long getId() {
@@ -115,7 +113,9 @@ public class Facility {
     this.postal_code = postal_code;
   }
 
-
+  public List<Amenity> getAmenities() {
+    return amenities;
+  }
 
   @Override
   public String toString() {
