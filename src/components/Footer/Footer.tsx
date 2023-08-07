@@ -3,10 +3,10 @@ import SocialMediaLinks from './SocialMediaLinks/SocialMediaLinks';
 
 const Footer = () => {
   return (
-    <div className='footer-container'>
+    <footer className='footer-container'>
       <DeveloperInformation />
       <SocialMediaLinks />
-    </div>
+    </footer>
   );
 };
 

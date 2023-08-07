@@ -4,7 +4,7 @@ import Footer from './Footer/Footer';
 
 const LoadHomePage = () => {
   return (
-    <div className='site-container'>
+    <div className='home-container'>
       <Header />
       <Main />
       <Footer />

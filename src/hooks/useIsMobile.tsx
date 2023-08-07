@@ -8,12 +8,10 @@ const useIsMobile = (): void => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) dispatch(setIsMobile(true));
-      else dispatch(setIsMobile(false));
+      dispatch(setIsMobile(window.innerWidth < 768));
     };
 
     window.addEventListener('resize', handleResize);
-
     handleResize();
 
     return () => {

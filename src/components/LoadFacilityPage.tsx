@@ -1,10 +1,10 @@
 import Header from './Header/Header';
-import Location from './Location/Location';
+import Location from './Facility/FacilityPage';
 import Footer from './Footer/Footer';
 
-const LoadLocationPage = () => {
+const LoadFacilityPage = () => {
   return (
-    <div className='location-container'>
+    <div className='facility-page-container'>
       <Header />
       <Location />
       <Footer />
@@ -12,4 +12,4 @@ const LoadLocationPage = () => {
   );
 };
 
-export default LoadLocationPage;
+export default LoadFacilityPage;

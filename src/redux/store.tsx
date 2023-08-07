@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
 import mobileReducer from './mobileSlice';
 import searchTermReducer from './searchTermSlice';
-import locationsSlice from './locationsSlice';
+import facilitiesSliceReducer from './facilitySlice';
+import selectedFacilityReducer from './selectedFacilitySlice';
 
 const store = configureStore({
   reducer: {
     isMobile: mobileReducer,
     searchTerm: searchTermReducer,
-    locations: locationsSlice,
+    facilities: facilitiesSliceReducer,
+    selectedFacility: selectedFacilityReducer,
   },
 });
 

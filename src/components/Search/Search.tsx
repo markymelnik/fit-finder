@@ -4,7 +4,7 @@ import MobileSearch from './MobileSearch/MobileSearch';
 import DesktopSearch from './DesktopSearch/DesktopSearch';
 
 const Search = () => {
-  const isMobile = useSelector((state: RootState) => state.isMobile);
+  const isMobile = useSelector((state: RootState) => state.isMobile.isMobile);
 
   return isMobile ? <MobileSearch /> : <DesktopSearch />;
 };

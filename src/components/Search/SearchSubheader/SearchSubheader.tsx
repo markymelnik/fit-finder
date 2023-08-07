@@ -5,7 +5,7 @@ import DesktopFilterMenu from '../DesktopSearch/DesktopFilterMenu';
 import { RootState } from '../../../redux/store';
 
 const SearchSubheader = () => {
-  const isMobile = useSelector((state: RootState) => state.isMobile);
+  const isMobile = useSelector((state: RootState) => state.isMobile.isMobile);
   return (
     <div className='search-subheader-container'>
       <SearchBar />

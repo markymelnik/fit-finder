@@ -4,7 +4,7 @@ import Footer from './Footer/Footer';
 
 const LoadSearchPage = () => {
   return (
-    <div className='site-container'>
+    <div className='search-container'>
       <Header />
       <Search />
       <Footer />

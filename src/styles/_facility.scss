@@ -1,4 +1,4 @@
-.location-container {
+.facility-page-container {
   min-height: calc(90vh - 2.5rem);
   width: 100%;
   display: flex;
@@ -6,27 +6,27 @@
   align-items: center;
 }
 
-.location-photo {
+.facility-photo {
   height: calc((80vw * 9) / 16);
   width: 80vw;
   margin: 3rem 0 1rem;
   background-color: grey;
 }
 
-.location-information {
+.facility-information {
   height: 5rem;
   width: 80vw;
   display: flex;
   flex-direction: column;
 }
 
-.location-name,
-.location-type,
-.location-address {
+.facility-name,
+.facility-type,
+.facility-address {
   flex: 1;
 }
 
-.location-navigation-btns {
+.facility-navigation-btns {
   width: 80vw;
   display: flex;
   justify-content: center;
