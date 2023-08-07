@@ -1,8 +1,8 @@
-import DropdownButton from './DropdownButtonFactory';
 
 const ServiceButton = () => {
   return (
-    <DropdownButton text={'Service'} customClass={'service-dropdown-btn'} />
+    <div className="service-dropdown-btn"></div>
+
   );
 };
 

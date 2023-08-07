@@ -1,8 +1,18 @@
-import DropdownButton from './DropdownButtonFactory';
+import Dropdown from "./Dropdown";
 
 const AmenityButton = () => {
+
+  const amenities = ['Locker Rooms', 'Showers', 'Sauna'];
+
   return (
-    <DropdownButton text={'Amenity'} customClass={'amenity-dropdown-btn'} />
+    <Dropdown
+      customClass='amenity'
+      buttonName='Amenities'
+      options={amenities}
+      onOptionSelected={(selected) => {
+        console.log(`Selected amenity: ${selected}`);
+      }}
+    />
   );
 };
 

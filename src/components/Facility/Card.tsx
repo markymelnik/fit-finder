@@ -33,5 +33,3 @@ const Card = ({ name, type, address, onClick }: CardProps) => {
 };
 
 export default Card;
-
-Location

@@ -1,9 +1,16 @@
 package app.fitnessfinderapp.backend.facility;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import app.fitnessfinderapp.backend.amenity.Amenity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
@@ -21,8 +28,17 @@ public class Facility {
     strategy= GenerationType.SEQUENCE,
     generator = "facility_sequence"
   )
-  
   private Long id;
+
+  @ManyToMany
+  @JoinTable(
+    name="facility_amenity",
+    joinColumns = @JoinColumn(name="facility_id"),
+    inverseJoinColumns = @JoinColumn(name="amenity_id")
+  )
+  private List<Amenity> amenities = new ArrayList<>();
+  
+  
 
   private String name;
   private String type;
@@ -98,6 +114,8 @@ public class Facility {
   public void setPostCode(String postal_code) {
     this.postal_code = postal_code;
   }
+
+
 
   @Override
   public String toString() {

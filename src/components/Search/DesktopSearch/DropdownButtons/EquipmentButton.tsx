@@ -1,8 +1,9 @@
-import DropdownButton from './DropdownButtonFactory';
 
 const EquipmentButton = () => {
   return (
-    <DropdownButton text={'Equipment'} customClass={'equipment-dropdown-btn'} />
+    <div className="equipment-dropdown-btn">
+
+    </div>
   );
 };
 

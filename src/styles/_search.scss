@@ -34,6 +34,31 @@
   width: 3rem;
 }
 
+.amenity-dropdown {
+  position: relative;
+  display: flex;
+}
+
+.dropdown-list {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  width: 4rem;
+  height: auto;
+  border: 1px solid black;
+  padding: 0.25rem;
+  font-size: 0.5rem;
+  background-color: lightgrey;
+}
+
+.dropdown-list li {
+  list-style: none;
+
+}
+
 .search-subheader-container {
   height: 3rem;
   width: 100%;
