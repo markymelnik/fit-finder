@@ -16,7 +16,7 @@ public class AmenityService {
     this.amenityRepository = amenityRepository;
   }
 
-  public List<Amenity> getAmenities() {
+  public List<Amenity> getAllAmenities() {
     return amenityRepository.findAll();
   }
 

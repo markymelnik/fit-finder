@@ -24,6 +24,15 @@ const fetchFacilitiesByKeyword = (keyword: string) => async (dispatch: AppDispat
   }
 };
 
+const fetchAllAmenities = () => async (dispatch: AppDispatch) => {
+  try {
+    const response = await Axios.get('http://localhost:8080/api/amenity');
+    dispatch(setAmenities(response.data));
+  } catch (err) {
+    console.error('Error fetching amenities', err);
+  }
+};
+
 const fetchAmenitiesByFacilityId = (facilityId: number) => async (dispatch: AppDispatch) => {
   try {
     const response = await Axios.get(`http://localhost:8080/api/facility/${facilityId}/amenities`);
@@ -36,5 +45,6 @@ const fetchAmenitiesByFacilityId = (facilityId: number) => async (dispatch: AppD
 export {
   fetchAllFacilities,
   fetchFacilitiesByKeyword,
+  fetchAllAmenities,
   fetchAmenitiesByFacilityId,
 };
