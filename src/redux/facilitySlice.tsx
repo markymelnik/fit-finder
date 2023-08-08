@@ -1,28 +1,40 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from './store';
+import { Facility, Amenity } from './types';
 
 interface FacilityState {
-  facilities: any[];
-  error: string | null;
+  byIds: Record<number, Facility>;
+  allIds: number[];
 }
 
-const initialState: FacilityState = {
-  facilities: [],
-  error: null,
+const initialFacilityState: FacilityState = {
+  byIds: {},
+  allIds: [],
 };
 
 export const facilitiesSlice = createSlice({
   name: 'facilities',
-  initialState: initialState,
+  initialState: initialFacilityState,
   reducers: {
     setFacilities: (state, action: PayloadAction<any[]>) => {
-      state.facilities = action.payload;
-    },
-    setError: (state, action: PayloadAction<string | null>) => {
-      state.error = action.payload;
+      state.byIds = {};
+      state.allIds = [];
+      action.payload.forEach((facility) => {
+        state.byIds[facility.id] = facility;
+        state.allIds.push(facility.id);
+      });
     },
   },
 });
 
-export const { setFacilities, setError } = facilitiesSlice.actions;
+export const retrieveAmenitiesForFacility = (state: RootState, facilityId: number): Amenity[] => {
+  const facility = state.facilities.byIds[facilityId];
+  if (facility) {
+    return facility.amenities.map((amenityId) => state.amenities.byIds[amenityId]);
+  }
+  return [];
+}
+
+export const { setFacilities } = facilitiesSlice.actions;
 
 export default facilitiesSlice.reducer;
