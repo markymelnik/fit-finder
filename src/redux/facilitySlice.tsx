@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from './store';
-import { Facility, Amenity } from './types';
+import { Facility } from './types';
 
 interface FacilityState {
   byIds: Record<number, Facility>;
@@ -16,7 +15,7 @@ export const facilitiesSlice = createSlice({
   name: 'facilities',
   initialState: initialFacilityState,
   reducers: {
-    setFacilities: (state, action: PayloadAction<any[]>) => {
+    setFacilities: (state, action: PayloadAction<Facility[]>) => {
       state.byIds = {};
       state.allIds = [];
       action.payload.forEach((facility) => {
@@ -27,10 +26,10 @@ export const facilitiesSlice = createSlice({
   },
 });
 
-export const retrieveAmenitiesForFacility = (state: RootState, facilityId: number): Amenity[] => {
-  const facility = state.facilities.byIds[facilityId];
+export const retrieveAmenitiesForFacility = (facilities: FacilityState, facilityId: number): string[] => {
+  const facility = facilities.byIds[facilityId];
   if (facility) {
-    return facility.amenities.map((amenityId) => state.amenities.byIds[amenityId]);
+    return facility.amenities.map(facility => facility.name);
   }
   return [];
 }

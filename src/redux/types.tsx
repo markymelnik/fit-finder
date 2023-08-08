@@ -3,9 +3,7 @@ export interface Facility {
   name: string;
   type: string;
   address: string;
-  neighborhood: string;
-  postal_code: string;
-  amenities: number[];
+  amenities: Amenity[];
 }
 
 export interface Amenity {

@@ -1,10 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-interface Facility {
-  name: String;
-  type: String;
-  address: String;
-}
+import { Facility } from "./types";
 
 interface selectedFacilityState {
   selectedFacility: Facility | null;

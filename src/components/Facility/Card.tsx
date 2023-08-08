@@ -1,19 +1,14 @@
 import { Link } from 'react-router-dom';
+import { Facility } from '../../redux/types';
 
-interface FacilityData {
-  name: String;
-  type: String;
-  address: String;
+interface FacilityCard extends Facility {
+  onClick: (facility: Facility) => void;
 }
 
-interface CardProps extends FacilityData {
-  onClick: (facility: FacilityData) => void;
-}
-
-const Card = ({ name, type, address, onClick }: CardProps) => {
+const Card = ({ id, name, type, address, amenities, onClick }: FacilityCard) => {
 
   const handleClick = () => {
-    onClick({ name, type, address });
+    onClick({ id, name, type, address, amenities });
   };
   
   return (

@@ -14,7 +14,7 @@
 }
 
 .facility-information {
-  height: 5rem;
+  height: auto;
   width: 80vw;
   display: flex;
   flex-direction: column;
@@ -22,7 +22,8 @@
 
 .facility-name,
 .facility-type,
-.facility-address {
+.facility-address,
+.facility-amenity {
   flex: 1;
 }
 

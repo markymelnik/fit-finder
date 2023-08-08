@@ -3,37 +3,38 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../redux/store';
 import { AppDispatch } from '../../../redux/store';
 import { setSelectedFacility } from '../../../redux/selectedFacilitySlice';
-
-interface Facility {
-  name: String;
-  type: String;
-  address: String;
-}
+import { Facility } from '../../../redux/types';
 
 const ResultsList = () => {
-  const facilities = useSelector((state: RootState) => state.facilities.facilities);
+  const facilitiesByIds = useSelector((state: RootState) => state.facilities.byIds);
+  const facilitiesAllIds = useSelector((state: RootState) => state.facilities.allIds);
   const dispatch = useDispatch<AppDispatch>();
 
-  if (facilities.length === 0) {
+  if (facilitiesAllIds.length === 0) {
     return <p>No results found for your query.</p>
   }
 
-  const handleCardClick = ({ name, type, address }: Facility) => {
-    const locationData = ({ name, type, address });
+  const handleCardClick = ({ id, name, type, address, amenities }: Facility) => {
+    const locationData = ({ id, name, type, address, amenities });
     dispatch(setSelectedFacility(locationData));
   }
   
   return (
     <div className='results-list'>
-      {facilities.map((facility) => (
-        <Card
-          key={facility.id}
-          name={facility.name}
-          type={facility.type}
-          address={facility.address}
-          onClick={handleCardClick}
-        />
-      ))}
+      {facilitiesAllIds.map((facilityId) => {
+        const facility = facilitiesByIds[facilityId];
+        return (
+          <Card
+            key={facility.id}
+            id={facility.id}
+            name={facility.name}
+            type={facility.type}
+            address={facility.address}
+            amenities={facility.amenities}
+            onClick={handleCardClick}
+          />
+        )
+      })}
     </div>
   );
 };
