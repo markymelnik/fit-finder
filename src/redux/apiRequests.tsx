@@ -12,30 +12,20 @@ const fetchAllFacilities = () => async (dispatch: AppDispatch) => {
   }
 };
 
-const fetchFacilitiesByKeyword = (keyword: string) => async (dispatch: AppDispatch) => {
+const fetchFacilitiesByKeywordAndAmenity = (keyword: string, selectedAmenities: string[]) => async (dispatch: AppDispatch) => {
   try {
-    const response = await Axios.get(
-      'http://localhost:8080/api/facility/search',
-      { params: { keyword } }
-    );
+    const params = new URLSearchParams();
+
+    if (keyword) {
+      params.append('keyword', keyword);
+    }
+    
+    selectedAmenities.forEach(amenity => params.append('amenities', amenity));
+
+    const response = await Axios.get('http://localhost:8080/api/facility/search', { params } );
     dispatch(setFacilities(response.data));
   } catch (err) {
     console.error('Error fetching facilities', err);
-  }
-};
-
-const fetchFacilitiesByAmenity = (selectedAmenities: string[]) => async (dispatch: AppDispatch) => {
-  try {
-    const params = new URLSearchParams();
-    selectedAmenities.forEach(amenity => params.append('amenities', amenity));
-
-    const response = await Axios.get(
-      'http://localhost:8080/api/facility/search/amenity',
-      { params }
-    );
-    dispatch(setFacilities(response.data));
-  } catch (err) {
-    console.error('Error fetching facilities by amenity', err);
   }
 };
 
@@ -59,8 +49,7 @@ const fetchAmenitiesByFacilityId = (facilityId: number) => async (dispatch: AppD
 
 export {
   fetchAllFacilities,
-  fetchFacilitiesByKeyword,
-  fetchFacilitiesByAmenity,
+  fetchFacilitiesByKeywordAndAmenity,
   fetchAllAmenities,
   fetchAmenitiesByFacilityId,
 };

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from '../../../redux/store';
 import { setSearchTerm } from '../../../redux/searchTermSlice';
-import { fetchAllFacilities, fetchFacilitiesByKeyword, fetchFacilitiesByAmenity } from '../../../redux/apiRequests';
+import { fetchAllFacilities, fetchFacilitiesByKeywordAndAmenity } from '../../../redux/apiRequests';
 import { useNavigate } from 'react-router-dom';
 import { ChangeEvent, FormEvent } from 'react';
 import { RootState } from '../../../redux/store';
@@ -19,23 +19,22 @@ const SubheaderSearchBar = () => {
 
   const handleSearchSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    dispatch(setSearchTerm(`${searchTerm.searchTerm}`));
 
     const queryParams = [];
 
     if (searchTerm.searchTerm.trim()) {
       queryParams.push(`query=${searchTerm.searchTerm}`);
-      dispatch(fetchFacilitiesByKeyword(searchTerm.searchTerm));
     } 
     
     if (selectedAmenities.length) {
       selectedAmenities.forEach(amenity => queryParams.push(`amenities=${amenity}`));
-      dispatch(fetchFacilitiesByAmenity(selectedAmenities));
     } 
     
     if (!searchTerm.searchTerm.trim() && !selectedAmenities.length) {
       queryParams.push('query=all');
       dispatch(fetchAllFacilities());
+    } else {
+      dispatch(fetchFacilitiesByKeywordAndAmenity(searchTerm.searchTerm, selectedAmenities));
     }
 
     navigate(`/search?${queryParams.join('&')}`);

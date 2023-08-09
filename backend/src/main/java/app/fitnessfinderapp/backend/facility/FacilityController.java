@@ -18,18 +18,17 @@ import app.fitnessfinderapp.backend.amenity.Amenity;
 import app.fitnessfinderapp.backend.amenity.AmenityService;
 
 @RestController
-@RequestMapping(path="api/facility")
-@CrossOrigin(origins="http://localhost:5173")
+@RequestMapping(path = "api/facility")
+@CrossOrigin(origins = "http://localhost:5173")
 public class FacilityController {
 
   private final FacilityService facilityService;
+  private final AmenityService amenityService;
 
   @Autowired
-  private AmenityService amenityService;
-
-  @Autowired
-  public FacilityController(FacilityService facilityService) {
+  public FacilityController(FacilityService facilityService, AmenityService amenityService) {
     this.facilityService = facilityService;
+    this.amenityService = amenityService;
   }
 
   @GetMapping
@@ -38,13 +37,10 @@ public class FacilityController {
   }
 
   @GetMapping("/search")
-  public List<Facility> searchFacilitiesByKeyword(@RequestParam String keyword) {
-    return facilityService.searchFacilitiesByKeyword(keyword);
-  }
-
-  @GetMapping("/search/amenity")
-  public List<Facility> searchFacilitiesByAmenity(@RequestParam List<String> amenities) {
-    return facilityService.searchFacilitiesByAmenities(amenities);
+  public List<Facility> searchFacilities(
+      @RequestParam(required = false) String keyword,
+      @RequestParam(required = false) List<String> amenities) {
+    return facilityService.searchFacilities(keyword, amenities);
   }
 
   @GetMapping("/{facilityId}/amenities")
@@ -58,7 +54,7 @@ public class FacilityController {
   }
 
   @DeleteMapping(path = "{facilityId}")
-  public void deleteStudent(@PathVariable("facilityId") Long facilityId) {
+  public void deleteFacility(@PathVariable("facilityId") Long facilityId) {
     facilityService.deleteFacility(facilityId);
   }
 }
