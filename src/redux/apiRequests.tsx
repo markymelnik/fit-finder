@@ -2,6 +2,7 @@ import Axios from 'axios';
 import { AppDispatch } from './store';
 import { setFacilities } from './facilitySlice';
 import { setAmenities } from './amenitySlice';
+import { setServices } from './serviceSlice';
 
 const fetchAllFacilities = () => async (dispatch: AppDispatch) => {
   try {
@@ -47,9 +48,19 @@ const fetchAmenitiesByFacilityId = (facilityId: number) => async (dispatch: AppD
   }
 };
 
+const fetchAllServices = () => async (dispatch: AppDispatch) => {
+  try { 
+    const response = await Axios.get('http://localhost:8080/api/service');
+    dispatch(setServices(response.data));
+  } catch (err) {
+    console.error('Error fetching services', err);
+  }
+}
+
 export {
   fetchAllFacilities,
   fetchFacilitiesByKeywordAndAmenity,
   fetchAllAmenities,
   fetchAmenitiesByFacilityId,
+  fetchAllServices
 };

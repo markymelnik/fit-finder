@@ -11,3 +11,9 @@ export interface Amenity {
   name: string;
   description: string;
 }
+
+export interface Service {
+  id: number;
+  name: string;
+  description: string;
+}
