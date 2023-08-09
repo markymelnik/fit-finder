@@ -19,4 +19,7 @@ public interface FacilityRepository
       "f.postal_code = :keyword")
   List<Facility> searchByKeyword(@Param("keyword") String keyword);
 
+  @Query("SELECT f FROM Facility f JOIN f.amenities a WHERE a.name IN :amenities GROUP BY f HAVING COUNT(DISTINCT a.name) = :amenityCount")
+  List<Facility> findByAllAmenities(@Param("amenities") List<String> amenities, @Param("amenityCount") Long amenityCount);
+
 }

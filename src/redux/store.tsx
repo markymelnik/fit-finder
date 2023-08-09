@@ -4,6 +4,7 @@ import searchTermReducer from './searchTermSlice';
 import facilitiesSliceReducer from './facilitySlice';
 import amenititesSliceReducer from './amenitySlice';
 import selectedFacilityReducer from './selectedFacilitySlice';
+import filtersReducer from './filterSlice';
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     facilities: facilitiesSliceReducer,
     amenities: amenititesSliceReducer,
     selectedFacility: selectedFacilityReducer,
+    filters: filtersReducer,
   },
 });
 

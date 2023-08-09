@@ -23,6 +23,10 @@ public class FacilityService {
     return facilityRepository.searchByKeyword(keyword);
   }
 
+  public List<Facility> searchFacilitiesByAmenities(List<String> amenities) {
+    return facilityRepository.findByAllAmenities(amenities, (long) amenities.size());
+  }
+
   public void addNewFacility(Facility facility) {
     facilityRepository.save(facility);
   }

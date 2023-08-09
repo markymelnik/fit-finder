@@ -42,6 +42,11 @@ public class FacilityController {
     return facilityService.searchFacilitiesByKeyword(keyword);
   }
 
+  @GetMapping("/search/amenity")
+  public List<Facility> searchFacilitiesByAmenity(@RequestParam List<String> amenities) {
+    return facilityService.searchFacilitiesByAmenities(amenities);
+  }
+
   @GetMapping("/{facilityId}/amenities")
   public Set<Amenity> getAmenitiesByFacilityId(@PathVariable Long facilityId) {
     return amenityService.getAmenitiesByFacilityId(facilityId);
