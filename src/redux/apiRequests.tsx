@@ -13,6 +13,15 @@ const fetchAllFacilities = () => async (dispatch: AppDispatch) => {
   }
 };
 
+const fetchAllFacilityTypes = () => async (dispatch: AppDispatch) => {
+  try {
+    const response = await Axios.get('http://localhost:8080/api/facility');
+    dispatch(setFacilityTypes(response.data));
+  } catch (err) {
+    console.error('Error fetching facility types', err);
+  }
+};
+
 const fetchAllAmenities = () => async (dispatch: AppDispatch) => {
   try {
     const response = await Axios.get('http://localhost:8080/api/amenities');

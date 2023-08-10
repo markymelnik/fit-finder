@@ -7,6 +7,12 @@ export interface Facility {
   services: Service[];
 }
 
+export interface FacilityType {
+  id: number;
+  name: string;
+  description: string;
+}
+
 export interface Amenity {
   id: number;
   name: string;

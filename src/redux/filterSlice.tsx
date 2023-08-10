@@ -1,11 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface FilterState {
+  selectedFacilityTypes: string[];
   selectedAmenities: string[];
   selectedServices: string[];
 }
 
 const initialFilterState: FilterState = {
+  selectedFacilityTypes: [],
   selectedAmenities: [],
   selectedServices: [],
 }
@@ -14,6 +16,10 @@ const filterSlice = createSlice({
   name: 'filters',
   initialState: initialFilterState,
   reducers: {
+    setSelectedFacilityTypes: (state, action: PayloadAction<string[]>) => {
+      state.selectedFacilityTypes = action.payload;
+      console.log("In the reducer: ", action.payload);
+    },
     setSelectedAmenities: (state, action: PayloadAction<string[]>) => {
       state.selectedAmenities = action.payload;
       console.log("In the reducer: ", action.payload);
@@ -25,6 +31,10 @@ const filterSlice = createSlice({
   }
 });
 
-export const { setSelectedAmenities, setSelectedServices } = filterSlice.actions;
+export const {
+  setSelectedFacilityTypes,
+  setSelectedAmenities,
+  setSelectedServices,
+} = filterSlice.actions;
 
 export default filterSlice.reducer;
