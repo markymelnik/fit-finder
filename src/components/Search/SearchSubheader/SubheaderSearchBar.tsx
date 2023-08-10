@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from '../../../redux/store';
 import { setSearchTerm } from '../../../redux/searchTermSlice';
-import { fetchAllFacilities, fetchFacilitiesByKeywordAndAmenity } from '../../../redux/apiRequests';
+import { fetchAllFacilities, fetchFacilitiesByParameters } from '../../../redux/apiRequests';
 import { useNavigate } from 'react-router-dom';
 import { ChangeEvent, FormEvent } from 'react';
 import { RootState } from '../../../redux/store';
@@ -9,6 +9,7 @@ import { RootState } from '../../../redux/store';
 const SubheaderSearchBar = () => {
   const searchTerm = useSelector((state: RootState) => state.searchTerm);
   const selectedAmenities = useSelector((state: RootState) => state.filters.selectedAmenities);
+  const selectedServices = useSelector((state: RootState) => state.filters.selectedServices);
 
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
@@ -27,14 +28,28 @@ const SubheaderSearchBar = () => {
     } 
     
     if (selectedAmenities.length) {
-      selectedAmenities.forEach(amenity => queryParams.push(`amenities=${amenity}`));
-    } 
+      selectedAmenities.forEach((amenity) =>
+        queryParams.push(`amenities=${amenity}`)
+      );
+    }
     
-    if (!searchTerm.searchTerm.trim() && !selectedAmenities.length) {
+    if (selectedServices.length) {
+      selectedServices.forEach((service) =>
+        queryParams.push(`services=${service}`)
+      );
+    }
+    
+    if (
+      !searchTerm.searchTerm.trim() &&
+      !selectedAmenities.length &&
+      !selectedServices.length
+    ) {
       queryParams.push('query=all');
       dispatch(fetchAllFacilities());
     } else {
-      dispatch(fetchFacilitiesByKeywordAndAmenity(searchTerm.searchTerm, selectedAmenities));
+      dispatch(
+        fetchFacilitiesByParameters(searchTerm.searchTerm, selectedAmenities, selectedServices)
+      );
     }
 
     navigate(`/search?${queryParams.join('&')}`);

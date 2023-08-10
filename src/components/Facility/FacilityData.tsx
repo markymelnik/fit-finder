@@ -1,11 +1,13 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { amenitiesSelector } from "../../redux/selectors/amenitiesSelector";
+import { servicesSelector } from "../../redux/selectors/servicesSelector";
 
 const FacilityData = () => {
 
   const selectedFacility = useSelector((state: RootState) => state.selectedFacility.selectedFacility);
   const amenities = useSelector(amenitiesSelector);
+  const services = useSelector(servicesSelector);
 
   if (!selectedFacility) {
     return <p>Facility not found.</p>
@@ -20,6 +22,13 @@ const FacilityData = () => {
         return (
           <div className="facility-amenity" key={index}>
             {amenity}
+          </div>
+        )
+      })}
+      {services.map((service, index) => {
+        return (
+          <div className="facility-service" key={index}>
+            {service}
           </div>
         )
       })}

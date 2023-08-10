@@ -14,8 +14,8 @@ const ResultsList = () => {
     return <p>No results found for your query.</p>
   }
 
-  const handleCardClick = ({ id, name, type, address, amenities }: Facility) => {
-    const locationData = ({ id, name, type, address, amenities });
+  const handleCardClick = ({ id, name, type, address, amenities, services }: Facility) => {
+    const locationData = ({ id, name, type, address, amenities, services });
     dispatch(setSelectedFacility(locationData));
   }
   
@@ -31,6 +31,7 @@ const ResultsList = () => {
             type={facility.type}
             address={facility.address}
             amenities={facility.amenities}
+            services={facility.services}
             onClick={handleCardClick}
           />
         )

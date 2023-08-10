@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path="api/amenity")
+@RequestMapping(path="api/amenities")
 @CrossOrigin(origins="http://localhost:5173")
 public class AmenityController {
   

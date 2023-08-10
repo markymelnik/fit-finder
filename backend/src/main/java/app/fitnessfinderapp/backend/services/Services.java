@@ -1,9 +1,14 @@
 package app.fitnessfinderapp.backend.services;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import app.fitnessfinderapp.backend.facility.Facility;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
@@ -13,16 +18,19 @@ public class Services {
   
   @Id
   @SequenceGenerator(
-    name="service_sequence",
-    sequenceName="service_sequence",
+    name="services_sequence",
+    sequenceName="services_sequence",
     allocationSize = 1
   )
 
   @GeneratedValue(
     strategy= GenerationType.SEQUENCE,
-    generator= "service_sequence"
+    generator= "services_sequence"
   )
   private Long id;
+
+  @ManyToMany(mappedBy = "services")
+  private List<Facility> facilities = new ArrayList<>();
 
   private String name;
   private String description;

@@ -13,6 +13,7 @@ public interface FacilityRepository
 
   @Query("SELECT f FROM Facility f " +
       "LEFT JOIN f.amenities a " +
+      "LEFT JOIN f.services s " +
       "WHERE (" +
       ":keyword IS NULL OR " +
       "lower(f.name) LIKE lower(concat('%', :keyword, '%')) OR " +
@@ -21,11 +22,16 @@ public interface FacilityRepository
       "lower(f.type) LIKE lower(concat('%', :keyword, '%')) OR " +
       "f.postal_code = :keyword) " +
       "AND (:amenityCount IS NULL OR a.name IN :amenityList) " +
+      "AND (:serviceCount IS NULL OR s.name IN :serviceList) " +
       "GROUP BY f " +
-      "HAVING (:amenityCount IS NULL OR COUNT(DISTINCT a.name) = :amenityCount)")
-  List<Facility> findFacilitiesByKeywordAndAmenities(
+      "HAVING (:amenityCount IS NULL OR COUNT(DISTINCT a.name) = :amenityCount) " +
+      "AND (:serviceCount IS NULL OR COUNT(DISTINCT s.name) = :serviceCount)")
+  List<Facility> findFacilitiesByParameters(
       @Param("keyword") String keyword,
       @Param("amenityList") List<String> amenityList,
-      @Param("amenityCount") Long amenityCount);
+      @Param("amenityCount") Long amenityCount,
+      @Param("serviceList") List<String> serviceList,
+      @Param("serviceCount") Long serviceCount
+    );
 
 }

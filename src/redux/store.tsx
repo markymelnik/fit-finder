@@ -3,7 +3,7 @@ import mobileReducer from './mobileSlice';
 import searchTermReducer from './searchTermSlice';
 import facilitiesSliceReducer from './facilitySlice';
 import amenititesSliceReducer from './amenitySlice';
-import serviceSliceReducer from './serviceSlice';
+import serviceSliceReducer from './servicesSlice';
 import selectedFacilityReducer from './selectedFacilitySlice';
 import filtersReducer from './filterSlice';
 

@@ -20,16 +20,16 @@ public class FacilityService {
     return facilityRepository.findAll();
   }
 
-  public List<Facility> searchFacilities(String keyword, List<String> amenities) {
-
-    List<String> amenityList = null;
-    Long amenityCount = null;
+  public List<Facility> getFacilitiesByParameters(String keyword, List<String> amenities, List<String> services) {
 
     if (keyword != null && !keyword.trim().isEmpty()) {
       keyword = keyword.trim();
     } else {
       keyword = null;
     }
+
+    List<String> amenityList = null;
+    Long amenityCount = null;
 
     if (amenities != null) {
       amenityList = amenities;
@@ -41,11 +41,26 @@ public class FacilityService {
       amenityCount = (long) amenityList.size();
     }
 
-    if (keyword == null && amenityCount == null) {
+    List<String> serviceList = null;
+    Long serviceCount = null;
+
+    if (services != null) {
+      serviceList = services;
+    } else {
+      serviceList = new ArrayList<>();
+    }
+
+    if(!serviceList.isEmpty()) {
+      serviceCount = (long) serviceList.size();
+    }
+
+    
+
+    if (keyword == null && amenityCount == null && serviceCount == null) {
       return facilityRepository.findAll();
     }
 
-    return facilityRepository.findFacilitiesByKeywordAndAmenities(keyword, amenityList, amenityCount);
+    return facilityRepository.findFacilitiesByParameters(keyword, amenityList, amenityCount, serviceList, serviceCount);
   }
 
   public void addNewFacility(Facility facility) {

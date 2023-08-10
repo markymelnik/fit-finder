@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import app.fitnessfinderapp.backend.amenity.Amenity;
 import app.fitnessfinderapp.backend.amenity.AmenityService;
+import app.fitnessfinderapp.backend.services.Services;
+import app.fitnessfinderapp.backend.services.ServicesService;
 
 @RestController
 @RequestMapping(path = "api/facility")
@@ -24,11 +26,13 @@ public class FacilityController {
 
   private final FacilityService facilityService;
   private final AmenityService amenityService;
+  private final ServicesService servicesService;
 
   @Autowired
-  public FacilityController(FacilityService facilityService, AmenityService amenityService) {
+  public FacilityController(FacilityService facilityService, AmenityService amenityService, ServicesService servicesService) {
     this.facilityService = facilityService;
     this.amenityService = amenityService;
+    this.servicesService = servicesService;
   }
 
   @GetMapping
@@ -37,15 +41,21 @@ public class FacilityController {
   }
 
   @GetMapping("/search")
-  public List<Facility> searchFacilities(
+  public List<Facility> getFacilitiesByParameters(
       @RequestParam(required = false) String keyword,
-      @RequestParam(required = false) List<String> amenities) {
-    return facilityService.searchFacilities(keyword, amenities);
+      @RequestParam(required = false) List<String> amenities,
+      @RequestParam(required = false) List<String> services) {
+    return facilityService.getFacilitiesByParameters(keyword, amenities, services);
   }
 
   @GetMapping("/{facilityId}/amenities")
   public Set<Amenity> getAmenitiesByFacilityId(@PathVariable Long facilityId) {
     return amenityService.getAmenitiesByFacilityId(facilityId);
+  }
+
+  @GetMapping("/{facilityId}/services")
+  public Set<Services> getServicesByFacilityId(@PathVariable Long facilityId) {
+    return servicesService.getServicesByFacilityId(facilityId);
   }
 
   @PostMapping

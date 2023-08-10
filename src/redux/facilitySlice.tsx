@@ -29,10 +29,18 @@ export const facilitiesSlice = createSlice({
 export const retrieveAmenitiesForFacility = (facilities: FacilityState, facilityId: number): string[] => {
   const facility = facilities.byIds[facilityId];
   if (facility) {
-    return facility.amenities.map(facility => facility.name);
+    return facility.amenities.map(amenity => amenity.name);
   }
   return [];
-}
+};
+
+export const retrieveServicesForFacility = (facilities: FacilityState, facilityId: number): string[] => {
+  const facility = facilities.byIds[facilityId];
+  if (facility) {
+    return facility.services.map(service => service.name);
+  }
+  return [];
+};
 
 export const { setFacilities } = facilitiesSlice.actions;
 

@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
-import { AppDispatch, RootState } from "../../../../redux/store";
 import { useEffect, useState } from "react";
 import { fetchAllServices } from "../../../../redux/apiRequests";
-import { setSelectedServices } from "../../../../redux/filterSlice";
+import { AppDispatch, RootState } from "../../../../redux/store";
 import Dropdown from "./Dropdown";
+import { setSelectedServices } from "../../../../redux/filterSlice";
 
 const ServiceButton = () => {
 
@@ -19,16 +19,16 @@ const ServiceButton = () => {
 
   const handleCheckboxClick = (option: string) => {
     
-    let updatedAmenities;
+    let updatedServices;
 
     if (checkedServices.includes(option)) {
-      updatedAmenities = checkedServices.filter(item => item !== option);
+      updatedServices = checkedServices.filter(item => item !== option);
     } else {
-      updatedAmenities = [...checkedServices, option];
+      updatedServices = [...checkedServices, option];
     }
 
-    setCheckedServices(updatedAmenities);
-    dispatch(setSelectedServices(updatedAmenities));
+    setCheckedServices(updatedServices);
+    dispatch(setSelectedServices(updatedServices));
 
   };
 

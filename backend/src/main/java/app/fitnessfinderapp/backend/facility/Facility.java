@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.fitnessfinderapp.backend.amenity.Amenity;
+import app.fitnessfinderapp.backend.services.Services;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -37,6 +38,14 @@ public class Facility {
     inverseJoinColumns = @JoinColumn(name="amenity_id")
   )
   private List<Amenity> amenities = new ArrayList<>();
+
+  @ManyToMany
+  @JoinTable(
+    name="facility_services",
+    joinColumns = @JoinColumn(name="facility_id"),
+    inverseJoinColumns = @JoinColumn(name="services_id")
+  )
+  private List<Services> services = new ArrayList<>();
   
   private String name;
   private String type;
@@ -109,12 +118,16 @@ public class Facility {
     return this.postal_code;
   }
 
-  public void setPostCode(String postal_code) {
+  public void setPostalCode(String postal_code) {
     this.postal_code = postal_code;
   }
 
   public List<Amenity> getAmenities() {
     return amenities;
+  }
+
+  public List<Services> getServices() {
+    return services;
   }
 
   @Override

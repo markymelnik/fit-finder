@@ -1,17 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Service } from "./types";
 
-interface ServiceState {
+interface ServicesState {
   byIds: Record<number, Service>
   allIds: number[];
 }
 
-const initialServicesState: ServiceState = {
+const initialServicesState: ServicesState = {
   byIds: {},
   allIds: [],
 }
 
-const serviceSlice = createSlice({
+const servicesSlice = createSlice({
   name: 'services',
   initialState: initialServicesState,
   reducers: {
@@ -26,6 +26,6 @@ const serviceSlice = createSlice({
   },
 });
 
-export const { setServices } = serviceSlice.actions;
+export const { setServices } = servicesSlice.actions;
 
-export default serviceSlice.reducer;
+export default servicesSlice.reducer;

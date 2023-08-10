@@ -4,6 +4,7 @@ export interface Facility {
   type: string;
   address: string;
   amenities: Amenity[];
+  services: Service[];
 }
 
 export interface Amenity {
