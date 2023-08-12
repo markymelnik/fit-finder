@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import mobileReducer from './mobileSlice';
 import searchTermReducer from './searchTermSlice';
 import facilitiesSliceReducer from './facilitySlice';
+import facilityTypesSliceReducer from './facilityTypeSlice';
 import amenititesSliceReducer from './amenitySlice';
 import serviceSliceReducer from './servicesSlice';
 import selectedFacilityReducer from './selectedFacilitySlice';
@@ -12,6 +13,7 @@ const store = configureStore({
     isMobile: mobileReducer,
     searchTerm: searchTermReducer,
     facilities: facilitiesSliceReducer,
+    facilityTypes: facilityTypesSliceReducer,
     amenities: amenititesSliceReducer,
     services: serviceSliceReducer,
     selectedFacility: selectedFacilityReducer,

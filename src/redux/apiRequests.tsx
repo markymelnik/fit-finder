@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import { AppDispatch } from './store';
 import { setFacilities } from './facilitySlice';
+import { setFacilityTypes } from './facilityTypeSlice';
 import { setAmenities } from './amenitySlice';
 import { setServices } from './servicesSlice';
 
@@ -15,7 +16,7 @@ const fetchAllFacilities = () => async (dispatch: AppDispatch) => {
 
 const fetchAllFacilityTypes = () => async (dispatch: AppDispatch) => {
   try {
-    const response = await Axios.get('http://localhost:8080/api/facility');
+    const response = await Axios.get('http://localhost:8080/api/facilitytypes');
     dispatch(setFacilityTypes(response.data));
   } catch (err) {
     console.error('Error fetching facility types', err);
@@ -79,6 +80,7 @@ const fetchFacilitiesByParameters = (keyword: string, selectedAmenities: string[
 
 export {
   fetchAllFacilities,
+  fetchAllFacilityTypes,
   fetchAllAmenities,
   fetchAmenitiesByFacilityId,
   fetchAllServices,

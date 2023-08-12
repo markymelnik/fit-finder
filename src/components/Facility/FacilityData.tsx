@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { amenitiesSelector } from "../../redux/selectors/amenitiesSelector";
-import { servicesSelector } from "../../redux/selectors/servicesSelector";
+import { servicesSelector, amenitiesSelector } from "../../redux/selectors/dataSelector";
 
 const FacilityData = () => {
 
@@ -18,14 +17,14 @@ const FacilityData = () => {
       <div className='facility-name'>{selectedFacility.name}</div>
       <div className='facility-type'>{selectedFacility.type}</div>
       <div className='facility-address'>{selectedFacility.address}</div>
-      {amenities.map((amenity, index) => {
+      {amenities.map((amenity: string, index: number) => {
         return (
           <div className="facility-amenity" key={index}>
             {amenity}
           </div>
         )
       })}
-      {services.map((service, index) => {
+      {services.map((service: string, index: number) => {
         return (
           <div className="facility-service" key={index}>
             {service}
