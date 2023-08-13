@@ -10,7 +10,7 @@
   height: calc((80vw * 9) / 16);
   width: 80vw;
   margin: 3rem 0 1rem;
-  background-color: grey;
+  background-color: map-get($grey, lighter);
 }
 
 .facility-information {

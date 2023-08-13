@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../redux/store';
-import { setEnteredKeyword } from '../../../redux/enteredKeywordSlice';
+import { setEnteredKeyword } from '../../../redux/filterSlice';
 import { useNavigate } from 'react-router-dom';
 import { ChangeEvent, FormEvent } from 'react';
+import searchIcon from '../../../assets/imgs/searchIcon.png';
 
 const MainSearchBar = () => {
   const enteredKeyword = useSelector((state: RootState) => state.filters.enteredKeyword);
@@ -27,9 +28,9 @@ const MainSearchBar = () => {
           type='text'
           value={enteredKeyword}
           onChange={handleInputChange}
-          placeholder='Search...'
+          placeholder='Enter a name, address, neighborhood...'
         />
-        <button type='submit'></button>
+        <button type='submit' style={{ backgroundImage: `url(${searchIcon})`}}></button>
       </form>
     </div>
   );

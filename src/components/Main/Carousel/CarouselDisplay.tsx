@@ -1,12 +1,12 @@
-import Card from '../../Facility/Card';
+import DummyCard from "../../Facility/DummyCard";
 
 const CarouselDisplay = () => {
   return (
     <div className='carousel-display'>
-      {/* <Card />
-      <Card />
-      <Card />
-      <Card /> */}
+      <DummyCard/>
+      <DummyCard/>
+      <DummyCard/>
+      <DummyCard/>
     </div>
   );
 };

@@ -1,10 +1,12 @@
 .header-mobile-container {
-  height: 2.5rem;
+  height: 3rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
+  background-color: map-get($grey, darker);
+  padding: 0 1.5rem;
 }
 
 .mobile-menu-btn, .space-fragment {
@@ -18,13 +20,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: map-get($grey, darker);
+  padding: 0 1.5rem;
 }
 
 .navigation-bar {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .header-links, .header-btns {
@@ -35,32 +39,36 @@
   gap: 0.5rem;
 }
 
-.help-link, .business-link {
+.business-link, .help-link {
   height: 1rem;
   width: 3rem;
+  color: map-get($grey, lighter);
+  background-color: map-get($grey, darker);
+  border: none;
+  font-size: 0.6rem;
 }
 
-.log-in-btn {
+.login-signup-btn {
   height: 1rem;
-  width: 3rem;
-}
-
-.sign-up-btn {
-  height: 1rem;
-  width: 3rem;
+  width: 5rem;
+  color: map-get($grey, lighter);
+  background-color: map-get($grey, darker);
+  border: none;
+  font-size: 0.6rem;
 }
 
 .logo-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 2rem;
   width: 60%;
-  
 }
 
 .logo-text {
   font-size: 1rem;
   text-decoration: none;
+  color: map-get($grey, lighter);
 }
 
 @media (min-width: 320px) {}

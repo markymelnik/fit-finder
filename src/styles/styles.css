@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: 1px dotted red;
 }
 
 html {
@@ -15,8 +14,23 @@ body {
 }
 
 .site-container {
+  display: flex;
+  flex-direction: column;
   height: auto;
-  width: 100%;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
 }
 
 @media (min-width: 320px) {
@@ -45,12 +59,14 @@ body {
   }
 }
 .header-mobile-container {
-  height: 2.5rem;
+  height: 3rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
+  background-color: hsl(209, 15%, 28%);
+  padding: 0 1.5rem;
 }
 
 .mobile-menu-btn, .space-fragment {
@@ -64,13 +80,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: hsl(209, 15%, 28%);
+  padding: 0 1.5rem;
 }
 
 .navigation-bar {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .header-links, .header-btns {
@@ -81,24 +99,28 @@ body {
   gap: 0.5rem;
 }
 
-.help-link, .business-link {
+.business-link, .help-link {
   height: 1rem;
   width: 3rem;
+  color: hsl(208, 21%, 81%);
+  background-color: hsl(209, 15%, 28%);
+  border: none;
+  font-size: 0.6rem;
 }
 
-.log-in-btn {
+.login-signup-btn {
   height: 1rem;
-  width: 3rem;
-}
-
-.sign-up-btn {
-  height: 1rem;
-  width: 3rem;
+  width: 5rem;
+  color: hsl(208, 21%, 81%);
+  background-color: hsl(209, 15%, 28%);
+  border: none;
+  font-size: 0.6rem;
 }
 
 .logo-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 2rem;
   width: 60%;
 }
@@ -106,6 +128,7 @@ body {
 .logo-text {
   font-size: 1rem;
   text-decoration: none;
+  color: hsl(208, 21%, 81%);
 }
 
 @media (min-width: 768px) {
@@ -123,54 +146,76 @@ body {
 }
 
 .main-photo-container {
-  height: 40vh;
+  height: 60vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightgrey;
+  background-color: hsl(208, 21%, 81%);
 }
 
 .main-search-bar {
-  height: 3rem;
-  width: 75%;
+  height: 80px;
+  width: 80%;
   position: absolute;
-  top: 43vh;
+  top: 45vh;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 8px;
   z-index: 1;
-  background-color: lightsteelblue;
+  background-color: hsl(210, 16%, 76%);
+  border: 1px solid hsl(207, 12%, 43%);
+  border-radius: 5px;
 }
 
 .main-search-bar form {
+  height: 100%;
+  width: 100%;
   display: flex;
+  flex: 1;
   justify-content: center;
-  gap: 1rem;
-  width: 80%;
+  align-items: center;
 }
 
 .main-search-bar input {
-  height: 1.5rem;
-  width: 90%;
-  font-size: 0.75rem;
-  padding: 0.25rem;
+  height: 100%;
+  width: 100%;
+  font-size: 0.8rem;
+  background-color: white;
+  border: 1px solid hsl(209, 15%, 28%);
+  border-right: none;
+  padding: 0.75rem;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .main-search-bar button {
-  height: 1.5rem;
-  min-width: 1.5rem;
+  height: 100%;
+  width: 80px;
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  border: 1px solid hsl(207, 12%, 43%);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.main-search-bar button:hover {
+  cursor: pointer;
+  background-color: #f2f2f2;
 }
 
 .carousel-container {
   height: 100%;
-  width: 95%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 5rem 0 5rem;
+  margin: 4rem 0 4rem;
+  padding: 0 1.5rem;
 }
 
 .carousel-header {
@@ -199,13 +244,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: lightgrey;
-  margin: 1.25rem 0;
+  background-color: hsl(207, 12%, 43%);
+  padding: 0 1.5rem;
 }
 
 .information-box {
   height: 90%;
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -218,6 +263,9 @@ body {
   }
 }
 @media (min-width: 768px) {
+  .main-search-bar {
+    width: 60%;
+  }
   .carousel-display {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
@@ -260,36 +308,57 @@ body {
   margin: 0 0.5rem;
 }
 
-.price-dropdown-btn,
+.type-dropdown-btn,
 .amenity-dropdown-btn,
-.service-dropdown-btn,
-.equipment-dropdown-btn {
+.service-dropdown-btn {
   height: 1.5rem;
   width: 3rem;
+  border: 1px solid hsl(207, 12%, 43%);
+  background-color: white;
 }
 
-.amenity-dropdown {
+.type-dropdown,
+.amenity-dropdown,
+.service-dropdown {
   position: relative;
   display: flex;
+}
+
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .dropdown-list {
   display: flex;
   flex-direction: column;
+  gap: 0.25rem;
   position: absolute;
-  top: 100%;
+  top: 0.5rem;
   left: 0;
   z-index: 1;
-  width: 5rem;
+  width: auto;
   height: auto;
-  border: 1px solid black;
+  border: 1px solid hsl(207, 12%, 43%);
   padding: 0.25rem;
   font-size: 0.5rem;
-  background-color: lightgrey;
+  background-color: white;
 }
 
-.dropdown-list li {
+.dropdown-option {
+  display: flex;
+  align-items: center;
   list-style: none;
+}
+
+.option-checkbox {
+  margin-right: 0.25rem;
+  height: 0.7rem;
+  width: 0.7rem;
+}
+
+.option-text {
+  font-size: 0.4rem;
 }
 
 .search-subheader-container {
@@ -299,6 +368,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 0.5rem;
+  border-bottom: 1px solid hsl(207, 12%, 43%);
 }
 
 .subheader-search-bar {
@@ -313,21 +383,22 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.25rem;
 }
 
 .subheader-search-bar input {
   height: 1.5rem;
   width: 100%;
-  border: 1px solid black;
-  font-size: 0.75rem;
-  padding: 0.25rem;
+  border: 1px solid hsl(207, 12%, 43%);
+  font-size: 0.6rem;
+  padding: 0.5rem;
+  border-right: none;
 }
 
 .subheader-search-bar button {
   height: 1.5rem;
   min-width: 1.5rem;
-  border: 1px solid black;
+  border: 1px solid hsl(207, 12%, 43%);
+  background-color: none;
 }
 
 .query-info-container {
@@ -340,12 +411,13 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+  background-color: hsl(210, 16%, 76%);
 }
 
 .results-list {
   display: grid;
   grid-template-columns: repeat(1fr);
-  padding: 0.5rem;
+  padding: 0 0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -375,7 +447,7 @@ body {
   height: 45vw;
   width: 80vw;
   margin: 3rem 0 1rem;
-  background-color: grey;
+  background-color: hsl(208, 21%, 81%);
 }
 
 .facility-information {
@@ -388,7 +460,8 @@ body {
 .facility-name,
 .facility-type,
 .facility-address,
-.facility-amenity {
+.facility-amenity,
+.facility-service {
   flex: 1;
 }
 
@@ -417,7 +490,8 @@ body {
   position: relative;
   overflow: hidden;
   margin: 0.5rem 0;
-  background-color: lightsteelblue;
+  background-color: white;
+  border-radius: 6px;
 }
 
 .card-container::before {
@@ -434,7 +508,11 @@ body {
   right: 0;
   z-index: 1;
   height: 70%;
-  background-color: grey;
+  background-color: white;
+  border-bottom: 1px solid hsl(210, 16%, 76%);
+}
+.card-photo:hover {
+  background-color: hsl(208, 21%, 81%);
 }
 
 .card-photo img {
@@ -454,6 +532,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0 0.5rem;
   font-size: 0.7rem;
 }
 
@@ -497,27 +576,25 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 1.25rem 0 0;
+  padding: 0 1.5rem;
+  margin: 1rem 0;
 }
 
 .developer-information {
-  font-size: 0.5rem;
-  margin: 0.5rem 0;
+  font-size: 0.75rem;
 }
 
 .social-media-links {
   height: 2rem;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin: 0 0 1rem;
 }
 
 .something-link {
-  height: 1.25rem;
-  width: 1.25rem;
+  height: 2rem;
+  width: 2rem;
   background-color: lightgrey;
 }
 

@@ -13,7 +13,7 @@ const Logo = () => {
   return (
     <h1 className='logo-container'>
       <Link to='/' onClick={handleLogoClick} className='logo-text'>
-        Fitness Finder
+        FF
       </Link>
     </h1>
   );

@@ -31,6 +31,8 @@
 .service-dropdown-btn {
   height: 1.5rem;
   width: 3rem;
+  border: 1px solid map-get($grey, dark);
+  background-color: white;
 }
 
 .type-dropdown,
@@ -40,24 +42,46 @@
   display: flex;
 }
 
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
 .dropdown-list {
   display: flex;
   flex-direction: column;
+  gap: 0.25rem;
   position: absolute;
-  top: 100%;
+  top: 0.5rem;
   left: 0;
   z-index: 1;
-  width: 5rem;
+  width: auto;
   height: auto;
-  border: 1px solid black;
+  border: 1px solid map-get($grey, dark);
   padding: 0.25rem;
   font-size: 0.5rem;
-  background-color: lightgrey;
+  background-color: white;
+
 }
 
-.dropdown-list li {
+.dropdown-option {
+  display: flex;
+  align-items: center;
   list-style: none;
 }
+
+.option-checkbox {
+  margin-right: 0.25rem;
+  height: 0.7rem;
+  width: 0.7rem;
+}
+
+.option-text {
+  font-size: 0.4rem;
+}
+
+
 
 .search-subheader-container {
   height: 3rem;
@@ -66,6 +90,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 0.5rem;
+  border-bottom: 1px solid map-get($grey, dark);
 }
 
 .subheader-search-bar {
@@ -80,21 +105,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.25rem;
 }
 
 .subheader-search-bar input {
   height: 1.5rem;
   width: 100%;
-  border: 1px solid black;
-  font-size: 0.75rem;
-  padding: 0.25rem;
+  border: 1px solid map-get($grey, dark);
+  font-size: 0.6rem;
+  padding: 0.5rem;
+  border-right: none;
 }
 
 .subheader-search-bar button {
   height: 1.5rem;
   min-width: 1.5rem;
-  border: 1px solid black;
+  border: 1px solid map-get($grey, dark);
+  background-color: none;
 }
 
 .query-info-container {
@@ -107,12 +133,13 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  background-color: map-get($grey, light);
 }
 
 .results-list {
   display: grid;
   grid-template-columns: repeat(1fr);
-  padding: 0.5rem;
+  padding: 0 0.5rem;
 }
 
 @media (min-width: 320px) {}

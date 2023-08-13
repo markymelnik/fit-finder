@@ -28,13 +28,14 @@ const Dropdown = ({ buttonName, options, customClass, checkedOptions, onCheckbox
         <div className={`${customClass}-dropdown`} onMouseLeave={() => setDropdownVisible(false)}>
           <ul className='dropdown-list'>
             {options.map((option, index) => (
-              <li key={index}>
+              <li key={index} className="dropdown-option">
                 <input
+                  className="option-checkbox"
                   type="checkbox"
                   checked={checkedOptions.includes(option)}
                   onChange={() => handleCheckboxChange(option)}
                 />
-                {option}
+                <div className="option-text">{option}</div>
               </li>
             ))}
           </ul>
