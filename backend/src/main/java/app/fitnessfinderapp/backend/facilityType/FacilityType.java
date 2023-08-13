@@ -1,7 +1,7 @@
 package app.fitnessfinderapp.backend.facilityType;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import app.fitnessfinderapp.backend.facility.Facility;
 import jakarta.persistence.Entity;
@@ -30,8 +30,8 @@ public class FacilityType {
   )
   private Long id;
 
-  @OneToMany(mappedBy = "facilityType", fetch = FetchType.EAGER)
-  private List<Facility> facilities = new ArrayList<>();
+  @OneToMany(mappedBy = "facilityType", fetch=FetchType.EAGER)
+  private Set<Facility> facilities = new HashSet<>();
 
   private String name;
   private String description;

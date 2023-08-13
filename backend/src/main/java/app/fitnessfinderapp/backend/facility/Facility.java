@@ -1,7 +1,7 @@
 package app.fitnessfinderapp.backend.facility;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import app.fitnessfinderapp.backend.amenity.Amenity;
 import app.fitnessfinderapp.backend.facilityType.FacilityType;
@@ -40,7 +40,7 @@ public class Facility {
     joinColumns = @JoinColumn(name="facility_id"),
     inverseJoinColumns = @JoinColumn(name="amenity_id")
   )
-  private List<Amenity> amenities = new ArrayList<>();
+  private Set<Amenity> amenities = new HashSet<>();
 
   @ManyToMany
   @JoinTable(
@@ -48,18 +48,18 @@ public class Facility {
     joinColumns = @JoinColumn(name="facility_id"),
     inverseJoinColumns = @JoinColumn(name="services_id")
   )
-  private List<Services> services = new ArrayList<>();
+  private Set<Services> services = new HashSet<>();
 
   @ManyToOne(fetch = FetchType.EAGER)
-  @JoinColumn(name = "facilityType_id")
+  @JoinColumn(name = "type_id")
   private FacilityType facilityType;
-  
+
   private String name;
   private String address;
   private String neighborhood;
   private String postal_code;
 
-   public Facility() {
+  public Facility() {
 
   }
 
@@ -122,11 +122,11 @@ public class Facility {
     return facilityType;
   }
 
-  public List<Amenity> getAmenities() {
+  public Set<Amenity> getAmenities() {
     return amenities;
   }
 
-  public List<Services> getServices() {
+  public Set<Services> getServices() {
     return services;
   }
 

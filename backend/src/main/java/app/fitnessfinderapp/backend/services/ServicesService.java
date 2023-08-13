@@ -1,6 +1,6 @@
 package app.fitnessfinderapp.backend.services;
 
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +16,8 @@ public class ServicesService {
     this.servicesRepository = servicesRepository;
   }
 
-  public List<Services> getAllServices() {
-    return servicesRepository.findAll();
+  public Set<Services> getAllServices() {
+    return new HashSet<>(servicesRepository.findAll());
   }
 
   public Set<Services> getServicesByFacilityId(Long facilityId) {

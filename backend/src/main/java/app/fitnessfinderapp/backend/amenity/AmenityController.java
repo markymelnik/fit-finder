@@ -1,6 +1,6 @@
 package app.fitnessfinderapp.backend.amenity;
 
-import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,7 +21,7 @@ public class AmenityController {
   }
 
   @GetMapping
-  public List<Amenity> getAmenities() {
+  public Set<Amenity> getAmenities() {
     return amenityService.getAllAmenities();
   }
 }

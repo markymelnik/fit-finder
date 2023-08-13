@@ -1,6 +1,5 @@
 package app.fitnessfinderapp.backend.facility;
 
-import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,22 +38,23 @@ public class FacilityController {
     this.servicesService = servicesService;
   }
 
+  @GetMapping("/search")
+  public Set<Facility> getFacilitiesByParameters(
+      @RequestParam(required = false) String enteredKeyword,
+      @RequestParam(required = false) Set<String> facilityTypes,
+      @RequestParam(required = false) Set<String> amenities,
+      @RequestParam(required = false) Set<String> services) {
+        
+      return facilityService.getFacilitiesByParameters(enteredKeyword, facilityTypes, amenities, services);
+  }
+
   @GetMapping
-  public List<Facility> getFacilities() {
+  public Set<Facility> getFacilities() {
     return facilityService.getFacilities();
   }
 
-  @GetMapping("/search")
-  public List<Facility> getFacilitiesByParameters(
-      @RequestParam(required = false) String keyword,
-      @RequestParam(required = false) List<String> facilityTypes,
-      @RequestParam(required = false) List<String> amenities,
-      @RequestParam(required = false) List<String> services) {
-    return facilityService.getFacilitiesByParameters(keyword, facilityTypes, amenities, services);
-  }
-
   @GetMapping("/{facilityId}/type")
-  public List<FacilityType> getFacilityTypeByFacilityId(@PathVariable Long facilityId) {
+  public Set<FacilityType> getFacilityTypeByFacilityId(@PathVariable Long facilityId) {
     return facilityTypeService.getFacilityTypeByFacilityId(facilityId);
   }
 

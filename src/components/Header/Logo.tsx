@@ -1,13 +1,13 @@
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { setSearchTerm } from '../../redux/enteredKeywordSlice';
+import { setEnteredKeyword } from '../../redux/enteredKeywordSlice';
 import { AppDispatch } from '../../redux/store';
 
 const Logo = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   const handleLogoClick = () => {
-    dispatch(setSearchTerm(''));
+    dispatch(setEnteredKeyword(''));
   };
 
   return (

@@ -1,7 +1,7 @@
 package app.fitnessfinderapp.backend.facility;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,49 +16,56 @@ public class FacilityService {
     this.facilityRepository = facilityRepository;
   }
 
-  public List<Facility> getFacilities() {
-    return facilityRepository.findAll();
-  }
+  public Set<Facility> getFacilities() {
+    return new HashSet<>(facilityRepository.findAll());
+  }  
 
-  public List<Facility> getFacilitiesByParameters(String keyword, List<String> facilityTypes, List<String> amenities, List<String> services) {
+  public Set<Facility> getFacilitiesByParameters(String enteredKeyword, Set<String> facilityTypes, Set<String> amenities, Set<String> services) {
 
-    if (keyword != null && !keyword.trim().isEmpty()) {
-      keyword = keyword.trim();
+    if (
+    (enteredKeyword == null || enteredKeyword.isEmpty()) && 
+    (facilityTypes == null || facilityTypes.isEmpty()) && 
+    (amenities == null || amenities.isEmpty()) && 
+    (services == null || services.isEmpty())
+  ) {
+  return new HashSet<>(facilityRepository.findAll());
+}
+
+    Set<String> typeList = null;
+    
+    if (facilityTypes != null) {
+      typeList = facilityTypes;
     } else {
-      keyword = null;
+      typeList = new HashSet<>();
     }
 
-    List<String> amenityList = null;
+    Set<String> amenityList = null;
     Long amenityCount = null;
 
     if (amenities != null) {
       amenityList = amenities;
     } else {
-      amenityList = new ArrayList<>();
+      amenityList = new HashSet<>();
     }
 
     if (!amenityList.isEmpty()) {
       amenityCount = (long) amenityList.size();
     }
 
-    List<String> serviceList = null;
+    Set<String> serviceList = null;
     Long serviceCount = null;
 
     if (services != null) {
       serviceList = services;
     } else {
-      serviceList = new ArrayList<>();
+      serviceList = new HashSet<>();
     }
 
     if(!serviceList.isEmpty()) {
       serviceCount = (long) serviceList.size();
     }
 
-    if (keyword == null && amenityCount == null && serviceCount == null) {
-      return facilityRepository.findAll();
-    }
-
-    return facilityRepository.findFacilitiesByParameters(keyword, amenityList, amenityCount, serviceList, serviceCount);
+    return facilityRepository.findFacilitiesByParameters(enteredKeyword, typeList, amenityList, amenityCount, serviceList, serviceCount);
   }
 
   public void addNewFacility(Facility facility) {

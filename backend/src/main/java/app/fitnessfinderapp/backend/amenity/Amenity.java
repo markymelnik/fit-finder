@@ -1,7 +1,7 @@
 package app.fitnessfinderapp.backend.amenity;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import app.fitnessfinderapp.backend.facility.Facility;
 import jakarta.persistence.Entity;
@@ -30,7 +30,7 @@ public class Amenity {
   private Long id;
 
   @ManyToMany(mappedBy = "amenities")
-  private List<Facility> facilities = new ArrayList<>();
+  private Set<Facility> facilities = new HashSet<>();
   
   private String name;
   private String description;

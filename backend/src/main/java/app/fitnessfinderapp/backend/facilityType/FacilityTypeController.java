@@ -1,6 +1,6 @@
 package app.fitnessfinderapp.backend.facilityType;
 
-import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,7 +21,8 @@ public class FacilityTypeController {
   }
 
   @GetMapping
-  public List<FacilityType> getFacilityTypes() {
+  public Set<FacilityType> getFacilityTypes() {
     return facilityTypeService.getAllFacilityTypes();
   }
+
 }

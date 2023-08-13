@@ -1,6 +1,6 @@
 package app.fitnessfinderapp.backend.services;
 
-import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,7 +21,7 @@ public class ServicesController {
   }
 
   @GetMapping
-  public List<Services> getServices() {
+  public Set<Services> getServices() {
     return servicesService.getAllServices();
   }
 }

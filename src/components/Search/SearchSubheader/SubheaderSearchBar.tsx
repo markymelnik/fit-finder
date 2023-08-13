@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from '../../../redux/store';
-import { setEnteredKeyword } from '../../../redux/filterSlice';
+import { setEnteredKeyword } from '../../../redux/enteredKeywordSlice';
 import { fetchAllFacilities, fetchFacilitiesByParameters } from '../../../redux/apiRequests';
 import { useNavigate } from 'react-router-dom';
 import { ChangeEvent, FormEvent } from 'react';
