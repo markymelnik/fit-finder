@@ -31,8 +31,24 @@
 .service-dropdown-btn {
   height: 1.5rem;
   width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
   border: 1px solid map-get($grey, dark);
   background-color: white;
+  
+  &:hover {
+    cursor: pointer;
+    background-color: darken(white, 5%);
+    border: 1px solid map-get($grey, lighter);
+  }
+
+  &.active,
+  &:active 
+  &:hover {
+    border: 1px solid map-get($grey, lighter);
+  }
 }
 
 .type-dropdown,
@@ -45,7 +61,19 @@
 .dropdown-container {
   display: flex;
   flex-direction: column;
+  
+}
 
+.dropdown-title {
+  font-size: 0.4rem;
+  font-weight: 700;
+  white-space: nowrap;
+  margin: 0.3rem 0 0.2rem;
+}
+
+.dropdown-arrow {
+  height: 0.5rem;
+  width: 0.5rem;
 }
 
 .dropdown-list {
@@ -55,33 +83,52 @@
   position: absolute;
   top: 0.5rem;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   width: auto;
   height: auto;
-  border: 1px solid map-get($grey, dark);
-  padding: 0.25rem;
+  border: 1px solid map-get($grey, lighter);
+  padding: 0.5rem;
   font-size: 0.5rem;
   background-color: white;
-
+  box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.1);
 }
 
 .dropdown-option {
   display: flex;
   align-items: center;
   list-style: none;
+  gap: 0.1rem;
 }
 
 .option-checkbox {
   margin-right: 0.25rem;
   height: 0.7rem;
   width: 0.7rem;
+  color: white;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .option-text {
-  font-size: 0.4rem;
+  font-size: 0.5rem;
 }
 
+.checkbox-done-btn {
+  height: 1.25rem;
+  width: 4rem;
+  align-self: center;
+  border: none;
+  color: white;
+  margin: 0.4rem 0 0;
+  background-color: map-get($grey, dark);
 
+  &:hover {
+    cursor: pointer;
+    background-color: map-get($grey, neutral);
+  }
+}
 
 .search-subheader-container {
   height: 3rem;
@@ -90,7 +137,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 0.5rem;
-  border-bottom: 1px solid map-get($grey, dark);
+  border: none;
+  background-color: white;
+  border-bottom: 1px solid map-get($grey, lighter);
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 5;
 }
 
 .subheader-search-bar {
@@ -111,16 +164,31 @@
   height: 1.5rem;
   width: 100%;
   border: 1px solid map-get($grey, dark);
+  border-right: 0.5px solid map-get($grey, dark);
   font-size: 0.6rem;
   padding: 0.5rem;
-  border-right: none;
+  
+  &:hover {
+    cursor: pointer;
+    border: 1px solid darken(map-get($grey, light), 10%);
+  }
 }
 
 .subheader-search-bar button {
   height: 1.5rem;
   min-width: 1.5rem;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
   border: 1px solid map-get($grey, dark);
+  border-left: 0.5px solid map-get($grey, dark);
   background-color: none;
+
+  &:hover {
+    cursor: pointer;
+    background-color: darken(white, 5%);
+  }
 }
 
 .query-info-container {

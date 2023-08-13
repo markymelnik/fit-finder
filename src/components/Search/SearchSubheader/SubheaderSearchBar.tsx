@@ -5,6 +5,7 @@ import { fetchAllFacilities, fetchFacilitiesByParameters } from '../../../redux/
 import { useNavigate } from 'react-router-dom';
 import { ChangeEvent, FormEvent } from 'react';
 import { RootState } from '../../../redux/store';
+import SearchIcon from '../../../assets/imgs/search-icon.png';
 
 const SubheaderSearchBar = () => {
   const enteredKeyword = useSelector((state: RootState) => state.filters.enteredKeyword);
@@ -71,7 +72,7 @@ const SubheaderSearchBar = () => {
           onChange={handleInputChange}
           placeholder='Search...'
         />
-        <button type='submit'></button>
+        <button type='submit' style={{ backgroundImage: `url(${SearchIcon})`}}></button>
       </form>
     </div>
   );

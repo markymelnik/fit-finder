@@ -10,18 +10,21 @@ const DesktopFilterMenu = () => {
         selector={(state) => state.facilityTypes}
         setSelected={setSelectedFacilityTypes}
         entityName='Type'
+        dropdownTitle='FACILITY TYPES'
       />
       <FilterButton
         fetchAll={fetchAllAmenities}
         selector={(state) => state.amenities}
         setSelected={setSelectedAmenities}
         entityName='Amenity'
+        dropdownTitle='OFFERED AMENITIES'
       />
       <FilterButton
         fetchAll={fetchAllServices}
         selector={(state) => state.services}
         setSelected={setSelectedServices}
         entityName='Service'
+        dropdownTitle="OFFERED SERVICES"
       />
     </div>
   );

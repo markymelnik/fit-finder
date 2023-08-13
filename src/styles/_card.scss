@@ -27,7 +27,7 @@
   border-bottom: 1px solid map-get($grey, light);
 
   &:hover {
-    background-color: map-get($grey, lighter);
+    background-color: darken(white, 5%);
   }
 }
 

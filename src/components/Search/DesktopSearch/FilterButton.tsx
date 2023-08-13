@@ -8,8 +8,9 @@ interface filterButtonProps {
   selector: (state: RootState) => any;
   setSelected: (items: string[]) => any;
   entityName: string;
+  dropdownTitle: string;
 }
-const FilterButton = ({ fetchAll, selector, setSelected, entityName }: filterButtonProps) => {
+const FilterButton = ({ fetchAll, selector, setSelected, entityName, dropdownTitle }: filterButtonProps) => {
 
   const dispatch = useDispatch<AppDispatch>();
   const [checkedItems, setCheckedItems] = useState<string[]>([]);
@@ -38,9 +39,10 @@ const FilterButton = ({ fetchAll, selector, setSelected, entityName }: filterBut
   
   return (
     <Dropdown
-      customClass={entityName.toLowerCase()}
       buttonName={entityName}
+      dropdownTitle={dropdownTitle}
       options={items}
+      customClass={entityName.toLowerCase()}
       checkedOptions={checkedItems}
       onCheckboxClick={handleCheckboxClick}
     />
