@@ -20,7 +20,7 @@ public class FacilityService {
     return facilityRepository.findAll();
   }
 
-  public List<Facility> getFacilitiesByParameters(String keyword, List<String> amenities, List<String> services) {
+  public List<Facility> getFacilitiesByParameters(String keyword, List<String> facilityTypes, List<String> amenities, List<String> services) {
 
     if (keyword != null && !keyword.trim().isEmpty()) {
       keyword = keyword.trim();
@@ -53,8 +53,6 @@ public class FacilityService {
     if(!serviceList.isEmpty()) {
       serviceCount = (long) serviceList.size();
     }
-
-    
 
     if (keyword == null && amenityCount == null && serviceCount == null) {
       return facilityRepository.findAll();

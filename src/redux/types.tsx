@@ -1,7 +1,7 @@
 export interface Facility {
   id: number;
   name: string;
-  type: string;
+  facilityType: FacilityType;
   address: string;
   amenities: Amenity[];
   services: Service[];

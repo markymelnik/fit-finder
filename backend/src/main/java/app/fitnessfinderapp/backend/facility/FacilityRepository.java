@@ -12,6 +12,7 @@ public interface FacilityRepository
     extends JpaRepository<Facility, Long> {
 
   @Query("SELECT f FROM Facility f " +
+      "LEFT JOIN t.facilityType t " +
       "LEFT JOIN f.amenities a " +
       "LEFT JOIN f.services s " +
       "WHERE (" +
@@ -19,7 +20,7 @@ public interface FacilityRepository
       "lower(f.name) LIKE lower(concat('%', :keyword, '%')) OR " +
       "lower(f.address) LIKE lower(concat('%', :keyword, '%')) OR " +
       "lower(f.neighborhood) LIKE lower(concat('%', :keyword, '%')) OR " +
-      "lower(f.type) LIKE lower(concat('%', :keyword, '%')) OR " +
+      "lower(t.name) LIKE lower(concat('%', :keyword, '%')) OR " +
       "f.postal_code = :keyword) " +
       "AND (:amenityCount IS NULL OR a.name IN :amenityList) " +
       "AND (:serviceCount IS NULL OR s.name IN :serviceList) " +

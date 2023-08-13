@@ -4,14 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.fitnessfinderapp.backend.amenity.Amenity;
+import app.fitnessfinderapp.backend.facilityType.FacilityType;
 import app.fitnessfinderapp.backend.services.Services;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
@@ -46,9 +49,12 @@ public class Facility {
     inverseJoinColumns = @JoinColumn(name="services_id")
   )
   private List<Services> services = new ArrayList<>();
+
+  @ManyToOne(fetch = FetchType.EAGER)
+  @JoinColumn(name = "facilityType_id")
+  private FacilityType facilityType;
   
   private String name;
-  private String type;
   private String address;
   private String neighborhood;
   private String postal_code;
@@ -57,18 +63,16 @@ public class Facility {
 
   }
 
-  public Facility(Long id, String name, String type, String address, String neighborhood, String postal_code) {
+  public Facility(Long id, String name, String address, String neighborhood, String postal_code) {
     this.id = id;
     this.name = name;
-    this.type = type;
     this.address = address;
     this.neighborhood = neighborhood;
     this.postal_code = postal_code;
   }
 
-  public Facility(String name, String type, String address, String neighborhood, String postal_code) {
+  public Facility(String name, String address, String neighborhood, String postal_code) {
     this.name = name;
-    this.type = type;
     this.address = address;
     this.neighborhood = neighborhood;
     this.postal_code = postal_code;
@@ -88,14 +92,6 @@ public class Facility {
 
   public void setName(String name) {
     this.name = name;
-  }
-
-  public String getType() {
-    return this.type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
   }
 
   public String getAddress() {
@@ -122,6 +118,10 @@ public class Facility {
     this.postal_code = postal_code;
   }
 
+  public FacilityType getFacilityType() {
+    return facilityType;
+  }
+
   public List<Amenity> getAmenities() {
     return amenities;
   }
@@ -132,7 +132,7 @@ public class Facility {
 
   @Override
   public String toString() {
-    return "Facility {" + "id=" + id + ", name=" + name + '\'' + ", type=" + type + '\'' + ", address=" + '\'' + address
+    return "Facility {" + "id=" + id + ", name=" + name + '\'' + ", address=" + '\'' + address
         + '\'' + ", neighborhood=" + '\'' + neighborhood + '\'' + ", postal_code=" + '\'' + postal_code + '}';
   }
 

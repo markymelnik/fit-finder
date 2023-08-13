@@ -15,7 +15,7 @@ const FacilityData = () => {
   return (
     <div className='facility-information'>
       <div className='facility-name'>{selectedFacility.name}</div>
-      <div className='facility-type'>{selectedFacility.type}</div>
+      <div className='facility-type'>{selectedFacility.facilityType.name}</div>
       <div className='facility-address'>{selectedFacility.address}</div>
       {amenities.map((amenity: string, index: number) => {
         return (

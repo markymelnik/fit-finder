@@ -1,9 +1,15 @@
 package app.fitnessfinderapp.backend.facilityType;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import app.fitnessfinderapp.backend.facility.Facility;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
@@ -23,6 +29,9 @@ public class FacilityType {
     generator = "facilityType_sequence"
   )
   private Long id;
+
+  @OneToMany(mappedBy = "facilityType", fetch = FetchType.EAGER)
+  private List<Facility> facilities = new ArrayList<>();
 
   private String name;
   private String description;

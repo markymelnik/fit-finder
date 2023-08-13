@@ -14,8 +14,8 @@ const ResultsList = () => {
     return <p>No results found for your query.</p>
   }
 
-  const handleCardClick = ({ id, name, type, address, amenities, services }: Facility) => {
-    const locationData = ({ id, name, type, address, amenities, services });
+  const handleCardClick = ({ id, name, facilityType, address, amenities, services }: Facility) => {
+    const locationData = ({ id, name, facilityType, address, amenities, services });
     dispatch(setSelectedFacility(locationData));
   }
   
@@ -28,7 +28,7 @@ const ResultsList = () => {
             key={facility.id}
             id={facility.id}
             name={facility.name}
-            type={facility.type}
+            facilityType={facility.facilityType}
             address={facility.address}
             amenities={facility.amenities}
             services={facility.services}

@@ -1,13 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from '../../../redux/store';
-import { setSearchTerm } from '../../../redux/searchTermSlice';
+import { setEnteredKeyword } from '../../../redux/filterSlice';
 import { fetchAllFacilities, fetchFacilitiesByParameters } from '../../../redux/apiRequests';
 import { useNavigate } from 'react-router-dom';
 import { ChangeEvent, FormEvent } from 'react';
 import { RootState } from '../../../redux/store';
 
 const SubheaderSearchBar = () => {
-  const searchTerm = useSelector((state: RootState) => state.searchTerm);
+  const enteredKeyword = useSelector((state: RootState) => state.filters.enteredKeyword);
+  const selectedFacilityTypes = useSelector((state: RootState) => state.filters.selectedFacilityTypes);
   const selectedAmenities = useSelector((state: RootState) => state.filters.selectedAmenities);
   const selectedServices = useSelector((state: RootState) => state.filters.selectedServices);
 
@@ -15,7 +16,7 @@ const SubheaderSearchBar = () => {
   const navigate = useNavigate();
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch(setSearchTerm(event.target.value));
+    dispatch(setEnteredKeyword(event.target.value));
   };
 
   const handleSearchSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -23,9 +24,15 @@ const SubheaderSearchBar = () => {
 
     const queryParams = [];
 
-    if (searchTerm.searchTerm.trim()) {
-      queryParams.push(`query=${searchTerm.searchTerm}`);
+    if (enteredKeyword.trim()) {
+      queryParams.push(`query=${enteredKeyword}`);
     } 
+
+    if (selectedFacilityTypes.length) {
+      selectedFacilityTypes.forEach((facilityType) =>
+        queryParams.push(`facilityTypes=${facilityType}`)
+      );
+    }
     
     if (selectedAmenities.length) {
       selectedAmenities.forEach((amenity) =>
@@ -40,16 +47,15 @@ const SubheaderSearchBar = () => {
     }
     
     if (
-      !searchTerm.searchTerm.trim() &&
+      !enteredKeyword.trim() &&
+      !selectedFacilityTypes &&
       !selectedAmenities.length &&
       !selectedServices.length
     ) {
       queryParams.push('query=all');
       dispatch(fetchAllFacilities());
     } else {
-      dispatch(
-        fetchFacilitiesByParameters(searchTerm.searchTerm, selectedAmenities, selectedServices)
-      );
+      dispatch(fetchFacilitiesByParameters(enteredKeyword, selectedFacilityTypes, selectedAmenities, selectedServices));
     }
 
     navigate(`/search?${queryParams.join('&')}`);
@@ -61,7 +67,7 @@ const SubheaderSearchBar = () => {
       <form onSubmit={handleSearchSubmit}>
         <input
           type='text'
-          value={searchTerm.searchTerm}
+          value={enteredKeyword}
           onChange={handleInputChange}
           placeholder='Search...'
         />

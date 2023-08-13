@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import app.fitnessfinderapp.backend.amenity.Amenity;
 import app.fitnessfinderapp.backend.amenity.AmenityService;
+import app.fitnessfinderapp.backend.facilityType.FacilityType;
+import app.fitnessfinderapp.backend.facilityType.FacilityTypeService;
 import app.fitnessfinderapp.backend.services.Services;
 import app.fitnessfinderapp.backend.services.ServicesService;
 
@@ -25,12 +27,14 @@ import app.fitnessfinderapp.backend.services.ServicesService;
 public class FacilityController {
 
   private final FacilityService facilityService;
+  private final FacilityTypeService facilityTypeService;
   private final AmenityService amenityService;
   private final ServicesService servicesService;
 
   @Autowired
-  public FacilityController(FacilityService facilityService, AmenityService amenityService, ServicesService servicesService) {
+  public FacilityController(FacilityService facilityService, FacilityTypeService facilityTypeService, AmenityService amenityService, ServicesService servicesService) {
     this.facilityService = facilityService;
+    this.facilityTypeService = facilityTypeService;
     this.amenityService = amenityService;
     this.servicesService = servicesService;
   }
@@ -43,9 +47,15 @@ public class FacilityController {
   @GetMapping("/search")
   public List<Facility> getFacilitiesByParameters(
       @RequestParam(required = false) String keyword,
+      @RequestParam(required = false) List<String> facilityTypes,
       @RequestParam(required = false) List<String> amenities,
       @RequestParam(required = false) List<String> services) {
-    return facilityService.getFacilitiesByParameters(keyword, amenities, services);
+    return facilityService.getFacilitiesByParameters(keyword, facilityTypes, amenities, services);
+  }
+
+  @GetMapping("/{facilityId}/type")
+  public List<FacilityType> getFacilityTypeByFacilityId(@PathVariable Long facilityId) {
+    return facilityTypeService.getFacilityTypeByFacilityId(facilityId);
   }
 
   @GetMapping("/{facilityId}/amenities")

@@ -23,6 +23,15 @@ const fetchAllFacilityTypes = () => async (dispatch: AppDispatch) => {
   }
 };
 
+const fetchFacilityTypeByFacilityId = (facilityId: number) => async (dispatch: AppDispatch) => {
+  try {
+    const response = await Axios.get(`http://localhost:8080/api/${facilityId}/type`);
+    dispatch(setFacilityTypes(response.data));
+  } catch (err) {
+    console.log('Error fetching facility types', err);
+  }
+}
+
 const fetchAllAmenities = () => async (dispatch: AppDispatch) => {
   try {
     const response = await Axios.get('http://localhost:8080/api/amenities');
@@ -59,14 +68,15 @@ const fetchServicesByFacilityId = (facilityId: number) => async (dispatch: AppDi
   }
 };
 
-const fetchFacilitiesByParameters = (keyword: string, selectedAmenities: string[], selectedServices: string[]) => async (dispatch: AppDispatch) => {
+const fetchFacilitiesByParameters = (enteredKeyword: string, selectedFacilityTypes: string[], selectedAmenities: string[], selectedServices: string[]) => async (dispatch: AppDispatch) => {
   try {
     const params = new URLSearchParams();
 
-    if (keyword) {
-      params.append('keyword', keyword);
+    if (enteredKeyword) {
+      params.append('enteredKeyword', enteredKeyword);
     }
     
+    selectedFacilityTypes.forEach((facilityType) => params.append('facilityTypes', facilityType));
     selectedAmenities.forEach(amenity => params.append('amenities', amenity));
     selectedServices.forEach(service => params.append('services', service));
 
@@ -81,6 +91,7 @@ const fetchFacilitiesByParameters = (keyword: string, selectedAmenities: string[
 export {
   fetchAllFacilities,
   fetchAllFacilityTypes,
+  fetchFacilityTypeByFacilityId,
   fetchAllAmenities,
   fetchAmenitiesByFacilityId,
   fetchAllServices,
