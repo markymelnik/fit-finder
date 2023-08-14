@@ -13,10 +13,8 @@ const Card = ({ id, name, facilityType, address, amenities, services, onClick }:
   
   return (
     <div className='card-container'>
-      <Link to='/facility'>
-        <div className='card-photo' onClick={handleClick}>
-          <img />
-        </div>
+      <Link to='/facility' className='card-photo' onClick={handleClick}>
+        <img />
       </Link>
       <div className='card-facility-info'>
         <div className='card-facility-name'>{name}</div>

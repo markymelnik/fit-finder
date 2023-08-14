@@ -26,6 +26,10 @@ export const facilitiesSlice = createSlice({
   },
 });
 
+export const getFacilityCount = (state: { facilities: FacilityState}): number => {
+  return state.facilities.allIds.length;
+}
+
 export const retrieveAmenitiesForFacility = (facilities: FacilityState, facilityId: number): string[] => {
   const facility = facilities.byIds[facilityId];
   if (facility) {
