@@ -1,10 +1,9 @@
 .header-mobile-container {
-  height: 3rem;
+  height: 70px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
   background-color: map-get($grey, darker);
   padding: 0 1.5rem;
 }
@@ -15,7 +14,7 @@
 }
 
 .header-desktop-container {
-  height: 2.5rem;
+  height: 70px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -45,7 +44,7 @@
   color: map-get($grey, lighter);
   background-color: map-get($grey, darker);
   border: none;
-  font-size: 0.6rem;
+  font-size: 16px;
 }
 
 .login-signup-btn {
@@ -54,7 +53,7 @@
   color: map-get($grey, lighter);
   background-color: map-get($grey, darker);
   border: none;
-  font-size: 0.6rem;
+  font-size: 16px;
 }
 
 .logo-container {

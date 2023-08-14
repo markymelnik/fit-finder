@@ -16,7 +16,7 @@
 }
 
 .main-search-bar {
-  height: 80px;
+  height: 50px;
   width: 80%;
   position: absolute;
   top: 45vh;
@@ -25,7 +25,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px;
   z-index: 1;
   background-color: map-get($grey, light);
   border: 1px solid map-get($grey, dark);
@@ -45,7 +44,7 @@
 .main-search-bar input {
   height: 100%;
   width: 100%;
-  font-size: 0.8rem;
+  font-size: 16px;
   background-color: white;
   border: 1px solid map-get($grey, darker);
   border-right: none;
@@ -56,8 +55,8 @@
 
 .main-search-bar button {
   height: 100%;
-  width: 80px;
-  background-size: 40px 40px;
+  width: 60px;
+  background-size: 30px 30px;
   background-repeat: no-repeat;
   background-position: center;
   background-color: white;
@@ -69,35 +68,6 @@
     cursor: pointer;
     background-color: darken(white, 5%);
   }
-}
-
-.carousel-container {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 4rem 0 4rem;
-  padding: 0 1.5rem;
-}
-
-.carousel-header {
-  font-weight: 700;
-  align-self: flex-start;
-  font-size: 1rem;
-}
-
-.carousel-subheader {
-  font-weight: 400;
-  align-self: flex-start;
-  margin-bottom: 2vh;
-  font-size: 0.75rem;
-}
-
-.carousel-display {
-  display: grid;
-  grid-template-columns: repeat(1fr);
-  place-items: center;
 }
 
 .information-container {
@@ -129,24 +99,19 @@
 }
 
 @media (min-width: 768px) {
-
   .main-search-bar {
-    width: 60%;
+    width: 70%;
+    height: 70px;
   }
-  .carousel-display {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
+  .main-search-bar input {
+    font-size: 20px;
   }
-  .carousel-card {
-    margin: 0;
+  .main-search-bar button {
+    width: 80px;
   }
 }
 
 @media (min-width: 992px) {
-  .carousel-display {
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 0.5rem;
-  }
 }
 
 @media (min-width: 1200px) {}

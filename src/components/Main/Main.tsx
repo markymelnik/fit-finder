@@ -1,6 +1,6 @@
 import MainPhoto from './MainPhoto';
 import SearchBar from './MainSearchBar/MainSearchBar';
-import Carousel from './Carousel/Carousel';
+import Carousel from './Slider/Slider';
 import Information from './Information/Information';
 
 const Main = () => {
