@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import mobileReducer from './mobileSlice';
-import enteredKeywordReducer from './enteredKeywordSlice';
-import facilitiesSliceReducer from './facilitySlice';
-import facilityTypesSliceReducer from './facilityTypeSlice';
-import amenititesSliceReducer from './amenitySlice';
-import serviceSliceReducer from './servicesSlice';
-import selectedFacilityReducer from './selectedFacilitySlice';
-import filtersReducer from './filterSlice';
+import mobileReducer from './slices/mobileSlice';
+import enteredKeywordReducer from './slices/enteredKeywordSlice';
+import facilitiesSliceReducer from './slices/facilitySlice';
+import facilityTypesSliceReducer from './slices/facilityTypeSlice';
+import amenititesSliceReducer from './slices/amenitySlice';
+import serviceSliceReducer from './slices/servicesSlice';
+import selectedFacilityReducer from './slices/selectedFacilitySlice';
+import filtersReducer from './slices/filterSlice';
 
 const store = configureStore({
   reducer: {

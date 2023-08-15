@@ -1,9 +1,9 @@
 import Axios from 'axios';
 import { AppDispatch } from './store';
-import { setFacilities } from './facilitySlice';
-import { setFacilityTypes } from './facilityTypeSlice';
-import { setAmenities } from './amenitySlice';
-import { setServices } from './servicesSlice';
+import { setFacilities } from './slices/facilitySlice';
+import { setFacilityTypes } from './slices/facilityTypeSlice';
+import { setAmenities } from './slices/amenitySlice';
+import { setServices } from './slices/servicesSlice';
 
 const fetchAllFacilities = () => async (dispatch: AppDispatch) => {
   try {

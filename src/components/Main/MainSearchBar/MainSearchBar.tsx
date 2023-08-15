@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../redux/store';
-import { setEnteredKeyword } from '../../../redux/filterSlice';
+import { setEnteredKeyword } from '../../../redux/slices/filterSlice';
 import { useNavigate } from 'react-router-dom';
 import { ChangeEvent, FormEvent } from 'react';
 import SearchIcon from '../../../assets/imgs/search-icon.png';

@@ -56,31 +56,4 @@
   font-size: 16px;
 }
 
-.logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 2rem;
-  width: 60%;
-}
-
-.logo-text {
-  font-size: 1rem;
-  text-decoration: none;
-  color: map-get($grey, lighter);
-}
-
-@media (min-width: 320px) {}
-
-@media (min-width: 480px) {}
-
-@media (min-width: 768px) {
-  .logo-container {
-    width: 30%;
-    align-items: center;
-  }
-}
-
-@media (min-width: 992px) {}
-
-@media (min-width: 1200px) {}
+@import 'logo';

@@ -1,4 +1,4 @@
-import './styles/styles.scss';
+import './styles/main.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoadHomePage from './components/LoadHomePage';
 import LoadSearchPage from './components/LoadSearchPage';

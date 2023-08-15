@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Amenity } from "./types";
+import { Amenity } from "../types";
 
 interface AmenityState {
   byIds: Record<number, Amenity>

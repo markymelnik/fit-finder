@@ -1,5 +1,5 @@
 import { fetchAllAmenities, fetchAllFacilityTypes, fetchAllServices } from '../../../redux/apiRequests';
-import { setSelectedAmenities, setSelectedFacilityTypes, setSelectedServices } from '../../../redux/filterSlice';
+import { setSelectedAmenities, setSelectedFacilityTypes, setSelectedServices } from '../../../redux/slices/filterSlice';
 import FilterButton from './FilterButton';
 
 const DesktopFilterMenu = () => {

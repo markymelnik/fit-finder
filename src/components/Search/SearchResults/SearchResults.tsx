@@ -2,7 +2,7 @@ import Card from '../../Card/Card';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../redux/store';
 import { AppDispatch } from '../../../redux/store';
-import { setSelectedFacility } from '../../../redux/selectedFacilitySlice';
+import { setSelectedFacility } from '../../../redux/slices/selectedFacilitySlice';
 import { Facility } from '../../../redux/types';
 
 const ResultsList = () => {

@@ -41,23 +41,21 @@ body {
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 20px;
-  }
+
 }
 
 @media (min-width: 992px) {
+
 }
 
 @media (min-width: 1200px) {
+
 }
 
-@import 'colors';
+@import './Global/colors';
 
-@import 'header';
-@import 'main';
-@import 'slider';
-@import 'search';
-@import 'facility';
-@import 'card';
-@import 'footer';
+@import './Header/header';
+@import './HomePage/home';
+@import './SearchPage/search';
+@import './FacilityPage/facility';
+@import './Footer/footer';

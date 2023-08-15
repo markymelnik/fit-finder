@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import { getFacilityCount } from "../../redux/facilitySlice";
+import { getFacilityCount } from "../../redux/slices/facilitySlice";
 
 const QueryInformation = () => {
 
