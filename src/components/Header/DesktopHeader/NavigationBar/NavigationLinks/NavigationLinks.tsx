@@ -4,7 +4,7 @@ import LogInSignUpLink from './LogInSignUpLink';
 
 const NavigationLinks = () => {
   return (
-    <div className='header-links'>
+    <div className='navigation-links'>
       <BusinessLink />
       <HelpLink />
       <LogInSignUpLink />

@@ -1,4 +1,7 @@
-.main-container {
+@import 'slider';
+@import 'information';
+
+.home-container {
   height: auto;
   width: 100%;
   display: flex;
@@ -6,7 +9,7 @@
   align-items: center;
 }
 
-.main-photo-container {
+.home-photo-container {
   height: 60vh;
   width: 100%;
   display: flex;
@@ -15,8 +18,8 @@
   background-color: map-get($grey, lighter);
 }
 
-.main-search-bar {
-  height: 50px;
+.home-search-bar {
+  height: 55px;
   width: 70%;
   position: absolute;
   top: 45vh;
@@ -32,7 +35,7 @@
   box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.1);
 }
 
-.main-search-bar form {
+.home-search-bar form {
   height: 100%;
   width: 100%;
   display: flex;
@@ -42,7 +45,7 @@
   
 }
 
-.main-search-bar input {
+.home-search-bar input {
   height: 100%;
   width: 100%;
   font-size: 1rem;
@@ -50,15 +53,16 @@
   color: map-get($grey, neutral);
   border: 1px solid map-get($grey, darker);
   border-right: none;
-  padding: 0 1.5rem 0;
+  padding: 0 1rem 0;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
-.main-search-bar button {
+.home-search-bar button {
   height: 100%;
   width: 60px;
-  background-size: 1.75rem 1.75rem;
+  padding: 0.5rem;
+  background-size: 1.5rem 1.5rem;
   background-repeat: no-repeat;
   background-position: center;
   background-color: white;
@@ -72,26 +76,6 @@
   }
 }
 
-.information-container {
-  height: 80vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: map-get($grey, dark);
-  padding: 0 1rem;
-}
-
-.information-box {
-  height: 90%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-}
-
 @media (min-width: 480px) {
   .search-bar-container {
     width: 80%;
@@ -99,13 +83,15 @@
 }
 
 @media (min-width: 768px) {
-  .main-search-bar {
+  .home-search-bar {
     width: 60%;
     height: 70px;
   }
-  .main-search-bar button {
+  .home-search-bar input {
+    padding: 0 1.5rem 0;
+  }
+  .home-search-bar button {
     width: 80px;
+    background-size: 1.75rem 1.75rem;
   }
 }
-
-@import 'slider';

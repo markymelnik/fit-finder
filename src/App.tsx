@@ -1,8 +1,8 @@
 import './styles/main.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoadHomePage from './components/LoadHomePage';
-import LoadSearchPage from './components/LoadSearchPage';
-import LoadSelectedFacilityPage from './components/LoadSelectedFacilityPage';
+import LoadHomePage from './components/LoadPages/LoadHomePage';
+import LoadSearchPage from './components/LoadPages/LoadSearchPage';
+import LoadSelectedFacilityPage from './components/LoadPages/LoadSelectedFacilityPage';
 import useIsMobile from './hooks/useIsMobile';
 
 const App = () => {

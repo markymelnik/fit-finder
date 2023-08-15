@@ -1,3 +1,11 @@
+@import './Global/colors';
+@import './Header/header';
+@import './HomePage/home';
+@import './SearchPage/search';
+@import './Card/card';
+@import './FacilityPage/facility';
+@import './Footer/footer';
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,27 +24,7 @@ body {
 .site-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   height: auto;
   width: 100%;
 }
-
-.home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: auto;
-}
-
-.search-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: auto;
-}
-
-@import './Global/colors';
-@import './Header/header';
-@import './HomePage/home';
-@import './SearchPage/search';
-@import './FacilityPage/facility';
-@import './Footer/footer';

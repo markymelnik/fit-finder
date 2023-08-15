@@ -1,6 +1,6 @@
 const LogInSignUpLink = () => {
   return (
-    <button className='login-signup-btn'>
+    <button className='login-signup-link'>
       <div>Log In / Sign Up</div>
     </button>
   );

@@ -1,10 +1,10 @@
-import MobileMenuButton from './MobileMenu/MobileMenu';
+import MobileMenuButton from './MobileMenu/MobileMenuButton';
 import Logo from '../Logo';
 import SpaceFragment from './MobileMenu/SpaceFragment';
 
 const MobileHeader = () => {
   return (
-    <header className='header-mobile-container'>
+    <header className='header-container header-mobile'>
       <MobileMenuButton />
       <Logo />
       <SpaceFragment />
