@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import DummyCard from "../../Facility/DummyCard";
+import DummyCard from "../../Card/DummyCard";
 import LeftArrow from '../../../assets/imgs/left-arrow.png';
 import RightArrow from '../../../assets/imgs/right-arrow.png';
 

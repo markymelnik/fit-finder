@@ -1,12 +1,12 @@
 import Header from './Header/Header';
-import Location from './Facility/FacilityPage';
+import SelectedFacilityPage from './SelectedFacilityPage/SelectedFacilityPage';
 import Footer from './Footer/Footer';
 
 const LoadFacilityPage = () => {
   return (
-    <div className='facility-page-container'>
+    <div className="selected-facility-container">
       <Header />
-      <Location />
+      <SelectedFacilityPage />
       <Footer />
     </div>
   );
