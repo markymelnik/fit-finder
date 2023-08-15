@@ -1,11 +1,9 @@
-import HeaderLinks from './NavigationLinks/NavigationLinks';
-import HeaderButtons from './NavigationButtons/NavigationButtons';
+import NavigationLinks from "./NavigationLinks/NavigationLinks";
 
 const NavigationBar = () => {
   return (
     <div className='navigation-bar'>
-      <HeaderLinks />
-      <HeaderButtons />
+      <NavigationLinks />
     </div>
   );
 };

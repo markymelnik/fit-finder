@@ -1,4 +1,4 @@
-const LogInSignUpButton = () => {
+const LogInSignUpLink = () => {
   return (
     <button className='login-signup-btn'>
       <div>Log In / Sign Up</div>
@@ -6,4 +6,4 @@ const LogInSignUpButton = () => {
   );
 };
 
-export default LogInSignUpButton;
+export default LogInSignUpLink;

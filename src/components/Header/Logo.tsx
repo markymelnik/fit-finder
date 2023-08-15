@@ -11,11 +11,11 @@ const Logo = () => {
   };
 
   return (
-    <h1 className='logo-container'>
+    <div className='logo-container'>
       <Link to='/' onClick={handleLogoClick} className='logo-text'>
         FF
       </Link>
-    </h1>
+    </div>
   );
 };
 

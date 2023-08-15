@@ -70,7 +70,7 @@ const SubheaderSearchBar = () => {
           type='text'
           value={enteredKeyword}
           onChange={handleInputChange}
-          placeholder='Search...'
+          placeholder='Name, address, neighborhood, ZIP'
         />
         <button type='submit' style={{ backgroundImage: `url(${SearchIcon})`}}></button>
       </form>

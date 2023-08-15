@@ -34,26 +34,7 @@ body {
   height: auto;
 }
 
-@media (min-width: 320px) {
-}
-
-@media (min-width: 480px) {
-}
-
-@media (min-width: 768px) {
-
-}
-
-@media (min-width: 992px) {
-
-}
-
-@media (min-width: 1200px) {
-
-}
-
 @import './Global/colors';
-
 @import './Header/header';
 @import './HomePage/home';
 @import './SearchPage/search';

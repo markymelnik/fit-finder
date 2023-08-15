@@ -28,7 +28,7 @@ const MainSearchBar = () => {
           type='text'
           value={enteredKeyword}
           onChange={handleInputChange}
-          placeholder='Enter a name, address, neighborhood...'
+          placeholder='Enter a name, address, neighborhood, or ZIP code...'
         />
         <button type='submit' style={{ backgroundImage: `url(${SearchIcon})`}}></button>
       </form>

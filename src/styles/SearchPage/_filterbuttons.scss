@@ -1,0 +1,109 @@
+.type-dropdown-btn,
+.amenity-dropdown-btn,
+.service-dropdown-btn {
+  height: 100%;
+  width: 90px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid map-get($grey, dark);
+  border-radius: 2px;
+  background-color: white;
+  
+  &:hover {
+    cursor: pointer;
+    background-color: darken(white, 5%);
+    border: 1px solid map-get($grey, lighter);
+  }
+
+  &.active,
+  &:active 
+  &:hover {
+    border: 1px solid map-get($grey, lighter);
+  }
+}
+
+.dropdown-button-text {
+  font-size: 0.8rem;
+}
+
+.type-dropdown,
+.amenity-dropdown,
+.service-dropdown {
+  position: relative;
+  display: flex;
+}
+
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.dropdown-title {
+  font-size: 0.6rem;
+  font-weight: 700;
+  white-space: nowrap;
+  margin: 0 0 0.3rem;
+}
+
+.dropdown-arrow {
+  height: 0.75rem;
+  width: 0.75rem;
+}
+
+.dropdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+  z-index: 2;
+  width: auto;
+  height: auto;
+  padding: 1rem;
+  font-size: 0.7rem;
+  background-color: white;
+  border: 1px solid map-get($grey, lighter);
+  box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.1);
+}
+
+.dropdown-option {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 0.1rem;
+}
+
+.option-checkbox {
+  margin-right: 0.4rem;
+  height: 1.2rem;
+  width: 1.2rem;
+  color: white;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.option-text {
+  font-size: 0.8rem;
+}
+
+.checkbox-done-btn {
+  height: 2rem;
+  width: 6rem;
+  align-self: center;
+  border: none;
+  color: white;
+  margin: 0.6rem 0 0;
+  background-color: map-get($grey, dark);
+
+  &:hover {
+    cursor: pointer;
+    background-color: map-get($grey, neutral);
+  }
+}

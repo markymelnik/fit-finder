@@ -17,7 +17,7 @@
 
 .main-search-bar {
   height: 50px;
-  width: 80%;
+  width: 70%;
   position: absolute;
   top: 45vh;
   left: 50%;
@@ -27,8 +27,9 @@
   align-items: center;
   z-index: 1;
   background-color: map-get($grey, light);
-  border: 1px solid map-get($grey, dark);
   border-radius: 5px;
+  border: 1px solid map-get($grey, lighter);
+  box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.1);
 }
 
 .main-search-bar form {
@@ -44,11 +45,12 @@
 .main-search-bar input {
   height: 100%;
   width: 100%;
-  font-size: 16px;
+  font-size: 1rem;
   background-color: white;
+  color: map-get($grey, neutral);
   border: 1px solid map-get($grey, darker);
   border-right: none;
-  padding: 0.75rem;
+  padding: 0 1.5rem 0;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
@@ -78,7 +80,7 @@
   justify-content: center;
   align-items: center;
   background-color: map-get($grey, dark);
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
 
 .information-box {
@@ -98,11 +100,8 @@
 
 @media (min-width: 768px) {
   .main-search-bar {
-    width: 70%;
+    width: 60%;
     height: 70px;
-  }
-  .main-search-bar input {
-    font-size: 20px;
   }
   .main-search-bar button {
     width: 80px;
