@@ -1,11 +1,11 @@
-import DeveloperInformation from './DeveloperInformation';
-import SocialMediaLinks from './SocialMediaLinks/SocialMediaLinks';
+import FooterTop from "./FooterTop/FooterTop";
+import FooterBottom from "./FooterBottom/FooterBottom";
 
 const Footer = () => {
   return (
     <footer className='footer-container'>
-      <DeveloperInformation />
-      <SocialMediaLinks />
+      <FooterTop />
+      <FooterBottom />
     </footer>
   );
 };

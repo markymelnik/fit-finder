@@ -6,26 +6,26 @@ $grey: (
   'lighter': hsl(208, 21%, 81%)
 );
 
+$candy: (
+  'prussian': #102E4A,
+  'maya': #55C1FF,
+  'cornflower':#5887FF,
+  'purpel':#715AFF,
+  'lightpurpel':#A682FF
+);
+
+$royal: (
+  'light': #90DDF0,
+  'neutral': #2C666E,
+  'dark': #07393C,
+  'black': #0A090C,
+  'white': #F0EDEE,
+);
+
 $theme: (
-  'dark': hsl(165, 18%, 22%),
-  'teal': hsl(184, 66%, 29%),
-  'sand': hsl(30, 30%, 90%),
-  'boldred': hsl(5, 57%, 49%),
-  'darkred': hsl(8, 49%, 30%)
-);
-
-$beach: (
-  '1': hsl(168, 57%, 26%),
-  '2': hsl(143, 36%, 38%),
-  '3': hsl(51, 37%, 74%),
-  '4': hsl(90, 26%, 92%),
-  '5': hsl(15, 50%, 60%)
-);
-
-$spring: (
-  '1': #157145,
-  '2': #57A773,
-  '3': #6A8EAE,
-  '4': #9BD1E5,
-  '5': #D1FAFF
-);
+  '1': #0B132B,
+  '2': #0B132B,
+  '3': #3A506B,
+  '4': #5BC0BE,
+  '5': #6FFFE9,
+)

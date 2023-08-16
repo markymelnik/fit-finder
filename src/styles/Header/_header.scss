@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: map-get($grey, darker);
-  padding: 0 1rem;
+  padding: 0 5%;
 }
 
 .mobile-menu-btn, .space-fragment {
@@ -26,13 +26,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
+  
 }
 
-.business-link, 
+.business-link,
+.about-link,
 .help-link, 
-.login-signup-link {
-  width: 4rem;
+.login-link,
+.signup-link {
+  width: auto;
   background-color: map-get($grey, darker);
   font-size: 1rem;
   border: none;
@@ -44,6 +47,18 @@
   }
 }
 
+.signup-link {
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+}
+
 .login-signup-link {
   width: 8rem;
+}
+
+@media (min-width: 768px) {
+  .header-container {
+    padding: 0 10%;
+  }
 }

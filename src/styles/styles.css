@@ -4,13 +4,12 @@
   align-items: center;
   height: 3rem;
   width: 3rem;
-  border: 1px solid white;
-  border-radius: 2px;
+  border-bottom: 2px solid white;
   text-decoration: none;
 }
 
 .logo-text {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: white;
 }
 
@@ -21,7 +20,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: hsl(209, 15%, 28%);
-  padding: 0 1rem;
+  padding: 0 5%;
 }
 
 .mobile-menu-btn, .space-fragment {
@@ -40,37 +39,52 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .business-link,
+.about-link,
 .help-link,
-.login-signup-link {
-  width: 4rem;
+.login-link,
+.signup-link {
+  width: auto;
   background-color: hsl(209, 15%, 28%);
   font-size: 1rem;
   border: none;
   color: white;
 }
 .business-link:hover,
+.about-link:hover,
 .help-link:hover,
-.login-signup-link:hover {
+.login-link:hover,
+.signup-link:hover {
   cursor: pointer;
   color: #d9d9d9;
+}
+
+.signup-link {
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
 }
 
 .login-signup-link {
   width: 8rem;
 }
 
+@media (min-width: 768px) {
+  .header-container {
+    padding: 0 10%;
+  }
+}
 .slider-container {
   height: 500px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2rem 0 2rem;
-  padding: 0 1rem;
+  margin: 2rem 0;
+  padding: 0 5%;
 }
 
 .slider-header {
@@ -127,10 +141,15 @@
 
 .slider-display-cards > * {
   flex: 0 0 24.25%;
-  scroll-snap-align: start;
+  scroll-snap-align: none;
   min-width: 325px;
 }
 
+@media (min-width: 768px) {
+  .slider-container {
+    padding: 0 10%;
+  }
+}
 .information-container {
   height: 80vh;
   width: 100%;
@@ -139,7 +158,7 @@
   justify-content: center;
   align-items: center;
   background-color: hsl(207, 12%, 43%);
-  padding: 0 1rem;
+  padding: 0 5%;
 }
 
 .information-box {
@@ -149,8 +168,15 @@
   justify-content: center;
   align-items: center;
   background-color: white;
+  border-radius: 4px;
+  margin: 4rem 0;
 }
 
+@media (min-width: 768px) {
+  .information-container {
+    padding: 0 10%;
+  }
+}
 .home-container {
   height: auto;
   width: 100%;
@@ -170,7 +196,7 @@
 
 .home-page-searchbar {
   height: 55px;
-  width: 70%;
+  width: 80%;
   position: absolute;
   top: 45vh;
   left: 50%;
@@ -180,9 +206,12 @@
   align-items: center;
   z-index: 1;
   background-color: hsl(210, 16%, 76%);
-  border-radius: 5px;
-  border: 1px solid hsl(208, 21%, 81%);
-  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.home-page-searchbar:hover {
+  outline: 2px solid #5BC0BE;
 }
 
 .home-page-searchbar form {
@@ -199,21 +228,20 @@
   height: 100%;
   display: flex;
   flex: 1;
-  font-size: 1.2rem;
+  font-size: 1rem;
   background-color: white;
   color: hsl(209, 15%, 28%);
-  border: 1px solid hsl(209, 15%, 28%);
-  border-right: none;
-  padding: 0 1rem 0;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  padding: 0 1.25rem 0;
+  border: none;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 .home-page-searchbar input::placeholder {
   color: hsl(208, 12%, 58%);
   opacity: 1;
 }
-.home-page-searchbar input:hover {
-  cursor: pointer;
+.home-page-searchbar input:focus {
+  outline: none;
 }
 
 .submit-input-btn-home {
@@ -224,9 +252,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-color: white;
-  border: 1px solid hsl(209, 15%, 28%);
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border: none;
+  border-left: 1px solid hsl(208, 21%, 81%);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 .submit-input-btn-home:hover {
   cursor: pointer;
@@ -234,13 +263,14 @@
 }
 
 .delete-input-btn-home {
-  height: 0.8rem;
-  width: 0.8rem;
-  background-size: 1.5rem 1.5rem;
+  height: 2rem;
+  width: 2rem;
+  background-size: 0.8rem 0.8rem;
   background-repeat: no-repeat;
   background-position: center;
   background-color: white;
-  border: none;
+  border: 1px solid white;
+  border-radius: 25px;
   position: absolute;
   right: 4.5rem;
   top: 50%;
@@ -248,6 +278,7 @@
 }
 .delete-input-btn-home:hover {
   cursor: pointer;
+  background-color: #e6e6e6;
 }
 
 @media (min-width: 480px) {
@@ -260,17 +291,19 @@
     width: 60%;
     height: 70px;
   }
-  .home-page-search-bar input {
+  .home-page-searchbar input {
     padding: 0 1.5rem 0;
+    font-size: 1.1rem;
   }
   .submit-input-btn-home {
     width: 70px;
     background-size: 1.75rem 1.75rem;
   }
   .delete-input-btn-home {
-    right: 6rem;
-    height: 1rem;
-    width: 1rem;
+    background-size: 1rem 1rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    right: 5.5rem;
   }
 }
 .desktop-filter-menu {
@@ -292,7 +325,7 @@
   align-items: center;
   gap: 0.25rem;
   border: 1px solid hsl(207, 12%, 43%);
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: white;
 }
 .type-dropdown-btn:hover,
@@ -436,6 +469,7 @@
   height: 40px;
   min-width: 40px;
   border: 1px solid hsl(207, 12%, 43%);
+  border-radius: 4px;
 }
 
 .search-page-header {
@@ -459,6 +493,10 @@
   display: flex;
   height: 40px;
   width: clamp(200px, 100%, 400px);
+  border-radius: 4px;
+}
+.search-page-searchbar:hover {
+  outline: 2px solid #5BC0BE;
 }
 
 .search-page-searchbar form {
@@ -479,15 +517,15 @@
   border-right: none;
   color: hsl(209, 15%, 28%);
   padding-left: 0.75rem;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 .search-page-searchbar input::placeholder {
   color: hsl(208, 12%, 58%);
   opacity: 1;
 }
-.search-page-searchbar input:hover {
-  cursor: pointer;
+.search-page-searchbar input:focus {
+  outline: none;
 }
 
 .submit-input-btn-search {
@@ -499,8 +537,8 @@
   background-color: white;
   border: 1px solid hsl(209, 15%, 28%);
   background-color: none;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 .submit-input-btn-search:hover {
   cursor: pointer;
@@ -508,20 +546,22 @@
 }
 
 .delete-input-btn-search {
-  height: 0.6rem;
-  width: 0.6rem;
-  background-size: 1.5rem 1.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-size: 0.75rem 0.75rem;
   background-repeat: no-repeat;
   background-position: center;
   background-color: white;
   border: none;
+  border-radius: 25px;
   position: absolute;
-  right: 3.5rem;
+  right: 3.25rem;
   top: 50%;
   transform: translateY(-50%);
 }
 .delete-input-btn-search:hover {
   cursor: pointer;
+  background-color: #e6e6e6;
 }
 
 @media (min-width: 768px) {
@@ -539,8 +579,6 @@
   background-color: white;
   border: none;
   border-radius: 4px;
-  border-bottom: 1px solid hsl(208, 21%, 81%);
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
 .dummy-card-container {
@@ -585,7 +623,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 5%;
 }
 
 .facility-page-header {
@@ -599,13 +637,13 @@
 }
 
 .facility-name {
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 700;
   margin: 0 0 0.5rem;
 }
 
 .facility-address {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 300;
   color: hsl(209, 15%, 28%);
   margin: 0 0 0.25rem;
@@ -620,7 +658,7 @@
 
 .facility-website,
 .facility-phone-number {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 300;
   color: hsl(209, 15%, 28%);
 }
@@ -654,7 +692,7 @@
 }
 
 .facility-about-header {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid hsl(210, 16%, 76%);
@@ -699,7 +737,7 @@
   font-weight: 700;
 } */
 .facility-description-text {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
 }
 
 .facility-offers {
@@ -722,7 +760,7 @@
 .facility-amenities-header,
 .facility-services-header {
   display: flex;
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   font-weight: 700;
   margin: 0 0 0.2rem;
 }
@@ -730,7 +768,7 @@
 .facility-type,
 .facility-amenity,
 .facility-service {
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   margin: 0 0.4rem 0.2rem;
   color: hsl(207, 12%, 43%);
 }
@@ -765,18 +803,32 @@
 }
 .footer-container {
   width: 100%;
-  min-height: 60px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 5%;
+}
+
+.footer-top {
+  height: 4rem;
+  width: 100%;
+  border-bottom: 1px solid hsl(210, 16%, 76%);
+}
+
+.footer-bottom {
+  height: 4rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
-  margin: 1.5rem 0;
+  margin: 1.5rem 0 2.5rem;
   gap: 1rem;
 }
 
 .developer-information {
   font-size: 1rem;
+  text-align: center;
 }
 
 .social-media-links {
@@ -784,24 +836,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .something-link {
   height: 3rem;
   width: 3rem;
   background-color: lightgrey;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 @media (min-width: 768px) {
   .footer-container {
-    flex-direction: row;
     gap: 0;
+    padding: 0 10%;
+  }
+  .developer-information {
+    text-align: left;
+  }
+  .footer-bottom {
+    flex-direction: row;
   }
   .social-media-links {
     margin: 0;
   }
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/fonts/Avenir.otf");
 }
 * {
   box-sizing: border-box;
@@ -814,7 +876,7 @@ html {
 }
 
 body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-family: "Avenir";
   line-height: 1.5;
 }
 
@@ -822,6 +884,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: auto;
   width: 100%;
 }

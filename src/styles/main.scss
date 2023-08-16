@@ -6,6 +6,11 @@
 @import './FacilityPage/facility';
 @import './Footer/footer';
 
+@font-face {
+  font-family: 'Avenir';
+  src: url('../assets/fonts/Avenir.otf');
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,7 +22,7 @@ html {
 }
 
 body {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Avenir';
   line-height: 1.5;
 }
 
@@ -25,6 +30,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: auto;
   width: 100%;
 }

@@ -4,8 +4,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2rem 0 2rem;
-  padding: 0 1rem;
+  margin: 2rem 0;
+  padding: 0 5%;
 }
 
 .slider-header {
@@ -63,7 +63,13 @@
 }
 
 .slider-display-cards > * {
-  flex: 0 0 24.25%;
-  scroll-snap-align: start;
+  flex: 0 0 calc(25% - 0.75%);
+  scroll-snap-align: none;
   min-width: 325px;
+}
+
+@media (min-width: 768px) {
+  .slider-container {
+    padding: 0 10%;
+  }
 }

@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 5%;
 }
 
 .facility-page-header {
@@ -18,13 +18,13 @@
 }
 
 .facility-name {
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 700;
   margin: 0 0 0.5rem;
 }
 
 .facility-address {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 300;
   color: map-get($grey, darker);
   margin: 0 0 0.25rem;
@@ -39,7 +39,7 @@
 
 .facility-website,
 .facility-phone-number {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 300;
   color: map-get($grey, darker);
 
@@ -73,7 +73,7 @@
 }
 
 .facility-about-header {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid map-get($grey, light);
@@ -119,7 +119,7 @@
 } */
 
 .facility-description-text {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
 }
 
 .facility-offers {
@@ -142,7 +142,7 @@
 .facility-amenities-header,
 .facility-services-header {
   display: flex;
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   font-weight: 700;
   margin: 0 0 0.2rem;
 }
@@ -150,7 +150,7 @@
 .facility-type,
 .facility-amenity,
 .facility-service {
-  font-size: 0.70rem;
+  font-size: 0.85rem;
   margin: 0 0.4rem 0.2rem;
   color: map-get($grey, dark);
 }

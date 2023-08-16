@@ -4,11 +4,11 @@ import Footer from '../Footer/Footer';
 
 const LoadFacilityPage = () => {
   return (
-    <div className="selected-facility-container">
+    <>
       <Header />
       <FacilityPage />
       <Footer />
-    </div>
+    </>
   );
 };
 

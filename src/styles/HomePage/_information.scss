@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   background-color: map-get($grey, dark);
-  padding: 0 1rem;
+  padding: 0 5%;
 }
 
 .information-box {
@@ -16,4 +16,12 @@
   justify-content: center;
   align-items: center;
   background-color: white;
+  border-radius: 4px;
+  margin: 4rem 0;
+}
+
+@media (min-width: 768px) {
+  .information-container {
+    padding: 0 10%;
+  }
 }

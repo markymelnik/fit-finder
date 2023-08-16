@@ -4,11 +4,11 @@ import Footer from '../Footer/Footer';
 
 const LoadHomePage = () => {
   return (
-    <div className='home-container'>
+    <>
       <Header />
       <HomePage />
       <Footer />
-    </div>
+    </>
   );
 };
 
