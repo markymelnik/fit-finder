@@ -39,6 +39,7 @@
 }
 
 .search-page-searchbar form {
+  position: relative;
   height: 100%;
   width: 100%;
   display: flex;
@@ -50,28 +51,32 @@
   height: 100%;
   display: flex;
   flex: 1;
-  border: 1px solid map-get($grey, dark);
-  border-right: 0.5px solid map-get($grey, dark);
   font-size: 0.8rem;
+  border: 1px solid map-get($grey, darker);
+  border-right: none;
+  color: map-get($grey, darker);
   padding-left: 0.75rem;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
+
+  &::placeholder { 
+    color: map-get($grey, neutral);
+    opacity: 1;
+  }
   
   &:hover {
     cursor: pointer;
-    border: 1px solid darken(map-get($grey, light), 10%);
   }
 }
 
-.search-page-searchbar button {
+.submit-input-btn-search {
   height: 100%;
   width: 40px;
   background-size: 1rem 1rem;
   background-repeat: no-repeat;
   background-position: center;
   background-color: white;
-  border: 1px solid map-get($grey, dark);
-  border-left: 0.5px solid map-get($grey, dark);
+  border: 1px solid map-get($grey, darker);
   background-color: none;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
@@ -79,6 +84,24 @@
   &:hover {
     cursor: pointer;
     background-color: darken(white, 5%);
+  }
+}
+
+.delete-input-btn-search {
+  height: 0.6rem;
+  width: 0.6rem;
+  background-size: 1.5rem 1.5rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  border: none;
+  position: absolute;
+  right: 3.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &:hover {
+    cursor: pointer;
   }
 }
 

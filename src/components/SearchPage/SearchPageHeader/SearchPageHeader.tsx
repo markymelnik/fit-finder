@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import SearchBar from './SearchBar';
+import SearchBar from './SearchPageSearchBar';
 import MobileFilterDropdown from './MobileSearchPage/MobileFilterDropdown';
 import DesktopFilterMenu from './DesktopSearchPage/DesktopFilterMenu';
 import { RootState } from '../../../redux/store';

@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { setEnteredKeyword } from '../../redux/slices/enteredKeywordSlice';
+import { setEnteredKeyword } from '../../redux/slices/filterSlice';
 import { AppDispatch } from '../../redux/store';
 
 const Logo = () => {

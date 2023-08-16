@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
 import mobileReducer from './slices/mobileSlice';
-import enteredKeywordReducer from './slices/enteredKeywordSlice';
 import facilitiesSliceReducer from './slices/facilitySlice';
 import facilityTypesSliceReducer from './slices/facilityTypeSlice';
 import amenititesSliceReducer from './slices/amenitySlice';
@@ -11,7 +10,6 @@ import filtersReducer from './slices/filterSlice';
 const store = configureStore({
   reducer: {
     isMobile: mobileReducer,
-    enteredKeyword: enteredKeywordReducer,
     facilities: facilitiesSliceReducer,
     facilityTypes: facilityTypesSliceReducer,
     amenities: amenititesSliceReducer,
