@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux';
 import SearchBar from './SearchPageSearchBar';
-import MobileFilterDropdown from './MobileSearchPage/MobileFilterDropdown';
-import DesktopFilterMenu from './DesktopSearchPage/DesktopFilterMenu';
+import MobileFilterDropdown from './Mobile/MobileFilterDropdown';
+import DesktopFilterMenu from './Desktop/DesktopFilterMenu';
 import { RootState } from '../../../redux/store';
+import MapSwitchButton from '../SearchPageResults/SearchResultsComponents/MapOverlay/MapSwitchButton';
 
 const SearchPageHeader = () => {
   const isMobile = useSelector((state: RootState) => state.isMobile.isMobile);
@@ -10,6 +11,7 @@ const SearchPageHeader = () => {
     <div className='search-page-header'>
       <SearchBar />
       {isMobile ? <MobileFilterDropdown /> : <DesktopFilterMenu />}
+      <MapSwitchButton />
     </div>
   );
 };

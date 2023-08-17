@@ -1,12 +1,13 @@
-import { useSelector } from 'react-redux';
-import { RootState } from '../../redux/store';
-import MobileSearchPage from './SearchPageHeader/MobileSearchPage/MobileSearchPage';
-import DesktopSearchPage from './SearchPageHeader/DesktopSearchPage/DesktopSearchPage';
+import SearchPageHeader from "./SearchPageHeader/SearchPageHeader";
+import ResultsContainer from "./SearchPageResults/SearchPageResultsContainer";
 
 const SearchPage = () => {
-  const isMobile = useSelector((state: RootState) => state.isMobile.isMobile);
-
-  return isMobile ? <MobileSearchPage /> : <DesktopSearchPage />;
+  return (
+    <div className='search-container'>
+      <SearchPageHeader />
+      <ResultsContainer />
+    </div>
+  );
 };
 
 export default SearchPage;
