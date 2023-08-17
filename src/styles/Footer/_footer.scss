@@ -9,7 +9,7 @@
 .footer-top {
   height: 4rem;
   width: 100%;
-  border-bottom: 1px solid map-get($grey, light);
+  border-bottom: 1px solid map-get($grey, 'light');
 }
 
 .footer-bottom {
@@ -39,7 +39,7 @@
 .something-link {
   height: 3rem;
   width: 3rem;
-  background-color: lightgrey;
+  background-color: map-get($grey, 'light');
   border-radius: 4px;
 }
 

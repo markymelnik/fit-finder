@@ -1,8 +1,6 @@
 const SignUpLink = () => {
   return (
-    <button className='signup-link'>
-      <div>Sign Up</div>
-    </button>
+    <button className='signup-link'>Sign Up</button>
   );
 };
 

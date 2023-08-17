@@ -15,7 +15,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: map-get($grey, lighter);
+  background-color: map-get($grey, 'lighter');
+}
+
+.home-welcome-text {
+  height: auto;
+  width: 80%;
+  position: absolute;
+  top: 28vh;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 1;
+  font-size: 2rem;
+  color: map-get($grey, 'darker');
+  font-weight: 600;
+
+  .highlight {
+    color: map-get($theme, 'mint');
+  }
 }
 
 .home-page-searchbar {
@@ -29,13 +47,13 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
-  background-color: map-get($grey, light);
+  background-color: map-get($grey, 'light');
   border: none;
   border-radius: 8px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
   &:hover {
-    outline: 2px solid map-get($theme, '4');
+    outline: 1.5px solid map-get($theme, 'mint');
   }
 }
 
@@ -56,7 +74,7 @@
   font-size: 1rem;
   background-color: white;
   color: map-get($grey, darker);
-  padding: 0 1.25rem 0;
+  padding: 0.2rem 1.25rem 0;
   border: none;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -81,7 +99,7 @@
   background-position: center;
   background-color: white;
   border: none;
-  border-left: 1px solid map-get($grey, lighter);
+  border-left: 1px solid map-get($grey, 'lighter');
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 
@@ -118,13 +136,17 @@
 }
 
 @media (min-width: 768px) {
+  .home-welcome-text {
+    width: 60%;
+    font-size: 2.5rem;
+  }
   .home-page-searchbar {
     width: 60%;
     height: 70px;
   }
   .home-page-searchbar input {
-    padding: 0 1.5rem 0;
-    font-size: 1.1rem;
+    padding: 0.3rem 1.5rem 0;
+    font-size: 1.2rem;
   }
   .submit-input-btn-home {
     width: 70px;

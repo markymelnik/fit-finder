@@ -16,7 +16,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: map-get($grey, light);
+  background-color: map-get($grey, 'light');
   padding: 1rem 1rem;
 }
 

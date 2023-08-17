@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: map-get($grey, darker);
+  background-color: map-get($grey, 'darker');
   padding: 0 5%;
 }
 
@@ -32,25 +32,28 @@
 
 .business-link,
 .about-link,
-.help-link, 
-.login-link,
-.signup-link {
+.help-link,
+.login-link {
   width: auto;
-  background-color: map-get($grey, darker);
+  background-color: map-get($grey, 'darker');
   font-size: 1rem;
   border: none;
   color: white;
 
   &:hover {
     cursor: pointer;
-    color: darken(white, 15%);
+    color: map-get($theme, 'mint');
   }
 }
 
-.signup-link {
+.login-link {
   border: 1px solid white;
   border-radius: 8px;
   padding: 0.6rem 1.2rem;
+
+  &:hover {
+    border: 1px solid map-get($theme, 'mint');
+  }
 }
 
 .login-signup-link {

@@ -1,8 +1,6 @@
 const HelpLink = () => {
   return (
-    <button className='help-link'>
-      <div>Help</div>
-    </button>
+    <button className='help-link'>Help</button>
   );
 };
 

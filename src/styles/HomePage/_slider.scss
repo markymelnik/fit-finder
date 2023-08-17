@@ -11,14 +11,14 @@
 .slider-header {
   font-weight: 700;
   align-self: flex-start;
-  font-size: 1.75rem;
+  font-size: 2rem;
 }
 
 .slider-subheader {
   font-weight: 400;
   align-self: flex-start;
-  font-size: 1rem;
-  color: map-get($grey, neutral);
+  font-size: 1.25rem;
+  color: map-get($grey, 'neutral');
 }
 
 .slider-scroll-btns {
@@ -64,7 +64,7 @@
 
 .slider-display-cards > * {
   flex: 0 0 calc(25% - 0.75%);
-  scroll-snap-align: none;
+  scroll-snap-align: start end;
   min-width: 325px;
 }
 

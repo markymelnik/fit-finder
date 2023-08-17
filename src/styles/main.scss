@@ -26,6 +26,10 @@ body {
   line-height: 1.5;
 }
 
+button, input {
+  font-family: 'Avenir';
+}
+
 .site-container {
   display: flex;
   flex-direction: column;

@@ -2,7 +2,7 @@ import BusinessLink from './BusinessLink';
 import AboutLink from './AboutLink';
 import HelpLink from './HelpLink';
 import LogInLink from './LogInLink';
-import SignUpLink from './SignUpLink';
+/* import SignUpLink from './SignUpLink'; */
 
 const NavigationLinks = () => {
   return (
@@ -11,7 +11,7 @@ const NavigationLinks = () => {
       <AboutLink />
       <HelpLink />
       <LogInLink />
-      <SignUpLink />
+      {/* <SignUpLink /> */}
     </div>
   );
 };
