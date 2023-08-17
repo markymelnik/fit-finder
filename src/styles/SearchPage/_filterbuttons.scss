@@ -12,13 +12,14 @@
   height: 100%;
   width: 90px;
   font-size: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center-elements;
   gap: 0.25rem;
   border: 1px solid map-get($grey, dark);
   border-radius: 4px;
   background-color: white;
+  
+  @include smooth-hover(border);
+  @include smooth-hover(background-color);
   
   &:hover {
     cursor: pointer;
@@ -65,7 +66,6 @@
 .dropdown-list {
   display: flex;
   flex-direction: column;
-
   gap: 0.5rem;
   position: absolute;
   top: 0.5rem;
@@ -78,45 +78,45 @@
   background-color: white;
   border: 1px solid map-get($grey, lighter);
   box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.1);
-}
 
-.dropdown-option {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: 0.1rem;
-}
-
-.option-checkbox {
-  margin-right: 0.4rem;
-  height: 1.2rem;
-  width: 1.2rem;
-  color: white;
-
-  &:hover {
-    cursor: pointer;
+  .dropdown-option {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 0.1rem;
   }
-}
 
-.option-text {
-  font-size: 0.8rem;
-}
+  .option-checkbox {
+    margin-right: 0.4rem;
+    height: 1.2rem;
+    width: 1.2rem;
+    color: white;
+  
+    &:hover {
+      cursor: pointer;
+    }
+  }
 
-.checkbox-done-btn {
-  height: 2rem;
-  width: 6rem;
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  color: white;
-  margin: 0.6rem 0 0;
-  padding: 0.25rem 0 0;
-  background-color: map-get($grey, dark);
+  .option-text {
+    font-size: 0.8rem;
+  }
 
-  &:hover {
-    cursor: pointer;
-    background-color: map-get($grey, neutral);
+  .checkbox-done-btn {
+    height: 2rem;
+    width: 6rem;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: white;
+    margin: 0.6rem 0 0;
+    padding: 0.25rem 0 0;
+    background-color: map-get($grey, dark);
+  
+    &:hover {
+      cursor: pointer;
+      background-color: map-get($grey, neutral);
+    }
   }
 }

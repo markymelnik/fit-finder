@@ -1,3 +1,5 @@
+$page-max-width: 800px;
+
 .facility-page-container {
   height: 100%;
   width: 100%;
@@ -12,40 +14,40 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  max-width: 800px;
+  max-width: $page-max-width;
   width: 100%;
   margin: 1.5rem 0 0.25rem;
-}
 
-.facility-name {
-  font-size: 2.25rem;
-  font-weight: 700;
-  margin: 0 0 0.5rem;
-}
+  .facility-name {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+  }
 
-.facility-address {
-  font-size: 1rem;
-  font-weight: 300;
-  color: map-get($grey, 'darker');
-  margin: 0 0 0.25rem;
-}
+  .facility-address {
+    font-size: 1rem;
+    font-weight: 300;
+    color: map-get($grey, 'darker');
+    margin: 0 0 0.25rem;
+  }
 
-.facility-contact {
-  display: flex;
-  justify-content: flex-start;
-  gap: 0.75rem;
-  margin: 0 0 0.25rem;
-}
-
-.facility-website,
-.facility-phone-number {
-  font-size: 1rem;
-  font-weight: 300;
-  color: map-get($grey, 'darker');
-
-  &:hover {
-    cursor: pointer;
-    text-decoration: underline;
+  .facility-contact {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    margin: 0 0 0.25rem;
+  }
+  
+  .facility-website,
+  .facility-phone-number {
+    font-size: 1rem;
+    font-weight: 300;
+    color: map-get($grey, 'darker');
+  
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
   }
 }
 
@@ -54,105 +56,97 @@
   justify-content: center;
   width: 100%;
   height: calc(100vw * (9/16));
-}
 
-.facility-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background-color: map-get($grey, 'lighter');
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: map-get($grey, 'lighter');
+  }
+  
 }
 
 .facility-about {
   display: flex;
   flex-direction: column;
-  max-width: 800px;
+  max-width: $page-max-width;
   margin: 2rem 0;
   padding: 1rem;
   border: 1px solid map-get($grey, 'light');
-}
 
-.facility-about-header {
-  font-size: 1.5rem;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid map-get($grey, 'light');
+  .facility-about-header {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid map-get($grey, 'light');
+  }
 }
 
 .facility-data {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  max-width: 800px;
+  max-width: $page-max-width;
   width: 100%;
-}
-
-.facility-data-header {
-  display: flex;
 }
 
 .facility-data-left {
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  .facility-description {
+    height: auto;
+    max-width: $page-max-width;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid map-get($grey, 'light');
+  }
+
+  .facility-description-text {
+    font-size: 0.85rem;
+  }
 } 
 
 .facility-data-right {
   display: flex;
   justify-content: center;
   width: 100%;
-}
 
-.facility-description {
-  height: auto;
-  max-width: 800px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid map-get($grey, 'light');
-}
+  .facility-offers {
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    max-width: $page-max-width;
+    width: 100%;
 
-/* .facility-description-header {
-  font-size: 0.5rem;
-  font-weight: 700;
-} */
+    .facility-type-container,
+    .facility-amenities-container,
+    .facility-services-container {
+      display: flex;
+      flex-direction: column;
+      padding: 0 0 0.5rem;
+    }
 
-.facility-description-text {
-  font-size: 0.85rem;
-}
+    .facility-type-header,
+    .facility-amenities-header,
+    .facility-services-header {
+      display: flex;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin: 0 0 0.2rem;
+    }
 
-.facility-offers {
-  width: 10rem;
-  display: flex;
-  flex-direction: column;
-  max-width: 800px;
-  width: 100%;
-}
-
-.facility-type-container,
-.facility-amenities-container,
-.facility-services-container {
-  display: flex;
-  flex-direction: column;
-  padding: 0 0 0.5rem;
-}
-
-.facility-type-header,
-.facility-amenities-header,
-.facility-services-header {
-  display: flex;
-  font-size: 0.8rem;
-  font-weight: 700;
-  margin: 0 0 0.2rem;
-}
-
-.facility-type,
-.facility-amenity,
-.facility-service {
-  font-size: 0.85rem;
-  margin: 0 0.4rem 0.2rem;
-  color: map-get($grey, dark);
+    .facility-type,
+    .facility-amenity,
+    .facility-service {
+      font-size: 0.85rem;
+      margin: 0 0.4rem 0.2rem;
+      color: map-get($grey, dark);
+    }
+  }
 }
 
 .facility-navigation-btns {
@@ -177,8 +171,8 @@
 
 @media (min-width: 768px) {
   .facility-photo-container {
-    max-width: 800px;
-    height: calc(800px * (9/16))
+    max-width: $page-max-width;
+    height: calc($page-max-width * (9/16))
   }
   .facility-data {
     flex-direction: row;

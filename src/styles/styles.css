@@ -34,44 +34,41 @@
   align-items: center;
   height: auto;
 }
-
-.navigation-links {
+.navigation-bar .navigation-links {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3rem;
 }
-
-.business-link,
-.about-link,
-.help-link,
-.login-link,
-.signup-link {
+.navigation-bar .business-link,
+.navigation-bar .about-link,
+.navigation-bar .help-link,
+.navigation-bar .login-link {
   width: auto;
   background-color: hsl(209, 15%, 28%);
   font-size: 1rem;
   border: none;
   color: white;
+  transition: color 0.1s ease-in-out;
 }
-.business-link:hover,
-.about-link:hover,
-.help-link:hover,
-.login-link:hover,
-.signup-link:hover {
+.navigation-bar .business-link:hover,
+.navigation-bar .about-link:hover,
+.navigation-bar .help-link:hover,
+.navigation-bar .login-link:hover {
   cursor: pointer;
   color: #17B890;
 }
-
-.signup-link {
+.navigation-bar .login-link {
   border: 1px solid white;
   border-radius: 8px;
   padding: 0.6rem 1.2rem;
+  transition: border 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
 }
-.signup-link:hover {
+.navigation-bar .login-link:hover {
   border: 1px solid #17B890;
 }
-
-.login-signup-link {
+.navigation-bar .login-signup-link {
   width: 8rem;
 }
 
@@ -123,6 +120,7 @@
 .slider-arrow {
   height: 1.5rem;
   width: 1.5rem;
+  transition: transform 0.1s ease-in-out;
 }
 .slider-arrow:hover {
   cursor: pointer;
@@ -141,7 +139,6 @@
   scroll-behavior: smooth;
   gap: 1%;
 }
-
 .slider-display-cards > * {
   flex: 0 0 24.25%;
   scroll-snap-align: start end;
@@ -230,20 +227,15 @@
   border-radius: 8px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
-.home-page-searchbar:hover {
-  outline: 1.5px solid #17B890;
-}
-
 .home-page-searchbar form {
   position: relative;
   height: 100%;
   width: 100%;
   display: flex;
-  flex: 1;
   justify-content: center;
   align-items: center;
+  flex: 1;
 }
-
 .home-page-searchbar input {
   height: 100%;
   display: flex;
@@ -276,6 +268,7 @@
   border-left: 1px solid hsl(208, 21%, 81%);
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+  transition: background-color 0.1s ease-in-out;
 }
 .submit-input-btn-home:hover {
   cursor: pointer;
@@ -295,6 +288,7 @@
   right: 4.5rem;
   top: 50%;
   transform: translateY(-50%);
+  transition: background-color 0.1s ease-in-out;
 }
 .delete-input-btn-home:hover {
   cursor: pointer;
@@ -351,6 +345,8 @@
   border: 1px solid hsl(207, 12%, 43%);
   border-radius: 4px;
   background-color: white;
+  transition: border 0.1s ease-in-out;
+  transition: background-color 0.1s ease-in-out;
 }
 .type-dropdown-btn:hover,
 .amenity-dropdown-btn:hover,
@@ -417,32 +413,29 @@
   border: 1px solid hsl(208, 21%, 81%);
   box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.1);
 }
-
-.dropdown-option {
+.dropdown-list .dropdown-option {
   display: flex;
   align-items: center;
   list-style: none;
   gap: 0.1rem;
 }
-
-.option-checkbox {
+.dropdown-list .option-checkbox {
   margin-right: 0.4rem;
   height: 1.2rem;
   width: 1.2rem;
   color: white;
 }
-.option-checkbox:hover {
+.dropdown-list .option-checkbox:hover {
   cursor: pointer;
 }
-
-.option-text {
+.dropdown-list .option-text {
   font-size: 0.8rem;
 }
-
-.checkbox-done-btn {
+.dropdown-list .checkbox-done-btn {
   height: 2rem;
   width: 6rem;
   display: flex;
+  align-self: center;
   justify-content: center;
   align-items: center;
   border: none;
@@ -451,7 +444,7 @@
   padding: 0.25rem 0 0;
   background-color: hsl(207, 12%, 43%);
 }
-.checkbox-done-btn:hover {
+.dropdown-list .checkbox-done-btn:hover {
   cursor: pointer;
   background-color: hsl(208, 12%, 58%);
 }
@@ -464,8 +457,7 @@
   width: 100%;
   padding: 0.5rem 1rem;
 }
-
-.query-result-count {
+.query-info-container .query-result-count {
   font-size: 20px;
 }
 
@@ -477,8 +469,7 @@
   background-color: hsl(210, 16%, 76%);
   padding: 1rem 1rem;
 }
-
-.results-list {
+.results-container .results-list {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -503,9 +494,9 @@
   height: 80px;
   width: 100%;
   display: flex;
-  gap: 1rem;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   padding: 0 1rem;
   border: none;
   background-color: white;
@@ -522,10 +513,6 @@
   width: clamp(200px, 100%, 400px);
   border-radius: 4px;
 }
-.search-page-searchbar:hover {
-  outline: 1px solid #17B890;
-}
-
 .search-page-searchbar form {
   position: relative;
   height: 100%;
@@ -534,13 +521,13 @@
   justify-content: left;
   align-items: center;
 }
-
 .search-page-searchbar input {
   height: 100%;
   display: flex;
   align-items: center;
   flex: 1;
   font-size: 0.8rem;
+  border: 1px solid hsl(209, 15%, 28%);
   border-right: none;
   color: hsl(209, 15%, 28%);
   padding: 0.2rem 0.75rem 0;
@@ -562,9 +549,11 @@
   background-repeat: no-repeat;
   background-position: center;
   background-color: white;
+  border: 1px solid hsl(209, 15%, 28%);
   background-color: none;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
+  transition: background-color 0.1s ease-in-out;
 }
 .submit-input-btn-search:hover {
   cursor: pointer;
@@ -584,6 +573,7 @@
   right: 3.25rem;
   top: 50%;
   transform: translateY(-50%);
+  transition: background-color 0.1s ease-in-out;
 }
 .delete-input-btn-search:hover {
   cursor: pointer;
@@ -617,11 +607,11 @@
   border-bottom: 1px solid hsl(210, 16%, 76%);
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+  transition: background-color 0.1s ease-in-out;
 }
 .facility-card-photo:hover {
   background-color: #f2f2f2;
 }
-
 .facility-card-photo img {
   position: absolute;
   object-fit: cover;
@@ -640,7 +630,7 @@
 .facility-card-type,
 .facility-card-address {
   display: flex;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .facility-page-container {
@@ -661,35 +651,31 @@
   width: 100%;
   margin: 1.5rem 0 0.25rem;
 }
-
-.facility-name {
+.facility-page-header .facility-name {
   font-size: 2.25rem;
   font-weight: 700;
   margin: 0 0 0.5rem;
 }
-
-.facility-address {
+.facility-page-header .facility-address {
   font-size: 1rem;
   font-weight: 300;
   color: hsl(209, 15%, 28%);
   margin: 0 0 0.25rem;
 }
-
-.facility-contact {
+.facility-page-header .facility-contact {
   display: flex;
   justify-content: flex-start;
   gap: 0.75rem;
   margin: 0 0 0.25rem;
 }
-
-.facility-website,
-.facility-phone-number {
+.facility-page-header .facility-website,
+.facility-page-header .facility-phone-number {
   font-size: 1rem;
   font-weight: 300;
   color: hsl(209, 15%, 28%);
 }
-.facility-website:hover,
-.facility-phone-number:hover {
+.facility-page-header .facility-website:hover,
+.facility-page-header .facility-phone-number:hover {
   cursor: pointer;
   text-decoration: underline;
 }
@@ -700,8 +686,7 @@
   width: 100%;
   height: 56.25vw;
 }
-
-.facility-photo {
+.facility-photo-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -716,8 +701,7 @@
   padding: 1rem;
   border: 1px solid hsl(210, 16%, 76%);
 }
-
-.facility-about-header {
+.facility-about .facility-about-header {
   font-size: 1.5rem;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
@@ -732,23 +716,12 @@
   width: 100%;
 }
 
-.facility-data-header {
-  display: flex;
-}
-
 .facility-data-left {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-
-.facility-data-right {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.facility-description {
+.facility-data-left .facility-description {
   height: auto;
   max-width: 800px;
   width: 100%;
@@ -757,43 +730,40 @@
   padding-bottom: 1rem;
   border-bottom: 1px solid hsl(210, 16%, 76%);
 }
-
-/* .facility-description-header {
-  font-size: 0.5rem;
-  font-weight: 700;
-} */
-.facility-description-text {
+.facility-data-left .facility-description-text {
   font-size: 0.85rem;
 }
 
-.facility-offers {
+.facility-data-right {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.facility-data-right .facility-offers {
   width: 10rem;
   display: flex;
   flex-direction: column;
   max-width: 800px;
   width: 100%;
 }
-
-.facility-type-container,
-.facility-amenities-container,
-.facility-services-container {
+.facility-data-right .facility-offers .facility-type-container,
+.facility-data-right .facility-offers .facility-amenities-container,
+.facility-data-right .facility-offers .facility-services-container {
   display: flex;
   flex-direction: column;
   padding: 0 0 0.5rem;
 }
-
-.facility-type-header,
-.facility-amenities-header,
-.facility-services-header {
+.facility-data-right .facility-offers .facility-type-header,
+.facility-data-right .facility-offers .facility-amenities-header,
+.facility-data-right .facility-offers .facility-services-header {
   display: flex;
   font-size: 0.8rem;
   font-weight: 700;
   margin: 0 0 0.2rem;
 }
-
-.facility-type,
-.facility-amenity,
-.facility-service {
+.facility-data-right .facility-offers .facility-type,
+.facility-data-right .facility-offers .facility-amenity,
+.facility-data-right .facility-offers .facility-service {
   font-size: 0.85rem;
   margin: 0 0.4rem 0.2rem;
   color: hsl(207, 12%, 43%);
@@ -834,14 +804,12 @@
   flex-direction: column;
   padding: 0 5%;
 }
-
-.footer-top {
+.footer-container .footer-top {
   height: 4rem;
   width: 100%;
   border-bottom: 1px solid hsl(210, 16%, 76%);
 }
-
-.footer-bottom {
+.footer-container .footer-bottom {
   height: 4rem;
   width: 100%;
   display: flex;
@@ -864,12 +832,16 @@
   align-items: center;
   gap: 2.5rem;
 }
-
-.something-link {
+.social-media-links .something-link {
   height: 3rem;
   width: 3rem;
   background-color: hsl(210, 16%, 76%);
   border-radius: 4px;
+  transition: transform 0.1s ease-in-out;
+}
+.social-media-links .something-link:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 @media (min-width: 768px) {
@@ -901,13 +873,12 @@ html {
   font-size: 16px;
 }
 
-body {
+body, button, input {
   font-family: "Avenir";
-  line-height: 1.5;
 }
 
 button, input {
-  font-family: "Avenir";
+  line-height: 1.5;
 }
 
 .site-container {

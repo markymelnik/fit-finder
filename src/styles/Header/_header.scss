@@ -16,48 +16,48 @@
 }
 
 .navigation-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center-elements;
   height: auto;
-}
 
-.navigation-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  
-}
-
-.business-link,
-.about-link,
-.help-link,
-.login-link {
-  width: auto;
-  background-color: map-get($grey, 'darker');
-  font-size: 1rem;
-  border: none;
-  color: white;
-
-  &:hover {
-    cursor: pointer;
-    color: map-get($theme, 'mint');
+  .navigation-links {
+    @include center-elements;
+    gap: 3rem;
   }
-}
 
-.login-link {
-  border: 1px solid white;
-  border-radius: 8px;
-  padding: 0.6rem 1.2rem;
+  .business-link,
+  .about-link,
+  .help-link,
+  .login-link {
+    width: auto;
+    background-color: map-get($grey, 'darker');
+    font-size: 1rem;
+    border: none;
+    color: white;
 
-  &:hover {
-    border: 1px solid map-get($theme, 'mint');
+    @include smooth-hover(color);
+
+    &:hover {
+      cursor: pointer;
+      color: map-get($theme, 'mint');
+    }
   }
-}
 
-.login-signup-link {
-  width: 8rem;
+  .login-link {
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+
+    @include smooth-hover(border);
+    @include smooth-hover(color);
+
+    &:hover {
+      border: 1px solid map-get($theme, 'mint');
+    }
+  }
+
+  .login-signup-link {
+    width: 8rem;
+  }
 }
 
 @media (min-width: 768px) {

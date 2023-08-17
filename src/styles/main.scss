@@ -1,3 +1,8 @@
+$primary-font: 'Avenir';
+$global-font-size: 16px;
+
+@import './Global/mixins';
+@import './Global/transitions';
 @import './Global/colors';
 @import './Header/header';
 @import './HomePage/home';
@@ -18,23 +23,19 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: $global-font-size;
 }
 
-body {
-  font-family: 'Avenir';
-  line-height: 1.5;
+body, button, input {
+  font-family: $primary-font;
 }
 
 button, input {
-  font-family: 'Avenir';
+  line-height: 1.5;
 }
 
 .site-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include center-elements(column);
   height: auto;
   width: 100%;
 }

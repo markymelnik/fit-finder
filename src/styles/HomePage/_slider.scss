@@ -42,6 +42,8 @@
   height: 1.5rem;
   width: 1.5rem;
 
+  @include smooth-hover(transform);
+
   &:hover {
     cursor: pointer;
     transform: scale(1.1);
@@ -60,12 +62,12 @@
   width: 100%;
   scroll-behavior: smooth;
   gap: 1%;
-}
 
-.slider-display-cards > * {
-  flex: 0 0 calc(25% - 0.75%);
-  scroll-snap-align: start end;
-  min-width: 325px;
+  > * {
+    flex: 0 0 calc(25% - 0.75%);
+    scroll-snap-align: start end;
+    min-width: 325px;
+  }
 }
 
 @media (min-width: 768px) {

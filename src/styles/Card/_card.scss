@@ -21,14 +21,16 @@
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 
+  @include smooth-hover(background-color);
+
   &:hover {
     background-color: darken(white, 5%);
   }
-}
 
-.facility-card-photo img {
-  position: absolute;
-  object-fit: cover;
+  img {
+    position: absolute;
+    object-fit: cover;
+  }
 }
 
 .facility-card-info {
@@ -44,5 +46,5 @@
 .facility-card-type,
 .facility-card-address {
   display: flex;
-  font-size: 16px;
+  font-size: 1rem;
 }

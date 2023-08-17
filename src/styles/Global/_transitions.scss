@@ -1,0 +1,10 @@
+$smooth-hover-time: 0.1s;
+$smooth-hover-effect: ease-in-out;
+
+@mixin smooth-hover(
+  $property, 
+  $duration: $smooth-hover-time, 
+  $timing-function: $smooth-hover-effect
+) {
+  transition: $property $duration $timing-function;
+}

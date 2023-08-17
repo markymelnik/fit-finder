@@ -5,10 +5,10 @@
   height: 100px;
   width: 100%;
   padding: 0.5rem 1rem;
-}
 
-.query-result-count {
-  font-size: 20px;
+  .query-result-count {
+    font-size: 20px;
+  }
 }
 
 .results-container {
@@ -18,10 +18,10 @@
   flex-direction: column;
   background-color: map-get($grey, 'light');
   padding: 1rem 1rem;
-}
 
-.results-list {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  .results-list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
 }

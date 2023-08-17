@@ -12,9 +12,7 @@
 .home-photo-container {
   height: 60vh;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center-elements;
   background-color: map-get($grey, 'lighter');
 }
 
@@ -43,51 +41,42 @@
   top: 45vh;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center-elements;
   z-index: 1;
   background-color: map-get($grey, 'light');
   border: none;
   border-radius: 8px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
-  &:hover {
-    outline: 1.5px solid map-get($theme, 'mint');
-  }
-}
-
-.home-page-searchbar form {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-}
-
-.home-page-searchbar input {
-  height: 100%;
-  display: flex;
-  flex: 1;
-  font-size: 1rem;
-  background-color: white;
-  color: map-get($grey, darker);
-  padding: 0.2rem 1.25rem 0;
-  border: none;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-
-  &::placeholder { 
-    color: map-get($grey, neutral);
-    opacity: 1;
+  form {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    @include center-elements;
+    flex: 1;
   }
 
-  &:focus {
-    outline: none;
+  input {
+    height: 100%;
+    display: flex;
+    flex: 1;
+    font-size: 1rem;
+    background-color: white;
+    color: map-get($grey, darker);
+    padding: 0.2rem 1.25rem 0;
+    border: none;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  
+    &::placeholder { 
+      color: map-get($grey, neutral);
+      opacity: 1;
+    }
+  
+    &:focus {
+      outline: none;
+    }
   }
-
 }
 
 .submit-input-btn-home {
@@ -102,6 +91,8 @@
   border-left: 1px solid map-get($grey, 'lighter');
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+
+  @include smooth-hover(background-color);
 
   &:hover {
     cursor: pointer;
@@ -123,6 +114,8 @@
   top: 50%;
   transform: translateY(-50%);
 
+  @include smooth-hover(background-color);
+
   &:hover {
     cursor: pointer;
     background-color: darken(white, 10%);
@@ -143,11 +136,13 @@
   .home-page-searchbar {
     width: 60%;
     height: 70px;
+
+    input {
+      padding: 0.3rem 1.5rem 0;
+      font-size: 1.2rem;
+    }
   }
-  .home-page-searchbar input {
-    padding: 0.3rem 1.5rem 0;
-    font-size: 1.2rem;
-  }
+
   .submit-input-btn-home {
     width: 70px;
     background-size: 1.75rem 1.75rem;
