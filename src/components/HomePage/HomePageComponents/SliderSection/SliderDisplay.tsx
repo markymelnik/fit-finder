@@ -35,7 +35,7 @@ const SliderDisplay = () => {
           <img src={LeftArrow} alt="left arrow" className="slider-arrow"></img>
         </button>
         <button onClick={scrollRight} className="slider-scroll-btn">
-        <img src={RightArrow} alt="right arrow" className="slider-arrow"></img>
+          <img src={RightArrow} alt="right arrow" className="slider-arrow"></img>
         </button>
       </div>
       <div className='slider-display-cards' ref={carouselRef}>

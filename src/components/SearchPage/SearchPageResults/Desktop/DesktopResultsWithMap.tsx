@@ -2,6 +2,8 @@ import QueryResultInfo from "../SearchResultsComponents/QueryResultInfo";
 import SearchResults from "../SearchResultsComponents/SearchResults";
 import Footer from "../../../Footer/Footer";
 import MapOverlay from "../SearchResultsComponents/MapOverlay";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../redux/store";
 
 const DesktopResultsWithMap = () => {
 
@@ -10,7 +12,9 @@ const DesktopResultsWithMap = () => {
       <div className="result-left">
         <QueryResultInfo />
         <SearchResults />
-        <Footer />
+        <div className="desktop-map-view-wrapper">
+          <Footer />
+        </div>
       </div>
       <MapOverlay />
     </div>

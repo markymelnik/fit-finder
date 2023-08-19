@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 0 5%;
+  margin: 0 0 5rem;
   background-color: white;
 
   .footer-top {
@@ -50,17 +51,31 @@
   }
 }
 
+.desktop-map-view-wrapper {
+
+  .footer-container {
+
+    .footer-bottom {
+      flex-direction: column;
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .footer-container {
     gap: 0;
     padding: 0 10%;
+    margin: 0;
+
+    .footer-bottom {
+      flex-direction: row;
+    }
   }
+  
   .developer-information {
     text-align: left;
   }
-  .footer-bottom {
-    flex-direction: row;
-  }
+
   .social-media-links {
     margin: 0;
   }
