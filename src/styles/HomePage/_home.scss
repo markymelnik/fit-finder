@@ -24,7 +24,6 @@
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  z-index: 1;
   font-size: 2rem;
   color: map-get($grey, 'darker');
   font-weight: 600;
@@ -42,7 +41,6 @@
   left: 50%;
   transform: translateX(-50%);
   @include center-elements;
-  z-index: 1;
   background-color: map-get($grey, 'light');
   border: none;
   border-radius: 8px;

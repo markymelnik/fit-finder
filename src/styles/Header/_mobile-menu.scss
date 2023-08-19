@@ -1,0 +1,64 @@
+.space-fragment {
+  height: 2.5rem;
+  width: 2.5rem;
+  border: none;
+  border-radius: 4px;
+}
+
+.mobile-menu-btn {
+  height: 2.5rem;
+  width: 2.5rem;
+  border: none;
+  border-radius: 4px;
+  background-size: 2rem 2rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.mobile-menu-container {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  background-color: white;
+  border-right: 1px solid map-get($grey, 'darker');
+  z-index: 5;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  .business-link,
+  .about-link,
+  .help-link, 
+  .signup-link {
+    display: flex;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid map-get($grey, 'light');
+    background-color: white;
+  }
+
+  .signup-link {
+    background-color: map-get($grey, 'lighter');
+  }
+}
+
+.tinted-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 50%;
+  z-index: 2;
+}

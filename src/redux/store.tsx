@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import mobileReducer from './slices/mobileSlice';
 import mapOverlaySliceReducer from './slices/mapOverlaySlice';
+import mobileMenuSlicerReducer from './slices/mobileMenuSlice';
 import facilitiesSliceReducer from './slices/facilitySlice';
 import facilityTypesSliceReducer from './slices/facilityTypeSlice';
 import amenititesSliceReducer from './slices/amenitySlice';
@@ -12,6 +13,7 @@ const store = configureStore({
   reducer: {
     isMobile: mobileReducer,
     isMapOverlayShown: mapOverlaySliceReducer,
+    isMobileMenuOpen: mobileMenuSlicerReducer,
     facilities: facilitiesSliceReducer,
     facilityTypes: facilityTypesSliceReducer,
     amenities: amenititesSliceReducer,

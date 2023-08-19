@@ -1,4 +1,5 @@
 @import 'logo';
+@import 'mobile-menu';
 
 .header-container {
   height: 70px;
@@ -6,13 +7,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
   background-color: map-get($grey, 'darker');
   padding: 0 5%;
-}
-
-.mobile-menu-btn, .space-fragment {
-  height: 2.5rem;
-  width: 2.5rem;
+  z-index: 5;
 }
 
 .navigation-bar {
