@@ -1,6 +1,7 @@
 import QueryResultInfo from "../SearchResultsComponents/QueryResultInfo";
-import MapOverlay from "../SearchResultsComponents/MapOverlay/MapOverlay";
 import SearchResults from "../SearchResultsComponents/SearchResults";
+import Footer from "../../../Footer/Footer";
+import MapOverlay from "../SearchResultsComponents/MapOverlay";
 
 const DesktopResultsWithMap = () => {
 
@@ -9,6 +10,7 @@ const DesktopResultsWithMap = () => {
       <div className="result-left">
         <QueryResultInfo />
         <SearchResults />
+        <Footer />
       </div>
       <MapOverlay />
     </div>

@@ -1,11 +1,10 @@
 .facility-card-container,
 .dummy-card-container {
   width: 100%;
-  min-height: 320px;
+  height: 320px;
   display: flex;
   flex-direction: column;
   background-color: white;
-  border-bottom: 4px solid map-get($grey, 'light');
   border-radius: 4px;
 }
 

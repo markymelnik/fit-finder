@@ -16,6 +16,7 @@
   gap: 0.25rem;
   border: 1px solid map-get($grey, dark);
   border-radius: 4px;
+  color: map-get($grey, 'darker');
   background-color: white;
   
   @include smooth-hover(border);

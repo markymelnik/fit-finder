@@ -1,4 +1,5 @@
 @import 'filter-btns';
+@import 'map-switch-btn';
 @import 'results';
 
 .search-container {
@@ -20,9 +21,6 @@
   height: 80px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
   padding: 0 1rem;
   border: none;
   background-color: white;
@@ -31,6 +29,13 @@
   position: sticky;
   top: 0;
   z-index: 5;
+}
+
+.filter-options-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .search-page-searchbar {

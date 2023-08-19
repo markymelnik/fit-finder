@@ -344,6 +344,7 @@
   gap: 0.25rem;
   border: 1px solid hsl(207, 12%, 43%);
   border-radius: 4px;
+  color: hsl(209, 15%, 28%);
   background-color: white;
   transition: border 0.1s ease-in-out;
   transition: background-color 0.1s ease-in-out;
@@ -449,12 +450,53 @@
   background-color: hsl(208, 12%, 58%);
 }
 
-.map-switch-btn {
-  height: 3rem;
-  width: 5rem;
+.map-switch-container {
+  height: 100%;
+  width: auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
-.map-switch-btn:hover {
+
+.map-switch-btn {
+  height: 2.5rem;
+  width: 10rem;
+  display: flex;
+  position: relative;
+}
+.map-switch-btn .card-view,
+.map-switch-btn .map-view {
+  height: 100%;
+  flex: 1;
+  background-color: white;
+  color: hsl(207, 12%, 43%);
+  border: 1px solid hsl(207, 12%, 43%);
+  transition: background-color 0.1s ease-in-out;
+}
+.map-switch-btn .card-view:hover,
+.map-switch-btn .map-view:hover {
   cursor: pointer;
+  background-color: #e6e6e6;
+}
+.map-switch-btn .card-view.active,
+.map-switch-btn .map-view.active {
+  color: white;
+  background-color: hsl(207, 12%, 43%);
+}
+.map-switch-btn .card-view:disabled,
+.map-switch-btn .map-view:disabled {
+  cursor: auto;
+  pointer-events: none;
+}
+.map-switch-btn .card-view {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-right: 0.5px solid hsl(207, 12%, 43%);
+}
+.map-switch-btn .map-view {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-left: 0.5px solid hsl(209, 15%, 28%);
 }
 
 .results-container {
@@ -462,7 +504,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: hsl(210, 16%, 76%);
 }
 
 .query-info-container {
@@ -494,7 +535,8 @@
 .with-map .map-overlay-container {
   width: 100%;
   height: 40vh;
-  background-color: hsl(208, 21%, 81%);
+  position: sticky;
+  top: 80px;
 }
 .with-map .map-overlay-container .map-overlay {
   width: 100%;
@@ -503,18 +545,23 @@
   padding: 1rem;
 }
 
-.search-results-list {
-  width: 100%;
-  min-height: 90vh;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  padding: 1rem 1rem;
-}
-
 .empty-results-list {
   display: flex;
   width: 100%;
+  min-height: 40vh;
+  height: 100%;
+  padding: 1rem 1rem;
+  background-color: hsl(210, 16%, 76%);
+}
+
+.search-results-list {
+  width: 100%;
+  min-height: 40vh;
+  height: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  background-color: hsl(210, 16%, 76%);
   padding: 1rem 1rem;
 }
 
@@ -522,6 +569,7 @@
   display: flex;
   flex-direction: column;
   width: 50%;
+  height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -531,17 +579,18 @@
   .result-left {
     overflow-y: auto;
   }
+  .empty-results-list {
+    min-height: calc(100vh - 500px);
+  }
+  .search-results-list {
+    min-height: calc(100vh - 500px);
+  }
   .with-map {
     flex-direction: row;
   }
-  .with-map .empty-results-list,
   .with-map .map-overlay-container {
-    height: 90vh;
+    height: calc(100vh - 80px);
     width: 50%;
-  }
-  .with-map .search-results-list {
-    width: 100%;
-    height: 90vh;
   }
 }
 .search-container {
@@ -563,9 +612,6 @@
   height: 80px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
   padding: 0 1rem;
   border: none;
   background-color: white;
@@ -574,6 +620,13 @@
   position: sticky;
   top: 0;
   z-index: 5;
+}
+
+.filter-options-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .search-page-searchbar {
@@ -658,11 +711,10 @@
 .facility-card-container,
 .dummy-card-container {
   width: 100%;
-  min-height: 320px;
+  height: 320px;
   display: flex;
   flex-direction: column;
   background-color: white;
-  border-bottom: 4px solid hsl(210, 16%, 76%);
   border-radius: 4px;
 }
 
@@ -868,10 +920,12 @@
 }
 .footer-container {
   width: 100%;
-  height: auto;
+  height: 250px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 0 5%;
+  background-color: white;
 }
 .footer-container .footer-top {
   height: 4rem;
@@ -879,7 +933,7 @@
   border-bottom: 1px solid hsl(210, 16%, 76%);
 }
 .footer-container .footer-bottom {
-  height: 4rem;
+  height: 6rem;
   width: 100%;
   display: flex;
   flex-direction: column;
