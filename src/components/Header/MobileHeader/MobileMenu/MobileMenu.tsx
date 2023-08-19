@@ -1,17 +1,24 @@
-import SignUpLink from "../../DesktopHeader/NavigationBar/NavigationLinks/SignUpLink";
+import LogInLink from "../../DesktopHeader/NavigationBar/NavigationLinks/LogInLink";
 import AboutLink from "../../DesktopHeader/NavigationBar/NavigationLinks/AboutLink";
 import BusinessLink from "../../DesktopHeader/NavigationBar/NavigationLinks/BusinessLink";
 import HelpLink from "../../DesktopHeader/NavigationBar/NavigationLinks/HelpLink";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../../redux/store";
 
 const MobileMenu = () => {
 
+  const isMobileMenuOpen = useSelector((state: RootState) => state.isMobileMenuOpen.isMobileMenuOpen);
+
+  console.log(isMobileMenuOpen);
+  
   return (
-    <div className="mobile-menu-container">
+    <div className={`mobile-menu-container ${isMobileMenuOpen ? 'active' : ''}`}>
+      <div className="mobile-menu-header">Header</div>
       <div className="mobile-menu-links">
         <BusinessLink />
         <AboutLink />
         <HelpLink />
-        <SignUpLink />
+        <LogInLink />
       </div>
     </div>
   )

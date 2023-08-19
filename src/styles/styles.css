@@ -41,27 +41,46 @@
   width: 80%;
   height: 100%;
   background-color: white;
-  border-right: 1px solid hsl(209, 15%, 28%);
+  border-right: 1px solid grey;
   z-index: 5;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+.mobile-menu-container.active {
+  transform: translateX(0);
+}
+.mobile-menu-container .mobile-menu-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
 }
 
 .mobile-menu-links {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 .mobile-menu-links .business-link,
 .mobile-menu-links .about-link,
-.mobile-menu-links .help-link,
-.mobile-menu-links .signup-link {
+.mobile-menu-links .help-link {
   display: flex;
-  padding: 0.5rem;
+  padding: 1rem;
   font-size: 1rem;
-  border: 1px solid hsl(210, 16%, 76%);
+  border: none;
+  border-bottom: 1px solid hsl(210, 16%, 76%);
   background-color: white;
 }
 .mobile-menu-links .signup-link {
-  background-color: hsl(208, 21%, 81%);
+  border: 1px solid black;
+  border-radius: 8px;
+  background: transparent;
+  margin: 2rem 0;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tinted-overlay {
@@ -71,8 +90,14 @@
   width: 100%;
   height: 100%;
   background-color: black;
-  opacity: 50%;
   z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s, visibility 1s;
+}
+.tinted-overlay.active {
+  opacity: 0.5;
+  visibility: visible;
 }
 
 .header-container {
