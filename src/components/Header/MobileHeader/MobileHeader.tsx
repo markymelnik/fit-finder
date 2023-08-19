@@ -12,8 +12,6 @@ const MobileHeader = () => {
   const isMobileMenuOpen = useSelector((state: RootState) => state.isMobileMenuOpen.isMobileMenuOpen);
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
 
-  console.log(isMobileMenuOpen);
-
   useEffect(() => {
     if (isMobileMenuOpen) {
       setShowOverlay(true);

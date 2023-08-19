@@ -1,0 +1,89 @@
+.mobile-filter-btn {
+  height: 2.5rem;
+  width: 2.5rem;
+  border: 1px solid map-get($grey, 'dark');
+  border-radius: 4px;
+  background-size: 1.75rem 1.75rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+}
+
+.mobile-filter-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 4;
+}
+
+.mobile-filter-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 0;
+
+  .mobile-filter-title {
+    @include center-elements;
+  }
+
+  .mobile-filter-back-btn,
+  .mobile-filter-reset-btn {
+    background: none;
+    border: none;
+    height: 2rem;
+    width: 4rem;
+  }
+}
+
+.mobile-filter-menu {
+  width: 100%;
+  height: 100%;
+  background-color: map-get($grey, 'lighter');
+  padding: 1rem;
+}
+
+.filter-category-container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.filter-category-list {
+  width: 100%;
+  height: 100%;
+}
+
+.filter-category-title {
+  display: flex;
+}
+
+.filter-category-option {
+  display: flex;
+}
+
+.filter-option-checkbox {
+  height: 1rem;
+  width: 1rem;
+}
+
+.filter-option-text {
+  font-size: 1rem;
+}
+
+
+
+.mobile-filter-save-btn {
+  font-size: 1rem;
+  height: 3rem;
+  width: 8rem;
+  align-self: center;
+}

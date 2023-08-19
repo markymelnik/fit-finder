@@ -4,6 +4,7 @@ $global-font-size: 16px;
 @import './Global/mixins';
 @import './Global/transitions';
 @import './Global/colors';
+@import './mobile-filter';
 @import './Header/header';
 @import './HomePage/home';
 @import './SearchPage/search';
@@ -38,4 +39,5 @@ button, input {
   @include center-elements(column);
   height: auto;
   width: 100%;
+  z-index: 1;
 }
