@@ -15,8 +15,9 @@ const SearchResults = () => {
     return <EmptyResultsList /> 
   }
 
-  const handleCardClick = ({ id, name, facilityType, address, amenities, services }: Facility) => {
-    const locationData = ({ id, name, facilityType, address, amenities, services });
+  const handleCardClick = ({ id, name, address, postalCode, neighborhood, facilityType,  amenities, services }: Facility) => {
+    const locationData = ({ id, name,  address, postalCode, neighborhood, facilityType, amenities, services });
+    console.log(locationData);
     dispatch(setSelectedFacility(locationData));
   }
   
@@ -29,23 +30,10 @@ const SearchResults = () => {
             key={facility.id}
             id={facility.id}
             name={facility.name}
-            facilityType={facility.facilityType}
             address={facility.address}
-            amenities={facility.amenities}
-            services={facility.services}
-            onClick={handleCardClick}
-          />
-        )
-      })}
-      {facilitiesAllIds.map((facilityId) => {
-        const facility = facilitiesByIds[facilityId];
-        return (
-          <Card
-            key={facility.id}
-            id={facility.id}
-            name={facility.name}
+            postalCode={facility.postalCode}
+            neighborhood={facility.neighborhood}
             facilityType={facility.facilityType}
-            address={facility.address}
             amenities={facility.amenities}
             services={facility.services}
             onClick={handleCardClick}

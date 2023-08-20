@@ -1,5 +1,4 @@
 const FacilityDescription = () => {
-
   return (
     <div className='facility-description'>
       <div className='facility-description-text'>

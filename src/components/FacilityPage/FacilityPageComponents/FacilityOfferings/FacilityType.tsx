@@ -6,7 +6,12 @@ const FacilityType = () => {
   const selectedFacility = useSelector((state: RootState) => state.selectedFacility.selectedFacility);
 
   if (!selectedFacility) {
-    return <p>Facility type not found.</p>
+    return (
+      <div className="facility-amenities-container">
+        <div className="facility-amenities-header">TYPE</div>
+        <p className='no-offering'>No Type Found</p>
+      </div>
+    )
   }
 
   return (

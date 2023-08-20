@@ -57,25 +57,32 @@ public class Facility {
   private String name;
   private String address;
   private String neighborhood;
-  private String postal_code;
+  private String postalCode;
+
+  private Double latitude;
+  private Double longitude;
 
   public Facility() {
 
   }
 
-  public Facility(Long id, String name, String address, String neighborhood, String postal_code) {
+  public Facility(Long id, String name, String address, String neighborhood, String postalCode, Double latitude, Double longitude) {
     this.id = id;
     this.name = name;
     this.address = address;
     this.neighborhood = neighborhood;
-    this.postal_code = postal_code;
+    this.postalCode = postalCode;
+    this.latitude = latitude;
+    this.longitude = longitude;
   }
 
-  public Facility(String name, String address, String neighborhood, String postal_code) {
+  public Facility(String name, String address, String neighborhood, String postalCode, Double latitude, Double longitude) {
     this.name = name;
     this.address = address;
     this.neighborhood = neighborhood;
-    this.postal_code = postal_code;
+    this.postalCode = postalCode;
+    this.latitude = latitude;
+    this.longitude = longitude;
   }
 
   public Long getId() {
@@ -111,11 +118,27 @@ public class Facility {
   }
 
   public String getPostalCode() {
-    return this.postal_code;
+    return this.postalCode;
   }
 
-  public void setPostalCode(String postal_code) {
-    this.postal_code = postal_code;
+  public void setPostalCode(String postalCode) {
+    this.postalCode = postalCode;
+  }
+
+  public Double getLatitude() {
+    return this.latitude;
+  }
+
+  public void setLatitude(Double latitude) {
+    this.latitude = latitude;
+  }
+
+  public Double getLongitude() {
+    return this.longitude;
+  }
+
+  public void setLongitude(Double longitude) {
+    this.longitude = longitude;
   }
 
   public FacilityType getFacilityType() {
@@ -133,7 +156,8 @@ public class Facility {
   @Override
   public String toString() {
     return "Facility {" + "id=" + id + ", name=" + name + '\'' + ", address=" + '\'' + address
-        + '\'' + ", neighborhood=" + '\'' + neighborhood + '\'' + ", postal_code=" + '\'' + postal_code + '}';
+        + '\'' + ", neighborhood=" + '\'' + neighborhood + '\'' + ", postalCode=" + '\'' + postalCode + 
+         '\'' + ", latitude=" + '\'' + latitude + '\'' + ", longitude=" + '\'' + longitude + '}';
   }
 
 }

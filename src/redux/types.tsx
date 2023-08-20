@@ -1,8 +1,10 @@
 export interface Facility {
   id: number;
   name: string;
-  facilityType: FacilityType;
   address: string;
+  postalCode: string;
+  neighborhood: string;
+  facilityType: FacilityType;
   amenities: Amenity[];
   services: Service[];
 }

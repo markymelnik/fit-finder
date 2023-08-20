@@ -17,7 +17,7 @@ $page-max-width: 800px;
   align-items: flex-start;
   max-width: $page-max-width;
   width: 100%;
-  margin: 1.5rem 0.25rem;
+  margin: 1.5rem 0 0.5rem;
 
   .facility-name {
     font-size: 2.25rem;
@@ -107,9 +107,9 @@ $page-max-width: 800px;
   }
 
   .facility-description-text {
-    font-size: 0.85rem;
-  }
-} 
+    font-size: 1rem;
+  } 
+}
 
 .facility-data-right {
   display: flex;
@@ -135,19 +135,31 @@ $page-max-width: 800px;
     .facility-amenities-header,
     .facility-services-header {
       display: flex;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       font-weight: 700;
-      margin: 0 0 0.2rem;
+      margin: 0 0 0.5rem;
     }
 
     .facility-type,
     .facility-amenity,
     .facility-service {
-      font-size: 0.85rem;
-      margin: 0 0.4rem 0.2rem;
+      font-size: 0.95rem;
+      margin: 0 0 0.5rem;
+      padding: 0 1rem 0;
       color: map-get($grey, dark);
     }
   }
+}
+
+.no-facility-found {
+  font-size: 1rem;
+  padding: 2rem;
+}
+
+.no-offering {
+  font-size: 1rem;
+  margin-left: 1rem;
+  padding: 0.5rem 0;
 }
 
 .facility-navigation-btns {
