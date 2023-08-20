@@ -1,7 +1,7 @@
 import QueryResultInfo from "../SearchResultsComponents/QueryResultInfo";
 import SearchResults from "../SearchResultsComponents/SearchResults";
 import Footer from "../../../Footer/Footer";
-import MapOverlay from "../SearchResultsComponents/MapOverlay";
+import MapOverlay from "../../../Map/MapOverlay";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../redux/store";
 

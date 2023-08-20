@@ -1,4 +1,4 @@
-import MapOverlay from "./MapOverlay";
+import MapOverlay from "../../../Map/MapOverlay";
 import SearchResults from "./SearchResults"
 
 const SearchResultsWithMap = () => {
