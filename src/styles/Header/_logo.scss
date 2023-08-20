@@ -1,9 +1,8 @@
 .logo-container {
   @include center-elements;
-  height: 3rem;
   width: 3rem;
-  border-bottom: 2px solid white;
   text-decoration: none;
+  padding-top: 0.25rem;
 }
 
 .logo-text {

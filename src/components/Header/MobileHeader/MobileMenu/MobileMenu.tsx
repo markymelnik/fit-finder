@@ -13,7 +13,7 @@ const MobileMenu = () => {
   
   return (
     <div className={`mobile-menu-container ${isMobileMenuOpen ? 'active' : ''}`}>
-      <div className="mobile-menu-header">Header</div>
+      <div className="mobile-menu-header">Fit Finder</div>
       <div className="mobile-menu-links">
         <BusinessLink />
         <AboutLink />

@@ -4,18 +4,14 @@ import LoadHomePage from './components/LoadPages/LoadHomePage';
 import LoadSearchPage from './components/LoadPages/LoadSearchPage';
 import LoadSelectedFacilityPage from './components/LoadPages/LoadSelectedFacilityPage';
 import useIsMobile from './hooks/useIsMobile';
-import { useSelector } from 'react-redux';
-import { RootState } from './redux/store';
 import MobileFilter from './components/SearchPage/SearchPageHeader/Mobile/MobileFilter';
 
 const App = () => {
   useIsMobile();
 
-  const isMobileFilterOpen = useSelector((state: RootState) => state.isMobileFilterOpen.isMobileFilterOpen);
-
   return (
     <>
-      {isMobileFilterOpen && <MobileFilter />}
+      <MobileFilter />
       <div className='site-container'>
         <Router>
           <Routes>
