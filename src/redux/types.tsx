@@ -4,6 +4,8 @@ export interface Facility {
   address: string;
   postalCode: string;
   neighborhood: string;
+  latitude: number;
+  longitude: number;
   facilityType: FacilityType;
   amenities: Amenity[];
   services: Service[];

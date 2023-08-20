@@ -15,12 +15,11 @@ const SearchResults = () => {
     return <EmptyResultsList /> 
   }
 
-  const handleCardClick = ({ id, name, address, postalCode, neighborhood, facilityType,  amenities, services }: Facility) => {
-    const locationData = ({ id, name,  address, postalCode, neighborhood, facilityType, amenities, services });
-    console.log(locationData);
+  const handleCardClick = ({ id, name, address, postalCode, neighborhood, latitude, longitude, facilityType, amenities, services }: Facility) => {
+    const locationData = ({ id, name,  address, postalCode, neighborhood, latitude, longitude, facilityType, amenities, services });
     dispatch(setSelectedFacility(locationData));
   }
-  
+
   return (
     <div className='search-results-list'>
       {facilitiesAllIds.map((facilityId) => {
@@ -33,6 +32,8 @@ const SearchResults = () => {
             address={facility.address}
             postalCode={facility.postalCode}
             neighborhood={facility.neighborhood}
+            latitude={facility.latitude}
+            longitude={facility.longitude}
             facilityType={facility.facilityType}
             amenities={facility.amenities}
             services={facility.services}

@@ -5,10 +5,10 @@ interface FacilityCard extends Facility {
   onClick: (facility: Facility) => void;
 }
 
-const FacilityCard = ({ id, name, address, postalCode, neighborhood, facilityType, amenities, services, onClick }: FacilityCard) => {
+const FacilityCard = ({ id, name, address, postalCode, neighborhood, latitude, longitude, facilityType, amenities, services, onClick }: FacilityCard) => {
 
   const handleClick = () => {
-    onClick({ id, name, address, postalCode, neighborhood, facilityType, amenities, services });
+    onClick({ id, name, address, postalCode, neighborhood, latitude, longitude, facilityType, amenities, services });
   };
   
   return (
