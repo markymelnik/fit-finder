@@ -10,18 +10,16 @@ const App = () => {
   useIsMobile();
 
   return (
-    <>
+    <Router>
       <MobileFilter />
       <div className='site-container'>
-        <Router>
-          <Routes>
-            <Route path='/' element={<LoadHomePage />} />
-            <Route path='/search' element={<LoadSearchPage />} />
-            <Route path='/facility' element={<LoadSelectedFacilityPage />} />
-          </Routes>
-        </Router>
+        <Routes>
+          <Route path='/' element={<LoadHomePage />} />
+          <Route path='/search' element={<LoadSearchPage />} />
+          <Route path='/facility' element={<LoadSelectedFacilityPage />} />
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 };
 

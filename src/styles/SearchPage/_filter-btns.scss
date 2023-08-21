@@ -100,12 +100,15 @@
   }
 
   .option-text {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    padding: 0.25rem 0 0;
   }
 
   .checkbox-done-btn {
-    height: 2rem;
-    width: 6rem;
+    height: 2.5rem;
+    width: 7rem;
+    font-size: 1rem;
+    padding: 0.2rem 0 0;
     display: flex;
     align-self: center;
     justify-content: center;
@@ -113,12 +116,13 @@
     border: none;
     color: white;
     margin: 0.5rem 0 0;
-    padding: 0.25rem 0 0;
-    background-color: map-get($grey, dark);
+    background-color: map-get($grey, 'dark');
+
+    @include smooth-hover(background-color);
   
     &:hover {
       cursor: pointer;
-      background-color: map-get($grey, neutral);
+      background-color: lighten(map-get($grey, 'dark'), 10%);
     }
   }
 }

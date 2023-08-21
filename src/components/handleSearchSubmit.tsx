@@ -1,9 +1,9 @@
-import { FormEvent } from "react";
+import { FormEvent, MouseEvent } from "react";
 import { AppDispatch } from "../redux/store";
 import { fetchAllFacilities, fetchFacilitiesByParameters } from "../redux/apiRequests";
 
 const handleSearchSubmit = (
-  event: FormEvent<HTMLFormElement>,
+  event: FormEvent<HTMLFormElement> | MouseEvent<HTMLButtonElement>,
   enteredKeyword: string,
   selectedFacilityTypes: string[],
   selectedAmenities: string[],

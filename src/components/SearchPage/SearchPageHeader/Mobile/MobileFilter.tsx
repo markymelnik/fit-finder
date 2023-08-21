@@ -3,6 +3,8 @@ import { setIsMobileFilterOpen } from "../../../../redux/slices/mobileFilterSlic
 import { useDispatch } from "react-redux";
 import MobileFilterMenu from "./MobileFilterMenu";
 import { useSelector } from "react-redux";
+import SaveFiltersButton from "../../../SaveFiltersButton";
+import ResetFiltersButton from "../../../ResetFiltersButton";
 
 const MobileFilter = () => {
 
@@ -16,12 +18,14 @@ const MobileFilter = () => {
   return (
     <div className={`mobile-filter-container ${isMobileFilterOpen ? 'active' : ''}`}>
       <div className="mobile-filter-header">
-        <button className="mobile-filter-back-btn" onClick={handleSaveButtonClick}>SAVE</button>
+        <SaveFiltersButton customClass='mobile-filter-save-btn' buttonText='SAVE' exitMobileFilterMenu={handleSaveButtonClick}/>
         <div className="mobile-filter-title">Filter Options</div>
-        <button className="mobile-filter-reset-btn">RESET</button>
+        <ResetFiltersButton customClass='mobile-filter-reset-btn' buttonText='RESET' />
       </div>
       <MobileFilterMenu />
-      <button className="mobile-filter-done-btn" onClick={handleSaveButtonClick}>Done</button>
+      <div className="mobile-filter-done-btn-container">
+        <SaveFiltersButton customClass='mobile-filter-done-btn' buttonText='DONE' exitMobileFilterMenu={handleSaveButtonClick}/>
+      </div>
     </div>
   )
 }

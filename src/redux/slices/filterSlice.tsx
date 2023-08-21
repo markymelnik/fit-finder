@@ -33,7 +33,10 @@ const filterSlice = createSlice({
     setSelectedServices: (state, action: PayloadAction<string[]>) => {
       state.selectedServices = action.payload;
       console.log("In the reducer: ", action.payload);
-    }
+    },
+    resetAllFilters: (_state) => {
+      return initialFilterState;
+    },
   }
 });
 
@@ -42,6 +45,7 @@ export const {
   setSelectedFacilityTypes,
   setSelectedAmenities,
   setSelectedServices,
+  resetAllFilters,
 } = filterSlice.actions;
 
 export default filterSlice.reducer;
