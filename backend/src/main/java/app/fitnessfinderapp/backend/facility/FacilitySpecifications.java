@@ -22,7 +22,7 @@ public class FacilitySpecifications {
       Predicate addressPredicate = cb.like(cb.lower(facility.get("address")), "%" + keyword.toLowerCase() + "%");
       Predicate neighborhoodPredicate = cb.like(cb.lower(facility.get("neighborhood")), "%" + keyword.toLowerCase() + "%");
       Predicate facilityTypePredicate = cb.like(cb.lower(facility.join("facilityType").get("name")), "%" + keyword.toLowerCase() + "%");
-      Predicate postalCodePredicate = cb.equal(facility.get("postal_code"), keyword);
+      Predicate postalCodePredicate = cb.equal(facility.get("postalCode"), keyword);
       return cb.or(namePredicate, addressPredicate, neighborhoodPredicate, facilityTypePredicate, postalCodePredicate);
     };
   }

@@ -42,8 +42,8 @@
     .mapboxgl-map {
 
       .map-marker {
-        height: 1.5rem;
-        width: 1.5rem;
+        height: 1.25rem;
+        width: 1.25rem;
         background-size: cover; 
         background-repeat: no-repeat;
         background-position: center; 
@@ -53,7 +53,56 @@
         &:hover {
           cursor: pointer;
           transform: scale(1.2);
+
+          .map-marker-facility {
+            font-family: 'Avenir';
+            display: flex;
+            border: 1px solid map-get($grey, 'light');
+            border-radius: 4px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+            .map-marker-facility-photo {
+              height: 100%;
+              width: 120px;
+              border-right: 1px solid map-get($grey, 'light');
+    
+              &:hover {
+                background-color: darken(white, 5%);
+              }
+            }
+
+            .map-marker-facility-info {
+              display: flex;
+              flex-direction: column;
+              padding: 0.5rem;
+
+              .map-marker-facility-name {
+                font-size: 0.75rem;
+                margin: 0 0 0.25rem;
+              }
+
+              .map-marker-facility-address {
+                font-size: 0.65rem;
+              }
+
+              .map-marker-facility-type {
+                font-size: 0.65rem;
+              }
+            }
+          }
         }
+      }
+
+      .map-marker-facility {
+        display: none;
+        position: absolute;
+        width: 320px;
+        height: 140px;
+        background-color: white;
+        border: 1px solid map-get($grey, 'dark');
+        bottom: 1.25rem;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       .mapboxgl-control-container {

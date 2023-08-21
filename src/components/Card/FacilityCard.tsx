@@ -18,8 +18,8 @@ const FacilityCard = ({ id, name, address, postalCode, neighborhood, latitude, l
       </Link>
       <div className='facility-card-info'>
         <div className='facility-card-name'>{name}</div>
-        <div className='facility-card-type'>{facilityType.name}</div>
         <div className='facility-card-address'>{address}, {postalCode}</div>
+        <div className='facility-card-type'>{facilityType.name}</div>
       </div>
     </div>
   );
