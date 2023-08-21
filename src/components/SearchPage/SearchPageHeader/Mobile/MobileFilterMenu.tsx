@@ -6,23 +6,26 @@ const MobileFilterMenu = () => {
   return (
     <div className="mobile-filter-menu">
       <FilterCategory 
-        fetchAll={fetchAllFacilityTypes}
-        selector={(state) => state.facilityTypes}
-        setSelected={setSelectedFacilityTypes}
+        fetchAllOptionsFromDatabase={fetchAllFacilityTypes}
+        fetchAllOptionsFromGlobalState={(state) => state.facilityTypes}
+        setSelectedOptions={setSelectedFacilityTypes}
+        fetchSelectedOptions={(state) => state.filters.selectedFacilityTypes}
         entityName={'Type'}
         categoryTitle={'FACILITY TYPES'}
       />
       <FilterCategory 
-        fetchAll={fetchAllAmenities}
-        selector={(state) => state.amenities}
-        setSelected={setSelectedAmenities}
+        fetchAllOptionsFromDatabase={fetchAllAmenities}
+        fetchAllOptionsFromGlobalState={(state) => state.amenities}
+        setSelectedOptions={setSelectedAmenities}
+        fetchSelectedOptions={(state) => state.filters.selectedAmenities}
         entityName={'Amenity'}
         categoryTitle={'AMENITIES'}
       />
       <FilterCategory 
-        fetchAll={fetchAllServices}
-        selector={(state) => state.services}
-        setSelected={setSelectedServices}
+        fetchAllOptionsFromDatabase={fetchAllServices}
+        fetchAllOptionsFromGlobalState={(state) => state.services}
+        setSelectedOptions={setSelectedServices}
+        fetchSelectedOptions={(state) => state.filters.selectedServices}
         entityName={'Service'}
         categoryTitle={'SERVICES'}
       />

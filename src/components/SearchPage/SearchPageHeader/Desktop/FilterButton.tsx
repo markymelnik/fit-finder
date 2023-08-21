@@ -1,50 +1,50 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { AppDispatch, RootState } from "../../../../redux/store";
 import Dropdown from "./Dropdown";
 
-interface filterButtonProps {
-  fetchAll: () => any;
-  selector: (state: RootState) => any;
-  setSelected: (items: string[]) => any;
+interface FilterButtonProps {
+  fetchAllOptionsFromDatabase: () => any;
+  fetchAllOptionsFromGlobalState: (state: RootState) => any;
+  setSelectedOptions: (allOptions: string[]) => any;
+  fetchSelectedOptions: (state: RootState) => string[];
   entityName: string;
   dropdownTitle: string;
 }
-const FilterButton = ({ fetchAll, selector, setSelected, entityName, dropdownTitle }: filterButtonProps) => {
+
+const FilterButton = ({ fetchAllOptionsFromDatabase, fetchAllOptionsFromGlobalState, setSelectedOptions, fetchSelectedOptions, entityName, dropdownTitle }: FilterButtonProps) => {
 
   const dispatch = useDispatch<AppDispatch>();
-  const [checkedItems, setCheckedItems] = useState<string[]>([]);
 
   useEffect(() => {
-    dispatch(fetchAll());
-  }, [dispatch, fetchAll])
+    dispatch(fetchAllOptionsFromDatabase());
+  }, [dispatch, fetchAllOptionsFromDatabase])
 
-  const fetchedItems = useSelector(selector);
-  const items = fetchedItems.allIds.map((id: number) => fetchedItems.byIds[id].name);
+  const allFetchedOptions = useSelector(fetchAllOptionsFromGlobalState);
+  const allOptions = allFetchedOptions.allIds.map((id: number) => allFetchedOptions.byIds[id].name);
+  const globalCheckedOptions = useSelector(fetchSelectedOptions);
 
-  const handleCheckboxClick = (option: string) => {
+  const handleCheckboxClick = (newlyCheckedOption: string) => {
     
-    let updatedItems;
+    let updatedCheckedOptions;
 
-    if (checkedItems.includes(option)) {
-      updatedItems = checkedItems.filter(item => item !== option);
+    if (globalCheckedOptions.includes(newlyCheckedOption)) {
+      updatedCheckedOptions = globalCheckedOptions.filter(currentlyCheckedOption => currentlyCheckedOption !== newlyCheckedOption);
     } else {
-      updatedItems = [...checkedItems, option];
+      updatedCheckedOptions = [...globalCheckedOptions, newlyCheckedOption];
     }
 
-    setCheckedItems(updatedItems);
-    dispatch(setSelected(updatedItems));
-
+    dispatch(setSelectedOptions(updatedCheckedOptions));
   };
   
   return (
     <Dropdown
+      allOptions={allOptions}
+      checkedOptions={globalCheckedOptions}
+      onCheckboxClick={handleCheckboxClick}
       buttonName={entityName}
       dropdownTitle={dropdownTitle}
-      options={items}
       customClass={entityName.toLowerCase()}
-      checkedOptions={checkedItems}
-      onCheckboxClick={handleCheckboxClick}
     />
   );
 };

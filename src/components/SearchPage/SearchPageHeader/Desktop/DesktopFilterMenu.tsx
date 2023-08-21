@@ -1,4 +1,4 @@
-import { fetchAllAmenities, fetchAllFacilityTypes, fetchAllServices } from '../../../../redux/apiRequests';
+import { fetchAllFacilityTypes } from '../../../../redux/apiRequests';
 import { setSelectedAmenities, setSelectedFacilityTypes, setSelectedServices } from '../../../../redux/slices/filterSlice';
 import FilterButton from './FilterButton';
 
@@ -6,23 +6,26 @@ const DesktopFilterMenu = () => {
   return (
     <div className='desktop-filter-menu'>
        <FilterButton
-        fetchAll={fetchAllFacilityTypes}
-        selector={(state) => state.facilityTypes}
-        setSelected={setSelectedFacilityTypes}
+        fetchAllOptionsFromDatabase={fetchAllFacilityTypes}
+        fetchAllOptionsFromGlobalState={(state) => state.facilityTypes}
+        setSelectedOptions={setSelectedFacilityTypes}
+        fetchSelectedOptions={(state) => state.filters.selectedFacilityTypes}
         entityName='Type'
         dropdownTitle='FACILITY TYPES'
       />
       <FilterButton
-        fetchAll={fetchAllAmenities}
-        selector={(state) => state.amenities}
-        setSelected={setSelectedAmenities}
+        fetchAllOptionsFromDatabase={fetchAllFacilityTypes}
+        fetchAllOptionsFromGlobalState={(state) => state.amenities}
+        setSelectedOptions={setSelectedAmenities}
+        fetchSelectedOptions={(state) => state.filters.selectedAmenities}
         entityName='Amenity'
         dropdownTitle='OFFERED AMENITIES'
       />
       <FilterButton
-        fetchAll={fetchAllServices}
-        selector={(state) => state.services}
-        setSelected={setSelectedServices}
+        fetchAllOptionsFromDatabase={fetchAllFacilityTypes}
+        fetchAllOptionsFromGlobalState={(state) => state.services}
+        setSelectedOptions={setSelectedServices}
+        fetchSelectedOptions={(state) => state.filters.selectedServices}
         entityName='Service'
         dropdownTitle="OFFERED SERVICES"
       />

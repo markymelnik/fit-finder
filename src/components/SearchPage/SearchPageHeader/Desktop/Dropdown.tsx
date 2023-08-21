@@ -4,15 +4,16 @@ import UpArrow from '../../../../assets/imgs/up-arrow.png';
 import DownArrow from '../../../../assets/imgs/down-arrow.png';
 
 interface Dropdown {
-  buttonName: string;
-  dropdownTitle: string;
-  options: string[];
-  customClass: string;
+  allOptions: string[];
   checkedOptions: string[];
   onCheckboxClick: (option: string) => void;
+  buttonName: string;
+  dropdownTitle: string;
+  customClass: string;
 }
 
-const Dropdown = ({ buttonName, dropdownTitle, options, customClass, checkedOptions, onCheckboxClick }: Dropdown) => {
+const Dropdown = ({ allOptions, checkedOptions, onCheckboxClick, buttonName, dropdownTitle,  customClass }: Dropdown) => {
+
   const [dropdownVisible, setDropdownVisible] = useState<boolean>(false);
   const dropdownRef = useRef(null);
   useOutsideClick(dropdownRef, () => setDropdownVisible(false));
@@ -35,7 +36,7 @@ const Dropdown = ({ buttonName, dropdownTitle, options, customClass, checkedOpti
         <div className={`${customClass}-dropdown`}>
           <ul className='dropdown-list'>
             <div className="dropdown-title">{dropdownTitle}</div>
-            {options.map((option, index) => (
+            {allOptions.map((option, index) => (
               <li key={index} className="dropdown-option">
                 <input
                   className="option-checkbox"
