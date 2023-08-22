@@ -90,7 +90,7 @@
 }
 .mobile-filter-container .mobile-filter-menu .filter-category-container .filter-category-list .filter-category-option .filter-option-text {
   font-size: 1rem;
-  padding-top: 0.25rem;
+  padding-top: 0.2rem;
 }
 .mobile-filter-container .mobile-filter-done-btn-container {
   display: flex;
@@ -533,7 +533,7 @@
 .amenity-dropdown-btn,
 .service-dropdown-btn {
   height: 100%;
-  width: 90px;
+  width: 85px;
   font-size: 14px;
   display: flex;
   justify-content: center;
@@ -567,8 +567,34 @@
   border: 1px solid hsl(208, 21%, 81%);
 }
 
-.dropdown-button-text {
+.type-dropdown-btn .with-delete-icon,
+.amenity-dropdown-btn .with-delete-icon,
+.service-dropdown-btn .with-delete-icon {
+  width: 100px;
+}
+
+.dropdown-btn-content-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+}
+.dropdown-btn-content-container .dropdown-btn-checkedcount {
   font-size: 0.85rem;
+}
+.dropdown-btn-content-container .dropdown-btn-text {
+  font-size: 0.85rem;
+}
+
+.dropdown-btn-delete {
+  height: 0.8rem;
+  width: 0.8rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 25px;
+}
+.dropdown-btn-delete:hover {
+  background-color: hsl(210, 16%, 76%);
 }
 
 .type-dropdown,
@@ -763,7 +789,7 @@
 }
 .with-map .map-overlay-container {
   width: 100%;
-  height: 80vh;
+  height: calc(100vh - 250px);
   position: sticky;
   top: 150px;
   /* .map-overlay {
@@ -980,7 +1006,7 @@
 .search-page-searchbar {
   display: flex;
   height: 100%;
-  width: clamp(180px, 80%, 400px);
+  width: clamp(180px, 80%, 350px);
   border-radius: 4px;
 }
 .search-page-searchbar form {
@@ -1276,6 +1302,9 @@
   font-size: 1.5rem;
   background: transparent;
   height: 2rem;
+}
+.facility-navigation-btns .back-to-search-container .back-btn:hover {
+  cursor: pointer;
 }
 .facility-navigation-btns .back-to-search-container .back-btn-icon {
   height: 1.75rem;

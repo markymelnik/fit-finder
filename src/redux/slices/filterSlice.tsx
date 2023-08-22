@@ -20,19 +20,15 @@ const filterSlice = createSlice({
   reducers: {
     setEnteredKeyword: (state, action: PayloadAction<string>) => {
       state.enteredKeyword = action.payload;
-      console.log("In the reducer: ", action.payload);
     },
     setSelectedFacilityTypes: (state, action: PayloadAction<string[]>) => {
       state.selectedFacilityTypes = action.payload;
-      console.log("In the reducer: ", action.payload);
     },
     setSelectedAmenities: (state, action: PayloadAction<string[]>) => {
       state.selectedAmenities = action.payload;
-      console.log("In the reducer: ", action.payload);
     },
     setSelectedServices: (state, action: PayloadAction<string[]>) => {
       state.selectedServices = action.payload;
-      console.log("In the reducer: ", action.payload);
     },
     resetAllFilters: (_state) => {
       return initialFilterState;

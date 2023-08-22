@@ -81,7 +81,6 @@ const fetchFacilitiesByParameters = (enteredKeyword: string, selectedFacilityTyp
     selectedServices.forEach(service => params.append('services', service));
 
     const response = await Axios.get('http://localhost:8080/api/facility/search', { params } );
-    console.log(response.data);
     dispatch(setFacilities(response.data));
   } catch (err) {
     console.error('Error fetching facilities', err);

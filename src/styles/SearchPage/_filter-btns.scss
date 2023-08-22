@@ -9,10 +9,8 @@
 .amenity-dropdown-btn,
 .service-dropdown-btn {
   height: 100%;
-  width: 90px;
   font-size: 14px;
   @include center-elements;
-  gap: 0.25rem;
   border: 1px solid map-get($grey, dark);
   border-radius: 4px;
   color: map-get($grey, 'darker');
@@ -34,9 +32,46 @@
   }
 }
 
-.dropdown-button-text {
-  font-size: 0.85rem;
+.type-dropdown-btn.with-delete-icon {
+  width: 100px;
 }
+
+.amenity-dropdown-btn.with-delete-icon {
+  width: 110px;
+}
+
+.service-dropdown-btn.with-delete-icon {
+  width: 110px;
+}
+
+
+
+.dropdown-btn-content-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+
+  .dropdown-btn-checkedcount {
+    font-size: 0.85rem;
+  }
+  .dropdown-btn-text {
+    font-size: 0.85rem;
+  }
+}
+
+.dropdown-btn-delete {
+  height: 0.8rem;
+  width: 0.8rem;
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 25px;
+
+  &:hover {
+    background-color: map-get($grey, 'light');
+  }
+}
+
 
 .type-dropdown,
 .amenity-dropdown,

@@ -8,8 +8,6 @@ import { RootState } from "../../../../redux/store";
 const MobileMenu = () => {
 
   const isMobileMenuOpen = useSelector((state: RootState) => state.isMobileMenuOpen.isMobileMenuOpen);
-
-  console.log(isMobileMenuOpen);
   
   return (
     <div className={`mobile-menu-container ${isMobileMenuOpen ? 'active' : ''}`}>

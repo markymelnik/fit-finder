@@ -2,17 +2,21 @@ import { useState, useRef } from 'react';
 import useOutsideClick from '../../../../hooks/useOutsideClick';
 import UpArrow from '../../../../assets/imgs/up-arrow.png';
 import DownArrow from '../../../../assets/imgs/down-arrow.png';
+import SaveFiltersButton from '../../../SaveFiltersButton';
+import DeleteIcon from '../../../../assets/imgs/delete-icon.png';
 
 interface Dropdown {
   allOptions: string[];
   checkedOptions: string[];
   onCheckboxClick: (option: string) => void;
+  onClearChecks: () => void;
+  checkedCount: number;
   buttonName: string;
   dropdownTitle: string;
   customClass: string;
 }
 
-const Dropdown = ({ allOptions, checkedOptions, onCheckboxClick, buttonName, dropdownTitle,  customClass }: Dropdown) => {
+const Dropdown = ({ allOptions, checkedOptions, onCheckboxClick, checkedCount, onClearChecks, buttonName, dropdownTitle,  customClass }: Dropdown) => {
 
   const [dropdownVisible, setDropdownVisible] = useState<boolean>(false);
   const dropdownRef = useRef(null);
@@ -22,14 +26,34 @@ const Dropdown = ({ allOptions, checkedOptions, onCheckboxClick, buttonName, dro
     onCheckboxClick(option);
   }
 
+  const handleClearChecks = () => {
+    onClearChecks();
+  }
+
   return (
     <div className="dropdown-container" ref={dropdownRef}>
       <button
-        className={`${customClass}-dropdown-btn ${dropdownVisible ? 'active': ''}`}
+        className={`${customClass}-dropdown-btn ${dropdownVisible ? 'active': ''} ${checkedCount > 0 ? 'with-delete-icon' : ''}`}
         onClick={() => setDropdownVisible(prevVisible => !prevVisible)}
       >
-        <div className="dropdown-button-text">{buttonName}</div>
+        <div className="dropdown-btn-content-container">
+          <div className="dropdown-btn-checkedcount">
+          {checkedCount > 0 ? `${checkedCount}` : ''}
+          </div>
+          <div className="dropdown-btn-text">
+            {buttonName} 
+          </div>
+        </div>
         <img src={dropdownVisible ? UpArrow : DownArrow} alt="arrow "className="dropdown-arrow"></img>
+        {
+          checkedCount > 0 && 
+          <div 
+            className="dropdown-btn-delete" 
+            onClick={handleClearChecks} 
+            style={{ backgroundImage: `url(${DeleteIcon})`}}
+          >
+          </div>
+        }
       </button>
 
       {dropdownVisible && (
@@ -47,7 +71,7 @@ const Dropdown = ({ allOptions, checkedOptions, onCheckboxClick, buttonName, dro
                 <div className="option-text">{option}</div>
               </li>
             ))}
-            <button className="checkbox-done-btn" onClick={() => setDropdownVisible(false)}>Done</button>
+            <SaveFiltersButton customClass='checkbox-done-btn' buttonText='Done' exitMobileFilterMenu={() => setDropdownVisible(false)}/>
           </ul>
         </div>
       )}

@@ -36,12 +36,18 @@ const FilterButton = ({ fetchAllOptionsFromDatabase, fetchAllOptionsFromGlobalSt
 
     dispatch(setSelectedOptions(updatedCheckedOptions));
   };
+
+  const handleClearChecks = () => {
+    dispatch(setSelectedOptions([]));
+  }
   
   return (
     <Dropdown
       allOptions={allOptions}
       checkedOptions={globalCheckedOptions}
       onCheckboxClick={handleCheckboxClick}
+      checkedCount={globalCheckedOptions.length}
+      onClearChecks={handleClearChecks}
       buttonName={entityName}
       dropdownTitle={dropdownTitle}
       customClass={entityName.toLowerCase()}
