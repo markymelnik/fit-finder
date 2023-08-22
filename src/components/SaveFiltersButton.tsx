@@ -1,42 +1,25 @@
-import { MouseEvent } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { AppDispatch, RootState } from "../redux/store";
-import handleSearchSubmit from "./handleSearchSubmit";
-import { useNavigate } from "react-router-dom";
+import useFacilitySearch from "./useFacilitySearch";
 
 interface SaveFiltersButtonProps {
   customClass: string;
   buttonText: string;
-  exitMobileFilterMenu: () => void;
+  onClick: () => void;
 }
 
-const SaveFiltersButton = ({ customClass, buttonText, exitMobileFilterMenu }: SaveFiltersButtonProps) => {
-  const enteredKeyword = useSelector((state: RootState) => state.filters.enteredKeyword);
-  const selectedFacilityTypes = useSelector((state: RootState) => state.filters.selectedFacilityTypes);
-  const selectedAmenities = useSelector((state: RootState) => state.filters.selectedAmenities);
-  const selectedServices = useSelector((state: RootState) => state.filters.selectedServices);
+const SaveFiltersButton = ({ customClass, buttonText, onClick }: SaveFiltersButtonProps) => {
 
-  const dispatch = useDispatch<AppDispatch>();
-  const navigate = useNavigate();
+  const executeSearch = useFacilitySearch();
 
-  const handleSave = (event: MouseEvent<HTMLButtonElement>) => {
-    handleSearchSubmit(
-      event,
-      enteredKeyword,
-      selectedFacilityTypes,
-      selectedAmenities,
-      selectedServices,
-      dispatch,
-      navigate
-    )
-    exitMobileFilterMenu();
+  const handleSave = (event: any) => {
+    event.preventDefault();
+    executeSearch();
+    onClick();
   }
   
   return (
     <button 
       className={customClass}
-      onClick={handleSave}
+      onClick={(event) => handleSave(event)}
     >
       {buttonText}
     </button>

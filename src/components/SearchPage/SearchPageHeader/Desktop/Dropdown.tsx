@@ -1,9 +1,10 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import useOutsideClick from '../../../../hooks/useOutsideClick';
 import UpArrow from '../../../../assets/imgs/up-arrow.png';
 import DownArrow from '../../../../assets/imgs/down-arrow.png';
 import SaveFiltersButton from '../../../SaveFiltersButton';
 import DeleteIcon from '../../../../assets/imgs/delete-icon.png';
+import useFacilitySearch from '../../../useFacilitySearch';
 
 interface Dropdown {
   allOptions: string[];
@@ -21,6 +22,12 @@ const Dropdown = ({ allOptions, checkedOptions, onCheckboxClick, checkedCount, o
   const [dropdownVisible, setDropdownVisible] = useState<boolean>(false);
   const dropdownRef = useRef(null);
   useOutsideClick(dropdownRef, () => setDropdownVisible(false));
+
+  const executeSearch = useFacilitySearch();
+
+  useEffect(() => {
+    executeSearch();
+  }, [checkedOptions]);
   
   const handleCheckboxChange = (option: string) => {
     onCheckboxClick(option);
@@ -28,6 +35,7 @@ const Dropdown = ({ allOptions, checkedOptions, onCheckboxClick, checkedCount, o
 
   const handleClearChecks = () => {
     onClearChecks();
+    setDropdownVisible(prevVisible => !prevVisible);
   }
 
   return (
@@ -71,7 +79,7 @@ const Dropdown = ({ allOptions, checkedOptions, onCheckboxClick, checkedCount, o
                 <div className="option-text">{option}</div>
               </li>
             ))}
-            <SaveFiltersButton customClass='checkbox-done-btn' buttonText='Done' exitMobileFilterMenu={() => setDropdownVisible(false)}/>
+            <SaveFiltersButton customClass='checkbox-done-btn' buttonText='Done' onClick={() => {setDropdownVisible(false)}}/>
           </ul>
         </div>
       )}

@@ -8,7 +8,6 @@ import app.fitnessfinderapp.backend.amenity.Amenity;
 import app.fitnessfinderapp.backend.services.Services;
 import jakarta.persistence.criteria.Join;
 import jakarta.persistence.criteria.Predicate;
-import jakarta.persistence.criteria.Root;
 
 public class FacilitySpecifications {
  
@@ -41,8 +40,7 @@ public class FacilitySpecifications {
       if (amenities == null || amenities.isEmpty()) {
         return null;
       }
-      Root<Facility> root = cq.from(Facility.class);
-      Join<Facility, Amenity> join = root.join("amenities");
+      Join<Facility, Amenity> join = facility.join("amenities");
       return cb.and(join.get("name").in(amenities));
     };
   }
@@ -52,8 +50,7 @@ public class FacilitySpecifications {
       if (services == null || services.isEmpty()) {
         return null;
       }
-      Root<Facility> root = cq.from(Facility.class);
-      Join<Facility, Services> join = root.join("services");
+      Join<Facility, Services> join = facility.join("services");
       return cb.and(join.get("name").in(services));
     };
   }

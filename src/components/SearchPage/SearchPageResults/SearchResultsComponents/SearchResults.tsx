@@ -21,27 +21,30 @@ const SearchResults = () => {
   }
 
   return (
-    <div className='search-results-list'>
-      {facilitiesAllIds.map((facilityId) => {
-        const facility = facilitiesByIds[facilityId];
-        return (
-          <Card
-            key={facility.id}
-            id={facility.id}
-            name={facility.name}
-            address={facility.address}
-            postalCode={facility.postalCode}
-            neighborhood={facility.neighborhood}
-            latitude={facility.latitude}
-            longitude={facility.longitude}
-            facilityType={facility.facilityType}
-            amenities={facility.amenities}
-            services={facility.services}
-            onClick={handleCardClick}
-          />
-        )
-      })}
+    <div className="search-results-container">
+      <div className='search-results-list'>
+        {facilitiesAllIds.map((facilityId) => {
+          const facility = facilitiesByIds[facilityId];
+          return (
+            <Card
+              key={facility.id}
+              id={facility.id}
+              name={facility.name}
+              address={facility.address}
+              postalCode={facility.postalCode}
+              neighborhood={facility.neighborhood}
+              latitude={facility.latitude}
+              longitude={facility.longitude}
+              facilityType={facility.facilityType}
+              amenities={facility.amenities}
+              services={facility.services}
+              onClick={handleCardClick}
+            />
+          )
+        })}
+      </div>
     </div>
+    
   );
 };
 

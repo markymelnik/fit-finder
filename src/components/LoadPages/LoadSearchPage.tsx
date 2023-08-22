@@ -13,7 +13,7 @@ const LoadSearchPage = () => {
     <>
       <Header />
       <SearchPage />
-      {!isMobile && isMapOverlayShown || <Footer />}
+      {!isMapOverlayShown && <Footer />}
     </>
   );
 };

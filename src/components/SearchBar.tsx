@@ -1,13 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch } from '../redux/store';
 import { setEnteredKeyword } from '../redux/slices/filterSlice';
-import { useNavigate } from 'react-router-dom';
 import { ChangeEvent, FormEvent } from 'react';
 import { RootState } from '../redux/store';
 import SearchIcon from '../assets/imgs/search-icon.png'
 import DeleteIcon from '../assets/imgs/delete-icon.png';
-import handleSearchSubmit from './handleSearchSubmit';
-import handleSearchInputDelete from './handleSearchInputDelete';
+import useFacilitySearch from './useFacilitySearch';
 
 interface SearchBarProps {
   containerClass: string;
@@ -17,31 +15,25 @@ interface SearchBarProps {
 }
 
 const SearchBar = ({ containerClass, submitButtonClass, deleteButtonClass, placeholderText }: SearchBarProps ) => {
-  const enteredKeyword = useSelector((state: RootState) => state.filters.enteredKeyword);
-  const selectedFacilityTypes = useSelector((state: RootState) => state.filters.selectedFacilityTypes);
-  const selectedAmenities = useSelector((state: RootState) => state.filters.selectedAmenities);
-  const selectedServices = useSelector((state: RootState) => state.filters.selectedServices);
 
   const dispatch = useDispatch<AppDispatch>();
-  const navigate = useNavigate();
-
-  const deleteInput = handleSearchInputDelete();
+  const executeSearch = useFacilitySearch();
+  const enteredKeyword = useSelector((state: RootState) => state.filters.enteredKeyword);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setEnteredKeyword(event.target.value));
   };
 
   const onSearchSubmit = (event: FormEvent<HTMLFormElement>) => {
-    handleSearchSubmit(
-      event,
-      enteredKeyword,
-      selectedFacilityTypes,
-      selectedAmenities,
-      selectedServices,
-      dispatch,
-      navigate
-    )
+    event.preventDefault();
+    executeSearch();
   }
+
+  const deleteInput = (event: any) => {
+    event.preventDefault();
+    dispatch(setEnteredKeyword(''));
+    
+  };
 
   return (
     <div className={containerClass}>

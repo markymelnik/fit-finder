@@ -18,13 +18,13 @@ const MobileFilter = () => {
   return (
     <div className={`mobile-filter-container ${isMobileFilterOpen ? 'active' : ''}`}>
       <div className="mobile-filter-header">
-        <SaveFiltersButton customClass='mobile-filter-save-btn' buttonText='SAVE' exitMobileFilterMenu={handleSaveButtonClick}/>
+        <SaveFiltersButton customClass='mobile-filter-save-btn' buttonText='SAVE' onClick={handleSaveButtonClick}/>
         <div className="mobile-filter-title">Filter Options</div>
         <ResetFiltersButton customClass='mobile-filter-reset-btn' buttonText='RESET' />
       </div>
       <MobileFilterMenu />
       <div className="mobile-filter-done-btn-container">
-        <SaveFiltersButton customClass='mobile-filter-done-btn' buttonText='DONE' exitMobileFilterMenu={handleSaveButtonClick}/>
+        <SaveFiltersButton customClass='mobile-filter-done-btn' buttonText='DONE' onClick={handleSaveButtonClick}/>
       </div>
     </div>
   )
