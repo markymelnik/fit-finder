@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../redux/store";
+import CheckmarkIcon from '../../../../assets/imgs/checkmark-icon.png';
 
 const FacilityType = () => {
 
@@ -17,9 +18,13 @@ const FacilityType = () => {
   return (
     <div className="facility-type-container">
       <div className="facility-type-header">TYPE</div>
-      <div className="facility-type">
-        {selectedFacility.facilityType.name}
+      <div className="checkmark-container">
+        <div className="facility-checkmark" style={{ backgroundImage: `url(${CheckmarkIcon})`}}></div>
+        <div className="facility-type">
+          {selectedFacility.facilityType.name}
+        </div>
       </div>
+      
     </div>
   )
 }

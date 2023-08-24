@@ -260,8 +260,9 @@
 }
 .navigation-bar .login-link {
   border: 1px solid white;
+  font-size: 1rem;
   border-radius: 8px;
-  padding: 0.6rem 1.2rem;
+  padding: 0.4rem 1rem;
   transition: border 0.1s ease-in-out;
   transition: color 0.1s ease-in-out;
 }
@@ -1162,7 +1163,7 @@
   align-items: flex-start;
   max-width: 800px;
   width: 100%;
-  margin: 1.75rem 0 0.75rem;
+  margin: 2rem 0 0.75rem;
 }
 .facility-page-header .facility-name {
   font-size: 1.75rem;
@@ -1211,13 +1212,13 @@
   flex-direction: column;
   max-width: 800px;
   margin: 2rem 0;
-  padding: 1rem;
+  padding: 1.5rem;
   border: 1px solid hsl(210, 16%, 76%);
 }
 .facility-about .facility-about-header {
   font-size: 1.5rem;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+  padding: 0 0 0.75rem;
+  margin-bottom: 1.5rem;
   border-bottom: 1px solid hsl(210, 16%, 76%);
 }
 
@@ -1245,6 +1246,7 @@
 }
 .facility-data-left .facility-description-text {
   font-size: 1rem;
+  line-height: 1.6;
 }
 
 .facility-data-right {
@@ -1264,23 +1266,34 @@
 .facility-data-right .facility-offers .facility-services-container {
   display: flex;
   flex-direction: column;
-  padding: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
 }
 .facility-data-right .facility-offers .facility-type-header,
 .facility-data-right .facility-offers .facility-amenities-header,
 .facility-data-right .facility-offers .facility-services-header {
   display: flex;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
 }
-.facility-data-right .facility-offers .facility-type,
-.facility-data-right .facility-offers .facility-amenity,
-.facility-data-right .facility-offers .facility-service {
+.facility-data-right .facility-offers .checkmark-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 1rem;
+  margin: 0 0 0.75rem 1rem;
+}
+.facility-data-right .facility-offers .checkmark-container .facility-checkmark {
+  height: 1rem;
+  width: 1rem;
+  background-size: 0.8rem 0.8rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+}
+.facility-data-right .facility-offers .checkmark-container .facility-type,
+.facility-data-right .facility-offers .checkmark-container .facility-amenity,
+.facility-data-right .facility-offers .checkmark-container .facility-service {
   font-size: 0.95rem;
-  margin: 0 0 0.5rem;
-  padding: 0 1rem 0;
-  color: hsl(207, 12%, 43%);
 }
 
 .no-facility-found {

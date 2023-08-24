@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
-import { servicesSelector } from "../../../../redux/selectors/dataSelector"
+import { servicesSelector } from "../../../../redux/selectors/dataSelector";
+import CheckmarkIcon from '../../../../assets/imgs/checkmark-icon.png';
 
 const FacilityServices = () => {
 
@@ -19,9 +20,13 @@ const FacilityServices = () => {
       <div className="facility-services-header">SERVICES</div>
       {services.map((service: string, index: number) => {
         return (
-          <div className="facility-service" key={index}>
-            {service}
+          <div className="checkmark-container" key={index}>
+            <div className="facility-checkmark" style={{ backgroundImage: `url(${CheckmarkIcon})`}}></div>
+            <div className="facility-service" >
+              {service}
+            </div>
           </div>
+          
         )
       })}
     </div>
