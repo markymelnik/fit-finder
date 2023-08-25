@@ -1,11 +1,11 @@
 import DeveloperInformation from './DeveloperInformation';
-import SocialMediaLinks from './SocialMediaLinks/SocialMediaLinks';
+import FooterLinks from './FooterLinks/FooterLinks';
 
 const FooterBottom = () => {
   return (
     <div className='footer-bottom'>
       <DeveloperInformation />
-      <SocialMediaLinks />
+      <FooterLinks />
     </div>
   );
 };

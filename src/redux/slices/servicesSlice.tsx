@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Service } from "../types";
+import { Service } from "../../types/types";
 
 interface ServicesState {
   byIds: Record<number, Service>

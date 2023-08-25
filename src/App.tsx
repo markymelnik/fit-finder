@@ -1,10 +1,10 @@
 import './styles/main.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoadHomePage from './components/LoadPages/LoadHomePage';
-import LoadSearchPage from './components/LoadPages/LoadSearchPage';
-import LoadSelectedFacilityPage from './components/LoadPages/LoadSelectedFacilityPage';
+import LoadHomePage from './pages/LoadHomePage';
+import LoadSearchPage from './pages/LoadSearchPage';
+import LoadSelectedFacilityPage from './pages/LoadFacilityPage';
 import useIsMobile from './hooks/useIsMobile';
-import MobileFilter from './components/SearchPage/SearchPageHeader/Mobile/MobileFilter';
+import MobileFilter from './components/Main/SearchPage/Subheader/Mobile/MobileFilterMenu/MobileFilter';
 
 const App = () => {
   useIsMobile();

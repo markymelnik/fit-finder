@@ -16,4 +16,3 @@ const useOutsideClick = (ref: MutableRefObject<HTMLElement | null>, callback: ()
 };
 
 export default useOutsideClick;
-
