@@ -7,7 +7,7 @@ import { setServices } from './slices/servicesSlice';
 
 const fetchAllFacilities = () => async (dispatch: AppDispatch) => {
   try {
-    const response = await Axios.get('http://localhost:8080/api/facility');
+    const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/facility`);
     dispatch(setFacilities(response.data));
   } catch (err) {
     console.error('Error fetching facilities', err);
@@ -16,7 +16,7 @@ const fetchAllFacilities = () => async (dispatch: AppDispatch) => {
 
 const fetchAllFacilityTypes = () => async (dispatch: AppDispatch) => {
   try {
-    const response = await Axios.get('http://localhost:8080/api/types');
+    const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/types`);
     dispatch(setFacilityTypes(response.data));
   } catch (err) {
     console.error('Error fetching facility types', err);
@@ -25,7 +25,7 @@ const fetchAllFacilityTypes = () => async (dispatch: AppDispatch) => {
 
 const fetchFacilityTypeByFacilityId = (facilityId: number) => async (dispatch: AppDispatch) => {
   try {
-    const response = await Axios.get(`http://localhost:8080/api/${facilityId}/type`);
+    const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/${facilityId}/type`);
     dispatch(setFacilityTypes(response.data));
   } catch (err) {
     console.log('Error fetching facility types', err);
@@ -34,7 +34,7 @@ const fetchFacilityTypeByFacilityId = (facilityId: number) => async (dispatch: A
 
 const fetchAllAmenities = () => async (dispatch: AppDispatch) => {
   try {
-    const response = await Axios.get('http://localhost:8080/api/amenities');
+    const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/amenities`);
     dispatch(setAmenities(response.data));
   } catch (err) {
     console.error('Error fetching amenities', err);
@@ -43,7 +43,7 @@ const fetchAllAmenities = () => async (dispatch: AppDispatch) => {
 
 const fetchAmenitiesByFacilityId = (facilityId: number) => async (dispatch: AppDispatch) => {
   try {
-    const response = await Axios.get(`http://localhost:8080/api/facility/${facilityId}/amenities`);
+    const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/facility/${facilityId}/amenities`);
     dispatch(setAmenities(response.data));
   } catch (err) {
     console.error('Error fetching amenities', err);
@@ -52,7 +52,7 @@ const fetchAmenitiesByFacilityId = (facilityId: number) => async (dispatch: AppD
 
 const fetchAllServices = () => async (dispatch: AppDispatch) => {
   try { 
-    const response = await Axios.get('http://localhost:8080/api/services');
+    const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/services`);
     dispatch(setServices(response.data));
   } catch (err) {
     console.error('Error fetching services', err);
@@ -61,7 +61,7 @@ const fetchAllServices = () => async (dispatch: AppDispatch) => {
 
 const fetchServicesByFacilityId = (facilityId: number) => async (dispatch: AppDispatch) => {
   try {
-    const response = await Axios.get(`http://localhost:8080/api/facility/${facilityId}/services`);
+    const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/facility/${facilityId}/services`);
     dispatch(setServices(response.data));
   } catch (err) {
     console.error('Error fetching services', err);
@@ -80,7 +80,7 @@ const fetchFacilitiesByParameters = (enteredKeyword: string, selectedFacilityTyp
     selectedAmenities.forEach(amenity => params.append('amenities', amenity));
     selectedServices.forEach(service => params.append('services', service));
 
-    const response = await Axios.get('http://localhost:8080/api/facility/search', { params } );
+    const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/facility/search`, { params } );
     dispatch(setFacilities(response.data));
   } catch (err) {
     console.error('Error fetching facilities', err);
