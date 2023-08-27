@@ -1,0 +1,19 @@
+.without-map {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.with-map {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .with-map {
+    flex-direction: row;
+  }
+}

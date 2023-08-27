@@ -4,6 +4,7 @@ import BusinessLink from "../../NavigationBar/NavigationLinks/BusinessLink";
 import HelpLink from "../../NavigationBar/NavigationLinks/HelpLink";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../redux/store";
+import './_mobile-menu.scss';
 
 const MobileMenu = () => {
 

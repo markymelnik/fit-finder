@@ -1,0 +1,60 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/mixins';
+
+.mobile-menu-container {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  background-color: white;
+  border-right: 1px solid map-get($grey, 'dark');
+  z-index: 3;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-header {
+    @include center-elements;
+    width: 100%;
+    padding: 2rem 0;
+    font-size: 1.25rem;
+  }
+
+  .mobile-menu-links {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+  
+    .business-link,
+    .about-link,
+    .help-link {
+      display: flex;
+      padding: 1rem;
+      font-size: 1rem;
+      border: none;
+      border-bottom: 1px solid map-get($grey, 'light');
+      background-color: white;
+    }
+  
+    .business-link {
+      border-top: 1px solid map-get($grey, 'light');
+    }
+  
+    .login-link {
+      border: 1px solid black;
+      border-radius: 8px;
+      background: transparent;
+      margin: 2rem 0;
+      padding: 0.6rem 1.2rem;
+      width: 7rem;
+      font-size: 1rem;
+      @include center-elements;
+      align-self: center;
+      
+    }
+  }
+}

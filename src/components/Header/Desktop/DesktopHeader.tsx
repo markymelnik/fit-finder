@@ -1,9 +1,10 @@
-import Logo from '../Logo';
+import Logo from '../Logo/Logo';
 import NavigationBar from '../NavigationBar/NavigationBar';
+import '../_header.scss';
 
 const DesktopHeader = () => {
   return (
-    <header className='header-container desktop-header'>
+    <header className='header-container'>
       <Logo />
       <NavigationBar />
     </header>

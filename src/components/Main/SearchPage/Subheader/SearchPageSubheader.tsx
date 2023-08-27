@@ -1,9 +1,10 @@
 import { useSelector } from 'react-redux';
-import SearchBar from './SearchPageSearchBar';
-import MobileFilterButton from './Mobile/MobileFilterButton';
+import SearchBar from './SearchPageSearchbar/SearchPageSearchBar';
+import MobileFilterButton from './Mobile/MobileFilterButton/MobileFilterButton';
 import DesktopFilterMenu from './Desktop/DesktopFilterMenu/DesktopFilterMenu';
 import { RootState } from '../../../../redux/store';
-import DesktopMapSwitchButton from './Desktop/DesktopMapSwitchButton';
+import DesktopMapSwitchButton from './Desktop/DesktopMapSwitchButton/DesktopMapSwitchButton';
+import './_subheader.scss';
 
 const SearchPageSubheader = () => {
 

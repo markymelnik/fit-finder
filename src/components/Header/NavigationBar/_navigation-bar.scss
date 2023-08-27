@@ -1,0 +1,6 @@
+@import '../../../styles/mixins';
+
+.navigation-bar {
+  @include center-elements;
+  height: auto;
+}

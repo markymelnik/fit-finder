@@ -1,0 +1,29 @@
+@import '../../../../styles/mixins';
+@import '../../../../styles/colors';
+@import '../../../../styles/transitions';
+
+.footer-links {
+  height: auto;
+  @include center-elements;
+  gap: 2.5rem;
+
+  .something-link {
+    height: 3rem;
+    width: 3rem;
+    background-color: map-get($grey, 'light');
+    border-radius: 4px;
+  
+    @include smooth-hover(transform);
+  
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-links {
+    margin: 0;
+  }
+}

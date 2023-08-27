@@ -1,5 +1,5 @@
-import SearchResults from "../SearchResultsComponents/SearchResults";
-import QueryResultInfo from "../SearchResultsComponents/QueryResultInfo";
+import SearchResults from "../SearchResults/SearchResults";
+import QueryResultInfo from "../QuerySection/QueryResultInfo";
 
 const DesktopResultsWithoutMap = () => {
 

@@ -1,7 +1,7 @@
-import TopDescription from "./FacilityPageComponents/FacilityInformation/TopDescription";
-import FacilityPhoto from "./FacilityPageComponents/FacilityInformation/FacilityPhoto";
-import FacilityAbout from "./FacilityPageComponents/FacilityInformation/FacilityAbout/FacilityAbout";
-import BackButton from "./FacilityPageComponents/BackButton";
+import TopDescription from "./FacilityInformation/TopDescription/TopDescription";
+import FacilityPhoto from "./FacilityInformation/FacilityPhoto/FacilityPhoto";
+import FacilityAbout from "./FacilityInformation/FacilityAbout/FacilityAbout";
+import BackButton from "./BackButton/BackButton";
 
 const SelectedFacilityPage = () => {
 

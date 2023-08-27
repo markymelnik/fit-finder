@@ -1,0 +1,10 @@
+.dev-info {
+  font-size: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .dev-info {
+    text-align: left;
+  }
+}

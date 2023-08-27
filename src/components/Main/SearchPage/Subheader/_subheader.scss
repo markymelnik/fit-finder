@@ -1,0 +1,36 @@
+@import '../../../../styles/colors';
+
+.search-page-header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+  border: none;
+  background-color: white;
+  border-bottom: 1px solid map-get($grey, 'lighter');
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 70px;
+  z-index: 1;
+}
+
+.filter-options-container {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .search-page-header {
+    justify-content: left;
+  }
+
+  .filter-options-container {
+    justify-content: left;
+  }
+}

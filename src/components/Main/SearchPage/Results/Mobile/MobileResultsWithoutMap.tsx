@@ -1,5 +1,5 @@
-import QueryResultInfo from "../SearchResultsComponents/QueryResultInfo";
-import SearchResults from "../SearchResultsComponents/SearchResults";
+import QueryResultInfo from "../QuerySection/QueryResultInfo";
+import SearchResults from "../SearchResults/SearchResults";
 
 const MobileResultsWithoutMap = () => {
 

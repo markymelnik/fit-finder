@@ -1,8 +1,9 @@
 import SearchPageSubheader from "./Subheader/SearchPageSubheader";
 import ResultsContainer from "./Results/ResultsContainer";
-import MobileMapSwitchButton from "./MobileMapSwitchButton";
+import MobileMapSwitchButton from "./MobileMapSwitchButton/MobileMapSwitchButton";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
+import './_search-container.scss';
 
 const SearchPage = () => {
 

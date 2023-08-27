@@ -1,10 +1,10 @@
-import './styles/main.scss';
+import './styles/global.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoadHomePage from './pages/LoadHomePage';
 import LoadSearchPage from './pages/LoadSearchPage';
 import LoadSelectedFacilityPage from './pages/LoadFacilityPage';
 import useIsMobile from './hooks/useIsMobile';
-import MobileFilter from './components/Main/SearchPage/Subheader/Mobile/MobileFilterMenu/MobileFilter';
+import MobileFilter from './components/Main/SearchPage/Subheader/Mobile/MobileFilterContainer/MobileFilter';
 
 const App = () => {
   useIsMobile();

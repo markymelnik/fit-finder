@@ -1,0 +1,7 @@
+@import '../../../styles/colors';
+
+.footer-top {
+  height: 4rem;
+  width: 100%;
+  border-bottom: 1px solid map-get($grey, 'light');
+}

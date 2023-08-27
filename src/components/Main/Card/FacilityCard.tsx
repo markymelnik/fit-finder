@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Facility } from '../../../types/types';
+import './_card.scss';
 
 interface FacilityCard extends Facility {
   onClick: (facility: Facility) => void;

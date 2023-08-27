@@ -1,0 +1,45 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/transitions';
+@import '../../../../styles/mixins';
+
+
+.navigation-links {
+  @include center-elements;
+  gap: 3rem;
+
+  .business-link,
+  .about-link,
+  .help-link,
+  .login-link {
+    width: auto;
+    background-color: map-get($grey, 'darker');
+    font-size: 1rem;
+    border: none;
+    color: white;
+
+    @include smooth-hover(color);
+
+    &:hover {
+      cursor: pointer;
+      color: map-get($theme, 'mint');
+    }
+  }
+
+  .login-link {
+    border: 1px solid white;
+    font-size: 1rem;
+    border-radius: 8px;
+    padding: 0.4rem 1rem;
+
+    @include smooth-hover(border);
+    @include smooth-hover(color);
+
+    &:hover {
+      border: 1px solid map-get($theme, 'mint');
+    }
+  }
+
+  .login-signup-link {
+    width: 8rem;
+  }
+}

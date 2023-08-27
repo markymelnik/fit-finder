@@ -1,8 +1,9 @@
-import HomePhoto from './HomePageComponents/WelcomeSection/HomePhoto';
-import HomeWelcomeText from './HomePageComponents/WelcomeSection/HomeWelcomeText';
-import HomeSearchBar from './HomePageComponents/WelcomeSection/HomePageSearchBar';
-import SliderSection from './HomePageComponents/SliderSection/SliderSection';
-import InformationSection from './HomePageComponents/InformationSection/InformationSection';
+import HomePhoto from './WelcomeSection/HomePhoto/HomePhoto';
+import HomeWelcomeText from './WelcomeSection/HomeWelcomeText/HomeWelcomeText';
+import HomeSearchBar from './WelcomeSection/HomePageSearchBar/HomePageSearchBar';
+import SliderSection from './SliderSection/SliderSection';
+import InformationSection from './InformationSection/InformationSection';
+import './_home-page.scss';
 
 const HomePage = () => {
   return (

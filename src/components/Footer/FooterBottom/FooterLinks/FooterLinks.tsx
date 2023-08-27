@@ -1,8 +1,9 @@
 import SomethingLink from './SomethingLink';
+import './_footer-links.scss';
 
 const FooterLinks = () => {
   return (
-    <div className='social-media-links'>
+    <div className='footer-links'>
       <SomethingLink />
       <SomethingLink />
       <SomethingLink />

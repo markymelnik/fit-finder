@@ -1,11 +1,12 @@
-import MobileMenuButton from './MobileMenuButton';
-import Logo from '../Logo';
-import SpaceFragment from './SpaceFragment';
+import MobileMenuButton from './MobileMenuButton/MobileMenuButton';
+import Logo from '../Logo/Logo';
+import SpaceFragment from './SpaceFragment/SpaceFragment';
 import MobileMenu from './MobileMenu/MobileMenu';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../redux/store';
-import TintedOverlay from './MobileMenu/TintedOverlay';
+import TintedOverlay from './TintedOverlay/TintedOverlay';
 import { useEffect, useState } from 'react';
+import '../_header.scss';
 
 const MobileHeader = () => {
 
@@ -25,7 +26,7 @@ const MobileHeader = () => {
   return (
     <>
       {showOverlay && <TintedOverlay isActive={isMobileMenuOpen}/>}
-      <header className='header-container mobile-header'>
+      <header className='header-container'>
         <MobileMenuButton />
         <Logo />
         <SpaceFragment />

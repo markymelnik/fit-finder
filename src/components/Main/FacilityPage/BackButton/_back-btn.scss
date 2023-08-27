@@ -1,0 +1,45 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/transitions';
+
+
+.facility-navigation-btns {
+  display: flex;
+  max-width: 800px;
+  width: 100%;
+
+  .back-to-search-container {
+    height: 1.75rem;
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    text-decoration: none;
+
+    @include smooth-hover(transform);
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.08);
+    }
+
+    .back-btn-icon {
+      height: 1.75rem;
+      width: 1.75rem;
+      background-size: 1.5rem 1.5rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: transparent;
+    }
+    
+    .back-btn {
+      border: none;
+      font-size: 1.5rem;
+      background: transparent;
+      height: 2rem;
+    
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

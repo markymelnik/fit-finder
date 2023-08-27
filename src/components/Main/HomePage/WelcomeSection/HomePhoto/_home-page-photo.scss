@@ -1,0 +1,9 @@
+@import '../../../../../styles/colors';
+@import '../../../../../styles/mixins';
+
+.home-photo-container {
+  height: 60vh;
+  width: 100%;
+  @include center-elements;
+  background-color: map-get($grey, 'lighter');
+}

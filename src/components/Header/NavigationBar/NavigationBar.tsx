@@ -1,4 +1,5 @@
 import NavigationLinks from "./NavigationLinks/NavigationLinks";
+import './_navigation-bar.scss';
 
 const NavigationBar = () => {
   return (

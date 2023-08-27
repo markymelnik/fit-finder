@@ -1,0 +1,30 @@
+.without-map {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.with-map {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.result-left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .result-left {
+    overflow-y: auto;
+  }
+
+  .with-map {
+    flex-direction: row;
+  }
+}

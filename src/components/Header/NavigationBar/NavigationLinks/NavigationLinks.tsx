@@ -3,6 +3,7 @@ import AboutLink from './AboutLink';
 import HelpLink from './HelpLink';
 import LogInLink from './LogInLink';
 /* import SignUpLink from './SignUpLink'; */
+import './_navigation-links.scss';
 
 const NavigationLinks = () => {
   return (

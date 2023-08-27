@@ -1,0 +1,24 @@
+@import '../../../../../styles/colors';
+
+$page-max-width: 800px;
+
+.facility-photo-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vw * (9/16));
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: map-get($grey, 'lighter');
+  }  
+}
+
+@media (min-width: 768px) {
+  .facility-photo-container {
+    max-width: $page-max-width;
+    height: calc($page-max-width * (9/16))
+  }
+}

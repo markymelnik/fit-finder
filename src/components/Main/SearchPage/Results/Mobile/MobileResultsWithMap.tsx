@@ -1,5 +1,5 @@
-import QueryResultInfo from "../SearchResultsComponents/QueryResultInfo";
-import MapOverlay from "../SearchResultsComponents/Map/MapOverlay";
+import QueryResultInfo from "../QuerySection/QueryResultInfo";
+import MapOverlay from "../Map/MapOverlay";
 
 const MobileResultsWithMap = () => {
 
