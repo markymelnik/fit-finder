@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../../../../redux/store";
 import { useSelector } from "react-redux";
 import { setIsMapOverlayShown } from "../../../../redux/slices/mapOverlaySlice";
+import './_mobile-map-switch-btn.scss';
 
 const MobileMapSwitchButton = () => {
 

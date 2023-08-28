@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Facility } from '../../../../../types/types';
+import './_map.scss';
 
 interface MapFacilityCard extends Facility {
   onClick: (facility: Facility) => void;
@@ -12,12 +13,14 @@ const MapFacilityCard = ({ id, name, address, postalCode, neighborhood, latitude
   };
 
   return (
-  <div className='map-marker-facility'>
-    <Link to='/facility' className="map-marker-facility-photo" onClick={handleClick}></Link>
-    <div className="map-marker-facility-info">
-      <div className="map-marker-facility-name">{name.toUpperCase()}</div>
-      <div className="map-marker-facility-address">{address}</div>
-      <div className="map-marker-facility-type">{facilityType.name}</div>
+  <div className='map-facility-card'>
+    <Link to='/facility' className="map-facility-card-photo" onClick={handleClick}>
+      <img src={`/src/assets/images/main/facility_${id}.jpg`} alt="map facility card photo" />
+    </Link>
+    <div className="map-facility-card-info">
+      <div className="map-facility-card-name">{name}</div>
+      <div className="map-facility-card-address">{address.toUpperCase()}, {postalCode.toUpperCase()}</div>
+      <div className="map-facility-card-type">{facilityType.name.toUpperCase()}</div>
     </div>
     
   </div>

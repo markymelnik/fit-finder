@@ -14,13 +14,13 @@ const FacilityCard = ({ id, name, address, postalCode, neighborhood, latitude, l
   
   return (
     <div className='facility-card-container'>
-      <Link to='/facility' className='facility-card-photo' onClick={handleClick}>
-        <img />
+      <Link to={`/facility`} className='facility-photo-container' onClick={handleClick}>
+        <img src={`/src/assets/images/main/facility_${id}.jpg`} alt="facility main photo" />
       </Link>
       <div className='facility-card-info'>
         <div className='facility-card-name'>{name}</div>
-        <div className='facility-card-address'>{address}, {postalCode}</div>
-        <div className='facility-card-type'>{facilityType.name}</div>
+        <div className='facility-card-address'>{address.toUpperCase()}, {postalCode.toUpperCase()}</div>
+        <div className='facility-card-type'>{facilityType.name.toUpperCase()}</div>
       </div>
     </div>
   );

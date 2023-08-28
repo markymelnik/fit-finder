@@ -1,4 +1,4 @@
-import { MouseEvent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Map, NavigationControl, Marker } from 'react-map-gl';
 import { useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../../../../redux/store';
@@ -24,13 +24,6 @@ const MapOverlay = () => {
     width: '100%',
     height: '100%'
   });
-
-  const handleMarkerClick = (event: MouseEvent<HTMLDivElement>) => {
-    const facilityId = event.currentTarget.getAttribute('data-facility-id');
-    if (facilityId) {
-      console.log(`Facility Id: ${facilityId}`);
-    }
-  }
 
   const handleCardClick = ({ id, name, address, postalCode, neighborhood, latitude, longitude, facilityType, amenities, services }: Facility) => {
     const locationData = ({ id, name,  address, postalCode, neighborhood, latitude, longitude, facilityType, amenities, services });
@@ -69,26 +62,26 @@ const MapOverlay = () => {
                   longitude={facility.longitude}
                   latitude={facility.latitude}
                 >
-                <div
-                  className="map-marker" 
-                  data-facility-id={facility.id}
-                  style={{ backgroundImage: `url(${MapMarkerIcon})`}}
-                  
-                >
-                  <MapFacilityCard 
-                    key={facility.id}
-                    id={facility.id}
-                    name={facility.name}
-                    address={facility.address}
-                    postalCode={facility.postalCode}
-                    neighborhood={facility.neighborhood}
-                    latitude={facility.latitude}
-                    longitude={facility.longitude}
-                    facilityType={facility.facilityType}
-                    amenities={facility.amenities}
-                    services={facility.services}
-                    onClick={handleCardClick}/>
-                </div>
+                  <div
+                    className="map-marker" 
+                    data-facility-id={facility.id}
+                    style={{ backgroundImage: `url(${MapMarkerIcon})`}}
+                    
+                  >
+                    <MapFacilityCard 
+                      key={facility.id}
+                      id={facility.id}
+                      name={facility.name}
+                      address={facility.address}
+                      postalCode={facility.postalCode}
+                      neighborhood={facility.neighborhood}
+                      latitude={facility.latitude}
+                      longitude={facility.longitude}
+                      facilityType={facility.facilityType}
+                      amenities={facility.amenities}
+                      services={facility.services}
+                      onClick={handleCardClick}/>
+                  </div>
                 </Marker>
               )
             })}
