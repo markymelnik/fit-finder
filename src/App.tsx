@@ -4,7 +4,7 @@ import LoadHomePage from './pages/LoadHomePage';
 import LoadSearchPage from './pages/LoadSearchPage';
 import LoadSelectedFacilityPage from './pages/LoadFacilityPage';
 import useIsMobile from './hooks/useIsMobile';
-import MobileFilter from './components/Main/SearchPage/Subheader/Mobile/MobileFilterContainer/MobileFilter';
+import MobileFilter from './components/Main/SearchPage/Subheader/Mobile/MobileFilterDisplay/MobileFilterDisplay';
 
 const App = () => {
   useIsMobile();

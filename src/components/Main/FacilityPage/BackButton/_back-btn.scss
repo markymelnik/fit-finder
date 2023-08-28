@@ -2,12 +2,12 @@
 @import '../../../../styles/transitions';
 
 
-.facility-navigation-btns {
+.back-btn-container {
   display: flex;
   max-width: 800px;
   width: 100%;
 
-  .back-to-search-container {
+  .btn-wrapper {
     height: 1.75rem;
     width: auto;
     display: flex;
@@ -36,6 +36,7 @@
       font-size: 1.5rem;
       background: transparent;
       height: 2rem;
+      color: black;
     
       &:hover {
         cursor: pointer;

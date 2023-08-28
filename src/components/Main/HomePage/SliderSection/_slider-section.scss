@@ -2,7 +2,7 @@
 @import '../../../../styles/transitions';
 @import '../../../../styles/mixins';
 
-.slider-container {
+.slider-section-container {
   height: 500px;
   width: 100%;
   display: flex;
@@ -26,7 +26,7 @@
 }
 
 @media (min-width: 768px) {
-  .slider-container {
+  .slider-section-container {
     padding: 0 10%;
   }
 }

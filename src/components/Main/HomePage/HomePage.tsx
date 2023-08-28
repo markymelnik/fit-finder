@@ -1,18 +1,18 @@
-import HomePhoto from './WelcomeSection/HomePhoto/HomePhoto';
-import HomeWelcomeText from './WelcomeSection/HomeWelcomeText/HomeWelcomeText';
-import HomeSearchBar from './WelcomeSection/HomePageSearchBar/HomePageSearchBar';
+import HomePagePhoto from './WelcomeSection/Photo/HomePagePhoto';
+import WelcomeText from './WelcomeSection/WelcomeText/WelcomeText';
+import HomePageSearchbar from './WelcomeSection/Searchbar/HomePageSearchbar';
 import SliderSection from './SliderSection/SliderSection';
-import InformationSection from './InformationSection/InformationSection';
+import InfoSection from './InfoSection/InfoSection';
 import './_home-page.scss';
 
 const HomePage = () => {
   return (
-    <main className='home-container'>
-      <HomePhoto />
-      <HomeWelcomeText />
-      <HomeSearchBar />
+    <main className='home-page-container'>
+      <HomePagePhoto />
+      <WelcomeText />
+      <HomePageSearchbar />
       <SliderSection />
-      <InformationSection />
+      <InfoSection />
     </main>
   );
 };

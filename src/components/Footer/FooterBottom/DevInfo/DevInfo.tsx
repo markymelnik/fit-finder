@@ -1,7 +1,7 @@
 import './_dev-info.scss';
 
 const DeveloperInformation = () => {
-  return <h5 className='dev-info'>Developed by Mark Melnik</h5>;
+  return <div className='dev-info'>Developed by Mark Melnik</div>;
 };
 
 export default DeveloperInformation;

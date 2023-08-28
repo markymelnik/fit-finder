@@ -1,0 +1,52 @@
+@import '../../../../../../styles/colors';
+@import '../../../../../../styles/mixins';
+
+.mobile-filter-display-container {
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: white;
+  z-index: 4;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  .mobile-filter-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.25rem 0 0;
+  
+    .mobile-filter-title {
+      @include center-elements;
+      font-size: 1.25rem;
+    }
+  }
+
+  .mobile-filter-done-btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 1.5rem;
+
+    .mobile-filter-done-btn {
+      font-size: 1rem;
+      height: 3rem;
+      width: 8rem;
+      border: none;
+      border-radius: 4px;
+      background-color: map-get($grey, 'dark');
+      color: white;
+    }
+  }
+  
+}

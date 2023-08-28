@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { AppDispatch, RootState } from "../../../../../../../redux/store";
-import Dropdown from "../Dropdown/Dropdown";
+import Dropdown from "../Dropdown/ButtonDropdown";
 
 interface FilterButtonProps {
   fetchAllOptionsFromDatabase: () => any;

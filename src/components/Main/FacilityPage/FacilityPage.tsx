@@ -1,18 +1,18 @@
-import TopDescription from "./FacilityInformation/TopDescription/TopDescription";
-import FacilityPhoto from "./FacilityInformation/FacilityPhoto/FacilityPhoto";
-import FacilityAbout from "./FacilityInformation/FacilityAbout/FacilityAbout";
+import FacilityTopDescription from "./Information/TopDescription/FacilityTopDescription";
+import FacilityPagePhoto from "./Information/Photo/FacilityPagePhoto";
+import FacilityAbout from "./Information/About/FacilityAbout";
 import BackButton from "./BackButton/BackButton";
 
-const SelectedFacilityPage = () => {
+const FacilityPage = () => {
 
   return (
-    <div className="facility-page-container">
-      <TopDescription />
-      <FacilityPhoto />
+    <main className="facility-page-container">
+      <FacilityTopDescription />
+      <FacilityPagePhoto />
       <FacilityAbout />
       <BackButton />
-    </div>
+    </main>
   )
 }
 
-export default SelectedFacilityPage;
+export default FacilityPage;

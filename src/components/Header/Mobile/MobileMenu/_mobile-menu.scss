@@ -38,6 +38,7 @@
       border: none;
       border-bottom: 1px solid map-get($grey, 'light');
       background-color: white;
+      color: black;
     }
   
     .business-link {
@@ -54,7 +55,7 @@
       font-size: 1rem;
       @include center-elements;
       align-self: center;
-      
+      color: black;
     }
   }
 }

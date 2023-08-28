@@ -1,0 +1,54 @@
+@import '../../../../../styles/colors';
+
+$page-max-width: 800px;
+
+.facility-top-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: $page-max-width;
+  width: 100%;
+  margin: 2rem 0 0.75rem;
+
+  .facility-name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+  }
+
+  .facility-address {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: map-get($grey, 'darker');
+    margin: 0 0 0.25rem;
+  }
+
+  .facility-contact {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    margin: 0 0 0.25rem;
+  }
+  
+  .facility-website,
+  .facility-phone-number {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: map-get($grey, 'darker');
+    
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+
+  .facility-page-header {
+    .facility-name {
+      font-size: 2.25rem;
+    }
+  }
+}

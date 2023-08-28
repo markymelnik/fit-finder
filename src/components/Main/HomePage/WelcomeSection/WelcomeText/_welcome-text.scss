@@ -1,0 +1,27 @@
+@import '../../../../../styles/colors';
+@import '../../../../../styles/transitions';
+@import '../../../../../styles/mixins';
+
+.welcome-text {
+  height: auto;
+  width: 80%;
+  position: absolute;
+  top: 28vh;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 2rem;
+  color: map-get($grey, 'darker');
+  font-weight: 600;
+
+  .highlight {
+    color: map-get($theme, 'mint');
+  }
+}
+
+@media(min-width: 768px) {
+  .welcome-text {
+    width: 60%;
+    font-size: 2.5rem;
+  }
+}
