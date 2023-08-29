@@ -1,9 +1,9 @@
-import SearchBar from "../../../SearchBar";
+import SearchBarComponent from "../../../SearchBarComponent";
 import './_home-page-searchbar.scss';
 
-const HomeSearchBar = () => {
+const HomePageSearchBar = () => {
   return (
-    <SearchBar
+    <SearchBarComponent
       containerClass='home-page-searchbar'
       submitButtonClass='submit-input-btn-home'
       deleteButtonClass='delete-input-btn-home'
@@ -12,4 +12,4 @@ const HomeSearchBar = () => {
   );
 }
 
-export default HomeSearchBar;
+export default HomePageSearchBar;

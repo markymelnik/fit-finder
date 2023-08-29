@@ -14,7 +14,7 @@ interface SearchBarProps {
   placeholderText: string;
 }
 
-const SearchBar = ({ containerClass, submitButtonClass, deleteButtonClass, placeholderText }: SearchBarProps ) => {
+const SearchBarComponent = ({ containerClass, submitButtonClass, deleteButtonClass, placeholderText }: SearchBarProps ) => {
 
   const dispatch = useDispatch<AppDispatch>();
   const executeSearch = useFacilitySearch();
@@ -54,4 +54,4 @@ const SearchBar = ({ containerClass, submitButtonClass, deleteButtonClass, place
   );
 };
 
-export default SearchBar;
+export default SearchBarComponent;

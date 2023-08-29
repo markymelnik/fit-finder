@@ -1,12 +1,13 @@
+@import '../../styles/colors';
+
 .footer-container {
   width: 100%;
-  height: 250px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 5%;
-  margin: 0 0 5rem;
-  background-color: white;
+  padding: 0 5% 5rem;
+  background-color: map-get($grey, 'darker');
 }
 
 .desktop-map-view-wrapper {
@@ -22,7 +23,7 @@
 @media (min-width: 768px) {
   .footer-container {
     gap: 0;
-    padding: 0 10%;
+    padding: 0 10% 5rem;
     margin: 0;
   }
 }

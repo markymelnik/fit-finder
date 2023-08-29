@@ -1,7 +1,14 @@
 @import '../../../styles/colors';
 
 .footer-top {
-  height: 4rem;
+  height: 8rem;
   width: 100%;
-  border-bottom: 1px solid map-get($grey, 'light');
+  border-bottom: 1px solid white;
+}
+
+@media (min-width: 768px) {
+  .footer-top {
+    height: 8rem;
+  }
+  
 }

@@ -3,14 +3,14 @@
 @import '../../../styles/transitions';
 
 .footer-bottom {
-  height: 6rem;
+  height: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 1.5rem 0 2.5rem;
-  gap: 1rem;
+  margin: 2.5rem 0;
+  gap: 2rem;
 }
 
 @media (min-width: 768px) {

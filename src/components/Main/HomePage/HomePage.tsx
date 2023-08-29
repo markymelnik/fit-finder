@@ -1,6 +1,6 @@
 import HomePagePhoto from './WelcomeSection/Photo/HomePagePhoto';
 import WelcomeText from './WelcomeSection/WelcomeText/WelcomeText';
-import HomeSearchBar from './WelcomeSection/SearchBar/HomeSearchBar';
+import HomePageSearchBar from './WelcomeSection/HomePageSearchBar/HomePageSearchBar';
 import SliderSection from './SliderDisplay/SliderDisplay';
 import AboutSection from './AboutSection/AboutSection';
 import ExploreSection from './ExploreSection/ExploreSection';
@@ -12,7 +12,7 @@ const HomePage = () => {
     <main className='home-page-container'>
       <HomePagePhoto />
       <WelcomeText />
-      <HomeSearchBar />
+      <HomePageSearchBar />
       <SliderSection />
       <SectionDivider />
       <AboutSection />

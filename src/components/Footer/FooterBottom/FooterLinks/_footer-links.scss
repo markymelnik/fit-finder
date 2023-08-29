@@ -3,14 +3,14 @@
 @import '../../../../styles/transitions';
 
 .footer-links {
-  height: auto;
-  @include center-elements;
-  gap: 2.5rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 2rem;
 
   .something-link {
-    height: 3rem;
-    width: 3rem;
-    background-color: map-get($grey, 'light');
+    height: 4rem;
+    width: 4rem;
     border-radius: 4px;
   
     @include smooth-hover(transform);
@@ -19,11 +19,24 @@
       cursor: pointer;
       transform: scale(1.05);
     }
+
+    a {
+      img {
+        height: 4rem;
+        width: 4rem;
+      }
+    }
   }
 }
 
 @media (min-width: 768px) {
   .footer-links {
+    width: auto;
     margin: 0;
+
+    .something-link {
+      height: 4rem;
+      width: 4rem;
+    }
   }
 }
