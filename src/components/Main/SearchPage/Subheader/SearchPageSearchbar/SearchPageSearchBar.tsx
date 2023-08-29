@@ -1,4 +1,4 @@
-import SearchBar from "../../../Searchbar";
+import SearchBar from "../../../SearchBar";
 import './_search-page-searchbar.scss';
 
 const SearchPageSearchbar = () => {

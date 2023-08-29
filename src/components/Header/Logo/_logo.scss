@@ -1,13 +1,25 @@
 @import '../../../styles/mixins';
+@import '../../../styles/transitions';
 
 .logo-container {
-  @include center-elements;
-  width: 3rem;
+  display: flex;
+  justify-content: left;
   text-decoration: none;
   padding-top: 0.25rem;
 }
 
 .logo-text {
-  font-size: 2rem;
-  color: white;
+  font-family: 'Comfortaa';
+  font-size: 1.75rem;
+  color: black;
+
+  @include smooth-hover(transform);
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
 }

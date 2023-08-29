@@ -7,14 +7,14 @@ import SearchIcon from '../../assets/icons/search/search-icon.png'
 import DeleteIcon from '../../assets/icons/search/delete-icon.png';
 import useFacilitySearch from '../../hooks/useFacilitySearch';
 
-interface SearchbarProps {
+interface SearchBarProps {
   containerClass: string;
   submitButtonClass: string;
   deleteButtonClass: string;
   placeholderText: string;
 }
 
-const Searchbar = ({ containerClass, submitButtonClass, deleteButtonClass, placeholderText }: SearchbarProps ) => {
+const SearchBar = ({ containerClass, submitButtonClass, deleteButtonClass, placeholderText }: SearchBarProps ) => {
 
   const dispatch = useDispatch<AppDispatch>();
   const executeSearch = useFacilitySearch();
@@ -54,4 +54,4 @@ const Searchbar = ({ containerClass, submitButtonClass, deleteButtonClass, place
   );
 };
 
-export default Searchbar;
+export default SearchBar;

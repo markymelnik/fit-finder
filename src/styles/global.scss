@@ -6,6 +6,16 @@ $global-font-size: 16px;
   src: url('../assets/fonts/Avenir.otf');
 }
 
+@font-face {
+  font-family: 'Sora';
+  src: url('../assets/fonts/Sora.ttf');
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('../assets/fonts/Comfortaa.ttf');
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

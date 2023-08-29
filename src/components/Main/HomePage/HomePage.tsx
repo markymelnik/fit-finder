@@ -1,6 +1,6 @@
 import HomePagePhoto from './WelcomeSection/Photo/HomePagePhoto';
 import WelcomeText from './WelcomeSection/WelcomeText/WelcomeText';
-import HomePageSearchbar from './WelcomeSection/Searchbar/HomePageSearchbar';
+import HomePageSearchbar from './WelcomeSection/SearchBar/HomePageSearchBar';
 import SliderSection from './SliderSection/SliderSection';
 import InfoSection from './InfoSection/InfoSection';
 import './_home-page.scss';

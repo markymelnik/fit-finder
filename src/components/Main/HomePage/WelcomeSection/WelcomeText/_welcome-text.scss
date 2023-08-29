@@ -11,7 +11,7 @@
   transform: translateX(-50%);
   text-align: center;
   font-size: 2rem;
-  color: map-get($grey, 'darker');
+  color: white;
   font-weight: 600;
 
   .highlight {
@@ -22,6 +22,6 @@
 @media(min-width: 768px) {
   .welcome-text {
     width: 60%;
-    font-size: 2.5rem;
+    font-size: 2.75rem;
   }
 }

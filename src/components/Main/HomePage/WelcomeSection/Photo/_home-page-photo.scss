@@ -2,8 +2,14 @@
 @import '../../../../../styles/mixins';
 
 .home-page-photo-container {
-  height: 60vh;
+  height: 70vh;
   width: 100%;
   @include center-elements;
-  background-color: map-get($grey, 'lighter');
+  
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+  }
 }

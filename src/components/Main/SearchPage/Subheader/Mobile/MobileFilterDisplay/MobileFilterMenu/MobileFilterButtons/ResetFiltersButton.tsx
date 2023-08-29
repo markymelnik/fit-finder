@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { resetAllFilters } from "../../../../../../../../redux/slices/filterSlice";
+import './_mobile-filter-btns.scss';
 
 interface ResetFiltersButtonProps {
   customClass: string;

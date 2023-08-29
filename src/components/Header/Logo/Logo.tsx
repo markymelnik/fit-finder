@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <Link to='/' className='logo-container'>
       <div className="logo-text">
-        FF
+        fitfinder
       </div>
     </Link>
   );

@@ -2,44 +2,30 @@
 @import '../../../../styles/transitions';
 @import '../../../../styles/mixins';
 
-
 .navigation-links {
   @include center-elements;
-  gap: 3rem;
+  height: 100%;
 
   .business-link,
   .about-link,
   .help-link,
   .login-link {
     width: auto;
-    background-color: map-get($grey, 'darker');
+    height: 100%;
+    padding: 1.5rem;
+    background-color: white;
     font-size: 1rem;
     border: none;
-    color: white;
+    color: black;
 
-    @include smooth-hover(color);
+    @include smooth-hover(background-color);
+    @include smooth-hover(transform);
 
     &:hover {
       cursor: pointer;
-      color: map-get($theme, 'mint');
+      background-color: darken(white, 5%);
+      transform: scaleX(1.05);
     }
   }
 
-  .login-link {
-    border: 1px solid white;
-    font-size: 1rem;
-    border-radius: 8px;
-    padding: 0.4rem 1rem;
-
-    @include smooth-hover(border);
-    @include smooth-hover(color);
-
-    &:hover {
-      border: 1px solid map-get($theme, 'mint');
-    }
-  }
-
-  .login-signup-link {
-    width: 8rem;
-  }
 }
