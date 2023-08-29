@@ -1,8 +1,10 @@
 import HomePagePhoto from './WelcomeSection/Photo/HomePagePhoto';
 import WelcomeText from './WelcomeSection/WelcomeText/WelcomeText';
-import HomePageSearchbar from './WelcomeSection/SearchBar/HomePageSearchBar';
-import SliderSection from './SliderSection/SliderSection';
-import InfoSection from './InfoSection/InfoSection';
+import HomeSearchBar from './WelcomeSection/SearchBar/HomeSearchBar';
+import SliderSection from './SliderDisplay/SliderDisplay';
+import AboutSection from './AboutSection/AboutSection';
+import ExploreSection from './ExploreSection/ExploreSection';
+import SectionDivider from './SectionDivider/SectionDivider';
 import './_home-page.scss';
 
 const HomePage = () => {
@@ -10,9 +12,12 @@ const HomePage = () => {
     <main className='home-page-container'>
       <HomePagePhoto />
       <WelcomeText />
-      <HomePageSearchbar />
+      <HomeSearchBar />
       <SliderSection />
-      <InfoSection />
+      <SectionDivider />
+      <AboutSection />
+      <SectionDivider />
+      <ExploreSection />
     </main>
   );
 };

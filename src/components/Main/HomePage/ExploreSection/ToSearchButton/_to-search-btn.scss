@@ -1,0 +1,44 @@
+@import '../../../../../styles/transitions';
+
+.to-search-button-container {
+  display: flex;
+  width: auto;
+  margin: 2rem 0;
+
+  .btn-wrapper {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    @include smooth-hover(transform);
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    .to-search-btn {
+      border: none;
+      background: transparent;
+      font-size: 1.5rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .right-arrow-icon {
+      height: 1.75rem;
+      width: 1.75rem;
+      background-size: 1.5rem 1.5rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: transparent;
+    }
+  }
+}
