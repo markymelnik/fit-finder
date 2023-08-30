@@ -1,4 +1,4 @@
-import './_card.scss';
+import './_slider-card.scss';
 
 const SliderCard = () => {
   return <div className='slider-card-container'></div>;

@@ -19,11 +19,30 @@
   .empty-results-list {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
     width: 100%;
     min-height: 40vh;
     height: 100%;
     padding: 1rem 1rem;
+  }
+}
+
+.empty-reset-filters-btn {
+  font-size: 1rem;
+  height: 3rem;
+  width: 8rem;
+  margin-top: 2rem;
+  color: white;
+  background-color: map-get($grey, 'dark');
+  border: none;
+  border-radius: 4px;
+
+  @include smooth-hover(background-color);
+
+  &:hover {
+    cursor: pointer;
+    background-color: lighten(map-get($grey, 'dark'), 10%);
   }
 }
 

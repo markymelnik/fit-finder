@@ -4,7 +4,7 @@ import HomePageSearchBar from './WelcomeSection/HomePageSearchBar/HomePageSearch
 import SliderSection from './SliderDisplay/SliderDisplay';
 import AboutSection from './AboutSection/AboutSection';
 import ExploreSection from './ExploreSection/ExploreSection';
-import SectionDivider from './SectionDivider/SectionDivider';
+import SectionDivider from '../SectionDivider/SectionDivider';
 import './_home-page.scss';
 
 const HomePage = () => {

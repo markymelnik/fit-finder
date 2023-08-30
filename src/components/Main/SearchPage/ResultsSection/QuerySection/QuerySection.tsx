@@ -12,7 +12,7 @@ const QuerySection = () => {
       <div className='query-section-container'>
         <div className="query-result-count">{resultCount} {resultCountText}</div>
       </div>
-      <div className="section-divider-container">
+      <div className="query-section-divider-container">
         <div className="divider"></div>
       </div>
     </>

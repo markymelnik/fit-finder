@@ -1,5 +1,5 @@
-import useFacilitySearch from "../../../../../../../../hooks/useFacilitySearch";
-import './_mobile-filter-btns.scss';
+import useFacilitySearch from "../../../../hooks/useFacilitySearch";
+import './_filter-btns.scss';
 
 interface SaveFiltersButtonProps {
   customClass: string;

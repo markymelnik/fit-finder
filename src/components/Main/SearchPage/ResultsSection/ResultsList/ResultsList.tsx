@@ -1,4 +1,4 @@
-import Card from '../../../Card/FacilityCard';
+import Card from '../../../Card/FacilityCard/FacilityCard';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../../../redux/store';
 import { AppDispatch } from '../../../../../redux/store';

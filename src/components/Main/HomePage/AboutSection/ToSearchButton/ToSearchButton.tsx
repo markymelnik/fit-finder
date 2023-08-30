@@ -7,7 +7,9 @@ const ToSearchButton = () => {
     <div className="to-search-button-container">
       <Link to='/search' className="btn-wrapper">
         <button className="to-search-btn">Search Now</button>
-        <div className="right-arrow-icon" style={{ backgroundImage: `url(${RightArrowIcon})`}}></div>
+        <div className="right-arrow-wrapper">
+          <div className="right-arrow-icon" style={{ backgroundImage: `url(${RightArrowIcon})`}}></div>
+        </div>
       </Link>
     </div>
   )

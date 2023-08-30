@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Facility } from '../../../types/types';
-import usePhotoLoader from '../../../hooks/usePhotoLoader';
-import './_card.scss';
+import { Facility } from '../../../../types/types';
+import usePhotoLoader from '../../../../hooks/usePhotoLoader';
+import './_facility-card.scss';
 
 interface FacilityCard extends Facility {
   onClick: (facility: Facility) => void;

@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import SliderCard from '../../Card/SliderCard';
+import SliderCard from '../../Card/SliderCard/SliderCard';
 import LeftArrow from '../../../../assets/icons/arrows/left-arrow.png';
 import RightArrow from '../../../../assets/icons/arrows/right-arrow.png';
 import './_slider-display.scss';
