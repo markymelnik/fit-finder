@@ -2,6 +2,7 @@ import FacilityTopDescription from "./Information/TopDescription/FacilityTopDesc
 import FacilityPagePhoto from "./Information/Photo/FacilityPagePhoto";
 import FacilityAbout from "./Information/About/FacilityAbout";
 import BackButton from "./BackButton/BackButton";
+import './_facility-page.scss';
 
 const FacilityPage = () => {
 

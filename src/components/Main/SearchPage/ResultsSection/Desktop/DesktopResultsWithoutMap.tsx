@@ -1,12 +1,12 @@
-import SearchResults from "../ResultsList/ResultsList";
-import QueryResultInfo from "../QuerySection/QueryResultInfo";
+import ResultsList from "../ResultsList/ResultsList";
+import QuerySection from "../QuerySection/QuerySection";
 
 const DesktopResultsWithoutMap = () => {
 
   return (
     <div className="without-map">
-      <QueryResultInfo />
-      <SearchResults />
+      <QuerySection />
+      <ResultsList />
     </div>
   )
 }

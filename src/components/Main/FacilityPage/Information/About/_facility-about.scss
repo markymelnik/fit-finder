@@ -39,7 +39,10 @@ $page-max-width: 800px;
 }
 
 @media (min-width: 768px) {
-  .facility-data {
-    flex-direction: row;
+
+  .facility-about-container {
+    .facility-data {
+      flex-direction: row;
+    }
   }
 }

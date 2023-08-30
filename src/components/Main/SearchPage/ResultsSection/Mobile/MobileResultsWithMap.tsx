@@ -1,11 +1,11 @@
-import QueryResultInfo from "../QuerySection/QueryResultInfo";
+import QuerySection from "../QuerySection/QuerySection";
 import MapOverlay from "../Map/MapOverlay";
 
 const MobileResultsWithMap = () => {
 
   return (
     <div className="with-map">
-      <QueryResultInfo />
+      <QuerySection />
       <MapOverlay />
     </div>
   )

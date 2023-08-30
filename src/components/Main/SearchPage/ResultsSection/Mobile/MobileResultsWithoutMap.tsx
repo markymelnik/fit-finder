@@ -1,12 +1,12 @@
-import QueryResultInfo from "../QuerySection/QueryResultInfo";
-import SearchResults from "../ResultsList/ResultsList";
+import QuerySection from "../QuerySection/QuerySection";
+import ResultsList from "../ResultsList/ResultsList";
 
 const MobileResultsWithoutMap = () => {
 
   return (
     <div className="without-map">
-      <QueryResultInfo />
-      <SearchResults />
+      <QuerySection />
+      <ResultsList />
     </div>
   )
 }

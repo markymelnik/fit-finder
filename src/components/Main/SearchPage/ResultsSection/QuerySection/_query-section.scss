@@ -1,4 +1,6 @@
-.query-info-container {
+@import '../../../../../styles/colors';
+
+.query-section-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -8,6 +10,17 @@
   background-color: white;
 
   .query-result-count {
-    font-size: 20px;
+    font-size: 1.25rem;
+    color: map-get($grey, 'darker');
+  }
+}
+
+.section-divider-container {
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0 1rem;
+
+  .divider {
+    border-bottom: 1px solid map-get($grey, 'light');
   }
 }

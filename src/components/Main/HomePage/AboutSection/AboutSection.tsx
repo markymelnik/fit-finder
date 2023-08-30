@@ -1,5 +1,6 @@
 import './_about-section.scss';
 import ToSearchButton from '../ExploreSection/ToSearchButton/ToSearchButton';
+import SearchScreenshot from '../../../../assets/photos/home/search-screenshot.png';
 
 const AboutSection = () => {
 
@@ -21,7 +22,7 @@ const AboutSection = () => {
           <ToSearchButton />
         </div>
         <div className="row-photo-container">
-          <img />
+          <img src={SearchScreenshot} />
         </div>
       </div>
       

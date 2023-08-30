@@ -15,7 +15,7 @@ const usePhotoLoader = (id: number) => {
       setPhoto(module.default);
     }
 
-    loadPhoto(`/src/assets/images/main/facility_${id}.jpg`);
+    loadPhoto(`/src/assets/photos/main/facility_${id}.jpg`);
 
   }, [id])
 
