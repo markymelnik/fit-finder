@@ -1,7 +1,7 @@
 import SearchBarComponent from "../../../SearchBarComponent";
 import './_search-page-searchbar.scss';
 
-const SearchPageSearchBar = () => {
+const SPSearchBar = () => {
   return (
     <SearchBarComponent
       containerClass="search-page-searchbar"
@@ -12,4 +12,4 @@ const SearchPageSearchBar = () => {
   )
 }
 
-export default SearchPageSearchBar;
+export default SPSearchBar;

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Facility } from '../../../types/types';
+import usePhotoLoader from '../../../hooks/usePhotoLoader';
 import './_card.scss';
 
 interface FacilityCard extends Facility {
@@ -8,6 +9,8 @@ interface FacilityCard extends Facility {
 
 const FacilityCard = ({ id, name, address, postalCode, neighborhood, latitude, longitude, facilityType, amenities, services, onClick }: FacilityCard) => {
 
+  const photo = usePhotoLoader(id);
+
   const handleClick = () => {
     onClick({ id, name, address, postalCode, neighborhood, latitude, longitude, facilityType, amenities, services });
   };
@@ -15,7 +18,7 @@ const FacilityCard = ({ id, name, address, postalCode, neighborhood, latitude, l
   return (
     <div className='facility-card-container'>
       <Link to={`/facility`} className='facility-photo-container' onClick={handleClick}>
-        <img src={`/src/assets/images/main/facility_${id}.jpg`} alt="facility main photo" />
+        {photo && <img src={photo} alt="facility main photo" />}
       </Link>
       <div className='facility-card-info'>
         <div className='facility-card-name'>{name}</div>

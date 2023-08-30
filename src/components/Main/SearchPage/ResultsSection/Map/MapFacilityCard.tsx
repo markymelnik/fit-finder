@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Facility } from '../../../../../types/types';
+import usePhotoLoader from '../../../../../hooks/usePhotoLoader';
 import './_map.scss';
 
 interface MapFacilityCard extends Facility {
@@ -8,6 +9,8 @@ interface MapFacilityCard extends Facility {
 
 const MapFacilityCard = ({ id, name, address, postalCode, neighborhood, latitude, longitude, facilityType, amenities, services, onClick }: MapFacilityCard) => {
 
+  const photo = usePhotoLoader(id);
+
   const handleClick = () => {
     onClick({ id, name, address, postalCode, neighborhood, latitude, longitude, facilityType, amenities, services });
   };
@@ -15,7 +18,7 @@ const MapFacilityCard = ({ id, name, address, postalCode, neighborhood, latitude
   return (
   <div className='map-facility-card'>
     <Link to='/facility' className="map-facility-card-photo" onClick={handleClick}>
-      <img src={`/src/assets/images/main/facility_${id}.jpg`} alt="map facility card photo" />
+      {photo && <img src={photo} alt="map facility card photo" />}
     </Link>
     <div className="map-facility-card-info">
       <div className="map-facility-card-name">{name}</div>

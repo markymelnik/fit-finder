@@ -17,6 +17,10 @@ $page-max-width: 800px;
   }  
 }
 
+.no-facility-photo-found {
+  font-size: 1rem;
+}
+
 @media (min-width: 768px) {
   .facility-page-photo-container {
     max-width: $page-max-width;

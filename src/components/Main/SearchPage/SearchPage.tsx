@@ -1,4 +1,4 @@
-import SearchSubheader from "./Subheader/SearchSubheader";
+import Subheader from "./Subheader/Subheader";
 import ResultsDisplay from "./ResultsSection/ResultsDisplay";
 import MobileMapSwitchButton from "./MobileMapSwitchButton/MobileMapSwitchButton";
 import { useSelector } from "react-redux";
@@ -11,7 +11,7 @@ const SearchPage = () => {
 
   return (
     <div className='search-page-container'>
-      <SearchSubheader />
+      <Subheader />
       <ResultsDisplay />
       {isMobile && <MobileMapSwitchButton />}
     </div>
