@@ -1,0 +1,42 @@
+@import '../../styles/colors';
+
+.login-overlay {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  visibility: hidden;
+  z-index: 6;
+  padding: 3rem 1rem;
+
+  &.active {
+    visibility: visible;
+    overflow: auto;
+  }
+
+  .login-form-container {
+    display: flex;
+    flex-direction: column;
+    width: clamp(300px, 100%, 575px);
+    height: 700px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 1.5rem 2rem;
+    z-index: 1;
+
+    .login-signup-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+  }
+}
+
+@media (min-width: 768px) {
+  .login-overlay {
+    padding: 4rem 1rem;
+  }
+}

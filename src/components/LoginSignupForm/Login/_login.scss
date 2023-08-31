@@ -1,0 +1,74 @@
+@import '../../../styles/colors';
+@import '../../../styles/transitions';
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .login-form-descriptor {
+    text-align: center;
+    padding: 1rem;
+    margin: 3rem 0;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+
+      .enter-information {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid map-get($grey, 'light');
+
+        .input-login-email,
+        .input-login-password {
+          display: flex;
+          flex-direction: column;
+          
+          label {
+            font-size: 1rem;
+          }
+  
+          input {
+            font-size: 1rem;
+            padding: 1rem;
+            border: none;
+          }
+        }
+
+        .input-divider {
+          width: 100%;
+          padding: 0 1rem;
+
+          .divider {
+            border-bottom: 1px solid map-get($grey, 'lighter');
+          }
+        }
+      }
+
+      .space {
+        height: 10rem;
+      }
+
+      .login-form-submit-btn {
+        font-size: 1.25rem;
+        align-self: center;
+        height: 4rem;
+        width: clamp(10rem, 100%, 12rem);
+        color: white;
+        background-color: map-get($grey, 'dark');
+        border: none;
+
+        &:hover {
+          cursor: pointer;
+
+        }
+      }
+    }
+  }
+}

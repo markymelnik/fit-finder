@@ -1,0 +1,23 @@
+@import '../../../styles/colors';
+@import '../../../styles/transitions';
+
+.tab-btn {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  border-bottom: 1px solid map-get($grey, 'light');
+
+  @include smooth-hover(border-bottom);
+
+  &:hover {
+    border-bottom: 1px solid black;
+    cursor: pointer;
+  }
+
+  &.active {
+    border-bottom: 2px solid black;
+  }
+}
