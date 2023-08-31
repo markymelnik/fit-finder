@@ -1,0 +1,22 @@
+@import '../../../styles/mixins';
+@import '../../../styles/transitions';
+
+.close-form-btn {
+  @include center-elements;
+  background-color: white;
+  align-self: flex-end;
+  border: none;
+  padding: 0.5rem;
+
+  @include smooth-hover(background-color);
+
+  &:hover {
+    cursor: pointer;
+    background-color: darken(white, 10%);
+  }
+
+  .close-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}

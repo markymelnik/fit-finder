@@ -5,6 +5,7 @@ import LoadSearchPage from './pages/LoadSearchPage';
 import LoadSelectedFacilityPage from './pages/LoadFacilityPage';
 import useIsMobile from './hooks/useIsMobile';
 import MobileFilter from './components/Main/SearchPage/Subheader/Mobile/MobileFilterDisplay/MobileFilterDisplay';
+import LoginForm from './components/LoginForm/LoginForm';
 
 const App = () => {
   useIsMobile();
@@ -12,6 +13,7 @@ const App = () => {
   return (
     <Router>
       <MobileFilter />
+      <LoginForm />
       <div className='site-container'>
         <Routes>
           <Route path='/' element={<LoadHomePage />} />

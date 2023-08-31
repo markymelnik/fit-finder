@@ -19,7 +19,7 @@ const AboutSection = () => {
               Find your perfect gym or fitness center using our intuitive site.
               Search by keywords including location name, address, neighborhood, and ZIP code.
               Filter your search by type, amenities, and services to find exactly what you're looking for.
-              Explore locations on our interactive street map tool!
+              Explore locations using our interactive street map tool!
             </p>
             <ToSearchButton />
           </div>

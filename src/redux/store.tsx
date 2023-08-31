@@ -3,6 +3,7 @@ import mobileReducer from './slices/mobileSlice';
 import mapOverlaySliceReducer from './slices/mapOverlaySlice';
 import mobileMenuSlicerReducer from './slices/mobileMenuSlice';
 import mobileFilterSliceReducer from './slices/mobileFilterSlice';
+import loginFormSliceReducer from './slices/loginFormSlice';
 import facilitiesSliceReducer from './slices/facilitySlice';
 import facilityTypesSliceReducer from './slices/facilityTypeSlice';
 import amenititesSliceReducer from './slices/amenitySlice';
@@ -16,6 +17,7 @@ const store = configureStore({
     isMapOverlayShown: mapOverlaySliceReducer,
     isMobileMenuOpen: mobileMenuSlicerReducer,
     isMobileFilterOpen: mobileFilterSliceReducer,
+    isLoginFormShown: loginFormSliceReducer,
     facilities: facilitiesSliceReducer,
     facilityTypes: facilityTypesSliceReducer,
     amenities: amenititesSliceReducer,
