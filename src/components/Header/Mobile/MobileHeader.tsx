@@ -1,4 +1,4 @@
-import MobileMenuButton from './MobileMenuButton/MobileMenuButton';
+import MobileMenuButton from './MobileMenuOpenButton/MobileMenuOpenButton';
 import Logo from '../Logo/Logo';
 import SpaceFragment from './SpaceFragment/SpaceFragment';
 import MobileMenu from './MobileMenu/MobileMenu';
@@ -19,7 +19,7 @@ const MobileHeader = () => {
     } else {
       setTimeout(() => {
         setShowOverlay(true);
-      }, 300);
+      }, 200);
     }
   }, [isMobileMenuOpen]);
 
