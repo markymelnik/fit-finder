@@ -1,13 +1,18 @@
+@import '../../../styles/colors';
 @import '../../../styles/mixins';
 @import '../../../styles/transitions';
 
 .close-form-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
   @include center-elements;
   background-color: white;
   align-self: flex-end;
   border: none;
   padding: 0.5rem;
   border-radius: 25px;
+  color: map-get($grey, 'darker');
 
   @include smooth-hover(background-color);
 
@@ -17,7 +22,7 @@
   }
 
   .close-icon {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1.25rem;
+    width: 1.25rem;
   }
 }

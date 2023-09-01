@@ -14,12 +14,12 @@
   @include smooth-hover(background-color);
 
   &:hover {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid map-get($grey, 'darker');
     background-color: darken(white, 2.5%);
     cursor: pointer;
   }
 
   &.active {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid map-get($grey, 'darker');
   }
 }

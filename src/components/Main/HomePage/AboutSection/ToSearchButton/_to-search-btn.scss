@@ -8,48 +8,32 @@
   .btn-wrapper {
     text-decoration: none;
     display: flex;
-    align-items: center;
     gap: 0.75rem;
 
-    @include smooth-hover(transform);
-
-    &:hover {
-      cursor: pointer;
-      transform: scale(1.05);
-    }
-
-    &:active {
-      transform: scale(0.95);
+    .right-arrow-icon {
+      height: 1.5rem;
+      width: 1.5rem;
+      background-size: 1.5rem 1.5rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: transparent;
     }
 
     .to-search-btn {
-      border: none;
-      background: transparent;
+      display: inline-block;
       font-size: 1.5rem;
       color: black;
-      padding-top: 0.25rem;
+      line-height: 1;
+      background: linear-gradient(currentColor 0 0) bottom left / var(--underline-width, 0%) 0.1em no-repeat;
+      border: none;
+      text-decoration: none;
+      padding: 0.15rem 0 0.5rem 0;
+      transition: background-size 0.5s;
 
       &:hover {
         cursor: pointer;
+        --underline-width: 100%;
       }
     }
-    
-    .right-arrow-wrapper {
-
-      border: 1px solid black;
-      border-radius: 25px;
-      padding: 0.25rem;
-
-      .right-arrow-icon {
-        height: 1.75rem;
-        width: 1.75rem;
-        background-size: 1.5rem 1.5rem;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-color: transparent;
-      }
-    }
-
-    
   }
 }

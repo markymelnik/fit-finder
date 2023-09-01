@@ -4,9 +4,9 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  height: 170px;
+  height: 136px;
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
   background-color: white;
 
   .query-result-count {
@@ -22,5 +22,12 @@
 
   .divider {
     border-bottom: 1px solid map-get($grey, 'light');
+  }
+}
+
+@media (min-width: 768px) {
+  .query-section-container {
+    height: 170px;
+    padding: 0.5rem 1rem;
   }
 }

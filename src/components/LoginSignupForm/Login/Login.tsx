@@ -1,3 +1,5 @@
+import GoogleIcon from '../../../assets/icons/oauth/google-icon.png';
+import AppleIcon from '../../../assets/icons/oauth/apple-icon.png';
 import './_login.scss';
 
 const Login = () => {
@@ -43,9 +45,15 @@ const Login = () => {
       <div className='oauth-container'>
         <div className='oauth-login-links'>
           <button className='oauth-google-btn'>
+            <div className="oauth-btn-icon">
+              <img src={GoogleIcon} alt="google logo icon" />
+            </div>
             <div className='oauth-btn-text'>Continue with Google</div>
           </button>
           <button className='oauth-apple-btn'>
+            <div className="oauth-btn-icon">
+              <img src={AppleIcon} alt="apple logo icon" />
+            </div>
             <div className='oauth-btn-text'>Continue with Apple</div>
           </button>
         </div>

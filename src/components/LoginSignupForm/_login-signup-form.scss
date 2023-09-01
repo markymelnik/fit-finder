@@ -4,40 +4,42 @@
   position: fixed;
   display: flex;
   justify-content: center;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   background: transparent;
   z-index: 3;
-  padding: 3rem 1rem;
-  transform: translateY(-100%);
-  transition: transform 0.4s ease-in-out;
+  padding: 2rem 1rem;
+  visibility: hidden;
 
   &.active {
-    transform: translateY(0);
-    overflow: auto;
+    visibility: visible;
   }
 
   .login-signup-form-container {
+    position: relative;
     display: flex;
+    height: 100%;
     flex-direction: column;
     width: clamp(300px, 100%, 575px);
-    height: 700px;
     background-color: white;
     padding: 1.5rem 2rem;
     z-index: 2;
+    border: none;
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 
-    .login-signup-container {
+    .login-signup-tabs {
       display: flex;
       justify-content: center;
       width: 100%;
+      margin-top: 1rem;
     }
   }
 }
 
 @media (min-width: 768px) {
-  .login-overlay {
+  .login-signup-overlay {
     padding: 4rem 1rem;
+
   }
 }

@@ -25,7 +25,7 @@ const MobileFilter = () => {
       </div>
       <MobileFilterMenu />
       <div className="mobile-filter-done-btn-container">
-        <SaveFiltersButton customClass='mobile-filter-done-btn' buttonText='DONE' onClick={handleCloseMobileFilter}/>
+        <SaveFiltersButton customClass='mobile-filter-done-btn' buttonText='Done' onClick={handleCloseMobileFilter}/>
       </div>
     </div>
   )

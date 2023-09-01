@@ -23,7 +23,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 0 1rem 1rem;
+    padding: 0.25rem 0 1.5rem 1rem;
 
     .mobile-menu-logo {
       font-size: 1.5rem;
@@ -44,7 +44,7 @@
       border: none;
       border-bottom: 1px solid map-get($grey, 'light');
       background-color: white;
-      color: black;
+      color: map-get($grey, 'darker');
     }
   
     .business-link {
@@ -57,8 +57,8 @@
       border: none;
       border-radius: 6px;
       color: white;
-      background: map-get($grey, 'dark');
-      margin: 2rem 0;
+      background: map-get($grey, 'darker');
+      margin: 2rem 0 0;
       height: 3rem;
       width: 8rem;
       font-size: 1rem;
