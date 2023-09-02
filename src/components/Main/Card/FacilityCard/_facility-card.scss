@@ -4,6 +4,8 @@
 
 .facility-card-container,
 .dummy-card-container { 
+  text-decoration: none;
+  color: map-get($grey, 'darker');
   width: 100%;
   height: 320px;
   display: flex;

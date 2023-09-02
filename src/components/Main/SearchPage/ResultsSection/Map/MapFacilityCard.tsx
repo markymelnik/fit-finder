@@ -16,17 +16,16 @@ const MapFacilityCard = ({ id, name, address, postalCode, neighborhood, latitude
   };
 
   return (
-  <div className='map-facility-card'>
-    <Link to='/facility' className="map-facility-card-photo" onClick={handleClick}>
-      {photo && <img src={photo} alt="map facility card photo" />}
+    <Link to='/facility' onClick={handleClick} className='map-facility-card'>
+      <div className="map-facility-card-photo" >
+        {photo && <img src={photo} alt="map facility card photo" />}
+      </div>
+      <div className="map-facility-card-info">
+        <div className="map-facility-card-name">{name}</div>
+        <div className="map-facility-card-address">{address.toUpperCase()}, {postalCode.toUpperCase()}</div>
+        <div className="map-facility-card-type">{facilityType.name.toUpperCase()}</div>
+      </div>
     </Link>
-    <div className="map-facility-card-info">
-      <div className="map-facility-card-name">{name}</div>
-      <div className="map-facility-card-address">{address.toUpperCase()}, {postalCode.toUpperCase()}</div>
-      <div className="map-facility-card-type">{facilityType.name.toUpperCase()}</div>
-    </div>
-    
-  </div>
   )
 };
 

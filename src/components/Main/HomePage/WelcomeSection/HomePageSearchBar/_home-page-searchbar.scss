@@ -34,6 +34,8 @@
     border: none;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
   
     &::placeholder { 
       color: map-get($grey, neutral);

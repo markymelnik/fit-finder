@@ -26,6 +26,8 @@
         .map-facility-card {
           font-family: 'Avenir';
           display: flex;
+          text-decoration: none;
+          color: map-get($grey, 'darker');
           border: 1px solid map-get($grey, 'light');
           border-radius: 4px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;

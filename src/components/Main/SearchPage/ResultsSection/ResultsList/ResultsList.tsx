@@ -45,7 +45,6 @@ const SearchResults = () => {
         })}
       </div>
     </div>
-    
   );
 };
 

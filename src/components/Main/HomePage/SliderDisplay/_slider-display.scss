@@ -22,7 +22,7 @@
       .slider-header {
         font-weight: 700;
         align-self: flex-start;
-        font-size: 1.5rem;
+        font-size: 1.75rem;
         color: black;
       }
       
@@ -38,6 +38,7 @@
       display: flex;
       gap: 1rem;
       margin: 1.5rem 0 0;
+      visibility: hidden;
   
       .slider-scroll-btn {
         border: none;
@@ -94,13 +95,19 @@
     padding: 8rem 10%;
 
     .slider-top {
+
       .slider-text {
+
         .slider-header {
           font-size: 2.25rem;
         }
         .slider-subheader {
           font-size: 1.5rem;
         }
+      }
+
+      .slider-scroll-btns {
+        visibility: visible;
       }
     }
   }
