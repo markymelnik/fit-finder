@@ -3,7 +3,7 @@
 .footer-top {
   height: 8rem;
   width: 100%;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid map-get($theme, 'white');
 }
 
 @media (min-width: 768px) {

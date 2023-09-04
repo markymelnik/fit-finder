@@ -7,7 +7,7 @@
   top: 0.75rem;
   right: 0.75rem;
   @include center-elements;
-  background-color: white;
+  background-color: map-get($theme, 'white');
   align-self: flex-end;
   border: none;
   padding: 0.5rem;
@@ -18,7 +18,7 @@
 
   &:hover {
     cursor: pointer;
-    background-color: darken(white, 5%);
+    background-color: darken(map-get($theme, 'white'), 5%);
   }
 
   .close-icon {

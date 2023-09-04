@@ -4,10 +4,10 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  height: 136px;
+  height: 80px;
   width: 100%;
   padding: 0 1rem;
-  background-color: white;
+  background-color: map-get($theme, 'white');
 
   .query-result-count {
     font-size: 1.25rem;
@@ -22,12 +22,5 @@
 
   .divider {
     border-bottom: 1px solid map-get($grey, 'light');
-  }
-}
-
-@media (min-width: 768px) {
-  .query-section-container {
-    height: 170px;
-    padding: 0.5rem 1rem;
   }
 }

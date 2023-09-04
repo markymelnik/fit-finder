@@ -19,7 +19,7 @@
   .map-view {
     height: 100%;
     flex: 1;
-    background-color: white;
+    background-color: map-get($theme, 'white');
     color: map-get($grey, 'dark');
     border: 1px solid map-get($grey, 'dark');
 
@@ -27,11 +27,11 @@
 
     &:hover {
       cursor: pointer;
-      background-color: darken(white, 10%);
+      background-color: darken(map-get($theme, 'white'), 10%);
     }
 
     &.active {
-      color: white;
+      color: map-get($theme, 'white');
       background-color: map-get($grey, 'dark');
     }
 

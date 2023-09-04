@@ -1,5 +1,6 @@
 @import '../../../styles/mixins';
 @import '../../../styles/transitions';
+@import '../../../styles/colors';
 
 .logo-container {
   display: flex;
@@ -11,7 +12,7 @@
 .logo-text {
   font-family: 'Comfortaa';
   font-size: 1.75rem;
-  color: black;
+  color: map-get($theme, 'black');
 
   @include smooth-hover(transform);
   

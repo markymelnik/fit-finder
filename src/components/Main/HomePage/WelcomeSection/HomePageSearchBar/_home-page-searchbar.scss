@@ -12,7 +12,7 @@
   @include center-elements;
   background-color: map-get($grey, 'light');
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
   form {
@@ -28,12 +28,12 @@
     display: flex;
     flex: 1;
     font-size: 1rem;
-    background-color: white;
+    background-color: map-get($theme, 'white');
     color: map-get($grey, darker);
     padding: 0.2rem 1.25rem 0;
     border: none;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
   
@@ -52,20 +52,22 @@
   height: 100%;
   width: 55px;
   padding: 0.5rem;
-  background-size: 1.5rem 1.5rem;
+  background-size: 2rem 2rem;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: white;
+  background-color: map-get($theme, 'white');
   border: none;
   border-left: 1px solid map-get($grey, 'lighter');
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 
   @include smooth-hover(background-color);
 
   &:hover {
     cursor: pointer;
-    background-color: darken(white, 5%);
+    background-color: darken(map-get($theme, 'white'), 5%);
   }
 }
 
@@ -87,7 +89,7 @@
 
   &:hover {
     cursor: pointer;
-    background-color: darken(white, 10%);
+    background-color: darken(map-get($theme, 'white'), 10%);
   }
 }
 
@@ -110,7 +112,7 @@
 
   .submit-input-btn-home {
     width: 70px;
-    background-size: 1.75rem 1.75rem;
+    background-size: 2.75rem 2.75rem;
   }
   .delete-input-btn-home {
     background-size: 1rem 1rem;

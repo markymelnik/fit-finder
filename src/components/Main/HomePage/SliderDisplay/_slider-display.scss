@@ -9,21 +9,23 @@
   justify-content: center;
   gap: 1rem;
   padding: 5rem 5%;
+  background-color: map-get($theme, 'white');
 
   .slider-top {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 
     .slider-text {
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
+      gap: 0.5rem;
 
       .slider-header {
         font-weight: 700;
         align-self: flex-start;
         font-size: 1.75rem;
-        color: black;
+        color: map-get($theme, 'black');
       }
       
       .slider-subheader {
@@ -31,34 +33,6 @@
         align-self: flex-start;
         font-size: 1.25rem;
         color: map-get($grey, 'neutral');
-      }
-    }
-
-    .slider-scroll-btns {
-      display: flex;
-      gap: 1rem;
-      margin: 1.5rem 0 0;
-      visibility: hidden;
-  
-      .slider-scroll-btn {
-        border: none;
-        background-color: white;
-  
-        .slider-arrow {
-          height: 1.75rem;
-          width: 1.75rem;
-        
-          @include smooth-hover(transform);
-        
-          &:hover {
-            cursor: pointer;
-            transform: scale(1.15);
-          }
-        
-          &:active {
-            transform: scale(0.85);
-          }
-        }
       }
     }
   }
@@ -104,10 +78,6 @@
         .slider-subheader {
           font-size: 1.5rem;
         }
-      }
-
-      .slider-scroll-btns {
-        visibility: visible;
       }
     }
   }

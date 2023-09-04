@@ -15,7 +15,7 @@
 
   &:hover {
     border-bottom: 1px solid map-get($grey, 'darker');
-    background-color: darken(white, 2.5%);
+    background-color: darken(map-get($theme, 'white'), 2.5%);
     cursor: pointer;
   }
 

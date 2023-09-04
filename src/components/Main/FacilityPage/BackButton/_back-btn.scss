@@ -12,9 +12,9 @@
     gap: 0.5rem;
 
     .back-btn-icon {
-      height: 1.5rem;
-      width: 1.5rem;
-      background-size: 1.5rem 1.5rem;
+      height: 1.35rem;
+      width: 1.35rem;
+      background-size: 1.35rem 1.35rem;
       background-repeat: no-repeat;
       background-position: center;
       background-color: transparent;
@@ -28,7 +28,7 @@
       background: linear-gradient(currentColor 0 0) bottom right / var(--underline-width, 0%) 0.1em no-repeat;
       border: none;
       text-decoration: none;
-      padding: 0.15rem 0 0.5rem 0;
+      padding-bottom: 0.5rem;
       transition: background-size 0.5s;
 
       &:hover {

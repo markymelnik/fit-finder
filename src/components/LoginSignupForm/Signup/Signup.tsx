@@ -1,5 +1,5 @@
 import GoogleIcon from '../../../assets/icons/oauth/google-icon.png';
-import AppleIcon from '../../../assets/icons/oauth/apple-icon.png';
+/* import AppleIcon from '../../../assets/icons/oauth/apple-icon.png'; */
 import './_signup.scss';
 
 const Signup = () => {
@@ -50,12 +50,12 @@ const Signup = () => {
             </div>
             <div className='oauth-btn-text'>Continue with Google</div>
           </button>
-          <button className='oauth-apple-btn'>
+          {/* <button className='oauth-apple-btn'>
             <div className="oauth-btn-icon">
               <img src={AppleIcon} alt="apple logo icon" />
             </div>
             <div className='oauth-btn-text'>Continue with Apple</div>
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

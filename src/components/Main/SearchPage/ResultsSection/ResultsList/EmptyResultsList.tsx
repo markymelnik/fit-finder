@@ -6,8 +6,10 @@ const EmptyResultsList = () => {
   return (
     <div className="results-list-container">
       <div className="empty-results-list">
-        <p>No results found.</p>
-        <p>Adjust your search filters to see new locations!</p>
+        <div className="empty-results-message">
+          <p>No results found.</p>
+          <p>Adjust your search filters to see new locations!</p>
+        </div>
         <ResetFiltersButton customClass='empty-reset-filters-btn' buttonText='Reset Filters' />
         {/* <DummyCard /> */}
       </div>

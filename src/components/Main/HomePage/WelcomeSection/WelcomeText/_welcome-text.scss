@@ -11,7 +11,7 @@
   transform: translateX(-50%);
   text-align: center;
   font-size: 2rem;
-  color: white;
+  color: map-get($theme, 'white');
   font-weight: 600;
 
   .highlight {

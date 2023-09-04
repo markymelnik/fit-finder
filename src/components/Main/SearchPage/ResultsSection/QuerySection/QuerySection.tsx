@@ -5,7 +5,7 @@ import './_query-section.scss';
 const QuerySection = () => {
 
   const resultCount = useSelector(getFacilityCount); 
-  const resultCountText = resultCount == 1 ? 'Result' : 'Results';
+  const resultCountText = resultCount == 1 ? 'result' : 'results';
 
   return (
     <>
