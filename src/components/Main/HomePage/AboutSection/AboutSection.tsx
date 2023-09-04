@@ -28,10 +28,8 @@ const AboutSection = () => {
           <Link to='/search' className="row-photo-container">
             <img src={SearchScreenshot} />
           </Link>
-        </div>
-        
+        </div>  
       </div>
-      
     </div>
   )
 }

@@ -148,13 +148,14 @@
     border: none;
     color: map-get($theme, 'white');
     margin: 0.8rem 0 0;
-    background-color: map-get($grey, 'dark');
+    background-color: map-get($grey, 'darker');
+    border-radius: 4px;
 
     @include smooth-hover(background-color);
   
     &:hover {
       cursor: pointer;
-      background-color: lighten(map-get($grey, 'dark'), 10%);
+      background-color: lighten(map-get($grey, 'darker'), 10%);
     }
   }
 }

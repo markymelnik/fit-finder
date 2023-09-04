@@ -3,13 +3,10 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 60px;
 }
 
 @media (min-width: 768px) {
-
   .results-display-container {
     flex-direction: row;
-    padding-top: 70px;
   }
 }

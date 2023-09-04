@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  height: 80px;
+  height: 60px;
   width: 100%;
   padding: 0 1rem;
   background-color: map-get($theme, 'white');
@@ -22,5 +22,11 @@
 
   .divider {
     border-bottom: 1px solid map-get($grey, 'light');
+  }
+}
+
+@media (min-width: 768px) {
+  .query-section-container {
+    height: 70px;
   }
 }

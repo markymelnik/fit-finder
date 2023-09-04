@@ -4,7 +4,7 @@
 .to-search-button-container {
   display: flex;
   width: auto;
-  margin: 4rem 0 0;
+  margin: 3rem 0;
 
   .btn-wrapper {
     text-decoration: none;
@@ -36,5 +36,11 @@
         --underline-width: 100%;
       }
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .to-search-button-container {
+    margin: 4rem 0 0;
   }
 }

@@ -2,6 +2,7 @@
 @import '../../../../styles/transitions';
 
 .about-section-container {
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -16,6 +17,7 @@
     align-items: center;
     gap: 2.5rem;
     margin-bottom: 2rem;
+    z-index: 1;
 
     .about-section-title {
       display: flex;
@@ -38,6 +40,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+    z-index: 1;
 
     .row-left {
       display: flex;
@@ -91,6 +94,7 @@
           padding: 0.75rem;
           width: 100%;
           object-fit: contain;
+          background-color: map-get($theme, 'white');
         }
       }
     }

@@ -10,11 +10,11 @@ const SearchPage = () => {
   const isMobile = useSelector((state: RootState) => state.isMobile.isMobile);
 
   return (
-    <div className='search-page-container'>
+    <main className='search-page-container'>
       <Subheader />
       <ResultsDisplay />
       {isMobile && <MobileMapSwitchButton />}
-    </div>
+    </main>
   );
 };
 

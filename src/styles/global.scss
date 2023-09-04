@@ -22,7 +22,7 @@ $global-font-size: 16px;
   padding: 0;
 }
 
-html {
+body {
   font-size: $global-font-size;
 }
 
@@ -37,8 +37,6 @@ button, input {
 .site-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: auto;
+  min-height: 100vh;
   width: 100%;
 }
