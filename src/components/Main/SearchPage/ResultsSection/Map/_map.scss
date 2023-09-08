@@ -5,9 +5,7 @@
 .map-overlay-container {
   position: sticky;
   top: 150px;
-  height: calc(100vh - 180px);
-  width: 100%;
-  padding: 1rem;
+  height: calc(100vh - 140px);
   
   .mapboxgl-map {
     border-radius: 4px;
@@ -181,6 +179,7 @@
   .map-overlay-container {
     height: calc(100vh - 150px);
     width: 50%;
+    padding: 1rem;
 
     .mapboxgl-map {
       width: 100%;
