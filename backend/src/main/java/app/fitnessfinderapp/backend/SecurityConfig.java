@@ -26,13 +26,18 @@ public class SecurityConfig {
     daoAuthenticationProvider.setUserDetailsService(userDetailsService);
     return new ProviderManager(daoAuthenticationProvider);
   }
-  
+
+  @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http
       .csrf(csrf -> csrf.disable())
-      .authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
+      .authorizeHttpRequests(authorize -> {
+        authorize.requestMatchers("/auth/**").permitAll();
+        authorize.anyRequest().authenticated();
+      })
       .httpBasic(Customizer.withDefaults());
 
     return http.build();
   }
+
 }

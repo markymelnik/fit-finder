@@ -28,6 +28,7 @@ public class UserAccount implements UserDetails {
   @Column(name="useraccount_id")
   private Integer id;
 
+  @Column(unique=true)
   private String username;
 
   private String password;
