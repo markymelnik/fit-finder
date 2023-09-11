@@ -1,8 +1,40 @@
+import { ChangeEvent, useState } from 'react';
 import GoogleIcon from '../../../assets/icons/oauth/google-icon.png';
 /* import AppleIcon from '../../../assets/icons/oauth/apple-icon.png'; */
 import './_signup.scss';
+import { AppDispatch } from '../../../redux/store';
+import { registerNewAccount } from '../../../redux/authentication/authenticationRequests';
+import { useDispatch } from 'react-redux';
+import { setIsLoginFormShown } from '../../../redux/slices/loginFormSlice';
 
 const Signup = () => {
+
+  const dispatch = useDispatch<AppDispatch>();
+
+  const [signupUsername, setSignupUsername] = useState<string>('');
+  const [signupPassword, setSignupPassword] = useState<string>('');
+
+  const handleSignupUsernameChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSignupUsername(event.target.value);
+  }
+
+  const handleSignupPasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSignupPassword(event.target.value);
+  }
+
+  const handleSubmitClickButton = (event: any) => {
+    event.preventDefault();
+    if (signupUsername && signupPassword) {
+      registerNewAccount(signupCredentials)();
+      dispatch(setIsLoginFormShown(false));
+    }
+  }
+
+  const signupCredentials = {
+    "username": signupUsername,
+    "password": signupPassword
+  }
+
   return (
     <div className='signup-container'>
       <div className='signup-form-descriptor'>Sign Up for fitfinder</div>
@@ -12,10 +44,12 @@ const Signup = () => {
             <div className='input-signup-email'>
               <label htmlFor='email'></label>
               <input
-                type='email'
-                id='email'
-                name='email'
-                placeholder='Email'
+                type='text'
+                id='username'
+                name='username'
+                onChange={handleSignupUsernameChange}
+                value={signupUsername}
+                placeholder='Username'
                 required
               />
             </div>
@@ -25,9 +59,11 @@ const Signup = () => {
             <div className='input-signup-password'>
               <label htmlFor='password'></label>
               <input
-                type='password'
+                type='text'
                 id='password'
                 name='password'
+                onChange={handleSignupPasswordChange}
+                value={signupPassword}
                 placeholder='Password'
                 required
               />
@@ -35,7 +71,12 @@ const Signup = () => {
           </div>
         </div>
         <div className='form-field'>
-          <button className='signup-form-submit-btn'>Sign Up</button>
+          <button 
+            className='signup-form-submit-btn'
+            onClick={handleSubmitClickButton}
+          >
+            Sign Up
+          </button>
         </div>
       </form>
       <div className='form-divider'>

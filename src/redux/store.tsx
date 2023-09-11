@@ -10,6 +10,7 @@ import amenititesSliceReducer from './slices/amenitySlice';
 import serviceSliceReducer from './slices/servicesSlice';
 import selectedFacilityReducer from './slices/selectedFacilitySlice';
 import filtersReducer from './slices/filterSlice';
+import authenticationReducer from './authentication/authenticationReducer';
 
 const store = configureStore({
   reducer: {
@@ -24,6 +25,7 @@ const store = configureStore({
     services: serviceSliceReducer,
     selectedFacility: selectedFacilityReducer,
     filters: filtersReducer,
+    authentication: authenticationReducer
   },
 });
 

@@ -35,10 +35,8 @@ public class BackendApplication {
 			Set<AccountRole> accountRoles = new HashSet<>();
 			accountRoles.add(adminRole);
 
-			UserAccount mark = new UserAccount(1, "Mark", passwordEncoder.encode("password"), accountRoles);
-			UserAccount admin = new UserAccount(2, "admin", passwordEncoder.encode("password"), accountRoles);
+			UserAccount admin = new UserAccount(1, "admin", passwordEncoder.encode("password"), accountRoles);
 			
-			userAccountRepository.save(mark);
 			userAccountRepository.save(admin);
 		};
 	}

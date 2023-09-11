@@ -1,8 +1,40 @@
+import { useDispatch } from 'react-redux';
 import GoogleIcon from '../../../assets/icons/oauth/google-icon.png';
 /* import AppleIcon from '../../../assets/icons/oauth/apple-icon.png'; */
 import './_login.scss';
+import { AppDispatch } from '../../../redux/store';
+import { ChangeEvent, useState } from 'react';
+import { loginAccount } from '../../../redux/authentication/authenticationRequests';
+import { setIsLoginFormShown } from '../../../redux/slices/loginFormSlice';
 
 const Login = () => {
+
+  const dispatch = useDispatch<AppDispatch>();
+
+  const [loginUsername, setLoginUsername] = useState<string>('');
+  const [loginPassword, setLoginPassword] = useState<string>('');
+
+  const handleLoginUsernameChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setLoginUsername(event.target.value);
+  }
+
+  const handleLoginPasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setLoginPassword(event.target.value);
+  }
+
+  const handleSubmitButtonClick = (event: any) => {
+    event.preventDefault();
+    if (loginUsername && loginPassword) {
+      loginAccount(loginCredentials, dispatch)();
+      dispatch(setIsLoginFormShown(false));
+    }
+  }
+
+  const loginCredentials = {
+    "username": loginUsername,
+    "password": loginPassword
+  }
+
   return (
     <div className='login-container'>
       <div className='login-form-descriptor'>Log In to fitfinder</div>
@@ -10,12 +42,14 @@ const Login = () => {
         <div className='form-field'>
           <div className='enter-information'>
             <div className='input-login-email'>
-              <label htmlFor='email'></label>
+              <label htmlFor='username'></label>
               <input
-                type='email'
-                id='email'
-                name='email'
-                placeholder='Email'
+                type='text'
+                id='username'
+                name='username'
+                onChange={handleLoginUsernameChange}
+                value={loginUsername}
+                placeholder='Username'
                 required
               />
             </div>
@@ -25,9 +59,11 @@ const Login = () => {
             <div className='input-login-password'>
               <label htmlFor='password'></label>
               <input
-                type='password'
+                type='text'
                 id='password'
                 name='password'
+                onChange={handleLoginPasswordChange}
+                value={loginPassword}
                 placeholder='Password'
                 required
               />
@@ -35,7 +71,12 @@ const Login = () => {
           </div>
         </div>
         <div className='form-field'>
-          <button className='login-form-submit-btn'>Log In</button>
+          <button 
+            className='login-form-submit-btn'
+            onClick={handleSubmitButtonClick}
+          >
+            Log In
+          </button>
         </div>
       </form>
       <div className='form-divider'>

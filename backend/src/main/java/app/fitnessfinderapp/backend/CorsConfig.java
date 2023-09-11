@@ -16,7 +16,7 @@ public class CorsConfig {
   public WebMvcConfigurer corsConfigurer() {
     return new WebMvcConfigurer() {
       public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/**")
+        registry.addMapping("/**")
             .allowedOrigins(frontEndURL)
             .allowedMethods("GET", "POST", "DELETE")
             .allowCredentials(true);
