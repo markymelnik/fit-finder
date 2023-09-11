@@ -9,7 +9,12 @@
   .business-link,
   .about-link,
   .help-link,
-  .login-link {
+  .login-link,
+  .account-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     width: auto;
     height: 100%;
     padding: 1.5rem;

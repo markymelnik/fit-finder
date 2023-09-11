@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoadHomePage from './pages/LoadHomePage';
 import LoadSearchPage from './pages/LoadSearchPage';
 import LoadSelectedFacilityPage from './pages/LoadFacilityPage';
+import LoadAccountPage from './pages/LoadAccountPage';
 import useIsMobile from './hooks/useIsMobile';
 import MobileFilterDisplay from './components/Main/SearchPage/Subheader/Mobile/MobileFilterDisplay/MobileFilterDisplay';
 import LoginSignupForm from './components/LoginSignupForm/LoginSignupForm';
@@ -23,6 +24,7 @@ const App = () => {
           <Route path='/' element={<LoadHomePage />} />
           <Route path='/search' element={<LoadSearchPage />} />
           <Route path='/facility' element={<LoadSelectedFacilityPage />} />
+          <Route path='/account' element={<LoadAccountPage /> } />
         </Routes>
       </div>
     </Router>
