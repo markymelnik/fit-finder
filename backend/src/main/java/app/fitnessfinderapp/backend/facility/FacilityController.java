@@ -3,7 +3,6 @@ package app.fitnessfinderapp.backend.facility;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +21,6 @@ import app.fitnessfinderapp.backend.services.ServicesService;
 
 @RestController
 @RequestMapping(path = "api/facility")
-@CrossOrigin(origins = "http://localhost:5173")
 public class FacilityController {
 
   private final FacilityService facilityService;
