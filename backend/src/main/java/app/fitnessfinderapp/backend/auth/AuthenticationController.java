@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import app.fitnessfinderapp.backend.DTO.LoginResponseDTO;
 import app.fitnessfinderapp.backend.DTO.RegistrationDTO;
 import app.fitnessfinderapp.backend.userAccount.UserAccount;
 
@@ -21,6 +22,11 @@ public class AuthenticationController {
   @PostMapping("/register")
   public UserAccount registerUser(@RequestBody RegistrationDTO body) {
     return authenticationService.registerUser(body.getUsername(), body.getPassword());
+  }
+
+  @PostMapping("/login")
+  public LoginResponseDTO loginUser(@RequestBody RegistrationDTO body) {
+    return authenticationService.loginUser(body.getUsername(), body.getPassword());
   }
   
 }
