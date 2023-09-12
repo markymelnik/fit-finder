@@ -1,0 +1,38 @@
+@import '../../../../../styles/colors';
+
+.account-details-container {
+  display: flex;
+  flex-direction: column;
+
+  .account-details-header {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .account-details-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .account-details-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      border: 1px solid map-get($grey, 'lighter');
+      border-radius: 6px;
+      padding: 1rem;
+  
+      .account-details-title {
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+  
+      .account-name,
+      .account-id {
+        font-size: 1.25rem;
+      }
+    }
+
+  }
+  
+}

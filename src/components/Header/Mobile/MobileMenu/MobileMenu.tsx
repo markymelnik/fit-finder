@@ -39,11 +39,11 @@ const MobileMenu = () => {
           {/* <HelpLink /> */}
           {isLoggedIn &&  <AccountLink />}
         </div>
-        {isLoggedIn ? (
+        {isLoggedIn && userAccountDetails ? (
             <>
               <div className="mobile-menu-account-container">
-                <div className="mobile-menu-account-name">{userAccountDetails.username}</div>
-                <div className="mobile-menu-account-id">User ID: {userAccountDetails.userId}</div>
+                <div className="mobile-menu-account-name">{userAccountDetails?.username}</div>
+                <div className="mobile-menu-account-id">User ID: {userAccountDetails?.userId}</div>
               </div>
             </>
           ) : (

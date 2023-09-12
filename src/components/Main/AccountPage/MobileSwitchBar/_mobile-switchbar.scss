@@ -1,0 +1,27 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/transitions';
+
+.mobile-switchbar {
+  display: flex;
+  z-index: 1;
+  border-radius: 6px;
+
+  .mobile-switchbar-tab {
+    font-size: 1.25rem;
+    text-align: center;
+    padding: 1rem;
+    margin: 0 0.5rem 0;
+    background-color: transparent;
+    flex: 1;
+
+    @include smooth-hover(border-bottom);
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.active {
+      border-bottom: 1.5px solid black;
+    }
+  }
+}

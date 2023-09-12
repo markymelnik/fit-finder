@@ -20,7 +20,7 @@ const userAccountReducer = (state = initialState, action: any) => {
         ...state,
         isLoggedIn: false,
         token: null,
-        etails: null
+        details: null
       };
     default:
       return state;

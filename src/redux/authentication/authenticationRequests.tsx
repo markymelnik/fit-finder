@@ -30,7 +30,7 @@ const loginAccount = (loginCredentials: LoginAccountCredentials, dispatch: AppDi
         const token = response.data.jwt;
         const user = response.data.user;
         
-        if (!token) {
+        if (!token || !user) {
           dispatch(loginFailure());
           console.log("Account does not exist; login unsuccessful")
         } else {

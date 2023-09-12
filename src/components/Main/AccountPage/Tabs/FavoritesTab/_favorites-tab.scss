@@ -1,0 +1,9 @@
+.account-favorites-container {
+  display: flex;
+  flex-direction: column;
+
+  .account-favorites-header {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+}
