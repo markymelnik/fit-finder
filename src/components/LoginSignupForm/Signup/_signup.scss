@@ -26,7 +26,7 @@
         flex-direction: column;
         border: 1px solid map-get($grey, 'light');
 
-        .input-signup-email,
+        .input-signup-username,
         .input-signup-password {
           display: flex;
           flex-direction: column;
@@ -133,8 +133,8 @@
         @include smooth-hover(background-color);
 
         &:hover {
-          cursor: pointer;
-          background-color: darken(map-get($theme, 'white'), 5%);
+          cursor: not-allowed;
+          /* background-color: darken(map-get($theme, 'white'), 5%); */
         }
 
         .oauth-btn-icon {

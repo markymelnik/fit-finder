@@ -27,6 +27,8 @@ const Signup = () => {
     if (signupUsername && signupPassword) {
       registerNewAccount(signupCredentials)();
       dispatch(setIsLoginFormShown(false));
+      setSignupUsername('');
+      setSignupPassword('');
     }
   }
 
@@ -41,11 +43,11 @@ const Signup = () => {
       <form id='signup-form' className='signup-form'>
         <div className='form-field'>
           <div className='enter-information'>
-            <div className='input-signup-email'>
-              <label htmlFor='email'></label>
+            <div className='input-signup-username'>
+              <label htmlFor='signup-username'></label>
               <input
                 type='text'
-                id='username'
+                id='signup-username'
                 name='username'
                 onChange={handleSignupUsernameChange}
                 value={signupUsername}
@@ -57,10 +59,10 @@ const Signup = () => {
               <div className='divider'></div>
             </div>
             <div className='input-signup-password'>
-              <label htmlFor='password'></label>
+              <label htmlFor='signup-password'></label>
               <input
                 type='text'
-                id='password'
+                id='signup-password'
                 name='password'
                 onChange={handleSignupPasswordChange}
                 value={signupPassword}
@@ -85,7 +87,7 @@ const Signup = () => {
       </div>
       <div className='oauth-container'>
         <div className='oauth-login-links'>
-          <button className='oauth-google-btn'>
+          <button className='oauth-google-btn' disabled>
             <div className="oauth-btn-icon">
               <img src={GoogleIcon} alt="google logo icon" />
             </div>

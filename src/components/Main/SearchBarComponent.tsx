@@ -40,6 +40,7 @@ const SearchBarComponent = ({ containerClass, submitButtonClass, deleteButtonCla
       <form onSubmit={onSearchSubmit}>
         <input
           type='text'
+          name='search'
           value={enteredKeyword}
           onChange={handleInputChange}
           placeholder={placeholderText}

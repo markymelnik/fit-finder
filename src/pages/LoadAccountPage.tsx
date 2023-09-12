@@ -5,9 +5,9 @@ import Footer from '../components/Footer/Footer';
 const LoadAccountPage = () => {
   return (
     <>
-    <Header />
-    <AccountPage />
-    <Footer />
+      <Header />
+      <AccountPage />
+      <Footer />
     </>
   )
 }

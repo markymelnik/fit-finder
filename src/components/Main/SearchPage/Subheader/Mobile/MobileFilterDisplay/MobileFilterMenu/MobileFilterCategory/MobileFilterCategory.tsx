@@ -47,6 +47,7 @@ const MobileFilterCategory = ({ fetchAllOptionsFromDatabase, fetchAllOptionsFrom
             <input 
               className="mobile-filter-option-checkbox"
               type="checkbox"
+              name={option}
               checked={globalCheckedOptions.includes(option)}
               onChange={() => handleCheckboxChange(option)}
             />

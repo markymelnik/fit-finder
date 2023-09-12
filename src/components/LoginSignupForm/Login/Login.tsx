@@ -27,6 +27,8 @@ const Login = () => {
     if (loginUsername && loginPassword) {
       loginAccount(loginCredentials, dispatch)();
       dispatch(setIsLoginFormShown(false));
+      setLoginUsername('');
+      setLoginPassword('');
     }
   }
 
@@ -41,15 +43,16 @@ const Login = () => {
       <form id='login-form' className='login-form'>
         <div className='form-field'>
           <div className='enter-information'>
-            <div className='input-login-email'>
-              <label htmlFor='username'></label>
+            <div className='input-login-username'>
+              <label htmlFor='login-username'></label>
               <input
                 type='text'
-                id='username'
+                id='login-username'
                 name='username'
                 onChange={handleLoginUsernameChange}
                 value={loginUsername}
                 placeholder='Username'
+                autoComplete='username'
                 required
               />
             </div>
@@ -57,10 +60,10 @@ const Login = () => {
               <div className='divider'></div>
             </div>
             <div className='input-login-password'>
-              <label htmlFor='password'></label>
+              <label htmlFor='login-password'></label>
               <input
                 type='text'
-                id='password'
+                id='login-password'
                 name='password'
                 onChange={handleLoginPasswordChange}
                 value={loginPassword}
@@ -85,7 +88,7 @@ const Login = () => {
       </div>
       <div className='oauth-container'>
         <div className='oauth-login-links'>
-          <button className='oauth-google-btn'>
+          <button className='oauth-google-btn' disabled>
             <div className="oauth-btn-icon">
               <img src={GoogleIcon} alt="google logo icon" />
             </div>

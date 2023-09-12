@@ -16,9 +16,9 @@ import Logo from "../../Logo/Logo";
 const MobileMenu = () => {
 
   const isMobileMenuOpen = useSelector((state: RootState) => state.isMobileMenuOpen.isMobileMenuOpen);
+  const isLoggedIn = useSelector((state: RootState) => state.authentication.isLoggedIn);
   const userAccountDetails = useSelector((state: RootState) => state.authentication.details);
-  const isLoggedIn = useSelector((state: RootState) => state.authentication.details);
-
+  
   const dispatch = useDispatch<AppDispatch>();
 
   const closeMobileMenu = () => {
@@ -45,7 +45,6 @@ const MobileMenu = () => {
                 <div className="mobile-menu-account-name">{userAccountDetails.username}</div>
                 <div className="mobile-menu-account-id">User ID: {userAccountDetails.userId}</div>
               </div>
-             
             </>
           ) : (
             <LogInLink />
