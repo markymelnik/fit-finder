@@ -28,13 +28,14 @@ const loginAccount = (loginCredentials: LoginAccountCredentials, dispatch: AppDi
         const response = await Axios.post(`${import.meta.env.VITE_FFA_BE_URL}/auth/login`, loginCredentials)
         console.log(response);
         const token = response.data.jwt;
-        const user = response.data.user;
+        const userAccount = response.data.userAccount;
+        console.log(userAccount);
         
-        if (!token || !user) {
+        if (!token || !userAccount) {
           dispatch(loginFailure());
           console.log("Account does not exist; login unsuccessful")
         } else {
-          dispatch(loginSuccess(token, user));
+          dispatch(loginSuccess(token, userAccount));
           console.log("Account exists; login successful")
         }
     

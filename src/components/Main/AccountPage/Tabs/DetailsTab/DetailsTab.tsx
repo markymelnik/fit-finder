@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 const DetailsTab = () => {
   
   const isLoggedIn = useSelector((state: RootState) => state.authentication.isLoggedIn);
-  const userAccountDetails = useSelector((state: RootState) => state.authentication.details);
+  const userAccountDetails = useSelector((state: RootState) => state.authentication.userAccount);
 
   return (
     <div className='account-details-container'>
@@ -19,7 +19,7 @@ const DetailsTab = () => {
           </div>
           <div className='account-details-section'>
             <div className='account-details-title'>ID NUMBER</div>
-            <div className='account-id'>{userAccountDetails?.userId}</div>
+            <div className='account-id'>{userAccountDetails?.id}</div>
           </div>
         </div>
       ) : (

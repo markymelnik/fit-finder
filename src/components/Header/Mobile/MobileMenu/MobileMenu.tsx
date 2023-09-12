@@ -17,7 +17,7 @@ const MobileMenu = () => {
 
   const isMobileMenuOpen = useSelector((state: RootState) => state.isMobileMenuOpen.isMobileMenuOpen);
   const isLoggedIn = useSelector((state: RootState) => state.authentication.isLoggedIn);
-  const userAccountDetails = useSelector((state: RootState) => state.authentication.details);
+  const userAccountDetails = useSelector((state: RootState) => state.authentication.userAccount);
   
   const dispatch = useDispatch<AppDispatch>();
 
@@ -43,7 +43,7 @@ const MobileMenu = () => {
             <>
               <div className="mobile-menu-account-container">
                 <div className="mobile-menu-account-name">{userAccountDetails?.username}</div>
-                <div className="mobile-menu-account-id">User ID: {userAccountDetails?.userId}</div>
+                <div className="mobile-menu-account-id">User ID: {userAccountDetails?.id}</div>
               </div>
             </>
           ) : (

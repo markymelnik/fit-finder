@@ -1,3 +1,10 @@
+export interface UserAccount {
+  id: string;
+  username: string;
+  password: string;
+  [key: string]: any;
+}
+
 export interface Facility {
   id: number;
   name: string;

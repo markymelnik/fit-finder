@@ -1,26 +1,40 @@
+import { UserAccount } from "../../types/types";
 import { LOGIN_SUCCESS, LOGIN_FAILURE } from "./authenticationActionTypes";
 
-const initialState = {
-  isLoggedIn: false,
-  token: null as String | null,
-  details: null as any | null
+interface UserAccountState {
+  isLoggedIn: boolean;
+  token: string | null;
+  userAccount: UserAccount | null;
 }
 
-const userAccountReducer = (state = initialState, action: any) => {
+type UserAccountActions =
+  | {
+      type: typeof LOGIN_SUCCESS;
+      payload: { token: string; userAccount: UserAccount };
+    }
+  | { type: typeof LOGIN_FAILURE };
+
+const initialState: UserAccountState = {
+  isLoggedIn: false,
+  token: null,
+  userAccount: null
+}
+
+const userAccountReducer = (state = initialState, action: UserAccountActions) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
       return {
         ...state,
         isLoggedIn: true,
         token: action.payload.token,
-        details: action.payload.user
+        userAccount: action.payload.userAccount
       };
     case LOGIN_FAILURE:
       return {
         ...state,
         isLoggedIn: false,
         token: null,
-        details: null
+        userAccount: null
       };
     default:
       return state;
