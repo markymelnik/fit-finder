@@ -1,0 +1,19 @@
+.image-section-container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 5%;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 768px) {
+  .image-section-container {
+    padding: 4rem 10%;
+  }
+}

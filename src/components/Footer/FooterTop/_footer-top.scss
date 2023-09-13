@@ -5,10 +5,3 @@
   width: 100%;
   border-bottom: 1px solid map-get($theme, 'white');
 }
-
-@media (min-width: 768px) {
-  .footer-top {
-    height: 8rem;
-  }
-  
-}

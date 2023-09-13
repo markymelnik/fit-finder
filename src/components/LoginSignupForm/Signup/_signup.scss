@@ -43,6 +43,10 @@
             &:focus {
               outline: none;
             }
+
+            &:hover {
+              cursor: not-allowed;
+            }
           }
         }
 
@@ -74,7 +78,7 @@
         @include smooth-hover(background-color);
         
         &:hover {
-          cursor: pointer;
+          cursor: not-allowed;
           background-color: lighten(map-get($grey, 'darker'), 5%);
         }
       }

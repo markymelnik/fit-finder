@@ -14,6 +14,9 @@ const DesktopResultsWithMap = () => {
           <Footer />
         </div>
       </div>
+      <div className="vertical-divider">
+          <div className="divider"></div>
+        </div>
       <MapOverlay />
     </div>
   )

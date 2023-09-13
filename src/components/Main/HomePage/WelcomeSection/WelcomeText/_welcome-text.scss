@@ -13,9 +13,13 @@
   font-size: 2rem;
   color: map-get($theme, 'white');
   font-weight: 600;
+  text-shadow: -1px 1px 2px map-get($grey, 'darker'),
+				  1px 2px 6px map-get($grey, 'darker'),
+				  1px -1px 0 map-get($grey, 'darker'),
+				  -1px -1px 0 map-get($grey, 'darker');
 
   .highlight {
-    color: map-get($theme, 'mint');
+    color: map-get($theme, 'white');
   }
 }
 

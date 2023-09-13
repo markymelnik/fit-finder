@@ -6,6 +6,7 @@ import AboutSection from './AboutSection/AboutSection';
 import ExploreSection from './ExploreSection/ExploreSection';
 import SectionDivider from '../SectionDivider/SectionDivider';
 import './_home-page.scss';
+import ImageSection from './ImageSection/ImageSection';
 
 const HomePage = () => {
   return (
@@ -18,6 +19,8 @@ const HomePage = () => {
       <AboutSection />
       <SectionDivider />
       <ExploreSection />
+      <SectionDivider />
+      <ImageSection />
     </main>
   );
 };
