@@ -3,6 +3,7 @@
 @import '../../../../styles/transitions';
 
 .explore-section-container {
+  position: relative;
   height: auto;
   width: 100%;
   display: flex;
@@ -18,8 +19,9 @@
     font-size: 2rem;
     display: flex;
     justify-content: center;
-    font-weight: 700;
+    font-weight: 400;
     color: map-get($theme, 'black');
+    z-index: 1;
   }
 
   .explore-category-container {
@@ -30,7 +32,6 @@
     height: auto;
     gap: 1rem;
     
-
     .explore-category {
       @include center-elements;
       text-decoration: none;
@@ -42,6 +43,7 @@
       border: 1px solid map-get($grey, 'lighter');
       border-radius: 8px;
       box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      z-index: 1;
       
       @include smooth-hover(transform);
 

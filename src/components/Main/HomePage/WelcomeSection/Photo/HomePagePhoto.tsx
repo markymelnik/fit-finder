@@ -1,10 +1,10 @@
 import './_home-page-photo.scss';
-import HomeBackgroundPhoto from '../../../../../assets/photos/home/home-background.jpg';
+import HomeWelcomeBackground from '../../../../../assets/photos/home/home-welcome-background.jpg';
 
 const HomePagePhoto = () => {
   return (
     <div className='home-page-photo-container'>
-      <img src={HomeBackgroundPhoto} alt='home page background photo'/>
+      <img src={HomeWelcomeBackground} alt='home page background photo'/>
     </div>
   );
 };

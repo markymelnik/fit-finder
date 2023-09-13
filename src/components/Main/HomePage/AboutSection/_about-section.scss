@@ -14,23 +14,21 @@
   .about-section-top {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 2.5rem;
     margin-bottom: 2rem;
     z-index: 1;
 
     .about-section-title {
       display: flex;
-      text-align: center;
       font-size: 1.75rem;
-      font-weight: 700;
+      font-weight: 400;
       color: map-get($theme, 'black');
     }
 
     .about-section-subtitle {
       display: flex;
       font-size: 1.75rem;
-      font-weight: 700;
+      font-weight: 400;
       color: map-get($theme, 'black');
     }
   }
@@ -48,19 +46,21 @@
       .row-text {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 2rem;
         margin-top: 2rem;
 
         .row-title {
-          font-size: 1.75rem;
-          font-weight: 700;
+          font-size: 1.5rem;
+          font-weight: 400;
           color: map-get($theme, 'black');
         }
 
         .row-description {
-          font-size: 1.2rem;
-          line-height: 1.5;
+          font-size: 1rem;
+          line-height: 1.6;
           color: map-get($grey, 'dark');
+          border-left: 2px solid map-get($grey, 'darker');
+          padding: 0 0 0 1.5rem;
         }
       }
     }
@@ -70,15 +70,20 @@
       justify-content: center;
 
       .row-photo-container {
+        position: relative;
         display: flex;
         align-items: center;
         min-height: 325px;
         min-width: 325px;
         margin-top: 1rem;
         overflow: hidden;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-      
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        z-index: 1;
+        border: 1.5px solid map-get($grey, 'dark');
+        border-radius: 6px;
+        
         @include smooth-hover(transform);
+        
 
         &:hover {
           cursor: pointer;
@@ -91,10 +96,12 @@
 
         img {
           border-radius: 5px;
-          padding: 0.75rem;
+          padding: 0.25rem;
           width: 100%;
           object-fit: contain;
           background-color: map-get($theme, 'white');
+          z-index: 2;
+          border-radius: 6px;
         }
       }
     }
@@ -107,6 +114,7 @@
     gap: 5rem;
 
     .about-section-top {
+      align-items: center;
       gap: 2.5rem;
 
       .about-section-title {
@@ -124,6 +132,17 @@
 
       .row-left {
         width: 50%;
+
+        .row-text {
+
+          .row-title {
+            font-size: 1.75rem;
+          }
+
+          .row-description {
+            font-size: 1.25rem;
+          }
+        }
       }
 
       .row-right {

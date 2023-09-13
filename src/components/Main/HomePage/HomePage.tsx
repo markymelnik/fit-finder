@@ -5,8 +5,8 @@ import SliderSection from './SliderDisplay/SliderDisplay';
 import AboutSection from './AboutSection/AboutSection';
 import ExploreSection from './ExploreSection/ExploreSection';
 import SectionDivider from '../SectionDivider/SectionDivider';
-import './_home-page.scss';
 import ImageSection from './ImageSection/ImageSection';
+import './_home-page.scss';
 
 const HomePage = () => {
   return (
