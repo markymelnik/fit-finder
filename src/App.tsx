@@ -10,15 +10,17 @@ import LoginSignupForm from './components/LoginSignupForm/LoginSignupForm';
 import { useSelector } from 'react-redux';
 import { RootState } from './redux/store';
 import { SkeletonTheme } from 'react-loading-skeleton';
+import ScrollToTop from './hooks/useScrollToTop';
 
 const App = () => {
   useIsMobile();
-
+  
   const isMobile = useSelector((state: RootState) => state.isMobile.isMobile);
 
   return (
     <SkeletonTheme baseColor='#C4CfD9' highlightColor='#E6EBF0'>
       <Router>
+        <ScrollToTop />
         {isMobile && <MobileFilterDisplay />}
         <LoginSignupForm />
         <div className='site-container'>
