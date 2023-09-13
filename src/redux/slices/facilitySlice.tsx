@@ -4,17 +4,22 @@ import { Facility } from '../../types/types';
 interface FacilityState {
   byIds: Record<number, Facility>;
   allIds: number[];
+  isLoading: boolean;
 }
 
 const initialFacilityState: FacilityState = {
   byIds: {},
   allIds: [],
+  isLoading: false,
 };
 
 export const facilitiesSlice = createSlice({
   name: 'facilities',
   initialState: initialFacilityState,
   reducers: {
+    startFetching: (state) => {
+      state.isLoading = true;
+    },
     setFacilities: (state, action: PayloadAction<Facility[]>) => {
       state.byIds = {};
       state.allIds = [];
@@ -22,6 +27,7 @@ export const facilitiesSlice = createSlice({
         state.byIds[facility.id] = facility;
         state.allIds.push(facility.id);
       });
+      state.isLoading = false;
     },
   },
 });
@@ -46,6 +52,6 @@ export const retrieveServicesForFacility = (facilities: FacilityState, facilityI
   return [];
 };
 
-export const { setFacilities } = facilitiesSlice.actions;
+export const { setFacilities, startFetching } = facilitiesSlice.actions;
 
 export default facilitiesSlice.reducer;

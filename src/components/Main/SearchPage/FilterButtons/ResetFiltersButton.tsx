@@ -5,17 +5,15 @@ import './_filter-btns.scss';
 interface ResetFiltersButtonProps {
   customClass: string;
   buttonText: string;
-  onClick: () => void;
 }
 
-const ResetFiltersButton = ({ customClass, buttonText, onClick }: ResetFiltersButtonProps) => {
+const ResetFiltersButton = ({ customClass, buttonText }: ResetFiltersButtonProps) => {
 
   const dispatch = useDispatch();
 
   const handleReset = (event: any) => {
     event.preventDefault();
     dispatch(resetAllFilters());
-    onClick();
   }
   
   return (

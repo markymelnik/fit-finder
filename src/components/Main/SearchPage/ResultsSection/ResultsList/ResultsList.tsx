@@ -5,47 +5,51 @@ import { AppDispatch } from '../../../../../redux/store';
 import { setSelectedFacility } from '../../../../../redux/slices/selectedFacilitySlice';
 import { Facility } from '../../../../../types/types';
 import EmptyResultsList from './EmptyResultsList';
+import SkeletonCard from '../../../Card/SkeletonCard/SkeletonCard';
 import './_results-list.scss';
 
-const SearchResults = () => {
+const ResultsList = () => {
   const facilitiesByIds = useSelector((state: RootState) => state.facilities.byIds);
   const facilitiesAllIds = useSelector((state: RootState) => state.facilities.allIds);
+  const isLoading = useSelector((state: RootState) => state.facilities.isLoading);
   const dispatch = useDispatch<AppDispatch>();
 
-  if (facilitiesAllIds.length === 0) {
-    return <EmptyResultsList /> 
+  const handleCardClick = (facility: Facility) => {
+    dispatch(setSelectedFacility(facility));
   }
 
-  const handleCardClick = ({ id, name, address, postalCode, neighborhood, latitude, longitude, facilityType, amenities, services }: Facility) => {
-    const locationData = ({ id, name,  address, postalCode, neighborhood, latitude, longitude, facilityType, amenities, services });
-    dispatch(setSelectedFacility(locationData));
+  let listOfFacilities;
+
+  if (isLoading) {
+    const numberOfSkeletons = 12;
+    listOfFacilities = [];
+    for (let i = 0; i < numberOfSkeletons; i++) {
+      listOfFacilities.push(
+        <SkeletonCard key={i} />
+      )
+    }
+  } else if (facilitiesAllIds.length > 0) {
+    listOfFacilities = facilitiesAllIds.map((facilityId) => {
+      const facility = facilitiesByIds[facilityId];
+      return (
+        <Card
+          key={facility.id}
+          {...facility}
+          onClick={() => handleCardClick(facility)}
+        />
+      );
+    });
+  } else {
+    listOfFacilities = <EmptyResultsList />;
   }
 
   return (
     <div className="results-list-container">
       <div className='results-list'>
-        {facilitiesAllIds.map((facilityId) => {
-          const facility = facilitiesByIds[facilityId];
-          return (
-            <Card
-              key={facility.id}
-              id={facility.id}
-              name={facility.name}
-              address={facility.address}
-              postalCode={facility.postalCode}
-              neighborhood={facility.neighborhood}
-              latitude={facility.latitude}
-              longitude={facility.longitude}
-              facilityType={facility.facilityType}
-              amenities={facility.amenities}
-              services={facility.services}
-              onClick={handleCardClick}
-            />
-          )
-        })}
+        {listOfFacilities}
       </div>
     </div>
   );
 };
 
-export default SearchResults;
+export default ResultsList;

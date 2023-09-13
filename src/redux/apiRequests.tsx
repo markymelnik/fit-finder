@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import { AppDispatch } from './store';
-import { setFacilities } from './slices/facilitySlice';
+import { setFacilities, startFetching } from './slices/facilitySlice';
 import { setFacilityTypes } from './slices/facilityTypeSlice';
 import { setAmenities } from './slices/amenitySlice';
 import { setServices } from './slices/servicesSlice';
@@ -69,6 +69,9 @@ const fetchServicesByFacilityId = (facilityId: number) => async (dispatch: AppDi
 };
 
 const fetchFacilitiesByParameters = (enteredKeyword: string, selectedFacilityTypes: string[], selectedAmenities: string[], selectedServices: string[]) => async (dispatch: AppDispatch) => {
+
+  dispatch(startFetching());
+
   try {
     const params = new URLSearchParams();
 
