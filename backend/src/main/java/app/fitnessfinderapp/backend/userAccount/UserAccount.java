@@ -26,7 +26,7 @@ public class UserAccount implements UserDetails {
   @Id
   @GeneratedValue(strategy=GenerationType.IDENTITY)
   @Column(name="useraccount_id")
-  private Integer id;
+  private Long id;
 
   @Column(unique=true)
   private String username;
@@ -45,18 +45,17 @@ public class UserAccount implements UserDetails {
     this.authorities = new HashSet<AccountRole>();
   }
 
-  public UserAccount(Integer id, String username, String password, Set<AccountRole> authorities) {
-    this.id = id;
+  public UserAccount(String username, String password, Set<AccountRole> authorities) {
     this.username = username;
     this.password = password;
     this.authorities = authorities;
   }
 
-  public Integer getId() {
+  public Long getId() {
     return this.id;
   }
 
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

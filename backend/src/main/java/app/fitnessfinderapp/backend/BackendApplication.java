@@ -35,7 +35,7 @@ public class BackendApplication {
 			Set<AccountRole> accountRoles = new HashSet<>();
 			accountRoles.add(adminRole);
 
-			UserAccount admin = new UserAccount(1, "admin", passwordEncoder.encode("password"), accountRoles);
+			UserAccount admin = new UserAccount("admin", passwordEncoder.encode("password"), accountRoles);
 			
 			userAccountRepository.save(admin);
 		};
