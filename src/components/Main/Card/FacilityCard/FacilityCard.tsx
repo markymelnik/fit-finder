@@ -35,7 +35,7 @@ const FacilityCard = ({ onClick, ...facility }: FacilityCard) => {
       </div>
       </Link>
       {userAccount && 
-      <AddFavoriteButton userAccountId={userAccount.id} facilityId={facility.id}/>
+      <AddFavoriteButton userAccountId={userAccount.id} facilityId={facility.id} customClass='add-favorite-btn'/>
       }
     </div>
   );

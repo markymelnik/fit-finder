@@ -6,10 +6,11 @@ import { addFavoritedFacility } from '../../../../../../redux/apiRequests';
 
 type AddFavoriteButtonProps = {
   userAccountId: string,
-  facilityId: number
+  facilityId: number,
+  customClass: string,
 }
 
-const AddFavoriteButton = ({ userAccountId, facilityId}: AddFavoriteButtonProps) => {
+const AddFavoriteButton = ({ userAccountId, facilityId, customClass}: AddFavoriteButtonProps) => {
 
   const dispatch = useDispatch<AppDispatch>();
 
@@ -24,7 +25,7 @@ const AddFavoriteButton = ({ userAccountId, facilityId}: AddFavoriteButtonProps)
   }
 
   return (
-    <button className="add-favorite-btn" onClick={handleAddFavoriteClick}>
+    <button className={customClass} onClick={handleAddFavoriteClick}>
       <img src={AddFavoriteIcon} />
     </button>
   )

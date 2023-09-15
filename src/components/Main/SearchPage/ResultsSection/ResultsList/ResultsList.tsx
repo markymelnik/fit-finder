@@ -40,7 +40,11 @@ const ResultsList = () => {
       );
     });
   } else {
-    listOfFacilities = <EmptyResultsList />;
+    return (
+      <div className="results-list-container">
+        <EmptyResultsList />
+      </div>
+    )
   }
 
   return (

@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { fetchFavoritedFacilities } from '../../../../../redux/apiRequests';
 import FavoritedFacilityCard from './FavoritedFacilityCard/FavoritedFacilityCard';
 import { setSelectedFacility } from '../../../../../redux/slices/selectedFacilitySlice';
+import NoFavoritesMessage from './NoFavoritesMessage/NoFavoritesMessage';
 
 const FavoritesTab = () => {
 
@@ -30,11 +31,19 @@ const FavoritesTab = () => {
       <div className='account-favorites-header'>My Favorites</div>
       {isLoggedIn && userAccountId ? (
         <div className='favorited-facility-container'>
-          {favoritedFacility.map((favoriteFacilityObject) => {
-            return (
-              <FavoritedFacilityCard favoriteFacilityObject={favoriteFacilityObject} onClick={() => handleCardClick(favoriteFacilityObject.facility)} key={favoriteFacilityObject.facility.id} />
-            )
-          })}
+          {favoritedFacility.length === 0
+            ? <NoFavoritesMessage />
+            : favoritedFacility.map((favoriteFacilityObject) => {
+              return (
+                <FavoritedFacilityCard
+                  favoriteFacilityObject={favoriteFacilityObject}
+                  onClick={() => handleCardClick(favoriteFacilityObject.facility)}
+                  key={favoriteFacilityObject.facility.id}
+                  
+                />
+              );
+            })
+          }
         </div>
       ) : (
         <>

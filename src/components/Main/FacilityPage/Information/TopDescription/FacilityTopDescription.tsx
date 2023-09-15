@@ -13,11 +13,11 @@ const FacilityTopDescription = () => {
   return (
     <div className="facility-top-description">
       <div className='facility-name'>{selectedFacility.name}</div>
-      <div className='facility-address'>{selectedFacility.address}, {selectedFacility.postalCode}</div>
-      <div className="facility-contact">
+      {/* <div className='facility-address'>{selectedFacility.address.toUpperCase()}, {selectedFacility.postalCode}</div> */}
+      {/* <div className="facility-contact">
         <div className="facility-website">Visit website</div>
         <div className="facility-phone-number">1(123)456-7890</div>
-      </div>
+      </div> */}
     </div>
   );
 };

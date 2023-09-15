@@ -1,0 +1,73 @@
+@import '../../../../../styles/colors';
+@import '../../../../../styles/transitions';
+
+$page-max-width: 800px;
+
+.facility-save-section-container {
+  min-height: 4rem;
+  width: 100%;
+  padding: 1rem 0;
+  border: 1px solid map-get($grey, 'light');
+  border-radius: 6px;
+  margin: 1.5rem 0;
+
+
+  .facility-save-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem 0 0;
+
+    .facility-add-favorite-text {
+      font-size: 1rem;
+    }
+
+    .facility-add-favorite-btn {
+      height: 2rem;
+      width: 2rem;
+      background-color: transparent;
+      border: none;
+  
+      img {
+        height: 100%;
+        width: 100%;
+
+        @include smooth-hover(transform);
+
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.075);
+        }
+
+        &:active {
+          transform: scale(0.975);
+        }
+      }
+
+    }
+
+  }
+}
+
+@media(min-width: 768px) {
+  .facility-save-section-container {
+    width: $page-max-width;
+    padding: 1.5rem 1rem;
+    min-height: 5rem;
+
+    .facility-save-container {
+
+      .facility-add-favorite-btn {
+        height: 2rem;
+        width: 2rem;
+
+        img {
+          height: 100%;
+          width: 100%;
+
+        }
+      }
+    }
+  }
+}

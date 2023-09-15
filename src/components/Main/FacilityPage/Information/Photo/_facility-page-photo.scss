@@ -14,6 +14,7 @@ $page-max-width: 800px;
     width: 100%;
     background-color: map-get($grey, 'lighter');
     object-fit: cover;
+    border-radius: 6px;
   }  
 }
 

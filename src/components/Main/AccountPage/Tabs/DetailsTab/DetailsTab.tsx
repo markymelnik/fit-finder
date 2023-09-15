@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../../../redux/store';
 import './_details-tab.scss';
-import { useEffect } from 'react';
 
 const DetailsTab = () => {
   

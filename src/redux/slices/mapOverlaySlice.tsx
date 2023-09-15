@@ -5,7 +5,7 @@ interface mapOverlaySliceState {
 }
 
 const initialState: mapOverlaySliceState = {
-  isMapOverlayShown: false,
+  isMapOverlayShown: true,
 }
 
 export const mapOverlaySlice = createSlice({
