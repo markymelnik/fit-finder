@@ -4,8 +4,7 @@
 
 .facility-card-container,
 .dummy-card-container { 
-  text-decoration: none;
-  color: map-get($grey, 'darker');
+  position: relative;
   width: 100%;
   max-height: 345px;
   display: flex;
@@ -13,49 +12,62 @@
   background-color: map-get($theme, 'white');
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
-  .facility-photo-container {
-    height: 225px;
-    background-color: map-get($theme, 'white');
-    overflow: hidden;
-  
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      
-      @include smooth-hover(transform, $duration: 0.25s);
-  
-      &:hover {
-        transform: scale(1.05);
+  .facility-card-link-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: map-get($grey, 'darker');
+
+    .facility-photo-container {
+      height: 225px;
+      background-color: map-get($theme, 'white');
+      overflow: hidden;
+    
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        
+        @include smooth-hover(transform, $duration: 0.25s);
+    
+        &:hover {
+          transform: scale(1.05);
+        }
       }
     }
-  }
   
-  .facility-card-info {
-    height: 100px;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.75rem 0.5rem;
-    border: none;
-  
-    .facility-card-name {
+    .facility-card-bottom {
       display: flex;
-      font-size: 1.25rem;
-    }
+      padding: 1rem;
+      height: 100px;
+      
+  
+      .facility-card-info {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 0.5rem;
+        border: none;
+      
+        .facility-card-name {
+          display: flex;
+          font-size: 1.25rem;
+          
+        }
+        
+        .facility-card-address {
+          display: flex;
+          font-size: 0.8rem;
+        }
     
-    .facility-card-address {
-      display: flex;
-      font-size: 0.8rem;
+        .facility-card-type {
+          display: flex;
+          font-size: 0.8rem;
+          font-weight: bold;
+        }
+      }
     }
-
-    .facility-card-type {
-      display: flex;
-      font-size: 0.8rem;
-      font-weight: bold;
-    }
-  }
+  }  
 }
 
 .dummy-card-container {

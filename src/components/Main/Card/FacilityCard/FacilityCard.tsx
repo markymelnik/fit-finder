@@ -2,30 +2,42 @@ import { Link } from 'react-router-dom';
 import { Facility } from '../../../../types/types';
 import usePhotoLoader from '../../../../hooks/usePhotoLoader';
 import './_facility-card.scss';
+import AddFavoriteButton from '../../AccountPage/Tabs/FavoritesTab/AddFavoriteButton/AddFavoriteButton';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../../redux/store';
 
 interface FacilityCard extends Facility {
   onClick: (facility: Facility) => void;
 }
 
-const FacilityCard = ({ id, name, address, postalCode, neighborhood, latitude, longitude, facilityType, amenities, services, onClick }: FacilityCard) => {
+const FacilityCard = ({ onClick, ...facility }: FacilityCard) => {
 
-  const photo = usePhotoLoader(id);
+  const userAccount = useSelector((state: RootState) => state.authentication.userAccount);
+
+  const photo = usePhotoLoader(facility.id);
 
   const handleClick = () => {
-    onClick({ id, name, address, postalCode, neighborhood, latitude, longitude, facilityType, amenities, services });
+    onClick({ ...facility });
   };
   
   return (
-    <Link to={`/facility`} className='facility-card-container' onClick={handleClick}>
+    <div className='facility-card-container' onClick={handleClick}>
+    <Link to={`/facility`} className="facility-card-link-wrapper">
       <div className='facility-photo-container' >
         {photo && <img src={photo} alt="facility main photo" />}
       </div>
-      <div className='facility-card-info'>
-        <div className='facility-card-name'>{name}</div>
-        <div className='facility-card-address'>{address.toUpperCase()}, {postalCode.toUpperCase()}</div>
-        <div className='facility-card-type'>{facilityType.name.toUpperCase()}</div>
+      <div className="facility-card-bottom">
+        <div className='facility-card-info'>
+          <div className='facility-card-name'>{facility.name}</div>
+          <div className='facility-card-address'>{facility.address.toUpperCase()}, {facility.postalCode.toUpperCase()}</div>
+          <div className='facility-card-type'>{facility.facilityType.name.toUpperCase()}</div>
+        </div>
       </div>
-    </Link>
+      </Link>
+      {userAccount && 
+      <AddFavoriteButton userAccountId={userAccount.id} facilityId={facility.id}/>
+      }
+    </div>
   );
 };
 

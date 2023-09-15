@@ -26,10 +26,8 @@ const loginAccount = (loginCredentials: LoginAccountCredentials, dispatch: AppDi
     return async () => {
       try {
         const response = await Axios.post(`${import.meta.env.VITE_FFA_BE_URL}/auth/login`, loginCredentials)
-        console.log(response);
         const token = response.data.jwt;
         const userAccount = response.data.userAccount;
-        console.log(userAccount);
         
         if (!token || !userAccount) {
           dispatch(loginFailure());

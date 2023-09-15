@@ -1,0 +1,32 @@
+@import '../../../../../../styles/colors';
+@import '../../../../../../styles/transitions';
+
+.add-favorite-btn {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 0.5rem;
+  height: 3rem;
+  width: 3rem;
+  border: none;
+  background-color: white;
+
+  img {
+    height: 100%;
+    width: 100%;
+
+    @include smooth-hover(transform);
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.075);
+    }
+
+    &:active {
+      transform: scale(0.925);
+    }
+  }
+
+  
+
+  
+}

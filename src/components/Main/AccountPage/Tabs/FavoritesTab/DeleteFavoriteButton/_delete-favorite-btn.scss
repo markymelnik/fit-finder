@@ -1,0 +1,11 @@
+@import '../../../../../../styles/colors';
+
+.delete-favorite-btn {
+  height: 5rem;
+  width: 5rem;
+
+  &:hover {
+    cursor: pointer;
+    background-color: darken(map-get($theme, 'white'), 5%);
+  }
+}

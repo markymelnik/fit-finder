@@ -11,6 +11,7 @@ import serviceSliceReducer from './slices/servicesSlice';
 import selectedFacilityReducer from './slices/selectedFacilitySlice';
 import filtersReducer from './slices/filterSlice';
 import authenticationReducer from './authentication/authenticationReducer';
+import favoritedFacilityReducer from './slices/favoritedFacilitySlice';
 
 const store = configureStore({
   reducer: {
@@ -25,7 +26,8 @@ const store = configureStore({
     services: serviceSliceReducer,
     selectedFacility: selectedFacilityReducer,
     filters: filtersReducer,
-    authentication: authenticationReducer
+    authentication: authenticationReducer,
+    favoritedFacility: favoritedFacilityReducer
   },
 });
 

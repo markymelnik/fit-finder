@@ -4,6 +4,7 @@ import { setFacilities, startFetching } from './slices/facilitySlice';
 import { setFacilityTypes } from './slices/facilityTypeSlice';
 import { setAmenities } from './slices/amenitySlice';
 import { setServices } from './slices/servicesSlice';
+import { addFavoritedFacilityToState } from './slices/favoritedFacilitySlice';
 
 const fetchAllFacilities = () => async (dispatch: AppDispatch) => {
   try {
@@ -90,6 +91,39 @@ const fetchFacilitiesByParameters = (enteredKeyword: string, selectedFacilityTyp
   }
 };
 
+const fetchFavoritedFacilities = (userAccountId: string) => async (dispatch: AppDispatch) => {
+  try {
+    const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/favorites/list/${userAccountId}`);
+    console.log(response.data);
+    response.data.forEach((favoritedFacilityObject: any) => {
+      dispatch(addFavoritedFacilityToState(favoritedFacilityObject));
+    });
+  } catch (err) {
+    console.error("Error fetching favorited facilities");
+  }
+}
+
+type AddFavoriteData = {
+  userAccountId: string,
+  facilityId: number
+}
+
+const addFavoritedFacility = (addFavoriteData: AddFavoriteData) => async () => {
+  try {
+    await Axios.post(`${import.meta.env.VITE_FFA_BE_URL}/api/favorites/add`, addFavoriteData);
+  } catch(err) {
+    console.error("Error adding favorite facility");
+  }
+}
+
+const deleteFavoritedFacility = (favoritedFacilityObjectId: number) => async () => {
+  try {
+    await Axios.delete(`${import.meta.env.VITE_FFA_BE_URL}/api/favorites/${favoritedFacilityObjectId}`);
+  } catch (err) {
+    console.error("Error deleting favorited facility");
+  }
+}
+
 export {
   fetchAllFacilities,
   fetchAllFacilityTypes,
@@ -98,5 +132,8 @@ export {
   fetchAmenitiesByFacilityId,
   fetchAllServices,
   fetchServicesByFacilityId,
-  fetchFacilitiesByParameters
+  fetchFacilitiesByParameters,
+  fetchFavoritedFacilities,
+  addFavoritedFacility,
+  deleteFavoritedFacility
 };
