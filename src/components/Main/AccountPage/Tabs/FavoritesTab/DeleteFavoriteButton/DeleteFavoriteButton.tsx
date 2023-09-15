@@ -3,6 +3,7 @@ import { AppDispatch } from '../../../../../../redux/store';
 import './_delete-favorite-btn.scss';
 import { deleteFavoritedFacilityFromState } from '../../../../../../redux/slices/favoritedFacilitySlice';
 import { deleteFavoritedFacility } from '../../../../../../redux/apiRequests';
+import DeleteIcon from '../../../../../../assets/icons/mobile/mobile-menu-close-icon.png';
 
 type DeleteFavoriteButtonProps = {
   favoriteFacilityObjectId: number;
@@ -16,7 +17,6 @@ const DeleteFavoriteButton = ({ favoriteFacilityObjectId }: DeleteFavoriteButton
     try {
       dispatch(deleteFavoritedFacilityFromState(favoriteFacilityObjectId));
       dispatch(deleteFavoritedFacility(favoriteFacilityObjectId));
-      console.log('dispatch delete facility')
     } catch {
       console.error("Error deleting favorite facility")
     }
@@ -27,7 +27,7 @@ const DeleteFavoriteButton = ({ favoriteFacilityObjectId }: DeleteFavoriteButton
       className="delete-favorite-btn"
       onClick={handleDeleteButtonClick}
     >
-      X
+      <img src={DeleteIcon} />
     </button>
   )
 }

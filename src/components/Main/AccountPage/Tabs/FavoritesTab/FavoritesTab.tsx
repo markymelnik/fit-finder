@@ -1,10 +1,11 @@
 import { useSelector } from 'react-redux';
-import DeleteFavoriteButton from './DeleteFavoriteButton/DeleteFavoriteButton';
 import './_favorites-tab.scss';
 import { AppDispatch, RootState } from '../../../../../redux/store';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchFavoritedFacilities } from '../../../../../redux/apiRequests';
+import FavoritedFacilityCard from './FavoritedFacilityCard/FavoritedFacilityCard';
+import { setSelectedFacility } from '../../../../../redux/slices/selectedFacilitySlice';
 
 const FavoritesTab = () => {
 
@@ -19,8 +20,10 @@ const FavoritesTab = () => {
       dispatch(fetchFavoritedFacilities(userAccountId));
     }
   }, [userAccountId, dispatch]);
-  
-  console.log(favoritedFacility);
+
+  const handleCardClick = (facility: any) => {
+    dispatch(setSelectedFacility(facility));
+  }
 
   return (
     <div className='account-favorites-container'>
@@ -29,15 +32,7 @@ const FavoritesTab = () => {
         <div className='favorited-facility-container'>
           {favoritedFacility.map((favoriteFacilityObject) => {
             return (
-              <div className='favorited-facility-card' key={favoriteFacilityObject.facility.id}>
-                <div className="favorited-facility-card-text">
-                  <h1>{favoriteFacilityObject.facility.id}</h1>
-                  <h1>{favoriteFacilityObject.facility.name}</h1>
-                </div>
-                <DeleteFavoriteButton 
-                  favoriteFacilityObjectId={favoriteFacilityObject.id}
-                />
-              </div>
+              <FavoritedFacilityCard favoriteFacilityObject={favoriteFacilityObject} onClick={() => handleCardClick(favoriteFacilityObject.facility)} key={favoriteFacilityObject.facility.id} />
             )
           })}
         </div>

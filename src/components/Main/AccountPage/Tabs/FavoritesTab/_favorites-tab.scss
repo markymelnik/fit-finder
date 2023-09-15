@@ -5,31 +5,32 @@
   flex-direction: column;
 
   .account-favorites-header {
-    font-size: 1.75rem;
-    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid map-get($grey, 'lighter');
+    color: map-get($grey, 'darker');
   }
 
   .favorited-facility-container {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     width: 100%;
+  }
+}
 
-    .favorited-facility-card {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      border: 1px solid map-get($grey, 'light');
-      padding: 1rem;
+@media (min-width: 768px) {
 
-      h1 {
-        color: black;
-        font-size: 1rem;
-      }
+  .account-favorites-container {
 
-      .favorited-facility-card-text {
-        font-size: 1rem;
-      }
+    .account-favorites-header {
+      font-size: 1.75rem;
+      padding-bottom: 2.5rem;
+      border: 0;
+    }
+  
+    .favorited-facility-container {
+      gap: 1.25rem;
     }
   }
+  
 }
