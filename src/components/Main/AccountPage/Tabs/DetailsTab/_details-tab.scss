@@ -5,8 +5,10 @@
   flex-direction: column;
 
   .account-details-header {
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    padding: 0 0 1.25rem;
+    color: map-get($grey, 'darker');
   }
 
   .account-details-body {
@@ -35,4 +37,15 @@
 
   }
   
+}
+
+@media (min-width: 768px) {
+  .account-details-container {
+
+    .account-details-header {
+      font-size: 1.75rem;
+      padding: 0 0 2.5rem;
+    }
+
+  }
 }

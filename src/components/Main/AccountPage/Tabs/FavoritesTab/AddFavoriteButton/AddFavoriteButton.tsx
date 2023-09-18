@@ -1,8 +1,12 @@
 import './_add-favorite-btn.scss';
-import AddFavoriteIcon from '../../../../../../assets/icons/account/favorites-icon.png';
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../../../../../redux/store';
-import { addFavoritedFacility } from '../../../../../../redux/apiRequests';
+import { AppDispatch, RootState } from '../../../../../../redux/store';
+import { addFavoritedFacility, deleteFavoritedFacility, fetchFavoritedFacilities } from '../../../../../../redux/apiRequests';
+import FavoriteSVG from './FavoriteSVG';
+import { useSelector } from 'react-redux';
+import { favoritedFacilityIdSelector } from '../../../../../../redux/selectors/favoriteFacilityIdSelector';
+import { deleteFavoritedFacilityFromState } from '../../../../../../redux/slices/favoritedFacilitySlice';
+import { useEffect } from 'react';
 
 type AddFavoriteButtonProps = {
   userAccountId: string,
@@ -14,9 +18,49 @@ const AddFavoriteButton = ({ userAccountId, facilityId, customClass}: AddFavorit
 
   const dispatch = useDispatch<AppDispatch>();
 
-  const handleAddFavoriteClick = (event: any) => {
+  const favoritedFacilityIds = useSelector(favoritedFacilityIdSelector);
+  const isFavorited = favoritedFacilityIds.includes(facilityId);
+
+  const favoritedFacilityObjects = useSelector((state: RootState) => state.favoritedFacility);
+
+  
+
+  useEffect(() => {
+    if (userAccountId) {
+      dispatch(fetchFavoritedFacilities(userAccountId));
+      console.log(favoritedFacilityIds);
+      console.log(isFavorited);
+    }
+  }, [isFavorited, dispatch]);
+
+  const handleAddFavoriteClick = async (event: any) => {
     event.stopPropagation();
-    dispatch(addFavoritedFacility(addFavoriteData))
+
+    let passedFacilityObjId: number = 0;
+    for (let facilityObject of favoritedFacilityObjects) {
+      if (facilityObject.facility.id === facilityId) {
+        passedFacilityObjId = facilityObject.id;
+        break;
+      }
+    }
+
+    if (isFavorited) {
+      try {
+        await dispatch(deleteFavoritedFacility(passedFacilityObjId));
+        dispatch(deleteFavoritedFacilityFromState(passedFacilityObjId));
+      } catch (err) {
+        console.error("Error deleting favorited facility");
+      }
+      
+    } else {
+      try { 
+        dispatch(addFavoritedFacility(addFavoriteData));
+      } catch (err) {
+        console.error("Error adding favorited facility")
+      }
+        
+    }
+    
   }
 
   const addFavoriteData = {
@@ -26,7 +70,7 @@ const AddFavoriteButton = ({ userAccountId, facilityId, customClass}: AddFavorit
 
   return (
     <button className={customClass} onClick={handleAddFavoriteClick}>
-      <img src={AddFavoriteIcon} />
+      <FavoriteSVG isFilled={isFavorited} />
     </button>
   )
 }

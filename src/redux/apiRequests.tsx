@@ -108,9 +108,10 @@ type AddFavoriteData = {
   facilityId: number
 }
 
-const addFavoritedFacility = (addFavoriteData: AddFavoriteData) => async () => {
+const addFavoritedFacility = (addFavoriteData: AddFavoriteData) => async (dispatch: AppDispatch) => {
   try {
     await Axios.post(`${import.meta.env.VITE_FFA_BE_URL}/api/favorites/add`, addFavoriteData);
+    dispatch(fetchFavoritedFacilities(addFavoriteData.userAccountId));
   } catch(err) {
     console.error("Error adding favorite facility");
   }

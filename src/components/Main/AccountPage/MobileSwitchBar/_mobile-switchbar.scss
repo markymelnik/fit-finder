@@ -5,6 +5,7 @@
   display: flex;
   z-index: 1;
   border-radius: 6px;
+  margin-bottom: 1.75rem;
 
   .mobile-switchbar-tab {
     font-size: 1.25rem;
@@ -12,6 +13,7 @@
     padding: 1rem;
     margin: 0 0.5rem 0;
     background-color: transparent;
+    color: map-get($grey, 'darker');
     flex: 1;
 
     @include smooth-hover(border-bottom);
@@ -21,7 +23,7 @@
     }
 
     &.active {
-      border-bottom: 1.5px solid black;
+      border-bottom: 1.5px solid map-get($grey, 'darker');
     }
   }
 }

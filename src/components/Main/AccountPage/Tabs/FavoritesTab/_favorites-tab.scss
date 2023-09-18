@@ -1,36 +1,62 @@
 @import '../../../../../styles/colors';
+@import '../../../../../styles/transitions';
+@import '../../../../../styles/mixins';
 
 .account-favorites-container {
   display: flex;
   flex-direction: column;
 
-  .account-favorites-header {
-    font-size: 1.25rem;
-    padding-bottom: 1.25rem;
-    border-bottom: 1px solid map-get($grey, 'lighter');
-    color: map-get($grey, 'darker');
-  }
+    .account-favorites-header {
+      font-size: 1.25rem;
+      font-weight: 400;
+      padding: 0 0 1.25rem;
+      border-bottom: 1px solid map-get($grey, 'lighter');
+      color: map-get($grey, 'darker');
+    }
+  
+    .favorited-facility-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
 
-  .favorited-facility-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
+    .header-to-search-btn {
+      @include center-elements;
+      text-decoration: none;
+      height: 2rem;
+      width: 6rem;
+      border: none;
+      border-radius: 6px;
+      background-color: map-get($grey, 'darker');
+      color: map-get($theme, 'white');
+
+      @include smooth-hover(background-color);
+
+      &:hover {
+        cursor: pointer;
+        background-color: lighten(map-get($grey, 'darker'), 5%);
+      }
+
+      &:active {
+        transform: scale(0.975);
+      }
+    }
+
 }
 
 @media (min-width: 768px) {
 
   .account-favorites-container {
 
-    .account-favorites-header {
-      font-size: 1.75rem;
-      padding-bottom: 2.5rem;
-      border: 0;
-    }
-  
-    .favorited-facility-container {
-      gap: 1.25rem;
-    }
+      .account-favorites-header {
+        font-size: 1.75rem;
+        padding: 0 0 2.5rem;
+        border: 0;
+      }
+    
+      .favorited-facility-container {
+        gap: 1.25rem;
+      }
   }
   
 }

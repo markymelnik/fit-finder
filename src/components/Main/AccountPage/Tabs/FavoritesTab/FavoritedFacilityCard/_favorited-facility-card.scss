@@ -16,10 +16,6 @@
     cursor: pointer;
   }
 
-  &:active {
-    transform: scale(0.975);
-  }
-
   .favorited-facility-card-link-wrapper {
     display: flex;
     text-decoration: none;

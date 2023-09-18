@@ -1,4 +1,4 @@
-import Card from '../../../Card/FacilityCard/FacilityCard';
+import FacilityCard from '../../../Card/FacilityCard/FacilityCard';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../../../redux/store';
 import { AppDispatch } from '../../../../../redux/store';
@@ -32,7 +32,7 @@ const ResultsList = () => {
     listOfFacilities = facilitiesAllIds.map((facilityId) => {
       const facility = facilitiesByIds[facilityId];
       return (
-        <Card
+        <FacilityCard
           key={facility.id}
           {...facility}
           onClick={() => handleCardClick(facility)}

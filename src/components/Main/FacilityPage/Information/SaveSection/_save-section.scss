@@ -24,14 +24,15 @@ $page-max-width: 800px;
     }
 
     .facility-add-favorite-btn {
-      height: 2rem;
-      width: 2rem;
-      background-color: transparent;
       border: none;
-  
-      img {
-        height: 100%;
-        width: 100%;
+      background-color: map-get($theme, 'white');
+      
+      svg {
+        height: 2rem;
+        width: 2rem;
+        stroke-width: 1.2;
+        opacity: 0.8;
+        stroke: #333333;
 
         @include smooth-hover(transform);
 

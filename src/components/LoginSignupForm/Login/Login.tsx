@@ -2,10 +2,12 @@ import { useDispatch } from 'react-redux';
 import GoogleIcon from '../../../assets/icons/oauth/google-icon.png';
 /* import AppleIcon from '../../../assets/icons/oauth/apple-icon.png'; */
 import './_login.scss';
-import { AppDispatch } from '../../../redux/store';
-import { ChangeEvent, useState } from 'react';
+import { AppDispatch, RootState } from '../../../redux/store';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { loginAccount } from '../../../redux/authentication/authenticationRequests';
 import { setIsLoginFormShown } from '../../../redux/slices/loginFormSlice';
+import { fetchFavoritedFacilities } from '../../../redux/apiRequests';
+import { useSelector } from 'react-redux';
 
 const Login = () => {
 
@@ -13,6 +15,14 @@ const Login = () => {
 
   const [loginUsername, setLoginUsername] = useState<string>('');
   const [loginPassword, setLoginPassword] = useState<string>('');
+
+  const userAccountId = useSelector((state: RootState) => state.authentication.userAccount?.id);
+
+  useEffect(() => {
+    if (userAccountId) {
+      dispatch(fetchFavoritedFacilities(userAccountId));
+    }
+  }, [userAccountId]);
 
   const handleLoginUsernameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setLoginUsername(event.target.value);

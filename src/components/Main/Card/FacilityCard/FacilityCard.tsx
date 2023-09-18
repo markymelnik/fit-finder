@@ -5,6 +5,7 @@ import './_facility-card.scss';
 import AddFavoriteButton from '../../AccountPage/Tabs/FavoritesTab/AddFavoriteButton/AddFavoriteButton';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../../redux/store';
+import { useEffect } from 'react';
 
 interface FacilityCard extends Facility {
   onClick: (facility: Facility) => void;
@@ -35,7 +36,7 @@ const FacilityCard = ({ onClick, ...facility }: FacilityCard) => {
       </div>
       </Link>
       {userAccount && 
-      <AddFavoriteButton userAccountId={userAccount.id} facilityId={facility.id} customClass='add-favorite-btn'/>
+        <AddFavoriteButton userAccountId={userAccount.id} facilityId={facility.id} customClass='add-favorite-btn'/>
       }
     </div>
   );

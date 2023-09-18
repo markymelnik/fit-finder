@@ -3,26 +3,28 @@
 
 .add-favorite-btn {
   position: absolute;
-  bottom: 3.5rem;
+  bottom: 3.25rem;
   right: 0.75rem;
-  height: 2rem;
-  width: 2rem;
   border: none;
-  background-color: white;
+  background-color: map-get($theme, 'white');
 
-  img {
-    height: 100%;
-    width: 100%;
+  svg {
+    height: 2rem;
+    width: 2rem;
+    stroke-width: 1.2;
+    opacity: 0.8;
+    stroke: #333333;
 
     @include smooth-hover(transform);
 
     &:hover {
       cursor: pointer;
-      transform: scale(1.075);
+      transform: scale(1.05);
     }
 
     &:active {
-      transform: scale(0.925);
+      transform: scale(0.975);
     }
   }
+
 }

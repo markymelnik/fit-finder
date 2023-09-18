@@ -21,7 +21,6 @@ const favoritedFacilitySlice = createSlice({
     deleteFavoritedFacilityFromState: (state, action: PayloadAction<number>) => {
       return state.filter(facility => facility.id !== action.payload);
     },
-
   }
 })
 
