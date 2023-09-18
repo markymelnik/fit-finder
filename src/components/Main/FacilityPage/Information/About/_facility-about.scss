@@ -46,6 +46,16 @@ $page-max-width: 800px;
 
     .facility-data {
       flex-direction: row;
+      gap: 2rem;
+
+      .facility-data-left {
+        width: 55%;
+      }
+
+      .facility-data-right {
+        width: 45%;
+      }
+      
     }
   }
 }

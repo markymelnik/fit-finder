@@ -21,6 +21,7 @@ import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.logout.HttpStatusReturningLogoutSuccessHandler;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -85,6 +86,13 @@ public class SecurityConfig {
         authorize.requestMatchers("/admin/**").hasRole("ADMIN");
         authorize.requestMatchers("/user/**").hasAnyRole("ADMIN", "USER");
         authorize.anyRequest().authenticated();
+      })
+      .logout(logout -> {
+        logout.logoutUrl("/auth/logout")
+          .logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler())
+          .clearAuthentication(true)
+          .invalidateHttpSession(true)
+          .deleteCookies("JSESSIONID");
       })
       .oauth2ResourceServer(oauth2 -> 
         oauth2.jwt(jwtConfigurer -> jwtConfigurer.jwtAuthenticationConverter(jwtAuthenticationConverter()))

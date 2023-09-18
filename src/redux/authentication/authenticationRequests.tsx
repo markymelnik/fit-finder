@@ -1,5 +1,5 @@
 import Axios from "axios";
-import { loginSuccess, loginFailure } from "./authenticationActions";
+import { loginSuccess, loginFailure, logoutSuccess } from "./authenticationActions";
 import { AppDispatch } from "../store";
 
 type SignupAccountCredentials = {
@@ -44,7 +44,19 @@ const loginAccount = (loginCredentials: LoginAccountCredentials, dispatch: AppDi
     }
 }
 
+const logoutAccount = (dispatch: AppDispatch) => async() => {
+  try {
+    const response = await Axios.post(`${import.meta.env.VITE_FFA_BE_URL}/auth/logout`);
+    console.log(response.data);
+    dispatch(logoutSuccess());
+    console.log("Logout successful");
+  } catch (err) {
+    console.error("Error logging out account.")
+  }
+}
+
 export {
   registerNewAccount,
-  loginAccount
+  loginAccount,
+  logoutAccount
 }

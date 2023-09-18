@@ -1,5 +1,5 @@
 import { UserAccount } from "../../types/types";
-import { LOGIN_SUCCESS, LOGIN_FAILURE } from "./authenticationActionTypes";
+import { LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT_SUCCESS } from "./authenticationActionTypes";
 
 interface UserAccountState {
   isLoggedIn: boolean;
@@ -12,7 +12,8 @@ type UserAccountActions =
       type: typeof LOGIN_SUCCESS;
       payload: { token: string; userAccount: UserAccount };
     }
-  | { type: typeof LOGIN_FAILURE };
+  | { type: typeof LOGIN_FAILURE }
+  | { type: typeof LOGOUT_SUCCESS };
 
 const initialState: UserAccountState = {
   isLoggedIn: false,
@@ -30,6 +31,13 @@ const userAccountReducer = (state = initialState, action: UserAccountActions) =>
         userAccount: action.payload.userAccount
       };
     case LOGIN_FAILURE:
+      return {
+        ...state,
+        isLoggedIn: false,
+        token: null,
+        userAccount: null
+      };
+    case LOGOUT_SUCCESS:
       return {
         ...state,
         isLoggedIn: false,

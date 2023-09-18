@@ -13,9 +13,9 @@ const FacilitySaveSection = () => {
     <div className="facility-save-section-container">
       {isLoggedIn && userAccount && selectedFacility && (
         <div className="facility-save-container">
-        <div className="facility-add-favorite-text">Add to Favorites</div>
-        <AddFavoriteButton userAccountId={userAccount.id} facilityId={selectedFacility.id} customClass='facility-add-favorite-btn'/>
-      </div>
+          {/* <div className="facility-add-favorite-text">Add to Favorites</div> */}
+          <AddFavoriteButton userAccountId={userAccount.id} facilityId={selectedFacility.id} customClass='facility-add-favorite-btn'/>
+        </div>
       )}
     </div>
   )

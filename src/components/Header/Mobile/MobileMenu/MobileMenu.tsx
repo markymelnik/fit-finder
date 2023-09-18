@@ -11,6 +11,7 @@ import TintedOverlay from "../../../TintedOverlay/TintedOverlay";
 import { useDispatch } from "react-redux";
 import { setIsMobileMenuOpen } from "../../../../redux/slices/mobileMenuSlice";
 import Logo from "../../Logo/Logo";
+import LogoutButton from "./LogoutButton/LogoutButton";
 
 
 const MobileMenu = () => {
@@ -40,15 +41,16 @@ const MobileMenu = () => {
           {isLoggedIn &&  <AccountLink />}
         </div>
         {isLoggedIn && userAccountDetails ? (
-            <>
-              <div className="mobile-menu-account-container">
+            <div className='mobile-menu-account-container'>
+              <div className="mobile-menu-account-information">
                 <div className="mobile-menu-account-name">{userAccountDetails?.username}</div>
                 <div className="mobile-menu-account-id">User ID: {userAccountDetails?.id}</div>
               </div>
-            </>
+              <LogoutButton customClass="mobile-menu-logout-btn"/>
+            </div>
           ) : (
             <LogInLink />
-          )}
+        )}
       </div>
     </>
   )

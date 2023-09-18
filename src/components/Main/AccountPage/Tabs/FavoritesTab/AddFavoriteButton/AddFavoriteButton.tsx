@@ -6,7 +6,6 @@ import FavoriteSVG from './FavoriteSVG';
 import { useSelector } from 'react-redux';
 import { favoritedFacilityIdSelector } from '../../../../../../redux/selectors/favoriteFacilityIdSelector';
 import { deleteFavoritedFacilityFromState } from '../../../../../../redux/slices/favoritedFacilitySlice';
-import { useEffect } from 'react';
 
 type AddFavoriteButtonProps = {
   userAccountId: string,
@@ -22,16 +21,6 @@ const AddFavoriteButton = ({ userAccountId, facilityId, customClass}: AddFavorit
   const isFavorited = favoritedFacilityIds.includes(facilityId);
 
   const favoritedFacilityObjects = useSelector((state: RootState) => state.favoritedFacility);
-
-  
-
-  useEffect(() => {
-    if (userAccountId) {
-      dispatch(fetchFavoritedFacilities(userAccountId));
-      console.log(favoritedFacilityIds);
-      console.log(isFavorited);
-    }
-  }, [isFavorited, dispatch]);
 
   const handleAddFavoriteClick = async (event: any) => {
     event.stopPropagation();
