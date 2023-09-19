@@ -23,7 +23,7 @@ const registerNewAccount = (signupCredentials: SignupAccountCredentials, dispatc
       dispatch(startLoading());
 
       await sleep(1000);
-      const response = await Axios.post(`http://localhost:8080/auth/register`, signupCredentials);
+      const response = await Axios.post(`${import.meta.env.VITE_FFA_BE_URL}/auth/register`, signupCredentials);
 
       console.log(response);
   
@@ -45,7 +45,7 @@ const loginAccount = (loginCredentials: LoginAccountCredentials, dispatch: AppDi
     try {
       dispatch(startLoading());
       
-      const response = await Axios.post(`http://localhost:8080/auth/login`, loginCredentials);
+      const response = await Axios.post(`${import.meta.env.VITE_FFA_BE_URL}/auth/login`, loginCredentials);
       const token = response.data.jwt;
       const userAccount = response.data.userAccount;
 
@@ -71,7 +71,7 @@ const loginAccount = (loginCredentials: LoginAccountCredentials, dispatch: AppDi
 
 const logoutAccount = (dispatch: AppDispatch) => async() => {
   try {
-    await Axios.post(`http://localhost:8080/auth/logout`);
+    await Axios.post(`${import.meta.env.VITE_FFA_BE_URL}/auth/logout`);
     dispatch(logoutSuccess());
     console.log("Logout successful");
   } catch (err) {

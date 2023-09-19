@@ -24,16 +24,14 @@
       .enter-information {
         display: flex;
         flex-direction: column;
-        border: 1px solid map-get($grey, 'light');
-
-        &.input-error {
-          border: 1.5px solid red;
-        }
+        gap: 1rem;
 
         .input-signup-username,
         .input-signup-password {
           display: flex;
           flex-direction: column;
+          border: 1px solid map-get($grey, 'light');
+          border-radius: 4px;
   
           label {
             font-size: 1rem;
@@ -41,21 +39,18 @@
   
           input {
             font-size: 1rem;
-            padding: 1rem;
+            height: 3.25rem;
+            padding: 0.15rem 1rem 0;
             border: none;
+            border-radius: 4px;
 
             &:focus {
               outline: none;
             }
           }
-        }
 
-        .input-divider {
-          width: 100%;
-          padding: 0 1rem;
-
-          .divider {
-            border-bottom: 1px solid map-get($grey, 'lighter');
+          &.input-error {
+            border: 1.5px solid red;
           }
         }
       }
@@ -67,7 +62,7 @@
       .signup-form-submit-btn {
         font-size: 1rem;
         align-self: center;
-        height: 3rem;
+        height: 3.5rem;
         width: 100%;
         color: map-get($theme, 'white');
         background-color: map-get($grey, 'darker');
@@ -85,85 +80,9 @@
     }
 
     .error-message {
-      margin-top: 0.5rem;
-      font-size: 1;
+      margin-top: 0.75rem;
+      font-size: 1rem;
       color: red;
-    }
-  }
-
-  .form-divider {
-    width: 100%;
-    position: relative;
-
-    .divider {
-      border-bottom: 1px solid map-get($grey, 'dark');
-    }
-
-    .divider-text {
-      position: absolute;
-      top: -6px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: map-get($theme, 'white');
-      color: map-get($grey, 'dark');
-      font-size: 0.8rem;
-      padding: 0 0.5rem;
-    }
-  }
-
-  .oauth-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .oauth-login-links {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      margin: 2.5rem 0 1.5rem;
-
-      .oauth-google-btn/* ,
-      .oauth-apple-btn  */{
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        height: 3rem;
-        width: 100%;
-        border: none;
-        border-radius: 4px;
-        color: map-get($theme, 'white');
-        padding: 0 1rem;
-        border: 1.5px solid map-get($grey, 'darker');
-        color: map-get($grey, 'darker');
-        background: transparent;
-
-        @include smooth-hover(border);
-
-        &:hover {
-          cursor: not-allowed;
-          border: 1.5px solid red;
-          /* background-color: darken(map-get($theme, 'white'), 5%); */
-        }
-
-        .oauth-btn-icon {
-          height: 2rem;
-          width: 2rem;
-
-          img {
-            height: 2rem;
-            width: 2rem;
-          }
-        }
-
-        .oauth-btn-text {
-          flex: 1;
-          font-size: 1rem;
-          padding: 0.1rem 0 0;
-        }
-      }
     }
   }
 }

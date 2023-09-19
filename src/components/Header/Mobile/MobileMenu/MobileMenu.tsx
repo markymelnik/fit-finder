@@ -17,8 +17,8 @@ import LogoutButton from "./LogoutButton/LogoutButton";
 const MobileMenu = () => {
 
   const isMobileMenuOpen = useSelector((state: RootState) => state.isMobileMenuOpen.isMobileMenuOpen);
-  const isLoggedIn = useSelector((state: RootState) => state.authentication.isLoggedIn);
-  const userAccountDetails = useSelector((state: RootState) => state.authentication.userAccount);
+  const isLoggedIn = useSelector((state: RootState) => state.login.isLoggedIn);
+  const userAccountDetails = useSelector((state: RootState) => state.login.userAccount);
   
   const dispatch = useDispatch<AppDispatch>();
 

@@ -1,0 +1,27 @@
+@import '../../../../styles/transitions';
+
+.no-account-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 1rem;
+
+  .no-account-message {
+    font-size: 1rem;
+  }
+
+  .no-account-signup-link {
+    border: none;
+    background-color: transparent;
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    @include smooth-hover(transform);
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+}
