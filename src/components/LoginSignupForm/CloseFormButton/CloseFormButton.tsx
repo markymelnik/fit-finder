@@ -3,6 +3,7 @@ import { setIsLoginFormShown } from '../../../redux/slices/loginFormSlice';
 import CloseIcon from '../../../assets/icons/mobile/mobile-menu-close-icon.png';
 import './close-form-btn.scss';
 import { resetLoginError } from '../../../redux/authentication/login/loginActions';
+import { resetRegisterError } from '../../../redux/authentication/register/registerActions';
 
 const CloseFormButton = () => {
 
@@ -11,6 +12,7 @@ const CloseFormButton = () => {
   const handleButtonClick = () => {
     dispatch(setIsLoginFormShown(false));
     dispatch(resetLoginError());
+    dispatch(resetRegisterError());
   }
 
   return (

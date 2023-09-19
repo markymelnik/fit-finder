@@ -144,10 +144,11 @@
         color: map-get($grey, 'darker');
         background-color: transparent;
 
-        @include smooth-hover(background-color);
+        @include smooth-hover(border);
 
         &:hover {
           cursor: not-allowed;
+          border: 1.5px solid red;
           /* background-color: darken(map-get($theme, 'white'), 5%); */
         }
 

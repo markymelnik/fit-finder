@@ -2,33 +2,45 @@ import { ChangeEvent, useState } from 'react';
 import GoogleIcon from '../../../assets/icons/oauth/google-icon.png';
 /* import AppleIcon from '../../../assets/icons/oauth/apple-icon.png'; */
 import './_signup.scss';
-import { AppDispatch } from '../../../redux/store';
+import { AppDispatch, RootState } from '../../../redux/store';
 import { registerNewAccount } from '../../../redux/authentication/authenticationRequests';
 import { useDispatch } from 'react-redux';
-import { setIsLoginFormShown } from '../../../redux/slices/loginFormSlice';
+import { useSelector } from 'react-redux';
+import { Ring } from '@uiball/loaders';
+import { resetRegisterError } from '../../../redux/authentication/register/registerActions';
 
 const Signup = () => {
 
   const dispatch = useDispatch<AppDispatch>();
 
+  const isLoading = useSelector((state: RootState) => state.loading === 1);
+  const registerError = useSelector((state: RootState) => state.register.registerError);
+
   const [signupUsername, setSignupUsername] = useState<string>('');
   const [signupPassword, setSignupPassword] = useState<string>('');
 
   const handleSignupUsernameChange = (event: ChangeEvent<HTMLInputElement>) => {
+    dispatch(resetRegisterError());
     setSignupUsername(event.target.value);
   }
 
   const handleSignupPasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
+    dispatch(resetRegisterError());
     setSignupPassword(event.target.value);
   }
 
   const handleSubmitClickButton = (event: any) => {
     event.preventDefault();
     if (signupUsername && signupPassword) {
-      registerNewAccount(signupCredentials)();
-      dispatch(setIsLoginFormShown(false));
-      setSignupUsername('');
-      setSignupPassword('');
+
+      registerNewAccount(signupCredentials, dispatch)()
+        .then(() => {
+          setSignupUsername('');
+          setSignupPassword('');
+        })
+        .catch(() => {
+          console.error('unsuccessful register')
+        })
     }
   }
 
@@ -42,7 +54,7 @@ const Signup = () => {
       <div className='signup-form-descriptor'>Sign Up for fitfinder</div>
       <form id='signup-form' className='signup-form'>
         <div className='form-field'>
-          <div className='enter-information'>
+          <div className={`enter-information ${registerError ? 'input-error': ''}`}>
             <div className='input-signup-username'>
               <label htmlFor='signup-username'></label>
               <input
@@ -52,6 +64,7 @@ const Signup = () => {
                 onChange={handleSignupUsernameChange}
                 value={signupUsername}
                 placeholder='Username'
+                autoComplete='true'
                 required
               />
             </div>
@@ -71,13 +84,24 @@ const Signup = () => {
               />
             </div>
           </div>
+          {registerError && <div className='error-message'>This email is already in use.</div>}
         </div>
         <div className='form-field'>
           <button 
             className='signup-form-submit-btn'
             onClick={handleSubmitClickButton}
+            disabled={isLoading}
           >
-            Sign Up
+            {isLoading ? (
+              <Ring
+                size={30}
+                lineWeight={5}
+                speed={2}
+                color="white"
+              />
+            ) : (
+              "Sign Up"
+            )}
           </button>
         </div>
       </form>

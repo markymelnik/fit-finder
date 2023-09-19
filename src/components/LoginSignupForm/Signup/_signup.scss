@@ -26,6 +26,10 @@
         flex-direction: column;
         border: 1px solid map-get($grey, 'light');
 
+        &.input-error {
+          border: 1.5px solid red;
+        }
+
         .input-signup-username,
         .input-signup-password {
           display: flex;
@@ -74,9 +78,16 @@
         @include smooth-hover(background-color);
         
         &:hover {
+          cursor: pointer;
           background-color: lighten(map-get($grey, 'darker'), 5%);
         }
       }
+    }
+
+    .error-message {
+      margin-top: 0.5rem;
+      font-size: 1;
+      color: red;
     }
   }
 
@@ -129,10 +140,11 @@
         color: map-get($grey, 'darker');
         background: transparent;
 
-        @include smooth-hover(background-color);
+        @include smooth-hover(border);
 
         &:hover {
-          
+          cursor: not-allowed;
+          border: 1.5px solid red;
           /* background-color: darken(map-get($theme, 'white'), 5%); */
         }
 

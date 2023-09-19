@@ -1,4 +1,4 @@
-import { REGISTER_SUCCESS, REGISTER_FAILURE } from "./registerActionTypes";
+import { REGISTER_SUCCESS, REGISTER_FAILURE, RESET_REGISTER_ERROR } from "./registerActionTypes";
 
 interface RegisterState {
   registrationSuccess: boolean;
@@ -7,7 +7,8 @@ interface RegisterState {
 
 type RegisterActions = 
   | { type: typeof REGISTER_SUCCESS }
-  | { type: typeof REGISTER_FAILURE };
+  | { type: typeof REGISTER_FAILURE }
+  | { type: typeof RESET_REGISTER_ERROR };
 
 const initialState: RegisterState = {
   registrationSuccess: false,
@@ -28,6 +29,11 @@ const registerReducer = (state = initialState, action: RegisterActions) => {
         registrationSuccess: false,
         registerError: true,
       };
+    case RESET_REGISTER_ERROR:
+      return {
+        ...state,
+        registerError: false,
+      }
     default:
       return state;
   }

@@ -9,6 +9,8 @@ import Signup from './Signup/Signup';
 import TintedOverlay from '../TintedOverlay/TintedOverlay';
 import { useDispatch } from 'react-redux';
 import { setIsLoginFormShown } from '../../redux/slices/loginFormSlice';
+import { resetLoginError } from '../../redux/authentication/login/loginActions';
+import { resetRegisterError } from '../../redux/authentication/register/registerActions';
 
 const LoginSignupForm = () => {
 
@@ -20,6 +22,8 @@ const LoginSignupForm = () => {
     if (currentTab != activeTab) {
       setActiveTab(currentTab);
     }
+    dispatch(resetLoginError());
+    dispatch(resetRegisterError());
   }
 
   const closeLoginSignupForm = () => {
