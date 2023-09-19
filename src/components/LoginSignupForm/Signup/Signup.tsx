@@ -7,6 +7,8 @@ import { Ring } from '@uiball/loaders';
 import { resetRegisterError } from '../../../redux/authentication/register/registerActions';
 import HasAccount from './HasAccount/HasAccount';
 import './_signup.scss';
+import PasswordRequirements from './PasswordRequirements/PasswordRequirements';
+import validatePassword from './PasswordRequirements/ValidatePassword';
 
 const Signup = () => {
 
@@ -18,19 +20,37 @@ const Signup = () => {
   const [signupUsername, setSignupUsername] = useState<string>('');
   const [signupPassword, setSignupPassword] = useState<string>('');
 
+  const [passwordIsValid, setPasswordIsValid] = useState<boolean>(false);
+
+  const [lengthRequirementSatisfied, setLengthRequirementSatisfied] = useState<boolean>(false);
+  const [caseRequirementSatisfied, setCaseRequirementSatisfied] = useState<boolean>(false);
+  const [numberRequirementSatisfied, setNumberRequirementSatisfied] = useState<boolean>(false);
+
   const handleSignupUsernameChange = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch(resetRegisterError());
     setSignupUsername(event.target.value);
   }
 
   const handleSignupPasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const password = event.target.value;
     dispatch(resetRegisterError());
-    setSignupPassword(event.target.value);
+    setSignupPassword(password);
+
+    const validationResult = validatePassword(password);
+    setLengthRequirementSatisfied(validationResult.isLengthSatisfied);
+    setCaseRequirementSatisfied(validationResult.isCaseSatsified);
+    setNumberRequirementSatisfied(validationResult.isNumberSatisfied);
+
+    if (validationResult.isLengthSatisfied && validationResult.isCaseSatsified && validationResult.isNumberSatisfied) {
+      setPasswordIsValid(true)
+    } else {
+      setPasswordIsValid(false);
+    }
   }
 
   const handleSubmitClickButton = (event: any) => {
     event.preventDefault();
-    if (signupUsername && signupPassword) {
+    if (signupUsername && signupPassword && passwordIsValid) {
 
       registerNewAccount(signupCredentials, dispatch)()
         .then(() => {
@@ -49,52 +69,66 @@ const Signup = () => {
   }
 
   return (
-    <div className='signup-container'>
-      <div className='signup-form-descriptor'>Sign Up for fitfinder</div>
-      <form id='signup-form' className='signup-form'>
-        <div className='form-field'>
-          <div className='enter-information'>
-            <div className={`input-signup-username ${registerError ? 'input-error': ''}`}>
-              <label htmlFor='signup-username'></label>
+    <div className="signup-container">
+      <div className="signup-form-descriptor">Sign Up for fitfinder</div>
+      <form id="signup-form" className="signup-form">
+        <div className="form-field">
+          <div className="enter-information">
+            <div
+              className={`input-signup-username ${
+                registerError ? "input-error" : ""
+              }`}
+            >
+              <label htmlFor="signup-username"></label>
               <input
-                type='text'
-                id='signup-username'
-                name='username'
+                type="text"
+                id="signup-username"
+                name="username"
                 onChange={handleSignupUsernameChange}
                 value={signupUsername}
-                placeholder='Username'
-                autoComplete='true'
+                placeholder="Username"
+                autoComplete="true"
                 required
               />
             </div>
-            <div className={`input-signup-password ${registerError ? 'input-error': ''}`}>
-              <label htmlFor='signup-password'></label>
+            <div
+              className={`input-signup-password ${
+                registerError ? "input-error" : ""
+              }`}
+            >
+              <label htmlFor="signup-password"></label>
               <input
-                type='text'
-                id='signup-password'
-                name='password'
+                type="text"
+                id="signup-password"
+                name="password"
                 onChange={handleSignupPasswordChange}
                 value={signupPassword}
-                placeholder='Password'
+                placeholder="Password"
                 required
               />
             </div>
           </div>
-          {registerError && <div className='error-message'>An account with this email already exists.</div>}
+          {registerError && (
+            <div className="error-message">
+              An account with this email already exists.
+            </div>
+          )}
         </div>
-        <div className='form-field'>
-          <button 
-            className='signup-form-submit-btn'
+        <PasswordRequirements
+          lengthRequirementSatisfied={lengthRequirementSatisfied}
+          caseRequirementSatisfied={caseRequirementSatisfied}
+          numberRequirementSatisfied={numberRequirementSatisfied}
+        />
+        <div className="form-field">
+          <button
+            className={`signup-form-submit-btn ${
+              !passwordIsValid ? "disabled-btn" : ""
+            }`}
             onClick={handleSubmitClickButton}
-            disabled={isLoading}
+            disabled={!passwordIsValid || isLoading}
           >
             {isLoading ? (
-              <Ring
-                size={30}
-                lineWeight={5}
-                speed={2}
-                color="white"
-              />
+              <Ring size={30} lineWeight={5} speed={2} color="white" />
             ) : (
               "Sign Up"
             )}

@@ -24,7 +24,7 @@
       .enter-information {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
 
         .input-signup-username,
         .input-signup-password {
@@ -67,7 +67,7 @@
         color: map-get($theme, 'white');
         background-color: map-get($grey, 'darker');
         border: none;
-        margin: 2.25rem 0;
+        margin: 2.5rem 0 2rem;
         border-radius: 4px;
 
         @include smooth-hover(background-color);
@@ -75,6 +75,14 @@
         &:hover {
           cursor: pointer;
           background-color: lighten(map-get($grey, 'darker'), 5%);
+        }
+
+        &.disabled-btn {
+          cursor: auto;
+          opacity: 0.2;
+          border: 1px solid map-get($grey, 'darker');
+          background-color: map-get($grey, 'darker');
+
         }
       }
     }
