@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { setIsLoginFormShown } from '../../../redux/slices/loginFormSlice';
 import CloseIcon from '../../../assets/icons/mobile/mobile-menu-close-icon.png';
 import './close-form-btn.scss';
-import { resetLoginError } from '../../../redux/authentication/authenticationActions';
+import { resetLoginError } from '../../../redux/authentication/login/loginActions';
 
 const CloseFormButton = () => {
 

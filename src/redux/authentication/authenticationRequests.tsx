@@ -1,5 +1,5 @@
 import Axios from "axios";
-import { loginSuccess, loginFailure, logoutSuccess } from "./authenticationActions";
+import { loginSuccess, loginFailure, logoutSuccess } from "./login/loginActions";
 import { AppDispatch } from "../store";
 import { setIsLoginFormShown } from "../slices/loginFormSlice";
 import { sleep } from "./sleep";

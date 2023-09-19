@@ -13,7 +13,7 @@ interface FacilityCard extends Facility {
 
 const FacilityCard = ({ onClick, ...facility }: FacilityCard) => {
 
-  const userAccount = useSelector((state: RootState) => state.authentication.userAccount);
+  const userAccount = useSelector((state: RootState) => state.login.userAccount);
 
   const photo = usePhotoLoader(facility.id);
 

@@ -34,7 +34,7 @@ const LoginSignupForm = () => {
           <CloseFormButton />
           <div className="login-signup-tabs">
             <TabButton buttonText='Login' isActive={activeTab} onClick={() => handleTabClick(true)}/>
-            <TabButton buttonText='Signup' isActive={!activeTab} onClick={() => handleTabClick(false)}/>
+            <TabButton buttonText='Sign Up' isActive={!activeTab} onClick={() => handleTabClick(false)}/>
           </div>
           {activeTab ? <Login /> : <Signup />}
         </div>

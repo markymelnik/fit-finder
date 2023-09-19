@@ -5,8 +5,8 @@ import { RootState } from '../../../../../redux/store';
 
 const FacilitySaveSection = () => {
   
-  const isLoggedIn = useSelector((state: RootState) => state.authentication.isLoggedIn);
-  const userAccount = useSelector((state: RootState) => state.authentication.userAccount);
+  const isLoggedIn = useSelector((state: RootState) => state.login.isLoggedIn);
+  const userAccount = useSelector((state: RootState) => state.login.userAccount);
   const selectedFacility = useSelector((state: RootState) => state.selectedFacility.selectedFacility);
 
   return (

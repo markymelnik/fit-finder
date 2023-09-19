@@ -1,30 +1,30 @@
-import { UserAccount } from "../../types/types";
-import { LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT_SUCCESS, RESET_LOGIN_ERROR } from "./authenticationActionTypes";
+import { UserAccount } from "../../../types/types";
+import { LOGIN_SUCCESS, LOGIN_FAILURE, RESET_LOGIN_ERROR, LOGOUT_SUCCESS } from "./loginActionTypes";
 
-interface UserAccountState {
+interface LoginState {
   isLoggedIn: boolean;
   loginError: boolean;
   token: string | null;
   userAccount: UserAccount | null;
 }
 
-type UserAccountActions =
+type LoginActions =
   | {
       type: typeof LOGIN_SUCCESS;
       payload: { token: string; userAccount: UserAccount };
     }
   | { type: typeof LOGIN_FAILURE }
-  | { type: typeof LOGOUT_SUCCESS }
-  | { type: typeof RESET_LOGIN_ERROR };
+  | { type: typeof RESET_LOGIN_ERROR }
+  | { type: typeof LOGOUT_SUCCESS };
 
-const initialState: UserAccountState = {
+const initialState: LoginState = {
   isLoggedIn: false,
   loginError: false,
   token: null,
   userAccount: null,
 }
 
-const userAccountReducer = (state = initialState, action: UserAccountActions) => {
+const loginReducer = (state = initialState, action: LoginActions) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
       return {
@@ -60,4 +60,4 @@ const userAccountReducer = (state = initialState, action: UserAccountActions) =>
   }
 }
 
-export default userAccountReducer;
+export default loginReducer;

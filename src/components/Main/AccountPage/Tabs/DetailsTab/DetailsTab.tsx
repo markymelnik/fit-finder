@@ -4,8 +4,8 @@ import './_details-tab.scss';
 
 const DetailsTab = () => {
   
-  const isLoggedIn = useSelector((state: RootState) => state.authentication.isLoggedIn);
-  const userAccountDetails = useSelector((state: RootState) => state.authentication.userAccount);
+  const isLoggedIn = useSelector((state: RootState) => state.login.isLoggedIn);
+  const userAccountDetails = useSelector((state: RootState) => state.login.userAccount);
 
   return (
     <div className='account-details-container'>

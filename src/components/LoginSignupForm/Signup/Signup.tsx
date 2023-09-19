@@ -53,8 +53,6 @@ const Signup = () => {
                 value={signupUsername}
                 placeholder='Username'
                 required
-                //
-                disabled
               />
             </div>
             <div className='input-divider'>
@@ -70,8 +68,6 @@ const Signup = () => {
                 value={signupPassword}
                 placeholder='Password'
                 required
-                //
-                disabled
               />
             </div>
           </div>

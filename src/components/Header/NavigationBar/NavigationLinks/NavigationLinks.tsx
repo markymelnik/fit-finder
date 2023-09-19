@@ -10,7 +10,7 @@ import { RootState } from '../../../../redux/store';
 
 const NavigationLinks = () => {
 
-  const isLoggedIn = useSelector((state: RootState) => state.authentication.isLoggedIn);
+  const isLoggedIn = useSelector((state: RootState) => state.login.isLoggedIn);
 
   return (
     <div className='navigation-links'>

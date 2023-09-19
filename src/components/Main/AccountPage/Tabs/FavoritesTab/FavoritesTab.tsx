@@ -12,8 +12,8 @@ const FavoritesTab = () => {
 
   const dispatch = useDispatch<AppDispatch>();
 
-  const isLoggedIn = useSelector((state: RootState) => state.authentication.isLoggedIn);
-  const userAccountId = useSelector((state: RootState) => state.authentication.userAccount?.id);
+  const isLoggedIn = useSelector((state: RootState) => state.login.isLoggedIn);
+  const userAccountId = useSelector((state: RootState) => state.login.userAccount?.id);
   const favoritedFacility = useSelector((state: RootState) => state.favoritedFacility);
 
   useEffect(() => {

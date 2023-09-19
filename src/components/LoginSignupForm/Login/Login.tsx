@@ -8,19 +8,19 @@ import { loginAccount } from '../../../redux/authentication/authenticationReques
 import { fetchFavoritedFacilities } from '../../../redux/apiRequests';
 import { useSelector } from 'react-redux';
 import { Ring } from '@uiball/loaders';
-import { resetLoginError } from '../../../redux/authentication/authenticationActions';
+import { resetLoginError } from '../../../redux/authentication/login/loginActions';
 
 const Login = () => {
 
   const dispatch = useDispatch<AppDispatch>();
-
+  
   const isLoading = useSelector((state: RootState) => state.loading === 1);
-  const loginError = useSelector((state: RootState) => state.authentication.loginError);
+  const loginError = useSelector((state: RootState) => state.login.loginError);
 
   const [loginUsername, setLoginUsername] = useState<string>('');
   const [loginPassword, setLoginPassword] = useState<string>('');
 
-  const userAccountId = useSelector((state: RootState) => state.authentication.userAccount?.id);
+  const userAccountId = useSelector((state: RootState) => state.login.userAccount?.id);
 
   useEffect(() => {
     if (userAccountId) {

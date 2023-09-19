@@ -1,5 +1,5 @@
-import { LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT_SUCCESS, RESET_LOGIN_ERROR } from "./authenticationActionTypes";
-import { UserAccount } from "../../types/types";
+import { LOGIN_SUCCESS, LOGIN_FAILURE, RESET_LOGIN_ERROR, LOGOUT_SUCCESS } from "./loginActionTypes";
+import { UserAccount } from "../../../types/types";
 
 export interface LoginSuccessAction {
   type: typeof LOGIN_SUCCESS;
@@ -13,12 +13,12 @@ export interface LoginFailureAction {
   type: typeof LOGIN_FAILURE;
 }
 
-export interface LogoutSuccessAction {
-  type: typeof LOGOUT_SUCCESS;
-}
-
 export interface ResetLoginErrorAction {
   type: typeof RESET_LOGIN_ERROR;
+}
+
+export interface LogoutSuccessAction {
+  type: typeof LOGOUT_SUCCESS;
 }
 
 export const loginSuccess = (token: string, userAccount: UserAccount): LoginSuccessAction => {

@@ -10,7 +10,8 @@ import amenititesSliceReducer from './slices/amenitySlice';
 import serviceSliceReducer from './slices/servicesSlice';
 import selectedFacilityReducer from './slices/selectedFacilitySlice';
 import filtersReducer from './slices/filterSlice';
-import authenticationReducer from './authentication/authenticationReducer';
+import loginReducer from './authentication/login/loginReducer';
+import registerReducer from './authentication/register/registerReducer';
 import favoritedFacilityReducer from './slices/favoritedFacilitySlice';
 import loadingReducer from './slices/loadingSlice';
 
@@ -27,7 +28,8 @@ const store = configureStore({
     services: serviceSliceReducer,
     selectedFacility: selectedFacilityReducer,
     filters: filtersReducer,
-    authentication: authenticationReducer,
+    login: loginReducer,
+    register: registerReducer,
     favoritedFacility: favoritedFacilityReducer,
     loading: loadingReducer
   },
