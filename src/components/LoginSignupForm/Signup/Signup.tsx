@@ -8,9 +8,15 @@ import { resetRegisterError } from '../../../redux/authentication/register/regis
 import HasAccount from './HasAccount/HasAccount';
 import './_signup.scss';
 import PasswordRequirements from './PasswordRequirements/PasswordRequirements';
-import validatePassword from './PasswordRequirements/ValidatePassword';
+import validatePassword from './PasswordRequirements/validatePassword';
+import PasswordShowIcon from '../../../assets/icons/password/password-show.png';
+import PasswordHideIcon from '../../../assets/icons/password/password-hide.png';
 
-const Signup = () => {
+type SignupProps = {
+  handleTabClick: (value: boolean) => void;
+}
+
+const Signup = ({ handleTabClick }: SignupProps) => {
 
   const dispatch = useDispatch<AppDispatch>();
 
@@ -20,8 +26,9 @@ const Signup = () => {
   const [signupUsername, setSignupUsername] = useState<string>('');
   const [signupPassword, setSignupPassword] = useState<string>('');
 
-  const [passwordIsValid, setPasswordIsValid] = useState<boolean>(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
 
+  const [passwordIsValid, setPasswordIsValid] = useState<boolean>(false);
   const [lengthRequirementSatisfied, setLengthRequirementSatisfied] = useState<boolean>(false);
   const [caseRequirementSatisfied, setCaseRequirementSatisfied] = useState<boolean>(false);
   const [numberRequirementSatisfied, setNumberRequirementSatisfied] = useState<boolean>(false);
@@ -56,6 +63,9 @@ const Signup = () => {
         .then(() => {
           setSignupUsername('');
           setSignupPassword('');
+          setLengthRequirementSatisfied(false);
+          setCaseRequirementSatisfied(false);
+          setNumberRequirementSatisfied(false);
         })
         .catch(() => {
           console.error('unsuccessful register')
@@ -79,33 +89,37 @@ const Signup = () => {
                 registerError ? "input-error" : ""
               }`}
             >
-              <label htmlFor="signup-username"></label>
+              
               <input
                 type="text"
                 id="signup-username"
                 name="username"
                 onChange={handleSignupUsernameChange}
                 value={signupUsername}
-                placeholder="Username"
+                placeholder=" "
                 autoComplete="true"
                 required
               />
+              <label htmlFor="signup-username">Username</label>
             </div>
             <div
               className={`input-signup-password ${
                 registerError ? "input-error" : ""
               }`}
             >
-              <label htmlFor="signup-password"></label>
               <input
-                type="text"
+                type={isPasswordVisible ? "text" : "password"}
                 id="signup-password"
                 name="password"
                 onChange={handleSignupPasswordChange}
                 value={signupPassword}
-                placeholder="Password"
+                placeholder=" "
                 required
               />
+              <label htmlFor="signup-password">Password</label>
+              <div className='password-visible-toggle' onClick={() => setIsPasswordVisible(prev => !prev)}>
+                <img src={isPasswordVisible ? PasswordShowIcon : PasswordHideIcon}/>
+              </div>
             </div>
           </div>
           {registerError && (
@@ -135,7 +149,7 @@ const Signup = () => {
           </button>
         </div>
       </form>
-      <HasAccount />
+      <HasAccount navigateToLogin={() => handleTabClick(true)}/>
     </div>
   );
 };

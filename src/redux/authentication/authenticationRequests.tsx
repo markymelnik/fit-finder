@@ -29,6 +29,7 @@ const registerNewAccount = (signupCredentials: SignupAccountCredentials, dispatc
   
       console.log("Account created successfully")
       dispatch(registerSuccess());
+      dispatch(setIsLoginFormShown(false));
     } catch (err) {
       console.error('Error registering new account', err);
       dispatch(registerFailure());

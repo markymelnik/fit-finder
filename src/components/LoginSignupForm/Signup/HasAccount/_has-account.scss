@@ -4,8 +4,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0;
   gap: 1rem;
+  padding: 0 0 1rem;
 
   .has-account-message {
     font-size: 1rem;
@@ -14,7 +14,7 @@
   .has-account-signup-link {
     border: none;
     background-color: transparent;
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 600;
 
     @include smooth-hover(transform);

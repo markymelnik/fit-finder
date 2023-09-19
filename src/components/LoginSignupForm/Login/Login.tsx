@@ -7,14 +7,22 @@ import { useSelector } from 'react-redux';
 import { Ring } from '@uiball/loaders';
 import { resetLoginError } from '../../../redux/authentication/login/loginActions';
 import NoAccount from './NoAccount/NoAccount';
+import PasswordShowIcon from '../../../assets/icons/password/password-show.png';
+import PasswordHideIcon from '../../../assets/icons/password/password-hide.png';
 import './_login.scss';
 
-const Login = () => {
+type LoginProps = {
+  handleTabClick: (value: boolean) => void;
+}
+
+const Login = ({ handleTabClick }: LoginProps) => {
 
   const dispatch = useDispatch<AppDispatch>();
   
   const isLoading = useSelector((state: RootState) => state.loading === 1);
   const loginError = useSelector((state: RootState) => state.login.loginError);
+
+  const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
 
   const [loginUsername, setLoginUsername] = useState<string>('');
   const [loginPassword, setLoginPassword] = useState<string>('');
@@ -64,29 +72,34 @@ const Login = () => {
         <div className='form-field'>
           <div className='enter-information'>
             <div className={`input-login-username ${loginError ? 'input-error' : ''}`}>
-              <label htmlFor='login-username'></label>
+              
               <input
                 type='text'
                 id='login-username'
                 name='username'
                 onChange={handleLoginUsernameChange}
                 value={loginUsername}
-                placeholder='Username'
+                placeholder=''
                 autoComplete='username'
                 required
               />
+              <label htmlFor='login-username'>Username</label>
             </div>
             <div className={`input-login-password ${loginError ? 'input-error' : ''}`}>
-              <label htmlFor='login-password'></label>
+              
               <input
-                type='text'
+                type='password'
                 id='login-password'
                 name='password'
                 onChange={handleLoginPasswordChange}
                 value={loginPassword}
-                placeholder='Password'
+                placeholder=''
                 required
               />
+              <label htmlFor='login-password'>Password</label>
+              <div className='password-visible-toggle' onClick={() => setIsPasswordVisible(prev => !prev)}>
+                <img src={isPasswordVisible ? PasswordShowIcon : PasswordHideIcon}/>
+              </div>
             </div>
           </div>
           {loginError && <div className='error-message'>Please enter a valid email address and password.</div> }
@@ -110,7 +123,7 @@ const Login = () => {
           </button>
         </div>
       </form>
-      <NoAccount />
+      <NoAccount navigateToSignup={() => handleTabClick(false)}/>
     </div>
   );
 };

@@ -40,7 +40,7 @@ const LoginSignupForm = () => {
             <TabButton buttonText='Login' isActive={activeTab} onClick={() => handleTabClick(true)}/>
             <TabButton buttonText='Sign Up' isActive={!activeTab} onClick={() => handleTabClick(false)}/>
           </div>
-          {activeTab ? <Login /> : <Signup />}
+          {activeTab ? <Login handleTabClick={handleTabClick} /> : <Signup handleTabClick={handleTabClick} />}
         </div>
       </div>
     </>
