@@ -12,6 +12,7 @@ import selectedFacilityReducer from './slices/selectedFacilitySlice';
 import filtersReducer from './slices/filterSlice';
 import authenticationReducer from './authentication/authenticationReducer';
 import favoritedFacilityReducer from './slices/favoritedFacilitySlice';
+import loadingReducer from './slices/loadingSlice';
 
 const store = configureStore({
   reducer: {
@@ -27,7 +28,8 @@ const store = configureStore({
     selectedFacility: selectedFacilityReducer,
     filters: filtersReducer,
     authentication: authenticationReducer,
-    favoritedFacility: favoritedFacilityReducer
+    favoritedFacility: favoritedFacilityReducer,
+    loading: loadingReducer
   },
 });
 

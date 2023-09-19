@@ -1,5 +1,6 @@
 @import '../../../styles/colors';
 @import '../../../styles/transitions';
+@import '../../../styles/mixins';
 
 .login-container {
   display: flex;
@@ -26,6 +27,10 @@
         flex-direction: column;
         border: 1px solid map-get($grey, 'light');
 
+        &.input-error {
+          border: 1.5px solid red;
+        }
+
         .input-login-username,
         .input-login-password {
           display: flex;
@@ -46,6 +51,8 @@
           }
         }
 
+        
+
         .input-divider {
           width: 100%;
           padding: 0 1rem;
@@ -61,6 +68,7 @@
       }
 
       .login-form-submit-btn {
+        @include center-elements;
         font-size: 1rem;
         align-self: center;
         height: 3rem;
@@ -78,6 +86,12 @@
           background-color: lighten(map-get($grey, 'darker'), 7.5%);
         }
       }
+    }
+
+    .error-message {
+      margin-top: 0.5rem;
+      font-size: 1;
+      color: red;
     }
   }
 
