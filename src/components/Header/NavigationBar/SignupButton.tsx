@@ -3,11 +3,11 @@ import { setIsLoginFormShown } from "../../../redux/slices/loginFormSlice";
 import { AppDispatch } from "../../../redux/store";
 import { setIsMobileMenuOpen } from "../../../redux/slices/mobileMenuSlice";
 
-type LoginButtonProps = {
+type SignupButtonProps = {
   customClass: string;
 }
 
-const LoginButton = ({ customClass }: LoginButtonProps) => {
+const SignupButton = ({ customClass }: SignupButtonProps) => {
 
   const dispatch = useDispatch<AppDispatch>();
 
@@ -17,8 +17,8 @@ const LoginButton = ({ customClass }: LoginButtonProps) => {
   }
 
   return (
-    <button className={customClass} onClick={handleButtonClick}>Log In</button>    
+    <button className={customClass} onClick={handleButtonClick}>Sign Up</button>    
   );
 };
 
-export default LoginButton;
+export default SignupButton;

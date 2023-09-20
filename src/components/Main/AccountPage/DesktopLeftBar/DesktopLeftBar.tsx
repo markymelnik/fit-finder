@@ -1,5 +1,5 @@
 import './_desktop-left-bar.scss';
-import DetailsIcon from '../../../../assets/icons/account/details-icon.png';
+import DetailsIcon from '../../../../assets/icons/account/details-icon.svg';
 import FavoritesIcon from '../../../../assets/icons/account/favorites-icon.png';
 import LogoutButton from '../../../Header/Mobile/MobileMenu/LogoutButton/LogoutButton';
 

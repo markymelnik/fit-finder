@@ -1,0 +1,11 @@
+@import '../../../../../styles/colors';
+
+.dropdown-divider {
+  width: 100%;
+  margin: 0.5rem 0;
+
+  .divider {
+    width: 100%;
+    border-bottom: 1px solid map-get($grey, 'light');
+  }
+}
