@@ -1,6 +1,33 @@
 @import '../../../styles/mixins';
+@import '../../../styles/colors';
+@import '../../../styles/transitions';
 
 .navigation-bar {
   @include center-elements;
   height: 100%;
+
+  .navigation-links {
+    @include center-elements;
+    height: 100%;
+  
+    .login-link {
+      @include center-elements;
+      text-decoration: none;
+      height: 100%;
+      padding: 1.5rem;
+      background-color: map-get($theme, 'white');
+      font-size: 1rem;
+      border: none;
+      color: map-get($theme, 'black');
+  
+      @include smooth-hover(background-color);
+      @include smooth-hover(transform);
+  
+      &:hover {
+        cursor: pointer;
+        background-color: darken(map-get($theme, 'white'), 5%);
+        transform: scaleX(1.05);
+      }
+    }
+  }
 }

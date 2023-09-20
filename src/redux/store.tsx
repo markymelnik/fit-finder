@@ -15,6 +15,7 @@ import registerReducer from './authentication/register/registerReducer';
 import favoritedFacilityReducer from './slices/favoritedFacilitySlice';
 import loadingReducer from './slices/loadingSlice';
 import checkmarkSuccessReducer from './slices/checkmarkSuccessSlice';
+import desktopProfileDropdownReducer from './slices/desktopProfileDropdownSlice';
 
 const store = configureStore({
   reducer: {
@@ -34,6 +35,7 @@ const store = configureStore({
     favoritedFacility: favoritedFacilityReducer,
     loading: loadingReducer,
     checkmarkSuccess: checkmarkSuccessReducer,
+    isDesktopProfileDropdownOpen: desktopProfileDropdownReducer
   },
 });
 
