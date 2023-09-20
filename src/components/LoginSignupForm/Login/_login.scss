@@ -116,10 +116,17 @@
       }
     }
 
-    .error-message {
-      margin-top: 0.75rem;
-      font-size: 1rem;
-      color: red;
+    .error-container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.75rem 0 0;
+
+      .error-message {
+        font-size: 1rem;
+        color: red;
+        padding: 0.25rem 0 0;
+      }
     }
   }
 }

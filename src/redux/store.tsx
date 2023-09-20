@@ -14,6 +14,7 @@ import loginReducer from './authentication/login/loginReducer';
 import registerReducer from './authentication/register/registerReducer';
 import favoritedFacilityReducer from './slices/favoritedFacilitySlice';
 import loadingReducer from './slices/loadingSlice';
+import checkmarkSuccessReducer from './slices/checkmarkSuccessSlice';
 
 const store = configureStore({
   reducer: {
@@ -31,7 +32,8 @@ const store = configureStore({
     login: loginReducer,
     register: registerReducer,
     favoritedFacility: favoritedFacilityReducer,
-    loading: loadingReducer
+    loading: loadingReducer,
+    checkmarkSuccess: checkmarkSuccessReducer,
   },
 });
 

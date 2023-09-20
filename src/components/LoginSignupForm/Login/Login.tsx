@@ -10,6 +10,8 @@ import NoAccount from './NoAccount/NoAccount';
 import PasswordShowIcon from '../../../assets/icons/password/password-show.png';
 import PasswordHideIcon from '../../../assets/icons/password/password-hide.png';
 import './_login.scss';
+import WarningSVG from '../Signup/PasswordRequirements/WarningSVG';
+import AuthCheckmarkSVG from '../../../redux/authentication/AuthCheckmarkSVG';
 
 type LoginProps = {
   handleTabClick: (value: boolean) => void;
@@ -21,6 +23,7 @@ const Login = ({ handleTabClick }: LoginProps) => {
   
   const isLoading = useSelector((state: RootState) => state.loading === 1);
   const loginError = useSelector((state: RootState) => state.login.loginError);
+  const showCheckmark = useSelector((state: RootState) => state.checkmarkSuccess.showCheckmark);
 
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
 
@@ -72,7 +75,6 @@ const Login = ({ handleTabClick }: LoginProps) => {
         <div className='form-field'>
           <div className='enter-information'>
             <div className={`input-login-username ${loginError ? 'input-error' : ''}`}>
-              
               <input
                 type='text'
                 id='login-username'
@@ -88,7 +90,7 @@ const Login = ({ handleTabClick }: LoginProps) => {
             <div className={`input-login-password ${loginError ? 'input-error' : ''}`}>
               
               <input
-                type='password'
+                type={isPasswordVisible ? "text" : "password"}
                 id='login-password'
                 name='password'
                 onChange={handleLoginPasswordChange}
@@ -97,12 +99,24 @@ const Login = ({ handleTabClick }: LoginProps) => {
                 required
               />
               <label htmlFor='login-password'>Password</label>
-              <div className='password-visible-toggle' onClick={() => setIsPasswordVisible(prev => !prev)}>
-                <img src={isPasswordVisible ? PasswordShowIcon : PasswordHideIcon}/>
+              <div
+                className="password-visible-toggle"
+                onClick={() => setIsPasswordVisible((prev) => !prev)}
+              >
+                <img
+                  src={isPasswordVisible ? PasswordShowIcon : PasswordHideIcon}
+                />
               </div>
             </div>
           </div>
-          {loginError && <div className='error-message'>Please enter a valid email address and password.</div> }
+          {loginError && (
+            <div className="error-container">
+              <WarningSVG />
+              <div className="error-message">
+                Please enter a valid email address and password.
+              </div>
+            </div> 
+          )}
         </div>
         <div className='form-field'>
           <button 
@@ -117,7 +131,9 @@ const Login = ({ handleTabClick }: LoginProps) => {
                 speed={2}
                 color="white"
               />
-            ) : (
+            ) : showCheckmark ? (
+              <AuthCheckmarkSVG />
+            ) :(
               "Log In"
             )}
           </button>

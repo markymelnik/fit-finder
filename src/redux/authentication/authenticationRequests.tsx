@@ -5,6 +5,7 @@ import { setIsLoginFormShown } from "../slices/loginFormSlice";
 import { sleep } from "./sleep";
 import { startLoading, stopLoading } from "../slices/loadingSlice";
 import { registerFailure, registerSuccess } from "./register/registerActions";
+import { setShowCheckmark } from "../slices/checkmarkSuccessSlice";
 
 type SignupAccountCredentials = {
   username: string;
@@ -23,21 +24,30 @@ const registerNewAccount = (signupCredentials: SignupAccountCredentials, dispatc
       dispatch(startLoading());
 
       await sleep(1000);
-      const response = await Axios.post(`${import.meta.env.VITE_FFA_BE_URL}/auth/register`, signupCredentials);
 
+      const response = await Axios.post(`${import.meta.env.VITE_FFA_BE_URL}/auth/register`, signupCredentials);
       console.log(response);
   
-      console.log("Account created successfully")
       dispatch(registerSuccess());
+
+      console.log("Account created successfully")
+
+      dispatch(stopLoading());
+
+      dispatch(setShowCheckmark(true));
+
+      await sleep(1500);
+
+      dispatch(setShowCheckmark(false));
+
       dispatch(setIsLoginFormShown(false));
+
     } catch (err) {
       console.error('Error registering new account', err);
       dispatch(registerFailure());
-    } finally {
       dispatch(stopLoading());
     }
   }
-  
 }
 
 const loginAccount = (loginCredentials: LoginAccountCredentials, dispatch: AppDispatch) => {
@@ -54,17 +64,31 @@ const loginAccount = (loginCredentials: LoginAccountCredentials, dispatch: AppDi
       
       if (!token || !userAccount) {
         dispatch(loginFailure());
+
+        dispatch(stopLoading());
+
         console.log("Account does not exist; login unsuccessful")
+
       } else {
         dispatch(loginSuccess(token, userAccount));
-        dispatch(setIsLoginFormShown(false));
+
         console.log("Account exists; login successful")
+
+        dispatch(stopLoading());
+
+        dispatch(setShowCheckmark(true));
+
+        await sleep(1000);
+
+        dispatch(setShowCheckmark(false));
+
+        dispatch(setIsLoginFormShown(false));
+
       }
   
     } catch (err) {
       console.error('Error logging into account', err);
       dispatch(loginFailure());
-    } finally {
       dispatch(stopLoading());
     }
   }

@@ -11,6 +11,8 @@ import PasswordRequirements from './PasswordRequirements/PasswordRequirements';
 import validatePassword from './PasswordRequirements/validatePassword';
 import PasswordShowIcon from '../../../assets/icons/password/password-show.png';
 import PasswordHideIcon from '../../../assets/icons/password/password-hide.png';
+import WarningSVG from './PasswordRequirements/WarningSVG';
+import AuthCheckmarkSVG from '../../../redux/authentication/AuthCheckmarkSVG';
 
 type SignupProps = {
   handleTabClick: (value: boolean) => void;
@@ -22,6 +24,7 @@ const Signup = ({ handleTabClick }: SignupProps) => {
 
   const isLoading = useSelector((state: RootState) => state.loading === 1);
   const registerError = useSelector((state: RootState) => state.register.registerError);
+  const showCheckmark = useSelector((state: RootState) => state.checkmarkSuccess.showCheckmark);
 
   const [signupUsername, setSignupUsername] = useState<string>('');
   const [signupPassword, setSignupPassword] = useState<string>('');
@@ -89,7 +92,6 @@ const Signup = ({ handleTabClick }: SignupProps) => {
                 registerError ? "input-error" : ""
               }`}
             >
-              
               <input
                 type="text"
                 id="signup-username"
@@ -117,14 +119,22 @@ const Signup = ({ handleTabClick }: SignupProps) => {
                 required
               />
               <label htmlFor="signup-password">Password</label>
-              <div className='password-visible-toggle' onClick={() => setIsPasswordVisible(prev => !prev)}>
-                <img src={isPasswordVisible ? PasswordShowIcon : PasswordHideIcon}/>
+              <div
+                className="password-visible-toggle"
+                onClick={() => setIsPasswordVisible((prev) => !prev)}
+              >
+                <img
+                  src={isPasswordVisible ? PasswordShowIcon : PasswordHideIcon}
+                />
               </div>
             </div>
           </div>
           {registerError && (
-            <div className="error-message">
-              An account with this email already exists.
+            <div className="error-container">
+              <WarningSVG />
+              <div className="error-message">
+                An account with this email already exists.
+              </div>
             </div>
           )}
         </div>
@@ -132,6 +142,7 @@ const Signup = ({ handleTabClick }: SignupProps) => {
           lengthRequirementSatisfied={lengthRequirementSatisfied}
           caseRequirementSatisfied={caseRequirementSatisfied}
           numberRequirementSatisfied={numberRequirementSatisfied}
+          inputValue={signupPassword}
         />
         <div className="form-field">
           <button
@@ -143,13 +154,15 @@ const Signup = ({ handleTabClick }: SignupProps) => {
           >
             {isLoading ? (
               <Ring size={30} lineWeight={5} speed={2} color="white" />
+            ) : showCheckmark ? (
+              <AuthCheckmarkSVG />
             ) : (
               "Sign Up"
             )}
           </button>
         </div>
       </form>
-      <HasAccount navigateToLogin={() => handleTabClick(true)}/>
+      <HasAccount navigateToLogin={() => handleTabClick(true)} />
     </div>
   );
 };
