@@ -2,6 +2,7 @@ import './_save-section.scss';
 import AddFavoriteButton from '../../../AccountPage/Tabs/FavoritesTab/AddFavoriteButton/AddFavoriteButton';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../../../redux/store';
+import LoginButton from '../../../../Header/NavigationBar/LoginButton';
 
 const FacilitySaveSection = () => {
   
@@ -11,10 +12,15 @@ const FacilitySaveSection = () => {
 
   return (
     <div className="facility-save-section-container">
-      {isLoggedIn && userAccount && selectedFacility && (
-        <div className="facility-save-container">
+      {isLoggedIn && userAccount && selectedFacility ? (
+        <div className="save-to-favorites-container">
           {/* <div className="facility-add-favorite-text">Add to Favorites</div> */}
           <AddFavoriteButton userAccountId={userAccount.id} facilityId={selectedFacility.id} customClass='facility-add-favorite-btn'/>
+        </div>
+      ) : (
+        <div className="encourage-login-container">
+          <div className="encourage-text">Want to save this location?</div>
+          <LoginButton customClass='encourage-login-btn'/>
         </div>
       )}
     </div>

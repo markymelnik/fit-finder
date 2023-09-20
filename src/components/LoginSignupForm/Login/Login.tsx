@@ -70,7 +70,7 @@ const Login = ({ handleTabClick }: LoginProps) => {
 
   return (
     <div className='login-container'>
-      <div className='login-form-descriptor'>Log In to fitfinder</div>
+      <div className='login-form-descriptor'>Login to fitfinder</div>
       <form id='login-form' className='login-form'>
         <div className='form-field'>
           <div className='enter-information'>
@@ -134,7 +134,7 @@ const Login = ({ handleTabClick }: LoginProps) => {
             ) : showCheckmark ? (
               <AuthCheckmarkSVG />
             ) :(
-              "Log In"
+              "Login"
             )}
           </button>
         </div>

@@ -9,6 +9,8 @@ import { useDispatch } from "react-redux";
 import { setIsMobileMenuOpen } from "../../../../redux/slices/mobileMenuSlice";
 import Logo from "../../Logo/Logo";
 import LogoutButton from "./LogoutButton/LogoutButton";
+import AboutLink from "../../NavigationBar/AboutLink";
+import MobileMenuDivider from "./MobileMenuDivider/MobileMenuDivider";
 
 const MobileMenu = () => {
 
@@ -25,17 +27,24 @@ const MobileMenu = () => {
   return (
     <>
       <TintedOverlay isActive={isMobileMenuOpen} onCloseOverlay={closeMobileMenu} />
-      <div className={`mobile-menu-container ${isMobileMenuOpen ? 'active' : ''}`}>
+      <div className={`mobile-menu-container ${isMobileMenuOpen ? 'active' : ''} ${isLoggedIn ? '' : 'logged-out'}`}>
         <div className="mobile-menu-top">
           <div className="mobile-menu-header">
             <Logo />
             <MobileMenuCloseButton />
           </div>
-          {isLoggedIn && userAccountDetails && (
-            <div className="mobile-menu-link">
-              <AccountLink customClass='account-link' />
-            </div>
-          )}
+          <MobileMenuDivider />
+          <div className="mobile-menu-link">
+            <AboutLink customClass='about-link'/>
+            <MobileMenuDivider />
+            {isLoggedIn && userAccountDetails && (
+              <>
+                <AccountLink customClass='account-link' /> 
+                <MobileMenuDivider />
+              </>
+              )
+            }
+          </div>
         </div>
         <div className="mobile-menu-bottom">
           {isLoggedIn && userAccountDetails && (
@@ -49,7 +58,7 @@ const MobileMenu = () => {
               <LogoutButton customClass="mobile-menu-logout-btn"/>
             </>
           )}
-          {!isLoggedIn && <LoginButton/>}
+          {!isLoggedIn && <LoginButton customClass="mobile-menu-login-btn"/>}
         </div>
       </div>
     </>

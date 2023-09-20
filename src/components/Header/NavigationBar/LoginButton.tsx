@@ -17,7 +17,7 @@ const LoginButton = ({ customClass }: LoginButtonProps) => {
   }
 
   return (
-    <button className={customClass} onClick={handleButtonClick}>Log In</button>    
+    <button className={customClass} onClick={handleButtonClick}>Login</button>    
   );
 };
 

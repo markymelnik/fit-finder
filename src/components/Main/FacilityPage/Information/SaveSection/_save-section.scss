@@ -11,8 +11,35 @@ $page-max-width: 800px;
   border-radius: 6px;
   margin: 1.5rem 0;
 
+  .encourage-login-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
 
-  .facility-save-container {
+    .encourage-text {
+      font-size: 1.1rem;
+    }
+
+    .encourage-login-btn {
+      height: 3rem;
+      width: 8rem;
+      border: none;
+      border-radius: 6px;
+      background-color: map-get($grey, 'darker');
+      color: map-get($theme, 'white');
+      font-size: 1rem;
+
+      @include smooth-hover(background-color);
+
+      &:hover {
+        cursor: pointer;
+        background-color: lighten(map-get($grey, 'darker'), 10%);
+      }
+    }
+  }
+
+  .save-to-favorites-container {
     display: flex;
     justify-content: flex-end;
     align-items: center;

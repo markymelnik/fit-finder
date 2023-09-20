@@ -6,6 +6,7 @@ import { sleep } from "./sleep";
 import { startLoading, stopLoading } from "../slices/loadingSlice";
 import { registerFailure, registerSuccess } from "./register/registerActions";
 import { setShowCheckmark } from "../slices/checkmarkSuccessSlice";
+import { useNavigate } from "react-router-dom";
 
 type SignupAccountCredentials = {
   username: string;
@@ -97,8 +98,13 @@ const loginAccount = (loginCredentials: LoginAccountCredentials, dispatch: AppDi
 const logoutAccount = (dispatch: AppDispatch) => async() => {
   try {
     await Axios.post(`${import.meta.env.VITE_FFA_BE_URL}/auth/logout`);
+
+    await sleep(1000);
+
     dispatch(logoutSuccess());
+
     console.log("Logout successful");
+
   } catch (err) {
     console.error("Error logging out account.")
   }

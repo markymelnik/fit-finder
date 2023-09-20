@@ -1,8 +1,15 @@
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { AppDispatch } from "../../../redux/store";
+import { setIsMobileMenuOpen } from "../../../redux/slices/mobileMenuSlice";
 
-const AboutLink = () => {
+type AboutLinkProps = {
+  customClass: string;
+}
+const AboutLink = ({ customClass }: AboutLinkProps) => {
 
   const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
 
   const scrollToAboutSection = () => {
     const aboutSection = document.querySelector(".about-section-container");
@@ -21,10 +28,13 @@ const AboutLink = () => {
     } else {
       scrollToAboutSection();
     }
+    dispatch(setIsMobileMenuOpen(false));
   };
 
   return (
-    <div className="about-link" onClick={handleAboutButtonClick}>About</div>
+    <div className={customClass} onClick={handleAboutButtonClick}>
+      <div className={`${customClass}-text`}>About</div>
+    </div>
   )
 }
 

@@ -7,7 +7,7 @@ const NavigationBar = () => {
   return (
     <div className='navigation-bar'>
       <div className='navigation-links'>
-        <AboutLink />
+        <AboutLink customClass='about-link' />
         <DesktopProfileDropdown/>
       </div>
     </div>
