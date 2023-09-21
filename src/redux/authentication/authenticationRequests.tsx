@@ -7,6 +7,7 @@ import { startLoading, stopLoading } from "../slices/loadingSlice";
 import { registerFailure, registerSuccess } from "./register/registerActions";
 import { setShowCheckmark } from "../slices/checkmarkSuccessSlice";
 import { useNavigate } from "react-router-dom";
+import { setIsSuccessfulSignupShown } from "../slices/successfulSignup";
 
 type SignupAccountCredentials = {
   username: string;
@@ -40,7 +41,7 @@ const registerNewAccount = (signupCredentials: SignupAccountCredentials, dispatc
 
       dispatch(setShowCheckmark(false));
 
-      dispatch(setIsLoginFormShown(false));
+      dispatch(setIsSuccessfulSignupShown(true));
 
     } catch (err) {
       console.error('Error registering new account', err);

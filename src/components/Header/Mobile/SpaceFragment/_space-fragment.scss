@@ -19,12 +19,13 @@
     @include center-elements;
     height: 2.5rem;
     width: 2.5rem;
-    border: 1px solid map-get($grey, 'dark');
+    border: 1.5px solid map-get($theme, 'black');
     border-radius: 50px;
 
     .mobile-header-account-photo-letter {
-      padding: 0.2rem 0 0;
+      padding: 0.25rem 0 0;
       font-size: 1.15rem;
+      color: map-get($theme, 'black');
     }
   }
 }

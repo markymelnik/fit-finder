@@ -3,7 +3,6 @@ import { AppDispatch, RootState } from '../../redux/store';
 import CloseFormButton from './CloseFormButton/CloseFormButton';
 import TabButton from './TabButton/TabButton';
 import './_login-signup-form.scss';
-import { useState } from 'react';
 import Login from './Login/Login';
 import Signup from './Signup/Signup';
 import TintedOverlay from '../TintedOverlay/TintedOverlay';
@@ -11,12 +10,14 @@ import { useDispatch } from 'react-redux';
 import { setActiveTab, setIsLoginFormShown } from '../../redux/slices/loginFormSlice';
 import { resetLoginError } from '../../redux/authentication/login/loginActions';
 import { resetRegisterError } from '../../redux/authentication/register/registerActions';
+import SuccessfulSignup from './SuccessfulSignup/SucessfulSignup';
 
 const LoginSignupForm = () => {
 
   const dispatch = useDispatch<AppDispatch>();
   const isLoginFormShown = useSelector((state: RootState) => state.isLoginFormShown.isLoginFormShown);
   const activeTab = useSelector((state: RootState) => state.isLoginFormShown.activeTab);
+  const isSuccessfulSignupShown = useSelector((state: RootState) => state.isSuccessfulSignupShown.isSuccessfulSignupShown);
 
   const handleTabClick = (currentTab: 'login' | 'signup') => {
     if (currentTab != activeTab) {
@@ -31,9 +32,10 @@ const LoginSignupForm = () => {
   }
 
   return (
-    <>
-      <div className={`login-signup-overlay ${isLoginFormShown ? 'active' : ''}`}>
-        <TintedOverlay isActive={isLoginFormShown} onCloseOverlay={closeLoginSignupForm} />
+    <div className={`login-signup-overlay ${isLoginFormShown ? 'active' : ''}`}>
+      <TintedOverlay isActive={isLoginFormShown} onCloseOverlay={closeLoginSignupForm} />
+      {isSuccessfulSignupShown && <SuccessfulSignup />}
+      {!isSuccessfulSignupShown && 
         <div className='login-signup-form-container'>
           <CloseFormButton />
           <div className="login-signup-tabs">
@@ -42,8 +44,8 @@ const LoginSignupForm = () => {
           </div>
           {activeTab === 'login' ? <Login /> : <Signup />}
         </div>
-      </div>
-    </>
+      }
+    </div>
   )
 }
 

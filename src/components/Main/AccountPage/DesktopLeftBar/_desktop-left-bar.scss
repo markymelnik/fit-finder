@@ -22,12 +22,13 @@
         @include center-elements;
         height: 8rem;
         width: 8rem;
-        border: 1px solid map-get($grey, 'darker');
+        border: 1.5px solid map-get($theme, 'black');
         border-radius: 50%;
   
         .photo-container-letter {
-          padding: 0.25rem 0 0;
-          font-size: 2rem;
+          padding: 0.5rem 0 0;
+          font-size: 3rem;
+          color: map-get($theme, 'black');
         }
       }
     }
