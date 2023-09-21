@@ -1,9 +1,0 @@
-@import '../../../../../../styles/colors';
-
-.account-photo {
-  height: 1.5rem;
-  width: 1.5rem;
-  background-color: darken(map-get($theme, 'white'), 5%);
-  border: 1px solid map-get($grey, 'light');
-  border-radius: 50px;
-}

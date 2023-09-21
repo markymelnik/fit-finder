@@ -1,8 +1,30 @@
 @import '../../../../styles/colors';
+@import '../../../../styles/mixins';
 
 .space-fragment {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   height: 3.5rem;
   width: 3.5rem;
   border: none;
   background-color: transparent;
+
+  img {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .mobile-header-account-photo {
+    @include center-elements;
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 1px solid map-get($grey, 'dark');
+    border-radius: 50px;
+
+    .mobile-header-account-photo-letter {
+      padding: 0.2rem 0 0;
+      font-size: 1.15rem;
+    }
+  }
 }

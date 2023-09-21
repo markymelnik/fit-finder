@@ -2,6 +2,7 @@ import './_desktop-left-bar.scss';
 import DetailsIcon from '../../../../assets/icons/account/details-icon.svg';
 import FavoritesIcon from '../../../../assets/icons/account/favorites-icon.png';
 import LogoutButton from '../../../Header/Mobile/MobileMenu/LogoutButton/LogoutButton';
+import AccountPhoto from '../../../Header/Desktop/DesktopProfileDropdown/DropdownDivider/AccountPhoto/AccountPhoto';
 
 type DesktopLeftBarProps = {
   activeTab: string;
@@ -13,6 +14,9 @@ const DesktopLeftBar = ({ activeTab, setActiveTab }: DesktopLeftBarProps) => {
   return (
     <div className="account-page-leftbar">
       <div className="account-page-leftbar-top">
+        <div className="account-page-leftbar-photo">
+          <AccountPhoto customClass='photo-container'/>
+        </div>
         <div
           className={`leftbar-tab ${activeTab === "details" ? "active" : ""}`}
           onClick={() => setActiveTab("details")}

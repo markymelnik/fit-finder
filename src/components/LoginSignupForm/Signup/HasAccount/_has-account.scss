@@ -1,4 +1,5 @@
 @import '../../../../styles/transitions';
+@import '../../../../styles/colors';
 
 .has-account-container {
   display: flex;
@@ -14,8 +15,9 @@
   .has-account-signup-link {
     border: none;
     background-color: transparent;
+    color: map-get($theme, 'black');
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
 
     @include smooth-hover(transform);
 

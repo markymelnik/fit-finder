@@ -114,13 +114,13 @@
           background-color: lighten(map-get($grey, 'darker'), 5%);
         }
 
-        /* &.disabled-btn {
+        &.disabled-btn {
           cursor: auto;
           opacity: 0.2;
           border: 1px solid map-get($grey, 'darker');
           background-color: map-get($grey, 'darker');
 
-        } */
+        }
       }
     }
 

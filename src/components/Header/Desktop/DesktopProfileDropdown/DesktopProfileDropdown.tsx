@@ -40,7 +40,7 @@ const DesktopProfileDropdown = () => {
           <img src={MenuIcon} />
         </div>
         {isLoggedIn 
-          ? <AccountPhoto />
+          ? <AccountPhoto customClass='account-photo' />
           : <button className={`dropdown-btn ${isDesktopProfileDropdownOpen ? 'active' : ''}`} >
               <img src={ProfileIcon} />
             </button>

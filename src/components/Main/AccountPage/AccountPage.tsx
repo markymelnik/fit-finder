@@ -6,6 +6,7 @@ import DetailsTab from './Tabs/DetailsTab/DetailsTab';
 import FavoritesTab from './Tabs/FavoritesTab/FavoritesTab';
 import MobileSwitchBar from './MobileSwitchBar/MobileSwitchBar';
 import DesktopLeftBar from './DesktopLeftBar/DesktopLeftBar';
+import AccountPhoto from '../../Header/Desktop/DesktopProfileDropdown/DropdownDivider/AccountPhoto/AccountPhoto';
 
 const AccountPage = () => {
 
@@ -15,6 +16,12 @@ const AccountPage = () => {
   return (
     <div className='account-page-container'>
       <div className="account-page-header">My Account</div>
+      {
+        isMobile && 
+        <div className="account-page-photo">
+          <AccountPhoto customClass='photo-container'/>
+        </div>
+      }
       <div className="account-page-body">
         {isMobile 
           ? <MobileSwitchBar activeTab={activeTab} setActiveTab={setActiveTab}/> 

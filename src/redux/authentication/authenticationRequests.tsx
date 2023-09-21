@@ -26,8 +26,7 @@ const registerNewAccount = (signupCredentials: SignupAccountCredentials, dispatc
 
       await sleep(1000);
 
-      const response = await Axios.post(`${import.meta.env.VITE_FFA_BE_URL}/auth/register`, signupCredentials);
-      console.log(response);
+      await Axios.post(`${import.meta.env.VITE_FFA_BE_URL}/auth/register`, signupCredentials);
   
       dispatch(registerSuccess());
 
