@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { setIsLoginFormShown } from "../../../redux/slices/loginFormSlice";
+import { setActiveTab, setIsLoginFormShown } from "../../../redux/slices/loginFormSlice";
 import { AppDispatch } from "../../../redux/store";
 import { setIsMobileMenuOpen } from "../../../redux/slices/mobileMenuSlice";
 
@@ -13,6 +13,7 @@ const SignupButton = ({ customClass }: SignupButtonProps) => {
 
   const handleButtonClick = () => {
     dispatch(setIsLoginFormShown(true));
+    dispatch(setActiveTab('signup'));
     dispatch(setIsMobileMenuOpen(false));
   }
 

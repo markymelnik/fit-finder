@@ -13,11 +13,7 @@ import './_login.scss';
 import WarningSVG from '../Signup/PasswordRequirements/WarningSVG';
 import AuthCheckmarkSVG from '../../../redux/authentication/AuthCheckmarkSVG';
 
-type LoginProps = {
-  handleTabClick: (value: boolean) => void;
-}
-
-const Login = ({ handleTabClick }: LoginProps) => {
+const Login = () => {
 
   const dispatch = useDispatch<AppDispatch>();
   
@@ -139,7 +135,7 @@ const Login = ({ handleTabClick }: LoginProps) => {
           </button>
         </div>
       </form>
-      <NoAccount navigateToSignup={() => handleTabClick(false)}/>
+      <NoAccount />
     </div>
   );
 };

@@ -14,11 +14,7 @@ import PasswordHideIcon from '../../../assets/icons/password/password-hide.png';
 import WarningSVG from './PasswordRequirements/WarningSVG';
 import AuthCheckmarkSVG from '../../../redux/authentication/AuthCheckmarkSVG';
 
-type SignupProps = {
-  handleTabClick: (value: boolean) => void;
-}
-
-const Signup = ({ handleTabClick }: SignupProps) => {
+const Signup = () => {
 
   const dispatch = useDispatch<AppDispatch>();
 
@@ -162,7 +158,7 @@ const Signup = ({ handleTabClick }: SignupProps) => {
           </button>
         </div>
       </form>
-      <HasAccount navigateToLogin={() => handleTabClick(true)} />
+      <HasAccount />
     </div>
   );
 };

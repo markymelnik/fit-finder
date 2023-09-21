@@ -1,12 +1,12 @@
 @import '../../../../../styles/colors';
 @import '../../../../../styles/transitions';
+@import '../../../../../styles/mixins';
 
 $page-max-width: 800px;
 
 .facility-save-section-container {
-  min-height: 4rem;
   width: 100%;
-  padding: 1rem 0;
+  padding: 1rem;
   border: 1px solid map-get($grey, 'light');
   border-radius: 6px;
   margin: 1.5rem 0;
@@ -14,16 +14,16 @@ $page-max-width: 800px;
   .encourage-login-container {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 2rem;
 
     .encourage-text {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     .encourage-login-btn {
-      height: 3rem;
-      width: 8rem;
+      height: 2.5rem;
+      width: 6.5rem;
       border: none;
       border-radius: 6px;
       background-color: map-get($grey, 'darker');
@@ -43,14 +43,14 @@ $page-max-width: 800px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 1rem;
-    padding: 0 1rem 0 0;
+    gap: 0.75rem;
 
     .facility-add-favorite-text {
       font-size: 1rem;
     }
 
     .facility-add-favorite-btn {
+      @include center-elements;
       border: none;
       background-color: map-get($theme, 'white');
       
@@ -81,10 +81,21 @@ $page-max-width: 800px;
 @media(min-width: 768px) {
   .facility-save-section-container {
     width: $page-max-width;
-    padding: 1.5rem 1rem;
-    min-height: 5rem;
 
-    .facility-save-container {
+    .encourage-login-container {
+      justify-content: flex-end;
+
+      .encourage-text {
+        font-size: 1.1rem;
+      }
+
+      .encourage-login-btn {
+        height: 3rem;
+        width: 8rem;
+      }
+    }
+
+    .save-to-favorites-container {
 
       .facility-add-favorite-btn {
         height: 2rem;

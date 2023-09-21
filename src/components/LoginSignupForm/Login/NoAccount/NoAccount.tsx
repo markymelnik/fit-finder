@@ -1,13 +1,13 @@
+import { useDispatch } from "react-redux";
 import "./_no-account.scss";
+import { setActiveTab } from "../../../../redux/slices/loginFormSlice";
 
-type NoAccountProps = {
-  navigateToSignup: () => void;
-}
+const NoAccount = () => {
 
-const NoAccount = ({ navigateToSignup }: NoAccountProps) => {
+  const dispatch = useDispatch();
 
   const handleToSignupClick = () => {
-    navigateToSignup();
+    dispatch(setActiveTab('signup'));
   }
   
   return (
