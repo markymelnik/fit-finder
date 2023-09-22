@@ -135,7 +135,7 @@ const Login = () => {
           </button>
         </div>
       </form>
-      <NoAccount />
+      {/* <NoAccount /> */}
     </div>
   );
 };

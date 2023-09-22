@@ -10,9 +10,17 @@
   display: flex;
   flex-direction: column;
   background-color: map-get($theme, 'white');
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
+  @include smooth-hover(box-shadow);
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+  }
 
   .facility-card-link-wrapper {
+    height: 100%;
     display: flex;
     flex-direction: column;
     text-decoration: none;
@@ -46,24 +54,27 @@
         display: flex;
         flex: 1;
         flex-direction: column;
-        gap: 0.5rem;
         border: none;
-      
+        
         .facility-card-name {
           display: flex;
           font-size: 1.25rem;
-          
+          color: map-get($theme, 'black');
+          margin: 0 0 0.5rem;
         }
         
         .facility-card-address {
           display: flex;
-          font-size: 0.8rem;
+          font-size: 0.9rem;
+          color: map-get($theme, 'black');
+          margin: 0 0 0.4rem;
         }
-    
+        
         .facility-card-type {
           display: flex;
           font-size: 0.8rem;
-          font-weight: bold;
+          font-weight: 500;
+          color: map-get($theme, 'black');
         }
       }
     }

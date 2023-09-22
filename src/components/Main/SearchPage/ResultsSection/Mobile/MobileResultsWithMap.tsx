@@ -1,4 +1,4 @@
-import MapOverlay from "../Map/MapOverlay";
+import MapOverlay from "../Map/MapOverlay/MapOverlay";
 
 const MobileResultsWithMap = () => {
 

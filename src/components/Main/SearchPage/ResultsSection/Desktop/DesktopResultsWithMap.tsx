@@ -1,7 +1,7 @@
 import QuerySection from "../QuerySection/QuerySection";
 import ResultsList from "../ResultsList/ResultsList";
 import Footer from "../../../../Footer/Footer";
-import MapOverlay from "../Map/MapOverlay";
+import MapOverlay from "../Map/MapOverlay/MapOverlay";
 
 const DesktopResultsWithMap = () => {
 

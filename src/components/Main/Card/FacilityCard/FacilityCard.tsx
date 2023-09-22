@@ -30,7 +30,7 @@ const FacilityCard = ({ onClick, ...facility }: FacilityCard) => {
       <div className="facility-card-bottom">
         <div className='facility-card-info'>
           <div className='facility-card-name'>{facility.name}</div>
-          <div className='facility-card-address'>{facility.address.toUpperCase()}, {facility.postalCode.toUpperCase()}</div>
+          <div className='facility-card-address'>{facility.address}, {facility.postalCode}</div>
           <div className='facility-card-type'>{facility.facilityType.name.toUpperCase()}</div>
         </div>
       </div>

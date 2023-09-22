@@ -11,11 +11,15 @@ import { useSelector } from 'react-redux';
 import { RootState } from './redux/store';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import ScrollToTop from './hooks/useScrollToTop';
+import usePreventScrolling from './hooks/usePreventScrolling';
 
 const App = () => {
   useIsMobile();
   
   const isMobile = useSelector((state: RootState) => state.isMobile.isMobile);
+  const isLoginFormShown = useSelector((state: RootState) => state.isLoginFormShown.isLoginFormShown);
+
+  usePreventScrolling(isLoginFormShown);
 
   return (
     <SkeletonTheme baseColor='#C4CfD9' highlightColor='#E6EBF0'>

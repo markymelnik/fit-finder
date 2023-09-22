@@ -5,8 +5,8 @@
 .desktop-profile-dropdown-container {
   position: relative;
   display: flex;
-  border: 1px solid map-get($grey, 'lighter');
-  padding: 0.4rem 0.6rem 0.4rem 0.6rem;
+  border: 1px solid map-get($theme, 'black');
+  padding: 0.3rem 0.45rem 0.3rem 0.75rem;
   border-radius: 50px;
 
   @include smooth-hover(box-shadow);
@@ -43,7 +43,7 @@
       @include center-elements;
       height: 2rem;
       width: 2rem;
-      border: 1px solid map-get($grey, 'darker');
+      border: 1px solid map-get($theme, 'black');
       border-radius: 50%;
       background-color: transparent;
       
@@ -62,11 +62,11 @@
       height: 2rem;
       width: 2rem;
       background-color: transparent;
-      border: 1px solid map-get($grey, 'light');
+      border: 1px solid map-get($theme, 'black');
       border-radius: 50px;
 
       .account-photo-letter {
-        padding: 0.25rem 0 0;
+        padding: 0.2rem 0 0;
         font-size: 1.1rem;
       }
     }

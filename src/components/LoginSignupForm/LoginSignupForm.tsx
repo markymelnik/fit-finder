@@ -11,6 +11,7 @@ import { setActiveTab, setIsLoginFormShown } from '../../redux/slices/loginFormS
 import { resetLoginError } from '../../redux/authentication/login/loginActions';
 import { resetRegisterError } from '../../redux/authentication/register/registerActions';
 import SuccessfulSignup from './SuccessfulSignup/SucessfulSignup';
+import OrDivider from './OrDivider/OrDivider';
 
 const LoginSignupForm = () => {
 
@@ -43,6 +44,7 @@ const LoginSignupForm = () => {
             <TabButton buttonText='Sign Up' isActive={activeTab === 'signup'} onClick={() => handleTabClick('signup')}/>
           </div>
           {activeTab === 'login' ? <Login /> : <Signup />}
+          <OrDivider />
         </div>
       }
     </div>
