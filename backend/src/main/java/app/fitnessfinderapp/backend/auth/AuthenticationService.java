@@ -40,6 +40,8 @@ public class AuthenticationService {
 
   public UserAccount registerUser(String username, String password) {
 
+    username = username.toLowerCase();
+
     String encodedPassword = passwordEncoder.encode(password);
     AccountRole userRole = accountRoleRepository.findByAuthority("USER").get();
 

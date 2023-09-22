@@ -1,11 +1,10 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { AppDispatch, RootState } from '../../../redux/store';
 import { registerNewAccount } from '../../../redux/authentication/authenticationRequests';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { Ring } from '@uiball/loaders';
 import { resetRegisterError } from '../../../redux/authentication/register/registerActions';
-import HasAccount from './HasAccount/HasAccount';
 import './_signup.scss';
 import PasswordRequirements from './PasswordRequirements/PasswordRequirements';
 import validatePassword from './PasswordRequirements/validatePassword';
@@ -22,7 +21,7 @@ const Signup = () => {
   const registerError = useSelector((state: RootState) => state.register.registerError);
   const showCheckmark = useSelector((state: RootState) => state.checkmarkSuccess.showCheckmark);
 
-  const [signupUsername, setSignupUsername] = useState<string>('');
+  const [signupEmail, setSignupEmail] = useState<string>('');
   const [signupPassword, setSignupPassword] = useState<string>('');
 
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
@@ -32,9 +31,9 @@ const Signup = () => {
   const [caseRequirementSatisfied, setCaseRequirementSatisfied] = useState<boolean>(false);
   const [numberRequirementSatisfied, setNumberRequirementSatisfied] = useState<boolean>(false);
 
-  const handleSignupUsernameChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleSignupEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch(resetRegisterError());
-    setSignupUsername(event.target.value);
+    setSignupEmail(event.target.value);
   }
 
   const handleSignupPasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -54,13 +53,13 @@ const Signup = () => {
     }
   }
 
-  const handleSubmitClickButton = (event: any) => {
+  const handleSubmitButtonClick = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (signupUsername && signupPassword && passwordIsValid) {
+    if (signupEmail && signupPassword && passwordIsValid) {
 
       registerNewAccount(signupCredentials, dispatch)()
         .then(() => {
-          setSignupUsername('');
+          setSignupEmail('');
           setSignupPassword('');
           setLengthRequirementSatisfied(false);
           setCaseRequirementSatisfied(false);
@@ -73,32 +72,33 @@ const Signup = () => {
   }
 
   const signupCredentials = {
-    "username": signupUsername,
+    "username": signupEmail,
     "password": signupPassword
   }
 
   return (
     <div className="signup-container">
       <div className="signup-form-descriptor">Sign Up for fitfinder</div>
-      <form id="signup-form" className="signup-form">
+      <form id="signup-form" className="signup-form" onSubmit={(event) => handleSubmitButtonClick(event)}>
         <div className="form-field">
           <div className="enter-information">
             <div
-              className={`input-signup-username ${
+              className={`input-signup-email ${
                 registerError ? "input-error" : ""
               }`}
             >
               <input
-                type="text"
-                id="signup-username"
-                name="username"
-                onChange={handleSignupUsernameChange}
-                value={signupUsername}
+                type="email"
+                id="signup-email"
+                name="email"
+                pattern='^[^@]+@[^@]+\.[a-zA-Z\.]+$'
+                onChange={handleSignupEmailChange}
+                value={signupEmail}
                 placeholder=" "
                 autoComplete="true"
                 required
               />
-              <label htmlFor="signup-username">Username</label>
+              <label htmlFor="signup-email">Email</label>
             </div>
             <div
               className={`input-signup-password ${
@@ -145,7 +145,7 @@ const Signup = () => {
             className={`signup-form-submit-btn ${
               !passwordIsValid ? "disabled-btn" : ""
             }`}
-            onClick={handleSubmitClickButton}
+            type='submit'
             disabled={!passwordIsValid || isLoading}
           >
             {isLoading ? (
@@ -158,7 +158,6 @@ const Signup = () => {
           </button>
         </div>
       </form>
-      {/* <HasAccount /> */}
     </div>
   );
 };

@@ -6,7 +6,6 @@ import { sleep } from "./sleep";
 import { startLoading, stopLoading } from "../slices/loadingSlice";
 import { registerFailure, registerSuccess } from "./register/registerActions";
 import { setShowCheckmark } from "../slices/checkmarkSuccessSlice";
-import { useNavigate } from "react-router-dom";
 import { setIsSuccessfulSignupShown } from "../slices/successfulSignup";
 
 type SignupAccountCredentials = {

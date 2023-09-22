@@ -27,7 +27,7 @@
         flex-direction: column;
         gap: 1.5rem;
 
-        .input-signup-username,
+        .input-signup-email,
         .input-signup-password {
           position: relative;
           border: 1px solid map-get($grey, 'light');

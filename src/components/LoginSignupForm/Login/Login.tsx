@@ -1,12 +1,11 @@
 import { useDispatch } from 'react-redux';
 import { AppDispatch, RootState } from '../../../redux/store';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { loginAccount } from '../../../redux/authentication/authenticationRequests';
 import { fetchFavoritedFacilities } from '../../../redux/apiRequests';
 import { useSelector } from 'react-redux';
 import { Ring } from '@uiball/loaders';
 import { resetLoginError } from '../../../redux/authentication/login/loginActions';
-import NoAccount from './NoAccount/NoAccount';
 import PasswordShowIcon from '../../../assets/icons/password/password-show.png';
 import PasswordHideIcon from '../../../assets/icons/password/password-hide.png';
 import './_login.scss';
@@ -23,11 +22,11 @@ const Login = () => {
 
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
 
-  const [loginUsername, setLoginUsername] = useState<string>('');
+  const [loginEmail, setLoginEmail] = useState<string>('');
   const [loginPassword, setLoginPassword] = useState<string>('');
 
   const loginCredentials = {
-    "username": loginUsername,
+    "username": loginEmail,
     "password": loginPassword
   }
 
@@ -39,9 +38,9 @@ const Login = () => {
     }
   }, [userAccountId]);
 
-  const handleLoginUsernameChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleLoginEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch(resetLoginError());
-    setLoginUsername(event.target.value);
+    setLoginEmail(event.target.value);
   }
 
   const handleLoginPasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -49,13 +48,13 @@ const Login = () => {
     setLoginPassword(event.target.value);
   }
 
-  const handleSubmitButtonClick = (event: any) => {
+  const handleSubmitButtonClick = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (loginUsername && loginPassword) {
+    if (loginEmail && loginPassword) {
       loginAccount(loginCredentials, dispatch)()
         .then(() => {
-          setLoginUsername('');
+          setLoginEmail('');
           setLoginPassword('');
         })
         .catch(() => {
@@ -67,21 +66,22 @@ const Login = () => {
   return (
     <div className='login-container'>
       <div className='login-form-descriptor'>Login to fitfinder</div>
-      <form id='login-form' className='login-form'>
+      <form id='login-form' className='login-form' onSubmit={(event => handleSubmitButtonClick(event))}>
         <div className='form-field'>
           <div className='enter-information'>
-            <div className={`input-login-username ${loginError ? 'input-error' : ''}`}>
+            <div className={`input-login-email ${loginError ? 'input-error' : ''}`}>
               <input
                 type='text'
-                id='login-username'
-                name='username'
-                onChange={handleLoginUsernameChange}
-                value={loginUsername}
+                id='login-email'
+                name='email'
+                /* pattern='^[^@]+@[^@]+\.[a-zA-Z\.]+$' */
+                onChange={handleLoginEmailChange}
+                value={loginEmail}
                 placeholder=''
-                autoComplete='username'
+                autoComplete='email'
                 required
               />
-              <label htmlFor='login-username'>Username</label>
+              <label htmlFor='login-email'>Email</label>
             </div>
             <div className={`input-login-password ${loginError ? 'input-error' : ''}`}>
               
@@ -117,7 +117,7 @@ const Login = () => {
         <div className='form-field'>
           <button 
             className='login-form-submit-btn'
-            onClick={handleSubmitButtonClick}
+            type='submit'
             disabled={isLoading}
           >
             {isLoading ? (
