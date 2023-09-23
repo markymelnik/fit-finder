@@ -26,6 +26,7 @@ const FacilityCard = ({ onClick, ...facility }: FacilityCard) => {
     <Link to={`/facility`} className="facility-card-link-wrapper">
       <div className='facility-photo-container' >
         {photo && <img src={photo} alt="facility main photo" />}
+        
       </div>
       <div className="facility-card-bottom">
         <div className='facility-card-info'>

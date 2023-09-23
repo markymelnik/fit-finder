@@ -8,7 +8,7 @@ $page-max-width: 800px;
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   border: 1px solid map-get($grey, 'light');
   border-radius: 6px;
   margin: 1rem 0;
@@ -41,47 +41,37 @@ $page-max-width: 800px;
     }
   }
 
-  .save-to-favorites-container {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.5rem 1rem;
+  .facility-add-favorite-btn {
+    @include center-elements;
+    border: none;
     border: 1px solid map-get($grey, 'light');
-    border-radius: 6px;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    background-color: map-get($theme, 'white');
 
-    .facility-add-favorite-text {
-      font-size: 1rem;
-    }
+    svg {
+      height: 1.7rem;
+      width: 1.7rem;
+      stroke-width: 1.2;
+      opacity: 0.8;
+      stroke: #333333;
 
-    .facility-add-favorite-btn {
-      @include center-elements;
-      border: none;
-      background-color: map-get($theme, 'white');
-      
-      svg {
-        height: 2rem;
-        width: 2rem;
-        stroke-width: 1.2;
-        opacity: 0.8;
-        stroke: #333333;
+      @include smooth-hover(transform);
 
-        @include smooth-hover(transform);
-
-        &:hover {
-          cursor: pointer;
-          transform: scale(1.075);
-        }
-
-        &:active {
-          transform: scale(0.975);
-        }
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.075);
       }
 
+      &.filled {
+        height: 1.8rem;
+        width: 1.8rem;
+        stroke: none;
+      }
     }
-
   }
 }
-
 @media(min-width: 768px) {
   .facility-save-section-container {
     width: $page-max-width;

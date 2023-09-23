@@ -30,13 +30,15 @@
     .mobile-filter-title {
       @include center-elements;
       font-size: 1.25rem;
+      font-weight: 500;
+      color: map-get($theme, 'black');
     }
   }
 
   .mobile-filter-done-btn-container {
     display: flex;
     justify-content: center;
-    margin: 1rem 0 1.5rem;
+    margin: 1rem 0 2.5rem;
 
     .mobile-filter-done-btn {
       font-size: 1rem;
