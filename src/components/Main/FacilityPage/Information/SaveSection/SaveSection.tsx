@@ -1,8 +1,8 @@
 import './_save-section.scss';
-import AddFavoriteButton from '../../../AccountPage/Tabs/FavoritesTab/AddFavoriteButton/AddFavoriteButton';
+import AddFavoriteButton from '../../../../common/button/favorite/AddFavoriteButton';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../../../redux/store';
-import LoginButton from '../../../../Header/NavigationBar/LoginButton';
+import LoginButton from '../../../../common/button/auth/LoginButton';
 
 const FacilitySaveSection = () => {
   

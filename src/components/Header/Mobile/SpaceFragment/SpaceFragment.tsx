@@ -4,7 +4,7 @@ import { setIsLoginFormShown } from '../../../../redux/slices/loginFormSlice';
 import ProfileLogo from '../../../../assets/icons/account/details-icon.svg';
 import './_space-fragment.scss';
 import { useSelector } from 'react-redux';
-import AccountPhoto from '../../Desktop/DesktopProfileDropdown/DropdownDivider/AccountPhoto/AccountPhoto';
+import AccountPhoto from '../../../common/AccountPhoto';
 import { useNavigate } from 'react-router-dom';
 
 const SpaceFragment = () => {

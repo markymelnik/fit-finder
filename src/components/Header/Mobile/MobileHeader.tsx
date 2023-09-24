@@ -1,4 +1,4 @@
-import MobileMenuButton from './MobileMenuOpenButton/MobileMenuOpenButton';
+import MobileMenuButton from './MobileMenu/MobileMenuOpenButton/MobileMenuOpenButton';
 import Logo from '../Logo/Logo';
 import SpaceFragment from './SpaceFragment/SpaceFragment';
 import MobileMenu from './MobileMenu/MobileMenu';

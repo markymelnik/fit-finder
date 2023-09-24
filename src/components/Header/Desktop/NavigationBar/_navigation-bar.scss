@@ -1,0 +1,37 @@
+@import '../../../../styles/mixins';
+@import '../../../../styles/colors';
+@import '../../../../styles/transitions';
+
+.navigation-bar {
+  @include center-elements;
+  height: 100%;
+
+  .navigation-links {
+    @include center-elements;
+    gap: 0.75rem;
+  
+    .about-link {
+      @include center-elements;
+      text-decoration: none;
+      height: calc(2.6rem + 1px);
+      width: 5.5rem;
+      padding: 0.7rem;
+      background-color: map-get($theme, 'white');
+      border: none;
+      border-radius: 50px;
+    
+      @include smooth-hover(background-color);
+  
+      &:hover {
+        cursor: pointer;
+        background-color: darken(map-get($theme, 'white'), 5%);
+      }
+
+      .about-link-text {
+        font-size: 1rem;
+        font-weight: 400;
+        color: map-get($theme, 'black');
+      }
+    }
+  }
+}

@@ -1,15 +1,15 @@
-import LoginButton from "../../NavigationBar/LoginButton";
-import AccountLink from "../../NavigationBar/AccountLink";
+import LoginButton from "../../../common/button/auth/LoginButton";
+import AccountLink from "../../Desktop/NavigationBar/AccountLink";
 import { useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../../redux/store";
-import MobileMenuCloseButton from "../MobileMenuCloseButton/MobileMenuCloseButton";
+import MobileMenuCloseButton from "./MobileMenuCloseButton/MobileMenuCloseButton";
 import './_mobile-menu.scss';
 import TintedOverlay from "../../../TintedOverlay/TintedOverlay";
 import { useDispatch } from "react-redux";
 import { setIsMobileMenuOpen } from "../../../../redux/slices/mobileMenuSlice";
 import Logo from "../../Logo/Logo";
-import LogoutButton from "./LogoutButton/LogoutButton";
-import AboutLink from "../../NavigationBar/AboutLink";
+import LogoutButton from "../../../common/button/auth/LogoutButton";
+import AboutLink from "../../Desktop/NavigationBar/AboutLink";
 import MobileMenuDivider from "./MobileMenuDivider/MobileMenuDivider";
 
 const MobileMenu = () => {

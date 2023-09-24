@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import SliderCard from '../../Card/SliderCard/SliderCard';
+import SliderCard from './SliderCard/SliderCard';
 import SliderScrollButtons from './SliderScrollButtons/SliderScrollButtons';
 import './_slider-display.scss';
 import { RootState } from '../../../../redux/store';

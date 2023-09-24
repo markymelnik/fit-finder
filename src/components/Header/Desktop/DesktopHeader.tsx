@@ -1,5 +1,5 @@
 import Logo from '../Logo/Logo';
-import NavigationBar from '../NavigationBar/NavigationBar';
+import NavigationBar from './NavigationBar/NavigationBar';
 import '../_header.scss';
 
 const DesktopHeader = () => {

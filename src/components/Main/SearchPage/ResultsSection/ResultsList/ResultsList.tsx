@@ -1,11 +1,11 @@
-import FacilityCard from '../../../Card/FacilityCard/FacilityCard';
+import FacilityCard from './FacilityCard/FacilityCard';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../../../redux/store';
 import { AppDispatch } from '../../../../../redux/store';
 import { setSelectedFacility } from '../../../../../redux/slices/selectedFacilitySlice';
 import { Facility } from '../../../../../types/types';
 import EmptyResultsList from './EmptyResultsList';
-import SkeletonCard from '../../../Card/SkeletonCard/SkeletonCard';
+import SkeletonCard from './SkeletonCard/SkeletonCard';
 import './_results-list.scss';
 
 const ResultsList = () => {

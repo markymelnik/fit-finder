@@ -1,6 +1,6 @@
 import { fetchAllAmenities, fetchAllFacilityTypes, fetchAllServices } from "../../../../../../../redux/apiRequests";
 import { setSelectedAmenities, setSelectedFacilityTypes, setSelectedServices } from "../../../../../../../redux/slices/filterSlice";
-import MobileFilterCategory from "./MobileFilterCategory/MobileFilterCategory";
+import MobileFilterCategory from "./MobileFilterCategory";
 import './_mobile-filter-menu.scss';
 
 const MobileFilterMenu = () => {

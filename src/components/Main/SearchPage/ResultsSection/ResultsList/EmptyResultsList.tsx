@@ -1,5 +1,5 @@
 import './_results-list.scss';
-import ResetFiltersButton from '../../FilterButtons/ResetFiltersButton';
+import ResetFiltersButton from '../../../../common/button/search/ResetFiltersButton';
 /* import DummyCard from '../../../Card/DummyCard'; */
 
 const EmptyResultsList = () => {

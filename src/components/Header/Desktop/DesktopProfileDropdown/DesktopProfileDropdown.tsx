@@ -3,16 +3,16 @@ import { AppDispatch, RootState } from '../../../../redux/store';
 import { useSelector } from 'react-redux';
 import { setIsDesktopProfileDropdownOpen } from '../../../../redux/slices/desktopProfileDropdownSlice';
 import './_desktop-profile-dropdown.scss';
-import AccountLink from '../../NavigationBar/AccountLink';
-import LogoutButton from '../../Mobile/MobileMenu/LogoutButton/LogoutButton';
+import AccountLink from '../NavigationBar/AccountLink';
+import LogoutButton from '../../../common/button/auth/LogoutButton';
 import ProfileIcon from '../../../../assets/icons/account/details-icon.svg';
 import useOutsideClick from '../../../../hooks/useOutsideClick';
 import MenuIcon from '../../../../assets/icons/mobile/mobile-menu-open-icon.png';
 import { useRef } from 'react';
-import LoginButton from '../../NavigationBar/LoginButton';
+import LoginButton from '../../../common/button/auth/LoginButton';
 import DropdownDivider from './DropdownDivider/DropdownDivider';
-import SignupButton from '../../NavigationBar/SignupButton';
-import AccountPhoto from './DropdownDivider/AccountPhoto/AccountPhoto';
+import SignupButton from '../../../common/button/auth/SignupButton';
+import AccountPhoto from '../../../common/AccountPhoto';
 
 const DesktopProfileDropdown = () => {
 

@@ -1,0 +1,17 @@
+@import '../../../../styles/colors';
+
+.home-divider-container {
+  width: 100%;
+  padding: 0 1.5rem;
+  
+  .divider {
+    border-bottom: 1px solid map-get($grey, 'neutral');
+  }
+}
+
+@media (min-width: 768px) {
+  .home-divider-container {
+    padding: 0 10%;
+  }
+}
+

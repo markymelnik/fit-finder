@@ -1,4 +1,4 @@
-import LoginButton from '../../Header/NavigationBar/LoginButton';
+import LoginButton from '../../common/button/auth/LoginButton';
 import SuccessSVG from './SuccessSVG';
 import './_successful-signup.scss';
 

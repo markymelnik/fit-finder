@@ -3,8 +3,8 @@ import { setIsMobileFilterOpen } from "../../../../../../redux/slices/mobileFilt
 import { useDispatch } from "react-redux";
 import MobileFilterMenu from "./MobileFilterMenu/MobileFilterMenu";
 import { useSelector } from "react-redux";
-import SaveFiltersButton from "../../../FilterButtons/SaveFiltersButton";
-import ResetFiltersButton from "../../../FilterButtons/ResetFiltersButton";
+import SaveFiltersButton from "../../../../../common/button/search/SaveFiltersButton";
+import ResetFiltersButton from "../../../../../common/button/search/ResetFiltersButton";
 import './_mobile-filter-display.scss';
 
 const MobileFilter = () => {

@@ -6,7 +6,7 @@ import DetailsTab from './Tabs/DetailsTab/DetailsTab';
 import FavoritesTab from './Tabs/FavoritesTab/FavoritesTab';
 import MobileSwitchBar from './MobileSwitchBar/MobileSwitchBar';
 import DesktopLeftBar from './DesktopLeftBar/DesktopLeftBar';
-import AccountPhoto from '../../Header/Desktop/DesktopProfileDropdown/DropdownDivider/AccountPhoto/AccountPhoto';
+import AccountPhoto from '../../common/AccountPhoto';
 
 const AccountPage = () => {
 

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import ToSearchButton from './ToSearchButton/ToSearchButton';
+import ToSearchButton from '../../../common/button/nav/ToSearchButton';
 import SearchScreenshot from '../../../../assets/photos/home/search-screenshot.png';
 import './_about-section.scss';
 
