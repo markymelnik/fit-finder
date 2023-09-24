@@ -21,7 +21,7 @@ const MobileFilter = () => {
       <div className="mobile-filter-header">
         <SaveFiltersButton customClass='mobile-filter-save-btn' buttonText='SAVE' onClick={handleCloseMobileFilter}/>
         <div className="mobile-filter-title">Filter Options</div>
-        <ResetFiltersButton customClass='mobile-filter-reset-btn' buttonText='RESET' onClick={handleCloseMobileFilter}/>
+        <ResetFiltersButton customClass='mobile-filter-reset-btn' buttonText='RESET' />
       </div>
       <MobileFilterMenu />
       <div className="mobile-filter-done-btn-container">

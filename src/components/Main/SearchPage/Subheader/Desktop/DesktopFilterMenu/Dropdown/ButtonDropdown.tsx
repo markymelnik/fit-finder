@@ -1,10 +1,9 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import useOutsideClick from '../../../../../../../hooks/useOutsideClick';
 import UpArrow from '../../../../../../../assets/icons/arrows/up-arrow.png';
 import DownArrow from '../../../../../../../assets/icons/arrows/down-arrow.png';
 import SaveFiltersButton from '../../../../FilterButtons/SaveFiltersButton';
 import DeleteIcon from '../../../../../../../assets/icons/search/delete-icon.png';
-import useFacilitySearch from '../../../../../../../hooks/useFacilitySearch';
 import './_btn-dropdown.scss';
 
 interface ButtonDropdownProps {
@@ -18,17 +17,11 @@ interface ButtonDropdownProps {
   customClass: string;
 }
 
-const ButtonDropdown = ({ allOptions, checkedOptions, onCheckboxClick, checkedCount, onClearChecks, buttonName, dropdownTitle,  customClass }: ButtonDropdownProps) => {
+const ButtonDropdown = ({ allOptions, checkedOptions, onCheckboxClick, checkedCount, onClearChecks, buttonName, dropdownTitle, customClass }: ButtonDropdownProps) => {
 
   const [dropdownVisible, setDropdownVisible] = useState<boolean>(false);
   const dropdownRef = useRef(null);
   useOutsideClick(dropdownRef, () => setDropdownVisible(false));
-
-  const executeSearch = useFacilitySearch();
-
-  useEffect(() => {
-    executeSearch();
-  }, [checkedOptions]);
   
   const handleCheckboxChange = (option: string) => {
     onCheckboxClick(option);
@@ -72,6 +65,7 @@ const ButtonDropdown = ({ allOptions, checkedOptions, onCheckboxClick, checkedCo
             {allOptions.map((option, index) => (
               <li key={index} className="dropdown-option">
                 <input
+                  name={`${customClass}-choice`}
                   className="option-checkbox"
                   type="checkbox"
                   checked={checkedOptions.includes(option)}

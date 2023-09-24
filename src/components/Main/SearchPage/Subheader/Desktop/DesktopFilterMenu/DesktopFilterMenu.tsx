@@ -1,9 +1,10 @@
-import { fetchAllFacilityTypes } from '../../../../../../redux/apiRequests';
+import { fetchAllAmenities, fetchAllFacilityTypes, fetchAllServices } from '../../../../../../redux/apiRequests';
 import { setSelectedAmenities, setSelectedFacilityTypes, setSelectedServices } from '../../../../../../redux/slices/filterSlice';
 import FilterButton from './FilterButton/FilterButton';
 import './_desktop-filter-menu.scss';
 
 const DesktopFilterMenu = () => {
+
   return (
     <div className='desktop-filter-menu'>
        <FilterButton
@@ -15,7 +16,7 @@ const DesktopFilterMenu = () => {
         dropdownTitle='FACILITY TYPES'
       />
       <FilterButton
-        fetchAllOptionsFromDatabase={fetchAllFacilityTypes}
+        fetchAllOptionsFromDatabase={fetchAllAmenities}
         fetchAllOptionsFromGlobalState={(state) => state.amenities}
         setSelectedOptions={setSelectedAmenities}
         fetchSelectedOptions={(state) => state.filters.selectedAmenities}
@@ -23,7 +24,7 @@ const DesktopFilterMenu = () => {
         dropdownTitle='OFFERED AMENITIES'
       />
       <FilterButton
-        fetchAllOptionsFromDatabase={fetchAllFacilityTypes}
+        fetchAllOptionsFromDatabase={fetchAllServices}
         fetchAllOptionsFromGlobalState={(state) => state.services}
         setSelectedOptions={setSelectedServices}
         fetchSelectedOptions={(state) => state.filters.selectedServices}

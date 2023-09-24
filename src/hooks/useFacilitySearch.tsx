@@ -3,6 +3,8 @@ import { AppDispatch, RootState } from "../redux/store";
 import { fetchAllFacilities, fetchFacilitiesByParameters } from "../redux/apiRequests";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { acknowledgeUpdate, unsetResetFlag } from "../redux/slices/filterSlice";
 
 const useFacilitySearch = () => {
 
@@ -13,6 +15,22 @@ const useFacilitySearch = () => {
   const selectedFacilityTypes = useSelector((state: RootState) => state.filters.selectedFacilityTypes);
   const selectedAmenities = useSelector((state: RootState) => state.filters.selectedAmenities);
   const selectedServices = useSelector((state: RootState) => state.filters.selectedServices);
+  const hasUpdated = useSelector((state: RootState) => state.filters.hasUpdated);
+  const isReset = useSelector((state: RootState) => state.filters.isReset);
+
+  useEffect(() => {
+    if (isReset) {
+      executeSearch();
+      dispatch(unsetResetFlag());
+    }
+  }, [isReset]);
+
+  useEffect(() => {
+    if (hasUpdated) {
+      executeSearch();
+      dispatch(acknowledgeUpdate());
+    }
+  }, [hasUpdated]);
 
   const executeSearch = () => {
 
@@ -42,17 +60,20 @@ const useFacilitySearch = () => {
     
     if (
       !enteredKeyword.trim() &&
-      !selectedFacilityTypes &&
+      !selectedFacilityTypes.length &&
       !selectedAmenities.length &&
       !selectedServices.length
     ) {
       queryParams.push('query=all');
+      
       dispatch(fetchAllFacilities());
     } else {
       dispatch(fetchFacilitiesByParameters(enteredKeyword, selectedFacilityTypes, selectedAmenities, selectedServices));
     }
   
     navigate(`/search?${queryParams.join('&')}`);
+
+    dispatch(acknowledgeUpdate());
     
   }
 

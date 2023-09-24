@@ -5,6 +5,7 @@ import java.util.Set;
 
 import app.fitnessfinderapp.backend.facility.Facility;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -29,7 +30,7 @@ public class Services {
   )
   private Long id;
 
-  @ManyToMany(mappedBy = "services")
+  @ManyToMany(mappedBy = "services", fetch=FetchType.EAGER)
   private Set<Facility> facilities = new HashSet<>();
 
   private String name;

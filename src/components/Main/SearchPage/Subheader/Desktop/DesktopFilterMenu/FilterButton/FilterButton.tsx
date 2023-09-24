@@ -15,10 +15,10 @@ interface FilterButtonProps {
 const FilterButton = ({ fetchAllOptionsFromDatabase, fetchAllOptionsFromGlobalState, setSelectedOptions, fetchSelectedOptions, entityName, dropdownTitle }: FilterButtonProps) => {
 
   const dispatch = useDispatch<AppDispatch>();
-
+  
   useEffect(() => {
     dispatch(fetchAllOptionsFromDatabase());
-  }, [dispatch, fetchAllOptionsFromDatabase])
+  }, [dispatch, fetchAllOptionsFromDatabase]);
 
   const allFetchedOptions = useSelector(fetchAllOptionsFromGlobalState);
   const allOptions = allFetchedOptions.allIds.map((id: number) => allFetchedOptions.byIds[id].name);

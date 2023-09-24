@@ -12,7 +12,6 @@
   gap: 3.5rem;
   background-color: map-get($theme, 'white');
   padding: 4rem 5% 5rem;
-  
 
   .explore-section-title {
     width: 100%;
@@ -31,36 +30,7 @@
     width: 100%;
     height: auto;
     gap: 1rem;
-    
-    .explore-category {
-      @include center-elements;
-      text-decoration: none;
-      padding: 1rem;
-      width: auto;
-      height: auto;
-      background-color: map-get($theme, 'white');
-      border: none;
-      border: 1px solid map-get($grey, 'lighter');
-      border-radius: 8px;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-      z-index: 1;
-      
-      @include smooth-hover(transform);
 
-      &:hover {
-        transform: scale(1.025);
-        cursor: pointer;
-      }
-
-      &:active {
-        transform: scale(0.975);
-      }
-
-      .category-text {
-        color: map-get($theme, 'black');
-        font-size: 1rem;
-      }
-    }
   }
 }
 
@@ -71,17 +41,6 @@
 
     .explore-section-title {
       font-size: 2.25rem;
-    }
-
-    .explore-category-container {
-
-      .explore-category {
-        padding: 1.25rem;
-
-        .category-text {
-          font-size: 1.25rem;
-        }
-      }
     }
   }
 }

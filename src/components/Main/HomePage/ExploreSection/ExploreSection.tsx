@@ -1,29 +1,17 @@
-import './_explore-section.scss';
-import { Link } from 'react-router-dom';
+import ExploreCategory from "./ExploreCategory/ExploreCategory";
+import "./_explore-section.scss";
 
 const ExploreSection = () => {
   return (
-    <div className='explore-section-container'>
+    <div className="explore-section-container">
       <div className="explore-section-title">Explore Categories</div>
       <div className="explore-category-container">
-        <Link to='/search' className="explore-category">
-          <div className="category-text">Traditional Gym</div>
-        </Link>
-        <Link to='/search' className="explore-category">
-          <div className="category-text">Martial Arts Studio</div>
-        </Link>
-        <Link to='/search' className="explore-category">
-          <div className="category-text">Outdoor Workout Area</div>
-        </Link>
-        <Link to='/search' className="explore-category">
-          <div className="category-text">Yoga Studio</div>
-        </Link>
-        <Link to='/search' className="explore-category">
-          <div className="category-text">Climbing Gym</div>
-        </Link>
-        <Link to='/search' className="explore-category">
-          <div className="category-text">Pilates Studio</div>
-        </Link>
+        <ExploreCategory innerText="Traditional Gym"/>
+        <ExploreCategory innerText="Martial Arts Studio"/>
+        <ExploreCategory innerText="Outdoor Workout Area"/>
+        <ExploreCategory innerText="Yoga Studio"/>
+        <ExploreCategory innerText="Climbing Gym"/>
+        <ExploreCategory innerText="Pilates Studio"/>
       </div>
     </div>
   );

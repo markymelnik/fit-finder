@@ -5,6 +5,8 @@ interface FilterState {
   selectedFacilityTypes: string[];
   selectedAmenities: string[];
   selectedServices: string[];
+  hasUpdated: boolean;
+  isReset: boolean;
 }
 
 const initialFilterState: FilterState = {
@@ -12,6 +14,8 @@ const initialFilterState: FilterState = {
   selectedFacilityTypes: [],
   selectedAmenities: [],
   selectedServices: [],
+  hasUpdated: false,
+  isReset: false,
 }
 
 const filterSlice = createSlice({
@@ -23,16 +27,28 @@ const filterSlice = createSlice({
     },
     setSelectedFacilityTypes: (state, action: PayloadAction<string[]>) => {
       state.selectedFacilityTypes = action.payload;
+      state.hasUpdated = true;
     },
     setSelectedAmenities: (state, action: PayloadAction<string[]>) => {
       state.selectedAmenities = action.payload;
+      state.hasUpdated = true;
     },
     setSelectedServices: (state, action: PayloadAction<string[]>) => {
       state.selectedServices = action.payload;
+      state.hasUpdated = true;
+    },
+    acknowledgeUpdate: (state) => {
+      state.hasUpdated = false;
     },
     resetAllFilters: (_state) => {
-      return initialFilterState;
+      return {
+        ...initialFilterState,
+        isReset: true
+      }
     },
+    unsetResetFlag: (state) => {
+      state.isReset = false;
+    }
   }
 });
 
@@ -41,7 +57,9 @@ export const {
   setSelectedFacilityTypes,
   setSelectedAmenities,
   setSelectedServices,
+  acknowledgeUpdate,
   resetAllFilters,
+  unsetResetFlag,
 } = filterSlice.actions;
 
 export default filterSlice.reducer;
