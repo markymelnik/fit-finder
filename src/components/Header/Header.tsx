@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
-import { RootState } from '../../redux/store';
-import MobileHeader from './MobileHeader/MobileHeader';
+
 import DesktopHeader from './DesktopHeader/DesktopHeader';
+import MobileHeader from './MobileHeader/MobileHeader';
+import { RootState } from '../../redux/store';
 
 const Header = () => {
   const isMobile = useSelector((state: RootState) => state.viewport.isMobile);

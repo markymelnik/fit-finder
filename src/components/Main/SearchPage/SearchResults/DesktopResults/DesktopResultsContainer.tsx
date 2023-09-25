@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
-import { RootState } from "../../../../../redux/store";
+
 import DesktopResultsWithMap from "./DesktopResultsWithMap";
 import DesktopResultsWithoutMap from "./DesktopResultsWithoutMap";
+import { RootState } from "../../../../../redux/store";
 import './_deskop-results.scss';
 
 const DesktopResultsContainer = () => {

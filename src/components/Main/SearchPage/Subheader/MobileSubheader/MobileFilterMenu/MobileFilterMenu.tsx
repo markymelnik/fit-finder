@@ -1,12 +1,13 @@
-import { AppDispatch, RootState } from "../../../../../../redux/store";
-import { setIsMobileFilterOpen } from "../../../../../../redux/slices/mobileFilterSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import SaveFiltersButton from "../../../../../common/button/search/SaveFiltersButton";
-import ResetFiltersButton from "../../../../../common/button/search/ResetFiltersButton";
-import { fetchAllAmenities, fetchAllFacilityTypes, fetchAllServices } from "../../../../../../redux/apiRequests";
+
 import MobileFilterOptions from "./MobileFilterOptions/MobileFilterOptions";
+import { fetchAllAmenities, fetchAllFacilityTypes, fetchAllServices } from "../../../../../../redux/apiRequests";
 import { setSelectedAmenities, setSelectedFacilityTypes, setSelectedServices } from "../../../../../../redux/slices/filterSlice";
+import { setIsMobileFilterOpen } from "../../../../../../redux/slices/mobileFilterSlice";
+import { AppDispatch, RootState } from "../../../../../../redux/store";
+import ResetFiltersButton from "../../../../../common/button/search/ResetFiltersButton";
+import SaveFiltersButton from "../../../../../common/button/search/SaveFiltersButton";
 import './_mobile-filter-menu.scss';
 
 const MobileFilterMenu = () => {

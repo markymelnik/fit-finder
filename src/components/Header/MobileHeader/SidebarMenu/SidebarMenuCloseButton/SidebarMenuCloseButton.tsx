@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../../../../redux/store";
-import { setIsSidebarMenuOpen } from "../../../../../redux/slices/sidebarMenuSlice";
+
 import MobileMenuCloseIcon from '../../../../../assets/icons/mobile/mobile-menu-close-icon.png';
+import { setIsSidebarMenuOpen } from "../../../../../redux/slices/sidebarMenuSlice";
+import { AppDispatch } from "../../../../../redux/store";
 import './_sidebar-menu-close-btn.scss';
 
 const SidebarMenuCloseButton = () => {

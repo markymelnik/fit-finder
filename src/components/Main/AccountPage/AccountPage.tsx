@@ -1,12 +1,14 @@
-import { useSelector } from 'react-redux';
-import { RootState } from '../../../redux/store';
-import './_account-page.scss';
 import { useState } from 'react';
+
+import { useSelector } from 'react-redux';
+
+import DesktopLeftBar from './DesktopLeftBar/DesktopLeftBar';
+import MobileSwitchBar from './MobileSwitchBar/MobileSwitchBar';
 import DetailsTab from './Tabs/DetailsTab/DetailsTab';
 import FavoritesTab from './Tabs/FavoritesTab/FavoritesTab';
-import MobileSwitchBar from './MobileSwitchBar/MobileSwitchBar';
-import DesktopLeftBar from './DesktopLeftBar/DesktopLeftBar';
+import { RootState } from '../../../redux/store';
 import AccountPhoto from '../../common/AccountPhoto';
+import './_account-page.scss';
 
 const AccountPage = () => {
 

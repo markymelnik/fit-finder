@@ -1,9 +1,10 @@
 import { useState, useRef } from 'react';
-import useOutsideClick from '../../../../../../../hooks/useOutsideClick';
-import UpArrow from '../../../../../../../assets/icons/arrows/up-arrow.png';
+
 import DownArrow from '../../../../../../../assets/icons/arrows/down-arrow.png';
-import SaveFiltersButton from '../../../../../../common/button/search/SaveFiltersButton';
+import UpArrow from '../../../../../../../assets/icons/arrows/up-arrow.png';
 import DeleteIcon from '../../../../../../../assets/icons/search/delete-icon.png';
+import useOutsideClick from '../../../../../../../hooks/useOutsideClick';
+import SaveFiltersButton from '../../../../../../common/button/search/SaveFiltersButton';
 import './_dropdown-btn.scss';
 
 interface DropdownOptionsProps {

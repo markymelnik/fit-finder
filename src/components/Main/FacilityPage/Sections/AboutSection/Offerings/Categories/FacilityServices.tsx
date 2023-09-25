@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
-import { servicesSelector } from "../../../../../../../redux/selectors/dataSelector";
+
 import CheckmarkIcon from '../../../../../../../assets/icons/checkmark-icon.png';
+import { servicesSelector } from "../../../../../../../redux/selectors/dataSelector";
 
 const FacilityServices = () => {
 

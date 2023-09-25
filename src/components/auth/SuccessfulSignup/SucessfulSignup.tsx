@@ -1,5 +1,5 @@
-import LoginButton from '../../common/button/auth/LoginButton';
 import SuccessSVG from './SuccessSVG';
+import LoginButton from '../../common/button/auth/LoginButton';
 import './_successful-signup.scss';
 
 const SuccessfulSignup = () => {

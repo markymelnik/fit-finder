@@ -1,8 +1,8 @@
 import './_desktop-left-bar.scss';
 import DetailsIcon from '../../../../assets/icons/account/details-icon.svg';
 import FavoritesIcon from '../../../../assets/icons/account/favorites-icon.png';
-import LogoutButton from '../../../common/button/auth/LogoutButton';
 import AccountPhoto from '../../../common/AccountPhoto';
+import LogoutButton from '../../../common/button/auth/LogoutButton';
 
 type DesktopLeftBarProps = {
   activeTab: string;

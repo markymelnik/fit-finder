@@ -1,5 +1,5 @@
-import { UserAccount } from "../../../types/types";
 import { LOGIN_SUCCESS, LOGIN_FAILURE, RESET_LOGIN_ERROR, LOGOUT_SUCCESS } from "./loginActionTypes";
+import { UserAccount } from "../../../types/types";
 
 interface LoginState {
   isLoggedIn: boolean;

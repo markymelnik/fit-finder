@@ -1,11 +1,12 @@
-import FacilityCard from './FacilityCard/FacilityCard';
 import { useSelector, useDispatch } from 'react-redux';
+
+import FacilityCard from './FacilityCard/FacilityCard';
+import NoResults from './NoResults/NoResults';
+import SkeletonCard from './SkeletonCard/SkeletonCard';
+import { setSelectedFacility } from '../../../../../../redux/slices/selectedFacilitySlice';
 import { RootState } from '../../../../../../redux/store';
 import { AppDispatch } from '../../../../../../redux/store';
-import { setSelectedFacility } from '../../../../../../redux/slices/selectedFacilitySlice';
 import { Facility } from '../../../../../../types/types';
-import SkeletonCard from './SkeletonCard/SkeletonCard';
-import NoResults from './NoResults/NoResults';
 import './_result-cards.scss';
 
 const ResultCards = () => {

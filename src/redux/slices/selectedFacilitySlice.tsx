@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
 import { Facility } from "../../types/types";
 
 interface selectedFacilityState {

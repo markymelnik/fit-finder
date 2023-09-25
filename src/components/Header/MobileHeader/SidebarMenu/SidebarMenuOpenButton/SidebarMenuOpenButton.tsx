@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../../../../redux/store";
-import { setIsSidebarMenuOpen } from "../../../../../redux/slices/sidebarMenuSlice";
+
 import MobileMenuOpenIcon from '../../../../../assets/icons/mobile/mobile-menu-open-icon.png'
+import { setIsSidebarMenuOpen } from "../../../../../redux/slices/sidebarMenuSlice";
+import { AppDispatch } from "../../../../../redux/store";
 import './_sidebar-menu-open-btn.scss';
 
 

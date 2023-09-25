@@ -1,7 +1,9 @@
-import { useDispatch } from "react-redux";
-import { AppDispatch, RootState } from "../../../../../../../redux/store";
 import { useEffect } from "react";
+
+import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+
+import { AppDispatch, RootState } from "../../../../../../../redux/store";
 import './_mobile-filter-options.scss';
 
 interface MobileFilterOptionsProps {

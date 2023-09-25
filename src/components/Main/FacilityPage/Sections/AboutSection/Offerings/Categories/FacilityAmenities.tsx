@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
-import { amenitiesSelector } from "../../../../../../../redux/selectors/dataSelector";
+
 import CheckmarkIcon from '../../../../../../../assets/icons/checkmark-icon.png';
+import { amenitiesSelector } from "../../../../../../../redux/selectors/dataSelector";
 
 const FacilityAmenities = () => {
 

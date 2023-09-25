@@ -1,6 +1,7 @@
-import './_to-search-btn.scss';
 import { Link } from 'react-router-dom';
+
 import RightArrowIcon from '../../../../assets/icons/arrows/right-arrow.png';
+import './_to-search-btn.scss';
 
 const ToSearchButton = () => {
   return (

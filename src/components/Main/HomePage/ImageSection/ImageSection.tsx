@@ -1,5 +1,5 @@
-import './_image-section.scss';
 import HomeWorkoutBackground from '../../../../assets/photos/home/home-workout-background.jpg';
+import './_image-section.scss';
 
 const ImageSection = () => {
 

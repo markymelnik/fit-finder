@@ -1,6 +1,6 @@
+import DropdownButton from './Dropdown/DropdownButton';
 import { fetchAllAmenities, fetchAllFacilityTypes, fetchAllServices } from '../../../../../../redux/apiRequests';
 import { setSelectedAmenities, setSelectedFacilityTypes, setSelectedServices } from '../../../../../../redux/slices/filterSlice';
-import DropdownButton from './Dropdown/DropdownButton';
 import './_desktop-filter-menu.scss';
 
 const DesktopFilterMenu = () => {

@@ -1,12 +1,15 @@
-import { useSelector } from 'react-redux';
-import './_favorites-tab.scss';
-import { AppDispatch, RootState } from '../../../../../redux/store';
 import { useEffect } from 'react';
+
+import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { fetchFavoritedFacilities } from '../../../../../redux/apiRequests';
+
 import FavoritedFacilityCard from './FavoritedFacilityCard/FavoritedFacilityCard';
-import { setSelectedFacility } from '../../../../../redux/slices/selectedFacilitySlice';
 import NoFavoritesMessage from './NoFavoritesMessage/NoFavoritesMessage';
+import { fetchFavoritedFacilities } from '../../../../../redux/apiRequests';
+import { setSelectedFacility } from '../../../../../redux/slices/selectedFacilitySlice';
+import { AppDispatch, RootState } from '../../../../../redux/store';
+import './_favorites-tab.scss';
+
 const FavoritesTab = () => {
 
   const dispatch = useDispatch<AppDispatch>();

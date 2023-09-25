@@ -1,7 +1,8 @@
 import { useDispatch } from 'react-redux';
+
 import FilterIcon from '../../../../../../assets/icons/search/filter-icon.png';
-import { AppDispatch } from '../../../../../../redux/store';
 import { setIsMobileFilterOpen } from '../../../../../../redux/slices/mobileFilterSlice';
+import { AppDispatch } from '../../../../../../redux/store';
 import './_mobile-filter-menu-toggle-btn.scss';
 
 const MobileFilterMenuToggleButton = () => {

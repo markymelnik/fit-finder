@@ -1,11 +1,13 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch } from '../../redux/store';
-import { setEnteredKeyword } from '../../redux/slices/filterSlice';
 import { ChangeEvent, FormEvent } from 'react';
-import { RootState } from '../../redux/store';
-import SearchIcon from '../../assets/icons/search/search-icon.png'
+
+import { useDispatch, useSelector } from 'react-redux';
+
 import DeleteIcon from '../../assets/icons/search/delete-icon.png';
+import SearchIcon from '../../assets/icons/search/search-icon.png'
 import useFacilitySearch from '../../hooks/useFacilitySearch';
+import { setEnteredKeyword } from '../../redux/slices/filterSlice';
+import { AppDispatch } from '../../redux/store';
+import { RootState } from '../../redux/store';
 
 interface SearchBarProps {
   containerClass: string;

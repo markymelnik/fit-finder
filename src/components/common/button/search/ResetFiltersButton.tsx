@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../../../redux/store';
+
 import { resetAllFilters } from '../../../../redux/slices/filterSlice';
+import { AppDispatch } from '../../../../redux/store';
 import './_filter-btns.scss';
 
 interface ResetFiltersButtonProps {

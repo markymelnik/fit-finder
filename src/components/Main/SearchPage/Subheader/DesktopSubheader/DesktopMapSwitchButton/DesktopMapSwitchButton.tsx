@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux";
-import { AppDispatch, RootState } from "../../../../../../redux/store";
 import { useSelector } from "react-redux";
+
 import { setIsMapOverlayShown } from "../../../../../../redux/slices/mapOverlaySlice";
+import { AppDispatch, RootState } from "../../../../../../redux/store";
 import './_desktop-map-switch-btn.scss';
 
 const DesktopMapSwitchButton = () => {

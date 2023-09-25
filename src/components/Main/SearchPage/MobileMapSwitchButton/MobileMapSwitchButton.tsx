@@ -1,9 +1,10 @@
 import { useDispatch } from "react-redux";
-import { AppDispatch, RootState } from "../../../../redux/store";
 import { useSelector } from "react-redux";
-import { setIsMapOverlayShown } from "../../../../redux/slices/mapOverlaySlice";
-import MapIcon from '../../../../assets/icons/map/map-icon.png';
+
 import ListIcon from '../../../../assets/icons/map/list-icon.png';
+import MapIcon from '../../../../assets/icons/map/map-icon.png';
+import { setIsMapOverlayShown } from "../../../../redux/slices/mapOverlaySlice";
+import { AppDispatch, RootState } from "../../../../redux/store";
 import './_mobile-map-switch-btn.scss';
 
 const MobileMapSwitchButton = () => {

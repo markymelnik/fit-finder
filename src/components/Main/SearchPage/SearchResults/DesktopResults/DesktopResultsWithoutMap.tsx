@@ -1,5 +1,5 @@
-import ResultCards from "../ResultComponents/ResultCards/ResultCards";
 import QuerySection from "../ResultComponents/QuerySection/QuerySection";
+import ResultCards from "../ResultComponents/ResultCards/ResultCards";
 
 const DesktopResultsWithoutMap = () => {
 

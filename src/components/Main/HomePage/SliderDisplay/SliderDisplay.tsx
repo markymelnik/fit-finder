@@ -1,9 +1,11 @@
 import { useRef } from 'react';
+
+import { useSelector } from 'react-redux';
+
 import SliderCard from './SliderCard/SliderCard';
 import SliderScrollButtons from './SliderScrollButtons/SliderScrollButtons';
-import './_slider-display.scss';
 import { RootState } from '../../../../redux/store';
-import { useSelector } from 'react-redux';
+import './_slider-display.scss';
 
 const SliderDisplay = () => {
 

@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
+
 import { useDispatch } from 'react-redux';
+
 import { setIsMobile } from '../redux/slices/viewportSlice';
 import { AppDispatch } from '../redux/store';
 

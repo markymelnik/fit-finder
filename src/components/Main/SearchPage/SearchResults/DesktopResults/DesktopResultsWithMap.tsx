@@ -1,7 +1,7 @@
-import QuerySection from "../ResultComponents/QuerySection/QuerySection";
-import ResultCards from "../ResultComponents/ResultCards/ResultCards";
 import Footer from "../../../../Footer/Footer";
 import MapOverlay from "../ResultComponents/Map/MapOverlay/MapOverlay";
+import QuerySection from "../ResultComponents/QuerySection/QuerySection";
+import ResultCards from "../ResultComponents/ResultCards/ResultCards";
 
 const DesktopResultsWithMap = () => {
 

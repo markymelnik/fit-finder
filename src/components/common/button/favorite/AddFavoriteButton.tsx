@@ -1,11 +1,12 @@
-import './_add-favorite-btn.scss';
 import { useDispatch } from 'react-redux';
-import { AppDispatch, RootState } from '../../../../redux/store';
-import { addFavoritedFacility, deleteFavoritedFacility, fetchFavoritedFacilities } from '../../../../redux/apiRequests';
-import FavoriteSVG from './FavoriteSVG';
 import { useSelector } from 'react-redux';
+
+import FavoriteSVG from './FavoriteSVG';
+import { addFavoritedFacility, deleteFavoritedFacility } from '../../../../redux/apiRequests';
 import { favoritedFacilityIdSelector } from '../../../../redux/selectors/favoriteFacilityIdSelector';
 import { deleteFavoritedFacilityFromState } from '../../../../redux/slices/favoritedFacilitySlice';
+import { AppDispatch, RootState } from '../../../../redux/store';
+import './_add-favorite-btn.scss';
 
 type AddFavoriteButtonProps = {
   userAccountId: string,
@@ -26,7 +27,7 @@ const AddFavoriteButton = ({ userAccountId, facilityId, customClass}: AddFavorit
     event.stopPropagation();
 
     let passedFacilityObjId: number = 0;
-    for (let facilityObject of favoritedFacilityObjects) {
+    for (const facilityObject of favoritedFacilityObjects) {
       if (facilityObject.facility.id === facilityId) {
         passedFacilityObjId = facilityObject.id;
         break;

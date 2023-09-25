@@ -1,9 +1,10 @@
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../../../redux/store';
-import { setIsSidebarMenuOpen } from '../../../../redux/slices/sidebarMenuSlice';
+import { useNavigate } from 'react-router-dom';
+
 import { logoutAccount } from '../../../../redux/auth/authRequests';
 import { setIsAccountMenuOpen } from '../../../../redux/slices/accountMenuSlice';
-import { useNavigate } from 'react-router-dom';
+import { setIsSidebarMenuOpen } from '../../../../redux/slices/sidebarMenuSlice';
+import { AppDispatch } from '../../../../redux/store';
 
 type LogoutButtonProps = {
   customClass: string;

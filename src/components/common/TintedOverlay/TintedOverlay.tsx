@@ -1,9 +1,10 @@
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../../redux/store";
-import { setIsSidebarMenuOpen } from "../../../redux/slices/sidebarMenuSlice";
-import { setIsAuthFormShown } from "../../../redux/slices/authFormSlice";
+
 import { resetLoginError } from "../../../redux/auth/login/loginActions";
 import { resetSignupError } from "../../../redux/auth/signup/signupActions";
+import { setIsAuthFormShown } from "../../../redux/slices/authFormSlice";
+import { setIsSidebarMenuOpen } from "../../../redux/slices/sidebarMenuSlice";
+import { AppDispatch } from "../../../redux/store";
 import './_tinted-overlay.scss';
 
 interface TintedOverlayProps {

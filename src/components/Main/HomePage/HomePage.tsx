@@ -1,11 +1,11 @@
-import HomePagePhoto from './WelcomeSection/WelcomePhoto/WelcomePhoto';
-import WelcomeText from './WelcomeSection/WelcomeText/WelcomeText';
-import HPSearchbar from './WelcomeSection/HPSearchbar/HPSearchbar';
-import SliderSection from './SliderDisplay/SliderDisplay';
 import AboutSection from './AboutSection/AboutSection';
 import ExploreSection from './ExploreSection/ExploreSection';
-import SectionDivider from './SectionDivider/HomePageSectionDivider';
 import ImageSection from './ImageSection/ImageSection';
+import SectionDivider from './SectionDivider/HomePageSectionDivider';
+import SliderSection from './SliderDisplay/SliderDisplay';
+import HPSearchbar from './WelcomeSection/HPSearchbar/HPSearchbar';
+import HomePagePhoto from './WelcomeSection/WelcomePhoto/WelcomePhoto';
+import WelcomeText from './WelcomeSection/WelcomeText/WelcomeText';
 import './_home-page.scss';
 
 const HomePage = () => {

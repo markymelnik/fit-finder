@@ -1,15 +1,16 @@
-import LoginButton from "../../../common/button/auth/LoginButton";
-import AccountLink from "../../DesktopHeader/AccountMenu/AccountLink";
 import { useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../../../../redux/store";
-import SidebarMenuCloseButton from "./SidebarMenuCloseButton/SidebarMenuCloseButton";
-import TintedOverlay from "../../../common/TintedOverlay/TintedOverlay";
 import { useDispatch } from "react-redux";
-import { setIsSidebarMenuOpen } from "../../../../redux/slices/sidebarMenuSlice";
-import Logo from "../../Logo/Logo";
-import LogoutButton from "../../../common/button/auth/LogoutButton";
-import AboutLink from "../../DesktopHeader/NavigationBar/AboutLink";
+
+import SidebarMenuCloseButton from "./SidebarMenuCloseButton/SidebarMenuCloseButton";
 import SidebarMenuDivider from "./SidebarMenuDivider/SidebarMenuDivider";
+import { setIsSidebarMenuOpen } from "../../../../redux/slices/sidebarMenuSlice";
+import { AppDispatch, RootState } from "../../../../redux/store";
+import LoginButton from "../../../common/button/auth/LoginButton";
+import LogoutButton from "../../../common/button/auth/LogoutButton";
+import TintedOverlay from "../../../common/TintedOverlay/TintedOverlay";
+import AccountLink from "../../DesktopHeader/AccountMenu/AccountLink";
+import AboutLink from "../../DesktopHeader/NavigationBar/AboutLink";
+import Logo from "../../Logo/Logo";
 import './_sidebar-menu.scss';
 
 const SidebarMenu = () => {

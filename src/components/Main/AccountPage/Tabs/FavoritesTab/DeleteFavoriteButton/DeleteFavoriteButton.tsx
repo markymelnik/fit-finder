@@ -1,9 +1,11 @@
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../../../../../redux/store';
-import './_delete-favorite-btn.scss';
-import { deleteFavoritedFacilityFromState } from '../../../../../../redux/slices/favoritedFacilitySlice';
-import { deleteFavoritedFacility } from '../../../../../../redux/apiRequests';
+
 import DeleteIcon from '../../../../../../assets/icons/mobile/mobile-menu-close-icon.png';
+import { deleteFavoritedFacility } from '../../../../../../redux/apiRequests';
+import { deleteFavoritedFacilityFromState } from '../../../../../../redux/slices/favoritedFacilitySlice';
+import { AppDispatch } from '../../../../../../redux/store';
+
+import './_delete-favorite-btn.scss';
 
 type DeleteFavoriteButtonProps = {
   favoriteFacilityObjectId: number;

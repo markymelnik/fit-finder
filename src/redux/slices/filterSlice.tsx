@@ -40,6 +40,7 @@ const filterSlice = createSlice({
     acknowledgeUpdate: (state) => {
       state.hasUpdated = false;
     },
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     resetAllFilters: (_state) => {
       return {
         ...initialFilterState,

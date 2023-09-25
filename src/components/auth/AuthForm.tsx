@@ -1,16 +1,17 @@
 import { useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../../redux/store';
-import CloseFormButton from './CloseAuthFormButton/CloseAuthFormButton';
-import TabButton from './Tabs/TabButton/TabButton';
-import LoginForm from './Tabs/LoginForm/LoginForm';
-import SignupForm from './Tabs/SignupForm/SignupForm';
-import TintedOverlay from '../common/TintedOverlay/TintedOverlay';
 import { useDispatch } from 'react-redux';
-import { setActiveAuthTab, setIsAuthFormShown } from '../../redux/slices/authFormSlice';
+
+import CloseFormButton from './CloseAuthFormButton/CloseAuthFormButton';
+import SuccessfulSignup from './SuccessfulSignup/SucessfulSignup';
+import LoginForm from './Tabs/LoginForm/LoginForm';
+import OrDivider from './Tabs/OAuth/OrDivider/OrDivider';
+import SignupForm from './Tabs/SignupForm/SignupForm';
+import TabButton from './Tabs/TabButton/TabButton';
 import { resetLoginError } from '../../redux/auth/login/loginActions';
 import { resetSignupError } from '../../redux/auth/signup/signupActions';
-import SuccessfulSignup from './SuccessfulSignup/SucessfulSignup';
-import OrDivider from './Tabs/OAuth/OrDivider/OrDivider';
+import { setActiveAuthTab, setIsAuthFormShown } from '../../redux/slices/authFormSlice';
+import { AppDispatch, RootState } from '../../redux/store';
+import TintedOverlay from '../common/TintedOverlay/TintedOverlay';
 import './_auth-form.scss';
 
 const AuthForm = () => {

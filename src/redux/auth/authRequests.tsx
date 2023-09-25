@@ -1,12 +1,13 @@
 import Axios from "axios";
+
 import { loginSuccess, loginFailure, logoutSuccess } from "./login/loginActions";
-import { AppDispatch } from "../store";
-import { setIsAuthFormShown } from "../slices/authFormSlice";
+import { signupFailure, signupSuccess } from "./signup/signupActions";
 import { sleep } from "./sleep";
-import { startLoading, stopLoading } from "../slices/loadingSlice";
-import { registerFailure, registerSuccess } from "./register/registerActions";
+import { setIsAuthFormShown } from "../slices/authFormSlice";
 import { setShowCheckmark } from "../slices/checkmarkSuccessSlice";
+import { startLoading, stopLoading } from "../slices/loadingSlice";
 import { setIsSuccessfulSignupShown } from "../slices/successfulSignup";
+import { AppDispatch } from "../store";
 
 type SignupAccountCredentials = {
   username: string;
@@ -28,7 +29,7 @@ const registerNewAccount = (signupCredentials: SignupAccountCredentials, dispatc
 
       await Axios.post(`${import.meta.env.VITE_FFA_BE_URL}/auth/register`, signupCredentials);
   
-      dispatch(registerSuccess());
+      dispatch(signupSuccess());
 
       console.log("Account created successfully")
 
@@ -44,7 +45,7 @@ const registerNewAccount = (signupCredentials: SignupAccountCredentials, dispatc
 
     } catch (err) {
       console.error('Error registering new account', err);
-      dispatch(registerFailure());
+      dispatch(signupFailure());
       dispatch(stopLoading());
     }
   }

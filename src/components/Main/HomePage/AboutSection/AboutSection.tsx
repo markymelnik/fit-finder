@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import ToSearchButton from '../../../common/button/nav/ToSearchButton';
+
 import SearchScreenshot from '../../../../assets/photos/home/search-screenshot.png';
+import ToSearchButton from '../../../common/button/nav/ToSearchButton';
 import './_about-section.scss';
 
 const AboutSection = () => {
@@ -16,10 +17,10 @@ const AboutSection = () => {
           <div className="row-text">
             <div className="row-title">An easy way to search</div>       
             <p className="row-description">
-              Find your perfect gym or fitness center using our intuitive site.
+              {`Find your perfect gym or fitness center using our intuitive site.
               Search by keywords including location name, address, neighborhood, and ZIP code.
               Filter your search by type, amenities, and services to find exactly what you're looking for.
-              Explore locations using our interactive street map tool!
+              Explore locations using our interactive street map tool!`}
             </p>
             <ToSearchButton />
           </div>

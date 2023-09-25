@@ -1,5 +1,6 @@
-import { setSelectedFacilityTypes } from '../../../../../redux/slices/filterSlice';
 import { useDispatch } from 'react-redux';
+
+import { setSelectedFacilityTypes } from '../../../../../redux/slices/filterSlice';
 import { AppDispatch } from '../../../../../redux/store';
 import './_explore-category.scss';
 

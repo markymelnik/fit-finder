@@ -1,16 +1,18 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
-import { AppDispatch, RootState } from '../../../../redux/store';
-import { registerNewAccount } from '../../../../redux/auth/authRequests';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+
 import { Ring } from '@uiball/loaders';
-import { resetSignupError } from '../../../../redux/auth/signup/signupActions';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+
 import PasswordRequirements from './PasswordRequirements/PasswordRequirements';
 import validatePassword from './PasswordRequirements/validatePassword';
-import PasswordShowIcon from '../../../../assets/icons/password/password-show.png';
-import PasswordHideIcon from '../../../../assets/icons/password/password-hide.png';
 import WarningSVG from './PasswordRequirements/WarningSVG';
+import PasswordHideIcon from '../../../../assets/icons/password/password-hide.png';
+import PasswordShowIcon from '../../../../assets/icons/password/password-show.png';
 import AuthCheckmarkSVG from '../../../../redux/auth/AuthCheckmarkSVG';
+import { registerNewAccount } from '../../../../redux/auth/authRequests';
+import { resetSignupError } from '../../../../redux/auth/signup/signupActions';
+import { AppDispatch, RootState } from '../../../../redux/store';
 import './_signup-form.scss';
 
 const SignupForm = () => {

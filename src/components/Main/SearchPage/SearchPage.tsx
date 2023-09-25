@@ -1,7 +1,8 @@
-import Subheader from "./Subheader/Subheader";
-import SearchResults from "./SearchResults/SearchResults";
-import MobileMapSwitchButton from "./MobileMapSwitchButton/MobileMapSwitchButton";
 import { useSelector } from "react-redux";
+
+import MobileMapSwitchButton from "./MobileMapSwitchButton/MobileMapSwitchButton";
+import SearchResults from "./SearchResults/SearchResults";
+import Subheader from "./Subheader/Subheader";
 import { RootState } from "../../../redux/store";
 import './_search-page.scss';
 

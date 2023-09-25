@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
-import { Map, NavigationControl, Marker, Popup } from 'react-map-gl';
-import { useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../../../../../../../redux/store';
-import 'mapbox-gl/dist/mapbox-gl.css';
-import MapFacilityCard from '../MapCard/MapFacilityCard';
+
+import { Map, NavigationControl, Marker } from 'react-map-gl';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+
+import 'mapbox-gl/dist/mapbox-gl.css';
 import { setSelectedFacility } from '../../../../../../../redux/slices/selectedFacilitySlice';
+import { AppDispatch, RootState } from '../../../../../../../redux/store';
 import { Facility } from '../../../../../../../types/types';
+import MapFacilityCard from '../MapCard/MapFacilityCard';
 import MarkerSVG from '../MarkerSVG';
 import './_map-overlay.scss';
 

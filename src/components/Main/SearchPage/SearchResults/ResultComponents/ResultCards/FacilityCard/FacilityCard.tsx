@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
-import { Facility } from '../../../../../../../types/types';
-import usePhotoLoader from '../../../../../../../hooks/usePhotoLoader';
-import './_facility-card.scss';
-import AddFavoriteButton from '../../../../../../common/button/favorite/AddFavoriteButton';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+import usePhotoLoader from '../../../../../../../hooks/usePhotoLoader';
 import { RootState } from '../../../../../../../redux/store';
-import { useEffect } from 'react';
+import { Facility } from '../../../../../../../types/types';
+import AddFavoriteButton from '../../../../../../common/button/favorite/AddFavoriteButton';
+import './_facility-card.scss';
 
 interface FacilityCard extends Facility {
   onClick: (facility: Facility) => void;

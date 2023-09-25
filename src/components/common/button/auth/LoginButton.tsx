@@ -1,8 +1,9 @@
 import { useDispatch } from "react-redux";
+
 import { setActiveAuthTab, setIsAuthFormShown } from "../../../../redux/slices/authFormSlice";
-import { AppDispatch } from "../../../../redux/store";
 import { setIsSidebarMenuOpen } from "../../../../redux/slices/sidebarMenuSlice";
 import { setIsSuccessfulSignupShown } from "../../../../redux/slices/successfulSignup";
+import { AppDispatch } from "../../../../redux/store";
 
 type LoginButtonProps = {
   customClass: string;

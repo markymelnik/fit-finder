@@ -1,6 +1,6 @@
-import './_slider-scroll-btns.scss';
 import LeftArrow from '../../../../../assets/icons/arrows/left-arrow.png';
 import RightArrow from '../../../../../assets/icons/arrows/right-arrow.png';
+import './_slider-scroll-btns.scss';
 
 interface SliderScrollButtonsProps {
   scrollLeft: () => void;

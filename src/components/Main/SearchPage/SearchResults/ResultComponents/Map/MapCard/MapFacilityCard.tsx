@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Facility } from '../../../../../../../types/types';
+
 import usePhotoLoader from '../../../../../../../hooks/usePhotoLoader';
+import { Facility } from '../../../../../../../types/types';
 import './_map-card.scss';
 
 interface MapFacilityCard extends Facility {

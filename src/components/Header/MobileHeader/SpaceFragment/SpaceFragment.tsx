@@ -1,11 +1,12 @@
 import { useDispatch } from 'react-redux';
-import { AppDispatch, RootState } from '../../../../redux/store';
-import { setIsAuthFormShown } from '../../../../redux/slices/authFormSlice';
-import ProfileLogo from '../../../../assets/icons/account/details-icon.svg';
-import './_space-fragment.scss';
 import { useSelector } from 'react-redux';
-import AccountPhoto from '../../../common/AccountPhoto';
 import { useNavigate } from 'react-router-dom';
+
+import ProfileLogo from '../../../../assets/icons/account/details-icon.svg';
+import { setIsAuthFormShown } from '../../../../redux/slices/authFormSlice';
+import { AppDispatch, RootState } from '../../../../redux/store';
+import AccountPhoto from '../../../common/AccountPhoto';
+import './_space-fragment.scss';
 
 const SpaceFragment = () => {
   

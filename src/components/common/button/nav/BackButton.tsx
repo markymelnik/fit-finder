@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+
 import BackIcon from '../../../../assets/icons/arrows/left-arrow.png';
 import './_back-btn.scss';
 

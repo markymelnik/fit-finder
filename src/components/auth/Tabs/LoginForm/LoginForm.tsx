@@ -1,15 +1,17 @@
-import { useDispatch } from 'react-redux';
-import { AppDispatch, RootState } from '../../../../redux/store';
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
-import { loginAccount } from '../../../../redux/auth/authRequests';
-import { fetchFavoritedFacilities } from '../../../../redux/apiRequests';
-import { useSelector } from 'react-redux';
+
 import { Ring } from '@uiball/loaders';
-import { resetLoginError } from '../../../../redux/auth/login/loginActions';
-import PasswordShowIcon from '../../../../assets/icons/password/password-show.png';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+
 import PasswordHideIcon from '../../../../assets/icons/password/password-hide.png';
-import WarningSVG from '../SignupForm/PasswordRequirements/WarningSVG';
+import PasswordShowIcon from '../../../../assets/icons/password/password-show.png';
+import { fetchFavoritedFacilities } from '../../../../redux/apiRequests';
 import AuthCheckmarkSVG from '../../../../redux/auth/AuthCheckmarkSVG';
+import { loginAccount } from '../../../../redux/auth/authRequests';
+import { resetLoginError } from '../../../../redux/auth/login/loginActions';
+import { AppDispatch, RootState } from '../../../../redux/store';
+import WarningSVG from '../SignupForm/PasswordRequirements/WarningSVG';
 import './_login-form.scss';
 
 const Login = () => {

@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
-import { RootState } from "../../../../../../../redux/store";
+
 import CheckmarkIcon from '../../../../../../../assets/icons/checkmark-icon.png';
+import { RootState } from "../../../../../../../redux/store";
 
 const FacilityType = () => {
 

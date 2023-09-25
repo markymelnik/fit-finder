@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
 import { FacilityType } from "../../types/types";
 
 interface FacilityTypeState {

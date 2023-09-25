@@ -1,17 +1,18 @@
 import './styles/global.scss';
+import { SkeletonTheme } from 'react-loading-skeleton';
+import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import AuthForm from './components/auth/AuthForm';
+import MobileFilterMenu from './components/Main/SearchPage/Subheader/MobileSubheader/MobileFilterMenu/MobileFilterMenu';
+import useIsMobile from './hooks/useIsMobile';
+import usePreventScrolling from './hooks/usePreventScrolling';
+import ScrollToTop from './hooks/useScrollToTop';
+import LoadAccountPage from './pages/LoadAccountPage';
+import LoadSelectedFacilityPage from './pages/LoadFacilityPage';
 import LoadHomePage from './pages/LoadHomePage';
 import LoadSearchPage from './pages/LoadSearchPage';
-import LoadSelectedFacilityPage from './pages/LoadFacilityPage';
-import LoadAccountPage from './pages/LoadAccountPage';
-import useIsMobile from './hooks/useIsMobile';
-import MobileFilterMenu from './components/Main/SearchPage/Subheader/MobileSubheader/MobileFilterMenu/MobileFilterMenu';
-import AuthForm from './components/auth/AuthForm';
-import { useSelector } from 'react-redux';
 import { RootState } from './redux/store';
-import { SkeletonTheme } from 'react-loading-skeleton';
-import ScrollToTop from './hooks/useScrollToTop';
-import usePreventScrolling from './hooks/usePreventScrolling';
 
 const App = () => {
   useIsMobile();

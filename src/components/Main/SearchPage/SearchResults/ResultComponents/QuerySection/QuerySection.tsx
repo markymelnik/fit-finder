@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux/es/hooks/useSelector";
+
 import { getFacilityCount } from "../../../../../../redux/slices/facilitySlice";
 import './_query-section.scss';
 

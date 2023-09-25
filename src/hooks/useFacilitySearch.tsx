@@ -1,10 +1,12 @@
+import { useEffect } from "react";
+
 import { useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../redux/store";
-import { fetchAllFacilities, fetchFacilitiesByParameters } from "../redux/apiRequests";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+
+import { fetchAllFacilities, fetchFacilitiesByParameters } from "../redux/apiRequests";
 import { acknowledgeUpdate, unsetResetFlag } from "../redux/slices/filterSlice";
+import { AppDispatch, RootState } from "../redux/store";
 
 const useFacilitySearch = () => {
 

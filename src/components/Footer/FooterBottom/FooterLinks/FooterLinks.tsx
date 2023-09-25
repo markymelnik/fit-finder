@@ -1,7 +1,6 @@
 import SomethingLink from './SomethingLink';
 import GitHubIcon from '../../../../assets/icons/footer/github-icon.png';
 import LinkedInIcon from '../../../../assets/icons/footer/linkedin-icon.png';
-
 import './_footer-links.scss';
 
 const FooterLinks = () => {

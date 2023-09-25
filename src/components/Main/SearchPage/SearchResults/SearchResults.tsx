@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../../redux/store';
-import MobileResultsContainer from './MobileResults/MobileResultsContainer';
+
 import DesktopResultsContainer from './DesktopResults/DesktopResultsContainer';
+import MobileResultsContainer from './MobileResults/MobileResultsContainer';
+import { RootState } from '../../../../redux/store';
 import './_search-results.scss';
 
 const SearchResults = () => {

@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../../../redux/store';
+
 import usePhotoLoader from '../../../../../hooks/usePhotoLoader';
+import { RootState } from '../../../../../redux/store';
 import './_photo-section.scss';
 
 const FacilityPagePhoto = () => {

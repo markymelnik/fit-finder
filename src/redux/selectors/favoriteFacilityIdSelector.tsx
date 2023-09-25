@@ -1,4 +1,5 @@
 import { createSelector } from "reselect";
+
 import { RootState } from "../store";
 
 const getFavoritedFacility = (state: RootState) => state.favoritedFacility;
