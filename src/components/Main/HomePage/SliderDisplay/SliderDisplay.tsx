@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 const SliderDisplay = () => {
 
   const sliderRef = useRef<HTMLDivElement>(null);
-  const isMobile = useSelector((state: RootState) => state.isMobile.isMobile);
+  const isMobile = useSelector((state: RootState) => state.viewport.isMobile);
 
   const cardWidth = 325;
   const totalCards = 8;

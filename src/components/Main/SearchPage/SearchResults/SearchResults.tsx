@@ -6,7 +6,7 @@ import './_search-results.scss';
 
 const SearchResults = () => {
 
-  const isMobile = useSelector((state: RootState) => state.isMobile.isMobile);
+  const isMobile = useSelector((state: RootState) => state.viewport.isMobile);
 
   return (
     <div className="search-results-container">

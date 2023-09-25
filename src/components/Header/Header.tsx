@@ -4,7 +4,7 @@ import MobileHeader from './MobileHeader/MobileHeader';
 import DesktopHeader from './DesktopHeader/DesktopHeader';
 
 const Header = () => {
-  const isMobile = useSelector((state: RootState) => state.isMobile.isMobile);
+  const isMobile = useSelector((state: RootState) => state.viewport.isMobile);
 
   return isMobile ? <MobileHeader /> : <DesktopHeader />;
 };

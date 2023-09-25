@@ -9,7 +9,7 @@ import MobileFilterOptions from "./MobileFilterOptions/MobileFilterOptions";
 import { setSelectedAmenities, setSelectedFacilityTypes, setSelectedServices } from "../../../../../../redux/slices/filterSlice";
 import './_mobile-filter-menu.scss';
 
-const MobileFilter = () => {
+const MobileFilterMenu = () => {
 
   const dispatch = useDispatch<AppDispatch>();
   const isMobileFilterOpen = useSelector((state: RootState) => state.mobileFilter.isMobileFilterOpen);
@@ -56,4 +56,4 @@ const MobileFilter = () => {
   )
 }
 
-export default MobileFilter;
+export default MobileFilterMenu;

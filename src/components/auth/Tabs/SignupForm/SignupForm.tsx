@@ -4,7 +4,7 @@ import { registerNewAccount } from '../../../../redux/auth/authRequests';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { Ring } from '@uiball/loaders';
-import { resetRegisterError } from '../../../../redux/auth/register/registerActions';
+import { resetSignupError } from '../../../../redux/auth/signup/signupActions';
 import PasswordRequirements from './PasswordRequirements/PasswordRequirements';
 import validatePassword from './PasswordRequirements/validatePassword';
 import PasswordShowIcon from '../../../../assets/icons/password/password-show.png';
@@ -18,7 +18,7 @@ const SignupForm = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   const isLoading = useSelector((state: RootState) => state.loading === 1);
-  const registerError = useSelector((state: RootState) => state.register.registerError);
+  const signupError = useSelector((state: RootState) => state.signup.signupError);
   const showCheckmark = useSelector((state: RootState) => state.checkmarkSuccess.showCheckmark);
 
   const [signupEmail, setSignupEmail] = useState<string>('');
@@ -32,13 +32,13 @@ const SignupForm = () => {
   const [numberRequirementSatisfied, setNumberRequirementSatisfied] = useState<boolean>(false);
 
   const handleSignupEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
-    dispatch(resetRegisterError());
+    dispatch(resetSignupError());
     setSignupEmail(event.target.value);
   }
 
   const handleSignupPasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
     const password = event.target.value;
-    dispatch(resetRegisterError());
+    dispatch(resetSignupError());
     setSignupPassword(password);
 
     const validationResult = validatePassword(password);
@@ -84,7 +84,7 @@ const SignupForm = () => {
           <div className="enter-information">
             <div
               className={`input-signup-email ${
-                registerError ? "input-error" : ""
+                signupError ? "input-error" : ""
               }`}
             >
               <input
@@ -102,7 +102,7 @@ const SignupForm = () => {
             </div>
             <div
               className={`input-signup-password ${
-                registerError ? "input-error" : ""
+                signupError ? "input-error" : ""
               }`}
             >
               <input
@@ -125,7 +125,7 @@ const SignupForm = () => {
               </div>
             </div>
           </div>
-          {registerError && (
+          {signupError && (
             <div className="error-container">
               <WarningSVG />
               <div className="error-message">

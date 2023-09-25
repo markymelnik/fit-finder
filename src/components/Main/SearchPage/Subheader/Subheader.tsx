@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import SearchPageSearchbar from './SearchPageSearchbar/SearchPageSearchbar';
+import SPSearchbar from './SPSearchbar/SPSearchbar';
 import MobileFilterToggleButton from './MobileSubheader/MobileFilterMenuToggleButton/MobileFilterMenuToggleButton';
 import DesktopFilterMenu from './DesktopSubheader/DesktopFilterMenu/DesktopFilterMenu';
 import { RootState } from '../../../../redux/store';
@@ -8,12 +8,12 @@ import './_subheader.scss';
 
 const Subheader = () => {
 
-  const isMobile = useSelector((state: RootState) => state.isMobile.isMobile);
+  const isMobile = useSelector((state: RootState) => state.viewport.isMobile);
   
   return (
     <div className='search-page-subheader-container'>
       <div className="search-options-container">
-        <SearchPageSearchbar />
+        <SPSearchbar />
         {isMobile ? <MobileFilterToggleButton /> : <DesktopFilterMenu />}
       </div>
       {!isMobile && <DesktopMapSwitchButton />}

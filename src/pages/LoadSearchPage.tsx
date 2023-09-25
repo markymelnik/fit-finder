@@ -1,6 +1,6 @@
-import Header from '../components/header/Header';
-import SearchPage from '../components/main/SearchPage/SearchPage';
-import Footer from '../components/footer/Footer';
+import Header from '../components/Header/Header';
+import SearchPage from '../components/Main/SearchPage/SearchPage';
+import Footer from '../components/Footer/Footer';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 

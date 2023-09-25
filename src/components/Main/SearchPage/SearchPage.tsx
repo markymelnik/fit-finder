@@ -1,5 +1,5 @@
 import Subheader from "./Subheader/Subheader";
-import ResultsDisplay from "./SearchResults/SearchResults";
+import SearchResults from "./SearchResults/SearchResults";
 import MobileMapSwitchButton from "./MobileMapSwitchButton/MobileMapSwitchButton";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
@@ -7,12 +7,12 @@ import './_search-page.scss';
 
 const SearchPage = () => {
 
-  const isMobile = useSelector((state: RootState) => state.isMobile.isMobile);
+  const isMobile = useSelector((state: RootState) => state.viewport.isMobile);
 
   return (
     <main className='search-page-container'>
       <Subheader />
-      <ResultsDisplay />
+      <SearchResults />
       {isMobile && <MobileMapSwitchButton />}
     </main>
   );

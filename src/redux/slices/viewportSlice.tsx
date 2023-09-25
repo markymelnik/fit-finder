@@ -1,15 +1,15 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-interface mobileSliceState {
+interface ViewportSliceState {
   isMobile: boolean;
 }
 
-const initialState: mobileSliceState = {
+const initialState: ViewportSliceState = {
   isMobile: window.innerWidth < 768,
 };
 
-export const mobileSlice = createSlice({
-  name: 'isMobile',
+export const viewportSlice = createSlice({
+  name: 'viewport',
   initialState: initialState,
   reducers: {
     setIsMobile: (state, action: PayloadAction<boolean>) => {
@@ -18,6 +18,6 @@ export const mobileSlice = createSlice({
   },
 });
 
-export const { setIsMobile } = mobileSlice.actions;
+export const { setIsMobile } = viewportSlice.actions;
 
-export default mobileSlice.reducer;
+export default viewportSlice.reducer;

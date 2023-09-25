@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { setIsAuthFormShown } from '../../../redux/slices/authFormSlice';
 import CloseIcon from '../../../assets/icons/mobile/mobile-menu-close-icon.png';
 import { resetLoginError } from '../../../redux/auth/login/loginActions';
-import { resetRegisterError } from '../../../redux/auth/register/registerActions';
+import { resetSignupError } from '../../../redux/auth/signup/signupActions';
 import './_close-auth-form-btn.scss';
 
 const CloseAuthFormButton = () => {
@@ -12,7 +12,7 @@ const CloseAuthFormButton = () => {
   const handleButtonClick = () => {
     dispatch(setIsAuthFormShown(false));
     dispatch(resetLoginError());
-    dispatch(resetRegisterError());
+    dispatch(resetSignupError());
   }
 
   return (

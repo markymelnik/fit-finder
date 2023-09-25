@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import './_mobile-filter-options.scss';
 
-interface MobileFilterCategoryProps {
+interface MobileFilterOptionsProps {
   fetchAllOptionsFromDatabase: () => any;
   fetchAllOptionsFromGlobalState: (state: RootState) => any;
   setSelectedOptions: (items: string[]) => any;
@@ -13,7 +13,7 @@ interface MobileFilterCategoryProps {
   categoryTitle: string;
 }
 
-const MobileFilterOptions = ({ fetchAllOptionsFromDatabase, fetchAllOptionsFromGlobalState, setSelectedOptions, fetchSelectedOptions, categoryTitle }: MobileFilterCategoryProps) => {
+const MobileFilterOptions = ({ fetchAllOptionsFromDatabase, fetchAllOptionsFromGlobalState, setSelectedOptions, fetchSelectedOptions, categoryTitle }: MobileFilterOptionsProps) => {
 
   const dispatch = useDispatch<AppDispatch>();
 

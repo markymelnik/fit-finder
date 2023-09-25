@@ -10,7 +10,7 @@ import AccountPhoto from '../../common/AccountPhoto';
 
 const AccountPage = () => {
 
-  const isMobile = useSelector((state: RootState) => state.isMobile.isMobile);
+  const isMobile = useSelector((state: RootState) => state.viewport.isMobile);
   const [activeTab, setActiveTab] = useState<string>('details');
 
   return (

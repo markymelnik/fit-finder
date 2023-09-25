@@ -8,7 +8,7 @@ import TintedOverlay from '../common/TintedOverlay/TintedOverlay';
 import { useDispatch } from 'react-redux';
 import { setActiveAuthTab, setIsAuthFormShown } from '../../redux/slices/authFormSlice';
 import { resetLoginError } from '../../redux/auth/login/loginActions';
-import { resetRegisterError } from '../../redux/auth/register/registerActions';
+import { resetSignupError } from '../../redux/auth/signup/signupActions';
 import SuccessfulSignup from './SuccessfulSignup/SucessfulSignup';
 import OrDivider from './Tabs/OAuth/OrDivider/OrDivider';
 import './_auth-form.scss';
@@ -24,7 +24,7 @@ const AuthForm = () => {
     if (currentTab != activeTab) {
       dispatch(setActiveAuthTab(currentTab));
       dispatch(resetLoginError());
-      dispatch(resetRegisterError());
+      dispatch(resetSignupError());
     }
   }
 
@@ -40,7 +40,7 @@ const AuthForm = () => {
         <div className='auth-form-container'>
           <CloseFormButton />
           <div className="auth-nav-tabs">
-            <TabButton buttonText='LoginForm' isActive={activeTab === 'login'} onClick={() => handleTabClick('login')}/>
+            <TabButton buttonText='Login' isActive={activeTab === 'login'} onClick={() => handleTabClick('login')}/>
             <TabButton buttonText='Sign Up' isActive={activeTab === 'signup'} onClick={() => handleTabClick('signup')}/>
           </div>
           {activeTab === 'login' ? <LoginForm /> : <SignupForm />}

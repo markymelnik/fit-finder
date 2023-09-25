@@ -3,7 +3,7 @@ import { AppDispatch } from "../../../redux/store";
 import { setIsSidebarMenuOpen } from "../../../redux/slices/sidebarMenuSlice";
 import { setIsAuthFormShown } from "../../../redux/slices/authFormSlice";
 import { resetLoginError } from "../../../redux/auth/login/loginActions";
-import { resetRegisterError } from "../../../redux/auth/register/registerActions";
+import { resetSignupError } from "../../../redux/auth/signup/signupActions";
 import './_tinted-overlay.scss';
 
 interface TintedOverlayProps {
@@ -19,7 +19,7 @@ const TintedOverlay = ({ isActive, onCloseOverlay }: TintedOverlayProps) => {
     dispatch(setIsSidebarMenuOpen(false));
     dispatch(setIsAuthFormShown(false));
     dispatch(resetLoginError());
-    dispatch(resetRegisterError());
+    dispatch(resetSignupError());
     onCloseOverlay();
   }
   return (

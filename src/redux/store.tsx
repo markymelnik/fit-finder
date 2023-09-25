@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import mobileReducer from './slices/mobileSlice';
+import viewportReducer from './slices/viewportSlice';
 import mapOverlaySliceReducer from './slices/mapOverlaySlice';
 import sidebarMenuSlicerReducer from './slices/sidebarMenuSlice';
 import mobileFilterSliceReducer from './slices/mobileFilterSlice';
@@ -11,7 +11,7 @@ import serviceSliceReducer from './slices/servicesSlice';
 import selectedFacilityReducer from './slices/selectedFacilitySlice';
 import filtersReducer from './slices/filterSlice';
 import loginReducer from './auth/login/loginReducer';
-import registerReducer from './auth/register/registerReducer';
+import signupReducer from './auth/signup/signupReducer';
 import favoritedFacilityReducer from './slices/favoritedFacilitySlice';
 import loadingReducer from './slices/loadingSlice';
 import checkmarkSuccessReducer from './slices/checkmarkSuccessSlice';
@@ -20,7 +20,7 @@ import successfulSignupReducer from './slices/successfulSignup';
 
 const store = configureStore({
   reducer: {
-    isMobile: mobileReducer,
+    viewport: viewportReducer,
     mapOverlay: mapOverlaySliceReducer,
     sidebarMenu: sidebarMenuSlicerReducer,
     mobileFilter: mobileFilterSliceReducer,
@@ -32,7 +32,7 @@ const store = configureStore({
     selectedFacility: selectedFacilityReducer,
     filters: filtersReducer,
     login: loginReducer,
-    register: registerReducer,
+    signup: signupReducer,
     favoritedFacility: favoritedFacilityReducer,
     loading: loadingReducer,
     checkmarkSuccess: checkmarkSuccessReducer,

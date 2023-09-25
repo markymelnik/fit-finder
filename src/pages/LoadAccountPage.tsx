@@ -1,6 +1,6 @@
-import Header from '../components/header/Header';
-import AccountPage from '../components/main/AccountPage/AccountPage';
-import Footer from '../components/footer/Footer';
+import Header from '../components/Header/Header';
+import AccountPage from '../components/Main/AccountPage/AccountPage';
+import Footer from '../components/Footer/Footer';
 
 const LoadAccountPage = () => {
   return (

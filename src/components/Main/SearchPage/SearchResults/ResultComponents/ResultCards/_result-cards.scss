@@ -1,6 +1,3 @@
-@import '../../../../../../styles/colors';
-@import '../../../../../../styles/transitions';
-
 .result-cards-container {
   width: 100%;
   height: auto;
@@ -14,8 +11,4 @@
     padding: 0.25rem 1rem 1.25rem;
     grid-template-columns: repeat(auto-fill, minmax(345px, 1fr));
   }
-
-  
 }
-
-
