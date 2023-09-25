@@ -1,30 +1,30 @@
 import { configureStore } from '@reduxjs/toolkit';
 import mobileReducer from './slices/mobileSlice';
 import mapOverlaySliceReducer from './slices/mapOverlaySlice';
-import mobileMenuSlicerReducer from './slices/mobileMenuSlice';
+import sidebarMenuSlicerReducer from './slices/sidebarMenuSlice';
 import mobileFilterSliceReducer from './slices/mobileFilterSlice';
-import loginFormSliceReducer from './slices/loginFormSlice';
+import authFormSliceReducer from './slices/authFormSlice';
 import facilitiesSliceReducer from './slices/facilitySlice';
 import facilityTypesSliceReducer from './slices/facilityTypeSlice';
 import amenititesSliceReducer from './slices/amenitySlice';
 import serviceSliceReducer from './slices/servicesSlice';
 import selectedFacilityReducer from './slices/selectedFacilitySlice';
 import filtersReducer from './slices/filterSlice';
-import loginReducer from './authentication/login/loginReducer';
-import registerReducer from './authentication/register/registerReducer';
+import loginReducer from './auth/login/loginReducer';
+import registerReducer from './auth/register/registerReducer';
 import favoritedFacilityReducer from './slices/favoritedFacilitySlice';
 import loadingReducer from './slices/loadingSlice';
 import checkmarkSuccessReducer from './slices/checkmarkSuccessSlice';
-import desktopProfileDropdownReducer from './slices/desktopProfileDropdownSlice';
+import accountMenuReducer from './slices/accountMenuSlice';
 import successfulSignupReducer from './slices/successfulSignup';
 
 const store = configureStore({
   reducer: {
     isMobile: mobileReducer,
-    isMapOverlayShown: mapOverlaySliceReducer,
-    isMobileMenuOpen: mobileMenuSlicerReducer,
-    isMobileFilterOpen: mobileFilterSliceReducer,
-    isLoginFormShown: loginFormSliceReducer,
+    mapOverlay: mapOverlaySliceReducer,
+    sidebarMenu: sidebarMenuSlicerReducer,
+    mobileFilter: mobileFilterSliceReducer,
+    authForm: authFormSliceReducer,
     facilities: facilitiesSliceReducer,
     facilityTypes: facilityTypesSliceReducer,
     amenities: amenititesSliceReducer,
@@ -36,8 +36,8 @@ const store = configureStore({
     favoritedFacility: favoritedFacilityReducer,
     loading: loadingReducer,
     checkmarkSuccess: checkmarkSuccessReducer,
-    isDesktopProfileDropdownOpen: desktopProfileDropdownReducer,
-    isSuccessfulSignupShown: successfulSignupReducer,
+    accountMenu: accountMenuReducer,
+    successfulSignup: successfulSignupReducer,
   },
 });
 

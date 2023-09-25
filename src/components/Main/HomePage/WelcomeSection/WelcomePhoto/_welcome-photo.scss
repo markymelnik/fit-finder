@@ -1,0 +1,16 @@
+@import '../../../../../styles/colors';
+@import '../../../../../styles/mixins';
+
+.home-page-welcome-photo-container {
+  height: 70vh;
+  width: 100%;
+  @include center-elements;
+  
+  img {
+    height: 100%;
+    width: 100vw;
+    object-fit: cover;
+    filter: brightness(0.5);
+  }
+}
+

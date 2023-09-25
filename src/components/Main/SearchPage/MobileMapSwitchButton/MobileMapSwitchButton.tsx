@@ -9,7 +9,7 @@ import './_mobile-map-switch-btn.scss';
 const MobileMapSwitchButton = () => {
 
   const dispatch = useDispatch<AppDispatch>();
-  const isMapOverlayShown = useSelector((state: RootState) => state.isMapOverlayShown.isMapOverlayShown);
+  const isMapOverlayShown = useSelector((state: RootState) => state.mapOverlay.isMapOverlayShown);
 
   const buttonText = isMapOverlayShown ? 'List View' : 'Map View';
   const buttonIcon = isMapOverlayShown ? ListIcon : MapIcon;

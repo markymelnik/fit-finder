@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
-import SPSearchBar from './SPSearchBar/SPSearchBar';
-import MobileFilterToggleButton from './Mobile/MobileFilterToggleButton/MobileFilterToggleButton';
-import DesktopFilterMenu from './Desktop/DesktopFilterMenu/DesktopFilterMenu';
+import SearchPageSearchbar from './SearchPageSearchbar/SearchPageSearchbar';
+import MobileFilterToggleButton from './MobileSubheader/MobileFilterMenuToggleButton/MobileFilterMenuToggleButton';
+import DesktopFilterMenu from './DesktopSubheader/DesktopFilterMenu/DesktopFilterMenu';
 import { RootState } from '../../../../redux/store';
-import DesktopMapSwitchButton from './Desktop/DesktopMapSwitchButton/DesktopMapSwitchButton';
+import DesktopMapSwitchButton from './DesktopSubheader/DesktopMapSwitchButton/DesktopMapSwitchButton';
 import './_subheader.scss';
 
 const Subheader = () => {
@@ -12,8 +12,8 @@ const Subheader = () => {
   
   return (
     <div className='search-page-subheader-container'>
-      <div className="filter-options-container">
-        <SPSearchBar />
+      <div className="search-options-container">
+        <SearchPageSearchbar />
         {isMobile ? <MobileFilterToggleButton /> : <DesktopFilterMenu />}
       </div>
       {!isMobile && <DesktopMapSwitchButton />}

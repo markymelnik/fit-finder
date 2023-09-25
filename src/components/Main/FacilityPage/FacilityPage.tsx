@@ -1,18 +1,18 @@
-import FacilityTopDescription from "./Information/TopDescription/FacilityTopDescription";
-import FacilityPagePhoto from "./Information/Photo/FacilityPagePhoto";
-import FacilityAbout from "./Information/About/FacilityAbout";
+import TopSection from "./Sections/TopSection/TopSection";
+import PhotoSection from "./Sections/PhotoSection/PhotoSection";
+import AboutSection from "./Sections/AboutSection/AboutSection";
 import BackButton from "../../common/button/nav/BackButton";
 import './_facility-page.scss';
-import FacilitySaveSection from "./Information/SaveSection/SaveSection";
+import SaveSection from "./Sections/SaveSection/SaveSection";
 
 const FacilityPage = () => {
 
   return (
     <main className="facility-page-container">
-      <FacilityTopDescription />
-      <FacilityPagePhoto />
-      <FacilitySaveSection />
-      <FacilityAbout />
+      <TopSection />
+      <PhotoSection />
+      <SaveSection />
+      <AboutSection />
       <BackButton />
     </main>
   )

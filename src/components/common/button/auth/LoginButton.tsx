@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
-import { setActiveTab, setIsLoginFormShown } from "../../../../redux/slices/loginFormSlice";
+import { setActiveAuthTab, setIsAuthFormShown } from "../../../../redux/slices/authFormSlice";
 import { AppDispatch } from "../../../../redux/store";
-import { setIsMobileMenuOpen } from "../../../../redux/slices/mobileMenuSlice";
+import { setIsSidebarMenuOpen } from "../../../../redux/slices/sidebarMenuSlice";
 import { setIsSuccessfulSignupShown } from "../../../../redux/slices/successfulSignup";
 
 type LoginButtonProps = {
@@ -14,9 +14,9 @@ const LoginButton = ({ customClass }: LoginButtonProps) => {
 
   const handleButtonClick = () => {
     dispatch(setIsSuccessfulSignupShown(false));
-    dispatch(setIsLoginFormShown(true));
-    dispatch(setActiveTab('login'));
-    dispatch(setIsMobileMenuOpen(false));
+    dispatch(setIsAuthFormShown(true));
+    dispatch(setActiveAuthTab('login'));
+    dispatch(setIsSidebarMenuOpen(false));
   }
 
   return (

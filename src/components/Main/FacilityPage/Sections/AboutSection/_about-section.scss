@@ -1,0 +1,77 @@
+@import '../../../../../styles/colors';
+
+$page-max-width: 800px;
+
+.facility-about-section-container {
+  display: flex;
+  flex-direction: column;
+  max-width: $page-max-width;
+  margin: 0 0 3rem;
+  padding: 1.5rem;
+  border: 1px solid map-get($grey, 'light');
+  border-radius: 6px;
+
+  .facility-about-header {
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 0 0 0.75rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid map-get($grey, 'light');
+  }
+
+  .facility-data {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: $page-max-width;
+    width: 100%;
+
+    .facility-data-left {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .facility-description-container {
+        height: auto;
+        max-width: $page-max-width;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid map-get($grey, 'light');
+      }
+      
+      .facility-description-text {
+        font-size: 1rem;
+        line-height: 1.6;
+      } 
+    }
+
+    .facility-data-right {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+
+  .facility-about-section-container {
+    margin: 0 0 4rem;
+
+    .facility-data {
+      flex-direction: row;
+      gap: 2rem;
+
+      .facility-data-left {
+        width: 55%;
+      }
+
+      .facility-data-right {
+        width: 45%;
+      }
+      
+    }
+  }
+}

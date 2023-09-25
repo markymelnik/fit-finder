@@ -1,7 +1,7 @@
 import SearchBarComponent from "../../../../common/SearchBarComponent";
 import './_home-page-searchbar.scss';
 
-const HomePageSearchBar = () => {
+const HomePageSearchbar = () => {
   return (
     <SearchBarComponent
       containerClass='home-page-searchbar'
@@ -12,4 +12,4 @@ const HomePageSearchBar = () => {
   );
 }
 
-export default HomePageSearchBar;
+export default HomePageSearchbar;

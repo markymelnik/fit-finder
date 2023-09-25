@@ -1,0 +1,78 @@
+@import '../../../../../../../styles/colors';
+@import '../../../../../../../styles/mixins';
+@import '../../../../../../../styles/transitions';
+
+@import './dropdown-options';
+
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+
+  .type-dropdown-btn,
+  .amenity-dropdown-btn,
+  .service-dropdown-btn {
+    height: 100%;
+    font-size: 14px;
+    @include center-elements;
+    gap: 0.2rem;
+    min-width: 85px;
+    border: 1px solid map-get($grey, dark);
+    border-radius: 4px;
+    color: map-get($grey, 'darker');
+    background-color: map-get($theme, 'white');
+    
+    @include smooth-hover(border);
+    @include smooth-hover(background-color);
+  
+    &:hover {
+      cursor: pointer;
+      background-color: darken(map-get($theme, 'white'), 5%);
+      border: 1px solid map-get($grey, lighter);
+    }
+
+    &.active,
+    &:active 
+    &:hover {
+      border: 1px solid map-get($grey, lighter);
+    }
+
+    &.with-delete-icon {
+      width: 110px;
+    }
+
+    .dropdown-btn-content {
+      display: flex;
+      justify-content: center;
+      gap: 0.25rem;
+    
+      .dropdown-btn-checkedcount {
+        font-size: 0.85rem;
+      }
+      .dropdown-btn-text {
+        font-size: 0.85rem;
+      }
+    }
+
+    .dropdown-btn-arrow {
+      height: 0.75rem;
+      width: 0.75rem;
+    }
+
+    .dropdown-btn-delete {
+      height: 0.8rem;
+      width: 0.8rem;
+      background-size: cover; 
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 25px;
+
+      &:hover {
+        background-color: map-get($grey, 'light');
+      }
+    }
+  }
+
+  .type-dropdown.with-delete-btn {
+    width: 100px;
+  }
+}

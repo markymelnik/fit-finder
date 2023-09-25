@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../../../redux/store';
-import { setIsMobileMenuOpen } from '../../../../redux/slices/mobileMenuSlice';
-import { logoutAccount } from '../../../../redux/authentication/authenticationRequests';
-import { setIsDesktopProfileDropdownOpen } from '../../../../redux/slices/desktopProfileDropdownSlice';
+import { setIsSidebarMenuOpen } from '../../../../redux/slices/sidebarMenuSlice';
+import { logoutAccount } from '../../../../redux/auth/authRequests';
+import { setIsAccountMenuOpen } from '../../../../redux/slices/accountMenuSlice';
 import { useNavigate } from 'react-router-dom';
 
 type LogoutButtonProps = {
@@ -19,8 +19,8 @@ const LogoutButton = ({ customClass }: LogoutButtonProps) => {
     logoutAccount(dispatch)()
       .then(() => {
         navigate("/");
-        dispatch(setIsMobileMenuOpen(false));
-        setIsDesktopProfileDropdownOpen(false);
+        dispatch(setIsSidebarMenuOpen(false));
+        dispatch(setIsAccountMenuOpen(false));
       })
     
   }

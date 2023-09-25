@@ -7,7 +7,6 @@ import { fetchFavoritedFacilities } from '../../../../../redux/apiRequests';
 import FavoritedFacilityCard from './FavoritedFacilityCard/FavoritedFacilityCard';
 import { setSelectedFacility } from '../../../../../redux/slices/selectedFacilitySlice';
 import NoFavoritesMessage from './NoFavoritesMessage/NoFavoritesMessage';
-
 const FavoritesTab = () => {
 
   const dispatch = useDispatch<AppDispatch>();

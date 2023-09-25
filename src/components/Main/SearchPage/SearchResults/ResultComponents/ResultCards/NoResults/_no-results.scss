@@ -1,0 +1,45 @@
+@import '../../../../../../../styles/colors';
+@import '../../../../../../../styles/transitions';
+
+.no-results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  min-height: 75vh;
+  height: 100%;
+
+  .no-results-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    gap: 2rem;
+    margin-top: 2rem;
+
+    p {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+  }
+
+  .no-results-reset-filters-btn {
+    font-size: 1.05rem;
+    height: 3rem;
+    width: 9rem;
+    margin-top: 2rem;
+    color: map-get($theme, 'white');
+    background-color: map-get($grey, 'darker');
+    border: none;
+    border-radius: 4px;
+  
+    @include smooth-hover(background-color);
+  
+    &:hover {
+      cursor: pointer;
+      background-color: lighten(map-get($grey, 'darker'), 10%);
+    }
+  }
+}

@@ -5,8 +5,8 @@ import LoadSearchPage from './pages/LoadSearchPage';
 import LoadSelectedFacilityPage from './pages/LoadFacilityPage';
 import LoadAccountPage from './pages/LoadAccountPage';
 import useIsMobile from './hooks/useIsMobile';
-import MobileFilterDisplay from './components/Main/SearchPage/Subheader/Mobile/MobileFilterDisplay/MobileFilterDisplay';
-import LoginSignupForm from './components/LoginSignupForm/LoginSignupForm';
+import MobileFilterDisplay from './components/main/SearchPage/Subheader/MobileSubheader/MobileFilterMenu/MobileFilterMenu';
+import AuthForm from './components/auth/AuthForm';
 import { useSelector } from 'react-redux';
 import { RootState } from './redux/store';
 import { SkeletonTheme } from 'react-loading-skeleton';
@@ -17,16 +17,16 @@ const App = () => {
   useIsMobile();
   
   const isMobile = useSelector((state: RootState) => state.isMobile.isMobile);
-  const isLoginFormShown = useSelector((state: RootState) => state.isLoginFormShown.isLoginFormShown);
+  const isAuthFormOpen = useSelector((state: RootState) => state.authForm.isAuthFormOpen);
 
-  usePreventScrolling(isLoginFormShown);
+  usePreventScrolling(isAuthFormOpen);
 
   return (
     <SkeletonTheme baseColor='#C4CfD9' highlightColor='#E6EBF0'>
       <Router>
         <ScrollToTop />
         {isMobile && <MobileFilterDisplay />}
-        <LoginSignupForm />
+        <AuthForm />
         <div className='site-container'>
           <Routes>
             <Route path='/' element={<LoadHomePage />} />

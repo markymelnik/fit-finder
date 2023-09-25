@@ -1,0 +1,78 @@
+.type-dropdown,
+.amenity-dropdown,
+.service-dropdown {
+  position: relative;
+  display: flex;
+
+  .dropdown-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+    z-index: 2;
+    height: auto;
+    padding: 1rem;
+    font-size: 0.7rem;
+    background-color: map-get($theme, 'white');
+    border: 1px solid map-get($grey, lighter);
+    box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.1);
+  
+    .dropdown-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      white-space: nowrap;
+      margin: 0 0 0.4rem;
+    }
+  
+    .dropdown-option {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      width: 100%;
+      gap: 0.1rem;
+      padding: 0 0.5rem;
+  
+      .option-checkbox {
+        margin-right: 0.4rem;
+        height: 1.2rem;
+        width: 1.2rem;
+        color: map-get($theme, 'white');
+      
+        &:hover {
+          cursor: pointer;
+        }
+  
+        .option-text {
+          font-size: 0.85rem;
+          padding: 0.25rem 0 0;
+          white-space: nowrap;
+        }
+      }
+    }
+  
+    .checkbox-done-btn {
+      height: 2.5rem;
+      width: 7rem;
+      font-size: 1rem;
+      padding: 0.2rem 0 0;
+      display: flex;
+      align-self: center;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      color: map-get($theme, 'white');
+      margin: 0.8rem 0 0;
+      background-color: map-get($grey, 'darker');
+      border-radius: 4px;
+  
+      @include smooth-hover(background-color);
+    
+      &:hover {
+        cursor: pointer;
+        background-color: lighten(map-get($grey, 'darker'), 10%);
+      }
+    }  
+  }
+}

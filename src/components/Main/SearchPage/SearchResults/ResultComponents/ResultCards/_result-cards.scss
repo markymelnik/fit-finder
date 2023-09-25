@@ -1,0 +1,21 @@
+@import '../../../../../../styles/colors';
+@import '../../../../../../styles/transitions';
+
+.result-cards-container {
+  width: 100%;
+  height: auto;
+
+  .result-cards {
+    width: 100%;
+    min-height: 75vh;
+    height: 100%;
+    display: grid;
+    gap: 1.25rem;
+    padding: 0.25rem 1rem 1.25rem;
+    grid-template-columns: repeat(auto-fill, minmax(345px, 1fr));
+  }
+
+  
+}
+
+

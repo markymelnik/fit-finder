@@ -1,5 +1,5 @@
 import Subheader from "./Subheader/Subheader";
-import ResultsDisplay from "./ResultsSection/ResultsDisplay";
+import ResultsDisplay from "./SearchResults/SearchResults";
 import MobileMapSwitchButton from "./MobileMapSwitchButton/MobileMapSwitchButton";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";

@@ -1,15 +1,15 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-interface mobileFilterSliceState {
+interface MobileFilterSliceState {
   isMobileFilterOpen: boolean;
 }
 
-const initialState: mobileFilterSliceState = {
+const initialState: MobileFilterSliceState = {
   isMobileFilterOpen: false,
 }
 
 export const mobileFilterSlice = createSlice({
-  name: 'isMobileFilterOpen',
+  name: 'mobileFilterSlice',
   initialState: initialState,
   reducers: {
     setIsMobileFilterOpen: (state, action: PayloadAction<boolean>) => {

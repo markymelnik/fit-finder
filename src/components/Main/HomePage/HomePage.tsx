@@ -1,10 +1,10 @@
-import HomePagePhoto from './WelcomeSection/Photo/HomePagePhoto';
+import HomePagePhoto from './WelcomeSection/WelcomePhoto/WelcomePhoto';
 import WelcomeText from './WelcomeSection/WelcomeText/WelcomeText';
-import HomePageSearchBar from './WelcomeSection/HomePageSearchBar/HomePageSearchBar';
+import HomePageSearchBar from './WelcomeSection/HomePageSearchbar/HomePageSearchbar';
 import SliderSection from './SliderDisplay/SliderDisplay';
 import AboutSection from './AboutSection/AboutSection';
 import ExploreSection from './ExploreSection/ExploreSection';
-import SectionDivider from './SectionDivider/SectionDivider';
+import SectionDivider from './SectionDivider/HomePageSectionDivider';
 import ImageSection from './ImageSection/ImageSection';
 import './_home-page.scss';
 

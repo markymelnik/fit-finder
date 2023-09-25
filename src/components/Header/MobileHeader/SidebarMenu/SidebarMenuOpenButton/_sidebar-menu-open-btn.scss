@@ -1,0 +1,19 @@
+@import '../../../../../styles/mixins';
+
+.sidebar-menu-open-btn {
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  width: 3.5rem;
+  border: none;
+  background-color: transparent;
+
+  img {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

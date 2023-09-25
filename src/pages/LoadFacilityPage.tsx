@@ -1,6 +1,6 @@
-import Header from '../components/Header/Header';
-import FacilityPage from '../components/Main/FacilityPage/FacilityPage';
-import Footer from '../components/Footer/Footer';
+import Header from '../components/header/Header';
+import FacilityPage from '../components/main/FacilityPage/FacilityPage';
+import Footer from '../components/footer/Footer';
 
 const LoadFacilityPage = () => {
   return (

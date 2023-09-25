@@ -1,6 +1,6 @@
-import Header from '../components/Header/Header';
-import HomePage from '../components/Main/HomePage/HomePage';
-import Footer from '../components/Footer/Footer';
+import Header from '../components/header/Header';
+import HomePage from '../components/main/HomePage/HomePage';
+import Footer from '../components/footer/Footer';
 
 const LoadHomePage = () => {
   return (
