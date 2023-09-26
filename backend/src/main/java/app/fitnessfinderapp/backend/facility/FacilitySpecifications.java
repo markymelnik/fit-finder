@@ -5,6 +5,7 @@ import java.util.Set;
 import org.springframework.data.jpa.domain.Specification;
 
 import app.fitnessfinderapp.backend.amenity.Amenity;
+import app.fitnessfinderapp.backend.neighborhood.Neighborhood;
 import app.fitnessfinderapp.backend.services.Services;
 import jakarta.persistence.criteria.Join;
 import jakarta.persistence.criteria.Predicate;
@@ -19,10 +20,13 @@ public class FacilitySpecifications {
 
       Predicate namePredicate = cb.like(cb.lower(facility.get("name")), "%" + keyword.toLowerCase() + "%");
       Predicate addressPredicate = cb.like(cb.lower(facility.get("address")), "%" + keyword.toLowerCase() + "%");
-      Predicate neighborhoodPredicate = cb.like(cb.lower(facility.get("neighborhood")), "%" + keyword.toLowerCase() + "%");
       Predicate facilityTypePredicate = cb.like(cb.lower(facility.join("facilityType").get("name")), "%" + keyword.toLowerCase() + "%");
       Predicate postalCodePredicate = cb.equal(facility.get("postalCode"), keyword);
-      return cb.or(namePredicate, addressPredicate, neighborhoodPredicate, facilityTypePredicate, postalCodePredicate);
+
+      Join<Facility, Neighborhood> neighborhoodJoin = facility.join("neighborhood");
+      Predicate neighborhoodPredicate = cb.like(cb.lower(neighborhoodJoin.get("name")), "%" + keyword.toLowerCase() + "%");
+
+      return cb.or(namePredicate, addressPredicate, facilityTypePredicate, postalCodePredicate, neighborhoodPredicate);
     };
   }
 
@@ -54,8 +58,4 @@ public class FacilitySpecifications {
       return cb.and(join.get("name").in(services));
     };
   }
-
-
 }
-
-

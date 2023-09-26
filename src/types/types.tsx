@@ -10,7 +10,7 @@ export interface Facility {
   name: string;
   address: string;
   postalCode: string;
-  neighborhood: string;
+  neighborhood: Neighborhood;
   latitude: number;
   longitude: number;
   facilityType: FacilityType;
@@ -22,6 +22,11 @@ export interface FacilityType {
   id: number;
   name: string;
   description: string;
+}
+
+export interface Neighborhood {
+  id: number;
+  name: string;
 }
 
 export interface Amenity {

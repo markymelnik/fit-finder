@@ -5,6 +5,7 @@ import java.util.Set;
 
 import app.fitnessfinderapp.backend.amenity.Amenity;
 import app.fitnessfinderapp.backend.facilityType.FacilityType;
+import app.fitnessfinderapp.backend.neighborhood.Neighborhood;
 import app.fitnessfinderapp.backend.services.Services;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -54,9 +55,12 @@ public class Facility {
   @JoinColumn(name = "type_id")
   private FacilityType facilityType;
 
+  @ManyToOne(fetch = FetchType.EAGER)
+  @JoinColumn(name = "neighborhood_id")
+  private Neighborhood neighborhood;
+
   private String name;
   private String address;
-  private String neighborhood;
   private String postalCode;
 
   private Double latitude;
@@ -66,20 +70,18 @@ public class Facility {
 
   }
 
-  public Facility(Long id, String name, String address, String neighborhood, String postalCode, Double latitude, Double longitude) {
+  public Facility(Long id, String name, String address, String postalCode, Double latitude, Double longitude) {
     this.id = id;
     this.name = name;
     this.address = address;
-    this.neighborhood = neighborhood;
     this.postalCode = postalCode;
     this.latitude = latitude;
     this.longitude = longitude;
   }
 
-  public Facility(String name, String address, String neighborhood, String postalCode, Double latitude, Double longitude) {
+  public Facility(String name, String address, String postalCode, Double latitude, Double longitude) {
     this.name = name;
     this.address = address;
-    this.neighborhood = neighborhood;
     this.postalCode = postalCode;
     this.latitude = latitude;
     this.longitude = longitude;
@@ -109,14 +111,6 @@ public class Facility {
     this.address = address;
   }
 
-  public String getNeighborhood() {
-    return this.neighborhood;
-  }
-
-  public void setNeighborhood(String neighborhood) {
-    this.neighborhood = neighborhood;
-  }
-
   public String getPostalCode() {
     return this.postalCode;
   }
@@ -143,6 +137,10 @@ public class Facility {
 
   public FacilityType getFacilityType() {
     return facilityType;
+  }
+
+  public Neighborhood getNeighborhood() {
+    return neighborhood;
   }
 
   public Set<Amenity> getAmenities() {

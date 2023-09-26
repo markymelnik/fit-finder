@@ -16,6 +16,8 @@ import app.fitnessfinderapp.backend.amenity.Amenity;
 import app.fitnessfinderapp.backend.amenity.AmenityService;
 import app.fitnessfinderapp.backend.facilityType.FacilityType;
 import app.fitnessfinderapp.backend.facilityType.FacilityTypeService;
+import app.fitnessfinderapp.backend.neighborhood.Neighborhood;
+import app.fitnessfinderapp.backend.neighborhood.NeighborhoodService;
 import app.fitnessfinderapp.backend.services.Services;
 import app.fitnessfinderapp.backend.services.ServicesService;
 
@@ -25,13 +27,15 @@ public class FacilityController {
 
   private final FacilityService facilityService;
   private final FacilityTypeService facilityTypeService;
+  private final NeighborhoodService neighborhoodService;
   private final AmenityService amenityService;
   private final ServicesService servicesService;
 
   @Autowired
-  public FacilityController(FacilityService facilityService, FacilityTypeService facilityTypeService, AmenityService amenityService, ServicesService servicesService) {
+  public FacilityController(FacilityService facilityService, FacilityTypeService facilityTypeService, NeighborhoodService neighborhoodService, AmenityService amenityService, ServicesService servicesService) {
     this.facilityService = facilityService;
     this.facilityTypeService = facilityTypeService;
+    this.neighborhoodService = neighborhoodService;
     this.amenityService = amenityService;
     this.servicesService = servicesService;
   }
@@ -54,6 +58,11 @@ public class FacilityController {
   @GetMapping("/{facilityId}/type")
   public Set<FacilityType> getFacilityTypeByFacilityId(@PathVariable Long facilityId) {
     return facilityTypeService.getFacilityTypeByFacilityId(facilityId);
+  }
+
+  @GetMapping("/{facilityId}/neighborhood")
+  public Set<Neighborhood> getNeighborhoodByFacilityId(@PathVariable Long facilityId) {
+    return neighborhoodService.getNeighborhoodByFacilityId(facilityId);
   }
 
   @GetMapping("/{facilityId}/amenities")

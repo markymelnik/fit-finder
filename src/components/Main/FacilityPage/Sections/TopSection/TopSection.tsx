@@ -5,7 +5,7 @@ import './_top-section.scss';
 
 const FacilityTopDescription = () => {
 
-  const selectedFacility = useSelector((state: RootState) => state.selectedFacility.selectedFacility);
+  const selectedFacility: any = useSelector((state: RootState) => state.selectedFacility.selectedFacility);
 
   if (!selectedFacility) {
     return <p className="no-facility-found">Facility information not found.</p>
@@ -14,6 +14,7 @@ const FacilityTopDescription = () => {
   return (
     <div className="top-section-container">
       <div className='facility-name'>{selectedFacility.name}</div>
+      <div className="facility-neighborhood">{selectedFacility.neighborhood.name.toUpperCase()}</div>
     </div>
   );
 };

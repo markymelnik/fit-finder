@@ -60,25 +60,34 @@
         border: none;
         color: map-get($theme, 'black');
 
-        .facility-card-type {
-          font-size: 0.8rem;
-          font-weight: 600;
+        .facility-card-info-top {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
           margin: 0 0 0.5rem;
+
+          .facility-card-type,
+          .facility-card-neighborhood {
+            font-size: 0.8rem;
+            font-weight: 600;
+          }
         }
-        
-        .facility-card-name {
-          font-size: 1.25rem;
-          margin: 0 0 0.25rem;
-        }
-        
-        .facility-card-address {
-          font-size: 0.9rem;
+
+        .facility-card-info-bottom {
+          display: flex;
+          flex-direction: column;
+          
+          .facility-card-name {
+            font-size: 1.25rem;
+            margin: 0 0 0.25rem;
+          }
+          
+          .facility-card-address {
+            font-size: 0.9rem;
+          }
         }
       }
     }
   }  
 }
 
-@media (min-width) {
-  
-}
