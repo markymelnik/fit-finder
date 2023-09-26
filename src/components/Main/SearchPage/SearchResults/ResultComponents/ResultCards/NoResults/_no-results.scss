@@ -26,14 +26,14 @@
   }
 
   .no-results-reset-filters-btn {
-    font-size: 1.05rem;
+    font-size: 1rem;
     height: 3rem;
-    width: 9rem;
+    width: 8rem;
     margin-top: 2rem;
     color: map-get($theme, 'white');
     background-color: map-get($grey, 'darker');
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
   
     @include smooth-hover(background-color);
   

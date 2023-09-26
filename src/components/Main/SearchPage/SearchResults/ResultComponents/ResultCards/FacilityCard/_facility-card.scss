@@ -58,28 +58,27 @@
         flex: 1;
         flex-direction: column;
         border: none;
-        
-        .facility-card-name {
-          display: flex;
-          font-size: 1.25rem;
-          color: map-get($theme, 'black');
+        color: map-get($theme, 'black');
+
+        .facility-card-type {
+          font-size: 0.8rem;
+          font-weight: 600;
           margin: 0 0 0.5rem;
         }
         
-        .facility-card-address {
-          display: flex;
-          font-size: 0.9rem;
-          color: map-get($theme, 'black');
-          margin: 0 0 0.4rem;
+        .facility-card-name {
+          font-size: 1.25rem;
+          margin: 0 0 0.25rem;
         }
         
-        .facility-card-type {
-          display: flex;
-          font-size: 0.8rem;
-          font-weight: 500;
-          color: map-get($theme, 'black');
+        .facility-card-address {
+          font-size: 0.9rem;
         }
       }
     }
   }  
+}
+
+@media (min-width) {
+  
 }

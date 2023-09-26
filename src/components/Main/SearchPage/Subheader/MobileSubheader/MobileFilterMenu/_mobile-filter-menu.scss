@@ -2,13 +2,13 @@
 @import '@styles/mixins';
 
 .mobile-filter-menu-container {
-  min-height: 100vh;
+  min-height: 100dvh;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  padding: 1rem 1rem 4rem;
+  padding: 1rem 1rem 5rem;
   position: fixed;
   top: 0;
   right: 0;
@@ -47,7 +47,7 @@
       height: 3rem;
       width: 8rem;
       border: none;
-      border-radius: 4px;
+      border-radius: 6px;
       background-color: map-get($grey, 'darker');
       color: map-get($theme, 'white');
     }

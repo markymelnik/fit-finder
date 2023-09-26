@@ -24,6 +24,7 @@ $global-font-size: 16px;
 
 body {
   font-size: $global-font-size;
+  scrollbar-gutter: stable;
 }
 
 body, button, input {

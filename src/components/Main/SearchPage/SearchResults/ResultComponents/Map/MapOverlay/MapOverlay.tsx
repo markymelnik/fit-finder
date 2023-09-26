@@ -8,7 +8,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { setSelectedFacility } from '../../../../../../../redux/slices/selectedFacilitySlice';
 import { AppDispatch, RootState } from '../../../../../../../redux/store';
 import { Facility } from '../../../../../../../types/types';
-import MapFacilityCard from '../MapCard/MapFacilityCard';
+import MapCard from '../MapCard/MapCard';
 import MarkerSVG from '../MarkerSVG';
 import './_map-overlay.scss';
 
@@ -64,7 +64,7 @@ const MapOverlay = () => {
                   longitude={facility.longitude}
                   latitude={facility.latitude}
                 >
-                  <MapFacilityCard 
+                  <MapCard 
                     { ...facility }
                     onClick={handleCardClick}
                   />

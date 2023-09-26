@@ -4,11 +4,11 @@ import usePhotoLoader from '../../../../../../../hooks/usePhotoLoader';
 import { Facility } from '../../../../../../../types/types';
 import './_map-card.scss';
 
-interface MapFacilityCard extends Facility {
+interface MapCardProps extends Facility {
   onClick: (facility: Facility) => void;
 }
 
-const MapFacilityCard = ({ onClick, ...facility }: MapFacilityCard) => {
+const MapCard = ({ onClick, ...facility }: MapCardProps) => {
 
   const photo = usePhotoLoader(facility.id);
 
@@ -22,12 +22,12 @@ const MapFacilityCard = ({ onClick, ...facility }: MapFacilityCard) => {
         {photo && <img src={photo} alt="map facility card photo" />}
       </div>
       <div className="map-facility-card-info">
+        <div className="map-facility-card-type">{facility.facilityType.name.toUpperCase()}</div>
         <div className="map-facility-card-name">{facility.name}</div>
         <div className="map-facility-card-address">{facility.address}, {facility.postalCode}</div>
-        <div className="map-facility-card-type">{facility.facilityType.name.toUpperCase()}</div>
       </div>
     </Link>
   )
 };
 
-export default MapFacilityCard;
+export default MapCard;

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
-import FavoritedFacilityCard from './FavoritedFacilityCard/FavoritedFacilityCard';
+import FavoritedFacilityCard from './FavoriteCard/FavoriteCard';
 import NoFavoritesMessage from './NoFavoritesMessage/NoFavoritesMessage';
 import { fetchFavoritedFacilities } from '../../../../../redux/apiRequests';
 import { setSelectedFacility } from '../../../../../redux/slices/selectedFacilitySlice';

@@ -19,8 +19,10 @@ const App = () => {
   
   const isMobile = useSelector((state: RootState) => state.viewport.isMobile);
   const isAuthFormOpen = useSelector((state: RootState) => state.authForm.isAuthFormOpen);
+  const setIsSidebarMenuOpen = useSelector((state: RootState) => state.sidebarMenu.isSidebarMenuOpen);
 
   usePreventScrolling(isAuthFormOpen);
+  usePreventScrolling(setIsSidebarMenuOpen);
 
   return (
     <SkeletonTheme baseColor='#C4CfD9' highlightColor='#E6EBF0'>

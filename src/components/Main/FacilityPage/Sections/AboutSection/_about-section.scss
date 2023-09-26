@@ -7,14 +7,14 @@ $page-max-width: 800px;
   flex-direction: column;
   max-width: $page-max-width;
   margin: 0 0 3rem;
-  padding: 1.5rem;
+  padding: 2rem;
   border: 1px solid map-get($grey, 'light');
   border-radius: 6px;
 
   .facility-about-header {
     width: 100%;
     font-size: 1.5rem;
-    padding: 0 0 0.75rem;
+    padding: 0 0 1rem;
     margin-bottom: 1.5rem;
     border-bottom: 1px solid map-get($grey, 'light');
   }

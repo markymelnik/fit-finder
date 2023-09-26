@@ -2,12 +2,12 @@ import { useRef } from 'react';
 
 import { useSelector } from 'react-redux';
 
-import SliderCard from './SliderCard/SliderCard';
+import SliderDisplay from './SliderDisplay/SliderDisplay';
 import SliderScrollButtons from './SliderScrollButtons/SliderScrollButtons';
 import { RootState } from '../../../../redux/store';
-import './_slider-display.scss';
+import './_slider-section.scss';
 
-const SliderDisplay = () => {
+const SliderSection = () => {
 
   const sliderRef = useRef<HTMLDivElement>(null);
   const isMobile = useSelector((state: RootState) => state.viewport.isMobile);
@@ -54,25 +54,14 @@ const SliderDisplay = () => {
     <div className='slider-section-container'>
       <div className="slider-top">
         <div className="slider-text">
-          <h2 className='slider-header'>Locations in Bay Ridge</h2>
-          <h5 className='slider-subheader'>Popular in your area</h5>
+          <h2 className='slider-header'>Locations in Brooklyn</h2>
+          <h5 className='slider-subheader'>Popular with users</h5>
         </div>
        {!isMobile && <SliderScrollButtons scrollLeft={scrollLeft} scrollRight={scrollRight} />}
       </div>
-      <div className='slider-display'>
-        <div className='slider-display-cards' ref={sliderRef}>
-          <SliderCard/>
-          <SliderCard/>
-          <SliderCard/>
-          <SliderCard/>
-          <SliderCard/>
-          <SliderCard/>
-          <SliderCard/>
-          <SliderCard/>
-        </div>
-      </div>
+      <SliderDisplay sliderRef={sliderRef}/>
     </div>
   );
 };
 
-export default SliderDisplay;
+export default SliderSection;

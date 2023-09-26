@@ -2,7 +2,7 @@ import AboutSection from './AboutSection/AboutSection';
 import ExploreSection from './ExploreSection/ExploreSection';
 import ImageSection from './ImageSection/ImageSection';
 import SectionDivider from './SectionDivider/HomePageSectionDivider';
-import SliderSection from './SliderDisplay/SliderDisplay';
+import SliderSection from './SliderSection/SliderSection';
 import HPSearchbar from './WelcomeSection/HPSearchbar/HPSearchbar';
 import HomePagePhoto from './WelcomeSection/WelcomePhoto/WelcomePhoto';
 import WelcomeText from './WelcomeSection/WelcomeText/WelcomeText';

@@ -1,20 +1,27 @@
 @import '@styles/colors';
 @import '@styles/transitions';
+@import '@styles/mixins';
 
 .slider-scroll-btns {
   display: flex;
-  gap: 1rem;
+  align-items: flex-end;
+  gap: 0.75rem;
   margin: 1.5rem 0 0;
 
   .slider-scroll-btn {
+    @include center-elements;
+    height: 2.5rem;
+    width: 2.5rem;
     border: none;
+    border-radius: 50%;
     background-color: map-get($theme, 'white');
 
     .slider-arrow {
       height: 1.75rem;
       width: 1.75rem;
-    
-      @include smooth-hover(transform);
+    }
+
+    @include smooth-hover(transform);
     
       &:hover {
         cursor: pointer;
@@ -24,6 +31,5 @@
       &:active {
         transform: scale(0.85);
       }
-    }
   }
 }
