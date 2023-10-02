@@ -7,5 +7,11 @@ $page-max-width: 800px;
   flex-direction: column;
   align-items: center;
   padding: 0 5%;
-  margin: 80px 0;
+  margin: 7rem 0 4rem;
+}
+
+@media (min-width: 768px) {
+  .facility-page-container {
+    margin: 10rem 0 4rem;
+  }
 }

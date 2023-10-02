@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 
 import CheckmarkIcon from '../../../../../../../assets/icons/checkmark-icon.png';
 import { amenitiesSelector } from "../../../../../../../redux/selectors/dataSelector";
+import './_facility-categories.scss';
 
 const FacilityAmenities = () => {
 
@@ -21,8 +22,10 @@ const FacilityAmenities = () => {
       <div className="facility-amenities-header">AMENITIES</div>
       {amenities.map((amenity: string, index: number) => {
         return (
-          <div className="checkmark-container" key={index}> 
-            <div className="facility-checkmark" style={{ backgroundImage: `url(${CheckmarkIcon})`}}></div>
+          <div className="facility-amenity-field" key={index}> 
+            <div className="facility-checkmark">
+              <img src={CheckmarkIcon} />
+            </div>
             <div className="facility-amenity">
               {amenity}
             </div>

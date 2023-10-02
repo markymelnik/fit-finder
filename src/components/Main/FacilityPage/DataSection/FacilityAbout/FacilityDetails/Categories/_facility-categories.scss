@@ -1,0 +1,51 @@
+@import '@styles/colors';
+
+.facility-amenities-container,
+.facility-services-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0.75rem;
+
+  .facility-amenities-header,
+  .facility-services-header {
+    display: flex;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+  }
+
+  .facility-amenity-field,
+  .facility-services-field {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0 1rem 0.75rem;
+  
+    .facility-checkmark {
+      height: 1rem;
+      width: 1rem;
+      
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  
+    .facility-amenity,
+    .facility-service {
+      font-size: 1rem;
+      padding: 0.15rem 0 0;
+    }
+  }
+  
+  .no-facility-found {
+    font-size: 1rem;
+    padding: 2rem;
+  }
+
+  .no-offering {
+    font-size: 1rem;
+    margin-left: 1rem;
+    padding: 0.5rem 0;
+  }
+}

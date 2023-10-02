@@ -1,0 +1,15 @@
+.facility-info-container {
+  display: flex;
+
+  .facility-info-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .facility-info-container {
+    margin: 0 0 1rem;
+  }
+}

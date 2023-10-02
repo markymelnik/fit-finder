@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
 
-import usePhotoLoader from '../../../../../hooks/usePhotoLoader';
-import { RootState } from '../../../../../redux/store';
+import SaveSection from './SaveSection/SaveSection';
+import usePhotoLoader from '../../../../hooks/usePhotoLoader';
+import { RootState } from '../../../../redux/store';
 import './_photo-section.scss';
 
 const FacilityPagePhoto = () => {
@@ -17,6 +18,9 @@ const FacilityPagePhoto = () => {
   return (
     <div className='photo-section-container'>
       {photo && <img src={photo} />}
+      <div className="photo-section-favorite">
+        <SaveSection />
+      </div>
     </div>
   );
 };

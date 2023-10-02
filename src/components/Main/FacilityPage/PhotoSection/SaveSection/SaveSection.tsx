@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux';
 
 import { RootState } from '../../../../../redux/store';
-import LoginButton from '../../../../common/button/auth/LoginButton';
 import AddFavoriteButton from '../../../../common/button/favorite/AddFavoriteButton';
+import EncourageLoginButton from '../../../../common/button/favorite/EncourageLoginButton';
 import './_save-section.scss';
 
-const FacilitySaveSection = () => {
+const SaveSection = () => {
   
   const isLoggedIn = useSelector((state: RootState) => state.login.isLoggedIn);
   const userAccount = useSelector((state: RootState) => state.login.userAccount);
@@ -13,16 +13,16 @@ const FacilitySaveSection = () => {
 
   return (
     <div className="save-section-container">
+      {/* <div className="save-section-text">
+        Save
+      </div> */}
       {isLoggedIn && userAccount && selectedFacility ? (
         <AddFavoriteButton userAccountId={userAccount.id} facilityId={selectedFacility.id} customClass='facility-add-favorite-btn'/>
       ) : (
-        <div className="encourage-login-container">
-          <div className="encourage-text">Want to save this location?</div>
-          <LoginButton customClass='encourage-login-btn'/>
-        </div>
+        <EncourageLoginButton customClass='encourage-login-btn' />
       )}
     </div>
   )
 }
 
-export default FacilitySaveSection;
+export default SaveSection;

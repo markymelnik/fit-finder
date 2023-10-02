@@ -3,11 +3,15 @@
 $page-max-width: 800px;
 
 .photo-section-container {
+  position: relative;
   display: flex;
   justify-content: center;
   width: 100%;
   height: calc(100vw * (9/16));
   overflow: hidden;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 6px;
+  margin: 0 0 2.5rem;
 
   img {
     height: 100%;
@@ -16,6 +20,12 @@ $page-max-width: 800px;
     object-fit: cover;
     border-radius: 6px;
   }  
+
+  .photo-section-favorite {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+  }
 }
 
 .no-facility-photo-found {
@@ -25,6 +35,12 @@ $page-max-width: 800px;
 @media (min-width: 768px) {
   .photo-section-container {
     max-width: $page-max-width;
-    height: calc($page-max-width * (9/16))
+    height: calc($page-max-width * (9/16));
+    margin: 0 0 3rem;
+
+    .photo-section-favorite {
+      bottom: 1.5rem;
+      right: 1.5rem;
+    }
   }
 }
