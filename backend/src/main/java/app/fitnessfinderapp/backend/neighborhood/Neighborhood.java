@@ -3,12 +3,15 @@ package app.fitnessfinderapp.backend.neighborhood;
 import java.util.HashSet;
 import java.util.Set;
 
+import app.fitnessfinderapp.backend.borough.Borough;
 import app.fitnessfinderapp.backend.facility.Facility;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
@@ -32,6 +35,10 @@ public class Neighborhood {
 
   @OneToMany(mappedBy="neighborhood", fetch=FetchType.EAGER)
   private Set<Facility> facilities = new HashSet<>();
+
+  @ManyToOne(fetch = FetchType.EAGER)
+  @JoinColumn(name = "borough_id")
+  private Borough borough;
 
   private String name;
 
@@ -64,8 +71,12 @@ public class Neighborhood {
     this.name = name;
   }
 
+  public Borough getBorough() {
+    return borough;
+  }
+
   @Override
   public String toString() {
-    return "Neighborhood {" + "id=" + id + ", name=" + name + '}';
+    return "Neighborhood {" + "id=" + id + ", name=" + name + ",borough=" + borough + '}';
   }
 }

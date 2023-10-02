@@ -66,25 +66,30 @@ public class Facility {
   private Double latitude;
   private Double longitude;
 
+  private String webUrl;
+  private String description;
+
   public Facility() {
 
   }
 
-  public Facility(Long id, String name, String address, String postalCode, Double latitude, Double longitude) {
+  public Facility(Long id, String name, String address, String postalCode, Double latitude, Double longitude, String webUrl, String description) {
     this.id = id;
     this.name = name;
     this.address = address;
     this.postalCode = postalCode;
     this.latitude = latitude;
     this.longitude = longitude;
+    this.webUrl = webUrl;
   }
 
-  public Facility(String name, String address, String postalCode, Double latitude, Double longitude) {
+  public Facility(String name, String address, String postalCode, Double latitude, Double longitude, String webUrl, String description) {
     this.name = name;
     this.address = address;
     this.postalCode = postalCode;
     this.latitude = latitude;
     this.longitude = longitude;
+    this.webUrl = webUrl;
   }
 
   public Long getId() {
@@ -135,6 +140,22 @@ public class Facility {
     this.longitude = longitude;
   }
 
+  public String getWebUrl() {
+    return this.webUrl;
+  }
+
+  public void setWebUrl(String webUrl ){
+    this.webUrl = webUrl;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
   public FacilityType getFacilityType() {
     return facilityType;
   }
@@ -155,7 +176,8 @@ public class Facility {
   public String toString() {
     return "Facility {" + "id=" + id + ", name=" + name + '\'' + ", address=" + '\'' + address
         + '\'' + ", neighborhood=" + '\'' + neighborhood + '\'' + ", postalCode=" + '\'' + postalCode + 
-         '\'' + ", latitude=" + '\'' + latitude + '\'' + ", longitude=" + '\'' + longitude + '}';
+         '\'' + ", latitude=" + '\'' + latitude + '\'' + ", longitude=" + '\'' + longitude + '\'' + '\'' + 
+         ", webUrl=" + '\'' + webUrl + ", description=" + '\'' + description + '}';
   }
 
 }

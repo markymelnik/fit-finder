@@ -13,6 +13,7 @@ export interface Facility {
   neighborhood: Neighborhood;
   latitude: number;
   longitude: number;
+  webUrl: string;
   facilityType: FacilityType;
   amenities: Amenity[];
   services: Service[];
@@ -21,10 +22,15 @@ export interface Facility {
 export interface FacilityType {
   id: number;
   name: string;
-  description: string;
 }
 
 export interface Neighborhood {
+  id: number;
+  name: string;
+  borough: Borough;
+}
+
+export interface Borough {
   id: number;
   name: string;
 }
@@ -32,11 +38,9 @@ export interface Neighborhood {
 export interface Amenity {
   id: number;
   name: string;
-  description: string;
 }
 
 export interface Service {
   id: number;
   name: string;
-  description: string;
 }

@@ -5,6 +5,7 @@ import java.util.Set;
 import org.springframework.data.jpa.domain.Specification;
 
 import app.fitnessfinderapp.backend.amenity.Amenity;
+import app.fitnessfinderapp.backend.borough.Borough;
 import app.fitnessfinderapp.backend.neighborhood.Neighborhood;
 import app.fitnessfinderapp.backend.services.Services;
 import jakarta.persistence.criteria.Join;
@@ -26,7 +27,10 @@ public class FacilitySpecifications {
       Join<Facility, Neighborhood> neighborhoodJoin = facility.join("neighborhood");
       Predicate neighborhoodPredicate = cb.like(cb.lower(neighborhoodJoin.get("name")), "%" + keyword.toLowerCase() + "%");
 
-      return cb.or(namePredicate, addressPredicate, facilityTypePredicate, postalCodePredicate, neighborhoodPredicate);
+      Join<Neighborhood, Borough> boroughJoin = neighborhoodJoin.join("borough");
+      Predicate boroughPredicate = cb.like(cb.lower(boroughJoin.get("name")), "%" + keyword.toLowerCase() + "%");
+
+      return cb.or(namePredicate, addressPredicate, facilityTypePredicate, postalCodePredicate, neighborhoodPredicate, boroughPredicate);
     };
   }
 
