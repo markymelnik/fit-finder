@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 
 import ExploreCategory from "./ExploreCategory/ExploreCategory";
-import { setSelectedAmenities, setSelectedFacilityTypes, setSelectedServices } from "../../../../redux/slices/filterSlice";
+import { setSelectedAmenities, setSelectedFacilityTypes, setSelectedOfferings } from "../../../../redux/slices/filterSlice";
 import { shuffleArray } from "../../../common/shuffleArray";
 import "./_explore-section.scss";
 
@@ -44,7 +44,7 @@ const ExploreSection = () => {
         dispatch(setSelectedAmenities(selectedCategory));
         break;
       case offeringCategory.includes(category):
-        dispatch(setSelectedServices(selectedCategory));
+        dispatch(setSelectedOfferings(selectedCategory));
         break;
       default:
         break;

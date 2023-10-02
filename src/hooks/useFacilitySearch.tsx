@@ -16,7 +16,7 @@ const useFacilitySearch = () => {
   const enteredKeyword = useSelector((state: RootState) => state.filters.enteredKeyword);
   const selectedFacilityTypes = useSelector((state: RootState) => state.filters.selectedFacilityTypes);
   const selectedAmenities = useSelector((state: RootState) => state.filters.selectedAmenities);
-  const selectedServices = useSelector((state: RootState) => state.filters.selectedServices);
+  const selectedOfferings = useSelector((state: RootState) => state.filters.selectedOfferings);
   const hasUpdated = useSelector((state: RootState) => state.filters.hasUpdated);
   const isReset = useSelector((state: RootState) => state.filters.isReset);
 
@@ -54,8 +54,8 @@ const useFacilitySearch = () => {
       );
     }
     
-    if (selectedServices.length) {
-      selectedServices.forEach((service) =>
+    if (selectedOfferings.length) {
+      selectedOfferings.forEach((service) =>
         queryParams.push(`services=${service}`)
       );
     }
@@ -64,13 +64,13 @@ const useFacilitySearch = () => {
       !enteredKeyword.trim() &&
       !selectedFacilityTypes.length &&
       !selectedAmenities.length &&
-      !selectedServices.length
+      !selectedOfferings.length
     ) {
       queryParams.push('query=all');
       
       dispatch(fetchAllFacilities());
     } else {
-      dispatch(fetchFacilitiesByParameters(enteredKeyword, selectedFacilityTypes, selectedAmenities, selectedServices));
+      dispatch(fetchFacilitiesByParameters(enteredKeyword, selectedFacilityTypes, selectedAmenities, selectedOfferings));
     }
   
     navigate(`/search?${queryParams.join('&')}`);

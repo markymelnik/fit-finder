@@ -4,7 +4,7 @@ interface FilterState {
   enteredKeyword: string;
   selectedFacilityTypes: string[];
   selectedAmenities: string[];
-  selectedServices: string[];
+  selectedOfferings: string[];
   hasUpdated: boolean;
   isReset: boolean;
 }
@@ -13,7 +13,7 @@ const initialFilterState: FilterState = {
   enteredKeyword: '',
   selectedFacilityTypes: [],
   selectedAmenities: [],
-  selectedServices: [],
+  selectedOfferings: [],
   hasUpdated: false,
   isReset: false,
 }
@@ -33,8 +33,8 @@ const filterSlice = createSlice({
       state.selectedAmenities = action.payload;
       state.hasUpdated = true;
     },
-    setSelectedServices: (state, action: PayloadAction<string[]>) => {
-      state.selectedServices = action.payload;
+    setSelectedOfferings: (state, action: PayloadAction<string[]>) => {
+      state.selectedOfferings = action.payload;
       state.hasUpdated = true;
     },
     acknowledgeUpdate: (state) => {
@@ -57,7 +57,7 @@ export const {
   setEnteredKeyword,
   setSelectedFacilityTypes,
   setSelectedAmenities,
-  setSelectedServices,
+  setSelectedOfferings,
   acknowledgeUpdate,
   resetAllFilters,
   unsetResetFlag,

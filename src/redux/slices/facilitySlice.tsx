@@ -45,10 +45,10 @@ export const retrieveAmenitiesForFacility = (facilities: FacilityState, facility
   return [];
 };
 
-export const retrieveServicesForFacility = (facilities: FacilityState, facilityId: number): string[] => {
+export const retrieveOfferingsForFacility = (facilities: FacilityState, facilityId: number): string[] => {
   const facility = facilities.byIds[facilityId];
   if (facility) {
-    return facility.services.map(service => service.name);
+    return facility.offerings.map(offering => offering.name);
   }
   return [];
 };

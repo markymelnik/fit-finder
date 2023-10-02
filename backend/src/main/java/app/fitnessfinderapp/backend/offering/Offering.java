@@ -1,4 +1,4 @@
-package app.fitnessfinderapp.backend.services;
+package app.fitnessfinderapp.backend.offering;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -15,36 +15,36 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table
-public class Services {
+public class Offering {
   
   @Id
   @SequenceGenerator(
-    name="services_sequence",
-    sequenceName="services_sequence",
+    name="offering_sequence",
+    sequenceName="offering_sequence",
     allocationSize = 1
   )
 
   @GeneratedValue(
     strategy= GenerationType.SEQUENCE,
-    generator= "services_sequence"
+    generator= "offering_sequence"
   )
   private Long id;
 
-  @ManyToMany(mappedBy = "services", fetch=FetchType.EAGER)
+  @ManyToMany(mappedBy = "offerings", fetch=FetchType.EAGER)
   private Set<Facility> facilities = new HashSet<>();
 
   private String name;
 
-  public Services() {
+  public Offering() {
 
   }
 
-  public Services(Long id, String name) {
+  public Offering(Long id, String name) {
     this.id = id;
     this.name = name;
   }
 
-  public Services(String name) {
+  public Offering(String name) {
     this.name = name;
   }
 
@@ -66,7 +66,7 @@ public class Services {
 
   @Override
   public String toString() {
-    return "Service {" + "id=" + id + ", name=" + name + '\'' + '}';
+    return "Offering {" + "id=" + id + ", name=" + name + '\'' + '}';
 
   }
 

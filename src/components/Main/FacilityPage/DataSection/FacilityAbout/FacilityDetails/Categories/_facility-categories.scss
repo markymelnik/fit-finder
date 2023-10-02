@@ -1,13 +1,13 @@
 @import '@styles/colors';
 
 .facility-amenities-container,
-.facility-services-container {
+.facility-offerings-container {
   display: flex;
   flex-direction: column;
   margin: 0 0 0.75rem;
 
   .facility-amenities-header,
-  .facility-services-header {
+  .facility-offerings-header {
     display: flex;
     font-size: 0.8rem;
     font-weight: 700;
@@ -15,7 +15,7 @@
   }
 
   .facility-amenity-field,
-  .facility-services-field {
+  .facility-offerings-field {
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -32,7 +32,7 @@
     }
   
     .facility-amenity,
-    .facility-service {
+    .facility-offering {
       font-size: 1rem;
       padding: 0.15rem 0 0;
     }

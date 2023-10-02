@@ -7,7 +7,7 @@ import org.springframework.data.jpa.domain.Specification;
 import app.fitnessfinderapp.backend.amenity.Amenity;
 import app.fitnessfinderapp.backend.borough.Borough;
 import app.fitnessfinderapp.backend.neighborhood.Neighborhood;
-import app.fitnessfinderapp.backend.services.Services;
+import app.fitnessfinderapp.backend.offering.Offering;
 import jakarta.persistence.criteria.Join;
 import jakarta.persistence.criteria.Predicate;
 
@@ -53,13 +53,13 @@ public class FacilitySpecifications {
     };
   }
 
-  public static Specification<Facility> hasServices(Set<String> services) {
+  public static Specification<Facility> hasOfferings(Set<String> offerings) {
     return (facility, cq, cb) -> {
-      if (services == null || services.isEmpty()) {
+      if (offerings == null || offerings.isEmpty()) {
         return null;
       }
-      Join<Facility, Services> join = facility.join("services");
-      return cb.and(join.get("name").in(services));
+      Join<Facility, Offering> join = facility.join("offerings");
+      return cb.and(join.get("name").in(offerings));
     };
   }
 }

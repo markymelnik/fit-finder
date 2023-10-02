@@ -18,8 +18,8 @@ import app.fitnessfinderapp.backend.facilityType.FacilityType;
 import app.fitnessfinderapp.backend.facilityType.FacilityTypeService;
 import app.fitnessfinderapp.backend.neighborhood.Neighborhood;
 import app.fitnessfinderapp.backend.neighborhood.NeighborhoodService;
-import app.fitnessfinderapp.backend.services.Services;
-import app.fitnessfinderapp.backend.services.ServicesService;
+import app.fitnessfinderapp.backend.offering.Offering;
+import app.fitnessfinderapp.backend.offering.OfferingService;
 
 @RestController
 @RequestMapping(path = "api/facility")
@@ -29,15 +29,15 @@ public class FacilityController {
   private final FacilityTypeService facilityTypeService;
   private final NeighborhoodService neighborhoodService;
   private final AmenityService amenityService;
-  private final ServicesService servicesService;
+  private final OfferingService offeringService;
 
   @Autowired
-  public FacilityController(FacilityService facilityService, FacilityTypeService facilityTypeService, NeighborhoodService neighborhoodService, AmenityService amenityService, ServicesService servicesService) {
+  public FacilityController(FacilityService facilityService, FacilityTypeService facilityTypeService, NeighborhoodService neighborhoodService, AmenityService amenityService, OfferingService offeringService) {
     this.facilityService = facilityService;
     this.facilityTypeService = facilityTypeService;
     this.neighborhoodService = neighborhoodService;
     this.amenityService = amenityService;
-    this.servicesService = servicesService;
+    this.offeringService = offeringService;
   }
 
   @GetMapping("/search")
@@ -45,9 +45,9 @@ public class FacilityController {
       @RequestParam(required = false) String enteredKeyword,
       @RequestParam(required = false) Set<String> facilityTypes,
       @RequestParam(required = false) Set<String> amenities,
-      @RequestParam(required = false) Set<String> services) {
+      @RequestParam(required = false) Set<String> offerings) {
         
-      return facilityService.getFacilitiesByParameters(enteredKeyword, facilityTypes, amenities, services);
+      return facilityService.getFacilitiesByParameters(enteredKeyword, facilityTypes, amenities, offerings);
   }
 
   @GetMapping
@@ -70,9 +70,9 @@ public class FacilityController {
     return amenityService.getAmenitiesByFacilityId(facilityId);
   }
 
-  @GetMapping("/{facilityId}/services")
-  public Set<Services> getServicesByFacilityId(@PathVariable Long facilityId) {
-    return servicesService.getServicesByFacilityId(facilityId);
+  @GetMapping("/{facilityId}/offerings")
+  public Set<Offering> getOfferingsByFacilityId(@PathVariable Long facilityId) {
+    return offeringService.getOfferingsByFacilityId(facilityId);
   }
 
   @PostMapping

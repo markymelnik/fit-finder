@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 import FacilityAmenities from "./Categories/FacilityAmenities";
-import FacilityServices from "./Categories/FacilityServices";
+import FacilityOfferings from "./Categories/FacilityOfferings";
 import { RootState } from "../../../../../../redux/store";
 import './_facility-details.scss';
 
@@ -15,7 +15,7 @@ const FacilityDetails = () => {
       <div className="facility-details-categories">
         <FacilityAmenities />
         {selectedFacility?.facilityType.id !== 1 && 
-          <FacilityServices />
+          <FacilityOfferings />
         }
       </div>
     </div>

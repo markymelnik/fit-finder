@@ -4,7 +4,7 @@ import { setAmenities } from './slices/amenitySlice';
 import { setFacilities, startFetching } from './slices/facilitySlice';
 import { setFacilityTypes } from './slices/facilityTypeSlice';
 import { addFavoritedFacilityToState } from './slices/favoritedFacilitySlice';
-import { setServices } from './slices/servicesSlice';
+import { setOfferings } from './slices/offeringSlice';
 import { AppDispatch } from './store';
 
 const fetchAllFacilities = () => async (dispatch: AppDispatch) => {
@@ -52,25 +52,25 @@ const fetchAmenitiesByFacilityId = (facilityId: number) => async (dispatch: AppD
   }
 };
 
-const fetchAllServices = () => async (dispatch: AppDispatch) => {
+const fetchAllOfferings = () => async (dispatch: AppDispatch) => {
   try { 
-    const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/services`);
-    dispatch(setServices(response.data));
+    const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/offerings`);
+    dispatch(setOfferings(response.data));
   } catch (err) {
-    console.error('Error fetching services', err);
+    console.error('Error fetching offerings', err);
   }
 };
 
-const fetchServicesByFacilityId = (facilityId: number) => async (dispatch: AppDispatch) => {
+const fetchOfferingsByFacilityId = (facilityId: number) => async (dispatch: AppDispatch) => {
   try {
-    const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/facility/${facilityId}/services`);
-    dispatch(setServices(response.data));
+    const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/facility/${facilityId}/offerings`);
+    dispatch(setOfferings(response.data));
   } catch (err) {
-    console.error('Error fetching services', err);
+    console.error('Error fetching offerings', err);
   }
 };
 
-const fetchFacilitiesByParameters = (enteredKeyword: string, selectedFacilityTypes: string[], selectedAmenities: string[], selectedServices: string[]) => async (dispatch: AppDispatch) => {
+const fetchFacilitiesByParameters = (enteredKeyword: string, selectedFacilityTypes: string[], selectedAmenities: string[], selectedOfferings: string[]) => async (dispatch: AppDispatch) => {
 
   dispatch(startFetching());
 
@@ -83,7 +83,7 @@ const fetchFacilitiesByParameters = (enteredKeyword: string, selectedFacilityTyp
     
     selectedFacilityTypes.forEach((facilityType) => params.append('facilityTypes', facilityType));
     selectedAmenities.forEach(amenity => params.append('amenities', amenity));
-    selectedServices.forEach(service => params.append('services', service));
+    selectedOfferings.forEach(offering => params.append('offerings', offering));
 
     const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/facility/search`, { params } );
     dispatch(setFacilities(response.data));
@@ -131,8 +131,8 @@ export {
   fetchFacilityTypeByFacilityId,
   fetchAllAmenities,
   fetchAmenitiesByFacilityId,
-  fetchAllServices,
-  fetchServicesByFacilityId,
+  fetchAllOfferings,
+  fetchOfferingsByFacilityId,
   fetchFacilitiesByParameters,
   fetchFavoritedFacilities,
   addFavoritedFacility,

@@ -1,6 +1,6 @@
 import { createSelector } from "reselect";
 
-import { retrieveAmenitiesForFacility, retrieveServicesForFacility } from "../slices/facilitySlice";
+import { retrieveAmenitiesForFacility, retrieveOfferingsForFacility } from "../slices/facilitySlice";
 import { RootState } from "../store";
 
 const getSelectedFacility = (state: RootState) => state.selectedFacility?.selectedFacility;
@@ -20,4 +20,4 @@ const createFacilityDataSelector = (retrievalFunction: Function) => {
 };
 
 export const amenitiesSelector = createFacilityDataSelector(retrieveAmenitiesForFacility);
-export const servicesSelector = createFacilityDataSelector(retrieveServicesForFacility);
+export const offeringsSelector = createFacilityDataSelector(retrieveOfferingsForFacility);

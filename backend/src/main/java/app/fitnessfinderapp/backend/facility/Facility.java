@@ -6,7 +6,7 @@ import java.util.Set;
 import app.fitnessfinderapp.backend.amenity.Amenity;
 import app.fitnessfinderapp.backend.facilityType.FacilityType;
 import app.fitnessfinderapp.backend.neighborhood.Neighborhood;
-import app.fitnessfinderapp.backend.services.Services;
+import app.fitnessfinderapp.backend.offering.Offering;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -45,11 +45,11 @@ public class Facility {
 
   @ManyToMany
   @JoinTable(
-    name="facility_services",
+    name="facility_offering",
     joinColumns = @JoinColumn(name="facility_id"),
-    inverseJoinColumns = @JoinColumn(name="services_id")
+    inverseJoinColumns = @JoinColumn(name="offering_id")
   )
-  private Set<Services> services = new HashSet<>();
+  private Set<Offering> offerings = new HashSet<>();
 
   @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "type_id")
@@ -67,13 +67,12 @@ public class Facility {
   private Double longitude;
 
   private String webUrl;
-  private String description;
 
   public Facility() {
 
   }
 
-  public Facility(Long id, String name, String address, String postalCode, Double latitude, Double longitude, String webUrl, String description) {
+  public Facility(Long id, String name, String address, String postalCode, Double latitude, Double longitude, String webUrl) {
     this.id = id;
     this.name = name;
     this.address = address;
@@ -83,7 +82,7 @@ public class Facility {
     this.webUrl = webUrl;
   }
 
-  public Facility(String name, String address, String postalCode, Double latitude, Double longitude, String webUrl, String description) {
+  public Facility(String name, String address, String postalCode, Double latitude, Double longitude, String webUrl) {
     this.name = name;
     this.address = address;
     this.postalCode = postalCode;
@@ -148,14 +147,6 @@ public class Facility {
     this.webUrl = webUrl;
   }
 
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
   public FacilityType getFacilityType() {
     return facilityType;
   }
@@ -168,8 +159,8 @@ public class Facility {
     return amenities;
   }
 
-  public Set<Services> getServices() {
-    return services;
+  public Set<Offering> getOfferings() {
+    return offerings;
   }
 
   @Override
@@ -177,7 +168,7 @@ public class Facility {
     return "Facility {" + "id=" + id + ", name=" + name + '\'' + ", address=" + '\'' + address
         + '\'' + ", neighborhood=" + '\'' + neighborhood + '\'' + ", postalCode=" + '\'' + postalCode + 
          '\'' + ", latitude=" + '\'' + latitude + '\'' + ", longitude=" + '\'' + longitude + '\'' + '\'' + 
-         ", webUrl=" + '\'' + webUrl + ", description=" + '\'' + description + '}';
+         ",webUrl=" + '\'' + webUrl + '}';
   }
 
 }

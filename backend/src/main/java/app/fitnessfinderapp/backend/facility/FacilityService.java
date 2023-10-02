@@ -21,12 +21,12 @@ public class FacilityService {
     return new HashSet<>(facilityRepository.findAll());
   }  
 
-  public Set<Facility> getFacilitiesByParameters(String enteredKeyword, Set<String> facilityTypes, Set<String> amenities, Set<String> services) {
+  public Set<Facility> getFacilitiesByParameters(String enteredKeyword, Set<String> facilityTypes, Set<String> amenities, Set<String> offerings) {
     Specification<Facility> spec = Specification
       .where(FacilitySpecifications.hasKeyword(enteredKeyword))
       .and(FacilitySpecifications.hasFacilityTypes(facilityTypes))
       .and(FacilitySpecifications.hasAmenities(amenities))
-      .and(FacilitySpecifications.hasServices(services));
+      .and(FacilitySpecifications.hasOfferings(offerings));
 
     return new HashSet<>(facilityRepository.findAll(spec));
   }

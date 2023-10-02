@@ -13,8 +13,8 @@ import filtersReducer from './slices/filterSlice';
 import loadingReducer from './slices/loadingSlice';
 import mapOverlaySliceReducer from './slices/mapOverlaySlice';
 import mobileFilterSliceReducer from './slices/mobileFilterSlice';
+import offeringsSliceReducer from './slices/offeringSlice';
 import selectedFacilityReducer from './slices/selectedFacilitySlice';
-import serviceSliceReducer from './slices/servicesSlice';
 import sidebarMenuSlicerReducer from './slices/sidebarMenuSlice';
 import successfulSignupReducer from './slices/successfulSignup';
 import viewportReducer from './slices/viewportSlice';
@@ -29,7 +29,7 @@ const store = configureStore({
     facilities: facilitiesSliceReducer,
     facilityTypes: facilityTypesSliceReducer,
     amenities: amenititesSliceReducer,
-    services: serviceSliceReducer,
+    offerings: offeringsSliceReducer,
     selectedFacility: selectedFacilityReducer,
     filters: filtersReducer,
     login: loginReducer,

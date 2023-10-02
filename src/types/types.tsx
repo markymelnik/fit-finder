@@ -16,7 +16,7 @@ export interface Facility {
   webUrl: string;
   facilityType: FacilityType;
   amenities: Amenity[];
-  services: Service[];
+  offerings: Offering[];
 }
 
 export interface FacilityType {
@@ -40,7 +40,7 @@ export interface Amenity {
   name: string;
 }
 
-export interface Service {
+export interface Offering {
   id: number;
   name: string;
 }

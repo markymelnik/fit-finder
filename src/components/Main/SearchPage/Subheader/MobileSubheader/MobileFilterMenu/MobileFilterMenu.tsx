@@ -2,8 +2,8 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
 import MobileFilterOptions from "./MobileFilterOptions/MobileFilterOptions";
-import { fetchAllAmenities, fetchAllFacilityTypes, fetchAllServices } from "../../../../../../redux/apiRequests";
-import { setSelectedAmenities, setSelectedFacilityTypes, setSelectedServices } from "../../../../../../redux/slices/filterSlice";
+import { fetchAllAmenities, fetchAllFacilityTypes, fetchAllOfferings } from "../../../../../../redux/apiRequests";
+import { setSelectedAmenities, setSelectedFacilityTypes, setSelectedOfferings } from "../../../../../../redux/slices/filterSlice";
 import { setIsMobileFilterOpen } from "../../../../../../redux/slices/mobileFilterSlice";
 import { AppDispatch, RootState } from "../../../../../../redux/store";
 import ResetFiltersButton from "../../../../../common/button/search/ResetFiltersButton";
@@ -43,12 +43,12 @@ const MobileFilterMenu = () => {
           categoryTitle={'AMENITIES'}
         />
         <MobileFilterOptions 
-          fetchAllOptionsFromDatabase={fetchAllServices}
-          fetchAllOptionsFromGlobalState={(state) => state.services}
-          setSelectedOptions={setSelectedServices}
-          fetchSelectedOptions={(state) => state.filters.selectedServices}
-          entityName={'Service'}
-          categoryTitle={'SERVICES'}
+          fetchAllOptionsFromDatabase={fetchAllOfferings}
+          fetchAllOptionsFromGlobalState={(state) => state.offerings}
+          setSelectedOptions={setSelectedOfferings}
+          fetchSelectedOptions={(state) => state.filters.selectedOfferings}
+          entityName={'Offering'}
+          categoryTitle={'OFFERINGS'}
         />
       <div className="mobile-filter-done-btn-container">
         <SaveFiltersButton customClass='mobile-filter-done-btn' buttonText='Done' onClick={handleCloseMobileFilter}/>
