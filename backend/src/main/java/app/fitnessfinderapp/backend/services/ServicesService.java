@@ -1,6 +1,6 @@
 package app.fitnessfinderapp.backend.services;
 
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +17,10 @@ public class ServicesService {
   }
 
   public Set<Services> getAllServices() {
-    return new HashSet<>(servicesRepository.findAll());
+    return new LinkedHashSet<>(servicesRepository.findAllByOrderByIdAsc());
   }
 
   public Set<Services> getServicesByFacilityId(Long facilityId) {
-    return servicesRepository.getServicesByFacilityId(facilityId);
+    return new LinkedHashSet<>(servicesRepository.getServicesByFacilityId(facilityId));
   }
 }

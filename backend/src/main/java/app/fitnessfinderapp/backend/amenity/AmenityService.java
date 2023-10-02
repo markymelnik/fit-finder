@@ -1,6 +1,6 @@
 package app.fitnessfinderapp.backend.amenity;
 
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +17,10 @@ public class AmenityService {
   }
 
   public Set<Amenity> getAllAmenities() {
-    return new HashSet<>(amenityRepository.findAll());
+    return new LinkedHashSet<>(amenityRepository.findAllByOrderByIdAsc());
   }
 
   public Set<Amenity> getAmenitiesByFacilityId(Long facilityId) {
-    return amenityRepository.getAmenitiesByFacilityId(facilityId);
+    return new LinkedHashSet<>(amenityRepository.getAmenitiesByFacilityId(facilityId));
   }
 }

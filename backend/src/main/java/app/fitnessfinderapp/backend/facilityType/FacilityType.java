@@ -34,21 +34,18 @@ public class FacilityType {
   private Set<Facility> facilities = new HashSet<>();
 
   private String name;
-  private String description;
 
   public FacilityType() {
 
   }
 
-  public FacilityType(Long id, String name, String description) {
+  public FacilityType(Long id, String name) {
     this.id = id;
     this.name = name;
-    this.description = description;
   }
 
-  public FacilityType(String name, String description) {
+  public FacilityType(String name) {
     this.name = name;
-    this.description = description;
   }
 
   public Long getId() {
@@ -67,17 +64,9 @@ public class FacilityType {
     this.name = name;
   }
 
-  public String getDescription() {
-    return this.description;
-  }
-
-  public void setDeescription(String description) {
-    this.description = description;
-  }
-
   @Override
   public String toString() {
-    return "Facility Type {" + "id=" + id + ", name=" + name + '\'' + ", description:" + description + '}';
+    return "Facility Type {" + "id=" + id + ", name=" + name + '\'' + '}';
 
   }
 

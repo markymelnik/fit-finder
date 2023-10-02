@@ -34,17 +34,14 @@ public class Amenity {
   private Set<Facility> facilities = new HashSet<>();
   
   private String name;
-  private String description;
 
-  public Amenity(Long id, String name, String description) {
+  public Amenity(Long id, String name) {
     this.id = id;
     this.name = name;
-    this.description = description;
   }
 
-  public Amenity(String name, String description) {
+  public Amenity(String name) {
     this.name = name;
-    this.description = description;
   }
 
   public Amenity() {
@@ -67,17 +64,9 @@ public class Amenity {
     this.name = name;
   }
 
-  public String getDescription() {
-    return this.description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
   @Override
   public String toString() {
-    return "Amenity {" + "id=" + id + ", name=" + name + '\'' + ", description:" + description + '}';
+    return "Amenity {" + "id=" + id + ", name=" + name + '\'' + '}';
 
   }
 }
