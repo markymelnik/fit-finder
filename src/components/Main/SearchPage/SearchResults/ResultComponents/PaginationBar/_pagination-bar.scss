@@ -1,61 +1,142 @@
 @import '@styles/colors';
 @import '@styles/mixins';
+@import '@styles/transitions';
 
 .pagination-bar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 1rem;
   width: 100%;
-  
+  margin: 1rem 0 2rem;
+
   .pagination-bar {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
-    height: 5rem;
+    margin: 0 0 1.5rem;
 
-    .prev-btn,
-    .next-btn,
-    .to-start-btn,
-    .to-end-btn {
-      border: 1px solid black;
-      height: 3rem;
-      width: 3rem;
+    .pagination-prev-btn,
+    .pagination-next-btn,
+    .pagination-to-start-btn,
+    .pagination-to-end-btn {
+      @include center-elements;
+      border-radius: 6px;
+      height: 2.5rem;
+      width: 2rem;
+
+      svg {
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+
+      @include smooth-hover(background-color);
 
       &:hover {
-        background-color: map-get($grey, 'neutral');
+        background-color: map-get($grey, 'lighter');
         cursor: pointer;
       }
 
       &.disabled {
-        border: 1px solid grey;
         pointer-events: none;
-        cursor: auto;
+        
+        svg {
+          path {
+            stroke: map-get($grey, 'light');
+          }
+        }
+        
       }
-
     }
 
     .pagination-number-display {
       display: flex;
+      margin: 0.2rem 0 0;
 
       .nav-number {
-        border: 1px solid black;
-        height: 3rem;
-        width: 3rem;
+        @include center-elements;
+        font-size: 1rem;
+        border-radius: 6px;
+        height: 2.5rem;
+        width: 2.5rem;
+        color: map-get($grey, 'darker');
+
+        @include smooth-hover(background-color);
 
         &:hover {
           cursor: pointer;
-          background-color: map-get($grey, 'neutral');
+          background-color: map-get($grey, 'lighter');
         }
 
         &.active {
           pointer-events: none;
-          background-color: map-get($grey, 'lighter');
+          background-color: map-get($grey, 'darker');
+          color: map-get($theme, 'white');
         }
       }
 
       .ellipsis {
-        border: 1px solid black;
+        @include center-elements;
+        border-radius: 4px;
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+    }
+  }
+
+  .pagination-results-container {
+    
+    .pagination-results-text {
+      font-size: 0.85rem;
+      color: map-get($grey, 'darker');
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .pagination-bar-container {
+    margin: 3.5rem 0 5rem;
+
+    .pagination-bar {
+      gap: 0.5rem;
+      margin: 0 0 2rem;
+
+      .pagination-prev-btn,
+      .pagination-next-btn,
+      .pagination-to-start-btn,
+      .pagination-to-end-btn {
         height: 3rem;
         width: 3rem;
+
+        svg {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+
+      .pagination-number-display {
+        gap: 0.5rem;
+
+        .nav-number {
+          font-size: 1.25rem;
+          font-weight: 600;
+          height: 3rem;
+          width: 3rem;
+        }
+  
+        .ellipsis {
+          height: 3rem;
+          width: 3rem;
+        }
+      }
+    }
+    
+    .pagination-results-container {
+    
+      .pagination-results-text {
+        font-size: 1rem;
+        color: map-get($grey, 'darker');
       }
     }
   }

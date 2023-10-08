@@ -8,6 +8,7 @@ import { RootState } from '../../../../../../redux/store';
 import { AppDispatch } from '../../../../../../redux/store';
 import { Facility } from '../../../../../../types/types';
 import './_result-cards.scss';
+import SectionDivider from '../SectionDivider/SectionDivider';
 
 const ResultCards = () => {
   const facilitiesByIds = useSelector((state: RootState) => state.facilities.byIds);
@@ -47,11 +48,15 @@ const ResultCards = () => {
   }
 
   return (
+    <>
     <div className="result-cards-container">
       <div className='result-cards'>
         {listOfFacilities}
       </div>
     </div>
+    <SectionDivider />
+    </>
+    
   );
 };
 

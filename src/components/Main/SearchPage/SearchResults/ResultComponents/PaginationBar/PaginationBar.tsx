@@ -1,32 +1,29 @@
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
+import ArrowNext from "./ArrowNext";
+import ArrowPrev from "./ArrowPrev";
+import DoubleArrowNextSVG from "./DoubleArrowNextSVG";
+import DoubleArrowPrevSVG from "./DoubleArrowPrevSVG";
 import getDisplayedNumbers from "./getDisplayedNumbers";
 import { setCurrentPage } from "../../../../../../redux/slices/paginationSlice";
 import { RootState } from "../../../../../../redux/store";
 import "./_pagination-bar.scss";
 
 const PaginationBar = () => {
-  
+
   const dispatch = useDispatch();
-  const { currentPage, totalPages } = useSelector((state: RootState) => state.pagination);
+  const { currentPage, totalPages, totalElements } = useSelector((state: RootState) => state.pagination);
   const displayedNumbers = getDisplayedNumbers(currentPage, totalPages);
+
+  const upperNum = currentPage === totalPages ? totalElements : currentPage * 12;
+  const lowerNum = currentPage === 1 ? 1 : (currentPage - 1) * 12;
 
   const handleToStartButtonClick = () => {
     dispatch(setCurrentPage(1));
   };
 
-  const handlePrevButtonClick = () => {
-    if (currentPage > 1) {
-      dispatch(setCurrentPage(currentPage - 1));
-    }
-  };
-
-  const handleNextButtonClick = () => {
-    if (currentPage < totalPages) {
-      dispatch(setCurrentPage(currentPage + 1));
-    }
-  };
+  
 
   const handleToEndButtonClick = () => {
     dispatch(setCurrentPage(totalPages));
@@ -36,15 +33,12 @@ const PaginationBar = () => {
     <div className="pagination-bar-container">
       <div className="pagination-bar">
         <div
-          className={`to-start-btn ${currentPage === 1 ? `disabled` : ``}`}
+          className={`pagination-to-start-btn ${currentPage === 1 ? `disabled` : ``}`}
           onClick={handleToStartButtonClick}
-        ></div>
-        <div
-          className={`prev-btn ${currentPage === 1 ? `disabled` : ``}`}
-          onClick={currentPage === 1 ? undefined : handlePrevButtonClick}
         >
-          Prev
+          <DoubleArrowPrevSVG />
         </div>
+        <ArrowPrev customClass="pagination-prev-btn"/>
         <div className="pagination-number-display">
           {displayedNumbers.map((number) => (
             <div
@@ -69,20 +63,18 @@ const PaginationBar = () => {
             </div>
           )}
         </div>
+        <ArrowNext customClass="pagination-next-btn" />
         <div
-          className={`next-btn ${currentPage === totalPages ? `disabled` : ``}`}
-          onClick={
-            currentPage === totalPages ? undefined : handleNextButtonClick
-          }
-        >
-          Next
-        </div>
-        <div
-          className={`to-end-btn ${
+          className={`pagination-to-end-btn ${
             currentPage === totalPages ? `disabled` : ``
           }`}
           onClick={handleToEndButtonClick}
-        ></div>
+        >
+          <DoubleArrowNextSVG />
+        </div>
+      </div>
+      <div className="pagination-results-container">
+        <div className="pagination-results-text">{lowerNum} - {upperNum} of {totalElements} Results</div>
       </div>
     </div>
   );

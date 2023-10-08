@@ -8,7 +8,7 @@
     height: 100%;
     display: grid;
     gap: 1.25rem;
-    padding: 0.25rem 1rem 1.25rem;
+    padding: 0.25rem 1rem;
     grid-template-columns: repeat(auto-fill, minmax(345px, 1fr));
   }
 }

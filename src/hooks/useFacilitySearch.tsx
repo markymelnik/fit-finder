@@ -22,8 +22,6 @@ const useFacilitySearch = () => {
   const isReset = useSelector((state: RootState) => state.filters.isReset);
   const currentPage = useSelector((state: RootState) => state.pagination.currentPage);
 
-  console.log(currentPage);
-
   useEffect(() => {
     if (isReset) {
       executeSearch();
