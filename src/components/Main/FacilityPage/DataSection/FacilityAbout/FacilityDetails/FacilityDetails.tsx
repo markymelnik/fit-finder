@@ -9,12 +9,16 @@ const FacilityDetails = () => {
 
   const selectedFacility = useSelector((state: RootState) => state.selectedFacility.selectedFacility);
 
+  if (!selectedFacility) {
+    return <div>Error!</div>
+  }
+
   return (
     <div className="facility-details-container">
       <div className="facility-details-header">Details</div>
       <div className="facility-details-categories">
         <FacilityAmenities />
-        {selectedFacility?.facilityType.id !== 1 && 
+        {selectedFacility.facilityType.id !== 1 && 
           <FacilityOfferings />
         }
       </div>

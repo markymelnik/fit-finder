@@ -14,6 +14,7 @@ export interface Facility {
   latitude: number;
   longitude: number;
   webUrl: string;
+  description: string;
   facilityType: FacilityType;
   amenities: Amenity[];
   offerings: Offering[];

@@ -22,13 +22,13 @@ const ExploreSection = () => {
   ];
 
   const amenityCategory = [
-    "Sauna/Steam Room",
+    "Sauna / Steam Room",
     "Swimming Pool"
   ];
 
   const offeringCategory = [
     "Personal Training",
-    "Group Classes"
+    "Group Sessions",
   ];
 
   const handleCategoryClick = (category: string) => {

@@ -6,16 +6,21 @@ const usePhotoLoader = (id: number) => {
   const [photo, setPhoto] = useState<string | null>(null);
 
   useEffect(() => {
-    const photos = import.meta.glob('/src/assets/photos/main/*.jpg');
+    const photos = import.meta.glob('/src/assets/photos/facility_primary/*.jpg');
     const loadPhotos: LoadPhotosType = {};
 
     const loadPhoto = async (path: string) => {
-      const module: any = await photos[path]();
-      loadPhotos[id] = module.default;
-      setPhoto(module.default);
+      if (photos[path]) {
+        const module: any = await photos[path]();
+        loadPhotos[id] = module.default;
+        setPhoto(module.default);
+      } else {
+        setPhoto(`/src/assets/photos/facility_primary/default.jpg`)
+      }
+      
     }
 
-    loadPhoto(`/src/assets/photos/main/facility_${id}.jpg`);
+    loadPhoto(`/src/assets/photos/facility_primary/facility_${id}.jpg`);
 
   }, [id])
 

@@ -9,7 +9,7 @@ const FacilityInfo = () => {
       <div className="facility-info-left">
         <FacilityType />
         <FacilityAddress />
-        <WebUrl />
+        <WebUrl customClass="info-external-link"/>
       </div>
     </div>
   )

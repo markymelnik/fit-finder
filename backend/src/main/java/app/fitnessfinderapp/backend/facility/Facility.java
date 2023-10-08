@@ -7,6 +7,7 @@ import app.fitnessfinderapp.backend.amenity.Amenity;
 import app.fitnessfinderapp.backend.facilityType.FacilityType;
 import app.fitnessfinderapp.backend.neighborhood.Neighborhood;
 import app.fitnessfinderapp.backend.offering.Offering;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -68,11 +69,14 @@ public class Facility {
 
   private String webUrl;
 
+  @Column(columnDefinition = "TEXT")
+  private String description;
+
   public Facility() {
 
   }
 
-  public Facility(Long id, String name, String address, String postalCode, Double latitude, Double longitude, String webUrl) {
+  public Facility(Long id, String name, String address, String postalCode, Double latitude, Double longitude, String webUrl, String description) {
     this.id = id;
     this.name = name;
     this.address = address;
@@ -80,15 +84,17 @@ public class Facility {
     this.latitude = latitude;
     this.longitude = longitude;
     this.webUrl = webUrl;
+    this.description = description;
   }
 
-  public Facility(String name, String address, String postalCode, Double latitude, Double longitude, String webUrl) {
+  public Facility(String name, String address, String postalCode, Double latitude, Double longitude, String webUrl, String description) {
     this.name = name;
     this.address = address;
     this.postalCode = postalCode;
     this.latitude = latitude;
     this.longitude = longitude;
     this.webUrl = webUrl;
+    this.description = description;
   }
 
   public Long getId() {
@@ -147,6 +153,14 @@ public class Facility {
     this.webUrl = webUrl;
   }
 
+   public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
   public FacilityType getFacilityType() {
     return facilityType;
   }
@@ -167,8 +181,8 @@ public class Facility {
   public String toString() {
     return "Facility {" + "id=" + id + ", name=" + name + '\'' + ", address=" + '\'' + address
         + '\'' + ", neighborhood=" + '\'' + neighborhood + '\'' + ", postalCode=" + '\'' + postalCode + 
-         '\'' + ", latitude=" + '\'' + latitude + '\'' + ", longitude=" + '\'' + longitude + '\'' + '\'' + 
-         ",webUrl=" + '\'' + webUrl + '}';
+         '\'' + ", latitude=" + '\'' + latitude + '\'' + ", longitude=" + '\'' + longitude + '\'' + 
+         ", webUrl=" + '\'' + webUrl + '\'' + ", description=" + '\'' + description + '}';
   }
 
 }

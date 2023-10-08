@@ -8,26 +8,19 @@ const FacilityOfferings = () => {
 
   const offerings = useSelector(offeringsSelector);
 
-  if (!offerings.length) {
-    return (
-      <div className="facility-offerings-container">
-        <div className="facility-offerings-header">OFFERINGS</div>
-        <p className='no-offering'>No Offerings Found</p>
-      </div>
-    )
-  }
+  if (!offerings.length) return;
 
   return (
     <div className="facility-offerings-container">
-      <div className="facility-offerings-header">offerings</div>
+      <div className="facility-offerings-header">Offerings</div>
       {offerings.map((service: string, index: number) => {
         return (
           <div className="facility-offerings-field" key={index}>
-            <div className="facility-checkmark">
+            <div className="facility-offering-icon">
               <img src={CheckmarkIcon} />
             </div>
-            <div className="facility-offering" >
-              {service}
+            <div className="facility-offering">
+              <div className="offering-text">{service}</div>
             </div>
           </div>   
         )

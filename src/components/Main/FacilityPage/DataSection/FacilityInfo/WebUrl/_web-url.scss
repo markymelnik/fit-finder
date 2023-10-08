@@ -4,13 +4,15 @@
   display: flex;
   gap: 0.75rem;
   margin: 0 0 1.5rem;
+  width: 100%;
 
   .external-link-icon {
     height: 1.5rem;
     width: 1.5rem;
   }
 
-  .external-link {
+  .info-external-link,
+  .about-external-link {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -20,10 +22,8 @@
       text-decoration: underline;
     }
   }
-}
 
-@media (min-width: 768px) {
-  .facility-web-url {
-    gap: 0.35rem;
+  .about-external-link {
+    font-weight: 600;
   }
 }
