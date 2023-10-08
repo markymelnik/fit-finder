@@ -1,3 +1,4 @@
+import PaginationBar from "../ResultComponents/PaginationBar/PaginationBar";
 import QuerySection from "../ResultComponents/QuerySection/QuerySection";
 import ResultCards from "../ResultComponents/ResultCards/ResultCards";
 
@@ -7,6 +8,7 @@ const DesktopResultsWithoutMap = () => {
     <div className="without-map">
       <QuerySection />
       <ResultCards />
+      <PaginationBar />
     </div>
   )
 }

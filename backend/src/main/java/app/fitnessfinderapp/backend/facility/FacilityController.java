@@ -3,6 +3,9 @@ package app.fitnessfinderapp.backend.facility;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,13 +44,16 @@ public class FacilityController {
   }
 
   @GetMapping("/search")
-  public Set<Facility> getFacilitiesByParameters(
+  public Page<Facility> getFacilitiesByParameters(
       @RequestParam(required = false) String enteredKeyword,
       @RequestParam(required = false) Set<String> facilityTypes,
       @RequestParam(required = false) Set<String> amenities,
-      @RequestParam(required = false) Set<String> offerings) {
-        
-      return facilityService.getFacilitiesByParameters(enteredKeyword, facilityTypes, amenities, offerings);
+      @RequestParam(required = false) Set<String> offerings,
+      @RequestParam(defaultValue = "0") int page,
+      @RequestParam(defaultValue = "12") int size) {
+
+      Pageable pageable = PageRequest.of(page, size);  
+      return facilityService.getFacilitiesByParameters(enteredKeyword, facilityTypes, amenities, offerings, pageable);
   }
 
   @GetMapping

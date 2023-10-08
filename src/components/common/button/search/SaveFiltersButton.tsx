@@ -9,7 +9,7 @@ interface SaveFiltersButtonProps {
 
 const SaveFiltersButton = ({ customClass, buttonText, onClick }: SaveFiltersButtonProps) => {
 
-  const executeSearch = useFacilitySearch();
+  const { executeSearch } = useFacilitySearch();
 
   const handleSave = (event: any) => {
     event.preventDefault();

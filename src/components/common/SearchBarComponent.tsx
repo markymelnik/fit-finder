@@ -19,7 +19,7 @@ interface SearchBarProps {
 const SearchBarComponent = ({ containerClass, submitButtonClass, deleteButtonClass, placeholderText }: SearchBarProps ) => {
 
   const dispatch = useDispatch<AppDispatch>();
-  const executeSearch = useFacilitySearch();
+  const { executeSearch } = useFacilitySearch();
   const enteredKeyword = useSelector((state: RootState) => state.filters.enteredKeyword);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {

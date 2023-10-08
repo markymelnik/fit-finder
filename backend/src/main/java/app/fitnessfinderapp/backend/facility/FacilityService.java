@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
@@ -21,15 +23,15 @@ public class FacilityService {
     return new HashSet<>(facilityRepository.findAll());
   }  
 
-  public Set<Facility> getFacilitiesByParameters(String enteredKeyword, Set<String> facilityTypes, Set<String> amenities, Set<String> offerings) {
+  public Page<Facility> getFacilitiesByParameters(String enteredKeyword, Set<String> facilityTypes, Set<String> amenities, Set<String> offerings, Pageable pageable) {
     Specification<Facility> spec = Specification
-      .where(FacilitySpecifications.hasKeyword(enteredKeyword))
-      .and(FacilitySpecifications.hasFacilityTypes(facilityTypes))
-      .and(FacilitySpecifications.hasAmenities(amenities))
-      .and(FacilitySpecifications.hasOfferings(offerings));
+        .where(FacilitySpecifications.hasKeyword(enteredKeyword))
+        .and(FacilitySpecifications.hasFacilityTypes(facilityTypes))
+        .and(FacilitySpecifications.hasAmenities(amenities))
+        .and(FacilitySpecifications.hasOfferings(offerings));
 
-    return new HashSet<>(facilityRepository.findAll(spec));
-  }
+    return facilityRepository.findAll(spec, pageable);
+}
 
   public void addNewFacility(Facility facility) {
     facilityRepository.save(facility);

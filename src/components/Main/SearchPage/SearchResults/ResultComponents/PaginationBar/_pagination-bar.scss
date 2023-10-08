@@ -1,0 +1,62 @@
+@import '@styles/colors';
+@import '@styles/mixins';
+
+.pagination-bar-container {
+  padding: 1rem;
+  width: 100%;
+  
+  .pagination-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    height: 5rem;
+
+    .prev-btn,
+    .next-btn,
+    .to-start-btn,
+    .to-end-btn {
+      border: 1px solid black;
+      height: 3rem;
+      width: 3rem;
+
+      &:hover {
+        background-color: map-get($grey, 'neutral');
+        cursor: pointer;
+      }
+
+      &.disabled {
+        border: 1px solid grey;
+        pointer-events: none;
+        cursor: auto;
+      }
+
+    }
+
+    .pagination-number-display {
+      display: flex;
+
+      .nav-number {
+        border: 1px solid black;
+        height: 3rem;
+        width: 3rem;
+
+        &:hover {
+          cursor: pointer;
+          background-color: map-get($grey, 'neutral');
+        }
+
+        &.active {
+          pointer-events: none;
+          background-color: map-get($grey, 'lighter');
+        }
+      }
+
+      .ellipsis {
+        border: 1px solid black;
+        height: 3rem;
+        width: 3rem;
+      }
+    }
+  }
+}

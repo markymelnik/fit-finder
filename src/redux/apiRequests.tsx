@@ -5,6 +5,7 @@ import { setFacilities, startFetching } from './slices/facilitySlice';
 import { setFacilityTypes } from './slices/facilityTypeSlice';
 import { addFavoritedFacilityToState } from './slices/favoritedFacilitySlice';
 import { setOfferings } from './slices/offeringSlice';
+import { setTotalElements, setTotalPages } from './slices/paginationSlice';
 import { AppDispatch } from './store';
 
 const fetchAllFacilities = () => async (dispatch: AppDispatch) => {
@@ -70,27 +71,43 @@ const fetchOfferingsByFacilityId = (facilityId: number) => async (dispatch: AppD
   }
 };
 
-const fetchFacilitiesByParameters = (enteredKeyword: string, selectedFacilityTypes: string[], selectedAmenities: string[], selectedOfferings: string[]) => async (dispatch: AppDispatch) => {
+const fetchFacilitiesByParameters =
+  (
+    enteredKeyword: string,
+    selectedFacilityTypes: string[],
+    selectedAmenities: string[],
+    selectedOfferings: string[],
+    currentPage: number,
+    pageSize: number
+  ) =>
+  async (dispatch: AppDispatch) => {
+    dispatch(startFetching());
 
-  dispatch(startFetching());
+    try {
+      const params = new URLSearchParams();
 
-  try {
-    const params = new URLSearchParams();
+      if (enteredKeyword) {
+        params.append("enteredKeyword", enteredKeyword);
+      }
 
-    if (enteredKeyword) {
-      params.append('enteredKeyword', enteredKeyword);
+      selectedFacilityTypes.forEach((facilityType) => params.append("facilityTypes", facilityType));
+      selectedAmenities.forEach((amenity) => params.append("amenities", amenity));
+      selectedOfferings.forEach((offering) => params.append("offerings", offering));
+
+      params.append('page', `${currentPage - 1}`);
+      params.append('size', `${pageSize}`);
+
+      const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/facility/search`, { params });
+      const { content, totalPages, totalElements } = response.data;
+
+      dispatch(setFacilities(content));
+      dispatch(setTotalElements(totalElements));
+      dispatch(setTotalPages(totalPages));
+
+    } catch (err) {
+      console.error("Error fetching facilities", err);
     }
-    
-    selectedFacilityTypes.forEach((facilityType) => params.append('facilityTypes', facilityType));
-    selectedAmenities.forEach(amenity => params.append('amenities', amenity));
-    selectedOfferings.forEach(offering => params.append('offerings', offering));
-
-    const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/facility/search`, { params } );
-    dispatch(setFacilities(response.data));
-  } catch (err) {
-    console.error('Error fetching facilities', err);
-  }
-};
+  };
 
 const fetchFavoritedFacilities = (userAccountId: string) => async (dispatch: AppDispatch) => {
   try {

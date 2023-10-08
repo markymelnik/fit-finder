@@ -14,6 +14,7 @@ import loadingReducer from './slices/loadingSlice';
 import mapOverlaySliceReducer from './slices/mapOverlaySlice';
 import mobileFilterSliceReducer from './slices/mobileFilterSlice';
 import offeringsSliceReducer from './slices/offeringSlice';
+import paginationReducer from './slices/paginationSlice';
 import selectedFacilityReducer from './slices/selectedFacilitySlice';
 import sidebarMenuSlicerReducer from './slices/sidebarMenuSlice';
 import successfulSignupReducer from './slices/successfulSignup';
@@ -39,6 +40,7 @@ const store = configureStore({
     checkmarkSuccess: checkmarkSuccessReducer,
     accountMenu: accountMenuReducer,
     successfulSignup: successfulSignupReducer,
+    pagination: paginationReducer,
   },
 });
 

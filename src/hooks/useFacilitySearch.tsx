@@ -4,8 +4,9 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { fetchAllFacilities, fetchFacilitiesByParameters } from "../redux/apiRequests";
+import { fetchFacilitiesByParameters } from "../redux/apiRequests";
 import { acknowledgeUpdate, unsetResetFlag } from "../redux/slices/filterSlice";
+import { resetPagination } from "../redux/slices/paginationSlice";
 import { AppDispatch, RootState } from "../redux/store";
 
 const useFacilitySearch = () => {
@@ -19,6 +20,9 @@ const useFacilitySearch = () => {
   const selectedOfferings = useSelector((state: RootState) => state.filters.selectedOfferings);
   const hasUpdated = useSelector((state: RootState) => state.filters.hasUpdated);
   const isReset = useSelector((state: RootState) => state.filters.isReset);
+  const currentPage = useSelector((state: RootState) => state.pagination.currentPage);
+
+  console.log(currentPage);
 
   useEffect(() => {
     if (isReset) {
@@ -29,12 +33,19 @@ const useFacilitySearch = () => {
 
   useEffect(() => {
     if (hasUpdated) {
-      executeSearch();
+      executeSearch(currentPage);
+      dispatch(resetPagination());
       dispatch(acknowledgeUpdate());
     }
   }, [hasUpdated]);
 
-  const executeSearch = () => {
+  useEffect(() => {
+    if (location.pathname === "/search") {
+      executeSearch(currentPage);
+    }
+  }, [currentPage]);
+
+  const executeSearch = (page: number = 1) => {
 
     const queryParams = [];
 
@@ -59,27 +70,16 @@ const useFacilitySearch = () => {
         queryParams.push(`services=${service}`)
       );
     }
-    
-    if (
-      !enteredKeyword.trim() &&
-      !selectedFacilityTypes.length &&
-      !selectedAmenities.length &&
-      !selectedOfferings.length
-    ) {
-      queryParams.push('query=all');
-      
-      dispatch(fetchAllFacilities());
-    } else {
-      dispatch(fetchFacilitiesByParameters(enteredKeyword, selectedFacilityTypes, selectedAmenities, selectedOfferings));
-    }
-  
-    navigate(`/search?${queryParams.join('&')}`);
+
+    dispatch(fetchFacilitiesByParameters(enteredKeyword, selectedFacilityTypes, selectedAmenities, selectedOfferings, page, 12));
 
     dispatch(acknowledgeUpdate());
-    
+
+    navigate(`/search?${queryParams.join('&')}`);
+
   }
 
-  return executeSearch;
+  return { executeSearch };
 
 }
 
