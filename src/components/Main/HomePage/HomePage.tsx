@@ -3,6 +3,7 @@ import ExploreSection from './ExploreSection/ExploreSection';
 import ImageSection from './ImageSection/ImageSection';
 import SectionDivider from './SectionDivider/HomePageSectionDivider';
 import SliderSection from './SliderSection/SliderSection';
+import UpdateSection from './UpdateSection/UpdateSection';
 import HPSearchbar from './WelcomeSection/HPSearchbar/HPSearchbar';
 import HomePagePhoto from './WelcomeSection/WelcomePhoto/WelcomePhoto';
 import WelcomeText from './WelcomeSection/WelcomeText/WelcomeText';
@@ -17,6 +18,8 @@ const HomePage = () => {
       <SliderSection />
       <SectionDivider />
       <AboutSection />
+      <SectionDivider />
+      <UpdateSection />
       <SectionDivider />
       <ExploreSection />
       <SectionDivider />

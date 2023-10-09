@@ -1,0 +1,133 @@
+@import '@styles/colors';
+@import '@styles/mixins';
+@import '@styles/transitions';
+
+.update-section-container {
+  height: auto;
+  width: 100%;
+  padding: 4rem 5% 5rem;
+  background-color: map-get($theme, 'white');
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  .update-section-title {
+    width: 100%;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .updates-container {
+    position: relative;
+    display: grid;
+    grid-row-gap: 4rem;
+    width: 100%;
+
+    .update-box {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      border: 1px solid map-get($grey, 'lighter');
+      border-radius: 10px;
+      border-bottom: 4px solid map-get($grey, 'darker');
+      background-color: map-get($theme, 'white');
+      z-index: 1;
+
+      .update-box-title {
+        width: 80%;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 0 0 2rem;
+      }
+
+      .update-box-description {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: map-get($grey, 'darker');
+      }
+
+      .box-1-icon,
+      .box-2-icon,
+      .box-3-icon {
+        position: absolute;
+        background-color: map-get($theme, 'white');
+        border: 1px solid map-get($grey, 'lighter');
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border-radius: 8px;
+        padding: 1rem;
+        top: -1.5rem;
+        right: 0rem;
+        transform: rotate(7.5deg);
+
+        svg {
+          height: 2.5rem;
+          width: 2.5rem;
+        }
+
+        @include smooth-hover(transform);
+
+        &:hover {
+          transform: rotate(7.5deg) scale(1.075);
+        }
+      }
+    }
+
+    .box-1,
+    .box-3 {
+      justify-self: flex-start;
+    }
+
+    .box-2 {
+      justify-self: flex-end;
+    }
+
+    /* .updates-vertical-line {
+      position: absolute;
+      left: 50%;
+      transform: translateX(50%);
+      height: 100%;
+
+      .line {
+        border-right: 2px solid map-get($grey, 'darker');
+        height: 100%;
+      }
+    } */
+  }
+}
+
+@media (min-width: 768px) {
+  .update-section-container {
+    padding: 7rem 10% 8rem;
+    gap: 6rem;
+
+    .update-section-title {
+      font-size: 2.25rem;
+    }
+
+    .updates-container {
+      grid-row-gap: 5rem;
+
+      .update-box {
+        width: 55%;
+
+        .update-box-title {
+          width: 100%;
+        }
+
+        .box-1-icon,
+        .box-2-icon,
+        .box-3-icon {
+          right: -1rem;
+
+          svg {
+            height: 3rem;
+            width: 3rem;
+          }
+        }
+      }
+    }
+  }
+}
