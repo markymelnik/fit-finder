@@ -56,6 +56,11 @@ public class FacilityController {
       return facilityService.getFacilitiesByParameters(enteredKeyword, facilityTypes, amenities, offerings, pageable);
   }
 
+  @GetMapping("/random")
+  public Set<Facility> getRandomFacilities() {
+    return facilityService.getRandomFacilities();
+  }
+
   @GetMapping
   public Set<Facility> getFacilities() {
     return facilityService.getFacilities();

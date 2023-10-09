@@ -1,6 +1,7 @@
 package app.fitnessfinderapp.backend.facility;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,24 @@ public class FacilityService {
 
     return facilityRepository.findAll(spec, pageable);
 }
+
+  public Set<Facility> getRandomFacilities() {
+    int totalFacilities = facilityRepository.findAll().size();
+    Set<Long> randomIds = new HashSet<>();
+    Set<Facility> randomFacilities = new HashSet<>();
+
+    while (randomFacilities.size() < 8) {
+      long randomId = 1 + (long)(Math.random() * totalFacilities);
+
+      if (!randomIds.contains(randomId)) {
+        randomIds.add(randomId);
+        Optional<Facility> facility = facilityRepository.findById(randomId);
+
+        facility.ifPresent(randomFacilities::add);
+      }
+    }
+    return randomFacilities;
+  }
 
   public void addNewFacility(Facility facility) {
     facilityRepository.save(facility);
