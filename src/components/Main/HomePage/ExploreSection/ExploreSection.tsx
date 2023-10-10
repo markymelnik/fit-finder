@@ -33,12 +33,10 @@ const ExploreSection = () => {
 
   const handleCategoryClick = (category: string) => {
     const selectedCategory = [category];
-    console.log(selectedCategory);
 
     switch(true) {
       case typeCategory.includes(category):
         dispatch(setSelectedFacilityTypes(selectedCategory));
-        
         break;
       case amenityCategory.includes(category):
         dispatch(setSelectedAmenities(selectedCategory));

@@ -37,6 +37,9 @@ const filterSlice = createSlice({
       state.selectedOfferings = action.payload;
       state.hasUpdated = true;
     },
+    signalUpdate: (state) => {
+      state.hasUpdated = true;
+    },
     acknowledgeUpdate: (state) => {
       state.hasUpdated = false;
     },
@@ -58,6 +61,7 @@ export const {
   setSelectedFacilityTypes,
   setSelectedAmenities,
   setSelectedOfferings,
+  signalUpdate,
   acknowledgeUpdate,
   resetAllFilters,
   unsetResetFlag,

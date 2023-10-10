@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 
 import { setSelectedFacility } from "../../../../../redux/slices/selectedFacilitySlice";
 import { Facility } from "../../../../../types/types";
+import SearchSliderCard from "../SearchSliderCard/SearchSliderCard";
 import SliderCard from "../SliderCard/SliderCard";
 import "./_slider-display.scss";
 
@@ -47,6 +48,7 @@ const SliderDisplay = ({ sliderRef }: any) => {
         {randomFacilities.map((facility, index) => (
           <SliderCard key={index} {...facility} onClick={() => handleCardClick(facility)}/>
         ))}
+        <SearchSliderCard />
       </div>
     </div>
   );

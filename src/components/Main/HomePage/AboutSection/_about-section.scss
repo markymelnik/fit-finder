@@ -14,11 +14,12 @@
   .about-section-top {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 3rem;
     margin-bottom: 2rem;
     z-index: 1;
 
-    .about-section-title {
+    .about-section-title,
+    .about-section-subtitle {
       display: flex;
       font-size: 1.75rem;
       font-weight: 400;
@@ -26,10 +27,7 @@
     }
 
     .about-section-subtitle {
-      display: flex;
-      font-size: 1.75rem;
-      font-weight: 400;
-      color: map-get($theme, 'black');
+      font-weight: 500;
     }
   }
 
@@ -56,7 +54,7 @@
         }
 
         .row-description {
-          font-size: 1rem;
+          font-size: 1.15rem;
           line-height: 1.6;
           color: map-get($grey, 'dark');
           border-left: 2px solid map-get($grey, 'darker');
