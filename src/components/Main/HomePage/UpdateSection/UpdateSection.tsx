@@ -1,6 +1,6 @@
 import GymSVG from "./GymSVG";
 import OutdoorParkSVG from "./OutdoorParkSVG";
-import PhoneSVG from "./phoneSVG";
+import PhoneSVG from "./PhoneSVG";
 import "./_update-section.scss";
 
 const UpdateSection = () => {

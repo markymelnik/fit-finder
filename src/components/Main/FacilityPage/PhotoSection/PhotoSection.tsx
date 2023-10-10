@@ -18,9 +18,7 @@ const FacilityPagePhoto = () => {
   return (
     <div className='photo-section-container'>
       {photo && <img src={photo} />}
-      <div className="photo-section-favorite">
-        <SaveSection />
-      </div>
+      <SaveSection />
     </div>
   );
 };

@@ -5,58 +5,109 @@
 .account-favorites-container {
   display: flex;
   flex-direction: column;
+  padding: 2rem 1rem;
+  height: 500px;
 
-  .account-favorites-header {
-    font-size: 1.25rem;
-    font-weight: 500;
-    padding: 0 0 1.25rem;
-    border-bottom: 1px solid map-get($grey, 'lighter');
-    color: map-get($grey, 'darker');
+  .account-favorites-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 0 1rem;
+    margin: 0 1rem;
+    border-bottom: 1px solid map-get($grey, 'light');
+
+    .account-favorites-header {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: map-get($grey, 'darker');
+    }
+
+    .account-favorites-count {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+
+      .favorite-count {
+        font-size: 1.25rem;
+        color: map-get($grey, 'darker');
+      }
+
+      .favorite-slash {
+        padding: 0 0.4rem 0 0.5rem;
+        font-size: 1.25rem;
+        color: map-get($grey, 'darker');
+      }
+
+      .favorite-cap {
+        font-size: 1.25rem;
+        color: map-get($grey, 'darker');
+      }
+    }
   }
 
-  .favorited-facility-container {
+  .account-favorites-bottom {
     display: flex;
     flex-direction: column;
-    width: 100%;
-  }
+    overflow-y: auto;
+    height: 100%;
+    border-bottom: 1px solid map-get($grey, 'light');
 
-  .header-to-search-btn {
-    @include center-elements;
-    text-decoration: none;
-    height: 2rem;
-    width: 6rem;
-    border: none;
-    border-radius: 6px;
-    background-color: map-get($grey, 'darker');
-    color: map-get($theme, 'white');
-
-    @include smooth-hover(background-color);
-
-    &:hover {
-      cursor: pointer;
-      background-color: lighten(map-get($grey, 'darker'), 5%);
+    .favorited-facility-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 1rem 1rem 2rem;
     }
-
-    &:active {
-      transform: scale(0.975);
+  
+    .header-to-search-btn {
+      @include center-elements;
+      text-decoration: none;
+      height: 2rem;
+      width: 6rem;
+      border: none;
+      border-radius: 6px;
+      background-color: map-get($grey, 'darker');
+      color: map-get($theme, 'white');
+  
+      @include smooth-hover(background-color);
+  
+      &:hover {
+        cursor: pointer;
+        background-color: lighten(map-get($grey, 'darker'), 5%);
+      }
+  
+      &:active {
+        transform: scale(0.975);
+      }
     }
   }
-
 }
 
 @media (min-width: 768px) {
 
   .account-favorites-container {
+    height: 100%;
+    padding: 3rem 2rem;
 
-    .account-favorites-header {
-      font-size: 1.75rem;
-      padding: 0 0 2.5rem;
-      border: 0;
+    .account-favorites-top {
+      padding: 0 0 1.5rem;
+
+      .account-favorites-header {
+        font-size: 1.75rem;
+        border: 0;
+      }
+
+      .account-favorites-count {
+        font-size: 1.25rem;
+      }
     }
 
-    .favorited-facility-container {
-      gap: 1.25rem;
+    .account-favorites-bottom {
+
+      .favorited-facility-container {
+        gap: 1.25rem;
+        padding: 2rem 1rem;
+      }
     }
   }
-
 }

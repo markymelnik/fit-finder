@@ -7,6 +7,6 @@ const getFavoritedFacility = (state: RootState) => state.favoritedFacility;
 export const favoritedFacilityIdSelector = createSelector(
   [getFavoritedFacility],
   (favoritedFacility) => {
-    return favoritedFacility.map(facility => facility.facility.id);
+    return favoritedFacility.favoritedFacilities.map(facility => facility.facility.id);
   }
 )

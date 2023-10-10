@@ -47,13 +47,14 @@
     flex: 1;
 
     .account-page-rightbar {
+      position: relative;
       width: 100%;
+      height: 650px;
       display: flex;
       flex-direction: column;
       flex: 1;
       background-color: map-get($theme, 'white');
-      padding: 2rem 1.25rem;
-      border-radius: 6px;
+      border-radius: 8px;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       z-index: 1;
   
@@ -93,7 +94,6 @@
       margin: 2.5rem 0 0;
 
       .account-page-rightbar {
-        padding: 2.5rem 2rem;
         width: 75%;
         margin-top: 0;
       }

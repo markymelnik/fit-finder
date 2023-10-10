@@ -1,5 +1,6 @@
-
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+
+import { RootState } from "../store";
 
 interface FavoritedFacility {
   id: number;
@@ -7,19 +8,33 @@ interface FavoritedFacility {
   facility: any;
 }
 
-const initialState: FavoritedFacility[] = [];
+interface FavoritedFacilityState {
+  favoritedFacilities: FavoritedFacility[];
+  favoriteCap: number;
+}
+
+const initialState: FavoritedFacilityState = {
+  favoritedFacilities: [],
+  favoriteCap: 10
+}
 
 const favoritedFacilitySlice = createSlice({
   name: 'favoritedFacility',
   initialState,
   reducers: {
     addFavoritedFacilityToState: (state, action: PayloadAction<FavoritedFacility>) => {
-      if (!state.some(facility => facility.id === action.payload.id)) {
-        state.push(action.payload);
+      if (state.favoritedFacilities.length < state.favoriteCap) {
+        if (!state.favoritedFacilities.some(facility => facility.id === action.payload.id)) {
+          state.favoritedFacilities.push(action.payload);
+        }
       }
+      
     },
     deleteFavoritedFacilityFromState: (state, action: PayloadAction<number>) => {
-      return state.filter(facility => facility.id !== action.payload);
+      return {
+        ...state,
+        favoritedFacilities: state.favoritedFacilities.filter(facility => facility.id !== action.payload)
+      };
     },
   }
 })
@@ -27,5 +42,5 @@ const favoritedFacilitySlice = createSlice({
 export const { addFavoritedFacilityToState, deleteFavoritedFacilityFromState } = favoritedFacilitySlice.actions;
 export default favoritedFacilitySlice.reducer;
 
-
-
+export const selectFavoriteCount = (state: RootState) => state.favoritedFacility.favoritedFacilities.length;
+export const selectFavoriteCap = (state: RootState) => state.favoritedFacility.favoriteCap;

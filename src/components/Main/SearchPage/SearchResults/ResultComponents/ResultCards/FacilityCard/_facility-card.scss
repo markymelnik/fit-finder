@@ -16,9 +16,8 @@
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    
   }
-
+  
   .facility-card-link-wrapper {
     height: 100%;
     display: flex;
@@ -27,12 +26,12 @@
     color: map-get($grey, 'darker');
 
     .facility-photo-container {
-      height: 225px;
+      flex: 1;
       background-color: map-get($theme, 'white');
       overflow: hidden;
       border-top-left-radius: 6px;
       border-top-right-radius: 6px;
-    
+
       img {
         height: 100%;
         width: 100%;
@@ -41,7 +40,7 @@
         @include smooth-hover(transform, $duration: 0.25s);
     
         &:hover {
-          transform: scale(1.05);
+          transform: scale(1.025);
         }
       }
     }
@@ -54,6 +53,7 @@
       border-bottom-right-radius: 6px;
       
       .facility-card-info {
+        width: 100%;
         display: flex;
         flex: 1;
         flex-direction: column;
@@ -74,12 +74,16 @@
         }
 
         .facility-card-info-bottom {
+          width: 100%;
           display: flex;
           flex-direction: column;
           
           .facility-card-name {
             font-size: 1.25rem;
             margin: 0 0 0.25rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
           
           .facility-card-address {
@@ -88,6 +92,5 @@
         }
       }
     }
-  }  
+  } 
 }
-
