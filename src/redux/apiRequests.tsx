@@ -1,7 +1,7 @@
 import Axios from 'axios';
 
 import { setAmenities } from './slices/amenitySlice';
-import { setFacilities, startFetching } from './slices/facilitySlice';
+import { setAllFacilities, setPaginatedFacilities, startFetching } from './slices/facilitySlice';
 import { setFacilityTypes } from './slices/facilityTypeSlice';
 import { addFavoritedFacilityToState } from './slices/favoritedFacilitySlice';
 import { setOfferings } from './slices/offeringSlice';
@@ -11,7 +11,7 @@ import { AppDispatch } from './store';
 const fetchAllFacilities = () => async (dispatch: AppDispatch) => {
   try {
     const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/facility`);
-    dispatch(setFacilities(response.data));
+    dispatch(setPaginatedFacilities(response.data));
   } catch (err) {
     console.error('Error fetching facilities', err);
   }
@@ -98,11 +98,12 @@ const fetchFacilitiesByParameters =
       params.append('size', `${pageSize}`);
 
       const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/facility/search`, { params });
-      const { content, totalPages, totalElements } = response.data;
+      const { paginatedResults, allResults } = response.data;
 
-      dispatch(setFacilities(content));
-      dispatch(setTotalElements(totalElements));
-      dispatch(setTotalPages(totalPages));
+      dispatch(setPaginatedFacilities(paginatedResults.content));
+      dispatch(setAllFacilities(allResults));
+      dispatch(setTotalElements(paginatedResults.totalElements));
+      dispatch(setTotalPages(paginatedResults.totalPages));
 
     } catch (err) {
       console.error("Error fetching facilities", err);

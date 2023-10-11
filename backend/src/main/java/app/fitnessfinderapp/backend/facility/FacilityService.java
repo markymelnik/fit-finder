@@ -1,6 +1,7 @@
 package app.fitnessfinderapp.backend.facility;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -32,7 +33,17 @@ public class FacilityService {
         .and(FacilitySpecifications.hasOfferings(offerings));
 
     return facilityRepository.findAll(spec, pageable);
-}
+  }
+
+  public List<Facility> getFacilitiesByParameters(String enteredKeyword, Set<String> facilityTypes, Set<String> amenities, Set<String> offerings) {
+    Specification<Facility> spec = Specification
+        .where(FacilitySpecifications.hasKeyword(enteredKeyword))
+        .and(FacilitySpecifications.hasFacilityTypes(facilityTypes))
+        .and(FacilitySpecifications.hasAmenities(amenities))
+        .and(FacilitySpecifications.hasOfferings(offerings));
+
+    return facilityRepository.findAll(spec);
+  }
 
   public Set<Facility> getRandomFacilities() {
     int totalFacilities = facilityRepository.findAll().size();

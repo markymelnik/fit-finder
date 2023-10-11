@@ -16,7 +16,7 @@ import MarkerSVG from "../MarkerSVG";
 const MapboxMap = () => {
 
   const dispatch = useDispatch<AppDispatch>();
-  const facilities = useSelector((state: RootState) => state.facilities.byIds);
+  const facilities = useSelector((state: RootState) => state.facilities.byAllFacilityIds);
   const [showPopup, setShowPopup] = useState<boolean>(false);
   const [popupFacility, setPopupFacility] = useState<Facility | null>(null);
   const popupRef = useRef(null);

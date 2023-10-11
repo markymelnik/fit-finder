@@ -5,12 +5,16 @@ import { Facility } from '../../types/types';
 interface FacilityState {
   byIds: Record<number, Facility>;
   allIds: number[];
+  byAllFacilityIds: Record<number, Facility>
+  allFacilityIds: number[];
   isLoading: boolean;
 }
 
 const initialFacilityState: FacilityState = {
   byIds: {},
   allIds: [],
+  byAllFacilityIds: {},
+  allFacilityIds: [],
   isLoading: false,
 };
 
@@ -21,12 +25,21 @@ export const facilitiesSlice = createSlice({
     startFetching: (state) => {
       state.isLoading = true;
     },
-    setFacilities: (state, action: PayloadAction<Facility[]>) => {
+    setPaginatedFacilities: (state, action: PayloadAction<Facility[]>) => {
       state.byIds = {};
       state.allIds = [];
       action.payload.forEach((facility) => {
         state.byIds[facility.id] = facility;
         state.allIds.push(facility.id);
+      });
+      state.isLoading = false;
+    },
+    setAllFacilities: (state, action: PayloadAction<Facility[]>) => {
+      state.byAllFacilityIds = {};
+      state.allFacilityIds = [];
+      action.payload.forEach((facility) => {
+        state.byAllFacilityIds[facility.id] = facility;
+        state.allFacilityIds.push(facility.id);
       });
       state.isLoading = false;
     },
@@ -49,6 +62,6 @@ export const retrieveOfferingsForFacility = (facilities: FacilityState, facility
   return [];
 };
 
-export const { setFacilities, startFetching } = facilitiesSlice.actions;
+export const { setPaginatedFacilities, setAllFacilities, startFetching } = facilitiesSlice.actions;
 
 export default facilitiesSlice.reducer;

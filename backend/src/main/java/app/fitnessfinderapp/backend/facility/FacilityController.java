@@ -1,5 +1,8 @@
 package app.fitnessfinderapp.backend.facility;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +47,7 @@ public class FacilityController {
   }
 
   @GetMapping("/search")
-  public Page<Facility> getFacilitiesByParameters(
+  public Map<String, Object> getFacilitiesByParameters(
       @RequestParam(required = false) String enteredKeyword,
       @RequestParam(required = false) Set<String> facilityTypes,
       @RequestParam(required = false) Set<String> amenities,
@@ -52,8 +55,16 @@ public class FacilityController {
       @RequestParam(defaultValue = "0") int page,
       @RequestParam(defaultValue = "12") int size) {
 
-      Pageable pageable = PageRequest.of(page, size);  
-      return facilityService.getFacilitiesByParameters(enteredKeyword, facilityTypes, amenities, offerings, pageable);
+      Pageable pageable = PageRequest.of(page, size);
+      Page<Facility> paginatedFacilities = facilityService.getFacilitiesByParameters(enteredKeyword, facilityTypes, amenities, offerings, pageable);
+
+      List<Facility> allFacilities = facilityService.getFacilitiesByParameters(enteredKeyword, facilityTypes, amenities, offerings);
+      
+      Map<String, Object> response = new HashMap<>();
+      response.put("paginatedResults", paginatedFacilities);
+      response.put("allResults", allFacilities);
+
+      return response;
   }
 
   @GetMapping("/random")
