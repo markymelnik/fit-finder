@@ -1,12 +1,11 @@
-import MapOverlay from "../ResultComponents/Map/MapOverlay/MapOverlay";
+import MapboxMap from "../ResultComponents/Map/MapboxMap/MapboxMap";
 
 const MobileResultsWithMap = () => {
-
   return (
     <div className="with-map">
-      <MapOverlay />
+      <MapboxMap />
     </div>
-  )
-}
+  );
+};
 
 export default MobileResultsWithMap;

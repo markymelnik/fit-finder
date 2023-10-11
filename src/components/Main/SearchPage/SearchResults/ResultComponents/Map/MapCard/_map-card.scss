@@ -3,11 +3,12 @@
 
 .map-facility-card {
   font-family: 'Avenir';
+  display: flex;
   width: 320px;
   height: 120px;
   text-decoration: none;
   position: absolute;
-  bottom: 1.25rem;
+  bottom: 0.75rem;
   left: 50%;
   transform: translateX(-50%);
   color: map-get($grey, 'darker');
@@ -17,7 +18,7 @@
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  z-index: 10;
+  z-index: 5;
 
   .map-facility-card-photo {
     height: 100%;
@@ -48,6 +49,7 @@
     border-bottom-right-radius: 6px;
     color: map-get($theme, 'black');
     background-color: map-get($theme, 'white');
+    overflow: hidden;
 
     @include smooth-hover(background-color);
 
@@ -62,11 +64,17 @@
     }
 
     .map-facility-card-name {
-      font-size: 0.85rem;
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 0 0 0.15rem;
+
     }
 
     .map-facility-card-address {
       font-size: 0.75rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }

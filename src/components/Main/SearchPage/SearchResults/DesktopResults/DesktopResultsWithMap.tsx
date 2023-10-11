@@ -1,11 +1,10 @@
 import Footer from "../../../../Footer/Footer";
-import MapOverlay from "../ResultComponents/Map/MapOverlay/MapOverlay";
+import MapboxMap from "../ResultComponents/Map/MapboxMap/MapboxMap";
 import PaginationBar from "../ResultComponents/PaginationBar/PaginationBar";
 import QuerySection from "../ResultComponents/QuerySection/QuerySection";
 import ResultCards from "../ResultComponents/ResultCards/ResultCards";
 
 const DesktopResultsWithMap = () => {
-
   return (
     <div className="with-map">
       <div className="result-left">
@@ -17,12 +16,12 @@ const DesktopResultsWithMap = () => {
         </div>
       </div>
       <div className="vertical-divider">
-          <div className="divider"></div>
-        </div>
-      <MapOverlay />
-      
+        <div className="divider"></div>
+      </div>
+
+      <MapboxMap />
     </div>
-  )
-}
+  );
+};
 
 export default DesktopResultsWithMap;
