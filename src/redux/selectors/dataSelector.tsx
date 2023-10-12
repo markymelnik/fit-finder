@@ -1,23 +1,20 @@
 import { createSelector } from "reselect";
 
-import { retrieveAmenitiesForFacility, retrieveOfferingsForFacility } from "../slices/facilitySlice";
 import { RootState } from "../store";
 
-const getSelectedFacility = (state: RootState) => state.selectedFacility?.selectedFacility;
-const getFacilities = (state: RootState) => state.facilities;
+const selectedFacility = (state: RootState) => state.selectedFacility?.selectedFacility;
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-const createFacilityDataSelector = (retrievalFunction: Function) => {
+const createFacilityDataSelector = (attributeKey: 'offerings' | 'amenities') => {
   return createSelector(
-    [getSelectedFacility, getFacilities],
-    (selectedFacility, facilities) => {
-      if (selectedFacility) {
-        return retrievalFunction(facilities, selectedFacility.id);
+    selectedFacility,
+    (selectedFacility) => {
+      if (selectedFacility && attributeKey in selectedFacility) {
+        return selectedFacility[attributeKey].map((item: any) => item.name);
       }
-    return [];
+      return [];
     }
   );
 };
 
-export const amenitiesSelector = createFacilityDataSelector(retrieveAmenitiesForFacility);
-export const offeringsSelector = createFacilityDataSelector(retrieveOfferingsForFacility);
+export const offeringsSelector = createFacilityDataSelector("offerings");
+export const amenitiesSelector = createFacilityDataSelector("amenities");

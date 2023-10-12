@@ -46,22 +46,6 @@ export const facilitiesSlice = createSlice({
   },
 });
 
-export const retrieveAmenitiesForFacility = (facilities: FacilityState, facilityId: number): string[] => {
-  const facility = facilities.byIds[facilityId];
-  if (facility) {
-    return facility.amenities.map(amenity => amenity.name);
-  }
-  return [];
-};
-
-export const retrieveOfferingsForFacility = (facilities: FacilityState, facilityId: number): string[] => {
-  const facility = facilities.byIds[facilityId];
-  if (facility) {
-    return facility.offerings.map(offering => offering.name);
-  }
-  return [];
-};
-
 export const { setPaginatedFacilities, setAllFacilities, startFetching } = facilitiesSlice.actions;
 
 export default facilitiesSlice.reducer;

@@ -1,4 +1,3 @@
-import useFacilitySearch from "../../../../hooks/useFacilitySearch";
 import './_filter-btns.scss';
 
 interface SaveFiltersButtonProps {
@@ -9,11 +8,8 @@ interface SaveFiltersButtonProps {
 
 const SaveFiltersButton = ({ customClass, buttonText, onClick }: SaveFiltersButtonProps) => {
 
-  const { executeSearch } = useFacilitySearch();
-
   const handleSave = (event: any) => {
     event.preventDefault();
-    executeSearch();
     onClick();
   }
   
