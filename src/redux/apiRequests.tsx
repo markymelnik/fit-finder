@@ -6,6 +6,7 @@ import { setFacilityTypes } from './slices/facilityTypeSlice';
 import { addFavoritedFacilityToState } from './slices/favoritedFacilitySlice';
 import { setOfferings } from './slices/offeringSlice';
 import { setTotalElements, setTotalPages } from './slices/paginationSlice';
+import { setSelectedFacility } from './slices/selectedFacilitySlice';
 import { AppDispatch } from './store';
 
 const fetchAllFacilities = () => async (dispatch: AppDispatch) => {
@@ -16,6 +17,16 @@ const fetchAllFacilities = () => async (dispatch: AppDispatch) => {
     console.error('Error fetching facilities', err);
   }
 };
+
+const fetchFacilityByFacilityId = (facilityId: number, dispatch: AppDispatch) => async () => {
+  try {
+    const response = await Axios.get(`${import.meta.env.VITE_FFA_BE_URL}/api/facility/${facilityId}`);
+    dispatch(setSelectedFacility(response.data));
+    
+  } catch (err) {
+    console.error('Error fetching facility', err);
+  }
+}
 
 const fetchAllFacilityTypes = () => async (dispatch: AppDispatch) => {
   try {
@@ -145,6 +156,7 @@ const deleteFavoritedFacility = (favoritedFacilityObjectId: number) => async () 
 
 export {
   fetchAllFacilities,
+  fetchFacilityByFacilityId,
   fetchAllFacilityTypes,
   fetchFacilityTypeByFacilityId,
   fetchAllAmenities,

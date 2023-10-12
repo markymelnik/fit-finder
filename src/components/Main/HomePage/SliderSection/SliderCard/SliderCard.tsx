@@ -18,7 +18,7 @@ const SliderCard = ({ onClick, ...facility }: SliderCard) => {
 
   return (
     <div className="slider-card-container" onClick={handleSliderCardClick}>
-      <Link to='/facility' className="slider-card-link-wrapper">
+      <Link to={`/facility/${facility.id}`} className="slider-card-link-wrapper">
         <div className="slider-card-photo-container">
           {photo && <img src={photo} alt="facility main photo" />}
         </div>

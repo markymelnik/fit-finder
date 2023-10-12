@@ -25,6 +25,10 @@ public class FacilityService {
     return new HashSet<>(facilityRepository.findAll());
   }  
 
+  public Facility getFacilityById(Long facilityId) {
+    return facilityRepository.findById(facilityId).orElse(null);
+  }
+
   public Page<Facility> getFacilitiesByParameters(String enteredKeyword, Set<String> facilityTypes, Set<String> amenities, Set<String> offerings, Pageable pageable) {
     Specification<Facility> spec = Specification
         .where(FacilitySpecifications.hasKeyword(enteredKeyword))

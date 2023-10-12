@@ -8,12 +8,10 @@ import { RootState } from "../../../../../../../redux/store";
 
 const FacilityAmenities = () => {
 
-  const selectedFacility = useSelector((state: RootState) => state.selectedFacility.selectedFacility);
+  const selectedFacility = useSelector((state: RootState) => state.selectedFacility.facilityData);
   const amenities = useSelector(amenitiesSelector);
 
-  if (!selectedFacility) {
-    return <div>Error!</div>
-  }
+  if (!selectedFacility) return;
 
   if (selectedFacility.facilityType.id === 1) {
     return (

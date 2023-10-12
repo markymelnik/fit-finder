@@ -5,7 +5,7 @@ import './_facility-name.scss';
 
 const FacilityName = () => {
 
-  const selectedFacility = useSelector((state: RootState) => state.selectedFacility.selectedFacility);
+  const selectedFacility = useSelector((state: RootState) => state.selectedFacility.facilityData);
 
   if (!selectedFacility) {
     return <p className="no-facility-found">Facility information not found.</p>;

@@ -2,7 +2,7 @@ import { createSelector } from "reselect";
 
 import { RootState } from "../store";
 
-const selectedFacility = (state: RootState) => state.selectedFacility?.selectedFacility;
+const selectedFacility = (state: RootState) => state.selectedFacility?.facilityData;
 
 const createFacilityDataSelector = (attributeKey: 'offerings' | 'amenities') => {
   return createSelector(

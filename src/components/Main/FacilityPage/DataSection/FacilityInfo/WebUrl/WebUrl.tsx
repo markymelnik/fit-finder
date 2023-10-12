@@ -9,13 +9,9 @@ type WebUrlProps = {
 };
 
 const WebUrl = ({ customClass }: WebUrlProps) => {
-  const selectedFacility = useSelector(
-    (state: RootState) => state.selectedFacility.selectedFacility
-  );
+  const selectedFacility = useSelector((state: RootState) => state.selectedFacility.facilityData);
 
-  if (!selectedFacility) {
-    return <div>Error!</div>;
-  }
+  if (!selectedFacility) return;
 
   return (
     <div className="facility-web-url">

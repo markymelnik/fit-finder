@@ -7,13 +7,11 @@ import './_photo-section.scss';
 
 const FacilityPagePhoto = () => {
 
-  const selectedFacility = useSelector((state: RootState) => state.selectedFacility.selectedFacility);
+  const selectedFacility = useSelector((state: RootState) => state.selectedFacility.facilityData);
 
-  if (!selectedFacility) {
-    return <p className="no-facility-photo-found">Facility Photo not found.</p>
-  }
+  const photo = usePhotoLoader(selectedFacility?.id);
 
-  const photo = usePhotoLoader(selectedFacility.id);
+  if (!selectedFacility) return;
 
   return (
     <div className='photo-section-container'>

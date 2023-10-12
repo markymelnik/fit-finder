@@ -1,23 +1,22 @@
 import { useState, useEffect } from 'react';
 
-type LoadPhotosType = { [id: number]: string };
-
-const usePhotoLoader = (id: number) => {
+const usePhotoLoader = (id?: number |  null) => {
   const [photo, setPhoto] = useState<string | null>(null);
 
   useEffect(() => {
+    if (!id) {
+      return;
+    }
+
     const photos = import.meta.glob('/src/assets/photos/facility_primary/*.jpg');
-    const loadPhotos: LoadPhotosType = {};
 
     const loadPhoto = async (path: string) => {
-      if (photos[path]) {
-        const module: any = await photos[path]();
-        loadPhotos[id] = module.default;
+      const module: any = photos[path] ? await photos[path]() : null;
+      if (module) {
         setPhoto(module.default);
       } else {
-        setPhoto(`/src/assets/photos/facility_primary/default.jpg`)
+        setPhoto(`/src/assets/photos/facility_primary/default.jpg`);
       }
-      
     }
 
     loadPhoto(`/src/assets/photos/facility_primary/facility_${id}.jpg`);

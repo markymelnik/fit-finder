@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import AuthForm from './components/auth/AuthForm';
+import RedirectToHome from './components/common/redirectToHome';
 import MobileFilterMenu from './components/Main/SearchPage/Subheader/MobileSubheader/MobileFilterMenu/MobileFilterMenu';
 import useIsMobile from './hooks/useIsMobile';
 import usePreventScrolling from './hooks/usePreventScrolling';
@@ -34,7 +35,8 @@ const App = () => {
           <Routes>
             <Route path='/' element={<LoadHomePage />} />
             <Route path='/search' element={<LoadSearchPage />} />
-            <Route path='/facility' element={<LoadSelectedFacilityPage />} />
+            <Route path='/facility/:id' element={<LoadSelectedFacilityPage />} />
+            <Route path='/facility' element={<RedirectToHome />} />
             <Route path='/account' element={<LoadAccountPage /> } />
           </Routes>
         </div>

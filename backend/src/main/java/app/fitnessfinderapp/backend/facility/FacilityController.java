@@ -77,6 +77,11 @@ public class FacilityController {
     return facilityService.getFacilities();
   }
 
+  @GetMapping("/{facilityId}")
+  public Facility getFacilityById(@PathVariable Long facilityId) {
+    return facilityService.getFacilityById(facilityId);
+  }
+
   @GetMapping("/{facilityId}/type")
   public Set<FacilityType> getFacilityTypeByFacilityId(@PathVariable Long facilityId) {
     return facilityTypeService.getFacilityTypeByFacilityId(facilityId);

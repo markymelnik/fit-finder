@@ -3,11 +3,11 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Facility } from "../../types/types";
 
 interface selectedFacilityState {
-  selectedFacility: Facility | null;
+  facilityData: Facility | null;
 }
 
 const initialState: selectedFacilityState = {
-  selectedFacility: null,
+  facilityData: null,
 }
 
 export const selectedFacilitySlice = createSlice({
@@ -15,7 +15,7 @@ export const selectedFacilitySlice = createSlice({
   initialState: initialState,
   reducers: {
     setSelectedFacility: (state, action: PayloadAction<Facility>) => {
-      state.selectedFacility = action.payload;
+      state.facilityData = action.payload;
     },
   },
 });

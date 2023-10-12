@@ -18,7 +18,7 @@ const MapCard = ({ onClick, isAboveMiddle, ...facility }: MapCardProps) => {
   };
 
   return (
-    <Link to='/facility' onClick={handleClick} className={`map-facility-card ${isAboveMiddle ? `isAboveMiddle` : ``}`}>
+    <Link to={`/facility/${facility.id}`} onClick={handleClick} className={`map-facility-card ${isAboveMiddle ? `isAboveMiddle` : ``}`}>
       <div className="map-facility-card-photo" >
         {photo && <img src={photo} alt="map facility card photo" />}
       </div>

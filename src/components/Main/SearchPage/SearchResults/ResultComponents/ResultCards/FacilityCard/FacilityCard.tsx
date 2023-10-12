@@ -23,7 +23,7 @@ const FacilityCard = ({ onClick, ...facility }: FacilityCard) => {
 
   return (
     <div className='facility-card-container' onClick={handleClick}>
-      <Link to={`/facility`} className='facility-card-link-wrapper'>
+      <Link to={`/facility/${facility.id}`} className='facility-card-link-wrapper'>
         <div className='facility-photo-container'>
           {photo && <img src={photo} alt='facility main photo' />}
         </div>

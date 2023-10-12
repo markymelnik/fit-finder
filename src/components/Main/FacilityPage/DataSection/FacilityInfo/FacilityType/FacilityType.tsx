@@ -14,17 +14,9 @@ import { RootState } from "../../../../../../redux/store";
 import "./_facility-type.scss";
 
 const FacilityType = () => {
-  const selectedFacility = useSelector(
-    (state: RootState) => state.selectedFacility.selectedFacility
-  );
+  const selectedFacility = useSelector((state: RootState) => state.selectedFacility.facilityData);
 
-  if (!selectedFacility) {
-    return (
-      <div className="facility-type-container">
-        <p className="no-offering">No Type Found</p>
-      </div>
-    );
-  }
+  if (!selectedFacility) return;
 
   let typeIcon;
 

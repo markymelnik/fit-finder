@@ -5,12 +5,10 @@ import { RootState } from '../../../../../../redux/store';
 import './_facility-address.scss';
 
 const FacilityAddress = () => {
-  const selectedFacility = useSelector((state: RootState) => state.selectedFacility.selectedFacility);
+  const selectedFacility = useSelector((state: RootState) => state.selectedFacility.facilityData);
   
-  if (!selectedFacility) {
-    return <div>Error!</div>
-  }
-
+  if (!selectedFacility) return;
+  
   const googleMapsURL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
     `${selectedFacility.address}, ${selectedFacility.neighborhood.borough.name}, NY, ${selectedFacility.postalCode}`
   )}`;
