@@ -8,7 +8,7 @@
   height: 120px;
   text-decoration: none;
   position: absolute;
-  bottom: 0.75rem;
+  bottom: 0.65rem;
   left: 50%;
   transform: translateX(-50%);
   color: map-get($grey, 'darker');
@@ -18,7 +18,11 @@
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  z-index: 5;
+  z-index: 10;
+
+  &.isAboveMiddle {
+    bottom: -7.75rem;
+  }
 
   .map-facility-card-photo {
     height: 100%;

@@ -14,13 +14,15 @@ import MapCard from "../MapCard/MapCard";
 import MarkerSVG from "../MarkerSVG";
 
 const MapboxMap = () => {
-
   const dispatch = useDispatch<AppDispatch>();
   const facilities = useSelector((state: RootState) => state.facilities.byAllFacilityIds);
   const [showPopup, setShowPopup] = useState<boolean>(false);
   const [popupFacility, setPopupFacility] = useState<Facility | null>(null);
-  const popupRef = useRef(null);
+  const [isAboveMiddle, setIsAboveMiddle] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+
+  const mapRef = useRef<any>(null);
+  const popupRef = useRef(null);
 
   useOutsideClick(popupRef, () => setShowPopup(false));
 
@@ -34,6 +36,15 @@ const MapboxMap = () => {
 
   const handleMarkerClick = (facility: Facility) => {
     setPopupFacility({ ...facility });
+
+    if (mapRef.current) {
+      const mapInstance = mapRef.current.getMap();
+      const markerPosition = mapInstance.project([
+        facility.longitude,
+        facility.latitude,
+      ]);
+      setIsAboveMiddle(markerPosition.y < window.innerHeight / 4);
+    }
   };
 
   const handleCardClick = ({ ...facility }: Facility) => {
@@ -53,6 +64,7 @@ const MapboxMap = () => {
         <div className="map-error">{error}</div>
       ) : (
         <Map
+          ref={mapRef}
           {...viewState}
           mapStyle="mapbox://styles/mapbox/streets-v11"
           onMove={(evt) =>
@@ -82,16 +94,20 @@ const MapboxMap = () => {
             );
           })}
           {showPopup && popupFacility && (
-            <div ref={popupRef}>
-              <Popup
-                latitude={popupFacility.latitude}
-                longitude={popupFacility.longitude}
-                onClose={() => setPopupFacility(null)}
-                closeOnClick={false}
-              >
-                <MapCard {...popupFacility} onClick={handleCardClick} />
-              </Popup>
-            </div>
+            <Popup
+              latitude={popupFacility.latitude}
+              longitude={popupFacility.longitude}
+              onClose={() => setPopupFacility(null)}
+              closeOnClick={false}
+            >
+              <div ref={popupRef}>
+                <MapCard
+                  {...popupFacility}
+                  onClick={handleCardClick}
+                  isAboveMiddle={isAboveMiddle}
+                />
+              </div>
+            </Popup>
           )}
         </Map>
       )}

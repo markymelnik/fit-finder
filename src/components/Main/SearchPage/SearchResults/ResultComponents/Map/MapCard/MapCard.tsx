@@ -6,9 +6,10 @@ import './_map-card.scss';
 
 interface MapCardProps extends Facility {
   onClick: (facility: Facility) => void;
+  isAboveMiddle: boolean;
 }
 
-const MapCard = ({ onClick, ...facility }: MapCardProps) => {
+const MapCard = ({ onClick, isAboveMiddle, ...facility }: MapCardProps) => {
 
   const photo = usePhotoLoader(facility.id);
 
@@ -17,7 +18,7 @@ const MapCard = ({ onClick, ...facility }: MapCardProps) => {
   };
 
   return (
-    <Link to='/facility' onClick={handleClick} className='map-facility-card'>
+    <Link to='/facility' onClick={handleClick} className={`map-facility-card ${isAboveMiddle ? `isAboveMiddle` : ``}`}>
       <div className="map-facility-card-photo" >
         {photo && <img src={photo} alt="map facility card photo" />}
       </div>
