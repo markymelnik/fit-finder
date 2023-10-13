@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import AuthForm from './components/auth/AuthForm';
-import RedirectToHome from './components/common/redirectToHome';
+import RedirectToHome from './components/common/RedirectToHome';
 import MobileFilterMenu from './components/Main/SearchPage/Subheader/MobileSubheader/MobileFilterMenu/MobileFilterMenu';
 import useIsMobile from './hooks/useIsMobile';
 import usePreventScrolling from './hooks/usePreventScrolling';

@@ -1,13 +1,10 @@
 @import '@styles/colors';
 
 .dev-info {
-  font-size: 1rem;
-  text-align: center;
+  font-size: 0.85rem;
   color: map-get($theme, 'white');
-}
 
-@media (min-width: 768px) {
-  .dev-info {
-    text-align: left;
+  .dev-name {
+    margin: 0 0 1rem;
   }
 }

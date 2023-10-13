@@ -1,17 +1,15 @@
 .footer-bottom {
-  height: auto;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  margin: 5rem 0 2rem;
-  gap: 3rem;
+  height: auto;
+  width: 100%;
+  padding: 2.5rem 0;
 }
 
 @media (min-width: 768px) {
   .footer-bottom {
-    flex-direction: row;
-    margin: 3.5rem 0 2rem;
+    flex-direction: row-reverse;
+    justify-content: space-between;
   }
 }

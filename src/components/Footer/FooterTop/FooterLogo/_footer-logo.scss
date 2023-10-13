@@ -1,0 +1,7 @@
+@import '@styles/colors';
+
+.footer-logo {
+  font-family: 'Comfortaa';
+  font-size: 1.5rem;
+  color: map-get($theme, 'white');
+}

@@ -1,18 +1,14 @@
+@import '@styles/colors';
 @import '@styles/transitions';
 
 .footer-links {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  gap: 2.5rem;
+  display: inline-flex;
+  gap: 1.5rem;
+  margin: 0 0 2rem;
 
   .something-link {
-    height: 3.5rem;
-    width: 3.5rem;
-    border-radius: 3.5px;
-  
     @include smooth-hover(transform);
-  
+
     &:hover {
       cursor: pointer;
       transform: scale(1.05);
@@ -20,8 +16,8 @@
 
     a {
       img {
-        height: 3.5rem;
-        width: 3.5rem;
+        height: 2.5rem;
+        width: 2.5rem;
       }
     }
   }
@@ -29,12 +25,6 @@
 
 @media (min-width: 768px) {
   .footer-links {
-    width: auto;
     margin: 0;
-
-    .something-link {
-      height: 3.5rem;
-      width: 3.5rem;
-    }
   }
 }
