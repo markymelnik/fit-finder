@@ -9,9 +9,9 @@ import useOutsideClick from "../../../../../../../hooks/useOutsideClick";
 import { setSelectedFacility } from "../../../../../../../redux/slices/selectedFacilitySlice";
 import { AppDispatch, RootState } from "../../../../../../../redux/store";
 import { Facility } from "../../../../../../../types/types";
-import "./_mapbox-map.scss";
 import MapCard from "../MapCard/MapCard";
-import MarkerSVG from "../MarkerSVG";
+import MapMarkerSVG from "../MapMarkerSVG";
+import "./_mapbox-map.scss";
 
 const MapboxMap = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -20,6 +20,8 @@ const MapboxMap = () => {
   const [popupFacility, setPopupFacility] = useState<Facility | null>(null);
   const [isAboveMiddle, setIsAboveMiddle] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+
+  const [hoveredMarkerId, setHoveredMarkerId] = useState<string | number | null>(null);
 
   const mapRef = useRef<any>(null);
   const popupRef = useRef(null);
@@ -79,6 +81,8 @@ const MapboxMap = () => {
         >
           <NavigationControl position="top-left" />
           {Object.values(facilities).map((facility: any) => {
+            const isHovered = facility.id === hoveredMarkerId;
+
             return (
               <Marker
                 key={facility.id}
@@ -89,7 +93,12 @@ const MapboxMap = () => {
                   handleMarkerClick(facility);
                 }}
               >
-                <MarkerSVG />
+                <div
+                  onMouseEnter={() => setHoveredMarkerId(facility.id)}
+                  onMouseLeave={() => setHoveredMarkerId(null)}
+                >
+                  <MapMarkerSVG isHovered={isHovered} />
+                </div>
               </Marker>
             );
           })}
