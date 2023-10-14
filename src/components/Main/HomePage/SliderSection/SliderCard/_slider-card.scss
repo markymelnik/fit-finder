@@ -7,44 +7,44 @@
   display: flex;
   flex-direction: column;
   background-color: map-get($theme, 'white');
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
+  border-radius: 6px;
   flex: 0 0 auto;
   scroll-snap-align: start end;
+
+  @include smooth-hover(box-shadow);
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.32) 0px 4px 7px;
+  }
 
   .slider-card-link-wrapper {
     height: 100%;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 6px;
 
     .slider-card-photo-container {
-      height: 160px;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
+      height: 155px;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
       overflow: hidden;
 
       img {
         height: 100%;
         width: 100%;
         object-fit: cover;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-
-        @include smooth-hover(transform);
-
-        &:hover {
-          transform: scale(1.025);
-        }
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
       }
 
     }
 
     .slider-card-bottom {
-      height: 80px;
+      height: 85px;
       color: map-get($theme, 'black');
       padding: 0.7rem 0.75rem;
-      border-bottom-left-radius: 8px;
-      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
       
       .slider-card-type {
         font-size: 0.75rem;

@@ -3,32 +3,41 @@
 .save-section-encourage-login-btn {
 
   @include center-elements;
-    position: absolute;
-    border: none;
-    border-radius: 50%;
-    bottom: 1.5rem;
+  position: absolute;
+  border: none;
+  border-radius: 50%;
+  bottom: 1rem;
+  right: 1rem;
+  height: 3rem;
+  width: 3rem;
+  z-index: 2;
+  background-color: white;
+
+  .encourage-svg {
+    stroke-width: 1.2;
+    opacity: 0.8;
+    stroke: #333333;
+    fill: none;
+    height: 1.5rem;
+    width: 1.5rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+
+  .save-section-encourage-login-btn {
+    bottom: 1.25rem;
     right: 1.5rem;
     height: 3.5rem;
     width: 3.5rem;
-    z-index: 2;
-    background-color: white;
 
     .encourage-svg {
-      stroke-width: 1.2;
-      opacity: 0.8;
-      stroke: #333333;
-      fill: none;
-      height: 1.8rem;
-      width: 1.8rem;
-
-      &:hover {
-        cursor: pointer;
-      }
-
-      &.filled {
-        stroke: none;
-        height: 1.9rem;
-        width: 1.9rem;
-      }
+      height: 1.7rem;
+      width: 1.7rem;
     }
+  }
 }

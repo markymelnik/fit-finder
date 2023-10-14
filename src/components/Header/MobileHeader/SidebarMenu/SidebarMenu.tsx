@@ -10,7 +10,6 @@ import LogoutButton from "../../../common/button/auth/LogoutButton";
 import TintedOverlay from "../../../common/TintedOverlay/TintedOverlay";
 import AccountLink from "../../DesktopHeader/AccountMenu/AccountLink";
 import AboutLink from "../../DesktopHeader/NavigationBar/AboutLink";
-import Logo from "../../Logo/Logo";
 import './_sidebar-menu.scss';
 
 const SidebarMenu = () => {
@@ -31,7 +30,7 @@ const SidebarMenu = () => {
       <div className={`sidebar-menu-container ${isSidebarMenuOpen ? 'active' : ''} ${isLoggedIn ? '' : 'logged-out'}`}>
         <div className="sidebar-menu-top">
           <div className="sidebar-menu-header">
-            <Logo />
+            <div className="sidebar-menu-logo">fitfinder</div>
             <SidebarMenuCloseButton />
           </div>
           <SidebarMenuDivider />

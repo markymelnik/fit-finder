@@ -6,10 +6,16 @@
   @include center-elements(column);
   height: 240px;
   width: 320px;
-  border-radius: 10px;
+  border-radius: 6px;
   background-color: map-get($theme, 'white');
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
   flex: 0 0 auto;
+
+  @include smooth-hover(box-shadow);
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.32) 0px 4px 7px;
+  }
 
   .search-slider-card-message {
     font-size: 1.25rem;

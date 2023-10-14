@@ -71,24 +71,7 @@
   }
 
   .save-section-add-favorite-btn {
-    bottom: 1.5rem;
-    right: 1.5rem;
-    height: 3.5rem;
-    width: 3.5rem;
-
-    .favorite-svg {
-      height: 1.8rem;
-      width: 1.8rem;
-
-      &.filled {
-        height: 1.9rem;
-        width: 1.9rem;
-      }
-    }
-  }
-
-  .facility-card-add-favorite-btn {
-    bottom: 7.25rem;
+    bottom: 1rem;
     right: 1rem;
     height: 3rem;
     width: 3rem;
@@ -100,6 +83,44 @@
       &.filled {
         height: 1.6rem;
         width: 1.6rem;
+      }
+    }
+  }
+
+  .facility-card-add-favorite-btn {
+    bottom: 7rem;
+    right: 0.8rem;
+    height: 3rem;
+    width: 3rem;
+
+    .favorite-svg {
+      height: 1.5rem;
+      width: 1.5rem;
+
+      &.filled {
+        height: 1.6rem;
+        width: 1.6rem;
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .favorite-box {
+
+    .save-section-add-favorite-btn {
+      bottom: 1.25rem;
+      right: 1.5rem;
+      height: 3.5rem;
+      width: 3.5rem;
+
+      .favorite-svg {
+        height: 1.7rem;
+        width: 1.7rem;
+
+        &.filled {
+          height: 1.8rem;
+          width: 1.8rem;
+        }
       }
     }
   }

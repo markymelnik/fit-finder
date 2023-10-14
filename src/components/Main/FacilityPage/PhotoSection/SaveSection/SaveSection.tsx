@@ -6,12 +6,8 @@ import EncourageLoginButton from '../../../../common/button/favorite/EncourageLo
 
 const SaveSection = () => {
   const isLoggedIn = useSelector((state: RootState) => state.login.isLoggedIn);
-  const userAccount = useSelector(
-    (state: RootState) => state.login.userAccount
-  );
-  const selectedFacility = useSelector(
-    (state: RootState) => state.selectedFacility.selectedFacility
-  );
+  const userAccount = useSelector((state: RootState) => state.login.userAccount);
+  const selectedFacility = useSelector((state: RootState) => state.selectedFacility.facilityData);
 
   return (
     <>

@@ -11,9 +11,7 @@ const DesktopResultsWithMap = () => {
         <QuerySection />
         <ResultCards />
         <PaginationBar />
-        <div className="desktop-map-view-wrapper">
-          <Footer />
-        </div>
+        <Footer />
       </div>
       <div className="vertical-divider">
         <div className="divider"></div>

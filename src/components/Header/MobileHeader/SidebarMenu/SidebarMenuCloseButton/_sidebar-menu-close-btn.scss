@@ -1,14 +1,14 @@
 .sidebar-menu-close-btn {
   display: flex;
-  align-items: center;
-  height: 2.5rem;
-  width: 2.5rem;
+  align-items: flex-end;
+  height: 2.25rem;
+  width: 2.25rem;
   border: none;
   background-color: transparent;
 
   img {
-    height: 2.25rem;
-    width: 2.25rem;
+    height: 2rem;
+    width: 2rem;
   }
 
   &:hover {

@@ -17,9 +17,9 @@ const AboutSection = () => {
           <div className="row-text">
             <div className="row-title">An easy way to search</div>       
             <p className="row-description">
-              {`Find your perfect gym or fitness center using our intuitive site.
+              {`Find your perfect gym or workout spot using our intuitive site.
               Search by keywords including location name, address, neighborhood, and ZIP code.
-              Filter your search by type, amenities, and services to find exactly what you're looking for.
+              Filter your search by type, amenities, and offerings to find exactly what you're looking for.
               Explore locations using our interactive street map tool!`}
             </p>
             <ToSearchButton />
