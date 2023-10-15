@@ -2,12 +2,12 @@ import { ChangeEvent, FormEvent } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import DeleteIcon from '../../assets/icons/search/delete-icon.png';
-import SearchIcon from '../../assets/icons/search/search-icon.png'
-import useFacilitySearch from '../../hooks/useFacilitySearch';
-import { setEnteredKeyword } from '../../redux/slices/filterSlice';
-import { AppDispatch } from '../../redux/store';
-import { RootState } from '../../redux/store';
+import SearchIconSVG from './SearchIconSVG';
+import DeleteIcon from '../../../assets/icons/search/delete-icon.png';
+import useFacilitySearch from '../../../hooks/useFacilitySearch';
+import { setEnteredKeyword } from '../../../redux/slices/filterSlice';
+import { AppDispatch } from '../../../redux/store';
+import { RootState } from '../../../redux/store';
 
 interface SearchBarProps {
   containerClass: string;
@@ -51,7 +51,9 @@ const SearchBarComponent = ({ containerClass, submitButtonClass, deleteButtonCla
           <button type="button" onClick={deleteInput} style={{ backgroundImage: `url(${DeleteIcon})`}} className={deleteButtonClass}></button>
         )}
         
-        <button type='submit' style={{ backgroundImage: `url(${SearchIcon})`}} className={submitButtonClass}></button>
+        <button type='submit' className={submitButtonClass}>
+          <SearchIconSVG />
+        </button>
       </form>
     </div>
   );

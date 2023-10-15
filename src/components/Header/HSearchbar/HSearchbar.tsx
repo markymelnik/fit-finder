@@ -1,4 +1,4 @@
-import SearchBarComponent from '../../common/SearchBarComponent';
+import SearchBarComponent from '../../common/searchbar/SearchBarComponent';
 import './_header-searchbar.scss';
 
 type HSearchbarProps = {

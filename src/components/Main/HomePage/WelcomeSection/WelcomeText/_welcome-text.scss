@@ -4,13 +4,13 @@
   height: auto;
   width: 80%;
   position: absolute;
-  top: 28vh;
+  top: 32vh;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.75rem;
   color: map-get($theme, 'white');
-  font-weight: 600;
+  font-weight: 500;
   text-shadow: -1px 1px 2px map-get($theme, 'black'),
     1px 2px 6px map-get($theme, 'black'),
     1px -1px 0 map-get($theme, 'black'),

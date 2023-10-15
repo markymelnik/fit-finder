@@ -1,14 +1,11 @@
 import { Link } from 'react-router-dom';
-
-import RightArrowIcon from '../../../../assets/icons/arrows/right-arrow.png';
 import './_to-search-btn.scss';
 
 const ToSearchButton = () => {
   return (
-    <div className="to-search-button-container">
-      <Link to='/search' className="btn-wrapper">
-        <button className="to-search-btn">Search Now</button>
-        <div className="right-arrow-icon" style={{ backgroundImage: `url(${RightArrowIcon})`}}></div>
+    <div className="to-search-btn-container">
+      <Link to='/search' className="to-search-link-wrapper">
+        <button className="to-search-btn">Search</button>
       </Link>
     </div>
   )

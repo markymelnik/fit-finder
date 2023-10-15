@@ -1,32 +1,48 @@
 @import '@styles/colors';
 @import '@styles/mixins';
+@import '@styles/transitions';
 
-.to-search-button-container {
+.to-search-btn-container {
   display: flex;
+  justify-content: center;
   width: auto;
   margin: 3rem 0;
 
-  .btn-wrapper {
+  .to-search-link-wrapper {
     text-decoration: none;
     display: flex;
     gap: 0.75rem;
 
-    .right-arrow-icon {
-      height: 1.35rem;
-      width: 1.35rem;
-      background-size: 1.35rem 1.35rem;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: transparent;
-    }
-
     .to-search-btn {
-      font-size: 1.5rem;
-      color: map-get($theme, 'black');
-      line-height: 1;
-      padding: 0 0 0.5rem;
+      width: 12rem;
+      font-size: 1rem;
+      background-color: map-get($grey, 'darker');
+      color: map-get($theme, 'white');
+      border: none;
+      border-radius: 6px;
+      padding: 0.75rem 2rem;
 
-      @include underline-animation('ltr');
+      @include smooth-hover(background-color);
+
+      &:hover {
+        cursor: pointer;
+        background-color: lighten(map-get($grey, 'darker'), 5%);
+      }
+    
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .to-search-btn-container {
+
+    justify-content: left;
+
+    .to-search-link-wrapper {
+
+      .to-search-btn {
+        width: 8rem;
+      }
     }
   }
 }
