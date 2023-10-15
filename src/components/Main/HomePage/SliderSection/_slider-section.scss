@@ -8,28 +8,27 @@
   padding: 5rem 5%;
   background-color: map-get($theme, 'white');
 
-  .slider-top {
+  .slider-top-details {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin: 0 0 1.5rem;
 
-    .slider-text {
+    .slider-top-left-text {
       display: flex;
       flex-direction: column;
       gap: 0.25rem;
 
-      .slider-header {
-        font-weight: 400;
+      .slider-header { 
         align-self: flex-start;
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         color: map-get($theme, 'black');
+        font-weight: 500;
       }
       
       .slider-subheader {
-        font-weight: 400;
         align-self: flex-start;
-        font-size: 1.25rem;
+        font-size: 1rem;
         color: map-get($grey, 'neutral');
       }
     }
@@ -40,15 +39,16 @@
   .slider-section-container {
     padding: 8rem 10% 8rem;
 
-    .slider-top {
+    .slider-top-details {
+      margin: 0 0 1.25rem;
 
-      .slider-text {
+      .slider-top-left-text {
 
         .slider-header {
-          font-size: 2.25rem;
+          font-size: 1.75rem;
         }
         .slider-subheader {
-          font-size: 1.5rem;
+          font-size: 1.25rem;
         }
       }
     }

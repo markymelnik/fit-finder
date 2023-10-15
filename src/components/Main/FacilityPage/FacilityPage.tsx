@@ -15,7 +15,6 @@ const FacilityPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
 
-  const isMobile = useSelector((state: RootState) => state.viewport.isMobile);
   const selectedFacility = useSelector((state: RootState) => state.selectedFacility.facilityData);
 
   useEffect(() => {
@@ -29,7 +28,7 @@ const FacilityPage = () => {
       <FacilityName />
       <PhotoSection />
       <DataSection />
-      {!isMobile && <BackButton />}
+      <BackButton />
     </main>
   );
 };

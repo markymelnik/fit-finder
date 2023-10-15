@@ -52,10 +52,10 @@ const SliderSection = () => {
 
   return (
     <div className='slider-section-container'>
-      <div className="slider-top">
-        <div className="slider-text">
+      <div className="slider-top-details">
+        <div className="slider-top-left-text">
           <h2 className='slider-header'>Locations in New York City</h2>
-          <h5 className='slider-subheader'>Discover & Explore</h5>
+          <div className='slider-subheader'>Discover & Explore</div>
         </div>
        {!isMobile && <SliderScrollButtons scrollLeft={scrollLeft} scrollRight={scrollRight} />}
       </div>

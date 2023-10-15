@@ -19,7 +19,7 @@ const SliderDisplay = ({ sliderRef }: any) => {
 
   const fetchRandomFacilities = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/api/facility/random`);
+      const response = await fetch(`${import.meta.env.VITE_FFA_BE_URL}/api/facility/random`);
 
       if (!response.ok) {
         throw new Error('Network response was not OK')
