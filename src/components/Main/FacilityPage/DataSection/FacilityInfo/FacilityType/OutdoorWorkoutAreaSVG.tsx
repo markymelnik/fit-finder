@@ -1,6 +1,12 @@
 const OutdoorWorkoutAreaSVG = () => {
   return (
-    <svg viewBox="0 -1 20 20" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+    <svg
+      viewBox="0 -1 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+      height="200px"
+      width="200px"
+      fill="#000000"
+    >
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g
         id="SVGRepo_tracerCarrier"

@@ -18,29 +18,23 @@
 
     .account-favorites-header {
       font-size: 1.25rem;
-      font-weight: 500;
+      font-weight: 400;
       color: map-get($grey, 'darker');
     }
 
     .account-favorites-count {
       display: flex;
       align-items: center;
-      font-size: 1rem;
 
-      .favorite-count {
-        font-size: 1.25rem;
+      .favorite-count,
+      .favorite-slash,
+      .favorite-cap {
+        font-size: 1.1rem;
         color: map-get($grey, 'darker');
       }
 
       .favorite-slash {
         padding: 0 0.4rem 0 0.5rem;
-        font-size: 1.25rem;
-        color: map-get($grey, 'darker');
-      }
-
-      .favorite-cap {
-        font-size: 1.25rem;
-        color: map-get($grey, 'darker');
       }
     }
   }
@@ -98,7 +92,13 @@
       }
 
       .account-favorites-count {
+        
+        .favorite-count,
+      .favorite-slash,
+      .favorite-cap {
         font-size: 1.25rem;
+  
+      }
       }
     }
 

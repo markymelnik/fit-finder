@@ -1,6 +1,8 @@
 const RecreationCenterSVG = () => {
   return (
     <svg
+      height="200px"
+      width="200px"
       viewBox="0 0 24 24"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"

@@ -61,10 +61,9 @@
       width: 2rem;
       background-color: transparent;
       border: 1px solid map-get($theme, 'black');
-      border-radius: 50px;
+      border-radius: 50%;
 
       .account-menu-photo-letter {
-        padding: 0.2rem 0 0;
         font-size: 1.1rem;
       }
     }
@@ -139,7 +138,7 @@
     }
 
     .dropdown-login-btn {
-      font-weight: 600;
+      font-weight: 500;
     }
   }
 }

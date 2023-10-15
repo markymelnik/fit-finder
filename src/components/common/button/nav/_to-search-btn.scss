@@ -14,7 +14,7 @@
     gap: 0.75rem;
 
     .to-search-btn {
-      width: 12rem;
+      width: 10rem;
       font-size: 1rem;
       background-color: map-get($grey, 'darker');
       color: map-get($theme, 'white');
@@ -35,14 +35,6 @@
 
 @media (min-width: 768px) {
   .to-search-btn-container {
-
     justify-content: left;
-
-    .to-search-link-wrapper {
-
-      .to-search-btn {
-        width: 8rem;
-      }
-    }
   }
 }

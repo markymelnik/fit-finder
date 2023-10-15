@@ -8,8 +8,8 @@ const MartialArtsCenterSVG = () => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 536.138 536.138"
       xmlSpace="preserve"
-      stroke="#000000"
-      strokeWidth="0.005361380000000001"
+      height="200px"
+      width="200px"
     >
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g

@@ -1,33 +1,34 @@
 @import '@styles/colors';
 @import '@styles/transitions';
+@import '@styles/mixins';
 
 .about-section-container {
   position: relative;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include center-elements(column);
   padding: 5rem 5%;
-  gap: 1.75rem;
   background-color: map-get($theme, 'white');
 
   .about-section-top {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    margin-bottom: 2rem;
+    @include center-elements(column);
+    margin: 0 0 3rem;
     z-index: 1;
 
     .about-section-title,
     .about-section-subtitle {
-      display: flex;
-      font-size: 1.75rem;
-      font-weight: 400;
       color: map-get($theme, 'black');
+      text-align: center;
+      line-height: 2rem;
+      font-weight: 350;
+    }
+
+    .about-section-title {
+      font-size: 1.5rem;
+      margin: 0 0 2rem;
     }
 
     .about-section-subtitle {
-      font-weight: 500;
+      font-size: 1.5rem;
     }
   }
 
@@ -44,21 +45,20 @@
       .row-text {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.25rem;
         margin-top: 2rem;
 
         .row-title {
-          font-size: 1.5rem;
-          font-weight: 400;
+          font-size: 1.25rem;
           color: map-get($theme, 'black');
         }
 
         .row-description {
-          font-size: 1.15rem;
+          font-size: 1.1rem;
           line-height: 1.6;
           color: map-get($grey, 'dark');
           border-left: 2px solid map-get($grey, 'darker');
-          padding: 0 0 0 1.5rem;
+          padding: 0 0 0 1rem;
         }
       }
     }
@@ -75,21 +75,20 @@
         min-width: 325px;
         margin-top: 1rem;
         overflow: hidden;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
         z-index: 1;
-        border: 1.5px solid map-get($grey, 'dark');
-        border-radius: 6px;
+        border: 1px solid map-get($theme, 'black');
+        border-radius: 4px;
         
         @include smooth-hover(transform);
-        
 
         &:hover {
           cursor: pointer;
-          transform: scale(1.025) rotate(2deg);
+          transform: scale(1.015) rotate(2deg);
         }
 
         &:active {
-          transform: scale(0.975) rotate(2deg);
+          transform: scale(0.985) rotate(2deg);
         }
 
         img {
@@ -108,25 +107,25 @@
 
 @media (min-width: 768px) {
   .about-section-container {
-    padding: 8rem 10%;
-    gap: 5rem;
+    padding: 7rem 10% 8rem;
 
     .about-section-top {
       align-items: center;
-      gap: 2.5rem;
+      margin: 0 0 7rem;
 
-      .about-section-title {
-        font-size: 2.5rem;
-      }
-
+      .about-section-title,
       .about-section-subtitle {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
+        
+      }
+      .about-section-title {
+        margin: 0 0 3.5rem;
       }
     }
 
     .about-section-row {
       flex-direction: row;
-      gap: 2.75rem;
+      gap: 3rem;
 
       .row-left {
         width: 50%;
@@ -134,11 +133,13 @@
         .row-text {
 
           .row-title {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
+            margin: 0 0 1rem;
           }
 
           .row-description {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
+            padding: 0 0 0 1.5rem;
           }
         }
       }

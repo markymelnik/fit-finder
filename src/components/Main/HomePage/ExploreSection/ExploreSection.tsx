@@ -53,7 +53,10 @@ const ExploreSection = () => {
 
   return (
     <div className="explore-section-container">
-      <div className="explore-section-title">Explore Categories</div>
+      <div className="explore-section-top">
+        <div className="explore-section-title">Explore Categories</div>
+        <div className="explore-section-subtitle">Click to search</div>
+      </div>
       <div className="explore-category-container">
         {categories.map((category) => (
           <ExploreCategory

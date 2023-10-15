@@ -10,7 +10,7 @@ const AboutSection = () => {
     <div className="about-section-container">
       <div className="about-section-top">
         <div className="about-section-title">Looking for a place to workout?</div>
-        <div className="about-section-subtitle">Find it with fitfinder.</div>
+        <div className="about-section-subtitle">Find it with <span>fitfinder</span>.</div>
       </div>
       <div className="about-section-row">
         <div className="row-left">

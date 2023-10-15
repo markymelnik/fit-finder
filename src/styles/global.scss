@@ -1,4 +1,4 @@
-$primary-font: 'Avenir';
+$primary-font: 'Outfit';
 $global-font-size: 16px;
 
 @font-face {
@@ -7,8 +7,8 @@ $global-font-size: 16px;
 }
 
 @font-face {
-  font-family: 'Sora';
-  src: url('../assets/fonts/Sora.ttf');
+  font-family: 'Outfit';
+  src: url('../assets/fonts/Outfit.ttf');
 }
 
 @font-face {
@@ -29,6 +29,7 @@ body {
 
 body, button, input {
   font-family: $primary-font;
+  font-weight: 300;
 }
 
 button, input {

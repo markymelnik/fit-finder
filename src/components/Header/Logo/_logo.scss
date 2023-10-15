@@ -10,7 +10,8 @@
 
 .logo-text {
   font-family: 'Comfortaa';
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+  font-weight: 400;
   color: map-get($theme, 'black');
 
   @include smooth-hover(transform);

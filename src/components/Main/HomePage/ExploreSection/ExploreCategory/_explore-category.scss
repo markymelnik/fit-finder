@@ -5,39 +5,39 @@
 .explore-category {
   @include center-elements;
   text-decoration: none;
-  padding: 1rem;
+  padding: 1rem 1.25rem;
   width: auto;
   height: auto;
   background-color: map-get($theme, 'white');
-  border: none;
   border: 1px solid map-get($grey, 'lighter');
-  border-radius: 8px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: 6px;
   z-index: 1;
-
-  @include smooth-hover(transform);
+  transition: 0.1s ease-in-out;
 
   &:hover {
-    transform: scale(1.025);
     cursor: pointer;
+    border: 1px solid map-get($grey, 'darker');
   }
 
   &:active {
-    transform: scale(0.975);
+    background-color: darken(map-get($theme, 'white'), 5%);
   }
 
   .category-text {
-    color: map-get($theme, 'black');
-    font-size: 1rem;
+    font-family: 'Outfit';
+    color: map-get($grey, 'darker');
+    font-size: 0.85rem;
   }
+
+  
 }
 
 @media (min-width: 768px) {
   .explore-category {
-    padding: 1.25rem;
+    padding: 1.25rem 1.5rem;
 
     .category-text {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
     }
   }
 }

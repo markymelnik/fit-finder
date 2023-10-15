@@ -3,13 +3,14 @@
 .account-details-container {
   display: flex;
   flex-direction: column;
-  padding: 2.5rem 2rem;
+  padding: 2rem;
   min-height: 500px;
 
   .account-details-header {
     font-size: 1.25rem;
-    font-weight: 500;
+    font-weight: 400;
     padding: 0 0 1.25rem;
+    
     color: map-get($grey, 'darker');
   }
 
@@ -27,8 +28,8 @@
       padding: 1rem;
   
       .account-details-title {
-        font-size: 0.9rem;
-        font-weight: 500;
+        font-size: 0.75rem;
+        font-weight: 400;
       }
   
       .account-name,
@@ -44,10 +45,12 @@
 @media (min-width: 768px) {
   .account-details-container {
     height: 100%;
+    padding: 3rem 2rem;
 
     .account-details-header {
       font-size: 1.75rem;
       padding: 0 0 2rem;
+      margin: 0 1rem;
     }
 
     .account-details-body {

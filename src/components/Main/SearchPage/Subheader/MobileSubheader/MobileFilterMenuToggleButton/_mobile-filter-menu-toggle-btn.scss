@@ -1,12 +1,12 @@
+@import '@styles/mixins';
+
 .mobile-filter-menu-toggle-btn {
-  height: 2.5rem;
-  width: 2.5rem;
+  @include center-elements;
   background-color: transparent;
   border: none;
-  margin-right: 0.25rem;
 
-  img {
-    height: 100%;
-    width: 100%;
+  svg {
+    height: 2.75rem;
+    width: 2.75rem;
   }
 }

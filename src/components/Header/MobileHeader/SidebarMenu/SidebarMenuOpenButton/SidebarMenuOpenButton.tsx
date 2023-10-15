@@ -1,10 +1,9 @@
 import { useDispatch } from "react-redux";
 
-import MobileMenuOpenIcon from '../../../../../assets/icons/mobile/mobile-menu-open-icon.png'
+import OpenButtonSVG from "./OpenButtonSVG";
 import { setIsSidebarMenuOpen } from "../../../../../redux/slices/sidebarMenuSlice";
 import { AppDispatch } from "../../../../../redux/store";
 import './_sidebar-menu-open-btn.scss';
-
 
 const SidebarMenuOpenButton = () => {
 
@@ -16,7 +15,7 @@ const SidebarMenuOpenButton = () => {
 
   return (
     <button onClick={handleButtonClick} className='sidebar-menu-open-btn'>
-      <img src={MobileMenuOpenIcon} />
+      <OpenButtonSVG />
     </button>
   );
 };

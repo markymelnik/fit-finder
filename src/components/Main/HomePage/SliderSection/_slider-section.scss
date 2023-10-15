@@ -23,7 +23,7 @@
         align-self: flex-start;
         font-size: 1.5rem;
         color: map-get($theme, 'black');
-        font-weight: 500;
+        font-weight: 350;
       }
       
       .slider-subheader {
@@ -45,8 +45,9 @@
       .slider-top-left-text {
 
         .slider-header {
-          font-size: 1.75rem;
+          font-size: 2rem;
         }
+
         .slider-subheader {
           font-size: 1.25rem;
         }

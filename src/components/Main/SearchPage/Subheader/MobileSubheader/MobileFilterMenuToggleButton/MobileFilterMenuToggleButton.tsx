@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 
-import FilterIcon from '../../../../../../assets/icons/search/filter-icon.png';
+import ToggleButtonSVG from './ToggleButtonSVG';
 import { setIsMobileFilterOpen } from '../../../../../../redux/slices/mobileFilterSlice';
 import { AppDispatch } from '../../../../../../redux/store';
 import './_mobile-filter-menu-toggle-btn.scss';
@@ -15,7 +15,7 @@ const MobileFilterMenuToggleButton = () => {
 
   return (
     <button  onClick={handleButtonClick} className='mobile-filter-menu-toggle-btn'>
-      <img src={FilterIcon}/>
+      <ToggleButtonSVG />
     </button>
   )
 };

@@ -31,7 +31,7 @@
     .mobile-filter-menu-title {
       @include center-elements;
       font-size: 1.25rem;
-      font-weight: 500;
+      font-weight: 450;
       padding: 0 0 0.15rem;
       color: map-get($theme, 'black');
     }
