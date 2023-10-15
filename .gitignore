@@ -13,8 +13,6 @@ dist-ssr
 .env
 *.local
 
-src/assets/photos/facility_primary/
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
