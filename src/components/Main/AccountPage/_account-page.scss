@@ -13,7 +13,6 @@
     font-size: 1.5rem;
     font-weight: 400;
     letter-spacing: 0.05rem;
-    color: map-get($theme, 'black');
     z-index: 1;
     align-self: center;
     margin: 0 0 1rem;
@@ -35,7 +34,6 @@
       .photo-container-letter {
         padding: 0.25rem 0 0;
         font-size: 2.5rem;
-        color: map-get($theme, 'black');
       }
     }
   }
@@ -53,7 +51,6 @@
       display: flex;
       flex-direction: column;
       flex: 1;
-      background-color: map-get($theme, 'white');
       border-radius: 8px;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       z-index: 1;

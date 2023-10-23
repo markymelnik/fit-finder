@@ -7,7 +7,6 @@
   height: 240px;
   width: 280px;
   border-radius: 6px;
-  background-color: map-get($theme, 'white');
   box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px;
   flex: 0 0 auto;
 
@@ -27,11 +26,10 @@
     @include center-elements;
     padding: 0.75rem;
     color: map-get($theme, 'white');
-    background-color: map-get($grey, 'darker');
-    text-decoration: none;
     border-radius: 6px;
     height: 3rem;
     width: 8rem;
+    background-color: map-get($grey, 'darker');
 
     @include smooth-hover(background-color);
 

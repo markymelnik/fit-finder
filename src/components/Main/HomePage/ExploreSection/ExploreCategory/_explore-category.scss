@@ -4,11 +4,9 @@
 
 .explore-category {
   @include center-elements;
-  text-decoration: none;
   padding: 1rem 1.25rem;
   width: auto;
   height: auto;
-  background-color: map-get($theme, 'white');
   border: 1px solid map-get($grey, 'lighter');
   border-radius: 6px;
   z-index: 1;

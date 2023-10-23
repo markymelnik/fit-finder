@@ -9,7 +9,6 @@
   align-items: center;
   height: 100%;
   width: clamp(300px, 100%, 575px);
-  background-color: map-get($theme, 'white');
   padding: 3rem 2rem;
   z-index: 10;
   border: none;

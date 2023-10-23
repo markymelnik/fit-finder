@@ -25,7 +25,6 @@
       display: flex;
       flex: 1;
       font-size: 1rem;
-      background-color: map-get($theme, 'white');
       color: map-get($grey, 'darker');
       padding: 0 0 0 1.2rem;
       border: none;
@@ -47,7 +46,6 @@
     .submit-input-btn-home {
       height: 100%;
       width: 55px;
-      background-color: map-get($theme, 'white');
       border: none;
       border-top-left-radius: 0px;
       border-bottom-left-radius: 0px;
@@ -74,8 +72,7 @@
       background-size: 0.8rem 0.8rem;
       background-repeat: no-repeat;
       background-position: center;
-      background-color: white;
-      border: 1px solid white;
+      border: 1px solid map-get($theme, 'white');
       border-radius: 25px;
       position: absolute;
       right: 4rem;

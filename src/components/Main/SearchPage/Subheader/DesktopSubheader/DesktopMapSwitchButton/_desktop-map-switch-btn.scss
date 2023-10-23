@@ -19,7 +19,6 @@
   .map-view {
     height: 100%;
     flex: 1;
-    background-color: map-get($theme, 'white');
     color: map-get($grey, 'darker');
     border: 1px solid map-get($grey, 'darker');
     font-size: 0.85rem;

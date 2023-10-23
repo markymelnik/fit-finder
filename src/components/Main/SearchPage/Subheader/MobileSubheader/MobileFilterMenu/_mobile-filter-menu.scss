@@ -12,11 +12,11 @@
   position: fixed;
   top: 0;
   right: 0;
-  background-color: map-get($theme, 'white');
   z-index: 12;
   transform: translateX(100%);
   transition: transform 0.3s ease;
   overflow-y: auto;
+  background-color: map-get($theme, 'white');
 
   &.active {
     transform: translateX(0);
@@ -33,14 +33,13 @@
       font-size: 1.25rem;
       font-weight: 450;
       padding: 0 0 0.15rem;
-      color: map-get($theme, 'black');
     }
   }
 
   .mobile-filter-done-btn-container {
     display: flex;
     justify-content: center;
-    margin: 1rem 0 2.5rem;
+    margin: 1.5rem 0 0;
 
     .mobile-filter-done-btn {
       font-size: 1rem;

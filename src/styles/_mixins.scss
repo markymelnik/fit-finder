@@ -8,7 +8,6 @@
 @mixin underline-animation($direction: 'ltr') {
   display: inline-block;
   border: none;
-  text-decoration: none;
   transition: background-size 0.5s;
 
   @if $direction == 'ltr' {

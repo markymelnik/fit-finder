@@ -6,7 +6,6 @@
   flex-direction: column;
   justify-content: center;
   padding: 5rem 5%;
-  background-color: map-get($theme, 'white');
 
   .slider-top-details {
     display: flex;
@@ -22,7 +21,6 @@
       .slider-header { 
         align-self: flex-start;
         font-size: 1.5rem;
-        color: map-get($theme, 'black');
         font-weight: 350;
       }
       

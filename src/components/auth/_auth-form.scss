@@ -21,12 +21,12 @@
     height: 100%;
     flex-direction: column;
     width: clamp(300px, 100%, 575px);
-    background-color: map-get($theme, 'white');
     padding: 1.5rem 2rem;
     z-index: 10;
     border: none;
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    background-color: map-get($theme, 'white');
 
     .auth-nav-tabs {
       display: flex;

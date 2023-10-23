@@ -1,10 +1,7 @@
 $primary-font: 'Outfit';
 $global-font-size: 16px;
 
-@font-face {
-  font-family: 'Avenir';
-  src: url('../assets/fonts/Avenir.otf');
-}
+@import './colors';
 
 @font-face {
   font-family: 'Outfit';
@@ -22,18 +19,21 @@ $global-font-size: 16px;
   padding: 0;
 }
 
-body {
+html {
   font-size: $global-font-size;
-  scrollbar-gutter: stable;
 }
 
-body, button, input {
-  font-family: $primary-font;
+body, header, button {
+  font-family: $primary-font, Arial, sans-serif;
+  background-color: map-get($theme, 'white');
+  color: map-get($theme, 'black');
+  scrollbar-gutter: stable;
   font-weight: 300;
 }
 
-button, input {
-  line-height: 1.5;
+a, button {
+  text-decoration: none;
+  color: inherit;
 }
 
 .site-container {

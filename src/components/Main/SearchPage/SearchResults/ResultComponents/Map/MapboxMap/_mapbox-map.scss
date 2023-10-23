@@ -52,7 +52,6 @@
           height: 2rem;
           width: 100%;
           border: none;
-          background-color: map-get($theme, 'white');
 
           @include smooth-hover(background-color);
 

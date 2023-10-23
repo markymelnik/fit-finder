@@ -8,7 +8,6 @@
   max-height: 345px;
   display: flex;
   flex-direction: column;
-  background-color: map-get($theme, 'white');
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.3) 1px 2px 3px;
   
@@ -22,12 +21,10 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    text-decoration: none;
     color: map-get($grey, 'darker');
 
     .facility-photo-container {
       flex: 1;
-      background-color: map-get($theme, 'white');
       overflow: hidden;
       border-top-left-radius: 6px;
       border-top-right-radius: 6px;
@@ -58,7 +55,6 @@
         flex: 1;
         flex-direction: column;
         border: none;
-        color: map-get($theme, 'black');
 
         .facility-card-info-top {
           display: flex;

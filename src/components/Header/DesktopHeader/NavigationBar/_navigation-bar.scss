@@ -12,11 +12,9 @@
   
     .about-link {
       @include center-elements;
-      text-decoration: none;
       height: calc(2.6rem + 1px);
       width: 5.5rem;
       padding: 0.7rem;
-      background-color: map-get($theme, 'white');
       border: none;
       border-radius: 50px;
     
@@ -30,7 +28,6 @@
       .about-link-text {
         font-size: 1rem;
         font-weight: 400;
-        color: map-get($theme, 'black');
       }
     }
   }

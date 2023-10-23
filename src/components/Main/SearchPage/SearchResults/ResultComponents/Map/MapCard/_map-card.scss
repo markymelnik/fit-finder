@@ -6,13 +6,11 @@
   display: flex;
   width: 320px;
   height: 120px;
-  text-decoration: none;
   position: absolute;
   bottom: 0.65rem;
   left: 50%;
   transform: translateX(-50%);
   color: map-get($grey, 'darker');
-  background-color: map-get($theme, 'white');
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
   border-top-right-radius: 6px;
@@ -51,8 +49,6 @@
     padding: 0.5rem;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
-    color: map-get($theme, 'black');
-    background-color: map-get($theme, 'white');
     overflow: hidden;
 
     @include smooth-hover(background-color);
