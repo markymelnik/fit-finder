@@ -16,6 +16,7 @@
   transform: translateX(-100%);
   transition: transform 0.3s ease;
   padding: 1rem 0;
+  background-color: map-get($theme, 'white');
 
   &.active {
     transform: translateX(0);
@@ -48,13 +49,10 @@
       display: flex;
       flex-direction: column;
 
-      .about-link {
+      .about-link,
+      .home-link {
         padding: 1.25rem;
-
-        .about-link-text {
-          line-height: 1;
-          font-size: 1rem;
-        }
+        font-size: 1rem;
       }
 
       .account-link {

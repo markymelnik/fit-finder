@@ -25,10 +25,10 @@ const FacilityPage = () => {
 
   return (
     <main className="facility-page-container">
+      <BackButton />
       <FacilityName />
       <PhotoSection />
       <DataSection />
-      <BackButton />
     </main>
   );
 };

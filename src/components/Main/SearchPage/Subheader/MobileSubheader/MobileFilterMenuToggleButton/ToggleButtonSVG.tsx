@@ -16,12 +16,13 @@ const ToggleButtonSVG = () => {
             stroke="#000000"
             strokeLinecap="round"
             strokeLinejoin="round"
+            strokeWidth="0.8"
           >
             {" "}
             <path d="m14.25 9v-6.5"></path> <path d="m14.25 18.5v-4.5"></path>{" "}
-            <circle cx="14.25" cy="11.5" r="2.5"></circle>{" "}
+            <circle cx="14.25" cy="11.5" r="2.25"></circle>{" "}
             <path d="m7.25 5v-2.5"></path> <path d="m7.25 18.5v-8.5"></path>{" "}
-            <circle cx="7.25" cy="7.5" r="2.5"></circle>{" "}
+            <circle cx="7.25" cy="7.5" r="2.25"></circle>{" "}
           </g>{" "}
         </g>
       </g>

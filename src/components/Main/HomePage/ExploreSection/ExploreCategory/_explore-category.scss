@@ -4,7 +4,7 @@
 
 .explore-category {
   @include center-elements;
-  padding: 1rem 1.25rem;
+  padding: 1.25rem 1.5rem;
   width: auto;
   height: auto;
   border: 1px solid map-get($grey, 'lighter');
@@ -24,7 +24,7 @@
   .category-text {
     font-family: 'Outfit';
     color: map-get($grey, 'darker');
-    font-size: 0.85rem;
+    font-size: 0.95rem;
   }
 
   

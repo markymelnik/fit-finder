@@ -14,17 +14,17 @@
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 0 3rem;
+    margin: 0 0 4rem;
 
     .explore-section-title {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       margin: 0 0 0.5rem;
       font-weight: 350;
     }
   
     .explore-section-subtitle {
       color: map-get($grey, 'neutral');
-      font-size: 1rem;
+      font-size: 1.25rem;
     }
   }
 
@@ -43,14 +43,14 @@
     padding: 6rem 10% 8rem;
 
     .explore-section-top {
-      margin: 0 0 4rem;
+      margin: 0 0 5rem;
 
       .explore-section-title {
         font-size: 2.25rem;
       }
 
       .explore-section-subtitle {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
       }
     }
 

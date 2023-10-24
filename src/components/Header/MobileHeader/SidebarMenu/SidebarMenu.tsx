@@ -11,6 +11,7 @@ import TintedOverlay from "../../../common/TintedOverlay/TintedOverlay";
 import AccountLink from "../../DesktopHeader/AccountMenu/AccountLink";
 import AboutLink from "../../DesktopHeader/NavigationBar/AboutLink";
 import './_sidebar-menu.scss';
+import HomeLink from "../../DesktopHeader/NavigationBar/HomeLink";
 
 const SidebarMenu = () => {
 
@@ -35,6 +36,8 @@ const SidebarMenu = () => {
           </div>
           <SidebarMenuDivider />
           <div className="sidebar-menu-link">
+            <HomeLink customClass='home-link' />
+            <SidebarMenuDivider />
             <AboutLink customClass='about-link'/>
             <SidebarMenuDivider />
             {isLoggedIn && userAccountDetails && (

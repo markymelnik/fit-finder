@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { AppDispatch } from "../../../../redux/store";
+
 import { setIsSidebarMenuOpen } from "../../../../redux/slices/sidebarMenuSlice";
+import { AppDispatch } from "../../../../redux/store";
 
 type AboutLinkProps = {
   customClass: string;
@@ -32,9 +33,7 @@ const AboutLink = ({ customClass }: AboutLinkProps) => {
   };
 
   return (
-    <div className={customClass} onClick={handleAboutButtonClick}>
-      <div className={`${customClass}-text`}>About</div>
-    </div>
+    <div className={customClass} onClick={handleAboutButtonClick}>About</div>
   )
 }
 

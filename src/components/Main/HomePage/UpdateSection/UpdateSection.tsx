@@ -22,7 +22,10 @@ const UpdateSection = () => {
 
   return (
     <div className="update-section-container">
-      <div className="update-section-title">Recent Additions</div>
+      <div className="update-section-top">
+        <div className="update-section-title">Recent Additions</div>
+        <div className="update-section-subtitle">{`See what's new!`}</div>
+      </div>
       <div className="updates-container">
         <div className="update-box box-1">
           <div className="update-box-title">Fully Responsive</div>
@@ -40,9 +43,9 @@ const UpdateSection = () => {
           <p className="update-box-description">
             Explore 123 newly-added outdoor fitness areas across all 5 boroughs.
             Situated within New York City public parks, these fitness zones are
-            free to use. They feature equipment such as pull up
-            bars, parallel bars, incline benches, and more. Use our interactive
-            map to pinpoint their exact location!
+            free to use. They feature equipment such as pull up bars, parallel
+            bars, incline benches, and more. Use our interactive map to pinpoint
+            their exact location!
           </p>
           <div className="outdoor-fitness-area-search-link">
             <span onClick={handleOutdoorFitnessAreaLinkClick}>

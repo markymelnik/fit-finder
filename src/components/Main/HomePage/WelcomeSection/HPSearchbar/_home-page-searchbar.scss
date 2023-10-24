@@ -6,7 +6,7 @@
   height: 60px;
   width: 20rem;
   position: absolute;
-  top: 42vh;
+  top: 36vh;
   left: 50%;
   transform: translateX(-50%);
   @include center-elements;
@@ -98,7 +98,7 @@
 
       input {
         padding: 0.15rem 0 0 1.25rem;
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
   
       .submit-input-btn-home {
