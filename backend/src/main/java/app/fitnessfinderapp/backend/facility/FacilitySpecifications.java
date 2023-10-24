@@ -10,6 +10,8 @@ import app.fitnessfinderapp.backend.neighborhood.Neighborhood;
 import app.fitnessfinderapp.backend.offering.Offering;
 import jakarta.persistence.criteria.Join;
 import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
+import jakarta.persistence.criteria.Subquery;
 
 public class FacilitySpecifications {
  
@@ -45,21 +47,47 @@ public class FacilitySpecifications {
 
   public static Specification<Facility> hasAmenities(Set<String> amenities) {
     return (facility, cq, cb) -> {
-      if (amenities == null || amenities.isEmpty()) {
-        return null;
-      }
-      Join<Facility, Amenity> join = facility.join("amenities");
-      return cb.and(join.get("name").in(amenities));
+        if (amenities == null || amenities.isEmpty()) {
+            return null;
+        }
+
+        Subquery<Long> subquery = cq.subquery(Long.class);
+        Root<Facility> subRoot = subquery.from(Facility.class);
+        Join<Facility, Amenity> subJoin = subRoot.join("amenities");
+        subquery.select(subRoot.get("id")).where(subJoin.get("name").in(amenities));
+
+        return cb.in(facility.get("id")).value(subquery);
     };
   }
 
   public static Specification<Facility> hasOfferings(Set<String> offerings) {
     return (facility, cq, cb) -> {
-      if (offerings == null || offerings.isEmpty()) {
-        return null;
-      }
-      Join<Facility, Offering> join = facility.join("offerings");
-      return cb.and(join.get("name").in(offerings));
+        if (offerings == null || offerings.isEmpty()) {
+            return null;
+        }
+
+        Subquery<Long> subquery = cq.subquery(Long.class);
+        Root<Facility> subRoot = subquery.from(Facility.class);
+        Join<Facility, Offering> subJoin = subRoot.join("offerings");
+        subquery.select(subRoot.get("id")).where(subJoin.get("name").in(offerings));
+
+        return cb.in(facility.get("id")).value(subquery);
+    };
+  }
+
+  public static Specification<Facility> hasAmenitiesOrOfferings(Set<String> amenities, Set<String> offerings) {
+    return (facility, cq, cb) -> {
+        Predicate amenityPredicate = hasAmenities(amenities).toPredicate(facility, cq, cb);
+        Predicate offeringPredicate = hasOfferings(offerings).toPredicate(facility, cq, cb);
+        
+        if (amenityPredicate == null && offeringPredicate == null) {
+            return null;
+        } else if (amenityPredicate == null) {
+            return offeringPredicate;
+        } else if (offeringPredicate == null) {
+            return amenityPredicate;
+        }
+        return cb.or(amenityPredicate, offeringPredicate);
     };
   }
 }

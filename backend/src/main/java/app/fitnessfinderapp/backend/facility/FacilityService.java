@@ -33,8 +33,7 @@ public class FacilityService {
     Specification<Facility> spec = Specification
         .where(FacilitySpecifications.hasKeyword(enteredKeyword))
         .and(FacilitySpecifications.hasFacilityTypes(facilityTypes))
-        .and(FacilitySpecifications.hasAmenities(amenities))
-        .and(FacilitySpecifications.hasOfferings(offerings));
+        .and(FacilitySpecifications.hasAmenitiesOrOfferings(amenities, offerings));
 
     return facilityRepository.findAll(spec, pageable);
   }
@@ -43,8 +42,7 @@ public class FacilityService {
     Specification<Facility> spec = Specification
         .where(FacilitySpecifications.hasKeyword(enteredKeyword))
         .and(FacilitySpecifications.hasFacilityTypes(facilityTypes))
-        .and(FacilitySpecifications.hasAmenities(amenities))
-        .and(FacilitySpecifications.hasOfferings(offerings));
+        .and(FacilitySpecifications.hasAmenitiesOrOfferings(amenities, offerings));
 
     return facilityRepository.findAll(spec);
   }
