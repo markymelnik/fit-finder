@@ -1,12 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { fetchFacilitiesByParameters } from "../redux/apiRequests";
-import { acknowledgeUpdate, unsetResetFlag } from "../redux/slices/filterSlice";
-import { resetPagination } from "../redux/slices/paginationSlice";
+import { unsetResetFlag } from "../redux/slices/filterSlice";
 import { AppDispatch, RootState } from "../redux/store";
 
 const useFacilitySearch = () => {
@@ -18,9 +17,10 @@ const useFacilitySearch = () => {
   const selectedFacilityTypes = useSelector((state: RootState) => state.filters.selectedFacilityTypes);
   const selectedAmenities = useSelector((state: RootState) => state.filters.selectedAmenities);
   const selectedOfferings = useSelector((state: RootState) => state.filters.selectedOfferings);
-  const hasUpdated = useSelector((state: RootState) => state.filters.hasUpdated);
   const isReset = useSelector((state: RootState) => state.filters.isReset);
   const currentPage = useSelector((state: RootState) => state.pagination.currentPage);
+
+  const prevPageRef = useRef(currentPage);
 
   useEffect(() => {
     if (isReset) {
@@ -30,18 +30,11 @@ const useFacilitySearch = () => {
   }, [isReset]);
 
   useEffect(() => {
-    if (hasUpdated) {
-      executeSearch(currentPage);
-      dispatch(resetPagination());
-      dispatch(acknowledgeUpdate());
-    }
-  }, [hasUpdated]);
-
-  useEffect(() => {
-    if (location.pathname === "/search") {
+    if (location.pathname === "/search" && prevPageRef.current !== currentPage) {
       executeSearch(currentPage);
     }
-  }, [currentPage]);
+    prevPageRef.current = currentPage;
+  }, [location.pathname, currentPage]);
 
   const executeSearch = (page: number = 1) => {
 
@@ -69,9 +62,16 @@ const useFacilitySearch = () => {
       );
     }
 
-    dispatch(fetchFacilitiesByParameters(enteredKeyword, selectedFacilityTypes, selectedAmenities, selectedOfferings, page, 12));
+    if (
+      !enteredKeyword.trim() &&
+      !selectedFacilityTypes.length &&
+      !selectedAmenities.length &&
+      !selectedOfferings.length
+    ) {
+      queryParams.push(`all`);
+    }
 
-    dispatch(acknowledgeUpdate());
+    dispatch(fetchFacilitiesByParameters(enteredKeyword, selectedFacilityTypes, selectedAmenities, selectedOfferings, page, 12));
 
     navigate(`/search?${queryParams.join('&')}`);
 

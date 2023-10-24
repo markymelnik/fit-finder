@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
+import useFacilitySearch from "../../../../../../../hooks/useFacilitySearch";
 import { AppDispatch, RootState } from "../../../../../../../redux/store";
 import './_mobile-filter-options.scss';
 
 interface MobileFilterOptionsProps {
-  fetchAllOptionsFromDatabase: () => any;
   fetchAllOptionsFromGlobalState: (state: RootState) => any;
   setSelectedOptions: (items: string[]) => any;
   fetchSelectedOptions: (state: RootState) => string[];
@@ -15,17 +14,18 @@ interface MobileFilterOptionsProps {
   categoryTitle: string;
 }
 
-const MobileFilterOptions = ({ fetchAllOptionsFromDatabase, fetchAllOptionsFromGlobalState, setSelectedOptions, fetchSelectedOptions, categoryTitle }: MobileFilterOptionsProps) => {
+const MobileFilterOptions = ({ fetchAllOptionsFromGlobalState, setSelectedOptions, fetchSelectedOptions, categoryTitle }: MobileFilterOptionsProps) => {
 
   const dispatch = useDispatch<AppDispatch>();
-
-  useEffect(() => {
-    dispatch(fetchAllOptionsFromDatabase());
-  }, [dispatch, fetchAllOptionsFromDatabase])
+  const { executeSearch } = useFacilitySearch();
 
   const allFetchedOptions = useSelector(fetchAllOptionsFromGlobalState);
   const allOptions = allFetchedOptions.allIds.map((id: number) => allFetchedOptions.byIds[id].name);
   const globalCheckedOptions = useSelector(fetchSelectedOptions);
+
+  useEffect(() => {
+    executeSearch();
+  }, [globalCheckedOptions]);
 
   const handleCheckboxChange = (newlyCheckedOption: string) => {
 

@@ -1,23 +1,26 @@
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import GymSVG from "./GymSVG";
 import OutdoorParkSVG from "./OutdoorParkSVG";
 import PhoneSVG from "./PhoneSVG";
-import { setEnteredKeyword, setSelectedFacilityTypes, signalUpdate } from "../../../../redux/slices/filterSlice";
+import { setEnteredKeyword, setSelectedFacilityTypes } from "../../../../redux/slices/filterSlice";
 import { AppDispatch } from "../../../../redux/store";
 import "./_update-section.scss";
 
 const UpdateSection = () => {
 
   const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
 
   const handleBrooklynSearchLinkClick = () => {
     dispatch(setEnteredKeyword("Brooklyn"));
-    dispatch(signalUpdate());
-  };
+    navigate('search');
+  };  
 
   const handleOutdoorFitnessAreaLinkClick = () => {
     dispatch(setSelectedFacilityTypes(["Outdoor Workout Area"]));
+    navigate('search');
   }
 
   return (

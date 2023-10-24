@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import ExploreCategory from "./ExploreCategory/ExploreCategory";
 import { setSelectedAmenities, setSelectedFacilityTypes, setSelectedOfferings } from "../../../../redux/slices/filterSlice";
@@ -8,6 +9,7 @@ import "./_explore-section.scss";
 const ExploreSection = () => {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const typeCategory = [
     "Outdoor Workout Area",
@@ -47,6 +49,7 @@ const ExploreSection = () => {
       default:
         break;
     }
+    navigate('search');
   }
 
   const categories = shuffleArray([...typeCategory, ...amenityCategory, ...offeringCategory]);

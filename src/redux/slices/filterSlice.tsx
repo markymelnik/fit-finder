@@ -5,7 +5,6 @@ interface FilterState {
   selectedFacilityTypes: string[];
   selectedAmenities: string[];
   selectedOfferings: string[];
-  hasUpdated: boolean;
   isReset: boolean;
 }
 
@@ -14,7 +13,6 @@ const initialFilterState: FilterState = {
   selectedFacilityTypes: [],
   selectedAmenities: [],
   selectedOfferings: [],
-  hasUpdated: false,
   isReset: false,
 }
 
@@ -27,22 +25,23 @@ const filterSlice = createSlice({
     },
     setSelectedFacilityTypes: (state, action: PayloadAction<string[]>) => {
       state.selectedFacilityTypes = action.payload;
-      state.hasUpdated = true;
     },
     setSelectedAmenities: (state, action: PayloadAction<string[]>) => {
       state.selectedAmenities = action.payload;
-      state.hasUpdated = true;
     },
     setSelectedOfferings: (state, action: PayloadAction<string[]>) => {
       state.selectedOfferings = action.payload;
-      state.hasUpdated = true;
     },
-    signalUpdate: (state) => {
-      state.hasUpdated = true;
+    resetSelectedFacilityTypes: (state) => {
+      state.selectedFacilityTypes = initialFilterState.selectedFacilityTypes;
     },
-    acknowledgeUpdate: (state) => {
-      state.hasUpdated = false;
+    resetSelectedAmenities: (state) => {
+      state.selectedAmenities = initialFilterState.selectedAmenities;
     },
+    resetSelectedOfferings: (state) => {
+      state.selectedOfferings = initialFilterState.selectedOfferings;
+    },
+    
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     resetAllFilters: (_state) => {
       return {
@@ -61,8 +60,9 @@ export const {
   setSelectedFacilityTypes,
   setSelectedAmenities,
   setSelectedOfferings,
-  signalUpdate,
-  acknowledgeUpdate,
+  resetSelectedFacilityTypes,
+  resetSelectedAmenities,
+  resetSelectedOfferings,
   resetAllFilters,
   unsetResetFlag,
 } = filterSlice.actions;

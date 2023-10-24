@@ -1,5 +1,6 @@
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+
+import { useDispatch, useSelector } from "react-redux";
 
 import MobileFilterOptions from "./MobileFilterOptions/MobileFilterOptions";
 import { fetchAllAmenities, fetchAllFacilityTypes, fetchAllOfferings } from "../../../../../../redux/apiRequests";
@@ -14,6 +15,21 @@ const MobileFilterMenu = () => {
 
   const dispatch = useDispatch<AppDispatch>();
   const isMobileFilterOpen = useSelector((state: RootState) => state.mobileFilter.isMobileFilterOpen);
+  const facilityTypes = useSelector((state: RootState) => state.facilityTypes);
+  const amenities = useSelector((state: RootState) => state.amenities);
+  const offerings = useSelector((state: RootState) => state.offerings);
+
+  useEffect(() => {
+    if (!facilityTypes.allIds.length) {
+      dispatch(fetchAllFacilityTypes());
+    }
+    if (!amenities.allIds.length) {
+      dispatch(fetchAllAmenities());
+    }
+    if (!offerings.allIds.length) {
+      dispatch(fetchAllOfferings());
+    }
+  }, [dispatch]);
 
   const handleCloseMobileFilter = () => {
     dispatch(setIsMobileFilterOpen(false));
@@ -27,7 +43,6 @@ const MobileFilterMenu = () => {
         <ResetFiltersButton customClass='mobile-filter-reset-btn' buttonText='RESET' />
       </div>
         <MobileFilterOptions 
-          fetchAllOptionsFromDatabase={fetchAllFacilityTypes}
           fetchAllOptionsFromGlobalState={(state) => state.facilityTypes}
           setSelectedOptions={setSelectedFacilityTypes}
           fetchSelectedOptions={(state) => state.filters.selectedFacilityTypes}
@@ -35,7 +50,6 @@ const MobileFilterMenu = () => {
           categoryTitle={'FACILITY TYPES'}
         />
         <MobileFilterOptions 
-          fetchAllOptionsFromDatabase={fetchAllAmenities}
           fetchAllOptionsFromGlobalState={(state) => state.amenities}
           setSelectedOptions={setSelectedAmenities}
           fetchSelectedOptions={(state) => state.filters.selectedAmenities}
@@ -43,7 +57,6 @@ const MobileFilterMenu = () => {
           categoryTitle={'AMENITIES'}
         />
         <MobileFilterOptions 
-          fetchAllOptionsFromDatabase={fetchAllOfferings}
           fetchAllOptionsFromGlobalState={(state) => state.offerings}
           setSelectedOptions={setSelectedOfferings}
           fetchSelectedOptions={(state) => state.filters.selectedOfferings}
