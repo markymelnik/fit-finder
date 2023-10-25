@@ -42,7 +42,7 @@ const UpdateSection = () => {
           </div>
         </div>
         <div className="update-box box-2">
-          <div className="update-box-title">Outdoor Fitness Areas in NYC</div>
+          <div className="update-box-title">Outdoor Fitness Areas</div>
           <p className="update-box-description">
             Explore 123 newly-added outdoor fitness areas across all 5 boroughs.
             Situated within New York City public parks, these fitness zones are

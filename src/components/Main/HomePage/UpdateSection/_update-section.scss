@@ -13,7 +13,7 @@
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 0 4rem;
+    margin: 0 0 3rem;
 
     .update-section-title {
       font-size: 1.75rem;
@@ -29,25 +29,24 @@
 
   .updates-container {
     position: relative;
-    display: grid;
-    grid-row-gap: 5rem;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 
     .update-box {
       position: relative;
-      width: 100%;
       display: flex;
       flex-direction: column;
       padding: 2.5rem;
       border: 1px solid map-get($grey, 'lighter');
       border-radius: 10px;
       border-bottom: 4px solid map-get($grey, 'darker');
-
+      
       .update-box-title {
-        width: 80%;
         font-size: 1.35rem;
         margin: 0 0 2rem;
         font-weight: 350;
+        z-index: 1;
       }
 
       .update-box-description {
@@ -133,11 +132,11 @@
         font-size: 1.5rem;
       }
     }
-    .updates-container {
-      grid-row-gap: 5rem;
 
+    .updates-container {
+      
+      
       .update-box {
-        width: 55%;
 
         .update-box-title {
           font-size: 1.5rem;
@@ -154,6 +153,24 @@
             width: 3rem;
           }
         }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .update-section-container {
+
+    .update-section-top {
+      margin: 0 0 5rem;
+    }
+    
+    .updates-container {
+      flex-direction: row;
+      gap: 3rem;
+
+      .update-box {
+        flex: 1;
       }
     }
   }

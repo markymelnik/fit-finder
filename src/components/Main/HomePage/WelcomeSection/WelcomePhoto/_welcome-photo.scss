@@ -1,7 +1,7 @@
 @import '@styles/mixins';
 
-.home-page-welcome-photo-container {
-  height: 60vh;
+.home-page-welcome-photo {
+  height: 48vh;
   width: 100%;
   @include center-elements;
   
@@ -10,6 +10,12 @@
     width: 100vw;
     object-fit: cover;
     filter: brightness(0.4);
+  }
+}
+
+@media (min-width: 768px) {
+  .home-page-welcome-photo{
+    height: 54vh;
   }
 }
 

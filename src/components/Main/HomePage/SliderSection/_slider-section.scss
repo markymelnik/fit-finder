@@ -1,11 +1,12 @@
 @import '@styles/colors';
+@import '@styles/mixins';
 
 .slider-section-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem 5%;
+  padding: 2rem 5% 1.5rem;
 
   .slider-top-details {
     display: flex;
@@ -35,21 +36,25 @@
 
 @media (min-width: 768px) {
   .slider-section-container {
-    padding: 8rem 10% 8rem;
+    padding: 3rem 10% 2rem;
 
     .slider-top-details {
-      margin: 0 0 1.25rem;
+      margin: 0 0 0.5rem;
 
       .slider-top-left-text {
 
         .slider-header {
-          font-size: 2rem;
+          font-size: 1.75rem;
         }
 
         .slider-subheader {
-          font-size: 1.25rem;
+          font-size: 1.15rem;
         }
       }
+    }
+
+    .slider-bottom-details {
+      margin: 1rem 0 0;
     }
   }
 }

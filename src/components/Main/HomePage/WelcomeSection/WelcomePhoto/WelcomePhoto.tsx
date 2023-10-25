@@ -3,7 +3,7 @@ import './_welcome-photo.scss';
 
 const WelcomePhoto = () => {
   return (
-    <div className='home-page-welcome-photo-container'>
+    <div className='home-page-welcome-photo'>
       <img src={HomeWelcomeBackground} alt='home page background photo'/>
     </div>
   );

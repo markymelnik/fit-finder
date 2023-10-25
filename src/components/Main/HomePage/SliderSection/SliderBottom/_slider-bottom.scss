@@ -1,0 +1,29 @@
+@import '@styles/colors';
+@import '@styles/mixins';
+@import '@styles/transitions';
+
+.slider-bottom-details {
+  @include center-elements;
+
+  .slider-learn-more {
+    @include center-elements;
+    gap: 0.25rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 1.15rem;
+    transition: font-weight 1s ease;
+
+    @include smooth-hover(background-color);
+
+    &:hover {
+      cursor: pointer;
+      background-color: darken(map-get($theme, 'white'), 5%);
+      font-weight: 400;
+    }
+
+    svg {
+      height: 1.25rem;
+      width: 1.25rem;
+    }
+  }  
+}

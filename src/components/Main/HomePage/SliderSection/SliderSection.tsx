@@ -2,6 +2,7 @@ import { useRef } from 'react';
 
 import { useSelector } from 'react-redux';
 
+import SliderBottom from './SliderBottom/SliderBottom';
 import SliderDisplay from './SliderDisplay/SliderDisplay';
 import SliderScrollButtons from './SliderScrollButtons/SliderScrollButtons';
 import { RootState } from '../../../../redux/store';
@@ -60,6 +61,7 @@ const SliderSection = () => {
        {!isMobile && <SliderScrollButtons scrollLeft={scrollLeft} scrollRight={scrollRight} />}
       </div>
       <SliderDisplay sliderRef={sliderRef}/>
+      <SliderBottom />
     </div>
   );
 };
