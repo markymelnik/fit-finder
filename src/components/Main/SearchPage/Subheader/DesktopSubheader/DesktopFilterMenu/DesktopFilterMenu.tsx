@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import DropdownButton from './Dropdown/DropdownButton';
+import DropdownButton from './Dropdown/DropdownButton/DropdownButton';
 import { fetchAllAmenities, fetchAllFacilityTypes, fetchAllOfferings } from '../../../../../../redux/apiRequests';
 import { resetSelectedAmenities, resetSelectedFacilityTypes, resetSelectedOfferings, setSelectedAmenities, setSelectedFacilityTypes, setSelectedOfferings } from '../../../../../../redux/slices/filterSlice';
 import { AppDispatch, RootState } from '../../../../../../redux/store';
@@ -34,24 +34,27 @@ const DesktopFilterMenu = () => {
         setSelectedOptions={setSelectedFacilityTypes}
         resetSelectedOptions={resetSelectedFacilityTypes}
         fetchSelectedOptions={(state) => state.filters.selectedFacilityTypes}
-        entityName='Type'
-        dropdownTitle='TYPES'
+        entityName={'Type'}
+        dropdownTitle={'TYPES'}
+        dropdownTipMessage={`Display locations you're interested in`}
       />
       <DropdownButton
         fetchAllOptionsFromGlobalState={(state) => state.amenities}
         setSelectedOptions={setSelectedAmenities}
         resetSelectedOptions={resetSelectedAmenities}
         fetchSelectedOptions={(state) => state.filters.selectedAmenities}
-        entityName='Amenity'
-        dropdownTitle=' AMENITIES'
+        entityName={'Amenity'}
+        dropdownTitle={'AMENITIES'}
+        dropdownTipMessage={`Display locations with any selected amenity`}
       />
       <DropdownButton
         fetchAllOptionsFromGlobalState={(state) => state.offerings}
         setSelectedOptions={setSelectedOfferings}
         resetSelectedOptions={resetSelectedOfferings}
         fetchSelectedOptions={(state) => state.filters.selectedOfferings}
-        entityName='Offering'
-        dropdownTitle="OFFERINGS"
+        entityName={'Offering'}
+        dropdownTitle={'OFFERINGS'}
+        dropdownTipMessage={`Display locations with any selected offering`}
       />
     </div>
   );

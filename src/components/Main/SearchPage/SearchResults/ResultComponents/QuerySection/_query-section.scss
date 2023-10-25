@@ -17,7 +17,6 @@
 
   .query-result-right {
     display: flex;
-    align-items: center;
     gap: 0.5rem;
 
     .query-result-arrows {
@@ -56,9 +55,9 @@
     }
 
     .query-result-page {
-      padding: 0.25rem 0 0;
       font-size: 1rem;
       color: map-get($grey, 'darker');
+      padding: 0.25rem 0 0;
     }
   }
 }

@@ -2,13 +2,13 @@ import { useEffect, useRef, useState } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 
-import DropdownOptions from "./DropdownOptions";
-import DownArrow from '../../../../../../../assets/icons/arrows/down-arrow.png';
-import UpArrow from '../../../../../../../assets/icons/arrows/up-arrow.png';
-import DeleteIcon from '../../../../../../../assets/icons/search/delete-icon.png';
-import useFacilitySearch from "../../../../../../../hooks/useFacilitySearch";
-import useOutsideClick from "../../../../../../../hooks/useOutsideClick";
-import { AppDispatch, RootState } from "../../../../../../../redux/store";
+import DownArrow from '../../../../../../../../assets/icons/arrows/down-arrow.png';
+import UpArrow from '../../../../../../../../assets/icons/arrows/up-arrow.png';
+import DeleteIcon from '../../../../../../../../assets/icons/search/delete-icon.png';
+import useFacilitySearch from "../../../../../../../../hooks/useFacilitySearch";
+import useOutsideClick from "../../../../../../../../hooks/useOutsideClick";
+import { AppDispatch, RootState } from "../../../../../../../../redux/store";
+import DropdownOptions from "../DropdownOptions/DropdownOptions";
 import './_dropdown-btn.scss';
 
 type DropdownButtonProps = {
@@ -18,9 +18,10 @@ type DropdownButtonProps = {
   fetchSelectedOptions: (state: RootState) => string[];
   entityName: string;
   dropdownTitle: string;
+  dropdownTipMessage: string;
 }
 
-const DropdownButton = ({ fetchAllOptionsFromGlobalState, setSelectedOptions, resetSelectedOptions, fetchSelectedOptions, entityName, dropdownTitle }: DropdownButtonProps) => {
+const DropdownButton = ({ fetchAllOptionsFromGlobalState, setSelectedOptions, resetSelectedOptions, fetchSelectedOptions, entityName, dropdownTitle, dropdownTipMessage }: DropdownButtonProps) => {
 
   const dispatch = useDispatch<AppDispatch>();
   const { executeSearch } = useFacilitySearch();
@@ -91,6 +92,7 @@ const DropdownButton = ({ fetchAllOptionsFromGlobalState, setSelectedOptions, re
           checkedOptions={globalCheckedOptions}
           onCheckboxClick={handleCheckboxClick}
           dropdownTitle={dropdownTitle}
+          dropdownTipMessage={dropdownTipMessage}
           customClass={entityName.toLowerCase()}
           setDropdownVisible={setDropdownVisible}
         />

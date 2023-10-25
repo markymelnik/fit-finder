@@ -12,9 +12,10 @@ interface MobileFilterOptionsProps {
   fetchSelectedOptions: (state: RootState) => string[];
   entityName: string;
   categoryTitle: string;
+  categoryDescription: string;
 }
 
-const MobileFilterOptions = ({ fetchAllOptionsFromGlobalState, setSelectedOptions, fetchSelectedOptions, categoryTitle }: MobileFilterOptionsProps) => {
+const MobileFilterOptions = ({ fetchAllOptionsFromGlobalState, setSelectedOptions, fetchSelectedOptions, categoryTitle, categoryDescription }: MobileFilterOptionsProps) => {
 
   const dispatch = useDispatch<AppDispatch>();
   const { executeSearch } = useFacilitySearch();
@@ -43,7 +44,10 @@ const MobileFilterOptions = ({ fetchAllOptionsFromGlobalState, setSelectedOption
   return (
     <div className="mobile-filter-options-container">
       <ul className="mobile-filter-options-list">
-        <div className="mobile-filter-options-title">{categoryTitle}</div>
+        <div className="mobile-filter-options-top">
+          <div className="mobile-filter-options-title">{categoryTitle}</div>
+          <div className="mobile-filter-options-description">{categoryDescription}</div>
+        </div>
         {allOptions.map((option: string, index: number) => (
           <li key={index} className="mobile-filter-option">
             <input 

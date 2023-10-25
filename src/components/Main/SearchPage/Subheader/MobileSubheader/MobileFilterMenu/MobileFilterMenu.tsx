@@ -47,7 +47,8 @@ const MobileFilterMenu = () => {
           setSelectedOptions={setSelectedFacilityTypes}
           fetchSelectedOptions={(state) => state.filters.selectedFacilityTypes}
           entityName={'Type'}
-          categoryTitle={'FACILITY TYPES'}
+          categoryTitle={'TYPES'}
+          categoryDescription={`Display locations you're interested in`}
         />
         <MobileFilterOptions 
           fetchAllOptionsFromGlobalState={(state) => state.amenities}
@@ -55,6 +56,7 @@ const MobileFilterMenu = () => {
           fetchSelectedOptions={(state) => state.filters.selectedAmenities}
           entityName={'Amenity'}
           categoryTitle={'AMENITIES'}
+          categoryDescription={`Display locations with any selected amenity`}
         />
         <MobileFilterOptions 
           fetchAllOptionsFromGlobalState={(state) => state.offerings}
@@ -62,6 +64,7 @@ const MobileFilterMenu = () => {
           fetchSelectedOptions={(state) => state.filters.selectedOfferings}
           entityName={'Offering'}
           categoryTitle={'OFFERINGS'}
+          categoryDescription={`Display locations with any selected offering`}
         />
       <div className="mobile-filter-done-btn-container">
         <SaveFiltersButton customClass='mobile-filter-done-btn' buttonText='Done' onClick={handleCloseMobileFilter}/>
