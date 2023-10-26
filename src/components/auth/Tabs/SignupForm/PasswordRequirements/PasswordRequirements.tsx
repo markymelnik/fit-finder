@@ -1,7 +1,7 @@
 import './_password-requirements.scss';
-import CheckMarkSVG from './CheckMarkSVG';
-import NeutralSVG from './NeutralSVG';
-import XMarkSVG from './XMarkSVG';
+import ChevronRightSVG from '../../../../../assets/svg/arrows/ChevronRightSVG';
+import CheckMarkSVG from '../../../../../assets/svg/CheckMarkSVG';
+import XMarkSVG from '../../../../../assets/svg/XMarkSVG';
 
 type PasswordRequirementsProps = {
   lengthRequirementSatisfied: boolean;
@@ -19,7 +19,7 @@ const PasswordRequirements = ({ lengthRequirementSatisfied, caseRequirementSatis
         <div className="password-req-icon">
         {
           !inputValue ? 
-          <NeutralSVG /> : 
+          <ChevronRightSVG /> : 
           (lengthRequirementSatisfied ? <CheckMarkSVG /> : <XMarkSVG />)
         }
         </div>
@@ -29,7 +29,7 @@ const PasswordRequirements = ({ lengthRequirementSatisfied, caseRequirementSatis
         <div className="password-req-icon">
         {
           !inputValue ? 
-          <NeutralSVG /> : 
+          <ChevronRightSVG /> :  
           (caseRequirementSatisfied ? <CheckMarkSVG /> : <XMarkSVG />)
         }
         </div>
@@ -39,7 +39,7 @@ const PasswordRequirements = ({ lengthRequirementSatisfied, caseRequirementSatis
         <div className="password-req-icon">
         {
           !inputValue ? 
-          <NeutralSVG /> : 
+          <ChevronRightSVG /> : 
           (numberRequirementSatisfied ? <CheckMarkSVG /> : <XMarkSVG />)
         }
         </div>

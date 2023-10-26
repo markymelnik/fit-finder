@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 
-import DownArrow from '../../../../../../../../assets/icons/arrows/down-arrow.png';
-import UpArrow from '../../../../../../../../assets/icons/arrows/up-arrow.png';
-import DeleteIcon from '../../../../../../../../assets/icons/search/delete-icon.png';
+import ChevronDownSVG from "../../../../../../../../assets/svg/arrows/ChevronDownSVG";
+import ChevronUpSVG from "../../../../../../../../assets/svg/arrows/ChevronUpSVG";
+import XMarkSVG from "../../../../../../../../assets/svg/XMarkSVG";
 import useFacilitySearch from "../../../../../../../../hooks/useFacilitySearch";
 import useOutsideClick from "../../../../../../../../hooks/useOutsideClick";
 import { AppDispatch, RootState } from "../../../../../../../../redux/store";
@@ -75,14 +75,15 @@ const DropdownButton = ({ fetchAllOptionsFromGlobalState, setSelectedOptions, re
             {entityName} 
           </div>
         </div>
-        <img src={dropdownVisible ? UpArrow : DownArrow} alt="arrow" className="dropdown-btn-arrow"></img>
+        {dropdownVisible ? <ChevronUpSVG /> : <ChevronDownSVG />}
         {
           globalCheckedOptions.length > 0 && 
           <div 
             className="dropdown-btn-delete" 
             onClick={handleClearChecks} 
-            style={{ backgroundImage: `url(${DeleteIcon})`}}
+          
           >
+            <XMarkSVG />
           </div>
         }
       </button>

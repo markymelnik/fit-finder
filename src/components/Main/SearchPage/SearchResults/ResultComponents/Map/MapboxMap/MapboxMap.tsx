@@ -5,12 +5,12 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
 import "mapbox-gl/dist/mapbox-gl.css";
+import MapMarkerSVG from "../../../../../../../assets/svg/map/MapMarkerSVG";
 import useOutsideClick from "../../../../../../../hooks/useOutsideClick";
 import { setSelectedFacility } from "../../../../../../../redux/slices/selectedFacilitySlice";
 import { AppDispatch, RootState } from "../../../../../../../redux/store";
 import { Facility } from "../../../../../../../types/types";
 import MapCard from "../MapCard/MapCard";
-import MapMarkerSVG from "../MapMarkerSVG";
 import "./_mapbox-map.scss";
 
 const MapboxMap = () => {

@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
-import ListIcon from '../../../../assets/icons/map/list-icon.png';
-import MapIcon from '../../../../assets/icons/map/map-icon.png';
+import ListSVG from "../../../../assets/svg/map/ListSVG";
+import MapSVG from "../../../../assets/svg/map/MapSVG";
 import { setIsMapOverlayShown } from "../../../../redux/slices/mapOverlaySlice";
 import { AppDispatch, RootState } from "../../../../redux/store";
 import './_mobile-map-switch-btn.scss';
@@ -13,7 +13,7 @@ const MobileMapSwitchButton = () => {
   const isMapOverlayShown = useSelector((state: RootState) => state.mapOverlay.isMapOverlayShown);
 
   const buttonText = isMapOverlayShown ? 'List View' : 'Map View';
-  const buttonIcon = isMapOverlayShown ? ListIcon : MapIcon;
+  const buttonIcon = isMapOverlayShown ? <ListSVG /> : <MapSVG />;
 
   const handleViewToggle = () => {
     dispatch(setIsMapOverlayShown(!isMapOverlayShown));
@@ -26,10 +26,9 @@ const MobileMapSwitchButton = () => {
         onClick={handleViewToggle}
       >
         <div className="btn-icon">
-          <img src={buttonIcon} alt="map switch button icon" />
+          {buttonIcon}
         </div>
         <div className="btn-text">{buttonText}</div>
-        
       </button>
     </div>
   )

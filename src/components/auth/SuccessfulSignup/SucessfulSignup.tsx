@@ -1,4 +1,4 @@
-import SuccessSVG from './SuccessSVG';
+import SuccessSVG from '../../../assets/svg/auth/SuccessSVG';
 import LoginButton from '../../common/button/auth/LoginButton';
 import './_successful-signup.scss';
 

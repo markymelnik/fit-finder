@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 
-import ToggleButtonSVG from './ToggleButtonSVG';
+import MobileFilterSVG from '../../../../../../assets/svg/mobile/MobileFilterSVG';
 import { setIsMobileFilterOpen } from '../../../../../../redux/slices/mobileFilterSlice';
 import { AppDispatch } from '../../../../../../redux/store';
 import './_mobile-filter-menu-toggle-btn.scss';
@@ -15,7 +15,7 @@ const MobileFilterMenuToggleButton = () => {
 
   return (
     <button  onClick={handleButtonClick} className='mobile-filter-menu-toggle-btn'>
-      <ToggleButtonSVG />
+      <MobileFilterSVG />
     </button>
   )
 };

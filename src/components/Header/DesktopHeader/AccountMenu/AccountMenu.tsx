@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import AccountLink from './AccountLink';
 import MenuDivider from './AccountMenuDivider/AccountMenuDivider';
-import ProfileIcon from '../../../../assets/icons/account/details-icon.svg';
+import UserSVG from '../../../../assets/svg/account/UserSVG';
 import useOutsideClick from '../../../../hooks/useOutsideClick';
 import { setIsAccountMenuOpen } from '../../../../redux/slices/accountMenuSlice';
 import { AppDispatch, RootState } from '../../../../redux/store';
@@ -38,8 +38,8 @@ const AccountMenu = () => {
       <button className="account-menu-btn">
         {isLoggedIn 
           ? <AccountPhoto customClass='account-menu-photo' />
-          : <div className={`account-menu-generic-icon ${isDesktopProfileDropdownOpen ? 'active' : ''}`} >
-              <img src={ProfileIcon} />
+          : <div className={`account-menu-loggedout-icon ${isDesktopProfileDropdownOpen ? 'active' : ''}`} >
+              <UserSVG />
             </div>
         } 
       </button>

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import BackIcon from '../../../../assets/icons/arrows/left-arrow.png';
+import LongArrowLeftSVG from '../../../../assets/svg/arrows/LongArrowLeftSVG';
 import './_back-btn.scss';
 
 const BackButton = () => {
@@ -14,7 +14,7 @@ const BackButton = () => {
   return (
     <div className="back-btn-container">
       <div className='btn-wrapper' onClick={handleButtonClick}>
-          <div className="back-btn-icon"style={{ backgroundImage: `url(${BackIcon})`}}></div>
+          <LongArrowLeftSVG />
         <button className='back-btn'>Back</button>
       </div>
     </div>

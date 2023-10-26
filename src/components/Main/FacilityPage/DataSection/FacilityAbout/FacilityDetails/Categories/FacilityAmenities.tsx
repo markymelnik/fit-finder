@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
-import CalisthenicsEquipmentSVG from "./CalisthenicsEquipmentSVG";
-import CheckmarkIcon from '../../../../../../../assets/icons/checkmark-icon.png';
+import CalisthenicsEquipmentSVG from "../../../../../../../assets/svg/facility_page/CalisthenicsEquipmentSVG";
+import CheckMarkSVG from "../../../../../../../assets/svg/CheckmarkSVG";
 import { amenitiesSelector } from "../../../../../../../redux/selectors/dataSelector";
 import './_facility-categories.scss';
 import { RootState } from "../../../../../../../redux/store";
@@ -38,7 +38,7 @@ const FacilityAmenities = () => {
         return (
           <div className="facility-amenity-field" key={index}> 
             <div className="facility-amenity-icon">
-              <img src={CheckmarkIcon} />
+              <CheckMarkSVG />
             </div>
             <div className="facility-amenity-text">{amenity}</div>
           </div>

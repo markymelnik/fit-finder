@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import ExternalLinkSVG from "./ExternalLinkSVG";
+import WebLinkSVG from "../../../../../../assets/svg/facility_page/WebLinkSVG";
 import { RootState } from "../../../../../../redux/store";
 import "./_web-url.scss";
 
@@ -23,7 +23,7 @@ const WebUrl = ({ customClass }: WebUrlProps) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <ExternalLinkSVG />
+            <WebLinkSVG />
           </a>
           <a
             className={customClass}

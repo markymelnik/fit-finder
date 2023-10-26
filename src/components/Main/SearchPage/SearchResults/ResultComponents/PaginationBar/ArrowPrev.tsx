@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
-import ArrowPrevSVG from "./ArrowPrevSVG";
+import ChevronLeftSVG from "../../../../../../assets/svg/arrows/ChevronLeftSVG";
 import { setCurrentPage } from "../../../../../../redux/slices/paginationSlice";
 import { RootState } from "../../../../../../redux/store";
 
@@ -23,7 +23,7 @@ const ArrowPrev = ({ customClass }: ArrowPrevProps) => {
     className={`${customClass} ${currentPage === 1 ? `disabled` : ``}`}
     onClick={currentPage === 1 ? undefined : handlePrevButtonClick}
   >
-    <ArrowPrevSVG />
+    <ChevronLeftSVG />
   </div>
   );
 };

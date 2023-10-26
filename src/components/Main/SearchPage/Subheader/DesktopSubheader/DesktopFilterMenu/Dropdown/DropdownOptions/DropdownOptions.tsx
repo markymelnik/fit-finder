@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import ToolTipSVG from './ToolTipSVG';
+import ToolTipSVG from '../../../../../../../../assets/svg/ToolTipSVG';
 import SaveFiltersButton from '../../../../../../../common/button/search/SaveFiltersButton';
 import './_dropdown-options.scss';
 

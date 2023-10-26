@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import ProfileLogo from '../../../../assets/icons/account/details-icon.svg';
+import UserSVG from '../../../../assets/svg/account/UserSVG';
 import { setIsAuthFormShown } from '../../../../redux/slices/authFormSlice';
 import { AppDispatch, RootState } from '../../../../redux/store';
 import AccountPhoto from '../../../common/AccountPhoto';
@@ -29,7 +29,7 @@ const SpaceFragment = () => {
             <AccountPhoto customClass='mobile-header-account-photo'/>
           </div> 
         : <div className='space-fragment' onClick={handleNotLoggedInClick}>
-            <img src={ProfileLogo}/>
+            <UserSVG />
           </div> 
       }
     </>

@@ -50,21 +50,24 @@
       }
     }
 
-    .dropdown-btn-arrow {
-      height: 0.75rem;
-      width: 0.75rem;
+    svg {
+      height: 1rem;
+      width: 1rem;
     }
 
     .dropdown-btn-delete {
-      height: 0.8rem;
-      width: 0.8rem;
-      background-size: cover; 
-      background-repeat: no-repeat;
-      background-position: center;
+      @include center-elements;
+      height: 1rem;
+      width: 1rem;
       border-radius: 25px;
 
       &:hover {
         background-color: map-get($grey, 'light');
+      }
+
+      svg {
+        height: 1rem;
+        width: 1rem;
       }
     }
   }

@@ -1,8 +1,8 @@
-import './_desktop-left-bar.scss';
-import DetailsIcon from '../../../../assets/icons/account/details-icon.svg';
-import FavoritesIcon from '../../../../assets/icons/account/favorites-icon.png';
+import FavoriteSVG from '../../../../assets/svg/account/FavoriteSVG';
+import UserSVG from '../../../../assets/svg/account/UserSVG';
 import AccountPhoto from '../../../common/AccountPhoto';
 import LogoutButton from '../../../common/button/auth/LogoutButton';
+import './_desktop-left-bar.scss';
 
 type DesktopLeftBarProps = {
   activeTab: string;
@@ -21,14 +21,14 @@ const DesktopLeftBar = ({ activeTab, setActiveTab }: DesktopLeftBarProps) => {
           className={`leftbar-tab ${activeTab === "details" ? "active" : ""}`}
           onClick={() => setActiveTab("details")}
         >
-          <img className="leftbar-tab-icon" src={DetailsIcon} />
+          <UserSVG />
           <div className="details-btn">Details</div>
         </div>
         <div
           className={`leftbar-tab ${activeTab === "favorites" ? "active" : ""}`}
           onClick={() => setActiveTab("favorites")}
         >
-          <img className="leftbar-tab-icon" src={FavoritesIcon} />
+          <FavoriteSVG />
           <div className="favorites-btn">Favorites</div>
         </div>
       </div>

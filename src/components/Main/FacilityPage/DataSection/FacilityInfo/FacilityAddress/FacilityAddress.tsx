@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-import AddressLinkSVG from './AddressLinkSVG';
+import AddressLinkSVG from '../../../../../../assets/svg/facility_page/AddressLinkSVG';
 import { RootState } from '../../../../../../redux/store';
 import './_facility-address.scss';
 

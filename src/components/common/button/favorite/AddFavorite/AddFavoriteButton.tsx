@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
-import FavoriteSVG from './FavoriteSVG';
+import AddFavoriteSVG from '../../../../../assets/svg/favorite/AddFavoriteSVG';
 import { addFavoritedFacility, deleteFavoritedFacility } from '../../../../../redux/apiRequests';
 import { favoritedFacilityIdSelector } from '../../../../../redux/selectors/favoriteFacilityIdSelector';
 import { deleteFavoritedFacilityFromState, selectFavoriteCap, selectFavoriteCount } from '../../../../../redux/slices/favoritedFacilitySlice';
@@ -93,7 +93,7 @@ const AddFavoriteButton = ({ userAccountId, facilityId, customClass}: AddFavorit
         <div className="message-text">Your favorites list is full!</div>
       </div>
       <button className={customClass} onClick={handleAddFavoriteClick}>
-        <FavoriteSVG isFilled={isFavorited} />
+        <AddFavoriteSVG isFilled={isFavorited} />
       </button>
     </div>
   );

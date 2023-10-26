@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 
-import EncourageSVG from "./EncourageSVG";
+import EncourageLoginSVG from "../../../../../assets/svg/favorite/EncourageLoginSVG";
 import { setIsAuthFormShown } from "../../../../../redux/slices/authFormSlice";
 import { AppDispatch } from "../../../../../redux/store";
 import './_encourage-login-btn.scss';
@@ -19,7 +19,7 @@ const EncourageLoginButton = ({ customClass }: EncourageLoginButtonProps) => {
 
   return (
     <div className={customClass} onClick={handleButtonClick}>
-      <EncourageSVG />
+      <EncourageLoginSVG />
     </div>
   );
 };

@@ -1,44 +1,17 @@
 const OpenButtonSVG = () => {
   return (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g transform="rotate(180, 12, 12)">
-        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-        <g
-          id="SVGRepo_tracerCarrier"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        ></g>
-        <g id="SVGRepo_iconCarrier">
-          {" "}
-          <g id="style=linear">
-            {" "}
-            <g id="menu-fries">
-              {" "}
-              <path
-                id="vector"
-                d="M3 6H21"
-                stroke="#000000"
-                strokeWidth="1.25"
-                strokeLinecap="round"
-              ></path>{" "}
-              <path
-                id="vector_2"
-                d="M9 12L21 12"
-                stroke="#000000"
-                strokeWidth="1.25"
-                strokeLinecap="round"
-              ></path>{" "}
-              <path
-                id="vector_3"
-                d="M3 18H21"
-                stroke="#000000"
-                strokeWidth="1.25"
-                strokeLinecap="round"
-              ></path>{" "}
-            </g>{" "}
-          </g>{" "}
-        </g>
-      </g>
+    <svg
+      clipRule="evenodd"
+      fillRule="evenodd"
+      strokeLinejoin="round"
+      strokeMiterlimit="2"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m13 16.745c0-.414-.336-.75-.75-.75h-9.5c-.414 0-.75.336-.75.75s.336.75.75.75h9.5c.414 0 .75-.336.75-.75zm9-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm-4-5c0-.414-.336-.75-.75-.75h-14.5c-.414 0-.75.336-.75.75s.336.75.75.75h14.5c.414 0 .75-.336.75-.75z"
+        fillRule="nonzero"
+      />
     </svg>
   );
 };

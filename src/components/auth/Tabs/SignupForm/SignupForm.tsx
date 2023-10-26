@@ -6,10 +6,10 @@ import { useDispatch } from 'react-redux';
 
 import PasswordRequirements from './PasswordRequirements/PasswordRequirements';
 import validatePassword from './PasswordRequirements/validatePassword';
-import WarningSVG from './PasswordRequirements/WarningSVG';
-import PasswordHideIcon from '../../../../assets/icons/password/password-hide.png';
-import PasswordShowIcon from '../../../../assets/icons/password/password-show.png';
-import AuthCheckmarkSVG from '../../../../redux/auth/AuthCheckmarkSVG';
+import PasswordHiddenSVG from '../../../../assets/svg/auth/PasswordHiddenSVG';
+import PasswordVisibleSVG from '../../../../assets/svg/auth/PasswordVisibleSVG';
+import WarningSVG from '../../../../assets/svg/auth/WarningSVG';
+import CheckMarkSVG from '../../../../assets/svg/CheckMarkSVG';
 import { registerNewAccount } from '../../../../redux/auth/authRequests';
 import { resetSignupError } from '../../../../redux/auth/signup/signupActions';
 import { AppDispatch, RootState } from '../../../../redux/store';
@@ -121,9 +121,7 @@ const SignupForm = () => {
                 className="password-visible-toggle"
                 onClick={() => setIsPasswordVisible((prev) => !prev)}
               >
-                <img
-                  src={isPasswordVisible ? PasswordShowIcon : PasswordHideIcon}
-                />
+                {isPasswordVisible ? <PasswordVisibleSVG /> : <PasswordHiddenSVG />}
               </div>
             </div>
           </div>
@@ -153,7 +151,7 @@ const SignupForm = () => {
             {isLoading ? (
               <Ring size={30} lineWeight={5} speed={2} color="white" />
             ) : showCheckmark ? (
-              <AuthCheckmarkSVG />
+              <CheckMarkSVG />
             ) : (
               "Sign Up"
             )}

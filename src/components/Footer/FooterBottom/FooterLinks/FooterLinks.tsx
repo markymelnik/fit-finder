@@ -1,20 +1,18 @@
-import MediaLink from "./MediaLink";
-import GitHubIcon from "../../../../assets/icons/footer/github-icon.png";
-import LinkedInIcon from "../../../../assets/icons/footer/linkedin-icon.png";
+import SocialLink from "./SocialLink";
+import GithubSVG from "../../../../assets/svg/footer/GithubSVG";
+import LinkedInSVG from "../../../../assets/svg/footer/LinkedInSVG";
 import "./_footer-links.scss";
 
 const FooterLinks = () => {
   return (
     <div className="footer-links">
-      <MediaLink
+      <SocialLink
         url="https://github.com/markymelnik"
-        icon={GitHubIcon}
-        alt="GitHub Icon"
+        svg={<GithubSVG />}
       />
-      <MediaLink
+      <SocialLink
         url="https://www.linkedin.com/in/markmelnik/"
-        icon={LinkedInIcon}
-        alt="LinkedIn Icon"
+        svg={<LinkedInSVG />}
       />
     </div>
   );

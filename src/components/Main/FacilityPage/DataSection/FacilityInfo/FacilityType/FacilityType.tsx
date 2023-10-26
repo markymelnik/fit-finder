@@ -1,15 +1,15 @@
 import { useSelector } from "react-redux";
 
-import ClimbingGymSVG from "./ClimbingGymSVG";
-import FitnessStudioSVG from "./FitnessStudioSVG";
-import HIITCrossFitSVG from "./HIITCrossFitSVG";
-import MartialArtsCenterSVG from "./MartialArtsCenterSVG";
-import OutdoorWorkoutAreaSVG from "./OutdoorWorkoutAreaSVG";
-import PilatesStudioSVG from "./PilatesStudioSVG";
-import RecreationCenterSVG from "./RecreationCenterSVG";
-import TraditionalGymSVG from "./TraditionalGymSVG";
-import YogaStudioSVG from "./YogaStudioSVG";
-import CheckmarkIcon from "../../../../.././../assets/icons/checkmark-icon.png";
+import CheckMarkSVG from "../../../../../../assets/svg/CheckmarkSVG";
+import ClimbingGymSVG from "../../../../../../assets/svg/facility_page/ClimbingGymSVG";
+import FitnessStudioSVG from "../../../../../../assets/svg/facility_page/FitnessStudioSVG";
+import HIITCrossFitSVG from "../../../../../../assets/svg/facility_page/HIITCrossFitSVG";
+import MartialArtsCenterSVG from "../../../../../../assets/svg/facility_page/MartialArtsCenterSVG";
+import OutdoorWorkoutAreaSVG from "../../../../../../assets/svg/facility_page/OutdoorWorkoutAreaSVG";
+import PilatesStudioSVG from "../../../../../../assets/svg/facility_page/PilatesStudioSVG";
+import RecreationCenterSVG from "../../../../../../assets/svg/facility_page/RecreationCenterSVG";
+import TraditionalGymSVG from "../../../../../../assets/svg/facility_page/TraditionalGymSVG";
+import YogaStudioSVG from "../../../../../../assets/svg/facility_page/YogaStudioSVG";
 import { RootState } from "../../../../../../redux/store";
 import "./_facility-type.scss";
 
@@ -49,7 +49,7 @@ const FacilityType = () => {
       typeIcon = <FitnessStudioSVG />;
       break;
     default:
-      typeIcon = CheckmarkIcon;
+      typeIcon = <CheckMarkSVG />;
   }
 
   return (

@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import GymSVG from "./GymSVG";
-import OutdoorParkSVG from "./OutdoorParkSVG";
-import PhoneSVG from "./PhoneSVG";
+import GymSVG from "../../../../assets/svg/update_box/GymSVG";
+import OutdoorParkSVG from "../../../../assets/svg/update_box/OutdoorParkSVG";
+import PhoneSVG from "../../../../assets/svg/update_box/PhoneSVG";
 import { setEnteredKeyword, setSelectedFacilityTypes } from "../../../../redux/slices/filterSlice";
 import { AppDispatch } from "../../../../redux/store";
 import "./_update-section.scss";

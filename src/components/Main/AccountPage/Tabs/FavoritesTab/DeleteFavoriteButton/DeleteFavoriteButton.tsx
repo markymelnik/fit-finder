@@ -1,10 +1,9 @@
 import { useDispatch } from 'react-redux';
 
-import DeleteIcon from '../../../../../../assets/icons/mobile/mobile-menu-close-icon.png';
+import XMarkSVG from '../../../../../../assets/svg/XMarkSVG';
 import { deleteFavoritedFacility } from '../../../../../../redux/apiRequests';
 import { deleteFavoritedFacilityFromState } from '../../../../../../redux/slices/favoritedFacilitySlice';
 import { AppDispatch } from '../../../../../../redux/store';
-
 import './_delete-favorite-btn.scss';
 
 type DeleteFavoriteButtonProps = {
@@ -29,7 +28,7 @@ const DeleteFavoriteButton = ({ favoriteFacilityObjectId }: DeleteFavoriteButton
       className="delete-favorite-btn"
       onClick={handleDeleteButtonClick}
     >
-      <img src={DeleteIcon} />
+      <XMarkSVG />
     </button>
   )
 }

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import CheckmarkIcon from '../../../../../../../assets/icons/checkmark-icon.png';
+import CheckMarkSVG from "../../../../../../../assets/svg/CheckMarkSVG";
 import { offeringsSelector } from "../../../../../../../redux/selectors/dataSelector";
 import './_facility-categories.scss';
 
@@ -17,7 +17,7 @@ const FacilityOfferings = () => {
         return (
           <div className="facility-offerings-field" key={index}>
             <div className="facility-offering-icon">
-              <img src={CheckmarkIcon} />
+              <CheckMarkSVG />
             </div>
             <div className="facility-offering-text">{service}</div>
           </div>   

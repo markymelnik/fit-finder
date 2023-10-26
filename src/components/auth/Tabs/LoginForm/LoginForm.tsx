@@ -4,14 +4,14 @@ import { Ring } from '@uiball/loaders';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
-import PasswordHideIcon from '../../../../assets/icons/password/password-hide.png';
-import PasswordShowIcon from '../../../../assets/icons/password/password-show.png';
+import PasswordHiddenSVG from '../../../../assets/svg/auth/PasswordHiddenSVG';
+import PasswordVisibleSVG from '../../../../assets/svg/auth/PasswordVisibleSVG';
+import WarningSVG from '../../../../assets/svg/auth/WarningSVG';
+import CheckMarkSVG from '../../../../assets/svg/CheckMarkSVG';
 import { fetchFavoritedFacilities } from '../../../../redux/apiRequests';
-import AuthCheckmarkSVG from '../../../../redux/auth/AuthCheckmarkSVG';
 import { loginAccount } from '../../../../redux/auth/authRequests';
 import { resetLoginError } from '../../../../redux/auth/login/loginActions';
 import { AppDispatch, RootState } from '../../../../redux/store';
-import WarningSVG from '../SignupForm/PasswordRequirements/WarningSVG';
 import './_login-form.scss';
 
 const Login = () => {
@@ -100,10 +100,8 @@ const Login = () => {
               <div
                 className="password-visible-toggle"
                 onClick={() => setIsPasswordVisible((prev) => !prev)}
-              >
-                <img
-                  src={isPasswordVisible ? PasswordShowIcon : PasswordHideIcon}
-                />
+              >     
+                {isPasswordVisible ? <PasswordVisibleSVG /> : <PasswordHiddenSVG />}
               </div>
             </div>
           </div>
@@ -130,7 +128,7 @@ const Login = () => {
                 color="white"
               />
             ) : showCheckmark ? (
-              <AuthCheckmarkSVG />
+              <CheckMarkSVG />
             ) :(
               "Login"
             )}

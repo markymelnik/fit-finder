@@ -24,25 +24,24 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: transparent;
     border: none;
+    border-radius: 50%;
 
     &:hover {
       cursor: pointer;
     }
   
-    .account-menu-generic-icon,
+    .account-menu-loggedout-icon,
     .account-menu-photo {
       @include center-elements;
       height: 1.75rem;
       width: 1.75rem;
       border-radius: 50%;
-      background-color: transparent;
     }
 
-    .account-menu-generic-icon {
+    .account-menu-loggedout-icon {
 
-      img {
+      svg {
         height: 80%;
         width: 80%;
       }

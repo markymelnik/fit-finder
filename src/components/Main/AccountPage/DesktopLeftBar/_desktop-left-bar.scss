@@ -49,15 +49,15 @@
         background-color: darken(map-get($theme, 'white'), 10%);
       }
   
-      .leftbar-tab-icon {
-        height: 1.5rem;
-        width: 1.5rem;
+      svg {
+ 
+        height: 1.75rem;
+        width: 1.75rem;
       }
   
       .details-btn,
       .favorites-btn {
-        font-size: 1.1rem;
-        padding-top: 0.25rem;
+        font-size: 1.25rem;
       }
     }
 

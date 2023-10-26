@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 
-import CloseIcon from '../../../assets/icons/mobile/mobile-menu-close-icon.png';
+import XMarkSVG from '../../../assets/svg/XMarkSVG';
 import { resetLoginError } from '../../../redux/auth/login/loginActions';
 import { resetSignupError } from '../../../redux/auth/signup/signupActions';
 import { setIsAuthFormShown } from '../../../redux/slices/authFormSlice';
@@ -18,7 +18,7 @@ const CloseAuthFormButton = () => {
 
   return (
     <button className="close-auth-form-btn" onClick={handleButtonClick}>
-      <img src={CloseIcon} />
+      <XMarkSVG />
     </button>
   )
 }

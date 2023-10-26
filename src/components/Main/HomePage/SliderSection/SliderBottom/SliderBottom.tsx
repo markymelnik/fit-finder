@@ -1,4 +1,4 @@
-import DownArrowSVG from "./DownArrowSVG";
+import DownArrowSVG from "../../../../../assets/svg/arrows/DownArrowSVG";
 import AboutLink from "../../../../Header/DesktopHeader/NavigationBar/AboutLink";
 import "./_slider-bottom.scss";
 

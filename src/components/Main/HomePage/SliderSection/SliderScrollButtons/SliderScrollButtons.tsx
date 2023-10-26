@@ -1,5 +1,5 @@
-import LeftArrowSVG from "./LeftArrowSVG";
-import RightArrowSVG from "./RightArrowSVG";
+import ChevronLeftSVG from "../../../../../assets/svg/arrows/ChevronLeftSVG";
+import ChevronRightSVG from "../../../../../assets/svg/arrows/ChevronRightSVG";
 import "./_slider-scroll-btns.scss";
 
 interface SliderScrollButtonsProps {
@@ -10,10 +10,10 @@ const SliderScrollButtons = ({ scrollLeft, scrollRight }: SliderScrollButtonsPro
   return (
     <div className="slider-scroll-btns">
       <button onClick={scrollLeft} className="slider-scroll-btn-left">
-        <LeftArrowSVG />
+        <ChevronLeftSVG />
       </button>
       <button onClick={scrollRight} className="slider-scroll-btn-right">
-        <RightArrowSVG />
+        <ChevronRightSVG />
       </button>
     </div>
   );

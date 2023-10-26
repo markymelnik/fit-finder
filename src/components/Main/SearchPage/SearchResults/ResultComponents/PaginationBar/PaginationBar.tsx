@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 
 import ArrowNext from "./ArrowNext";
 import ArrowPrev from "./ArrowPrev";
-import DoubleArrowNextSVG from "./DoubleArrowNextSVG";
-import DoubleArrowPrevSVG from "./DoubleArrowPrevSVG";
 import getDisplayedNumbers from "./getDisplayedNumbers";
+import ChevronDoubleLeftSVG from "../../../../../../assets/svg/arrows/ChevronDoubleLeftSVG";
+import ChevronDoubleRightSVG from "../../../../../../assets/svg/arrows/ChevronDoubleRightSVG";
 import { setCurrentPage } from "../../../../../../redux/slices/paginationSlice";
 import { RootState } from "../../../../../../redux/store";
 import "./_pagination-bar.scss";
@@ -36,7 +36,7 @@ const PaginationBar = () => {
           className={`pagination-to-start-btn ${currentPage === 1 ? `disabled` : ``}`}
           onClick={handleToStartButtonClick}
         >
-          <DoubleArrowPrevSVG />
+          <ChevronDoubleLeftSVG />
         </div>
         <ArrowPrev customClass="pagination-prev-btn"/>
         <div className="pagination-number-display">
@@ -70,7 +70,7 @@ const PaginationBar = () => {
           }`}
           onClick={handleToEndButtonClick}
         >
-          <DoubleArrowNextSVG />
+          <ChevronDoubleRightSVG />
         </div>
       </div>
       <div className="pagination-results-container">

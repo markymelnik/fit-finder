@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 
-import MobileMenuCloseIcon from '../../../../../assets/icons/mobile/mobile-menu-close-icon.png';
+import XMarkSVG from "../../../../../assets/svg/XMarkSVG";
 import { setIsSidebarMenuOpen } from "../../../../../redux/slices/sidebarMenuSlice";
 import { AppDispatch } from "../../../../../redux/store";
 import './_sidebar-menu-close-btn.scss';
@@ -15,7 +15,7 @@ const SidebarMenuCloseButton = () => {
 
   return (
     <button onClick={handleButtonClick} className='sidebar-menu-close-btn'>
-      <img src={MobileMenuCloseIcon} />
+      <XMarkSVG />
     </button>
   );
 };

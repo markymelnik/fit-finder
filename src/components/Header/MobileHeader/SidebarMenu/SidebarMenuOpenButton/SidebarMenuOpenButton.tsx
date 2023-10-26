@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 
-import OpenButtonSVG from "./OpenButtonSVG";
+import SidebarMenuSVG from "../../../../../assets/svg/mobile/SidebarMenuSVG";
 import { setIsSidebarMenuOpen } from "../../../../../redux/slices/sidebarMenuSlice";
 import { AppDispatch } from "../../../../../redux/store";
 import './_sidebar-menu-open-btn.scss';
@@ -15,7 +15,7 @@ const SidebarMenuOpenButton = () => {
 
   return (
     <button onClick={handleButtonClick} className='sidebar-menu-open-btn'>
-      <OpenButtonSVG />
+      <SidebarMenuSVG />
     </button>
   );
 };
