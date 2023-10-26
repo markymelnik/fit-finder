@@ -20,7 +20,7 @@
       margin: 0 0 0.5rem;
       font-weight: 350;
     }
-  
+
     .update-section-subtitle {
       color: map-get($grey, 'neutral');
       font-size: 1.25rem;
@@ -37,23 +37,29 @@
       position: relative;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       padding: 2.5rem;
       border: 1px solid map-get($grey, 'lighter');
       border-radius: 10px;
       border-bottom: 4px solid map-get($grey, 'darker');
-      
-      .update-box-title {
-        font-size: 1.35rem;
-        margin: 0 0 2rem;
-        font-weight: 350;
-        z-index: 1;
-      }
 
-      .update-box-description {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: map-get($grey, 'darker');
-        margin: 0 0 2.5rem;
+      .update-box-top {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 2rem;
+
+        .update-box-title {
+          font-size: 1.35rem;
+          margin: 0 0 2rem;
+          font-weight: 350;
+          z-index: 1;
+        }
+
+        .update-box-description {
+          font-size: 1.1rem;
+          line-height: 1.6;
+          color: map-get($grey, 'darker');
+        }
       }
 
       .box-1-icon,
@@ -83,12 +89,12 @@
     }
 
     .box-1 {
-      justify-self: flex-start;
-      padding: 2.5rem 2.5rem 0;
+      .update-box-top {
+        margin: 0;
+      }
     }
 
     .box-2 {
-      justify-self: flex-end;
 
       .outdoor-fitness-area-search-link {
         font-size: 1rem;
@@ -102,7 +108,6 @@
     }
 
     .box-3 {
-      justify-self: flex-start;
 
       .brooklyn-search-link {
         font-size: 1rem;
@@ -124,6 +129,7 @@
     .update-section-top {
       margin: 0 0 7rem;
 
+
       .update-section-title {
         font-size: 2.25rem;
       }
@@ -134,13 +140,16 @@
     }
 
     .updates-container {
-      
-      
+
+
       .update-box {
 
-        .update-box-title {
-          font-size: 1.5rem;
-          width: 100%;
+        .updat-box-top {
+
+          .update-box-title {
+            font-size: 1.5rem;
+            width: 100%;
+          }
         }
 
         .box-1-icon,
@@ -164,7 +173,7 @@
     .update-section-top {
       margin: 0 0 5rem;
     }
-    
+
     .updates-container {
       flex-direction: row;
       gap: 3rem;

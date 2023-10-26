@@ -13,28 +13,43 @@
     gap: 0.75rem;
 
     .to-search-btn {
-      width: 10rem;
+      position: relative;
+      width: 8rem;
       height: 3rem;
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 400;
-      background-color: map-get($theme, 'white');
-      color: map-get($grey, 'darker');
-      border: 2px solid map-get($grey, 'darker');
-      border-radius: 6px;
+      color: map-get($theme, 'white');
+      background-color: map-get($grey, 'darker');
+      border: 1.5px solid map-get($theme, 'white');
+      border-radius: 8px;
       padding: 0.75rem 2rem;
+      transition: all 0.2s linear 0s;
 
-      @include smooth-hover(background-color);
-      
+      &::before {
+        content: "\2192";
+        font-size: 1.5rem;
+        position: absolute;
+        right: 0.25rem;
+        top: 25%;
+        transform: translateY(-7%);
+        opacity: 0;
+        width: 2.5rem;
+        text-indent: -0.5rem;
+        transition: all 0.2s linear;
+      }
+
       &:hover {
         cursor: pointer;
-        background-color: map-get($grey, 'darker');
-        color: map-get($theme, 'white');
-        border: none;
+        text-indent: -1rem;
+
+        &::before {
+          opacity: 1;
+          text-indent: 0;
+        }
       }
     }
   }
 }
-
 @media (min-width: 768px) {
   .to-search-btn-container {
     justify-content: left;
@@ -42,7 +57,7 @@
     .to-search-link-wrapper {
 
       .to-search-btn {
-        width: 10rem;
+        width: 9rem;
         height: 3.5rem;
         font-size: 1.25rem;
       }

@@ -6,8 +6,8 @@ const SliderBottom = () => {
   return (
     <div className="slider-bottom-details">
       <div className="slider-learn-more">
-      <DownArrowSVG />
-      <AboutLink customClass={'slider-link-wrapper'} innerText={'Learn more'} />
+        <DownArrowSVG />
+        <AboutLink customClass={'slider-link-wrapper'} innerText={'Learn more'} />
       </div>
       
     </div>

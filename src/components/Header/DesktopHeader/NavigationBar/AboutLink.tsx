@@ -6,8 +6,10 @@ import { AppDispatch } from "../../../../redux/store";
 
 type AboutLinkProps = {
   customClass: string;
+  innerText: string;
 }
-const AboutLink = ({ customClass }: AboutLinkProps) => {
+
+const AboutLink = ({ customClass, innerText }: AboutLinkProps) => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
@@ -33,7 +35,7 @@ const AboutLink = ({ customClass }: AboutLinkProps) => {
   };
 
   return (
-    <div className={customClass} onClick={handleAboutButtonClick}>About</div>
+    <div className={customClass} onClick={handleAboutButtonClick}>{innerText}</div>
   )
 }
 

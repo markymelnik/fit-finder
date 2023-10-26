@@ -31,19 +31,11 @@
         width: 100%;
       }
     }
-  
-    .facility-amenity,
-    .facility-offering {
+      
+    .facility-amenity-text,
+    .facility-offering-text,
+    .amenity-text-calisthenics {
       font-size: 1rem;
-
-      .amenity-text,
-      .offering-text {
-        padding: 0.15rem 0 0;
-      }
-
-      .amenity-text-calisthenics {
-        padding: 0.5rem 0 0;
-      }
     }
   }
   

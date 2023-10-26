@@ -5,11 +5,9 @@
 .mapbox-map-container {
   position: sticky;
   top: 150px;
-  height: calc(100dvh - 140px);
+  height: calc(100dvh - 130px);
 
   .mapboxgl-map {
-    border: 1px solid map-get($grey, 'light');
-    border-radius: 6px;
 
     .mapboxgl-popup {
 
@@ -26,6 +24,25 @@
       .mapboxgl-popup-tip {
         background: transparent;
         border: none;
+      }
+    }
+  }
+
+  .mapboxgl-canvas-container {
+
+    .mapboxgl-canvas {
+      height: 100%;
+    }
+
+    .mapboxgl-marker {
+
+
+      .map-marker-click-wrapper {
+
+        @include center-elements;
+        height: 2rem;
+        width: 2rem;
+        cursor: pointer;
       }
     }
   }
@@ -110,6 +127,22 @@
   .mapbox-map-container {
     height: calc(100dvh - 150px);
     width: 50%;
-    padding: 1rem;
+    padding: 0 1rem 1rem;
+
+    .mapboxgl-map {
+      border-radius: 4px;
+      border: 1px solid map-get($grey, 'light');
+    }
+
+    .mapboxgl-canvas-container {
+
+      .mapboxgl-marker {
+  
+        .map-marker-click-wrapper {
+          height: 1rem;
+          width: 1rem;
+        }
+      }
+    }
   }
 }

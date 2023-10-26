@@ -16,7 +16,7 @@ const ToggleButtonSVG = () => {
             stroke="#000000"
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth="0.8"
+            strokeWidth="0.9"
           >
             {" "}
             <path d="m14.25 9v-6.5"></path> <path d="m14.25 18.5v-4.5"></path>{" "}

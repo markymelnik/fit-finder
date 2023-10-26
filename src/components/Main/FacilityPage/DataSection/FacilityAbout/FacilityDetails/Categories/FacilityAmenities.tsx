@@ -40,9 +40,7 @@ const FacilityAmenities = () => {
             <div className="facility-amenity-icon">
               <img src={CheckmarkIcon} />
             </div>
-            <div className="facility-amenity">
-              <div className="amenity-text">{amenity}</div>
-            </div>
+            <div className="facility-amenity-text">{amenity}</div>
           </div>
         )
       })}

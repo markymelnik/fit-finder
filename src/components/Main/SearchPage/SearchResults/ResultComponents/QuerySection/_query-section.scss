@@ -25,8 +25,8 @@
       .query-result-prev-arrow,
       .query-result-next-arrow {
         @include center-elements;
-        height: 1.75rem;
-        width: 1.75rem;
+        height: 1.6rem;
+        width: 1.6rem;
         border-radius: 6px;
 
         svg {
@@ -37,7 +37,7 @@
         @include smooth-hover(background-color);
 
         &:hover {
-          background-color: map-get($grey, 'lighter');
+          background-color: darken(map-get($theme, 'white'), 7.5%);
           cursor: pointer;
         }
 

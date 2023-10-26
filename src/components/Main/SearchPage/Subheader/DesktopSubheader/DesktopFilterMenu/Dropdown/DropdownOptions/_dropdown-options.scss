@@ -46,7 +46,7 @@
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          left: 1.5rem;
+          left: 2.5rem;
           width: 10rem;
           border: 1px solid map-get($grey, 'darker');
           border-radius: 4px;
@@ -55,9 +55,35 @@
           background-color: map-get($theme, 'white');
           opacity: 0;
           transition: opacity 0.2s ease;
-
+          
           &.active {
             opacity: 1;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: -1.4rem;
+            top: 50%;
+            transform: translateY(-50%);
+
+            border-left: 0.7rem solid transparent;
+            border-right: 0.7rem solid map-get($grey, 'darker');
+            border-top: 0.7rem solid transparent;
+            border-bottom: 0.7rem solid transparent;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: -1.3rem;
+            top: 50%;
+            transform: translateY(-50%);
+
+            border-left: 0.7rem solid transparent;
+            border-right: 0.7rem solid map-get($theme, 'white');
+            border-top: 0.7rem solid transparent;
+            border-bottom: 0.7rem solid transparent;
           }
         }
       }

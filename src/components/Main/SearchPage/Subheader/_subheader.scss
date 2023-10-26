@@ -1,7 +1,7 @@
 @import '@styles/colors';
 
 .search-page-subheader-container {
-  height: 80px;
+  height: 70px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -14,24 +14,23 @@
   position: fixed;
   top: 60px;
   z-index: 3;
-}
 
-.search-options-container {
-  height: 40px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+  .search-options-container {
+    height: 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 
 @media (min-width: 768px) {
   .search-page-subheader-container {
     justify-content: left;
-    top: 70px;
-  }
 
-  .search-options-container {
-    justify-content: left;
+    .search-options-container {
+      justify-content: left;
+    }
   }
 }

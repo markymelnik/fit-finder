@@ -1,5 +1,5 @@
-import AccountMenu from "../AccountMenu/AccountMenu";
 import AboutLink from "./AboutLink";
+import AccountMenu from "../AccountMenu/AccountMenu";
 import './_navigation-bar.scss';
 
 const NavigationBar = () => {
@@ -7,7 +7,7 @@ const NavigationBar = () => {
   return (
     <div className='navigation-bar'>
       <div className='navigation-links'>
-        <AboutLink customClass='about-link' />
+        <AboutLink customClass='about-link' innerText={'About'} />
         <AccountMenu/>
       </div>
     </div>

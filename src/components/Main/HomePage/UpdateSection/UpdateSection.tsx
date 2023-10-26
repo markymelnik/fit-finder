@@ -31,17 +31,21 @@ const UpdateSection = () => {
       </div>
       <div className="updates-container">
         <div className="update-box box-1">
+          <div className="update-box-top">
           <div className="update-box-title">Fully Responsive</div>
           <p className="update-box-description">
             Our site is designed with ease of use in mind. Experience seamless
             browsing across phones, tablets, and computers. Find a location
             effortlessly on any device!
           </p>
+          </div>
+          
           <div className="box-1-icon">
             <PhoneSVG />
           </div>
         </div>
         <div className="update-box box-2">
+          <div className="update-box-top">
           <div className="update-box-title">Outdoor Fitness Areas</div>
           <p className="update-box-description">
             Explore 123 newly-added outdoor fitness areas across all 5 boroughs.
@@ -50,6 +54,8 @@ const UpdateSection = () => {
             bars, incline benches, and more. Use our interactive map to pinpoint
             their exact location!
           </p>
+          </div>
+          
           <div className="outdoor-fitness-area-search-link">
             <span onClick={handleOutdoorFitnessAreaLinkClick}>
               Search Outdoor Fitness Areas
@@ -60,6 +66,7 @@ const UpdateSection = () => {
           </div>
         </div>
         <div className="update-box box-3">
+          <div className="update-box-top">
           <div className="update-box-title">Brooklyn Facilities</div>
           <p className="update-box-description">
             Discover over 250 newly-added fitness destinations in Brooklyn -
@@ -67,6 +74,8 @@ const UpdateSection = () => {
             boutique studios. Tailor your search with specific amenities and
             offerings to find a location that suits your needs!
           </p>
+          </div>
+          
           <div className="brooklyn-search-link">
             <span onClick={handleBrooklynSearchLinkClick}>
               Search Brooklyn Locations

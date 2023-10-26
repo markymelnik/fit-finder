@@ -19,9 +19,7 @@ const FacilityOfferings = () => {
             <div className="facility-offering-icon">
               <img src={CheckmarkIcon} />
             </div>
-            <div className="facility-offering">
-              <div className="offering-text">{service}</div>
-            </div>
+            <div className="facility-offering-text">{service}</div>
           </div>   
         )
       })}

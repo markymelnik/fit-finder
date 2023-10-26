@@ -6,7 +6,7 @@
   position: relative;
   display: flex;
   border: 1px solid map-get($theme, 'black');
-  padding: 0.3rem 0.45rem 0.3rem 0.75rem;
+  padding: 0.25rem;
   border-radius: 50px;
 
   @include smooth-hover(box-shadow);
@@ -27,28 +27,21 @@
     background-color: transparent;
     border: none;
 
-    .account-menu-list-icon {
-      height: 1.5rem;
-      width: 1.5rem;
-  
-      img {
-        height: 100%;
-        width: 100%;
-      }
-    }
-
     &:hover {
       cursor: pointer;
     }
   
-    .account-menu-generic-icon {
+    .account-menu-generic-icon,
+    .account-menu-photo {
       @include center-elements;
-      height: 2rem;
-      width: 2rem;
-      border: 1px solid map-get($theme, 'black');
+      height: 1.75rem;
+      width: 1.75rem;
       border-radius: 50%;
       background-color: transparent;
-      
+    }
+
+    .account-menu-generic-icon {
+
       img {
         height: 80%;
         width: 80%;
@@ -56,12 +49,6 @@
     }
 
     .account-menu-photo {
-      @include center-elements;
-      height: 2rem;
-      width: 2rem;
-      background-color: transparent;
-      border: 1px solid map-get($theme, 'black');
-      border-radius: 50%;
 
       .account-menu-photo-letter {
         font-size: 1.1rem;
@@ -71,22 +58,25 @@
 
   .account-menu-dropdown {
     position: absolute;
-    top: 4rem;
-    right: -0.35rem;
+    top: 3.7rem;
+    right: -0.9rem;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
     width: 10rem;
     z-index: 2;
     padding: 1rem;
-    border: 1px solid map-get($grey, 'light');
+    border: 1px solid map-get($grey, 'darker');
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     visibility: hidden;
+    opacity: 0;
     background-color: map-get($theme, 'white');
+    transition: visibility 0.2s ease, opacity 0.2s ease;
 
     &.active {
       visibility: visible;
+      opacity: 1;
     }
 
     &::before {
@@ -98,13 +88,13 @@
       border-left: 1rem solid transparent;
       border-right: 1rem solid transparent;
       border-top: 1rem solid transparent;
-      border-bottom: 1rem solid map-get($grey, 'light');
+      border-bottom: 1rem solid map-get($grey, 'darker');
     }
 
     &::after {
       content: "";
       position: absolute;
-      top: -1.9rem;
+      top: -1.91rem;
       right: 1rem;
 
       border-left: 1rem solid transparent;

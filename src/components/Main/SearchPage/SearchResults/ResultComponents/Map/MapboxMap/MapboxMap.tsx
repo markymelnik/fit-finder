@@ -29,9 +29,9 @@ const MapboxMap = () => {
   useOutsideClick(popupRef, () => setShowPopup(false));
 
   const [viewState, setViewState] = useState({
-    latitude: 40.62783,
-    longitude: -74.0293,
-    zoom: 12,
+    latitude: 40.69983,
+    longitude: -73.9293,
+    zoom: 10,
     width: "100%",
     height: "100%",
   });
@@ -96,6 +96,7 @@ const MapboxMap = () => {
                 <div
                   onMouseEnter={() => setHoveredMarkerId(facility.id)}
                   onMouseLeave={() => setHoveredMarkerId(null)}
+                  className="map-marker-click-wrapper"
                 >
                   <MapMarkerSVG isHovered={isHovered} />
                 </div>

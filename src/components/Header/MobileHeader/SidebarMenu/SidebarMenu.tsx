@@ -38,7 +38,7 @@ const SidebarMenu = () => {
           <div className="sidebar-menu-link">
             <HomeLink customClass='home-link' />
             <SidebarMenuDivider />
-            <AboutLink customClass='about-link'/>
+            <AboutLink customClass='about-link' innerText={'About'} />
             <SidebarMenuDivider />
             {isLoggedIn && userAccountDetails && (
               <>
