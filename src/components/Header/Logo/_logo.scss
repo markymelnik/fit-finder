@@ -9,7 +9,7 @@
 
 .logo-text {
   font-family: 'Comfortaa';
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 400;
 
   @include smooth-hover(transform);
@@ -20,5 +20,11 @@
 
   &:active {
     transform: scale(0.95);
+  }
+}
+
+@media (min-width: 768px) {
+  .logo-text {
+    font-size: 1.25rem;
   }
 }

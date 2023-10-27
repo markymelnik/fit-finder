@@ -31,7 +31,9 @@ const DropdownButton = ({ fetchAllOptionsFromGlobalState, setSelectedOptions, re
   const globalCheckedOptions = useSelector(fetchSelectedOptions);
 
   useEffect(() => {
-    executeSearch();
+    if (location.pathname === '/search') {
+      executeSearch();
+    }
   }, [globalCheckedOptions]);
 
   const [dropdownVisible, setDropdownVisible] = useState<boolean>(false);

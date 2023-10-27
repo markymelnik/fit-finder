@@ -25,7 +25,9 @@ const MobileFilterOptions = ({ fetchAllOptionsFromGlobalState, setSelectedOption
   const globalCheckedOptions = useSelector(fetchSelectedOptions);
 
   useEffect(() => {
-    executeSearch();
+    if (location.pathname === '/search') {
+      executeSearch();
+    }
   }, [globalCheckedOptions]);
 
   const handleCheckboxChange = (newlyCheckedOption: string) => {

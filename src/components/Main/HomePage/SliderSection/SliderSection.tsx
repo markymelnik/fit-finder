@@ -26,7 +26,7 @@ const SliderSection = () => {
       } else {
         sliderRef.current.scrollBy({
           top: 0,
-          left: -200,
+          left: -500,
           behavior: 'smooth'
         });
       }
@@ -44,7 +44,7 @@ const SliderSection = () => {
       } else {
         sliderRef.current.scrollBy({
           top: 0,
-          left: 200,
+          left: 500,
           behavior: 'smooth'
         });
       }

@@ -1,6 +1,15 @@
 @import '@styles/mixins';
 @import '@styles/colors';
 
+@keyframes slideLeft {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-0.5rem);
+  }
+}
+
 .back-btn-container {
   display: flex;
   max-width: 800px;
@@ -11,6 +20,14 @@
     display: flex;
     gap: 0.5rem;
 
+    &:hover {
+      cursor: pointer;
+
+      svg {
+        animation: slideLeft 0.5s forwards, slideLeft 0.5s 0.5s forwards;
+      }
+    }
+
     svg {
       height: 1.5rem;
       width: 1.5rem;
@@ -19,9 +36,11 @@
     .back-btn {
       display: inline-block;
       font-size: 1.1rem;
-      line-height: 1;
+      border: none;
 
-      @include underline-animation('rtl');
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

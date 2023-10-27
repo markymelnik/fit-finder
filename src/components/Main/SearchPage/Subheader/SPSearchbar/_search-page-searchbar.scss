@@ -24,7 +24,8 @@
       border: 1px solid map-get($grey, 'darker');
       border-right: none;
       color: map-get($grey, darker);
-      padding: 0.75rem;
+      font-size: 1rem;
+      padding: 0.75rem 0 0.75rem 0.75rem;
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px;
       border-top-right-radius: 0px;

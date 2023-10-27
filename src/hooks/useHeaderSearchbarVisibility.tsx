@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { useLocation } from 'react-router-dom';
 
-const useHeaderSearchbarVisibility = (thresholdPercentage = 0.42) => {
+const useHeaderSearchbarVisibility = (thresholdPercentage = 0.31) => {
 
   const [showSearchbar, setShowSearchbar] = useState(false);
   const location = useLocation();

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import CheckMarkSVG from "../../../../../../assets/svg/CheckmarkSVG";
+import CheckMarkSVG from "../../../../../../assets/svg/CheckMarkSVG";
 import ClimbingGymSVG from "../../../../../../assets/svg/facility_page/ClimbingGymSVG";
 import FitnessStudioSVG from "../../../../../../assets/svg/facility_page/FitnessStudioSVG";
 import HIITCrossFitSVG from "../../../../../../assets/svg/facility_page/HIITCrossFitSVG";

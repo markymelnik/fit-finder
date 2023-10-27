@@ -18,8 +18,6 @@ const DropdownOptions = ({ allOptions, checkedOptions, onCheckboxClick, dropdown
 
   const [isDropdownTipHovered, setIsDropdownTipCovered] = useState<boolean>(false);
 
-  console.log(isDropdownTipHovered);
-
   const handleCheckboxChange = (option: string) => {
     onCheckboxClick(option);
   }
@@ -35,9 +33,7 @@ const DropdownOptions = ({ allOptions, checkedOptions, onCheckboxClick, dropdown
             onMouseLeave={() => setIsDropdownTipCovered(false)}
           >
             <ToolTipSVG />
-         
               <div className={`dropdown-tip-message ${isDropdownTipHovered ? `active` : ``}`}>{dropdownTipMessage}</div>
-        
           </div>
         </div>
         {allOptions.map((option, index) => (

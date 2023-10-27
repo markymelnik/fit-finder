@@ -16,7 +16,7 @@ const FavoriteCard = ({ favoriteFacilityObject, onClick }: any) => {
 
   return (
     <div className="favorite-facility-card" key={facility.id} onClick={handleClick}>
-      <Link to="/facility" className="favorite-facility-card-link-wrapper">
+      <Link to={`/facility/${facility.id}`} className="favorite-facility-card-link-wrapper">
         <div className="favorite-facility-card-left">
           {photo && <img src={photo} alt="facility main photo" />}
         </div>

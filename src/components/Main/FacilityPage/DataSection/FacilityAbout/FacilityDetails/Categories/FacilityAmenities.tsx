@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
+import CheckMarkSVG from "../../../../../../../assets/svg/CheckMarkSVG";
 import CalisthenicsEquipmentSVG from "../../../../../../../assets/svg/facility_page/CalisthenicsEquipmentSVG";
-import CheckMarkSVG from "../../../../../../../assets/svg/CheckmarkSVG";
 import { amenitiesSelector } from "../../../../../../../redux/selectors/dataSelector";
 import './_facility-categories.scss';
 import { RootState } from "../../../../../../../redux/store";
