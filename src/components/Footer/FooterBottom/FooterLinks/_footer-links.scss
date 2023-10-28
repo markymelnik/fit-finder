@@ -8,7 +8,7 @@
 
   .social-link {
     @include smooth-hover(background-color);
-    padding: 0.5rem 0.6rem 0.4rem;
+    padding: 0.6rem 0.6rem 0.3rem;
     border-radius: 5px;
 
     &:hover {

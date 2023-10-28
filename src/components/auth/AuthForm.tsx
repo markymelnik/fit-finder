@@ -45,7 +45,7 @@ const AuthForm = () => {
             <TabButton buttonText='Sign Up' isActive={activeTab === 'signup'} onClick={() => handleTabClick('signup')}/>
           </div>
           {activeTab === 'login' ? <LoginForm /> : <SignupForm />}
-          <OrDivider />
+          {<OrDivider />}
         </div>
       }
     </div>

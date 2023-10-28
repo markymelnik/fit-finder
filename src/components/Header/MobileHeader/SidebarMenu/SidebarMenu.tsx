@@ -55,7 +55,7 @@ const SidebarMenu = () => {
               <div className='sidebar-menu-account-container'>
                 <div className="sidebar-menu-account-information">
                   <div className="sidebar-menu-account-name">{userAccountDetails?.username}</div>
-                  <div className="sidebar-menu-account-id">User ID: {userAccountDetails?.id}</div>
+                  {/* <div className="sidebar-menu-account-id">User ID: {userAccountDetails?.id}</div> */}
                 </div>
               </div>
               <LogoutButton customClass="sidebar-menu-logout-btn"/>

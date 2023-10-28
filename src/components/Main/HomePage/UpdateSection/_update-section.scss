@@ -31,7 +31,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 5rem;
 
     .update-box {
       position: relative;
@@ -89,6 +89,7 @@
     }
 
     .box-1 {
+
       .update-box-top {
         margin: 0;
       }
@@ -129,7 +130,6 @@
     .update-section-top {
       margin: 0 0 7rem;
 
-
       .update-section-title {
         font-size: 2.25rem;
       }
@@ -140,7 +140,6 @@
     }
 
     .updates-container {
-
 
       .update-box {
 

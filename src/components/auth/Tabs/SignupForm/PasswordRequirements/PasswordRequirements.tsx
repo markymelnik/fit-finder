@@ -33,7 +33,7 @@ const PasswordRequirements = ({ lengthRequirementSatisfied, caseRequirementSatis
           (caseRequirementSatisfied ? <CheckMarkSVG /> : <XMarkSVG />)
         }
         </div>
-        <div className="password-req-text">Must contain both upper and lower case letters</div>
+        <div className="password-req-text">Must contain upper and lower case letters</div>
       </div>
       <div className={`password-req-line ${!inputValue ? 'default' : (numberRequirementSatisfied ? 'satisfied' : 'not-satisfied')}`}>
         <div className="password-req-icon">

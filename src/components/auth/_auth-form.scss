@@ -8,7 +8,7 @@
   width: 100%;
   background: transparent;
   z-index: 5;
-  padding: 2rem 1rem;
+  padding: 1rem;
   visibility: hidden;
 
   &.active {
@@ -21,7 +21,7 @@
     height: 100%;
     flex-direction: column;
     width: clamp(300px, 100%, 575px);
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 2rem 1rem;
     z-index: 10;
     border: none;
     border-radius: 6px;
@@ -40,6 +40,5 @@
 @media (min-width: 768px) {
   .auth-overlay {
     padding: 4rem 1rem;
-
   }
 }

@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 25%;
+  width: 16rem;
   z-index: 1;
 
   .account-page-leftbar-top {
@@ -31,7 +31,7 @@
       }
     }
 
-    .leftbar-tab {
+    .leftbar-tab-btn {
       display: flex;
       align-items: center;
       gap: 1rem;
@@ -50,13 +50,12 @@
       }
   
       svg {
- 
         height: 1.75rem;
         width: 1.75rem;
       }
   
-      .details-btn,
-      .favorites-btn {
+      .details-text,
+      .favorites-text {
         font-size: 1.25rem;
       }
     }
@@ -84,7 +83,5 @@
         color: map-get($theme, 'white');
       }
     }
-
   }
-
 }

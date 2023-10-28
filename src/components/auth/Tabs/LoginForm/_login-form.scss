@@ -104,7 +104,7 @@
         color: map-get($theme, 'white');
         background-color: map-get($grey, 'darker');
         border: none;
-        margin: 2.5rem 0 1.5rem;
+        margin: 2.5rem 0 1rem;
         border-radius: 4px;
 
         @include smooth-hover(background-color);

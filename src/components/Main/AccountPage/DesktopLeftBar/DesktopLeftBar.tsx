@@ -18,18 +18,18 @@ const DesktopLeftBar = ({ activeTab, setActiveTab }: DesktopLeftBarProps) => {
           <AccountPhoto customClass='photo-container'/>
         </div>
         <div
-          className={`leftbar-tab ${activeTab === "details" ? "active" : ""}`}
+          className={`leftbar-tab-btn ${activeTab === "details" ? "active" : ""}`}
           onClick={() => setActiveTab("details")}
         >
           <UserSVG />
-          <div className="details-btn">Details</div>
+          <div className="details-text">Details</div>
         </div>
         <div
-          className={`leftbar-tab ${activeTab === "favorites" ? "active" : ""}`}
+          className={`leftbar-tab-btn ${activeTab === "favorites" ? "active" : ""}`}
           onClick={() => setActiveTab("favorites")}
         >
           <FavoriteSVG />
-          <div className="favorites-btn">Favorites</div>
+          <div className="favorites-text">Favorites</div>
         </div>
       </div>
       <div className="account-page-leftbar-bottom">

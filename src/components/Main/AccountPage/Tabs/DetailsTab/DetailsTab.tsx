@@ -17,10 +17,10 @@ const DetailsTab = () => {
             <div className='account-details-title'>EMAIL</div>
             <div className='account-name'>{userAccountDetails?.username}</div>
           </div>
-          <div className='account-details-section'>
+          {/* <div className='account-details-section'>
             <div className='account-details-title'>ID NUMBER</div>
             <div className='account-id'>{userAccountDetails?.id}</div>
-          </div>
+          </div> */}
         </div>
       ) : (
         <>
