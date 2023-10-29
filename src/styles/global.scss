@@ -41,6 +41,11 @@ a, button {
   color: inherit;
 }
 
+h1, h2, h3, h4 {
+  font-weight: normal;
+  font-size: 100%;
+}
+
 .site-container {
   display: flex;
   flex-direction: column;

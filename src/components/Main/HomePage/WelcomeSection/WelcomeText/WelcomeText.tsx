@@ -1,9 +1,11 @@
-import './_welcome-text.scss';
+import "./_welcome-text.scss";
 
 const WelcomeText = () => {
   return (
-    <div className="welcome-text">Fitness starts <span className="highlight">here</span>.</div>
-  )
-}
+    <h1 className="welcome-text">
+      Fitness starts <span className="highlight">here</span>.
+    </h1>
+  );
+};
 
 export default WelcomeText;

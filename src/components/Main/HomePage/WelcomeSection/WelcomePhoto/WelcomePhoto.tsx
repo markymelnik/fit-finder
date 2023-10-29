@@ -4,7 +4,7 @@ import './_welcome-photo.scss';
 const WelcomePhoto = () => {
   return (
     <div className='home-page-welcome-photo'>
-      <img src={HomeWelcomeBackground} alt='home page background photo'/>
+      <img src={HomeWelcomeBackground} alt='home page welcome photo'/>
     </div>
   );
 };

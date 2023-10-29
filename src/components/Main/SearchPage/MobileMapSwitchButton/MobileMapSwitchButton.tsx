@@ -21,17 +21,12 @@ const MobileMapSwitchButton = () => {
 
   return (
     <div className="mobile-map-switch-container">
-      <button 
-        className="mobile-map-switch-btn"
-        onClick={handleViewToggle}
-      >
-        <div className="btn-icon">
-          {buttonIcon}
-        </div>
-        <div className="btn-text">{buttonText}</div>
+      <button className="mobile-map-switch-btn" onClick={handleViewToggle}>
+        <span className="btn-icon">{buttonIcon}</span>
+        <span className="btn-text">{buttonText}</span>
       </button>
     </div>
-  )
+  );
 }
 
 export default MobileMapSwitchButton;

@@ -16,7 +16,7 @@ const AccountPage = () => {
   const [activeTab, setActiveTab] = useState<string>('details');
 
   return (
-    <div className='account-page-container'>
+    <main className='account-page-container'>
       <div className="account-page-header">My Account</div>
       {
         isMobile && 
@@ -38,7 +38,7 @@ const AccountPage = () => {
           )}  
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

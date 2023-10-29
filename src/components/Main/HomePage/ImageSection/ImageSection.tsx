@@ -4,9 +4,9 @@ import './_image-section.scss';
 const ImageSection = () => {
 
   return (
-    <div className="image-section-container">
+    <section className="image-section-container">
         <img src={HomeWorkoutBackground} alt="home page workout photo above footer" />
-    </div>
+    </section>
   )
 }
 

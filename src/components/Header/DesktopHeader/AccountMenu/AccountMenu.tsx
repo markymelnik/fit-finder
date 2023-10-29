@@ -43,7 +43,7 @@ const AccountMenu = () => {
             </div>
         } 
       </button>
-      <div className={`account-menu-dropdown ${isDesktopProfileDropdownOpen ? 'active' : ''}`}>
+      <nav className={`account-menu-dropdown ${isDesktopProfileDropdownOpen ? 'active' : ''}`}>
         {isLoggedIn ? (
           <>
             <AccountLink customClass='dropdown-account-link'/>
@@ -56,7 +56,7 @@ const AccountMenu = () => {
             <SignupButton customClass='dropdown-signup-btn' />
           </>
         )}
-      </div>
+      </nav>
     </div>
   )
 }

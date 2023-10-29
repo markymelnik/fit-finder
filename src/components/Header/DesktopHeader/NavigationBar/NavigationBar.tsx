@@ -5,12 +5,12 @@ import './_navigation-bar.scss';
 const NavigationBar = () => {
 
   return (
-    <div className='navigation-bar'>
+    <nav className='navigation-bar'>
       <div className='navigation-links'>
         <AboutLink customClass='about-link' innerText={'About'} />
         <AccountMenu/>
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -52,17 +52,17 @@ const SliderSection = () => {
   }
 
   return (
-    <div className='slider-section-container'>
+    <section className='slider-section-container'>
       <div className="slider-top-details">
         <div className="slider-top-left-text">
-          <div className='slider-header'>Locations in New York City</div>
-          <div className='slider-subheader'>Discover & Explore</div>
+          <h2 className='slider-header'>Locations in New York City</h2>
+          <h3 className='slider-subheader'>Discover & Explore</h3>
         </div>
        {!isMobile && <SliderScrollButtons scrollLeft={scrollLeft} scrollRight={scrollRight} />}
       </div>
       <SliderDisplay sliderRef={sliderRef}/>
       <SliderBottom />
-    </div>
+    </section>
   );
 };
 

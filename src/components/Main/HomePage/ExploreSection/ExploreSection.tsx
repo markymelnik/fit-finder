@@ -55,10 +55,10 @@ const ExploreSection = () => {
   const categories = shuffleArray([...typeCategory, ...amenityCategory, ...offeringCategory]);
 
   return (
-    <div className="explore-section-container">
+    <section className="explore-section-container">
       <div className="explore-section-top">
-        <div className="explore-section-title">Explore Categories</div>
-        <div className="explore-section-subtitle">Click to search!</div>
+        <h2 className="explore-section-title">Explore Categories</h2>
+        <h3 className="explore-section-subtitle">Click to search!</h3>
       </div>
       <div className="explore-category-container">
         {categories.map((category) => (
@@ -69,7 +69,7 @@ const ExploreSection = () => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

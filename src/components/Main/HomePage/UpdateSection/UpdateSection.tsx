@@ -24,29 +24,28 @@ const UpdateSection = () => {
   }
 
   return (
-    <div className="update-section-container">
+    <section className="update-section-container">
       <div className="update-section-top">
-        <div className="update-section-title">Recent Additions</div>
-        <div className="update-section-subtitle">{`See what's new!`}</div>
+        <h2 className="update-section-title">Recent Additions</h2>
+        <h3 className="update-section-subtitle">{`See what's new!`}</h3>
       </div>
       <div className="updates-container">
         <div className="update-box box-1">
           <div className="update-box-top">
-          <div className="update-box-title">Fully Responsive</div>
+          <h4 className="update-box-title">Fully Responsive</h4>
           <p className="update-box-description">
             Our site is designed with ease of use in mind. Experience seamless
             browsing across phones, tablets, and computers. Find a location
             effortlessly on any device!
           </p>
           </div>
-          
           <div className="box-1-icon">
             <PhoneSVG />
           </div>
         </div>
         <div className="update-box box-2">
           <div className="update-box-top">
-          <div className="update-box-title">Outdoor Fitness Areas</div>
+          <h4 className="update-box-title">Outdoor Fitness Areas</h4>
           <p className="update-box-description">
             Explore 123 newly-added outdoor fitness areas across all 5 boroughs.
             Situated within New York City public parks, these fitness zones are
@@ -67,7 +66,7 @@ const UpdateSection = () => {
         </div>
         <div className="update-box box-3">
           <div className="update-box-top">
-          <div className="update-box-title">Brooklyn Facilities</div>
+          <h4 className="update-box-title">Brooklyn Facilities</h4>
           <p className="update-box-description">
             Discover over 250 newly-added fitness destinations in Brooklyn -
             from traditional gyms and martial arts centers to specialized
@@ -86,7 +85,7 @@ const UpdateSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

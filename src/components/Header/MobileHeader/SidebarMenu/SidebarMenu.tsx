@@ -35,7 +35,7 @@ const SidebarMenu = () => {
             <SidebarMenuCloseButton />
           </div>
           <SidebarMenuDivider />
-          <div className="sidebar-menu-link">
+          <nav className="sidebar-menu-navigation">
             <HomeLink customClass='home-link' />
             <SidebarMenuDivider />
             <AboutLink customClass='about-link' innerText={'About'} />
@@ -47,7 +47,7 @@ const SidebarMenu = () => {
               </>
               )
             }
-          </div>
+          </nav>
         </div>
         <div className="sidebar-menu-bottom">
           {isLoggedIn && userAccountDetails && (

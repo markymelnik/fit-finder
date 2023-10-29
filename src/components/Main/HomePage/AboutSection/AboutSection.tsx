@@ -7,15 +7,15 @@ import './_about-section.scss';
 const AboutSection = () => {
 
   return (
-    <div className="about-section-container">
+    <section className="about-section-container">
       <div className="about-section-top">
-        <div className="about-section-title">Looking for a place to workout?</div>
-        <div className="about-section-subtitle">Find it with <span>fitfinder</span>.</div>
+        <h2 className="about-section-title">Looking for a place to workout?</h2>
+        <h3 className="about-section-subtitle">Find it with <span>fitfinder</span>.</h3>
       </div>
       <div className="about-section-row">
         <div className="row-left">
           <div className="row-text">
-            <div className="row-title">An easy way to search</div>       
+            <h4 className="row-title">An easy way to search</h4>       
             <p className="row-description">
               {`Find your perfect gym or workout spot using our intuitive site.
               Search by keywords including location name, address, neighborhood, and ZIP code.
@@ -31,7 +31,7 @@ const AboutSection = () => {
           </Link>
         </div>  
       </div>
-    </div>
+    </section>
   )
 }
 
