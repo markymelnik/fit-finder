@@ -36,20 +36,24 @@ const DropdownOptions = ({ allOptions, checkedOptions, onCheckboxClick, dropdown
               <div className={`dropdown-tip-message ${isDropdownTipHovered ? `active` : ``}`}>{dropdownTipMessage}</div>
           </div>
         </div>
-        {allOptions.map((option, index) => (
-          <li key={index} className="dropdown-option">
+        {allOptions.map((option: string, index: number) => (
+        <li key={index} className="dropdown-option">
+          <label className="option-checkbox" htmlFor={`checkbox-${index}`}>
             <input
+              id={`checkbox-${index}`}
               name={`${customClass}-choice`}
-              className="option-checkbox"
               type="checkbox"
               checked={checkedOptions.includes(option)}
               onChange={() => handleCheckboxChange(option)}
             />
-            <div className="option-text">{option}</div>
-          </li>
+            <span className="custom-checkbox">
+              <div className="custom-checkbox-text">{option}</div>
+            </span>
+          </label>
+        </li>
         ))}
         <SaveFiltersButton
-          customClass="checkbox-done-btn"
+          customClass="dropdown-done-btn"
           buttonText="Done"
           onClick={() => {
             setDropdownVisible(false);

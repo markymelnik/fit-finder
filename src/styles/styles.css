@@ -6,6 +6,10 @@
   font-family: "Comfortaa";
   src: url("../assets/fonts/Comfortaa.ttf");
 }
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/fonts/Avenir.otf");
+}
 * {
   box-sizing: border-box;
   margin: 0;

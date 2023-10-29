@@ -15,7 +15,7 @@ interface MobileFilterOptionsProps {
   categoryDescription: string;
 }
 
-const MobileFilterOptions = ({ fetchAllOptionsFromGlobalState, setSelectedOptions, fetchSelectedOptions, categoryTitle, categoryDescription }: MobileFilterOptionsProps) => {
+const MobileFilterOptions = ({ fetchAllOptionsFromGlobalState, setSelectedOptions, fetchSelectedOptions, entityName, categoryTitle, categoryDescription, }: MobileFilterOptionsProps) => {
 
   const dispatch = useDispatch<AppDispatch>();
   const { executeSearch } = useFacilitySearch();
@@ -52,14 +52,19 @@ const MobileFilterOptions = ({ fetchAllOptionsFromGlobalState, setSelectedOption
         </div>
         {allOptions.map((option: string, index: number) => (
           <li key={index} className="mobile-filter-option">
-            <input 
-              className="mobile-filter-option-checkbox"
-              type="checkbox"
-              name={option}
-              checked={globalCheckedOptions.includes(option)}
-              onChange={() => handleCheckboxChange(option)}
-            />
-            <div className="mobile-filter-option-text">{option}</div>
+            <label className="option-checkbox" htmlFor={`checkbox-${index}`}>
+              <input
+                id={`checkbox-${index}`}
+                name={`${entityName}-choice`}
+                className="mobile-filter-option-checkbox"
+                type="checkbox"
+                checked={globalCheckedOptions.includes(option)}
+                onChange={() => handleCheckboxChange(option)}
+              />
+              <span className="custom-checkbox">
+                <div className="custom-checkbox-text">{option}</div>
+              </span>
+            </label>
           </li>
         ))}
       </ul>
