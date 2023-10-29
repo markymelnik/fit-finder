@@ -38,9 +38,9 @@ const DropdownOptions = ({ allOptions, checkedOptions, onCheckboxClick, dropdown
         </div>
         {allOptions.map((option: string, index: number) => (
         <li key={index} className="dropdown-option">
-          <label className="option-checkbox" htmlFor={`checkbox-${index}`}>
+          <label className="option-checkbox" htmlFor={`${option}-checkbox-${index}`}>
             <input
-              id={`checkbox-${index}`}
+              id={`${option}-checkbox-${index}`}
               name={`${customClass}-choice`}
               type="checkbox"
               checked={checkedOptions.includes(option)}

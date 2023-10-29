@@ -52,11 +52,10 @@ const MobileFilterOptions = ({ fetchAllOptionsFromGlobalState, setSelectedOption
         </div>
         {allOptions.map((option: string, index: number) => (
           <li key={index} className="mobile-filter-option">
-            <label className="option-checkbox" htmlFor={`checkbox-${index}`}>
+            <label className="option-checkbox" htmlFor={`${option}-checkbox-${index}`}>
               <input
-                id={`checkbox-${index}`}
+                id={`${option}-checkbox-${index}`}
                 name={`${entityName}-choice`}
-                className="mobile-filter-option-checkbox"
                 type="checkbox"
                 checked={globalCheckedOptions.includes(option)}
                 onChange={() => handleCheckboxChange(option)}
@@ -68,7 +67,6 @@ const MobileFilterOptions = ({ fetchAllOptionsFromGlobalState, setSelectedOption
           </li>
         ))}
       </ul>
-      
     </div>
   )
 }
