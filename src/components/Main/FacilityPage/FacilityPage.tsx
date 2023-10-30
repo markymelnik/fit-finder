@@ -8,7 +8,7 @@ import FacilityName from "./FacilityName/FacilityName";
 import PhotoSection from "./PhotoSection/PhotoSection";
 import { fetchFacilityByFacilityId } from "../../../redux/apiRequests";
 import { RootState } from "../../../redux/store";
-import BackButton from "../../common/button/nav/BackButton";
+import BackButton from "./BackButton/BackButton";
 import "./_facility-page.scss";
 
 const FacilityPage = () => {

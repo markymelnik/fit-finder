@@ -1,6 +1,5 @@
 @import '@styles/colors';
 @import '@styles/mixins';
-@import '@styles/transitions';
 
 .sidebar-menu-container {
   display: flex;
@@ -45,7 +44,7 @@
       }
     }
 
-    .sidebar-menu-link {
+    .sidebar-menu-navigation {
       display: flex;
       flex-direction: column;
 

@@ -1,0 +1,35 @@
+@import '@styles/colors';
+
+.about-description {
+  display: flex;
+  flex-direction: column;
+
+  .about-description-title {
+    font-size: 1.5rem;
+    font-weight: 350;
+  }
+
+  .about-description-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: map-get($grey, 'dark');
+    border-left: 2px solid map-get($grey, 'darker');
+    padding: 0 0 0 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-description {
+    width: 50%;
+
+    .about-description-title {
+      font-size: 1.75rem;
+      margin: 0 0 1.5rem;
+    }
+
+    .about-description-text {
+      font-size: 1.25rem;
+      padding: 0 0 0 1.5rem;
+    }
+  }
+}

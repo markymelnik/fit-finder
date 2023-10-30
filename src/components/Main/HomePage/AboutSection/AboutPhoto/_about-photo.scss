@@ -1,0 +1,53 @@
+@import '@styles/colors';
+
+.about-photo-container {
+  display: flex;
+  justify-content: center;
+
+  .about-search-photo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 325px;
+    min-width: 325px;
+    margin-top: 1rem;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px;
+    border: 0.5px solid map-get($grey, 'neutral');
+    z-index: 1;
+    border-radius: 4px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 15px;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    img {
+      border-radius: 5px;
+      padding: 0.25rem;
+      width: 100%;
+      object-fit: contain;
+      background-color: map-get($theme, 'white');
+      z-index: 2;
+      border-radius: 6px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .about-photo-container {
+    width: 50%;
+    align-items: center;
+
+    .about-search-photo {
+      margin: 0;
+      max-height: 500px;
+      max-width: 500px;
+    }
+  }
+}

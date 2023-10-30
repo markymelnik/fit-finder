@@ -1,3 +1,14 @@
+$smooth-hover-time: 0.12s;
+$smooth-hover-effect: ease-in;
+
+@mixin smooth-hover(
+  $property, 
+  $duration: $smooth-hover-time, 
+  $timing-function: $smooth-hover-effect
+) {
+  transition: $property $duration $timing-function;
+}
+
 @mixin center-elements($direction: null) {
   display: flex;
   flex-direction: $direction;

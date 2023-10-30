@@ -2,12 +2,12 @@ import { ChangeEvent, FormEvent } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import SearchIconSVG from '../../../assets/svg/SearchIconSVG';
-import XMarkSVG from '../../../assets/svg/XMarkSVG';
-import useFacilitySearch from '../../../hooks/useFacilitySearch';
-import { setEnteredKeyword } from '../../../redux/slices/filterSlice';
-import { AppDispatch } from '../../../redux/store';
-import { RootState } from '../../../redux/store';
+import SearchIconSVG from '../../assets/svg/SearchIconSVG';
+import XMarkSVG from '../../assets/svg/XMarkSVG';
+import useFacilitySearch from '../../hooks/useFacilitySearch';
+import { setEnteredKeyword } from '../../redux/slices/filterSlice';
+import { AppDispatch } from '../../redux/store';
+import { RootState } from '../../redux/store';
 
 interface SearchBarProps {
   containerClass: string;

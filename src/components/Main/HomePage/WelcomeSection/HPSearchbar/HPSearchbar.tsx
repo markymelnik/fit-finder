@@ -1,4 +1,4 @@
-import SearchBarComponent from "../../../../common/searchbar/SearchBarComponent";
+import SearchBarComponent from "../../../../common/SearchBarComponent";
 import './_home-page-searchbar.scss';
 
 const HPSearchbar = () => {

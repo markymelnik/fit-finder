@@ -1,5 +1,4 @@
 @import '@styles/colors';
-@import '@styles/transitions';
 @import '@styles/mixins';
 
 .about-section-container {
@@ -8,10 +7,9 @@
   @include center-elements(column);
   padding: 5rem 5%;
   
-
   .about-section-top {
     @include center-elements(column);
-    margin: 0 0 3rem;
+    margin: 0 0 5rem;
     z-index: 1;
 
     .about-section-title,
@@ -31,74 +29,12 @@
     }
   }
 
-  .about-section-row {
+  .about-section-bottom {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
     z-index: 1;
-
-    .row-left {
-      display: flex;
-
-      .row-text {
-        display: flex;
-        flex-direction: column;
-        gap: 1.25rem;
-        margin-top: 2rem;
-
-        .row-title {
-          font-size: 1.5rem;
-        }
-
-        .row-description {
-          font-size: 1.1rem;
-          line-height: 1.6;
-          color: map-get($grey, 'dark');
-          border-left: 2px solid map-get($grey, 'darker');
-          padding: 0 0 0 1rem;
-        }
-      }
-    }
-
-    .row-right {
-      display: flex;
-      justify-content: center;
-
-      .row-photo-container {
-        position: relative;
-        display: flex;
-        align-items: center;
-        min-height: 325px;
-        min-width: 325px;
-        margin-top: 1rem;
-        overflow: hidden;
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px;
-        border: 0.5px solid map-get($grey, 'neutral');
-        z-index: 1;
-        border-radius: 4px;
-        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-        &:hover {
-          cursor: pointer;
-          transform: scale(1.05);
-          box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 15px;
-        }
-
-        &:active {
-          transform: scale(0.95);
-        }
-
-        img {
-          border-radius: 5px;
-          padding: 0.25rem;
-          width: 100%;
-          object-fit: contain;
-          background-color: map-get($theme, 'white');
-          z-index: 2;
-          border-radius: 6px;
-        }
-      }
-    }
   }
 }
 
@@ -119,38 +55,9 @@
         margin: 0 0 3.5rem;
       }
     }
-
-    .about-section-row {
+    .about-section-bottom {
       flex-direction: row;
       gap: 3rem;
-
-      .row-left {
-        width: 50%;
-
-        .row-text {
-
-          .row-title {
-            font-size: 1.75rem;
-            margin: 0 0 0.5rem;
-          }
-
-          .row-description {
-            font-size: 1.25rem;
-            padding: 0 0 0 1.5rem;
-          }
-        }
-      }
-
-      .row-right {
-        width: 50%;
-        align-items: center;
-
-        .row-photo-container {
-          margin: 0;
-          max-height: 500px;
-          max-width: 500px;
-        }
-      }
     }
   }
 }

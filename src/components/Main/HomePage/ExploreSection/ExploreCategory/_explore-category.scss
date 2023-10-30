@@ -1,6 +1,5 @@
 @import '@styles/colors';
 @import '@styles/mixins';
-@import '@styles/transitions';
 
 .explore-category {
   @include center-elements;
@@ -26,8 +25,6 @@
     color: map-get($grey, 'darker');
     font-size: 0.95rem;
   }
-
-  
 }
 
 @media (min-width: 768px) {
