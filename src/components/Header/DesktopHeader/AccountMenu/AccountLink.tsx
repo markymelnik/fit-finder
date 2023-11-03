@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom';
-import { setIsSidebarMenuOpen } from '../../../../redux/slices/sidebarMenuSlice';
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../../../redux/store';
+import { Link } from 'react-router-dom';
+
 import { setIsAccountMenuOpen } from '../../../../redux/slices/accountMenuSlice';
+import { setIsSidebarMenuOpen } from '../../../../redux/slices/sidebarMenuSlice';
+import { AppDispatch } from '../../../../redux/store';
 
 type AccountLinkProps = {
   customClass: string;

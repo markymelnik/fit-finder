@@ -36,17 +36,31 @@ const SidebarMenu = () => {
           </div>
           <SidebarMenuDivider />
           <nav className="sidebar-menu-navigation">
-            <HomeLink customClass='home-link' />
-            <SidebarMenuDivider />
-            <AboutLink customClass='about-link' innerText={'About'} />
-            <SidebarMenuDivider />
-            {isLoggedIn && userAccountDetails && (
-              <>
-                <AccountLink customClass='account-link' /> 
+            <ul>
+              <li>
+                <HomeLink customClass='sidebar-home-link' />
+              </li>
+              <li>
                 <SidebarMenuDivider />
-              </>
-              )
-            }
+              </li>
+              <li>
+                <AboutLink customClass='sidebar-about-link' innerText={'About'} />
+              </li>
+              <li>
+                <SidebarMenuDivider />
+              </li>
+              {isLoggedIn && userAccountDetails && (
+                <>
+                  <li className='sidebar-account-link-wrapper'>
+                    <AccountLink customClass='sidebar-account-link' /> 
+                  </li>
+                  <li>
+                    <SidebarMenuDivider />
+                  </li>
+                </>
+                )
+              }
+            </ul>
           </nav>
         </div>
         <div className="sidebar-menu-bottom">

@@ -1,9 +1,8 @@
 @import '@styles/colors';
 
-.sidebar-menu-divider {
+hr.sidebar-menu-divider {
+  border: none;
+  height: 1px;
+  background-color: map-get($grey, 'lighter');
   width: 100%;
-
-  .divider {
-    border-bottom: 1px solid map-get($grey, 'light');
-  }
 }

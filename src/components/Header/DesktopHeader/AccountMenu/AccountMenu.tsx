@@ -44,18 +44,28 @@ const AccountMenu = () => {
         } 
       </button>
       <nav className={`account-menu-dropdown ${isDesktopProfileDropdownOpen ? 'active' : ''}`}>
-        {isLoggedIn ? (
-          <>
-            <AccountLink customClass='dropdown-account-link'/>
-            <MenuDivider />
-            <LogoutButton customClass='dropdown-logout-btn'/>
-          </>
-        ) : (
-          <>
-            <LoginButton customClass='dropdown-login-btn' />
-            <SignupButton customClass='dropdown-signup-btn' />
-          </>
-        )}
+        <ul>
+          {isLoggedIn ? (
+            <>
+              <li>
+                <AccountLink customClass='dropdown-account-link'/>
+              </li>
+              <MenuDivider />
+              <li>
+                <LogoutButton customClass='dropdown-logout-btn'/>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <LoginButton customClass='dropdown-login-btn' />
+              </li>
+              <li>
+                <SignupButton customClass='dropdown-signup-btn' />
+              </li>
+            </>
+          )}
+        </ul>
       </nav>
     </div>
   )

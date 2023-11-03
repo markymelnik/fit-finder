@@ -1,11 +1,9 @@
 @import '@styles/colors';
 
-.account-menu-divider {
-  width: 100%;
-  margin: 0.25rem 0;
-
-  .divider {
-    width: 100%;
-    border-bottom: 1px solid map-get($grey, 'light');
-  }
+hr.account-menu-divider {
+  border: none;
+  height: 1px;
+  background-color: map-get($grey, 'lighter');
+  width: 90%;
+  margin: 0.35rem 0;
 }

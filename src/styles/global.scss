@@ -41,6 +41,10 @@ a, button {
   color: inherit;
 }
 
+ul, ol {
+  list-style-type: none;
+}
+
 h1, h2, h3, h4 {
   font-weight: normal;
   font-size: 100%;

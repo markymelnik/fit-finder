@@ -1,16 +1,15 @@
 @import '@styles/colors';
 
-.home-page-divider-container {
-  width: 100%;
+hr.home-page-divider-container {
+  border: none;
+  height: 1px;
+  width: 80%;
+  background-color: map-get($grey, 'lighter');
   padding: 0 1.5rem;
-
-  .divider {
-    border-bottom: 1px solid map-get($grey, 'neutral');
-  }
 }
 
 @media (min-width: 768px) {
   .home-page-divider-container {
-    padding: 0 10%;
+    width: 50%;
   }
 }

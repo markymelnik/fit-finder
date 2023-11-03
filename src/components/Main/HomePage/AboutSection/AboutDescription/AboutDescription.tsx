@@ -7,9 +7,9 @@ const AboutDescription = () => {
       <h4 className="about-description-title">An easy way to search</h4>
       <p className="about-description-text">
         {`Find your perfect gym or workout spot using our intuitive site.
-          Search by keywords including location name, address, neighborhood, and ZIP code.
-          Filter your search by type, amenities, and offerings to find exactly what you're looking for.
-          Explore locations using our interactive street map tool!`}
+          Search by keywords including location name, location address, neighborhood, and ZIP code.
+          Refine your search with filters like type, amenities, and offerings to find exactly what you're looking for.
+          Explore locations using our interactive street map tool. Happy fitness journey!`}
       </p>
       <ToSearchButton />
     </div>

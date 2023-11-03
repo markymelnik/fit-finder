@@ -35,7 +35,7 @@
       align-items: center;
       width: 100%;
       padding: 0.25rem 1rem 1.25rem;
-  
+
       .sidebar-menu-logo {
         font-family: 'Comfortaa';
         font-size: 1.5rem;
@@ -48,88 +48,83 @@
       display: flex;
       flex-direction: column;
 
-      .about-link,
-      .home-link {
+      .sidebar-about-link,
+      .sidebar-home-link,
+      .sidebar-account-link-wrapper {
         padding: 1.25rem;
         font-size: 1rem;
-      }
-
-      .account-link {
-        line-height: 1;
-        font-size: 1rem;
-        padding: 1.25rem;
       }
     }
   }
+}
 
-  .sidebar-menu-bottom {
+.sidebar-menu-bottom {
+  display: flex;
+  flex-direction: column;
+
+  .sidebar-menu-account-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 2rem;
 
-    .sidebar-menu-account-container {
+    .sidebar-menu-account-information {
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-  
-      .sidebar-menu-account-information {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-        gap: 1rem;
-    
-        .sidebar-menu-account-name {
-          font-size: 1rem;
-        } 
-        
-        /* .sidebar-menu-account-id {
+      padding: 1rem;
+      gap: 1rem;
+
+      .sidebar-menu-account-name {
+        font-size: 1rem;
+      }
+
+      /* .sidebar-menu-account-id {
           font-size: 1rem;
         } */
-      }
     }
+  }
 
-    .login-link {
-      align-self: center;
-      border: none;
-      border-radius: 4px;
-      color: map-get($theme, 'white');
-      background: map-get($grey, 'darker');
-      height: 3rem;
-      width: 8rem;
-      font-size: 1rem;
-      margin: 2rem 0 0;
-    }
+  .login-link {
+    align-self: center;
+    border: none;
+    border-radius: 4px;
+    color: map-get($theme, 'white');
+    background: map-get($grey, 'darker');
+    height: 3rem;
+    width: 8rem;
+    font-size: 1rem;
+    margin: 2rem 0 0;
+  }
 
-    .sidebar-menu-login-btn {
-      @include center-elements;
-      height: 3rem;
-      width: 8rem;
-      border: none;
-      border-radius: 6px;
-      background-color: map-get($grey, 'darker');
+  .sidebar-menu-login-btn {
+    @include center-elements;
+    height: 3rem;
+    width: 8rem;
+    border: none;
+    border-radius: 6px;
+    background-color: map-get($grey, 'darker');
+    color: map-get($theme, 'white');
+    font-size: 1rem;
+    margin: 2rem 1rem;
+  }
+
+  .sidebar-menu-logout-btn {
+    @include center-elements;
+    height: 3rem;
+    width: 8rem;
+    border: 1px solid map-get($grey, 'darker');
+    border-radius: 6px;
+    color: map-get($grey, 'darker');
+    font-size: 1rem;
+    margin: 1rem;
+
+    @include smooth-hover(background-color);
+
+    &:hover {
+      cursor: pointer;
+      background-color: lighten(map-get($grey, 'darker'), 5%);
       color: map-get($theme, 'white');
-      font-size: 1rem;
-      margin: 2rem 1rem;
     }
-  
-    .sidebar-menu-logout-btn {
-      @include center-elements;
-      height: 3rem;
-      width: 8rem;
-      border: 1px solid map-get($grey, 'darker');
-      border-radius: 6px;
-      color: map-get($grey, 'darker');
-      font-size: 1rem;
-      margin: 1rem;
-    
-      @include smooth-hover(background-color);
-    
-      &:hover {
-        cursor: pointer;
-        background-color: lighten(map-get($grey, 'darker'), 5%);
-        color: map-get($theme, 'white');
-      }
-    }
-  } 
+  }
 }

@@ -6,10 +6,14 @@ const NavigationBar = () => {
 
   return (
     <nav className='navigation-bar'>
-      <div className='navigation-links'>
-        <AboutLink customClass='about-link' innerText={'About'} />
-        <AccountMenu/>
-      </div>
+      <ul className='navigation-links'>
+        <li>
+          <AboutLink customClass='about-link' innerText={'About'} />
+        </li>
+        <li>
+          <AccountMenu/>
+        </li>
+      </ul>
     </nav>
   );
 };

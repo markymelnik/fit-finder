@@ -1,11 +1,7 @@
 import "./_home-page-section-divider.scss";
 
 const HomePageSectionDivider = () => {
-  return (
-    <div className="home-page-divider-container">
-      <div className="divider"></div>
-    </div>
-  );
+  return <hr className="home-page-divider-container" />;
 };
 
 export default HomePageSectionDivider;

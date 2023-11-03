@@ -1,12 +1,7 @@
-import './_account-menu-divider.scss'
+import "./_account-menu-divider.scss";
 
 const AccountMenuDivider = () => {
-
-  return (
-    <div className="account-menu-divider">
-      <div className="divider"></div>
-    </div>
-  )
-}
+  return <hr className="account-menu-divider" />;
+};
 
 export default AccountMenuDivider;

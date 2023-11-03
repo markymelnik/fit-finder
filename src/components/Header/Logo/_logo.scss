@@ -5,26 +5,29 @@
   display: flex;
   justify-content: left;
   padding-top: 0.25rem;
-}
 
-.logo-text {
-  font-family: 'Comfortaa';
-  font-size: 1.5rem;
-  font-weight: 400;
-
-  @include smooth-hover(transform);
+  .logo-text {
+    font-family: 'Comfortaa';
+    font-size: 1.5rem;
+    font-weight: 400;
   
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  &:active {
-    transform: scale(0.95);
+    @include smooth-hover(transform);
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  
+    &:active {
+      transform: scale(0.95);
+    }
   }
 }
 
 @media (min-width: 768px) {
-  .logo-text {
-    font-size: 1.25rem;
+  .logo-container {
+    
+    .logo-text {
+      font-size: 1.25rem;
+    }
   }
 }
