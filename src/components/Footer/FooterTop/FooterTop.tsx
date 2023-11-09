@@ -1,10 +1,12 @@
-import FooterLogo from "./FooterLogo/FooterLogo";
+import DevInfo from "./DevInfo/DevInfo";
+import FooterLinks from "./FooterLinks/FooterLinks";
 import "./_footer-top.scss";
 
 const FooterTop = () => {
   return (
     <div className="footer-top">
-      <FooterLogo />
+      <DevInfo />
+      <FooterLinks />
     </div>
   );
 };

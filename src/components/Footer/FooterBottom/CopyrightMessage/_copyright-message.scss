@@ -1,0 +1,6 @@
+@import '@styles/colors';
+
+.footer-copyright {
+  font-size: 0.8rem;
+  color: map-get($theme, 'white');
+}

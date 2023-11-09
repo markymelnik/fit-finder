@@ -1,0 +1,16 @@
+@import '@styles/colors';
+
+.footer-divider {
+  padding: 0 6rem;
+  width: 100%;
+
+  .divider {
+    border-bottom: 0.5px solid map-get($theme, 'white');
+  } 
+}
+
+@media (min-width: 768px) {
+  .footer-divider {
+    padding: 0;
+  }
+}

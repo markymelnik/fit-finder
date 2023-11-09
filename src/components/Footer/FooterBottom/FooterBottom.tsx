@@ -1,12 +1,13 @@
-import DevInfo from "./DevInfo/DevInfo";
-import FooterLinks from "./FooterLinks/FooterLinks";
+
+import CopyrightMessage from "./CopyrightMessage/CopyrightMessage";
+import FooterLogo from "./FooterLogo/FooterLogo";
 import "./_footer-bottom.scss";
 
 const FooterBottom = () => {
   return (
     <div className="footer-bottom">
-      <FooterLinks />
-      <DevInfo />
+      <FooterLogo />
+      <CopyrightMessage />
     </div>
   );
 };
