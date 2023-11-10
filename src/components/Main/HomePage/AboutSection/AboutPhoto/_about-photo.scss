@@ -16,15 +16,12 @@
     border: 0.5px solid map-get($grey, 'neutral');
     z-index: 1;
     border-radius: 4px;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
     &:hover {
       cursor: pointer;
-      transform: scale(1.05);
+      transform: scale(1.025);
       box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 15px;
-    }
-
-    &:active {
-      transform: scale(0.95);
     }
 
     img {

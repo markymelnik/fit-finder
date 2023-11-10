@@ -17,7 +17,10 @@ const AboutLink = ({ customClass, innerText }: AboutLinkProps) => {
   const scrollToAboutSection = () => {
     const aboutSection = document.querySelector(".about-section-container");
     if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: "smooth" });
+      const offset = 60;
+      const aboutSectionLocation = aboutSection.getBoundingClientRect().top + window.scrollY;
+      const position = aboutSectionLocation - offset;
+      window.scrollTo({ top: position, behavior: "smooth" });
     }
   }
 

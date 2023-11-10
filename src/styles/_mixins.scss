@@ -1,5 +1,5 @@
-$smooth-hover-time: 0.12s;
-$smooth-hover-effect: ease-in;
+$smooth-hover-time: 0.15s;
+$smooth-hover-effect: ease-in-out;
 
 @mixin smooth-hover(
   $property, 

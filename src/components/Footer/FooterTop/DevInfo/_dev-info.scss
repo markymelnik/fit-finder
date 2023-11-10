@@ -10,21 +10,20 @@
   color: map-get($theme, 'white');
 
   .dev-site {
+    position: relative;
     display: flex;
-    align-items: center;
-    gap: 0.25rem;
+
 
     &:hover {
       text-decoration: underline;
     }
-
-    span {
-      display: flex;
-
-      svg {
-        height: 0.8rem;
-        width: 0.8rem;
-      }
+    svg {
+      position: absolute;
+      right: -1.2rem;
+      top: 0.15rem;
+      height: 1rem;
+      width: 1rem;
+      stroke-width: 1.5;
     }
   }
 }

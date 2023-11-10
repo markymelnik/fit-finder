@@ -33,7 +33,6 @@
       flex: 1;
       font-size: 0.85rem;
       border: none;
-      /* border: 1.5px solid map-get($grey, 'darker'); */
       background-color: lighten(map-get($grey, 'lighter'), 12%);
       border-right: none;
       border-top-left-radius: 4px;
@@ -76,11 +75,9 @@
       transform: translateY(-50%);
       height: 1.5rem;
       width: 1.5rem;
+      padding: 0.15rem;
       border: none;
       border-radius: 25px;
-      background-size: 0.75rem 0.75rem;
-      background-repeat: no-repeat;
-      background-position: center;
       background-color: lighten(map-get($grey, 'lighter'), 12%);
   
       @include smooth-hover(background-color);

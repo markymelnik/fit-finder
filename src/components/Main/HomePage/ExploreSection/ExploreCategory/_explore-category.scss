@@ -3,13 +3,13 @@
 
 .explore-category {
   @include center-elements;
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.25rem;
   width: auto;
   height: auto;
   border: 1px solid map-get($grey, 'lighter');
   border-radius: 6px;
   z-index: 1;
-  transition: 0.1s ease-in-out;
+  @include smooth-hover(border);
 
   &:hover {
     cursor: pointer;
@@ -23,16 +23,16 @@
   .category-text {
     font-family: 'Outfit';
     color: map-get($grey, 'darker');
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 768px) {
   .explore-category {
-    padding: 1.25rem 1.5rem;
+    padding: 1.25rem 1.75rem;
 
     .category-text {
-      font-size: 1.15rem;
+      font-size: 1.25rem;
     }
   }
 }

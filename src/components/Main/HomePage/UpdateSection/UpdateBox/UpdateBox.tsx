@@ -1,5 +1,7 @@
 import { ReactElement } from 'react';
+
 import './_update-box.scss';
+import UpRightArrowSVG from '../../../../../assets/svg/arrows/UpRightArrowSVG';
 
 type UpdateBoxProps = {
   boxId: string;
@@ -19,10 +21,11 @@ const UpdateBox = ({ boxId, boxTitle, boxDescription, boxSvg, linkName, linkText
         <p className="update-box-description">{boxDescription}</p>
       </div>
       <div className={`${boxId}-icon`}>{boxSvg}</div>
-      <div className={linkName}>
-        <span onClick={handleLinkClick}>
+      <div className="update-box-bottom">
+        <div onClick={handleLinkClick} className={linkName}>
           {linkText}
-        </span>
+          <UpRightArrowSVG />
+        </div>
       </div>
     </div>
   );

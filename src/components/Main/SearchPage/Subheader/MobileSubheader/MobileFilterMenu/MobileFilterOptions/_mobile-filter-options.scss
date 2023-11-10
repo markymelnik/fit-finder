@@ -33,7 +33,7 @@
       list-style: none;
       width: 100%;
       padding: 0 0.5rem;
-      margin: 0 0 1rem;
+      margin: 0 0 1.4rem;
 
       .option-checkbox {
         position: relative;
@@ -59,6 +59,7 @@
       }
 
       .custom-checkbox {
+        display: flex;
         position: relative;
         white-space: nowrap;
         font-size: 1rem;
@@ -66,15 +67,15 @@
 
         .custom-checkbox-text {
           position: absolute;
-          top: 0.06rem;
-          left: 1.96rem;
+          top: 0.12rem;
+          left: 2.18rem;
         }
 
         &::before {
           content: "";
           display: inline-block;
-          height: 1.25rem;
-          width: 1.25rem;
+          height: 1.4rem;
+          width: 1.4rem;
           border: 1px solid;
           transition: background-color 0.15s ease;
         }
@@ -82,14 +83,14 @@
         &::after {
           content: none;
           display: inline-block;
-          height: 0.25rem;
-          width: 0.65rem;
+          height: 0.35rem;
+          width: 0.85rem;
           border-left: 2px solid;
           border-bottom: 2px solid;
           transform: rotate(-45deg);
           position: absolute;
-          left: 0.28rem;
-          top: 0.38rem;
+          left: 0.31rem;
+          top: 0.4rem;
           transition: border-color 0.15s ease;
         }
       }

@@ -12,9 +12,9 @@ const DevInfo = () => {
         rel="noopener noreferrer"
       >
         <span>markmelnik.com</span>
-        <span>
+      
           <UpRightArrowSVG />
-        </span>
+     
       </a>
     </div>
   );

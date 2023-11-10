@@ -17,7 +17,7 @@ const SuccessSVG = () => {
         stroke="green"
         fill="none"
         strokeWidth="3"
-        d="M25 55 l15 15 l35 -35"
+        d="M25 52.5 l15 15 l35 -35"
       />
     </svg>
   );

@@ -68,9 +68,7 @@
     .delete-input-btn-home {
       height: 2rem;
       width: 2rem;
-      background-size: 0.8rem 0.8rem;
-      background-repeat: no-repeat;
-      background-position: center;
+      padding: 0.15rem;
       border: 1px solid map-get($theme, 'white');
       border-radius: 25px;
       position: absolute;
@@ -111,16 +109,11 @@
       }
     
       .delete-input-btn-home {
-        background-size: 1rem 1rem;
-        height: 2.5rem;
-        width: 2.5rem;
+        height: 2rem;
+        width: 2rem;
         right: 5rem;
       }
-
-
     }
-
-    
   }
 }
 

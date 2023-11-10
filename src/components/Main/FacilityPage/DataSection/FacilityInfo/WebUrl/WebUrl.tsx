@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 
+import UpRightArrowSVG from "../../../../../../assets/svg/arrows/UpRightArrowSVG";
 import WebLinkSVG from "../../../../../../assets/svg/facility_page/WebLinkSVG";
 import { RootState } from "../../../../../../redux/store";
 import "./_web-url.scss";
@@ -42,6 +43,7 @@ const WebUrl = ({ customClass }: WebUrlProps) => {
           rel="noopener noreferrer"
         >
           {`Learn More`}
+          <span><UpRightArrowSVG /></span>
         </a>
       )}
     </div>
