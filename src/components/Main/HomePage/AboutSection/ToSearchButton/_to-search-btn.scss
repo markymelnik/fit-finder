@@ -52,7 +52,6 @@
 
 @media (min-width: 768px) {
   .to-search-btn-container {
-    justify-content: left;
 
     .to-search-link-wrapper {
 
@@ -62,5 +61,13 @@
         font-size: 1.25rem;
       }
     }
+  }
+}
+
+@media (min-width: 992px) {
+  .to-search-btn-container {
+    justify-content: left;
+
+
   }
 }

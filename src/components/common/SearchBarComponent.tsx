@@ -53,7 +53,7 @@ const SearchBarComponent = ({ containerClass, submitButtonClass, deleteButtonCla
           </button>
         )}
         
-        <button type='submit' className={submitButtonClass}>
+        <button type='submit' className={submitButtonClass} aria-label="Search">
           <SearchIconSVG />
         </button>
       </form>

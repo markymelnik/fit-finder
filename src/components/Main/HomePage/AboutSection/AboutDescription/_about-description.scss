@@ -16,16 +16,22 @@
     color: map-get($grey, 'dark');
     border-left: 2px solid map-get($grey, 'darker');
     padding: 0 0 0 1rem;
+    font-weight: 200;
   }
 }
 
 @media (min-width: 768px) {
   .about-description {
-    width: 50%;
 
     .about-description-title {
       font-size: 1.75rem;
     }
+  }
+}
+
+@media (min-width: 992px) {
+  .about-description {
+    width: 50%;
 
     .about-description-text {
       font-size: 1.25rem;

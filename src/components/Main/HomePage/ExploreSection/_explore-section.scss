@@ -18,13 +18,14 @@
 
     .explore-section-title {
       font-size: 1.75rem;
+      font-weight: 400;
       margin: 0 0 0.5rem;
-      font-weight: 350;
     }
   
     .explore-section-subtitle {
-      color: map-get($grey, 'neutral');
+      color: map-get($grey, 'dark');
       font-size: 1.25rem;
+      font-weight: 300;
     }
   }
 

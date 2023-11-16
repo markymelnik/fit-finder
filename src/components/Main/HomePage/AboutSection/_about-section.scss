@@ -6,7 +6,7 @@
   width: 100%;
   @include center-elements(column);
   padding: 4.5rem 5% 5rem;
-  
+
   .about-section-top {
     @include center-elements(column);
     margin: 0 0 5rem;
@@ -17,7 +17,7 @@
     .about-section-subtitle {
       text-align: center;
       line-height: 2rem;
-      font-weight: 350;
+      font-weight: 400;
     }
 
     .about-section-title {
@@ -41,11 +41,11 @@
 
 @media (min-width: 768px) {
   .about-section-container {
-    padding: 6.5rem 10% 8rem;
+    padding: 6rem 10% 8rem;
 
     .about-section-top {
       align-items: center;
-      margin: 0 0 8rem;
+      margin: 0 0 7rem;
 
       .about-section-title,
       .about-section-subtitle {
@@ -56,7 +56,14 @@
         margin: 0 0 4rem;
       }
     }
+  }
+}
+
+@media (min-width: 992px) {
+  .about-section-container {
+
     .about-section-bottom {
+      align-items: flex-start;
       flex-direction: row;
       gap: 3rem;
     }

@@ -16,13 +16,14 @@
 
     .update-section-title {
       font-size: 1.75rem;
+      font-weight: 400;
       margin: 0 0 0.5rem;
-      font-weight: 350;
     }
 
     .update-section-subtitle {
-      color: map-get($grey, 'neutral');
+      color: map-get($grey, 'dark');
       font-size: 1.25rem;
+      font-weight: 300;
     }
   }
 
@@ -49,6 +50,10 @@
         font-size: 1.5rem;
       }
     }
+
+    .updates-display {
+      gap: 3.5rem;
+    }
   }
 }
 
@@ -61,6 +66,7 @@
 
     .updates-display {
       flex-direction: row;
+      gap: 3rem;
     }
   }
 }

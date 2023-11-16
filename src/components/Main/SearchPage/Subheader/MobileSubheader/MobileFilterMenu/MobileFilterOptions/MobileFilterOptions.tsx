@@ -45,11 +45,12 @@ const MobileFilterOptions = ({ fetchAllOptionsFromGlobalState, setSelectedOption
 
   return (
     <div className="mobile-filter-options-container">
-      <ul className="mobile-filter-options-list">
+      
         <div className="mobile-filter-options-top">
           <div className="mobile-filter-options-title">{categoryTitle}</div>
           <div className="mobile-filter-options-description">{categoryDescription}</div>
         </div>
+        <ul className="mobile-filter-options-list">
         {allOptions.map((option: string, index: number) => (
           <li key={index} className="mobile-filter-option">
             <label className="option-checkbox" htmlFor={`${option}-checkbox-${index}`}>

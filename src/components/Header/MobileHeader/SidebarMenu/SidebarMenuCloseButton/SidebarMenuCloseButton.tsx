@@ -14,7 +14,7 @@ const SidebarMenuCloseButton = () => {
   }
 
   return (
-    <button onClick={handleButtonClick} className='sidebar-menu-close-btn'>
+    <button onClick={handleButtonClick} className='sidebar-menu-close-btn' aria-label="Close Sidebar Menu">
       <XMarkSVG />
     </button>
   );

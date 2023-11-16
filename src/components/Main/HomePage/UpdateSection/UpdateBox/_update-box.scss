@@ -24,8 +24,8 @@
 
     .update-box-title {
       font-size: 1.5rem;
+      font-weight: 400;
       margin: 0 0 1.75rem;
-      font-weight: 350;
       z-index: 1;
     }
 
@@ -84,7 +84,7 @@
     .brooklyn-search-link {
       position: relative;
       font-size: 1rem;
-      font-weight: 450;
+      font-weight: 550;
       @include underline-animation('ltr');
       padding: 0 0 0.15rem;
 

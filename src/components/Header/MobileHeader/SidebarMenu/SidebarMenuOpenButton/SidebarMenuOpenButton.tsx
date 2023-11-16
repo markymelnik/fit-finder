@@ -14,7 +14,7 @@ const SidebarMenuOpenButton = () => {
   }
 
   return (
-    <button onClick={handleButtonClick} className='sidebar-menu-open-btn'>
+    <button onClick={handleButtonClick} className='sidebar-menu-open-btn' aria-label="Open Sidebar Menu">
       <SidebarMenuSVG />
     </button>
   );

@@ -8,6 +8,7 @@
     display: inherit;
     align-items: center;
     padding: 0 0 0.1rem;
+    font-weight: 550;
     @include underline-animation('ltr');
 
     span {
@@ -19,7 +20,7 @@
       svg {
         height: 1rem;
         width: 0.9rem;
-        stroke-width: 2;
+        stroke-width: 2.25;
       }
     }
   }

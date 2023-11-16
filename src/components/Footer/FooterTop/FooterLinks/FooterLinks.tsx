@@ -8,10 +8,12 @@ const FooterLinks = () => {
     <div className="footer-links">
       <SocialLink
         url="https://github.com/markymelnik"
+        label={"Github"}
         svg={<GithubSVG />}
       />
       <SocialLink
         url="https://www.linkedin.com/in/markmelnik/"
+        label={"Linkedin"}
         svg={<LinkedInSVG />}
       />
     </div>
