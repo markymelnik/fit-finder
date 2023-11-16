@@ -1,13 +1,13 @@
 @import '@styles/colors';
 @import '@styles/mixins';
 
-.facility-address-wrapper {
+.info-external-link-wrapper {
   display: flex;
 
-  .facility-address {
+  .info-external-link {
     display: inherit;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.65rem;
 
     &:hover {
       text-decoration: underline;

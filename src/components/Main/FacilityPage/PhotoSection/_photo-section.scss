@@ -11,7 +11,6 @@ $page-max-width: 800px;
   overflow: hidden;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border-radius: 6px;
-  margin: 0 0 2.5rem;
 
   img {
     height: 100%;
@@ -19,7 +18,7 @@ $page-max-width: 800px;
     background-color: map-get($grey, 'lighter');
     object-fit: cover;
     border-radius: 6px;
-  }  
+  }
 }
 
 .no-facility-photo-found {
@@ -30,7 +29,6 @@ $page-max-width: 800px;
   .photo-section-container {
     max-width: $page-max-width;
     height: calc($page-max-width * (9/16));
-    margin: 0 0 4rem;
 
     .photo-section-favorite {
       bottom: 1.5rem;

@@ -6,7 +6,7 @@ $page-max-width: 800px;
   display: flex;
   flex-direction: column;
   max-width: $page-max-width;
-  width: 100%;
+  padding: 2.5rem 0;
 
   .facility-details-header {
     font-size: 1.5rem;
@@ -25,6 +25,9 @@ $page-max-width: 800px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     border-radius: 6px;
     padding: 2rem;
+
+    .facility-details-header {
+      margin: 0 0 1.5rem;
+    }
   }
 }
-

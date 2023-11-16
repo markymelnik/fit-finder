@@ -17,7 +17,6 @@ $smooth-hover-effect: ease-in-out;
 }
 
 @mixin underline-animation($direction: 'ltr') {
-  display: inline-block;
   border: none;
   transition: background-size 0.5s;
 

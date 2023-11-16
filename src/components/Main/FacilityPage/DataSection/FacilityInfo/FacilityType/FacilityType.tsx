@@ -14,7 +14,9 @@ import { RootState } from "../../../../../../redux/store";
 import "./_facility-type.scss";
 
 const FacilityType = () => {
-  const selectedFacility = useSelector((state: RootState) => state.selectedFacility.facilityData);
+  const selectedFacility = useSelector(
+    (state: RootState) => state.selectedFacility.facilityData
+  );
 
   if (!selectedFacility) return;
 
@@ -53,9 +55,9 @@ const FacilityType = () => {
   }
 
   return (
-    <div className="facility-type-container">
-      <div className="facility-type-icon">{typeIcon}</div>
-      <div className="facility-type">{selectedFacility.facilityType.name}</div>
+    <div className="facility-type">
+      <span>{typeIcon}</span>
+      {selectedFacility.facilityType.name}
     </div>
   );
 };

@@ -6,13 +6,12 @@ $page-max-width: 800px;
   display: flex;
   flex-direction: column;
   max-width: $page-max-width;
-  
 }
 
 @media (min-width: 768px) {
   .facility-about-section-container {
     flex-direction: row;
     gap: 2rem;
-    margin: 1.5rem 0 3rem;
+    margin: 0 0 3rem;
   }
 }

@@ -7,7 +7,7 @@ const CheckMarkSVG = () => {
       viewBox="0 0 40 40"
     >
       <path
-        d="M8 20 L16 28 L32 12"
+        d="M10 23 L17 29 L30 11"
         stroke="currentColor"
         strokeWidth="3"
         strokeLinecap="round"

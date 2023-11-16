@@ -1,0 +1,26 @@
+@import '@styles/mixins';
+
+.external-link-wrapper {
+  display: flex;
+
+  .description-external-link {
+    position: relative;
+    display: inherit;
+    align-items: center;
+    padding: 0 0 0.1rem;
+    @include underline-animation('ltr');
+
+    span {
+      position: absolute;
+      right: -1.05rem;
+      top: 0.18rem;
+      display: inherit;
+
+      svg {
+        height: 1rem;
+        width: 0.9rem;
+        stroke-width: 2;
+      }
+    }
+  }
+}

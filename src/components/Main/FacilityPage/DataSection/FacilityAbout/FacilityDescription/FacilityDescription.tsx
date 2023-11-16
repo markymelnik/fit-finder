@@ -1,12 +1,13 @@
 import { useSelector } from "react-redux";
 
-import "./_facility-description.scss";
+import DescriptionExternalLink from "./DescriptionExternalLink/DescriptionExternalLink";
 import { RootState } from "../../../../../../redux/store";
-import WebUrl from "../../FacilityInfo/WebUrl/WebUrl";
+import "./_facility-description.scss";
 
 const FacilityDescription = () => {
-
-  const selectedFacility = useSelector((state: RootState) => state.selectedFacility.facilityData);
+  const selectedFacility = useSelector(
+    (state: RootState) => state.selectedFacility.facilityData
+  );
 
   if (!selectedFacility) return;
 
@@ -16,7 +17,7 @@ const FacilityDescription = () => {
       <p className="facility-description-text">
         {selectedFacility.description}
       </p>
-      <WebUrl customClass='about-external-link' />
+      <DescriptionExternalLink />
     </div>
   );
 };
