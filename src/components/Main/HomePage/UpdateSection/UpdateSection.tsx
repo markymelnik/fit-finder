@@ -56,13 +56,13 @@ const UpdateSection = () => {
         <UpdateBox
           boxId={`box-3`}
           boxTitle={`Brooklyn Facilities`}
-          boxDescription={`Discover over 250 newly-added fitness destinations in Brooklyn -
+          boxDescription={`Discover over 250 newly-added fitness facilities in Brooklyn -
           from traditional gyms and martial arts centers to specialized
           boutique studios. Tailor your search with specific amenities and
           offerings to find a location that suits your needs!`}
           boxSvg={<GymSVG />}
           linkName={`brooklyn-search-link`}
-          linkText={`Search Outdoor Fitness Areas`}
+          linkText={`Search Brooklyn Facilities`}
           handleLinkClick={handleBrooklynSearchLinkClick}
         />
       </div>

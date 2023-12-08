@@ -35,7 +35,7 @@ const AccountMenu = () => {
 
   return (
     <div className={`account-menu-container ${isDesktopProfileDropdownOpen ? 'active': ''}`} ref={dropdownRef} onClick={toggleDropdown}>
-      <button className="account-menu-btn">
+      <button className="account-menu-btn" aria-label="Toggle account menu">
         {isLoggedIn 
           ? <AccountPhoto customClass='account-menu-photo' />
           : <div className={`account-menu-loggedout-icon ${isDesktopProfileDropdownOpen ? 'active' : ''}`} >

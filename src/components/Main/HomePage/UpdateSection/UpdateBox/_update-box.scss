@@ -11,12 +11,6 @@
   border-radius: 10px;
   border-bottom: 4px solid map-get($grey, 'darker');
 
-  @include smooth-hover(transform);
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
   .update-box-top {
     display: flex;
     flex-direction: column;
@@ -54,12 +48,6 @@
       height: 2.5rem;
       width: 2.5rem;
     }
-
-    @include smooth-hover(transform);
-
-    &:hover {
-      transform: rotate(7.5deg) scale(1.075);
-    }
   }
 }
 
@@ -96,7 +84,6 @@
         width: 0.9rem;
         stroke-width: 2.25
       }
-      
     }
   }
 }
@@ -105,6 +92,12 @@
 @media (min-width: 768px) {
   .update-box {
     padding: 2.5rem 2.25rem;
+
+    @include smooth-hover(transform);
+
+    &:hover {
+      transform: scale(1.05);
+    }
 
     .updat-box-top {
 
@@ -123,6 +116,12 @@
       svg {
         height: 3.5rem;
         width: 3.5rem;
+      }
+
+      @include smooth-hover(transform);
+
+      &:hover {
+        transform: rotate(7.5deg) scale(1.05);
       }
     }
   }

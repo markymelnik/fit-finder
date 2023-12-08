@@ -9,10 +9,10 @@ interface SliderScrollButtonsProps {
 const SliderScrollButtons = ({ scrollLeft, scrollRight }: SliderScrollButtonsProps) => {
   return (
     <div className="slider-scroll-btns">
-      <button onClick={scrollLeft} className="slider-scroll-btn-left">
+      <button onClick={scrollLeft} className="slider-scroll-btn-left" aria-label="Slider display scroll left">
         <ChevronLeftSVG />
       </button>
-      <button onClick={scrollRight} className="slider-scroll-btn-right">
+      <button onClick={scrollRight} className="slider-scroll-btn-right" aria-label="Slider display scroll right">
         <ChevronRightSVG />
       </button>
     </div>
