@@ -6,20 +6,17 @@ $global-font-size: 16px;
 @font-face {
   font-family: 'Outfit';
   src: url('../assets/fonts/Outfit.ttf');
-  font-display: swap;
   font-weight: 350;
 }
 
 @font-face {
   font-family: 'Comfortaa';
   src: url('../assets/fonts/Comfortaa.ttf');
-  font-display: swap;
 }
 
 @font-face {
   font-family: 'Avenir';
   src: url('../assets/fonts/Avenir.otf');
-  font-display: swap;
 }
 
 * {
@@ -49,14 +46,6 @@ button {
 ul,
 ol {
   list-style-type: none;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-weight: normal;
-  font-size: 100%;
 }
 
 .site-container {
