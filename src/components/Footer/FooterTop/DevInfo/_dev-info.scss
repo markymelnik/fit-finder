@@ -5,10 +5,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
-  margin: 0 0 1.25rem;
+  gap: 1rem;
   font-size: 1rem;
   color: map-get($theme, 'white');
+  padding: 0 0 1rem;
 
   .dev-site {
     position: relative;

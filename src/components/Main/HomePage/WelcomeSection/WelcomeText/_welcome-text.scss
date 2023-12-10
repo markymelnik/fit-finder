@@ -5,12 +5,12 @@
   height: auto;
   width: 80%;
   position: absolute;
-  top: 22vh;
+  top: 22.5vh;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   font-size: 1.75rem;
-  font-weight: 800;
+  font-weight: 600;
   color: map-get($theme, 'white');
   text-shadow: -1px 1px 2px map-get($theme, 'black'),
     1px 2px 6px map-get($theme, 'black'),

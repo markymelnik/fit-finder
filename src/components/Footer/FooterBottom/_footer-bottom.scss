@@ -1,14 +1,25 @@
+@import '@styles/colors';
+
 .footer-bottom {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 3rem 0;
+  padding: 3rem 0 2rem;
+  color: map-get($theme, 'white');
+  gap: 0.5rem;
+
+  .footer-logo {
+    font-family: 'Comfortaa';
+    font-size: 1.35rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.85rem;
+  }
 }
 
 @media (min-width: 768px) {
   .footer-bottom {
-    gap: 0.5rem;
     padding: 3rem 0 2rem;
   }
 }

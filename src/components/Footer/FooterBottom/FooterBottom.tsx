@@ -1,13 +1,10 @@
-
-import CopyrightMessage from "./CopyrightMessage/CopyrightMessage";
-import FooterLogo from "./FooterLogo/FooterLogo";
 import "./_footer-bottom.scss";
 
 const FooterBottom = () => {
   return (
     <div className="footer-bottom">
-      <FooterLogo />
-      <CopyrightMessage />
+      <div className="footer-logo">fitfinder</div>
+      <div className="footer-copyright">&copy; 2023. All rights reserved.</div>
     </div>
   );
 };
