@@ -1,9 +1,16 @@
-import MapboxMap from "../ResultComponents/Map/MapboxMap/MapboxMap";
+import React, { Suspense } from 'react';
+
+import MapFallback from '../ResultComponents/Map/MapFallback/MapFallback';
 
 const MobileResultsWithMap = () => {
+
+  const MapboxMap = React.lazy(() => import('../ResultComponents/Map/MapboxMap/MapboxMap'));
+  
   return (
     <div className="with-map">
-      <MapboxMap />
+      <Suspense fallback={<MapFallback />}>
+        <MapboxMap />
+      </Suspense>
     </div>
   );
 };

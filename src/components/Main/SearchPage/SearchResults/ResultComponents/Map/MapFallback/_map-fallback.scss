@@ -1,0 +1,19 @@
+@import '@styles/mixins';
+
+.map-fallback-ui {
+    @include center-elements(column);
+    height: 50vh;
+    width: 100%;
+    gap: 1.5rem;
+
+    .map-fallback-text {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .map-fallback-ui {
+        height: 70vh;
+        width: 50%;
+    }
+}

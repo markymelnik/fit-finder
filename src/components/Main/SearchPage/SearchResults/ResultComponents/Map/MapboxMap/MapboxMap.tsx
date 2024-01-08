@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { Map, NavigationControl, Marker, Popup } from "react-map-gl";
 import { useDispatch } from "react-redux";
@@ -36,7 +36,16 @@ const MapboxMap = () => {
     height: "100%",
   });
 
-  const handleMarkerClick = (facility: Facility) => {
+  const handleMarkerMouseEnter = useCallback((facilityId: number) => () => {
+    setHoveredMarkerId(facilityId)
+  }, []);
+
+  const handleMarkerMouseLeave = useCallback(() => {
+    setHoveredMarkerId(null)
+  }, []);
+
+  const handleMarkerClick = useCallback((facility: Facility) => () => {
+    setShowPopup(true);
     setPopupFacility({ ...facility });
 
     if (mapRef.current) {
@@ -47,7 +56,7 @@ const MapboxMap = () => {
       ]);
       setIsAboveMiddle(markerPosition.y < window.innerHeight / 4);
     }
-  };
+  }, []);
 
   const handleCardClick = ({ ...facility }: Facility) => {
     const locationData = { ...facility };
@@ -88,14 +97,11 @@ const MapboxMap = () => {
                 key={facility.id}
                 longitude={facility.longitude}
                 latitude={facility.latitude}
-                onClick={() => {
-                  setShowPopup(true);
-                  handleMarkerClick(facility);
-                }}
+                onClick={handleMarkerClick(facility)}
               >
                 <div
-                  onMouseEnter={() => setHoveredMarkerId(facility.id)}
-                  onMouseLeave={() => setHoveredMarkerId(null)}
+                  onMouseEnter={handleMarkerMouseEnter(facility.id)}
+                  onMouseLeave={handleMarkerMouseLeave}
                   className="map-marker-click-wrapper"
                 >
                   <MapMarkerSVG isHovered={isHovered} />
