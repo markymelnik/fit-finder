@@ -1,0 +1,19 @@
+@import '@styles/mixins';
+
+.fallback-ui {
+    height: 80vh;
+    @include center-elements(column);
+
+    .fallback-center {
+        @include center-elements(column);
+        gap: 1.5rem;
+
+        .fallback-spinner {
+            @include center-elements;
+        }
+
+        .fallback-text {
+            font-size: 1.25rem;
+        }
+    }
+}
