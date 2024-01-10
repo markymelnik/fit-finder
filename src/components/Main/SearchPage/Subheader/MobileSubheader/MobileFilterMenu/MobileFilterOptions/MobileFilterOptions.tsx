@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import useFacilitySearch from "../../../../../../../hooks/useFacilitySearch";
+import { resetPagination } from "../../../../../../../redux/slices/paginationSlice";
 import { AppDispatch, RootState } from "../../../../../../../redux/store";
 import './_mobile-filter-options.scss';
 
@@ -20,13 +21,15 @@ const MobileFilterOptions = ({ fetchAllOptionsFromGlobalState, setSelectedOption
   const dispatch = useDispatch<AppDispatch>();
   const { executeSearch } = useFacilitySearch();
 
+  const currentPage = useSelector((state: RootState) => state.pagination.currentPage);
+
   const allFetchedOptions = useSelector(fetchAllOptionsFromGlobalState);
   const allOptions = allFetchedOptions.allIds.map((id: number) => allFetchedOptions.byIds[id].name);
   const globalCheckedOptions = useSelector(fetchSelectedOptions);
 
   useEffect(() => {
     if (location.pathname === '/search') {
-      executeSearch();
+      executeSearch(currentPage);
     }
   }, [globalCheckedOptions]);
 
@@ -40,6 +43,7 @@ const MobileFilterOptions = ({ fetchAllOptionsFromGlobalState, setSelectedOption
       updatedCheckedOptions = [...globalCheckedOptions, newlyCheckedOption];
     }
 
+    dispatch(resetPagination());
     dispatch(setSelectedOptions(updatedCheckedOptions));
   };
 

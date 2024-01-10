@@ -18,7 +18,7 @@ const ExploreSection = () => {
     "Climbing Gym",
     "Yoga Studio",
     "Pilates Studio",
-    "HIIT/CrossFit",
+    "HIIT / CrossFit",
     "Fitness Studio",
     "Recreation Center"
   ];

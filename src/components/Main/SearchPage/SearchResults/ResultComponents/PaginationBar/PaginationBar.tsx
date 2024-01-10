@@ -23,8 +23,6 @@ const PaginationBar = () => {
     dispatch(setCurrentPage(1));
   };
 
-  
-
   const handleToEndButtonClick = () => {
     dispatch(setCurrentPage(totalPages));
   };

@@ -7,6 +7,7 @@ import ChevronUpSVG from "../../../../../../../../assets/svg/arrows/ChevronUpSVG
 import XMarkSVG from "../../../../../../../../assets/svg/XMarkSVG";
 import useFacilitySearch from "../../../../../../../../hooks/useFacilitySearch";
 import useOutsideClick from "../../../../../../../../hooks/useOutsideClick";
+import { resetPagination } from "../../../../../../../../redux/slices/paginationSlice";
 import { AppDispatch, RootState } from "../../../../../../../../redux/store";
 import DropdownOptions from "../DropdownOptions/DropdownOptions";
 import './_dropdown-btn.scss';
@@ -26,13 +27,15 @@ const DropdownButton = ({ fetchAllOptionsFromGlobalState, setSelectedOptions, re
   const dispatch = useDispatch<AppDispatch>();
   const { executeSearch } = useFacilitySearch();
 
+  const currentPage = useSelector((state: RootState) => state.pagination.currentPage);
+
   const allFetchedOptions = useSelector(fetchAllOptionsFromGlobalState);
   const allOptions = allFetchedOptions.allIds.map((id: number) => allFetchedOptions.byIds[id].name);
   const globalCheckedOptions = useSelector(fetchSelectedOptions);
 
   useEffect(() => {
     if (location.pathname === '/search') {
-      executeSearch();
+      executeSearch(currentPage);
     }
   }, [globalCheckedOptions]);
 
@@ -56,10 +59,12 @@ const DropdownButton = ({ fetchAllOptionsFromGlobalState, setSelectedOptions, re
     }
 
     dispatch(setSelectedOptions(updatedCheckedOptions));
+    dispatch(resetPagination());
   };
 
   const handleClearChecks = () => {
     dispatch(resetSelectedOptions());
+    dispatch(resetPagination());
     setDropdownVisible(prevVisible => !prevVisible);
   };
 

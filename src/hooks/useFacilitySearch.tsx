@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import { fetchFacilitiesByParameters } from "../redux/apiRequests";
 import { unsetResetFlag } from "../redux/slices/filterSlice";
+import { resetPagination } from "../redux/slices/paginationSlice";
 import { AppDispatch, RootState } from "../redux/store";
 
 const useFacilitySearch = () => {
@@ -24,7 +25,7 @@ const useFacilitySearch = () => {
 
   useEffect(() => {
     if (isReset) {
-      executeSearch();
+      dispatch(resetPagination());
       dispatch(unsetResetFlag());
     }
   }, [isReset]);
@@ -36,7 +37,7 @@ const useFacilitySearch = () => {
     prevPageRef.current = currentPage;
   }, [location.pathname, currentPage]);
 
-  const executeSearch = (page: number = 1) => {
+  const executeSearch = (page: number) => {
 
     const queryParams = [];
 

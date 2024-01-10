@@ -3,12 +3,12 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
+import BackButton from "./BackButton/BackButton";
 import DataSection from "./DataSection/DataSection";
 import FacilityName from "./FacilityName/FacilityName";
 import PhotoSection from "./PhotoSection/PhotoSection";
 import { fetchFacilityByFacilityId } from "../../../redux/apiRequests";
 import { RootState } from "../../../redux/store";
-import BackButton from "./BackButton/BackButton";
 import "./_facility-page.scss";
 
 const FacilityPage = () => {

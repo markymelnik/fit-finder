@@ -19,6 +19,8 @@ interface SearchBarProps {
 const SearchBarComponent = ({ containerClass, submitButtonClass, deleteButtonClass, placeholderText }: SearchBarProps ) => {
 
   const dispatch = useDispatch<AppDispatch>();
+
+  const currentPage = useSelector((state: RootState) => state.pagination.currentPage);
   const { executeSearch } = useFacilitySearch();
   const enteredKeyword = useSelector((state: RootState) => state.filters.enteredKeyword);
 
@@ -28,7 +30,7 @@ const SearchBarComponent = ({ containerClass, submitButtonClass, deleteButtonCla
 
   const onSearchSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    executeSearch();
+    executeSearch(currentPage);
   }
 
   const deleteInput = (event: any) => {
