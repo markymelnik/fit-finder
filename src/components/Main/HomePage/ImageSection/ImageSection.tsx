@@ -1,4 +1,4 @@
-import HomeWorkoutBackground from "../../../../assets/photos/home/home-workout-background.jpg";
+import HomeWorkoutBackground from "../../../../assets/photos/home/home-workout-background.webp";
 import "./_image-section.scss";
 
 const ImageSection = () => {

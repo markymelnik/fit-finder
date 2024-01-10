@@ -1,4 +1,4 @@
-import HomeWelcomeBackground from '../../../../../assets/photos/home/home-welcome-background.jpg';
+import HomeWelcomeBackground from '../../../../../assets/photos/home/home-welcome-background.webp';
 import './_welcome-photo.scss';
 
 const WelcomePhoto = () => {

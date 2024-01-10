@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import SearchScreenshot from '../../../../../assets/photos/home/search-screenshot.png';
+import SearchScreenshot from '../../../../../assets/photos/home/search-screenshot.webp';
 import './_about-photo.scss';
 
 const AboutPhoto = () => {
